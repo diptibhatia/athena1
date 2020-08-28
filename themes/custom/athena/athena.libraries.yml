@@ -1,6 +1,6 @@
-global-css:
-  version: VERSION
+framework:
   css:
     theme:
-      css/styles.css: {}
-      css/normalize.css: {}
+      css/style.css: {}
+  js:
+    js/modal.js: {}

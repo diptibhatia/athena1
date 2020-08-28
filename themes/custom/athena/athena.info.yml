@@ -9,11 +9,14 @@ screenshot: athena.png
 
 regions:
   header: Header
+  highlighted: 'Highlighted'
+  help: 'Help'
   content: Content
   sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
   footer: Footer
   page_top: Page top
   page_bottom: Page bottom
 
 libraries:
-  - athena/global-css
+  - athena/framework
