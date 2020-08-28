@@ -15,4 +15,4 @@
 # Ignore node modules
 node_modules
 
- sites/default/files/*
+sites/default/files/*
