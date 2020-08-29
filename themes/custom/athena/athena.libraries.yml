@@ -3,4 +3,4 @@ framework:
     theme:
       css/style.css: {}
   js:
-    js/MobileMenu.js: {}
+    js/main.js: {}
