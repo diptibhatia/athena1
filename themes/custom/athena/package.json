@@ -16,6 +16,8 @@
   "dependencies": {},
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "laravel-mix": "^5.0.5"
+    "laravel-mix": "^5.0.5",
+    "sass": "^1.26.10",
+    "sass-loader": "^8.0.2"
   }
 }
