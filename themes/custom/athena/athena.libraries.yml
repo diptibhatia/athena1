@@ -3,4 +3,4 @@ framework:
     theme:
       css/style.css: {}
   js:
-    js/modal.js: {}
+    js/main.js: {}
