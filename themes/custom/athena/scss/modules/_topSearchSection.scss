@@ -1,6 +1,5 @@
 .top-search-section {
     position: relative;
-    overflow: hidden;
 
     &__title {
         font-family: 'Opens Sans', sans-serif;
@@ -9,7 +8,8 @@
         color: $primaryColor;
         width: 17.75rem;
         line-height: 1.3;
-        margin: 28px 0 0 0;
+        margin: 0;
+        padding-top: 4rem;
 
         @include atSize700 {
             font-size: 4rem;
@@ -17,7 +17,7 @@
         }
 
         > span {
-            color: $titleYellow;
+            color: $titlePink;
         }
     }
 
@@ -107,17 +107,22 @@
 
     &__background-image {
         position: absolute;
-        top: 0;
+        top: -20px;
         left: 0;
         z-index: -1;
         display: none;
 
         img {
-            width: 100%;
+            width: 65%;
         }
 
-        @include atSize700 {
-            display: block;
+        @include atSize850 {
+            display: flex;
+            justify-content: flex-end;
         }
+    }
+
+    @include atSize700 {
+        z-index: 15;
     }
 }
