@@ -1,6 +1,12 @@
-framework:
+global-css:
+  version: VERSION
   css:
     theme:
       css/style.css: {}
+
+global-js:
+  version: VERSION
   js:
     js/main.js: {}
+  dependencies:
+    - core/jquery

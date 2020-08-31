@@ -19,4 +19,5 @@ regions:
   page_bottom: Page bottom
 
 libraries:
-  - athena/framework
+  - athena/global-css
+  - athena/global-js
