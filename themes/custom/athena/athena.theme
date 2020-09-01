@@ -1,2 +1,17 @@
 <?php
+/**
+ * @file
+ * Functions to support theming in the Athena theme.
+ */
 
+/**
+ * Implements template_preprocess_image() to remove WIDTH and HEIGHT from img-tag
+ *
+ * Adds body classes if certain regions have content.
+ */
+function athena_preprocess_image(&$variables) {
+  if (isset($variables['attributes']['width']) && isset($variables['attributes']['height'])) {
+    unset($variables['attributes']['width']);
+    unset($variables['attributes']['height']);
+  }
+}
