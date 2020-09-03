@@ -790,6 +790,9 @@ body {
     width: 95%;
     text-align: center;
     position: absolute; }
+    .why-athena .get-started.know-more {
+      position: relative;
+      top: 80px; }
     .why-athena .get-started button {
       border-radius: 30px;
       border: solid 2px #ff026f;
@@ -800,10 +803,88 @@ body {
       outline: none; }
   .why-athena .testimonials {
     position: relative;
-    top: 30px; }
+    top: 70px; }
+    .why-athena .testimonials .testimonials-item {
+      display: flex; }
+      .why-athena .testimonials .testimonials-item .item-one {
+        flex: 0.6;
+        padding: 170px 0; }
+        .why-athena .testimonials .testimonials-item .item-one h2 {
+          font-size: 42px;
+          font-weight: bold;
+          color: #303030; }
+        .why-athena .testimonials .testimonials-item .item-one h3 {
+          font-size: 16px;
+          color: #303030; }
+        .why-athena .testimonials .testimonials-item .item-one button {
+          border-radius: 30px;
+          border: solid 2px #ff008e;
+          color: #ff008e;
+          padding: 5px 10px;
+          cursor: pointer;
+          outline: none;
+          background: white; }
+      .why-athena .testimonials .testimonials-item .item-two {
+        flex: 1;
+        margin: 0 0 0 85px; }
+        .why-athena .testimonials .testimonials-item .item-two .student-review {
+          width: 572px;
+          height: 202px;
+          border-radius: 6px;
+          box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
+          background-color: #ffffff;
+          margin: 30px 0 30px 100px;
+          display: flex; }
+          .why-athena .testimonials .testimonials-item .item-two .student-review.two {
+            margin: 30px 0; }
+          .why-athena .testimonials .testimonials-item .item-two .student-review .student-image {
+            width: 102px;
+            height: 102px;
+            border: solid 3px #feb80d;
+            border-radius: 56px;
+            position: relative;
+            top: 15px;
+            left: -50px; }
+            .why-athena .testimonials .testimonials-item .item-two .student-review .student-image img {
+              width: 102px;
+              height: 102px; }
+          .why-athena .testimonials .testimonials-item .item-two .student-review .info h3 {
+            color: #ff008e;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 20px; }
+          .why-athena .testimonials .testimonials-item .item-two .student-review .info p {
+            color: #303030;
+            font-size: 16px; }
+            .why-athena .testimonials .testimonials-item .item-two .student-review .info p span {
+              font-weight: bold; }
+      @media (min-width: 320px) and (max-width: 424px) {
+        .why-athena .testimonials .testimonials-item {
+          flex-direction: column; }
+          .why-athena .testimonials .testimonials-item .item-one {
+            padding: 0;
+            width: 100%;
+            text-align: center; }
+          .why-athena .testimonials .testimonials-item .item-two {
+            margin: 0; }
+            .why-athena .testimonials .testimonials-item .item-two .student-review {
+              margin: 30px 0;
+              width: 100%; }
+              .why-athena .testimonials .testimonials-item .item-two .student-review .student-image {
+                width: 48px;
+                height: 48px;
+                top: -20px;
+                left: 1px; }
+                .why-athena .testimonials .testimonials-item .item-two .student-review .student-image img {
+                  width: 48px;
+                  height: 48px; }
+              .why-athena .testimonials .testimonials-item .item-two .student-review .info {
+                font-size: 15px; }
+                .why-athena .testimonials .testimonials-item .item-two .student-review .info p {
+                  font-size: 13px; } }
 
 .partners {
-  margin: 0 30px; }
+  margin: 140px 30px 50px 30px; }
   .partners .info {
     width: 440px; }
     @media (min-width: 320px) and (max-width: 424px) {
@@ -845,6 +926,70 @@ body {
         .partners .partner-logos .logo {
           margin: 20px auto;
           width: 100%; } }
+
+.know-more {
+  width: 100%;
+  text-align: center; }
+  .know-more button {
+    border-radius: 30px;
+    border: solid 2px #ff008e;
+    color: #ff008e;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    background: white; }
+
+.reason-section {
+  margin: 100px 0;
+  display: flex; }
+  .reason-section .reason-section-item {
+    flex: 1; }
+    .reason-section .reason-section-item .steps {
+      text-align: left;
+      padding: 40px 64px; }
+      .reason-section .reason-section-item .steps h1 {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: normal;
+        color: #303030; }
+      .reason-section .reason-section-item .steps h2 {
+        font-size: 42px;
+        font-weight: bold;
+        color: #303030;
+        margin: 0; }
+      .reason-section .reason-section-item .steps ul li {
+        font-size: 17px;
+        line-height: 2.0;
+        letter-spacing: normal;
+        color: #222222; }
+      .reason-section .reason-section-item .steps .actions {
+        display: flex;
+        flex-direction: row; }
+        .reason-section .reason-section-item .steps .actions button {
+          border-radius: 4.1px;
+          box-shadow: 0 5px 21px 0 rgba(90, 202, 157, 0.05);
+          background-color: #ff008e;
+          color: white;
+          padding: 9px 23px;
+          outline: none;
+          border: none;
+          cursor: pointer; }
+        .reason-section .reason-section-item .steps .actions p {
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.47;
+          letter-spacing: normal;
+          color: #ff008e;
+          margin: 5px 30px; }
+  @media (min-width: 320px) and (max-width: 424px) {
+    .reason-section {
+      flex-direction: column-reverse; }
+      .reason-section .reason-section-item {
+        width: 100%; }
+        .reason-section .reason-section-item img {
+          width: 100%; }
+        .reason-section .reason-section-item .steps {
+          padding: 20px; } }
 
 .grid-view {
   width: 1200px;
