@@ -1,0 +1,91 @@
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/global";
+@import "base/assets";
+@import "modules/wrapper";
+@import "modules/menubar";
+@import "modules/topSearchSection";
+
+.orange-txt {
+	color: $orangeColor
+}
+
+.purple-txt {
+	color: $purpleColor;
+	a {
+		color: $purpleColor;
+	}
+}
+
+.voilet {
+	color: $voilet;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.txt-12 {
+	font-size: $font-size-sm;
+}
+
+.txt-14, p {
+	font-size: $font-size-md;
+}
+.txt-16 {
+	font-size: $font-size-lg;
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+.border-left {
+	border-left: 1px solid #979797;
+}
+
+
+.shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; }
+.shadow { box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; }
+.shadow-lg { box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; }
+.shadow-none { box-shadow: none !important; }
+
+.sidebar {
+	a {
+		color: $primaryColor;
+		text-decoration: none;
+
+		&:hover {
+			color: $purpleColor;
+		}
+	}
+}
+
+.banner-image {
+    bottom: 20px;
+    position: relative;
+
+    .carousel-caption {
+    	bottom: 25%;
+    }
+}
+
+.violet-btn {
+	border-color: $voilet;
+	border-radius: 20px;
+	color: $voilet;
+}
+
+.white-btn {
+	border-color: $primaryWhite;
+	border-radius: 20px;
+	color: $primaryWhite;
+	background-color: transparent;
+}
+
+.footer {
+	a {
+		color: $secondaryColor;
+	}
+}
