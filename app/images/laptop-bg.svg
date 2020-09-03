@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="628px" height="635px" viewBox="0 0 628 635" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 40</title>
+    <defs>
+        <linearGradient x1="-5.94886211%" y1="50%" x2="97.2668601%" y2="88.9766386%" id="linearGradient-1">
+            <stop stop-color="#FFBF00" offset="0%"></stop>
+            <stop stop-color="#FF4C95" offset="100%"></stop>
+            <stop stop-color="#FF4A98" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="website-home" transform="translate(-668.000000, -1617.000000)" fill="url(#linearGradient-1)">
+            <g id="Group-34" transform="translate(668.000000, 1617.000000)">
+                <g id="Group-40" transform="translate(0.709000, 0.000000)">
+                    <path d="M208.668418,519.508312 C327.612377,519.508312 548.9445,393.223104 548.9445,273.078599 C548.9445,152.934093 386.454172,115.969687 266.036138,115.969687 C145.618104,115.969687 48,213.366053 48,333.510558 C48,453.655064 89.7244596,519.508312 208.668418,519.508312 Z" id="Oval-Copy-12" opacity="0.339867001" transform="translate(298.472250, 317.739000) rotate(-61.000000) translate(-298.472250, -317.739000) "></path>
+                    <path d="M227.056262,514.538625 C346.00022,514.538625 567.332344,388.253417 567.332344,268.108911 C567.332344,147.964406 404.842016,111 284.423982,111 C164.005948,111 66.3878438,208.396365 66.3878438,328.540871 C66.3878438,448.685376 108.112303,514.538625 227.056262,514.538625 Z" id="Oval-Copy-10" transform="translate(316.860094, 312.769313) rotate(-23.000000) translate(-316.860094, -312.769313) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

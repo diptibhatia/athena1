@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="25px" viewBox="0 0 32 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrows copy 4</title>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400000006">
+        <g id="website-home" transform="translate(-1275.000000, -1561.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Group-12" transform="translate(1184.000000, 1561.000000)">
+                <g id="arrows-copy-4" transform="translate(107.000000, 12.500000) scale(-1, 1) translate(-107.000000, -12.500000) translate(91.000000, 0.000000)">
+                    <path d="M29.2,10.4 L6.8442,10.4 L13.8606,3.4176 C14.6435,2.6384 14.6465,1.3721 13.8673,0.5892 C13.0881,-0.1938 11.8217,-0.1967 11.0388,0.5824 L0.5884,10.9824 C-0.1943,11.7635 -0.1968,13.0339 0.5864,13.8157 L11.0386,24.2176 C11.8214,24.9966 13.0878,24.9939 13.8671,24.2108 C14.6463,23.4279 14.6433,22.1616 13.8604,21.3824 L6.8442,14.4 L29.2,14.4 C30.3046,14.4 31.2,13.5046 31.2,12.4 C31.2,11.2954 30.3046,10.4 29.2,10.4 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
