@@ -464,3 +464,362 @@
 		}
 	}
 }
+.insights-section {
+	width: 100%;
+	text-align: center;
+	h2 {
+		font-size: 42px;
+  		font-weight: bold;
+  		color: $primaryColor;
+  		margin: 10px 0;
+	}
+	h3 {
+		font-size: 16px;
+  		color: $primaryColor;
+	}
+	.section-items {
+		display: flex;
+		margin: 90px 0;
+		.section-item-one {
+			flex: 1;
+			.section-image {
+				h4 {
+					font-size: 18px;
+				  	font-weight: bold;
+				  	font-stretch: normal;
+				  	color: $blogColor;
+				  	text-align: left;
+				  	margin: 10px 22px;
+				}
+				h5 {
+			  		font-size: 18px;
+			  		font-weight: bold;
+			  		color: $primaryColor;
+			  		margin: 0 22px;
+    				text-align: left;
+				}
+				p {
+				  	font-size: 16px;
+				  	color: $primaryColor;
+				  	margin: 0 22px;
+    				text-align: left;
+				}
+			}
+			@include atSize424 {
+				display: none;
+			}
+		}
+		.section-item-two {
+			flex: 1;
+			text-align: left;
+			@include atSize424 {
+				margin: 20px;
+			}
+			h4 {
+				font-size: 24px;
+  				color: $primaryColor;
+  				margin: 0 0 12px 0;
+  				width: 90%;
+  				border-bottom: solid 3px $buttonPink;
+  				padding: 0 0 8px 0;
+  				span {
+  					float: right;
+  					font-size: 16px;
+				    font-weight: bold;
+				    margin: 6px 4px 0 0;
+  				}
+			}
+			.event-list {
+				display: flex;
+    			flex-direction: column;
+				.event-item {
+					display: flex;
+					.event-info {
+						padding: 0 16px;
+						h4 {
+							font-size: 18px;
+						  	font-weight: 500;
+						  	color: $primaryColor;
+						  	border: none;
+						}
+						p {
+							font-size: 14px;
+						  	font-weight: 500;
+						  	color: $primaryColor;
+						}
+						h5 {
+							font-size: 14px;
+  							color: $buttonPink;
+  							span {
+  								float: right;
+  								margin: 0 36px 0 0;
+  								text-transform: uppercase;
+  							}
+						}
+					}
+					@include atSize424 {
+						flex-direction: column;
+						.event-info {
+							padding: 10px 0;
+						}
+						.event-images {
+							img {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.insights-courses {
+	background: #eff1fe;
+	width: 100%;
+	height: 496px;
+	.courses-list {
+		margin: 50px 50px 10px 50px;
+		display: flex;
+		.course-item {
+			margin: 0 10px;
+			.course-image {
+				img {
+					width: 365px;
+  					height: 194px;
+				}
+				.insights {
+					position: relative;
+					top: -65px;
+					left: 15px;
+					img {
+						width: 90px;
+  						height: 40px;
+					}
+				}
+			}
+			.course-info {
+				position: relative;
+				top: -42px;
+				h1 {
+					font-size: 24px;
+				  	font-weight: bold;
+				  	color: #2f281e;
+				  	&.active {
+				  		color: $buttonPink;
+				  	}
+				}
+				h2 {
+					font-size: 16.8px;
+				  	font-weight: 500;
+				  	color: #5d523d;
+				}
+			}
+		}
+	}
+	@include atSize424 {
+		height: auto;
+		.courses-list {
+			flex-direction: column;
+			margin: 0px 20px;
+		    padding: 25px 0;
+			.course-item {
+				.course-image {
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	.view-all {
+		width: 100%;
+		text-align: center;
+		button {
+			border-radius: 30px;
+			border: solid 2px $buttonPink;
+			color: $buttonPink;
+			padding: 5px 20px;
+			cursor: pointer;
+			outline: none;
+			background: white;
+		}
+	}
+}
+
+.popular-courses {
+	h1 {
+		text-align: center;
+	}
+	h2 {
+		font-size: 42px;
+  		color: $primaryColor;
+  		text-align: center;
+  		margin: 0;
+	}
+	h3 {
+		font-size: 16px;
+  		text-align: center;
+  		color: #606060;
+  		width: 50%;
+  		margin: 20px auto;
+	}
+	.courses {
+		display: flex;
+		margin: 50px auto;
+		.course-item {
+			width: 350px;
+	  		height: 402px;
+	  		border-radius: 6px;
+	  		box-shadow: 0 2px 25px 2px #d5dbfb;
+	  		background-color: #ffffff;
+	  		position: relative;
+	  		margin: 0 10px;
+	  		@include atSize424 {
+	  			margin: 20px 6px;
+	  		}
+	  		.image {
+	  			position: relative;
+	  			img {
+	  				width: 350px;
+	  				height: 165px;
+	  			}
+	  		}
+	  		.course-details {
+	  			width: 331px;
+			  	height: 146px;
+			  	border-radius: 6px;
+			  	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
+			  	background-color: #ffffff;
+			  	position: absolute;
+			  	top: 90px;
+			  	left: 10px;
+			  	.course-tags {
+			  		width: 315px;
+				  	height: 30px;
+				  	border-radius: 3px;
+				  	background-color: $courseTags;
+				  	margin: 0 10px;
+				  	p {
+					  font-size: 14px;
+					  color: $primaryColor;
+					  padding: 7px;
+					  span {
+					  	color: white;
+					  	padding: 0 5px;
+					  }
+				  	}
+			  	}
+			  	h1 {
+			  		font-size: 18px;
+			    	font-weight: bold;
+			    	color: $primaryColor;
+			    	margin: 10px 0 0 5px;
+			    	text-align: left;
+			    	padding-left: 20px;
+			  	}
+			  	h2 {
+			  		font-size: 14px;
+					color: $buttonPink;
+					margin: 5px 0;
+					text-align: left;
+			    	padding-left: 24px;
+			  	}
+			  	h3 {
+					font-size: 14px;
+					color: $primaryColor;
+					text-align: left;
+					padding-left: 24px;
+			    	margin: 10px 0;
+			    	width: 100%;
+						span {
+							font-weight: bold;
+						}
+			  	}
+	  		}
+	  		.course-info {
+	  			margin: 100px 15px 0 15px;
+	  			font-size: 14px;
+	  			text-align: left;
+					color: $secondaryColor;
+					span {
+						color: $buttonPink;
+						cursor: pointer;
+					}
+	  		}
+	  		.know-more {
+	  			width: 113px;
+			    height: 44px;
+			    border-radius: 100px 0px 0 100px;
+			    background-image: linear-gradient(89deg, $knowMoreTag1 0%, $knowMoreTag2 100%, $knowMoreTag3 100%);
+			    float: right;
+			    margin: 10px 0;
+			    p {
+			    	color: white;
+					margin: 10px 0;
+			    }
+	  		}
+		}
+	}
+	@include atSize424 {
+		h3 {
+			width: 100%;
+		}
+		.courses {
+			flex-direction: column;
+		}
+	}
+	.show-more {
+		width: 100%;
+		text-align: center;
+		button {
+			border-radius: 30px;
+			border: solid 2px $buttonPink;
+			color: $buttonPink;
+			padding: 5px 20px;
+			cursor: pointer;
+			outline: none;
+			background: white;
+		}
+	}
+}
+
+.footer-banner {
+	margin: 50px 0 100px 0;
+	img {
+		width: 100%;
+	}
+	.footer-info {
+		position: relative;
+		top: -274px;
+		text-align: center;
+		h1 {
+			font-size: 52px;
+  			font-weight: bold;
+  			color: #ffffff;
+  			span {
+  				color: #ffb800;
+  			}
+		}
+		button {
+			border-radius: 30px;
+			border: solid 2px white;
+			color: white;
+			padding: 10px 20px;
+			cursor: pointer;
+			outline: none;
+			background: none;
+		}
+	}
+	@include atSize424 {
+		img {
+			height: 177px;
+		}
+		.footer-info {
+			top: -192px;
+			h1 {
+				font-size: 34px;
+			}
+		}
+	}
+}
