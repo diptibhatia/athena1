@@ -1,5 +1,5 @@
 @mixin atSize424 {
-    @media (min-width: 320px) and (max-width: 424px){
+    @media (min-width: 320px) and (max-width: 424px) {
         @content;
     }
 }

@@ -2,7 +2,7 @@
     position: relative;
 
     &__title {
-        font-family: 'Opens Sans', sans-serif;
+        font-family: "Opens Sans", sans-serif;
         font-size: 2.19rem;
         font-weight: bold;
         color: $primaryColor;
@@ -22,7 +22,7 @@
     }
 
     &__text {
-        font-size: .875rem;
+        font-size: 0.875rem;
         line-height: 1.75;
         margin: 10px 0 20px 3px;
         width: 18.125rem;
@@ -54,9 +54,9 @@
             }
 
             &::placeholder {
-                font-size: .75rem;
-                opacity: .6;
-                letter-spacing: .2px;
+                font-size: 0.75rem;
+                opacity: 0.6;
+                letter-spacing: 0.2px;
             }
         }
 
@@ -67,7 +67,7 @@
             width: 112px;
             color: $primaryColor;
             font-weight: 700;
-            font-size: .875rem;
+            font-size: 0.875rem;
             height: 42px;
             margin: 4px 5px;
             padding-right: 45px;
@@ -124,6 +124,5 @@
 
     @include atSize700 {
         z-index: 15;
-        background-color: #eaedf9;
     }
 }
