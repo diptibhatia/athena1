@@ -7,6 +7,11 @@
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
     <link href='assets/styles/main.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/styles/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/modules/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/styles/modules/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/styles/modules/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/styles/modules/regular.min.css">
     <title>Home</title>
 </head>
 
@@ -448,14 +453,43 @@
             </div>
         </div>
     </div>
-    <div class="footer-banner">
-        <img src="images/footer-bg.png" />
-        <div class="footer-info">
-            <h1>It’s Time to Start <br><span>Investing</span> In <span>Yourself</span> </h1>
-            <button>Join Now</button>
-        </div>
-    </div>
+    <div w3-include-html="footer.html"></div>
+
+    <script type="text/javascript">
+        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
     <script src="bundled.js"></script>
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script src="assets/scripts/fontawesome.min.js"></script>
+    <script src="assets/scripts/regular.min.js"></script>
 </body>
 
 </html>
