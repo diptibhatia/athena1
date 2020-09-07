@@ -1,0 +1,33 @@
+<div class="carousel-caption text-left">
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes }}>
+      {% for item in items %}
+        <h1 class="strong text-secondary"><span class="orange-txt">{{ item.content }}</span>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <h1 class="strong text-secondary"><span class="orange-txt">{{ item.content }}</span>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</span>
+    {% if multiple %}
+      <div>
+    {% endif %}
+    {% for item in items %}
+      <h1 class="strong text-secondary"><span class="orange-txt">{{ item.content }}</span>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -22,7 +22,6 @@
         }
 
         @include atSize700 {
-            
         }
 
         @include atSize850 {
@@ -32,8 +31,7 @@
     }
 
     &__explore-btn {
-        background-image: linear-gradient(89deg, #ff006e 0%, 
-        #ff4e9a 100%, #ffd85e 100%);
+        background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
         display: inline-flex;
         border-radius: 5px;
         padding: 0 9px;
@@ -44,7 +42,7 @@
 
         > a {
             text-decoration: none;
-            font-size: .875rem;
+            font-size: 0.875rem;
             font-weight: 700;
             color: #fff;
             width: 50px;
@@ -70,7 +68,7 @@
                 margin-right: 9px;
                 font-size: 1rem;
                 margin-top: -4px;
-                letter-spacing: .3px;
+                letter-spacing: 0.3px;
                 overflow: visible;
             }
         }
@@ -96,21 +94,21 @@
             left: 0;
             width: 26px;
             height: 2px;
-            background-color: rgba(0 ,0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             transform-origin: 0 0;
-            transition: transform .3s ease-out;
+            transition: transform 0.3s ease-out;
         }
-      
-         &__middle {
+
+        &__middle {
             position: absolute;
             top: 9px;
             left: 0;
             width: 26px;
             height: 2px;
-            background-color: rgba(0 ,0, 0, 0.5);
-            transition: all .3s ease-out;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-out;
         }
-      
+
         &::after {
             content: "";
             position: absolute;
@@ -118,13 +116,12 @@
             left: 0;
             width: 26px;
             height: 2px;
-            background-color: rgba(0 ,0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             transform-origin: 0 100%;
-            transition: transform .3s ease-out;
+            transition: transform 0.3s ease-out;
         }
 
         &--close-x {
-
             &::before {
                 transform: rotate(45deg);
             }
@@ -146,9 +143,9 @@
 
     &__menu-content {
         opacity: 0;
-        transform: scaleY(.5);
+        transform: scaleY(0.5);
         transform-origin: 0 0;
-        transition: all .3s ease-out;
+        transition: all 0.3s ease-out;
         position: relative;
         z-index: -10;
         position: absolute;
@@ -176,7 +173,6 @@
 }
 
 .primary-nav {
-
     ul {
         list-style: none;
         padding: 0;
@@ -186,15 +182,10 @@
         margin: 0;
 
         li {
-            border-bottom: .5px solid #ddd;
+            border-bottom: 0.5px solid #ddd;
 
             &:nth-last-child(1) {
                 border-bottom: none;
-                font-weight: bold;
-            }
-
-            &:nth-last-child(2) {
-                font-weight: bold;
             }
 
             @include atSize700 {
@@ -217,10 +208,10 @@
     a {
         text-decoration: none;
         color: $menuColor;
-        font-size: .875rem;
+        font-size: 0.875rem;
         display: block;
         padding: 1.2rem 0;
-        transition: background-color .3s ease-out;
+        transition: background-color 0.3s ease-out;
 
         &:hover {
             background-color: #eff1fe;

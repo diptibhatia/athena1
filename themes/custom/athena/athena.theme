@@ -15,3 +15,16 @@ function athena_preprocess_image(&$variables) {
     unset($variables['attributes']['height']);
   }
 }
+
+/**
+ * Implements template_preprocess_field().
+ */
+function athena_preprocess_field(&$variables) {
+
+  // Check for your image field.
+  if ($variables['element']['#field_name'] == 'field_page_heading_banner_image') {
+
+    // Set class.
+    $variables['attributes']['class'][] = 'img-fluid';
+  }
+}

@@ -13,6 +13,9 @@
  */
 #}
 {% if content %}
-    {{ content }}
+  <div{{ attributes }}>
+    <div class="main-wrapper container-fluid p-0">
+        {{ content }}
+    </div>
   </div>
 {% endif %}

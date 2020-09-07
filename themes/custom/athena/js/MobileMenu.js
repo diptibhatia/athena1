@@ -16,6 +16,3 @@ class MobileMenu {
 }
 
 export default MobileMenu;
-
-//constructor runs immediately whenever an object is created from a class
-//arrow function donot manipulate the value of this keyword

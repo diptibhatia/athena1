@@ -3,10 +3,20 @@ global-css:
   css:
     theme:
       css/style.css: {}
+      css/bootstrap.min.css: {}
+      css/bootstrap-grid.min.css: {}
+      css/bootstrap-reboot.min.css: {}
+      css/fontawesome.min.css: {}
+      css/regular.min.css: {}
 
 global-js:
   version: VERSION
   js:
     js/main.js: {}
+    js/bootstrap.min.js: {}
+    js/fontawesome.min.js: {}
+    js/jquery.min.js: {}
+    js/MobileMenu.js: {}
+    js/regular.min.js: {}
   dependencies:
     - core/jquery
