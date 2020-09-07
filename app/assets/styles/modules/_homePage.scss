@@ -534,6 +534,7 @@
     			flex-direction: column;
 				.event-item {
 					display: flex;
+					margin: 10px 0;
 					.event-info {
 						padding: 0 16px;
 						h4 {
@@ -785,7 +786,8 @@
 }
 
 .footer-banner {
-	margin: 50px 0 100px 0;
+	margin: 50px 0 0px 0;
+	height: 283px;
 	img {
 		width: 100%;
 	}
@@ -812,6 +814,7 @@
 		}
 	}
 	@include atSize424 {
+		height: 180px;
 		img {
 			height: 177px;
 		}
@@ -820,6 +823,36 @@
 			h1 {
 				font-size: 34px;
 			}
+		}
+	}
+}
+
+.all-courses {
+	display: flex;
+	background-color: #eff1fe;
+	height: auto;
+	width: 100%;
+	margin: 0 0 30px 0;
+	font-family: Lato;
+	.sections {
+		display: flex;
+		flex-direction: row;
+		margin: 20px 50px;
+		.section-item {
+			flex: 1;
+			line-height: 1.8;
+			margin: 0 30px;
+			h1 {
+				font-size: 16px;
+  				color: $primaryColor;
+			}
+			font-size: 14px;
+		}
+	}
+	@include atSize424 {
+		.sections {
+			flex-direction: column;
+			margin: 20px;
 		}
 	}
 }
