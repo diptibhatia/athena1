@@ -8,6 +8,7 @@
 @import "modules/topSearchSection";
 @import "modules/homePage";
 @import "modules/gridView";
+@import "modules/aboutUs";
 
 .orange-txt {
 	color: $orangeColor;
@@ -35,6 +36,7 @@
 .txt-14,
 p {
 	font-size: $font-size-md;
+	line-height: 1.5em;
 }
 .txt-16 {
 	font-size: $font-size-lg;
@@ -49,7 +51,7 @@ p {
 }
 
 .shadow-sm {
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+	box-shadow: 0 0.50rem 1rem rgba(0, 0, 0, 0.075) !important;
 }
 .shadow {
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -61,17 +63,6 @@ p {
 	box-shadow: none !important;
 }
 
-.sidebar {
-	a {
-		color: $primaryColor;
-		text-decoration: none;
-
-		&:hover {
-			color: $purpleColor;
-		}
-	}
-}
-
 .banner-image {
 	bottom: 20px;
 	position: relative;
@@ -79,19 +70,6 @@ p {
 	.carousel-caption {
 		bottom: 25%;
 	}
-}
-
-.violet-btn {
-	border-color: $voilet;
-	border-radius: 20px;
-	color: $voilet;
-}
-
-.white-btn {
-	border-color: $primaryWhite;
-	border-radius: 20px;
-	color: $primaryWhite;
-	background-color: transparent;
 }
 
 .footer {
