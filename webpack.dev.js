@@ -15,19 +15,22 @@ module.exports = merge(common, {
         contentBase: path.join(__dirname, 'app'),
         hot: true,
         port: 3001,
-        host: '127.0.0.1'
+        host: 'localhost'
     },
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.(ttf|eot|svg|gif|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: [{
-                    loader: 'file-loader',
-                }]
+                use: ["style-loader", "css-loader",  {
+                    loader: 'postcss-loader',
+                    options: {
+                      plugins: function () {
+                        return [
+                          require('autoprefixer')
+                        ];
+                      }
+                    }
+                  },"sass-loader"]
             }
         ]
     },
