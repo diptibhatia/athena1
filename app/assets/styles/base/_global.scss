@@ -7,11 +7,29 @@ body {
 	color: $orangeColor;
 }
 
+.yellow-txt {
+	color: $blogColor;
+}
+
 .purple-txt {
 	color: $purpleColor;
 	a {
 		color: $purpleColor;
 	}
+}
+
+.bg-purple {
+	background-color: $purpleColor !important;
+}
+
+.pink { 
+	&-txt {
+		color: $buttonPink
+	}
+	&-bg {
+		background-color: $buttonPink !important;
+		color: $primaryWhite;
+	}	
 }
 
 .voilet {
@@ -65,8 +83,34 @@ p {
 	}
 }
 
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 2px solid #eee;
+
+    &.purple-brd {
+    	border-left: 2px solid $purpleColor;
+    }
+}
+
 .footer {
 	a {
 		color: $secondaryColor;
 	}
+}
+
+.tag-outline {
+	padding: 4px 10px;
+    border: 1px solid #979797;
+    border-radius: 15px;
+    color: #0099fe;
+    font-size: 10px;
+    margin: 0 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.more-link:after {
+	content: ' \2192'
 }
