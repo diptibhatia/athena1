@@ -1,4 +1,4 @@
-<div class="col-md-4 col-sm-12 bg-white sidebar shadow-lg rounded">
+<section class="side-bar bg-white sidebar shadow-lg rounded p-3 "> 
 {% import _self as menus %}
 
 {#
@@ -13,10 +13,10 @@
     {% if menu_level == 0 %}
       <ul{{ attributes }} class="list-group list-group-flush">
     {% else %}
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush mt-2">
     {% endif %}
     {% for item in items %}
-      <li{{ item.attributes }}>
+      <li{{ item.attributes }} class="list-group-item">
         {{ link(item.title, item.url) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
@@ -26,4 +26,4 @@
     </ul>
   {% endif %}
 {% endmacro %}
-</div>
+</section>
