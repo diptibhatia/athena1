@@ -15,7 +15,7 @@ module.exports = merge(common, {
         contentBase: path.join(__dirname, 'app'),
         hot: true,
         port: 3001,
-        host: 'localhost'
+        host: '0.0.0.0'
     },
     module: {
         rules: [
