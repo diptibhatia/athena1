@@ -42,7 +42,31 @@
             font-weight: bold;
             letter-spacing: .2px;
             position: relative;
-            top: -3px;
+
+            @include atSize850 {
+                top: -3px;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                transform: scale(0);
+                height: 4px;
+                background-color: $titlePink;
+                display: inline-block;
+                position: absolute;
+                bottom: 8px;
+                left: 0;
+                transition: transform .2s ease-out;
+
+                @include atSize480 {
+                    bottom: -3px;
+                }
+            }
+
+            &.active::after {
+                transform: scale(1);;
+            }
         }
     }
 
