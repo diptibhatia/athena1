@@ -249,4 +249,98 @@
             }
         }
     }
+
+    &__eligibility, &__why-athena {
+        
+        @include atSize1250 {
+            display: flex;
+        }
+
+        &_details {
+            color: $secondaryColor;
+            max-width: 750px;
+
+            @include atSize480 {
+                width: 60%;
+                margin-right: 50px;
+            }
+
+            h2 {
+                font-size: 2rem;
+                display: inline-block;
+                color: $primaryColor;
+                font-weight: bold;
+                letter-spacing: .3px;
+                margin-bottom: 22px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 37%;
+                    height: 3px;
+                    border-radius: 1.5px;
+                    background-color: $itemColor;
+                    position: absolute;
+                    left: -3px;
+                }
+            }
+
+            h3 {
+                color: $primaryColor;
+                font-size: 1.25rem;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 30px;
+                line-height: 30px;
+            }
+
+            .knowmore {
+
+                a {
+                    display: block;
+                    color: $titlePink;
+                    font-style: italic;
+                    overflow-x: auto;
+                    scrollbar-width: none; /* Hide scrollbar Firefox */
+                    -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+                    &::-webkit-scrollbar {
+                        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+                    }
+                }
+            }
+        }
+    }
+
+    &__why-athena {
+
+        &_details {
+
+            h2 {
+                margin-bottom: 40px;
+
+                &::after {
+                    bottom: -7px;
+                }
+            }
+
+            h3 {
+                font-style: normal;
+                color: $titlePink;
+                font-size: 1.125rem;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: .875rem;
+                line-height: 24px;
+                color: $primaryColor;
+            }
+        }
+    }
 }
