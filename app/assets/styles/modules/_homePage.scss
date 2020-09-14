@@ -1,3 +1,14 @@
+.grid-view {
+	width:1200px;
+	height:auto;
+	padding:10px 15px;
+	margin:0px auto;
+	@include atSize424 {
+		width: 100%;
+		padding: 0;
+	}
+}	
+
 .explore-courses {
 	text-align: center;
 	.tabs {
