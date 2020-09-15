@@ -28,7 +28,7 @@
 	}
 
 	.list-group-item {
-		padding: 15px 1.25rem
+		
 	}
 
 	.list-item-none {
@@ -50,12 +50,17 @@
 
 	.sidebar {
 		.list-group-item {
-			&.active {
-				color: $purpleColor;
-				background-color: transparent;
-				border: inherit;
+			padding: 1rem 1.25rem;
 
-				a {
+			a {
+				color: $primaryColor;
+				text-decoration: none;
+				padding: 18px 0;
+
+				&.is-active {
+					color: $purpleColor;
+					background-color: transparent;
+
 					&::after {
 						content: "";
 					    display: block;
@@ -64,16 +69,11 @@
 					    position: relative;
 					    bottom: -7px;
 					}
-				}
-			}
-
-			a {
-				color: $primaryColor;
-				text-decoration: none;
+				}				
 
 				&:hover {
 					color: $purpleColor;
-				}				
+				}
 			}
 		}		
 	}
@@ -111,5 +111,9 @@
 }
 
 .txt-secondaryColor {
-	color: $secondaryColor;
+	color: $primaryColor;
+}
+
+.text-secondaryColor {
+	color: $primaryColor;
 }
