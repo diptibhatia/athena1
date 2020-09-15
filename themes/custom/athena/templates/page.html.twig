@@ -43,7 +43,7 @@
  * @see html.html.twig
  */
 #}
-<header class="site-header">
+<header class="site-header container-fluid">
     <div class="wrapper">
     {{ page.header }}
 </header>
@@ -61,24 +61,22 @@
     </aside>
     </div>
 {% endif %}
-<div id="main-wrapper" class="main-wrapper container-fluid p-0 about-us-wrapper">
-    <div class="wrapper pt-4 row bg-white pb-5">
-        <div class="col-md-8 col-sm-12">
-            {{ page.content }}
-        </div>
-    {% if page.sidebar_first %}
-        <div class="col-md-4 col-sm-12">
-            {{ page.sidebar_first }}
-        </div>
-    {% endif %}
-    
-    {% if page.sidebar_second %}
-        <div class="col-md-4 col-sm-12">
-            {{ page.sidebar_second }}
-        </div>
-    {% endif %}
-    </div>
-</div>
+  <div class="pt-4 container bg-white pb-5 d-flex">
+      <div class="col-md-8 col-sm-12">
+          {{ page.content }}
+      </div>
+  {% if page.sidebar_first %}
+      <div class="col-md-4 col-sm-12">
+          {{ page.sidebar_first }}
+      </div>
+  {% endif %}
+  
+  {% if page.sidebar_second %}
+      <div class="col-md-4 col-sm-12">
+          {{ page.sidebar_second }}
+      </div>
+  {% endif %}
+  </div>
 {% if page.featured_bottom %}
     <div class="featured-bottom">
     <aside class="layout-container clearfix" role="complementary">
