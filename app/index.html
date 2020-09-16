@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
-    <link href='assets/styles/main.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/styles/modules/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles/modules/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="assets/styles/modules/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="assets/styles/modules/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/styles/modules/regular.min.css">
-    <title>Home</title>
-</head>
-
-<body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+      <link href='assets/styles/main.css' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="assets/styles/modules/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/styles/modules/bootstrap-grid.min.css">
+      <link rel="stylesheet" href="assets/styles/modules/bootstrap-reboot.min.css">
+      <link rel="stylesheet" href="assets/styles/modules/fontawesome.min.css">
+      <link rel="stylesheet" href="assets/styles/modules/regular.min.css">
+      <title>Home</title>
+   </head>
+   <body>
     <header class="site-header">
         <div class="wrapper">
             <div class="site-header__logo">
@@ -40,459 +38,545 @@
             </div>
         </div>
     </header>
-    <div class="top-search-section">
-        <div class="grid-view">
+      <div class="top-search-section">
+         <div class="grid-view">
             <div class="wrapper">
-                <h1 class="top-search-section__title"><span>Read & Learn</span> in an easy way !</h1>
-                <p class="top-search-section__text">Learning is never too late. The whole world is in front of you ——
-                    Forward to the dream</p>
-                <form class="top-search-section__search">
-                    <input class="top-search-section__search-input" type="text"
-                        placeholder="What do you want to learn ?">
-                    <input class="top-search-section__search-btn" type="submit" value="Search">
-                    <div class="search-icon">
-                        <img src="images/search.svg" alt="search icon">
-                    </div>
-                </form>
-                <div class="top-search-section__background-image">
-                    <img src="images/homePageTopBanner1440.png" alt="background image">
-                </div>
-                <div class="top-search-section__mobile-background-image">
-                    <img src="images/mob-bg.svg" alt="background image">
-                </div>
+               <h1 class="top-search-section__title"><span>Read & Learn</span> in an easy way !</h1>
+               <p class="top-search-section__text">Learning is never too late. The whole world is in front of you ——
+                  Forward to the dream
+               </p>
+               <form class="top-search-section__search">
+                  <input class="top-search-section__search-input" type="text"
+                     placeholder="What do you want to learn ?">
+                  <input class="top-search-section__search-btn" type="submit" value="Search">
+                  <div class="search-icon">
+                     <img src="images/search.svg" alt="search icon">
+                  </div>
+               </form>
+               <div class="top-search-section__background-image">
+                  <img src="images/homePageTopBanner1440.png" alt="background image">
+               </div>
+               <div class="top-search-section__mobile-background-image">
+                  <img src="images/mob-bg.svg" alt="background image">
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="grid-view">
-        <div class="explore-courses">
+         </div>
+      </div>
+      <div class="grid-view">
+         <div class="explore-courses">
             <div class="wrapper">
-                <h1>Explore our Courses</h1>
-                <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum</p>
+               <h1>Explore our Courses</h1>
+               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum</p>
             </div>
             <div class="tabs">
-                <div class="tab-item">Acadamic</div>
-                <div class="tab-item">Micro Credits</div>
-                <div class="tab-item">Certifications</div>
+               <!-- <div class="tab-item">Acadamic</div>
+                  <div class="tab-item">Micro Credits</div>
+                  <div class="tab-item">Certifications</div> -->
+               <ul class="nav tabs-cyan tab-list" id="myClassicTab" role="tablist">
+                  <li class="nav-item tab-item">
+                     <a class="nav-link  waves-light active show" id="overview-tab-classic" data-toggle="tab" href="#acadamic"
+                        role="tab" aria-controls="overview-classic" aria-selected="true">Acadamic</a>
+                  </li>
+                  <li class="nav-item tab-item">
+                     <a class="nav-link waves-light" id="course-module-tab-classic" data-toggle="tab" href="#micro-credits" role="tab"
+                        aria-controls="course-module-classic" aria-selected="false">Micro Credits</a>
+                  </li>
+                  <li class="nav-item tab-item">
+                     <a class="nav-link waves-light" id="eligibility-tab-classic" data-toggle="tab" href="#certifications" role="tab"
+                        aria-controls="eligibility-classic" aria-selected="false">Certifications</a>
+                  </li>
+               </ul>
             </div>
-            <div class="courses-offered">
-                <div class="info">
-                    <h2>Our Acadamic Courses</h2>
-                    <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply </p>
-                    <button>View All Courses</button>
-                </div>
-                <div class="courses">
-                    <div class="course-list">
-                        <div class="course-item">
-                            <div class="image">
-                                <img src="images/course.jpg" alt="course-image" />
-                            </div>
-                            <div class="course-details">
-                                <h1>Master of Business Administration</h1>
-                                <h2>Guglielmo Marconi University, Italy</h2>
-                                <div class="course-tags">
-                                    <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                </div>
-                                <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                            </div>
-                            <div class="course-info">
-                                Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                                text of the <span>Read More</span>
-                            </div>
-                            <div class="know-more">
-                                <p>Know More</p>
-                            </div>
+            <div class="tab-content border-bottom rounded-bottom" id="myClassicTabContent">
+               <div class="tab-pane fade active show" id="acadamic" role="tabpanel" aria-labelledby="acadamic-tab-classic">
+                  <div class="fyi-tabs__overview">
+                     <div class="courses-offered">
+                        <div class="info">
+                           <h2>Our Acadamic Courses</h2>
+                           <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                              typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                           </p>
+                           <button>View All Courses</button>
                         </div>
-                        <div class="course-item">
-                            <div class="image">
-                                <img src="images/course.jpg" alt="course-image" />
-                            </div>
-                            <div class="course-details">
-                                <h1>Master of Business Administration</h1>
-                                <h2>Guglielmo Marconi University, Italy</h2>
-                                <div class="course-tags">
-                                    <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                </div>
-                                <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                            </div>
-                            <div class="course-info">
-                                Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                                text of the <span>Read More</span>
-                            </div>
-                            <div class="know-more">
-                                <p>Know More</p>
-                            </div>
+                        <div class="courses">
+                           <div class="course-list">
+                              <div class="course-item">
+                                 <div class="image">
+                                    <img src="images/course.jpg" alt="course-image" />
+                                 </div>
+                                 <div class="course-details">
+                                    <h1>Master of Business Administration</h1>
+                                    <h2>Guglielmo Marconi University, Italy</h2>
+                                    <div class="course-tags">
+                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                    </div>
+                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                 </div>
+                                 <div class="course-info">
+                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                                    text of the <span>Read More</span>
+                                 </div>
+                                 <div class="know-more">
+                                    <p>Know More</p>
+                                 </div>
+                              </div>
+                              <div class="course-item">
+                                 <div class="image">
+                                    <img src="images/course.jpg" alt="course-image" />
+                                 </div>
+                                 <div class="course-details">
+                                    <h1>Master of Business Administration</h1>
+                                    <h2>Guglielmo Marconi University, Italy</h2>
+                                    <div class="course-tags">
+                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                    </div>
+                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                 </div>
+                                 <div class="course-info">
+                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                                    text of the <span>Read More</span>
+                                 </div>
+                                 <div class="know-more">
+                                    <p>Know More</p>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-pane fade" id="micro-credits" role="tabpanel" aria-labelledby="micro-credits-tab-classic">
+                  <div class="fyi-tabs__micro-credits">
+                     tab2
+                  </div>
+               </div>
+               <div class="tab-pane fade" id="certifications" role="tabpanel" aria-labelledby="certifications-tab-classic">
+                  <div class="fyi-certifications">
+                     tab3
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="why-athena">
-        <div class="athena-background-image">
+            <!--             <div class="courses-offered">
+               <div class="info">
+                   <h2>Our Acadamic Courses</h2>
+                   <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                       typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply </p>
+                   <button>View All Courses</button>
+               </div>
+               <div class="courses">
+                   <div class="course-list">
+                       <div class="course-item">
+                           <div class="image">
+                               <img src="images/course.jpg" alt="course-image" />
+                           </div>
+                           <div class="course-details">
+                               <h1>Master of Business Administration</h1>
+                               <h2>Guglielmo Marconi University, Italy</h2>
+                               <div class="course-tags">
+                                   <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                               </div>
+                               <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                           </div>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                               text of the <span>Read More</span>
+                           </div>
+                           <div class="know-more">
+                               <p>Know More</p>
+                           </div>
+                       </div>
+                       <div class="course-item">
+                           <div class="image">
+                               <img src="images/course.jpg" alt="course-image" />
+                           </div>
+                           <div class="course-details">
+                               <h1>Master of Business Administration</h1>
+                               <h2>Guglielmo Marconi University, Italy</h2>
+                               <div class="course-tags">
+                                   <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                               </div>
+                               <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                           </div>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                               text of the <span>Read More</span>
+                           </div>
+                           <div class="know-more">
+                               <p>Know More</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               </div> -->
+         </div>
+      </div>
+      <div class="why-athena">
+         <div class="athena-background-image">
             <img src="images/bg-grey.svg" />
-        </div>
-        <div class="grid-view">
+         </div>
+         <div class="grid-view">
             <div class="athena-section">
-                <div class="why-athena-item-one">
-                    <h1>Why Athena ?</h1>
-                    <div class="info">
-                        <div class="info-item">
-                            <div class="item">
-                                <img src="images/why-athena-1.svg" />
-                                <span>Flexible & Stackable</span><br>
-                                <p>
-                                    With AGE, you are in charge of your learning! You decide the timing of your learning
-                                    and the pace of your education – you can complete each module by the 21st day of
-                                    enrollment up until the 90th day.
-                                </p>
-                            </div>
-                            <div class="item">
-                                <img src="images/why-athena-2.svg" />
-                                <span>Affordable (Pay per Module - Easy Instalments)</span><br>
-                                <p>
-                                    The ‘Pay per Module’ payment model gives you financial freedom, unlike most MBA’s.
-                                    Now, you can start your MBA by paying only for the 1st Module. .
-                                </p>
-                            </div>
-                            <div class="item">
-                                <img src="images/why-athena-3.svg" />
-                                <span>Accredited & Globaly Accepted</span><br>
-                                <p>
-                                    The ‘Pay per Module’ payment model gives you financial freedom, unlike most MBA’s.
-                                    Now, you can start your MBA by paying only for the 1st Module.
-                                </p>
-                            </div>
+               <div class="why-athena-item-one">
+                  <h1>Why Athena ?</h1>
+                  <div class="info">
+                     <div class="info-item">
+                        <div class="item">
+                           <img src="images/why-athena-1.svg" />
+                           <span>Flexible & Stackable</span><br>
+                           <p>
+                              With AGE, you are in charge of your learning! You decide the timing of your learning
+                              and the pace of your education – you can complete each module by the 21st day of
+                              enrollment up until the 90th day.
+                           </p>
                         </div>
-                    </div>
-                </div>
-                <div class="why-athena-item-two">
-                    <img src="images/why-athea-home.png" />
-                </div>
+                        <div class="item">
+                           <img src="images/why-athena-2.svg" />
+                           <span>Affordable (Pay per Module - Easy Instalments)</span><br>
+                           <p>
+                              The ‘Pay per Module’ payment model gives you financial freedom, unlike most MBA’s.
+                              Now, you can start your MBA by paying only for the 1st Module. .
+                           </p>
+                        </div>
+                        <div class="item">
+                           <img src="images/why-athena-3.svg" />
+                           <span>Accredited & Globaly Accepted</span><br>
+                           <p>
+                              The ‘Pay per Module’ payment model gives you financial freedom, unlike most MBA’s.
+                              Now, you can start your MBA by paying only for the 1st Module.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="why-athena-item-two">
+                  <img src="images/why-athea-home.png" />
+               </div>
             </div>
             <div class="get-started">
-                <button>Get Started</button>
+               <button>Get Started</button>
             </div>
             <div class="testimonials">
-                <div class="testimonials-item">
-                    <div class="item-one">
-                        <h1>Testimonials</h1>
-                        <h2>Our Students Say About Us</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy</h3>
-                        <button>View All</button>
-                    </div>
-                    <div class="item-two">
-                        <div class="student-review">
-                            <div class="student-image">
-                                <img src="images/rector.svg" />
-                            </div>
-                            <div class="info">
-                                <h3>The best option for the busy Working professionals</h3>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's<br><br>
-                                    <span>Lisa Reburn</span><br>
-                                    Chief Executive Officer l MC Donalds <br>
-                                    Germany
-                                </p>
-                            </div>
+               <div class="testimonials-item">
+                  <div class="item-one">
+                     <h1>Testimonials</h1>
+                     <h2>Our Students Say About Us</h2>
+                     <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy
+                     </h3>
+                     <button>View All</button>
+                  </div>
+                  <div class="item-two">
+                     <div class="student-review">
+                        <div class="student-image">
+                           <img src="images/rector.svg" />
                         </div>
-                        <div class="student-review two">
-                            <div class="student-image">
-                                <img src="images/rector.svg" />
-                            </div>
-                            <div class="info">
-                                <h3>The best option for the busy Working professionals</h3>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's<br><br>
-                                    <span>Lisa Reburn</span><br>
-                                    Chief Executive Officer l MC Donalds <br>
-                                    Germany
-                                </p>
-                            </div>
+                        <div class="info">
+                           <h3>The best option for the busy Working professionals</h3>
+                           <p>
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                              Ipsum has been the industry's<br><br>
+                              <span>Lisa Reburn</span><br>
+                              Chief Executive Officer l MC Donalds <br>
+                              Germany
+                           </p>
                         </div>
-                        <div class="student-review">
-                            <div class="student-image">
-                                <img src="images/rector.svg" />
-                            </div>
-                            <div class="info">
-                                <h3>The best option for the busy Working professionals</h3>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's<br><br>
-                                    <span>Lisa Reburn</span><br>
-                                    Chief Executive Officer l MC Donalds <br>
-                                    Germany
-                                </p>
-                            </div>
+                     </div>
+                     <div class="student-review two">
+                        <div class="student-image">
+                           <img src="images/rector.svg" />
                         </div>
-                    </div>
-                </div>
+                        <div class="info">
+                           <h3>The best option for the busy Working professionals</h3>
+                           <p>
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                              Ipsum has been the industry's<br><br>
+                              <span>Lisa Reburn</span><br>
+                              Chief Executive Officer l MC Donalds <br>
+                              Germany
+                           </p>
+                        </div>
+                     </div>
+                     <div class="student-review">
+                        <div class="student-image">
+                           <img src="images/rector.svg" />
+                        </div>
+                        <div class="info">
+                           <h3>The best option for the busy Working professionals</h3>
+                           <p>
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                              Ipsum has been the industry's<br><br>
+                              <span>Lisa Reburn</span><br>
+                              Chief Executive Officer l MC Donalds <br>
+                              Germany
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="grid-view">
-        <div class="partners">
+         </div>
+      </div>
+      <div class="grid-view">
+         <div class="partners">
             <div class="info">
-                <h1>Our Partners</h1>
-                <h2>Universities we Partner With</h2>
-                <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy</h3>
+               <h1>Our Partners</h1>
+               <h2>Universities we Partner With</h2>
+               <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy
+               </h3>
             </div>
             <div class="partner-logos">
-                <div class="logo">
-                    <img src="images/cmi-logo.svg" />
-                </div>
-                <div class="logo">
-                    <img src="images/ciq-logo.svg" />
-                </div>
-                <div class="logo">
-                    <img src="images/sqa-logo.svg" />
-                </div>
-                <div class="logo">
-                    <img src="images/ucam-logo.svg" />
-                </div>
+               <div class="logo">
+                  <img src="images/cmi-logo.svg" />
+               </div>
+               <div class="logo">
+                  <img src="images/ciq-logo.svg" />
+               </div>
+               <div class="logo">
+                  <img src="images/sqa-logo.svg" />
+               </div>
+               <div class="logo">
+                  <img src="images/ucam-logo.svg" />
+               </div>
             </div>
-        </div>
-        <div class="know-more">
+         </div>
+         <div class="know-more">
             <button>Know More</button>
-        </div>
-        <div class="reason-section">
+         </div>
+         <div class="reason-section">
             <div class="reason-section-item">
-                <img src="images/need-reason-img.svg" />
+               <img src="images/need-reason-img.svg" />
             </div>
             <div class="reason-section-item">
-                <div class="steps">
-                    <h1>Need More Reasons to Start today ?</h1>
-                    <h2>Take a 7-day free Trial</h2>
-                    <ul>
-                        <li>No Credit Card details Required</li>
-                        <li>Free of any Obligations </li>
-                        <li>Unlimited Acces to One Module Learning Resourses</li>
-                        <li>Immediate Access to the Course </li>
-                        <li>Decide After the Free Trial</li>
-                        <li>Engage With the Student Community</li>
-                    </ul>
-                    <div class="actions">
-                        <button> Start Now</button>
-                        <p>Watch Video</p>
-                    </div>
-                </div>
+               <div class="steps">
+                  <h1>Need More Reasons to Start today ?</h1>
+                  <h2>Take a 7-day free Trial</h2>
+                  <ul>
+                     <li>No Credit Card details Required</li>
+                     <li>Free of any Obligations </li>
+                     <li>Unlimited Acces to One Module Learning Resourses</li>
+                     <li>Immediate Access to the Course </li>
+                     <li>Decide After the Free Trial</li>
+                     <li>Engage With the Student Community</li>
+                  </ul>
+                  <div class="actions">
+                     <button> Start Now</button>
+                     <p>Watch Video</p>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div class="insights-section">
+         </div>
+         <div class="insights-section">
             <h1>News & Updates</h1>
             <h2>From Our Insights</h2>
             <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
             <div class="section-items">
-                <div class="section-item-one">
-                    <div class="section-image">
-                        <img src="images/blog-bg.png" />
-                        <h4>ARTICLE</h4>
-                        <h5>Beating Procrastination - The Never-Ending Struggle</h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem </p>
-                    </div>
-                </div>
-                <div class="section-item-two">
-                    <h4>Upcoming Events <span>View All</span></h4>
-                    <div class="event-list">
-                        <div class="event-item">
-                            <div class="event-images">
-                                <img src="images/events-bg.png" />
-                            </div>
-                            <div class="event-info">
-                                <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                                <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
-                                <p>Open For all</p>
-                                <h5>More Details <span>Register Now</span></h5>
-                            </div>
+               <div class="section-item-one">
+                  <div class="section-image">
+                     <img src="images/blog-bg.png" />
+                     <h4>ARTICLE</h4>
+                     <h5>Beating Procrastination - The Never-Ending Struggle</h5>
+                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem 
+                     </p>
+                  </div>
+               </div>
+               <div class="section-item-two">
+                  <h4>Upcoming Events <span>View All</span></h4>
+                  <div class="event-list">
+                     <div class="event-item">
+                        <div class="event-images">
+                           <img src="images/events-bg.png" />
                         </div>
-                        <div class="event-item">
-                            <div class="event-images">
-                                <img src="images/events-bg-2.png" />
-                            </div>
-                            <div class="event-info">
-                                <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                                <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
-                                <p>Open For all</p>
-                                <h5>More Details <span>Register Now</span></h5>
-                            </div>
+                        <div class="event-info">
+                           <h4>Beating Procrastination - The Never- Ending Struggle</h4>
+                           <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
+                           <p>Open For all</p>
+                           <h5>More Details <span>Register Now</span></h5>
                         </div>
-                        <div class="event-item">
-                            <div class="event-images">
-                                <img src="images/events-bg-3.png" />
-                            </div>
-                            <div class="event-info">
-                                <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                                <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
-                                <p>Open For all</p>
-                                <h5>More Details <span>Register Now</span></h5>
-                            </div>
+                     </div>
+                     <div class="event-item">
+                        <div class="event-images">
+                           <img src="images/events-bg-2.png" />
                         </div>
-                    </div>
-                </div>
+                        <div class="event-info">
+                           <h4>Beating Procrastination - The Never- Ending Struggle</h4>
+                           <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
+                           <p>Open For all</p>
+                           <h5>More Details <span>Register Now</span></h5>
+                        </div>
+                     </div>
+                     <div class="event-item">
+                        <div class="event-images">
+                           <img src="images/events-bg-3.png" />
+                        </div>
+                        <div class="event-info">
+                           <h4>Beating Procrastination - The Never- Ending Struggle</h4>
+                           <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
+                           <p>Open For all</p>
+                           <h5>More Details <span>Register Now</span></h5>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="insights-courses">
-        <div class="grid-view">
+         </div>
+      </div>
+      <div class="insights-courses">
+         <div class="grid-view">
             <div class="courses-list">
-                <div class="course-item">
-                    <div class="course-image">
-                        <img src="images/interview-bg1.png" />
-                        <div class="insights">
-                            <img src="images/insights.svg" />
-                        </div>
-                    </div>
-                    <div class="course-info">
-                        <h1>Upgrading To Microsoft Windows Vista Tips</h1>
-                        <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
-                    </div>
-                </div>
-                <div class="course-item">
-                    <div class="course-image">
-                        <img src="images/blog-bg1.png" />
-                        <div class="insights">
-                            <img src="images/insights.svg" />
-                        </div>
-                    </div>
-                    <div class="course-info">
-                        <h1 class="active">Finally A Top Secret Way You Can Get Google Adwords</h1>
-                        <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
-                    </div>
-                </div>
-                <div class="course-item">
-                    <div class="course-image">
-                        <img src="images/blog-bg-2.png" />
-                        <div class="insights">
-                            <img src="images/insights.svg" />
-                        </div>
-                    </div>
-                    <div class="course-info">
-                        <h1>Upgrading To Microsoft Windows Vista Tips</h1>
-                        <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
-                    </div>
-                </div>
+               <div class="course-item">
+                  <div class="course-image">
+                     <img src="images/interview-bg1.png" />
+                     <div class="insights">
+                        <img src="images/insights.svg" />
+                     </div>
+                  </div>
+                  <div class="course-info">
+                     <h1>Upgrading To Microsoft Windows Vista Tips</h1>
+                     <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
+                  </div>
+               </div>
+               <div class="course-item">
+                  <div class="course-image">
+                     <img src="images/blog-bg1.png" />
+                     <div class="insights">
+                        <img src="images/insights.svg" />
+                     </div>
+                  </div>
+                  <div class="course-info">
+                     <h1 class="active">Finally A Top Secret Way You Can Get Google Adwords</h1>
+                     <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
+                  </div>
+               </div>
+               <div class="course-item">
+                  <div class="course-image">
+                     <img src="images/blog-bg-2.png" />
+                     <div class="insights">
+                        <img src="images/insights.svg" />
+                     </div>
+                  </div>
+                  <div class="course-info">
+                     <h1>Upgrading To Microsoft Windows Vista Tips</h1>
+                     <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div class="view-all">
+         </div>
+         <div class="view-all">
             <button>View All</button>
-        </div>
-    </div>
-    <div class="grid-view">
-        <div class="popular-courses">
+         </div>
+      </div>
+      <div class="grid-view">
+         <div class="popular-courses">
             <h1>Popular Courses</h1>
             <h2>Our Popular Course</h2>
             <h3>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum printing and typesetting industry. Lorem Ipsum </h3>
+               industry. Lorem Ipsum printing and typesetting industry. Lorem Ipsum 
+            </h3>
             <div class="courses">
-                <div class="course-item">
-                    <div class="image">
-                        <img src="images/course.jpg" alt="course-image">
-                    </div>
-                    <div class="course-details">
-                        <h1>Master of Business Administration</h1>
-                        <h2>Guglielmo Marconi University, Italy</h2>
-                        <div class="course-tags">
-                            <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                        </div>
-                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                    </div>
-                    <div class="course-info">
-                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
-                        the <span>Read More</span>
-                    </div>
-                    <div class="know-more">
-                        <p>Know More</p>
-                    </div>
-                </div>
-                <div class="course-item">
-                    <div class="image">
-                        <img src="images/course.jpg" alt="course-image">
-                    </div>
-                    <div class="course-details">
-                        <h1>Master of Business Administration</h1>
-                        <h2>Guglielmo Marconi University, Italy</h2>
-                        <div class="course-tags">
-                            <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                        </div>
-                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                    </div>
-                    <div class="course-info">
-                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
-                        the <span>Read More</span>
-                    </div>
-                    <div class="know-more">
-                        <p>Know More</p>
-                    </div>
-                </div>
-                <div class="course-item">
-                    <div class="image">
-                        <img src="images/course.jpg" alt="course-image">
-                    </div>
-                    <div class="course-details">
-                        <h1>Master of Business Administration</h1>
-                        <h2>Guglielmo Marconi University, Italy</h2>
-                        <div class="course-tags">
-                            <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                        </div>
-                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                    </div>
-                    <div class="course-info">
-                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
-                        the <span>Read More</span>
-                    </div>
-                    <div class="know-more">
-                        <p>Know More</p>
-                    </div>
-                </div>
+               <div class="course-item">
+                  <div class="image">
+                     <img src="images/course.jpg" alt="course-image">
+                  </div>
+                  <div class="course-details">
+                     <h1>Master of Business Administration</h1>
+                     <h2>Guglielmo Marconi University, Italy</h2>
+                     <div class="course-tags">
+                        <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                     </div>
+                     <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                  </div>
+                  <div class="course-info">
+                     Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                     the <span>Read More</span>
+                  </div>
+                  <div class="know-more">
+                     <p>Know More</p>
+                  </div>
+               </div>
+               <div class="course-item">
+                  <div class="image">
+                     <img src="images/course.jpg" alt="course-image">
+                  </div>
+                  <div class="course-details">
+                     <h1>Master of Business Administration</h1>
+                     <h2>Guglielmo Marconi University, Italy</h2>
+                     <div class="course-tags">
+                        <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                     </div>
+                     <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                  </div>
+                  <div class="course-info">
+                     Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                     the <span>Read More</span>
+                  </div>
+                  <div class="know-more">
+                     <p>Know More</p>
+                  </div>
+               </div>
+               <div class="course-item">
+                  <div class="image">
+                     <img src="images/course.jpg" alt="course-image">
+                  </div>
+                  <div class="course-details">
+                     <h1>Master of Business Administration</h1>
+                     <h2>Guglielmo Marconi University, Italy</h2>
+                     <div class="course-tags">
+                        <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                     </div>
+                     <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                  </div>
+                  <div class="course-info">
+                     Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                     the <span>Read More</span>
+                  </div>
+                  <div class="know-more">
+                     <p>Know More</p>
+                  </div>
+               </div>
             </div>
             <div class="show-more">
-                <button>Show more</button>
+               <button>Show more</button>
             </div>
-        </div>
-    </div>
-    <div w3-include-html="footer.html"></div>
-
-    <script type="text/javascript">
-        includeHTML();
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            /* Loop through a collection of all HTML elements: */
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                    /* Make an HTTP request using the attribute value as the file name: */
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                            /* Remove the attribute, and call this function once more: */
-                            elmnt.removeAttribute("w3-include-html");
-                            includeHTML();
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    /* Exit the function: */
-                    return;
-                }
-            }
-        }
-    </script>
-    <script src="bundled.js"></script>
-    <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/scripts/bootstrap.min.js"></script>
-    <script src="assets/scripts/fontawesome.min.js"></script>
-    <script src="assets/scripts/regular.min.js"></script>
-</body>
-
+         </div>
+      </div>
+      <div w3-include-html="footer.html"></div>
+      <script type="text/javascript">
+         includeHTML();
+         function includeHTML() {
+             var z, i, elmnt, file, xhttp;
+             /* Loop through a collection of all HTML elements: */
+             z = document.getElementsByTagName("*");
+             for (i = 0; i < z.length; i++) {
+                 elmnt = z[i];
+                 /*search for elements with a certain atrribute:*/
+                 file = elmnt.getAttribute("w3-include-html");
+                 if (file) {
+                     /* Make an HTTP request using the attribute value as the file name: */
+                     xhttp = new XMLHttpRequest();
+                     xhttp.onreadystatechange = function () {
+                         if (this.readyState == 4) {
+                             if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                             if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                             /* Remove the attribute, and call this function once more: */
+                             elmnt.removeAttribute("w3-include-html");
+                             includeHTML();
+                         }
+                     }
+                     xhttp.open("GET", file, true);
+                     xhttp.send();
+                     /* Exit the function: */
+                     return;
+                 }
+             }
+         }
+      </script>
+      <script src="bundled.js"></script>
+      <script src="assets/scripts/jquery.min.js"></script>
+      <script src="assets/scripts/bootstrap.min.js"></script>
+      <script src="assets/scripts/fontawesome.min.js"></script>
+      <script src="assets/scripts/regular.min.js"></script>
+   </body>
 </html>

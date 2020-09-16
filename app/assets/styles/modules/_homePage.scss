@@ -1,3 +1,18 @@
+.grid-view {
+	width:1200px;
+	height:auto;
+	padding:10px 15px;
+	margin:0px auto;
+	@include atSize424 {
+		width: 100%;
+		padding: 0;
+	}
+	@include atSize430 {
+		width: 100%;
+		padding: 0;	
+	}
+}	
+
 .explore-courses {
 	text-align: center;
 	.tabs {
@@ -10,12 +25,24 @@
 	    @include atSize424 {
     		width: 100%
     	}
-		.tab-item {
-			flex: 1;
-  			font-size: 18px;
-  			font-weight: 500;
-  			color: $buttonPink;
+    	@include atSize430 {
+			width: 100%;
+			padding: 0;	
 		}
+		@include atSize480 {
+			width: 100%;
+			padding: 0;		
+		}
+    	.tab-list {
+    		width: 100%;
+    		.tab-item {
+				flex: 1;
+	  			font-size: 18px;
+	  			cursor: pointer;
+	  			font-weight: 500;
+	  			color: $buttonPink;
+			}
+    	}
 	}
 	.courses-offered {
 		display: flex;
@@ -23,6 +50,12 @@
 		@include atSize424 {
     		flex-direction: column;
     	}
+    	@include atSize430 {
+			flex-direction: column;
+		}
+		@include atSize480 {
+			flex-direction: column;
+		}
 		.info {
 			flex: 0.5;
 			text-align: left;
@@ -51,6 +84,12 @@
 				margin: 20px 10px;
 				display: flex;
 				@include atSize424 {
+					flex-direction: column;
+				}
+				@include atSize430 {
+					flex-direction: column;
+				}
+				@include atSize480 {
 					flex-direction: column;
 				}
 				.course-item {
@@ -166,6 +205,14 @@
 		width: 100%;
 		margin: 83px 0;
 		@include atSize424 {
+			flex-direction: column;
+			width: 100%;
+		}
+		@include atSize430 {
+			flex-direction: column;
+			width: 100%;
+		}
+		@include atSize480 {
 			flex-direction: column;
 			width: 100%;
 		}
@@ -332,6 +379,68 @@
 					}
 				}
 			}
+			@include atSize430 {
+				flex-direction: column;
+				.item-one {
+					padding: 0;
+					width: 100%;
+					text-align: center;
+				}
+				.item-two {
+					margin: 0;
+					.student-review {
+						margin: 30px 0;
+						width: 100%;
+						.student-image {
+							width: 48px;
+  							height: 48px;
+  							top: -20px;
+    						left: 1px;
+  							img {
+  								width: 48px;
+  								height: 48px;
+  							}
+						}
+						.info {
+							font-size: 15px;
+							p {
+								font-size: 13px;
+							}
+						}
+					}
+				}
+			}
+			@include atSize480 {
+				flex-direction: column;
+				.item-one {
+					padding: 0;
+					width: 100%;
+					text-align: center;
+				}
+				.item-two {
+					margin: 0;
+					.student-review {
+						margin: 30px 0;
+						width: 100%;
+						.student-image {
+							width: 48px;
+  							height: 48px;
+  							top: -20px;
+    						left: 1px;
+  							img {
+  								width: 48px;
+  								height: 48px;
+  							}
+						}
+						.info {
+							font-size: 15px;
+							p {
+								font-size: 13px;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -341,6 +450,12 @@
 	.info {
 		width: 440px;
 		@include atSize424 {
+			width: 100%;
+		}
+		@include atSize430 {
+			width: 100%;
+		}
+		@include atSize480 {
 			width: 100%;
 		}
 		h1 {
@@ -370,6 +485,12 @@
 		@include atSize424 {
 			flex-direction: column;
 		}
+		@include atSize430 {
+			flex-direction: column;
+		}
+		@include atSize480 {
+			flex-direction: column;
+		}
 		.logo {
 			width: 301px;
 			margin: 0 14px;
@@ -380,6 +501,14 @@
 		  	justify-content: center;
 		  	display: flex;
 		  	@include atSize424 {
+				margin: 20px auto;
+				width: 100%;
+			}
+			@include atSize430 {
+				margin: 20px auto;
+				width: 100%;
+			}
+			@include atSize480 {
 				margin: 20px auto;
 				width: 100%;
 			}
@@ -463,6 +592,30 @@
 			}
 		}
 	}
+	@include atSize430 {
+		flex-direction: column-reverse;
+		.reason-section-item {
+			width: 100%;
+			img {
+				width: 100%;
+			}
+			.steps {
+				padding: 20px;
+			}
+		}
+	}
+	@include atSize480 {
+		flex-direction: column-reverse;
+		.reason-section-item {
+			width: 100%;
+			img {
+				width: 100%;
+			}
+			.steps {
+				padding: 20px;
+			}
+		}
+	}
 }
 .insights-section {
 	width: 100%;
@@ -508,11 +661,23 @@
 			@include atSize424 {
 				display: none;
 			}
+			@include atSize430 {
+				display: none;
+			}
+			@include atSize480 {
+				display: none;
+			}
 		}
 		.section-item-two {
 			flex: 1;
 			text-align: left;
 			@include atSize424 {
+				margin: 20px;
+			}
+			@include atSize430 {
+				margin: 20px;
+			}
+			@include atSize480 {
 				margin: 20px;
 			}
 			h4 {
@@ -559,6 +724,28 @@
 						}
 					}
 					@include atSize424 {
+						flex-direction: column;
+						.event-info {
+							padding: 10px 0;
+						}
+						.event-images {
+							img {
+								width: 100%;
+							}
+						}
+					}
+					@include atSize430 {
+						flex-direction: column;
+						.event-info {
+							padding: 10px 0;
+						}
+						.event-images {
+							img {
+								width: 100%;
+							}
+						}
+					}
+					@include atSize480 {
 						flex-direction: column;
 						.event-info {
 							padding: 10px 0;
@@ -633,6 +820,38 @@
 			}
 		}
 	}
+	@include atSize430 {
+		height: auto;
+		.courses-list {
+			flex-direction: column;
+			margin: 0px 20px;
+		    padding: 25px 0;
+			.course-item {
+				.course-image {
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	@include atSize480 {
+		height: auto;
+		.courses-list {
+			flex-direction: column;
+			margin: 0px 20px;
+		    padding: 25px 0;
+			.course-item {
+				.course-image {
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
 	.view-all {
 		width: 100%;
 		text-align: center;
@@ -677,6 +896,12 @@
 	  		position: relative;
 	  		margin: 0 10px;
 	  		@include atSize424 {
+	  			margin: 20px 6px;
+	  		}
+	  		@include atSize430 {
+	  			margin: 20px 6px;
+	  		}
+	  		@include atSize480 {
 	  			margin: 20px 6px;
 	  		}
 	  		.image {
@@ -770,6 +995,22 @@
 			flex-direction: column;
 		}
 	}
+	@include atSize430 {
+		h3 {
+			width: 100%;
+		}
+		.courses {
+			flex-direction: column;
+		}
+	}
+	@include atSize480 {
+		h3 {
+			width: 100%;
+		}
+		.courses {
+			flex-direction: column;
+		}
+	}
 	.show-more {
 		width: 100%;
 		text-align: center;
@@ -825,6 +1066,30 @@
 			}
 		}
 	}
+	@include atSize430 {
+		height: 180px;
+		img {
+			height: 177px;
+		}
+		.footer-info {
+			top: -192px;
+			h1 {
+				font-size: 34px;
+			}
+		}
+	}
+	@include atSize480 {
+		height: 180px;
+		img {
+			height: 177px;
+		}
+		.footer-info {
+			top: -192px;
+			h1 {
+				font-size: 34px;
+			}
+		}
+	}
 }
 
 .all-courses {
@@ -833,7 +1098,7 @@
 	height: auto;
 	width: 100%;
 	margin: 0 0 30px 0;
-	font-family: Lato;
+	font-family: 'Opens Sans', sans-serif;
 	.sections {
 		display: flex;
 		flex-direction: row;
@@ -850,6 +1115,18 @@
 		}
 	}
 	@include atSize424 {
+		.sections {
+			flex-direction: column;
+			margin: 20px;
+		}
+	}
+	@include atSize430 {
+		.sections {
+			flex-direction: column;
+			margin: 20px;
+		}
+	}
+	@include atSize480 {
 		.sections {
 			flex-direction: column;
 			margin: 20px;
