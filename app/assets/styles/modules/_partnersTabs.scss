@@ -228,6 +228,10 @@
             > img {
                 width: 170px;
                 margin-top: -65px;
+
+                @include atSize1100 {
+                    width: 212px;
+                }
             }
 
             h3 {
