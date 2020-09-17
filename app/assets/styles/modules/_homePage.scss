@@ -458,14 +458,6 @@
 		@include atSize480 {
 			width: 100%;
 		}
-		h1 {
-			/*background: -webkit-linear-gradient(#222, #999);
-		    -webkit-background-clip: text;
-		    -webkit-text-fill-color: transparent;*/
-		    font-size: 50px;
-		    margin: 10px 0;
-		    color: $primaryColor;
-		}
 		h2 {
 			font-size: 42px;
 	  		font-weight: bold;
