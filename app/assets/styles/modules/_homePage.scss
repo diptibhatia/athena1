@@ -327,20 +327,20 @@
     					top: 15px;
     					left: -50px;
 					    img {
-					    	width: 102px;
-					    	height: 102px;
+					    	width: 98px;
+    						height: 98px;
 					    }
 				 	}
 				 	.info {
 				 		h3 {
 				 			color: $buttonPink;
 				 			font-weight: bold;
-				 			margin: 20px 0;
+				 			margin: 14px 0;
 				 			font-size: 20px;
 				 		}
 				 		p {
 				 			color: $primaryColor;
-				 			font-size: 16px;
+				 			font-size: 14px;
 				 			span {
 				 				font-weight: bold;
 				 			}
@@ -457,14 +457,6 @@
 		}
 		@include atSize480 {
 			width: 100%;
-		}
-		h1 {
-			/*background: -webkit-linear-gradient(#222, #999);
-		    -webkit-background-clip: text;
-		    -webkit-text-fill-color: transparent;*/
-		    font-size: 50px;
-		    margin: 10px 0;
-		    color: $primaryColor;
 		}
 		h2 {
 			font-size: 42px;
