@@ -35,12 +35,15 @@
 
         &-item {
             display: inline-block;
+
+            @include atSize850 {
+                margin-right: 15px;
+            }
         }
 
         a {
             color: $primaryColor;
             padding: 1.35rem 1.7rem;
-            font-weight: bold;
             letter-spacing: .2px;
             position: relative;
 
@@ -65,8 +68,12 @@
                 }
             }
 
-            &.active::after {
-                transform: scale(1);;
+            &.active {
+                font-weight: bold;
+            
+                &::after {
+                    transform: scale(1);;
+                }
             }
         }
     }
