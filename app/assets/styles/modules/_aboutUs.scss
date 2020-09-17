@@ -29,15 +29,17 @@
 				bottom: 20%;
 				width: 90%;
 				left: 0%;
-				right:0%;
+				right:0%;				
 
 				@include atSize700 { 
 					bottom: 25%;
 					width: 100%;
+					padding-left: 3rem;
 				}
 				@include atSize1350 { 
 					bottom: 25%;
 					width: 100%;
+					padding-left: 3rem;
 				}
 
 			}
