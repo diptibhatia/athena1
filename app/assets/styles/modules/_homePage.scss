@@ -29,7 +29,7 @@
 			width: 100%;
 			padding: 0;	
 		}
-		@include atSize480 {
+		@include atSize479 {
 			width: 100%;
 			padding: 0;		
 		}
@@ -53,7 +53,7 @@
     	@include atSize430 {
 			flex-direction: column;
 		}
-		@include atSize480 {
+		@include atSize479 {
 			flex-direction: column;
 		}
 		.info {
@@ -89,7 +89,7 @@
 				@include atSize430 {
 					flex-direction: column;
 				}
-				@include atSize480 {
+				@include atSize479 {
 					flex-direction: column;
 				}
 				.course-item {
@@ -212,7 +212,7 @@
 			flex-direction: column;
 			width: 100%;
 		}
-		@include atSize480 {
+		@include atSize479 {
 			flex-direction: column;
 			width: 100%;
 		}
@@ -410,7 +410,7 @@
 					}
 				}
 			}
-			@include atSize480 {
+			@include atSize479 {
 				flex-direction: column;
 				.item-one {
 					padding: 0;
@@ -455,7 +455,7 @@
 		@include atSize430 {
 			width: 100%;
 		}
-		@include atSize480 {
+		@include atSize479 {
 			width: 100%;
 		}
 		h2 {
@@ -480,7 +480,7 @@
 		@include atSize430 {
 			flex-direction: column;
 		}
-		@include atSize480 {
+		@include atSize479 {
 			flex-direction: column;
 		}
 		.logo {
@@ -500,7 +500,7 @@
 				margin: 20px auto;
 				width: 100%;
 			}
-			@include atSize480 {
+			@include atSize479 {
 				margin: 20px auto;
 				width: 100%;
 			}
@@ -596,7 +596,7 @@
 			}
 		}
 	}
-	@include atSize480 {
+	@include atSize479 {
 		flex-direction: column-reverse;
 		.reason-section-item {
 			width: 100%;
@@ -656,7 +656,7 @@
 			@include atSize430 {
 				display: none;
 			}
-			@include atSize480 {
+			@include atSize479 {
 				display: none;
 			}
 		}
@@ -669,7 +669,7 @@
 			@include atSize430 {
 				margin: 20px;
 			}
-			@include atSize480 {
+			@include atSize479 {
 				margin: 20px;
 			}
 			h4 {
@@ -737,7 +737,7 @@
 							}
 						}
 					}
-					@include atSize480 {
+					@include atSize479 {
 						flex-direction: column;
 						.event-info {
 							padding: 10px 0;
@@ -828,7 +828,7 @@
 			}
 		}
 	}
-	@include atSize480 {
+	@include atSize479 {
 		height: auto;
 		.courses-list {
 			flex-direction: column;
@@ -893,7 +893,7 @@
 	  		@include atSize430 {
 	  			margin: 20px 6px;
 	  		}
-	  		@include atSize480 {
+	  		@include atSize479 {
 	  			margin: 20px 6px;
 	  		}
 	  		.image {
@@ -995,7 +995,7 @@
 			flex-direction: column;
 		}
 	}
-	@include atSize480 {
+	@include atSize479 {
 		h3 {
 			width: 100%;
 		}
@@ -1070,7 +1070,7 @@
 			}
 		}
 	}
-	@include atSize480 {
+	@include atSize479 {
 		height: 180px;
 		img {
 			height: 177px;
@@ -1118,7 +1118,7 @@
 			margin: 20px;
 		}
 	}
-	@include atSize480 {
+	@include atSize479 {
 		.sections {
 			flex-direction: column;
 			margin: 20px;
