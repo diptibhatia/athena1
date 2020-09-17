@@ -36,21 +36,16 @@
     </header>
     <div class="main-wrapper container-fluid p-0 about-us-wrapper">
 
-        <div class="container-fluid banner-image p-0 bg-white z-999">
-            <img src="images/about-us-banner.png" class="img-fluid" alt="Banner image">
-            <div class="carousel-caption text-left">
-                <h1 class="strong text-secondary"><span class="orange-txt">About</span> Us</h1>
-                <div class="w-50 txt-16 text-secondary">
-                    When a crisis happens and times are tough it can be easy to lose focus on the importance of
-                    supporting and growing.
-                </div>
-            </div>
-        </div>
+        <div w3-include-html="about-banner.html"></div>
 
-        <div class="wrapper pt-4 row bg-white pb-5">
-            <div class="col-md-8 col-sm-12">
+        <div class="pt-4 container bg-white">
+            <div class="row">
+              <div class="col-md-4 col-sm-12 pb-5">
+                <div w3-include-html="about-sidebar.html"></div>
+              </div>
+              <div class="col-md-8 col-sm-12">
                 <div class="container txt-14">
-                    <h5>Policies &amp; Procedures</h5>
+                    <h3 class="page-title">Policies &amp; Procedures</h3>
                     <p>The Board of Directors represents the membership of the organization. The board sets in place policies, procedures, values and long-term planning to meet the mission of the organization. The board does this through a governance structure or model. The structure a board decides to implement will dictate not only the policies of the organization but also such things as the relationship between staff and the board, and the role and use of committees.</p>
                 </div> 
                 <div id="accordion" class="about-accord bg-white shadow-sm rounded mr-1 p-3">
@@ -134,12 +129,9 @@
                 <div class="container txt-14 mt-4">                   
                     <p>The Board of Directors represents the membership of the organization. The board sets in place policies, procedures, values and long-term planning to meet the mission of the organization. The board does this through a governance structure or model. The structure a board decides to implement will dictate not only the policies of the organization but also such things as the relationship between staff and the board, and the role and use of committees.</p>
                 </div>           
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div w3-include-html="about-sidebar.html"></div>
-            </div>
+            </div>           
+          </div> 
         </div>
-
         <div class="container-fluid p-0 mt-4 mb-5">
            <div w3-include-html="about-popular.html"></div>
         </div>

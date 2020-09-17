@@ -2,4 +2,17 @@
 	a {
 		color: $secondaryColor;
 	}
+
+	.new-footer {
+		.right-border {
+			border : none;
+
+			@include atSize700 { 
+				border-right: 1px solid #dee2e6;
+			}
+			@include atSize1350 { 
+				border-right: 1px solid #dee2e6;
+			}
+		}
+	}
 }
