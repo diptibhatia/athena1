@@ -1,14 +1,17 @@
 .site-header {
     background-color: #fff;
+    position: relative;
+    z-index: 30;
 
     .wrapper {
         display: flex;
         height: $mainMenuHeight;
         align-items: center;
         position: relative;
+        padding-top: 25px;
 
         @include atSize850 {
-            height: 6.125rem;
+            height: 4.56rem;
         }
     }
 
@@ -152,7 +155,7 @@
         position: relative;
         z-index: -10;
         position: absolute;
-        top: $mainMenuHeight;
+        top: 63px;
         background-color: #fff;
         left: 0;
         width: 100%;
@@ -160,7 +163,7 @@
 
         &--is-visible {
             opacity: 1;
-            z-index: 5;
+            z-index: 9999;
             transform: scaleY(1);
         }
 
@@ -177,7 +180,7 @@
 
 .primary-nav {
 
-    ul {
+    >ul {
         list-style: none;
         padding: 0;
         display: flex;
@@ -185,7 +188,8 @@
         text-align: center;
         margin: 0;
 
-        li {
+        >li {
+            position: relative;
             border-bottom: .5px solid #ddd;
 
             &:nth-last-child(1) {
@@ -206,6 +210,73 @@
             }
         }
 
+        .about {
+
+            i {
+                width: 12.5px;
+                height: 12.5px;
+                position: relative;
+                top: -2px;
+                border-color: #979797;
+                margin-left: 13px;
+                transition: transform .2s ease-out;
+                transform-origin: center center;
+            }
+
+            @include atSize700 {
+
+                &:hover {
+
+                    i {
+                        transform: rotate(225deg);
+                        top: 2px;
+                    }
+
+                    .secondary-nav {
+                        transform: scaleY(1);
+                    }
+                }
+            }
+        }
+
+        .secondary-nav {
+            display: none;
+            list-style: none;
+            padding: 0;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 0 2px 25px 2px #d5dbfb;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            transform-origin: 0 0;
+            transition: transform .2s ease-out;
+
+            a {
+                white-space: nowrap;
+                font-size: .875rem;
+                width: 100%;
+                padding-left: 1.6rem;
+                padding-right: 1.75rem;
+
+                &:hover {
+                    color: $titlePink;
+                    font-weight: bold;
+                }
+            }
+
+            &.show {
+                display: block;
+            }
+
+            @include atSize700 {
+                right: -20px;
+                position: absolute;
+                transform: scaleY(0);
+                display: block;
+                width: 245px;
+            }
+        }
+
         @include atSize700 {
             flex-direction: row;
             justify-content: space-between;
@@ -221,6 +292,7 @@
         display: block;
         padding: 1.2rem 0;
         transition: background-color .3s ease-out;
+        position: relative;
 
         &:hover {
             background-color: #eff1fe;
@@ -247,4 +319,10 @@
     @include atSize1100 {
         margin-left: 11rem;
     }
+}
+
+.top-gap {
+    height: 25px;
+    width: 100%;
+    background-color: #fff;
 }

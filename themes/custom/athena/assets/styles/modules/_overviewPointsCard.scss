@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-around;
     color: $primaryColor;
+    margin-bottom: 30px;
 
     @include atSize480 {
         width: 342px;
@@ -19,7 +20,7 @@
         position: relative;
 
         img {
-            margin-right: 24px;
+            left: 5px;
             display: inline-block;
             position: absolute;
             top: 50%;
@@ -27,7 +28,7 @@
         }
 
         &-contains {
-            padding-left: 84px;
+            padding-left: 80px;
             flex: 1;
             position: relative;
             overflow: hidden;
@@ -36,6 +37,10 @@
                 font-size: 1rem;
                 font-weight: bold;
                 margin: 0;
+
+                @include atSize1250 {
+                    font-size: 1.125rem;
+                }
             }
 
             p {

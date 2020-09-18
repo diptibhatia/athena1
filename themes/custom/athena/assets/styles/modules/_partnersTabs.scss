@@ -1,0 +1,295 @@
+.partners-tabs {
+    background-color: $skyblue;
+    padding-top: 46px;
+    overflow: hidden;
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 0 20px;
+        letter-spacing: .5px;
+
+        @include atSize850 {
+            font-size: 2rem;
+        }
+    }
+
+    .nav {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-bottom: solid 1px rgba(151, 151, 151, 0.4);
+        margin-bottom: 15px;
+        overflow-x: auto;
+
+        @include atSize850 {
+            margin-bottom: 35px;
+        }
+
+        @include atSize700 {
+            padding-right: 12.5rem;
+        }
+
+        a {
+            color: $primaryColor;
+            text-decoration: none;
+            font-size: .875rem;
+            font-weight: bold;
+            padding: 20px 0;
+            letter-spacing: .2px;
+            white-space: nowrap;
+            margin-right: 15px;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 4px;
+                transform: scale(0);
+                background-color: $titlePink;
+                display: inline-block;
+                position: absolute;
+                transition: transform .2s ease-out;
+                left: 0;
+                bottom: 0;
+            }
+
+            &.active::after {
+                transform: scale(1)
+            }
+        }
+    }
+
+    &__mba {
+        padding-bottom: 184px;
+
+        @include atSize1100 {
+            padding-bottom: 140px;
+        }
+
+        &-text {
+            position: relative;
+    
+            @include atSize850 {
+                display: flex;
+            }
+    
+            h2 {
+                font-size: 1rem;
+                color: $titlePink;
+                font-weight: bold;
+                letter-spacing: .2px;
+                margin-bottom: 10px;
+                line-height: 26px;
+            }
+    
+            p {
+                color: $secondaryColor;
+                font-size: .875rem;
+                line-height: 30px;
+    
+                @include atSize850 {
+                    font-size: 1rem;
+                }
+            }
+    
+            img {
+                display: inline-block;
+                margin: 3px 0 38px;
+                width: 106px;
+    
+                @include atSize850 {
+                    width: 133px;
+                }
+            }
+    
+            .content {
+    
+                @include atSize850 {
+                    flex: 2;
+                    margin-right: 50px;
+                }
+    
+                img {
+                    
+                    @include atSize850 {
+                        padding-bottom: 50px;
+                    }
+                }
+            }
+    
+            .certificate {
+                position: relative;
+                display: flex;
+                justify-content: center;
+    
+                @include atSize850 {
+                    flex: 1;
+                }
+    
+                img {
+                    width: 100%;
+                    margin: 0;
+                }
+    
+                .carousel {
+                    width: 274px;
+    
+                    &-indicators {
+                        display: none;
+                    }
+    
+                    .cover {
+                        border: none;
+                        padding: 0;
+                        display: block;
+                        margin: 0 auto;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+    
+                    .w-100 {
+                        width: 274px !important;
+                    }
+    
+                    .carousel-control-prev, .carousel-control-next {
+                        opacity: .9;
+                    }
+    
+                    .carousel-control-prev {
+    
+                        img {
+                            position: absolute;
+                            left: -22px;
+                        }
+    
+                    }
+    
+                    .carousel-control-next {
+    
+                        img {
+                            position: absolute;
+                            right: -22px;
+                        }
+    
+                    }
+                }
+    
+                p {
+                    position: absolute;
+                    bottom: -50px;
+                    color: $primaryColor;
+                    display: none;
+    
+                    @include atSize850 {
+                        display: block;
+                    }
+                }
+            }
+    
+            .note {
+                font-size: .75rem;
+                font-style: italic;
+                position: absolute;
+                bottom: -105px;
+                max-width: 514px;
+                line-height: 1.95;
+    
+                @include atSize850 {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__msg {
+        background-color: #fff;
+        margin: 0 -12px;
+        padding: 0 12px;
+        position: relative;
+
+        @include atSize1100 {
+            margin: 0 -10rem;
+            padding: 0 10rem;
+            display: flex;
+        }
+
+        &-person {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            @include atSize1100 {
+                margin-right: 45px;
+            }
+
+            > img {
+                width: 170px;
+                margin-top: -65px;
+
+                @include atSize1100 {
+                    width: 212px;
+                }
+            }
+
+            h3 {
+                font-size: 1.4rem;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 12px;
+                margin-bottom: 3px;
+                letter-spacing: .3px;
+
+                @include atSize1100 {
+                    font-size: 1.75rem;
+                }
+            }
+
+            p {
+                font-size: .8rem;
+                margin-bottom: 0;
+                text-align: center;
+                line-height: 1.63;
+
+                @include atSize1100 {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        &-text {
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 25px 2px #d5dbfb;
+            background-color: #ffffff;
+            max-width: 670px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include atSize700 {
+                padding: 21px 27px;
+            }
+
+            @include atSize1100 {
+                margin-top: -65px;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: center;
+                line-height: 30px;
+
+                @include atSize700 {
+                    text-align: left;
+                }
+
+                span {
+                    color: $titlePink;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

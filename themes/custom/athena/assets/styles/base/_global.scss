@@ -1,5 +1,5 @@
 body {
-    font-family: 'Opens Sans', sans-serif;
+    font-family: Lato, sans-serif;
     color: $primaryColor;
 }
 
@@ -44,13 +44,14 @@ body {
 	font-size: $font-size-sm;
 }
 
-.txt-14,
-p {
+.txt-14 {
 	font-size: $font-size-md;
 	line-height: 1.5em;
 }
-.txt-16 {
+
+.txt-16, p {
 	font-size: $font-size-lg;
+	line-height: 1.8em;
 }
 
 .cursor {
@@ -72,15 +73,6 @@ p {
 }
 .shadow-none {
 	box-shadow: none !important;
-}
-
-.banner-image {
-	bottom: 20px;
-	position: relative;
-
-	.carousel-caption {
-		bottom: 25%;
-	}
 }
 
 blockquote {

@@ -3,6 +3,7 @@
     position: relative;
     z-index: 4;
     overflow: hidden;
+    padding-bottom: 38px;
 
     @include atSize700 {
         z-index: 11;
@@ -34,12 +35,15 @@
 
         &-item {
             display: inline-block;
+
+            @include atSize850 {
+                margin-right: 15px;
+            }
         }
 
         a {
             color: $primaryColor;
             padding: 1.35rem 1.7rem;
-            font-weight: bold;
             letter-spacing: .2px;
             position: relative;
 
@@ -64,8 +68,12 @@
                 }
             }
 
-            &.active::after {
-                transform: scale(1);;
+            &.active {
+                font-weight: bold;
+            
+                &::after {
+                    transform: scale(1);;
+                }
             }
         }
     }
@@ -290,13 +298,17 @@
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
                 display: inline-block;
                 color: $primaryColor;
                 font-weight: bold;
                 letter-spacing: .3px;
                 margin-bottom: 22px;
                 position: relative;
+
+                @include atSize850 {
+                    font-size: 2rem;
+                }
 
                 &::after {
                     content: '';
@@ -318,9 +330,14 @@
             }
 
             p {
-                font-size: 1rem;
+                font-size: .875rem;
                 margin-bottom: 30px;
-                line-height: 30px;
+                line-height: 24px;
+
+                @include atSize850 {
+                    font-size: 1rem;
+                    line-height: 30px;
+                }
             }
 
             .knowmore {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="290px" viewBox="0 0 360 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mask</title>
+    <defs>
+        <linearGradient x1="46.7616142%" y1="94.6353187%" x2="46.7616142%" y2="-59.2434971%" id="linearGradient-1">
+            <stop stop-color="#F0F2FE" offset="0%"></stop>
+            <stop stop-color="#EFF1FE" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mobile-home" transform="translate(0.000000, -63.000000)" fill="url(#linearGradient-1)">
+            <path d="M0,63 L360,63 L360,308.993457 L334.66492,336.439756 C327.111735,343.682208 319.948844,348.569338 313.176246,351.101145 C306.403649,353.632952 292.298837,353.632952 270.861812,351.101145 L0,327.993457 L0,63 Z" id="Mask"></path>
+        </g>
+    </g>
+</svg>

@@ -43,10 +43,11 @@
  * @see html.html.twig
  */
 #}
-<header class="site-header container-fluid">
+<header class="site-header">
     <div class="wrapper">
     {{ page.header }}
 </header>
+<div class="top-gap"></div>
 {% if page.highlighted %}
     <div class="highlighted">
     <aside class="layout-container section clearfix" role="complementary">
@@ -54,29 +55,26 @@
     </aside>
     </div>
 {% endif %}
-{% if page.featured_top %}
-    <div class="featured-top">
-    <aside class="featured-top__inner section layout-container clearfix" role="complementary">
-        {{ page.featured_top }}
-    </aside>
-    </div>
-{% endif %}
 <div class="main-wrapper container-fluid p-0 about-us-wrapper">
-  <div class="pt-4 container bg-white pb-5 d-flex">
+{% if page.featured_top %}
+        {{ page.featured_top }}
+{% endif %}
+  <div class="pt-4 container bg-white">
+    <div class="row">
+      {% if page.sidebar_first %}
+          <div class="col-md-4 col-sm-12 pb-5">
+              {{ page.sidebar_first }}
+          </div>
+      {% endif %}
       <div class="col-md-8 col-sm-12">
           {{ page.content }}
       </div>
-  {% if page.sidebar_first %}
-      <div class="col-md-4 col-sm-12">
-          {{ page.sidebar_first }}
-      </div>
-  {% endif %}
-  
-  {% if page.sidebar_second %}
-      <div class="col-md-4 col-sm-12">
-          {{ page.sidebar_second }}
-      </div>
-  {% endif %}
+      {% if page.sidebar_second %}
+          <div class="col-md-4 col-sm-12">
+              {{ page.sidebar_second }}
+          </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% if page.featured_bottom %}

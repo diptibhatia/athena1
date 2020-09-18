@@ -2,13 +2,7 @@ global-css:
   version: VERSION
   css:
     theme:
-      css/style.css: {}
-      css/main.css: {}
-      css/bootstrap.min.css: {}
-      css/bootstrap-grid.min.css: {}
-      css/bootstrap-reboot.min.css: {}
-      css/fontawesome.min.css: {}
-      css/regular.min.css: {}
+      main.css: {}
 
 global-js:
   version: VERSION
@@ -20,6 +14,6 @@ global-js:
     js/MobileMenu.js: {}
     js/regular.min.js: {}
     js/bundled.js: {}
-    css/prodbundled.js: {}
+    prodbundled.js: {}
   dependencies:
     - core/jquery

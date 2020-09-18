@@ -17,6 +17,6 @@ function athena_preprocess_image(&$variables) {
   // Check the image style.
   if ($variables['style_name'] == 'page_banner_style') {
     // Set class.
-    $variables['attributes']['class'][] = 'img-fluid';
+    $variables['attributes']['class'][] = 'col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0';
   }
 }
