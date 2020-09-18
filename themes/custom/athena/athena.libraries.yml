@@ -3,6 +3,8 @@ global-css:
   css:
     theme:
       main.css: {}
+      'http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext': { type: external }
+      'https://fonts.googleapis.com/css?family=Open Sans': { type: external }
 
 global-js:
   version: VERSION
