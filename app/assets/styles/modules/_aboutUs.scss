@@ -13,6 +13,12 @@
 		border: none;
 	}
 
+	.about-accord {
+		.card {
+			width : 100%;
+		}
+	}
+
 	.banner {
 
 		&-image {			
@@ -169,6 +175,21 @@
 		    line-height: unset;
 		    left: 2px;
 	    }
+	}
+
+	.about-popular-content {
+		background: #eff1fe;
+		padding: 0;
+
+		@include atSize700 { 
+			background: url("images/popular-bg.png") -200px 0 ;
+			padding: 60px;
+		}
+
+		@include atSizeXXLarge {
+			background: url('images/popular-bg.png') 0 0 ;
+			padding: 120px;
+		}
 	}
 }
 

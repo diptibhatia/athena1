@@ -21,7 +21,7 @@ module.exports = merge(common, {
         rules: [
             {
                 test: /\.scss$/,
-                use: ["style-loader", "css-loader",  {
+                use: ["style-loader", "css-loader?url=false",  {
                     loader: 'postcss-loader',
                     options: {
                       plugins: function () {
@@ -31,7 +31,7 @@ module.exports = merge(common, {
                       }
                     }
                   },"sass-loader"]
-            }
+            },
         ]
     },
     watch: true
