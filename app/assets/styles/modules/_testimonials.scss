@@ -17,6 +17,145 @@
 /*-webkit-box-reflect: below 0.5px -webkit-gradient(linear, right top, right
             bottom, from(transparent), color-stop(10%, transparent), to(rgba(255, 255, 255, 0.5)));
 */
+
+.courses {
+  background-color: #eff1fe;
+  padding-bottom: 40px !important;
+}
+
+.headings {
+  display: flex;
+  .heading-one {
+    flex: 1;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $primaryColor;
+  }
+}
+
+.search-insights {
+  width: 359px;
+  height: 150px;
+  border-radius: 6px;
+  box-shadow: 0 2px 25px 2px rgba(213, 219, 251, 0.67);
+  background-color: #d5e2e5;
+  margin: 20px 0;
+  .insights-search-option {
+    padding: 26px 22px;
+    h1 {
+      font-size: 16px;
+      font-weight: 500;
+      color: $primaryColor;
+      margin: 0 0 12px 0;
+    }
+    input {
+      width: 308px;
+      height: 52px;
+      border-radius: 6px;
+      box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
+      background-color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: $primaryColor;
+    }
+    .search-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 6px;
+      background-image: linear-gradient(to right, #ffc300, #ffac00);
+      position: relative;
+      top: -52px;
+      left: 256px;
+      img {
+        position: relative;
+        top: 12px;
+        left: 11px;
+      }
+    }
+  }
+  @include atSize424 {
+    width: 100%;
+    .insights-search-option {
+      input {
+        width: 100%;
+      }
+      .search-icon {
+        left: 234px;
+      }
+    }
+  }
+}
+
+.testimonials-popular-courses {
+  width: 357px;
+  height: 433px;
+  border-radius: 6px;
+  background-color: rgba(255, 0, 142, 0.06);
+  .popular-course-item {
+    width: 310px;
+    height: 145px;
+    border-radius: 6px;
+    box-shadow: 0 2px 9px 3px rgba(0, 0, 0, 0.08);
+    background-color: #fcfcfc;
+    padding: 8px 15px;
+    margin: 10px 0;
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.88;
+      color: $primaryColor;
+      margin: 0;
+    }
+    h1 {
+      font-size: 16px;
+      line-height: 1.88;
+      color: $primaryColor;
+      margin: 0;
+    }
+    .partners-new-logo {
+      display: flex;
+      .partner-logo-item {
+        margin: 0 5px 0 0;
+        img {
+          width: 58px;
+          height: 58px;
+          border: solid 1px #ffb400;
+          border-radius: 50px;
+        }
+      }
+    }
+    .learn-more {
+      margin: 30px 0 0 40px;
+      p {
+        font-size: 14px;
+        font-weight: 500;
+        color: $titlePink;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
+  @include atSize424 {
+    width: 100%;
+    .popular-course-item {
+      width: 100%;
+      height: auto;
+    }
+    .learn-more {
+      p {
+        font-size: 11px !important;
+      }
+    }
+  }
+}
+
 .main {
   width: 100%;
   min-height: 350px;
@@ -113,12 +252,42 @@
 }
 
 .testimonials {
+  margin: 50px 0 0 0;
+    .sidebar {
+    .list-group-item {
+      padding: 20px 1.25rem;
+
+      a {
+        color: $primaryColor;
+        text-decoration: none;
+        padding: 18px 0;
+
+        &.is-active {
+          color: $purpleColor;
+          background-color: transparent;
+
+          &::after {
+            content: "";
+              display: block;
+              border-bottom: 2px solid $purpleColor;
+              width: 25%;
+              position: relative;
+              bottom: -7px;
+          }
+        }       
+
+        &:hover {
+          color: $purpleColor;
+        }
+      }
+    }   
+  }
   .title {
     display: flex;
     text-align: left;
-    margin: 50px auto;
+    margin: -40px auto;
     justify-content: left;
-    width: 85%;
+    width: 100%;
     h2 {
       margin: 50px 0px 100px;
       color: $lt-gray;
@@ -151,7 +320,7 @@
     box-shadow: $boxshadow;
     background: $wt;
     line-height: 1.4;
-    font-family: sans-serif;
+    font-family: Lato, sans-serif;
     border-radius: 5px;
     overflow: hidden;
     z-index: 0;
@@ -189,7 +358,7 @@
       z-index: 1;
       h1,
       h2 {
-        font-family: sans-serif;
+        font-family: Lato, sans-serif;
       }
       h1 {
         line-height: 1;
