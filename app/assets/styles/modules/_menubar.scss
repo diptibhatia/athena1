@@ -197,10 +197,6 @@
                 font-weight: bold;
             }
 
-            &:nth-last-child(2) {
-                font-weight: bold;
-            }
-
             @include atSize700 {
                 border-bottom: none;
 
