@@ -20,6 +20,28 @@
 		}
 	}
 
+	.founder-content {
+		padding : 1rem;
+
+		@include atSize700 { 
+			padding : 0;
+		}
+
+		.img-founder {
+			img {
+
+				@include atSize424 {
+					text-align : center;
+					padding-bottom : 1rem;
+				}
+
+				width : 300px;
+				height : 300px;	
+			}			
+		}
+
+	}
+
 	.brd-0 {
 		border: none;
 	}
