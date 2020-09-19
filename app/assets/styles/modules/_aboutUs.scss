@@ -9,8 +9,53 @@
 		}
 	}
 
+	.award-content {
+		p {
+			font-size : 18px; 
+			margin: 0;
+
+			@include atSize700 { 
+				font-size : 16px;
+			}
+		}
+	}
+
+	.founder-content {
+		padding : 1rem;
+
+		@include atSize700 { 
+			padding : 0;
+		}
+
+		.img-founder {
+			img {
+
+				@include atSize424 {
+					text-align : center;
+					padding-bottom : 1rem;
+				}
+
+				width : 300px;
+				height : 300px;	
+			}			
+		}
+
+	}
+
 	.brd-0 {
 		border: none;
+	}
+
+	.about-accord {
+		.card {
+			width : 100%;
+		}
+	}
+
+	.about-governance-content {
+		.card {
+			width : 100%;
+		}
 	}
 
 	.banner {
@@ -169,6 +214,21 @@
 		    line-height: unset;
 		    left: 2px;
 	    }
+	}
+
+	.about-popular-content {
+		background: #eff1fe;
+		padding: 0;
+
+		@include atSize700 { 
+			background: url("images/popular-bg.png") -200px 0 ;
+			padding: 60px;
+		}
+
+		@include atSizeXXLarge {
+			background: url('images/popular-bg.png') 0 0 ;
+			padding: 120px;
+		}
 	}
 }
 

@@ -10,30 +10,7 @@
 </head>
 
 <body>
-    <header class="site-header container-fluid">
-        <div class="wrapper">
-            <div class="site-header__logo">
-                <img src="images/logo.svg" alt="Site Logo">
-            </div>
-            <div class="site-header__explore-btn">
-                <a href="#">Explore Courses <i class="arrow arrow--down arrow--white"></i></a>
-            </div>
-            <div class="site-header__menu-icon">
-                <div class="site-header__menu-icon__middle"></div>
-            </div>
-            <div class="site-header__menu-content">
-                <nav class="primary-nav">
-                    <ul>
-                        <li><a href="#" class="active">About Us</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Insights</a></li>
-                        <li><a class="loginBtn" href="#">Log in</a></li>
-                        <li><a class="getStartedBtn" href="#">Get Started</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <div w3-include-html="header.html"></div>
     <div class="main-wrapper container-fluid p-0 about-us-wrapper">
 
         <div w3-include-html="about-banner.html"></div>
@@ -43,9 +20,9 @@
                 <div class="col-md-4 col-sm-12 pb-5">
                     <div w3-include-html="about-sidebar.html"></div>
                 </div>
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-8 col-sm-12 about-governance-content">
                     <div class="container txt-14 mb-2">
-                        <h4>Governance Structure</h4>
+                        <h3 class="page-title">Governance Structure</h3>
                         <p>The Board of Directors represents the membership of the organization. The board sets in place policies, procedures, values and long-term planning to meet the mission of the organization. The board does this through a governance structure or model. The structure a board decides to implement will dictate not only the policies of the organization but also such things as the relationship between staff and the board, and the role and use of committees.</p>
                         <p>While it is the board’s responsibility to determine the governance structure, activities of the organization are carried out by board members, staff, and committees. There is no single right structure for all non-profit organizations, and it may be necessary to change models over time. What can often dictate how a board chooses to govern is the experience of board members and staff, past experiences within an organization, how the organization wants to deliver its programs and services, and how the board views power and authority within the organization.</p>
                         <p>The activity provided at the end of this section takes boards through an exercise to help them decide which governance structure is best suited to their organization, but the United Way’s board development resource suggests boards look at these three questions when deciding on a governance model:</p>
@@ -72,7 +49,7 @@
         </div>
         
 
-        <div class="container-fluid p-0 mt-4 mb-5">
+        <div class="container-fluid mt-5 mb-5 about-popular-content">
            <div w3-include-html="about-popular.html"></div>
         </div>
     </div>

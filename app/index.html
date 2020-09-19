@@ -14,46 +14,7 @@
       <title>Home</title>
    </head>
    <body>
-      <header class="site-header">
-        <div class="wrapper">
-            <div class="site-header__logo">
-                <img src="images/logo_pink.svg" alt="Site Logo">
-            </div>
-            <div class="site-header__explore-btn">
-                <a href="#">Explore Courses <i class="arrow arrow--down arrow--white"></i></a>
-            </div>
-            <div class="site-header__menu-icon">
-                <div class="site-header__menu-icon__middle"></div>
-            </div>
-            <div class="site-header__menu-content">
-                <nav class="primary-nav">
-                    <ul>
-                        <li class="about"><a href="#">About Us</a>
-                           <ul class="secondary-nav">
-                              <li><a href="#">Our Background</a></li>
-                              <li><a href="#">Founder & CEO</a></li>
-                              <li><a href="#">Board of Directors</a></li>
-                              <li><a href="#">Governance Structure</a></li>
-                              <li><a href="#">Executive Council</a></li>
-                              <li><a href="#">Academic Council</a></li>
-                              <li><a href="#">Key Staffs & Contacts</a></li>
-                              <li><a href="#">Accreditation & Partnerships</a></li>
-                              <li><a href="#">Athena and Associated Entities</a></li>
-                              <li><a href="#">Awards and Recognitions</a></li>
-                              <li><a href="#">Policies & Procedure</a></li>
-                              <li><a href="#">Press Releases</a></li>
-                           </ul>
-                        </li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Insights</a></li>
-                        <li><a class="loginBtn" href="#">Log in</a></li>
-                        <li><a class="getStartedBtn" href="#">Get Started</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-      </header>
-      <div class="top-gap"></div>
+    <div w3-include-html="header.html"></div>
       <div class="top-search-section">
          <div class="grid-view">
             <div class="wrapper">
@@ -276,58 +237,6 @@
                   </div>
                </div>
             </div>
-            <!--             <div class="courses-offered">
-               <div class="info">
-                   <h2>Our Acadamic Courses</h2>
-                   <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                       typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply </p>
-                   <button>View All Courses</button>
-               </div>
-               <div class="courses">
-                   <div class="course-list">
-                       <div class="course-item">
-                           <div class="image">
-                               <img src="images/course.jpg" alt="course-image" />
-                           </div>
-                           <div class="course-details">
-                               <h1>Master of Business Administration</h1>
-                               <h2>Guglielmo Marconi University, Italy</h2>
-                               <div class="course-tags">
-                                   <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                               </div>
-                               <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                           </div>
-                           <div class="course-info">
-                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                               text of the <span>Read More</span>
-                           </div>
-                           <div class="know-more">
-                               <p>Know More</p>
-                           </div>
-                       </div>
-                       <div class="course-item">
-                           <div class="image">
-                               <img src="images/course.jpg" alt="course-image" />
-                           </div>
-                           <div class="course-details">
-                               <h1>Master of Business Administration</h1>
-                               <h2>Guglielmo Marconi University, Italy</h2>
-                               <div class="course-tags">
-                                   <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                               </div>
-                               <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                           </div>
-                           <div class="course-info">
-                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                               text of the <span>Read More</span>
-                           </div>
-                           <div class="know-more">
-                               <p>Know More</p>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               </div> -->
          </div>
       </div>
       <div class="why-athena">
@@ -543,51 +452,7 @@
             </div>
          </div>
       </div>
-      <div class="insights-courses">
-         <div class="grid-view">
-            <div class="courses-list">
-               <div class="course-item">
-                  <div class="course-image">
-                     <img src="images/interview-bg1.png" />
-                     <div class="insights">
-                        <img src="images/insights.svg" />
-                     </div>
-                  </div>
-                  <div class="course-info">
-                     <h1>Upgrading To Microsoft Windows Vista Tips</h1>
-                     <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
-                  </div>
-               </div>
-               <div class="course-item">
-                  <div class="course-image">
-                     <img src="images/blog-bg1.png" />
-                     <div class="insights">
-                        <img src="images/insights.svg" />
-                     </div>
-                  </div>
-                  <div class="course-info">
-                     <h1 class="active">Finally A Top Secret Way You Can Get Google Adwords</h1>
-                     <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
-                  </div>
-               </div>
-               <div class="course-item">
-                  <div class="course-image">
-                     <img src="images/blog-bg-2.png" />
-                     <div class="insights">
-                        <img src="images/insights.svg" />
-                     </div>
-                  </div>
-                  <div class="course-info">
-                     <h1>Upgrading To Microsoft Windows Vista Tips</h1>
-                     <h2>By Abul Hasan Milon | 02 Feb 2019</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="view-all">
-            <button>View All</button>
-         </div>
-      </div>
+      <div w3-include-html="insights-courses.html"></div>
       <div class="grid-view">
          <div class="popular-courses shawdow-effect">
             <h1>Popular Courses</h1>
