@@ -9,11 +9,28 @@
 		}
 	}
 
+	.award-content {
+		p {
+			font-size : 18px; 
+			margin: 0;
+
+			@include atSize700 { 
+				font-size : 16px;
+			}
+		}
+	}
+
 	.brd-0 {
 		border: none;
 	}
 
 	.about-accord {
+		.card {
+			width : 100%;
+		}
+	}
+
+	.about-governance-content {
 		.card {
 			width : 100%;
 		}
