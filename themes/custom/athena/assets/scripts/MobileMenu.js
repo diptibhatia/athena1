@@ -8,6 +8,7 @@ class MobileMenu {
     }
 
     events() {
+        //event.preventDefault();
         this.MenuIcon.addEventListener("click", () => this.toggleTheMenu());
         this.AboutMenu.addEventListener("click", () => this.toggleTheAbout());
     }
