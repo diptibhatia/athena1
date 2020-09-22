@@ -1,0 +1,48 @@
+.admission-steps-card {
+    border-radius: 5.4px;
+    box-shadow: 0 2px 23px 2px #d5dbfb;
+    background-color: #fff;
+    width: 336px;
+    height: 212px;
+    box-sizing: border-box;
+    padding: 12px 14px 24px 17px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+
+    @include atSize480 {
+        width: 342px;
+    }
+
+    @include atSize1250 {
+        display: inline-block;
+        margin-right: 13px;
+        width: 336px;
+
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+        }
+    }
+
+    > div {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+         color: #000;
+         font-size: 1.125rem;
+         line-height: 27px;
+         margin: 0 0 0 15px;
+
+         span {
+             display: block;
+         }
+    }
+
+    p {
+        color: $secondaryColor;
+        font-size: .9rem;
+        line-height: 27px;
+        text-align: left;
+    }
+}
