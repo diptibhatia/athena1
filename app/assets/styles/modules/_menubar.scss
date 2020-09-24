@@ -22,6 +22,10 @@
         img {
             width: 100%;
             display: inline-block;
+
+            @include atSize850 {
+                width: 146px;
+            }
         }
 
         @include atSize700 {
@@ -29,8 +33,10 @@
         }
 
         @include atSize850 {
-            width: 145px;
+            width: auto;
             margin-right: 1.8rem;
+            position: relative;
+            top: -6px;
         }
     }
 
@@ -174,6 +180,11 @@
             position: static;
             box-shadow: none;
             height: 100%;
+            margin-top: -20px
+        }
+
+        @include atSize850 {
+            margin-top: 0;
         }
     }
 }
@@ -305,15 +316,74 @@
         @include atSize850 {
             font-size: 1rem;
         }
+
+        &.active {
+            position: relative;
+
+            @include atSize700 {
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 75%;
+                    height: 2px;
+                    display: block;
+                    background: linear-gradient( 90deg, $titlePink, $titlePink 84%, #fff 84%, #fff 88%, $titlePink 88%, $titlePink 92%, #fff 92%, #fff 96%, $titlePink 96%, $titlePink 100%);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 4px;
+                }
+            }
+
+            @include atSize850 {
+
+                &::after {
+                    bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .getStartedBtn {
+        position: relative;
+
+        @include atSize700 {
+
+            &::before {
+                content: '';
+                width: 2px;
+                height: 50%;
+                background-color: #979797;
+                position: absolute;
+                left: 2px;
+            }
+
+            &::after {
+                content: '';
+                width: 74%;
+                height: 1px;
+                background-color: #979797;
+                position: absolute;
+                bottom: 6px;
+                opacity: .5;
+            }
+        }
+
+        @include atSize850 {
+
+            &::after {
+                bottom: 14px;
+            }
+        }
     }
 
     @include atSize700 {
-        margin-left: 3rem;
+        margin-left: 0;
         height: 100%;
     }
 
     @include atSize1100 {
-        margin-left: 11rem;
+        margin-left: 8rem;
     }
 }
 
