@@ -41,6 +41,14 @@
 	  			cursor: pointer;
 	  			font-weight: 500;
 	  			color: $buttonPink;
+	  			height: 12px;
+	  			a {
+	  				color: #303030;
+	  				&.active {
+	  					color: $buttonPink;
+	  					border-bottom: solid 2px $buttonPink;
+	  				}
+	  			}
 			}
     	}
 	}
@@ -80,6 +88,8 @@
 		}
 		.courses {
 			flex: 1;
+			padding: 5px;
+			margin: 0 0 20px 0;
 			.course-list {
 				margin: 20px 10px;
 				display: flex;
@@ -276,6 +286,55 @@
   			background: white;
   			outline: none;
 		}
+	}
+	.collaborate {
+		position: relative;
+    	top: 100px;
+    	h1 {
+    		text-align: center;
+    		font-family: Lato;
+		  	font-size: 42px;
+		  	font-weight: bold;
+		  	font-stretch: normal;
+		  	font-style: normal;
+		  	line-height: 1.33;
+		  	letter-spacing: normal;
+		  	color: $primaryColor;
+    	}
+    	.collaborate-section {
+    		display: flex;
+    		font-stretch: normal;
+		  	font-style: normal;
+		  	line-height: 1.63;
+		  	letter-spacing: normal;
+		  	position: relative;
+		  	top: 35px;
+		  	@include atSize424 {
+		  		flex-direction: column;
+		  	}
+    		.collaborate-item {
+    			flex: 1;
+    			padding: 0 30px;
+    			&.img-placeholder {
+    				width: 627px;
+				  	height: 470px;
+				  	opacity: 0.1;
+				  	background-color: #ff008e;
+				  	@include atSize424 {
+				  		width: 100%;
+				  	}
+    			}
+    			h2 {
+    				color: #6f009d;
+    				font-weight: bold;
+				  	font-size: 20px;
+    			}
+    			p {
+    				color: $primaryColor;
+    				font-size: 16px;
+    			}
+    		}
+    	}
 	}
 	.testimonials {
 		position: relative;
@@ -1090,7 +1149,7 @@
 	height: auto;
 	width: 100%;
 	margin: 0 0 30px 0;
-	font-family: 'Opens Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 	.sections {
 		display: flex;
 		flex-direction: row;
