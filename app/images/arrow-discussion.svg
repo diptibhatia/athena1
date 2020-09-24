@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>down-chevron</title>
+    <g id="Registration/login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="discussion1" transform="translate(-962.000000, -690.000000)" fill="#F00297" fill-rule="nonzero">
+            <g id="down-chevron" transform="translate(966.000000, 697.000000) scale(-1, -1) rotate(90.000000) translate(-966.000000, -697.000000) translate(959.000000, 693.000000)">
+                <polygon id="Path" points="12.9567873 -3.30957484e-13 7 5.92482439 1.04321267 -3.30957484e-13 -2.27373675e-13 1.03756061 7 8 14 1.03756061"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
