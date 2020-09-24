@@ -1,0 +1,782 @@
+.main {
+  width: 100%;
+  min-height: 240px;
+  padding: 0px;
+  display: block;
+  text-align: left;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: $background-pale;
+  padding: 10px 0px 10px 40px;
+  border: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  .container {
+    margin: 10px 80px 20px 50px;
+    padding: 10px;
+    .search {
+      overflow: auto;
+
+      input[type="text"] {
+        border: 0px;
+        width: 32%;
+        padding: 10px 10px;
+      }
+
+      i {
+        margin-left: 0px;
+        border: 0px;
+        background: none;
+        background-color: $orange;
+        color: black;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: small;
+    }
+    h4 {
+      width: auto;
+      padding: 10px;
+      margin: 7px 0px 1px 10px;
+    }
+    h4 {
+      margin-left: -10px;
+    }
+    .filter {
+      display: inline;
+      justify-content: left;
+      text-align: left;
+
+      .filter-type {
+        display: inline;
+        justify-content: left;
+        text-align: left;
+        margin: 30px auto;
+        select {
+          padding: 5px;
+          float: left;
+          margin-right: 40px;
+          margin-bottom: 0px;
+          border: 1px solid #ccc;
+          width: 234px;
+        }
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      font-size: inherit;
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    padding: 10px;
+    .container {
+      font-size: inherit;
+      flex: 100%;
+      align-items: left;
+      display: inline;
+      justify-content: left;
+      margin: 10px;
+      padding: 0px;
+      padding-top: 10px;
+      p {
+        font-size: small;
+        margin-left: 10px;
+      }
+      h4 {
+        margin-left: 10px;
+      }
+      .filter {
+        margin-left: 10px;
+        display: inline;
+        justify-content: left;
+        text-align: left;
+
+        .filter-type {
+          display: inline-flex;
+          justify-content: left;
+          text-align: left;
+          margin: 0px 0px 0px 0px;
+
+          select {
+            padding: 5px;
+            float: left;
+            margin-right: 5px;
+            width: auto;
+            border: 1px solid $wt;
+            font-size: small;
+          }
+        }
+      }
+      @media only screen and (min-width: 150px) and (max-width: 780px) {
+        .search {
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.courses {
+  .card {
+    margin: 20px auto;
+    padding: 0;
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $boxshadow;
+    background: $wt;
+    text-align: left;
+    padding: 0px;
+    .course-img {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      max-height: 50%;
+      object-fit: cover;
+    }
+    .course-main {
+      .course-title {
+        text-align: left;
+        color: $bl;
+        padding: 10px;
+        font-size: large;
+      }
+      .course-partner {
+        padding-left: 10px;
+        color: $boldtext;
+        font-size: small;
+      }
+      .course-info {
+        padding-left: 10px;
+        font-size: 14px;
+        color: $bl;
+      }
+      .tag {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 117px;
+        height: 39px;
+        border-radius: 100px 0px 0 100px;
+        background-image: linear-gradient(89deg, #ffc300 0%, #ffac00 100%, #ffd85e 100%);
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #303030;
+          text-align: center;
+          padding: 10px;
+        }
+        @media (max-width: 770px) {
+          display: none;
+        }
+      }
+      .duration {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        color: $bl;
+        font-size: 14px;
+        background-color: #efefef;
+        height: 59px;
+
+        .column-1 {
+          margin: 0px;
+          padding: 0px;
+          width: 100%;
+          z-index: 10;
+
+          &::before {
+            content: "\2022";
+            color: $boldtext;
+            font-size: 20px;
+            margin: 0px 3px 0px 0px;
+          }
+        }
+        .column-2 {
+          text-align: center;
+          margin: 0px;
+          width: 100%;
+          margin-top: -15px;
+          float: right;
+          font-size: 12px;
+          padding-right: 10px;
+          padding-left: 10px;
+          padding-top: 20px;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $boldtext;
+        font-weight: 500;
+        padding-left: 160px;
+        text-transform: uppercase;
+        background-color: #efefef;
+      }
+    }
+  }
+
+  @media (min-width: $break-small) {
+    .card {
+      max-width: 1200px;
+      max-height: 250px;
+      padding: 0;
+
+      flex-direction: row;
+      .course-img {
+        min-width: 200px;
+        max-height: 250px;
+        width: 250px;
+        height: 100%;
+      }
+      .course-main .course-info {
+        margin-top: 5px;
+      }
+      .course-main .duration {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-bottom: 3px;
+        .column-1 {
+          width: 100%;
+          padding-bottom: 1px;
+        }
+
+        .column-2 {
+          width: 100%;
+          margin: 0px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1099px) {
+    .card {
+      max-width: 1200px;
+      max-height: 250px;
+      padding: 0;
+
+      flex-direction: row;
+      .course-img {
+        min-width: 200px;
+        max-height: 250px;
+        width: 250px;
+        height: 100%;
+      }
+      .course-main .course-info {
+        margin-top: 5px;
+      }
+      .course-main .duration {
+        margin-top: 25px;
+        padding: 20px;
+
+        .column-1 {
+          margin: 0px;
+          padding: 0px;
+          width: 80%;
+
+          &::before {
+            content: "\2022";
+            color: $boldtext;
+            font-size: 20px;
+            margin: 0px 3px 0px 0px;
+          }
+        }
+        .column-2 {
+          margin: 0px;
+          width: 20%;
+          margin-top: -15px;
+          float: right;
+          font-size: 12px;
+          padding-right: 10px;
+          padding-left: 10px;
+          padding-top: 0px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1100px) {
+    margin: 40px;
+    margin-left: 40px;
+    padding: 5px 40px;
+    margin-bottom: 10px;
+    .card {
+      max-width: 1150px;
+      max-height: 200px;
+      padding: 0;
+      width: auto;
+      flex-direction: row;
+      .course-img {
+        min-width: 250px;
+        max-width: 200px;
+        width: 450px;
+        height: 200px;
+      }
+      .course-main {
+        margin-left: 50px;
+      }
+      .course-main .duration {
+        margin-top: 20px;
+        padding: 15px 20px;
+
+        .column-1 {
+          margin: 0px;
+          padding: 0px;
+          width: 60%;
+          &::before {
+            content: "\2022";
+            color: $boldtext;
+            font-size: 20px;
+            margin: 0px 3px 0px 0px;
+          }
+        }
+        .column-2 {
+          margin: 0px;
+          /*padding-left: 240px;*/
+          width: 100%;
+          text-align: right;
+          font-size: 14px;
+          padding-right: 0px;
+          margin-top: -28px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.explore {
+  margin-top: -20px;
+  h1 {
+    margin: 10px;
+    margin-left: 10px;
+    @media screen and (max-width: $break-small) {
+      font-size: inherit;
+      margin-left: 40px;
+    }
+  }
+  max-width: 1900px;
+  margin: 20px 50px;
+  padding: 10px 40px;
+  .item1 {
+    grid-area: one;
+  }
+  .item2 {
+    grid-area: two;
+  }
+
+  .item3 {
+    grid-area: three;
+  }
+
+  .grid-container {
+    display: grid;
+    width: 80%;
+    height: 100%;
+
+    grid:
+      "one two  "
+      "one three ";
+    grid-gap: 10px;
+    padding: 10px;
+    .item1 {
+      img {
+        width: 500px;
+        height: 510px;
+        opacity: 0.3;
+      }
+      background-color: rgb(255, 36, 114);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      color: #fff;
+      grid-row-end: span 40;
+      border-radius: 5px;
+    }
+    .item2 {
+      img {
+        width: 520px;
+        height: 250px;
+        opacity: 0.3;
+      }
+      background-color: rgb(129, 48, 174);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      grid-row-end: span 20;
+      color: #fff;
+      border-radius: 2px;
+    }
+    .item3 {
+      img {
+        width: 520px;
+        height: 250px;
+        opacity: 0.3;
+      }
+      background-color: rgb(255, 299, 44);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      color: #fff;
+      grid-row-start: 21;
+      grid-row-end: span 20;
+      border-radius: 5px;
+    }
+    @media screen and (min-width: $break-small) and (max-width: 1033px) {
+      margin-left: 50px;
+      margin-right: 20px;
+      justify-content: center;
+      .item1 {
+        width: 300px;
+        height: 80%;
+        img {
+          max-width: 300px;
+        }
+      }
+      .item2 {
+        padding: 0px;
+        img {
+          max-width: 300px;
+          max-height: 200px;
+        }
+        width: 300px;
+        height: 200px;
+      }
+      .item3 {
+        padding: 0px;
+        margin-top: -50px;
+        img {
+          max-width: 300px;
+          max-height: 200px;
+        }
+        width: 300px;
+        height: 200px;
+      }
+    }
+
+    .text {
+      color: white;
+      font-size: 14px;
+      position: absolute;
+      top: 10%;
+      left: 7%;
+      right: 10%;
+      text-align: left;
+      p {
+        margin-top: 10px;
+      }
+    }
+
+    @media screen and (max-width: $break-small) {
+      max-width: 279px;
+      margin: 10px 20px 0px 20px;
+
+      .item1 {
+        grid-column: span 20;
+        grid-row: span 10;
+        width: 297px;
+        height: 200px;
+        img {
+          width: 297px;
+          height: 200px;
+        }
+      }
+      .item2 {
+        grid-column: span 2;
+        grid-row: span 10;
+        width: 297px;
+        height: 200px;
+        img {
+          width: 297px;
+          height: 200px;
+        }
+      }
+      .item3 {
+        grid-column: span 2;
+        grid-row-end: span 10;
+        width: 297px;
+        height: 200px;
+        img {
+          width: 297px;
+          height: 200px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $break-small) {
+    margin: 20px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.questions {
+  background-color: white;
+  h1 {
+    margin: 20px 100px 30px;
+    @media screen and (max-width: $break-small) {
+      font-size: 20px;
+      margin: 20px 50px;
+    }
+  }
+  .about-course {
+    background-color: $background-pale;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    padding: 10px 100px;
+    justify-content: center;
+    border: 1px solid $lt-gray;
+    h4 {
+      margin: 30px 0px;
+      text-align: left;
+
+      color: $boldtext;
+
+      @media screen and (max-width: $break-small) {
+        font-size: 20px;
+        margin: 30px 50px;
+      }
+    }
+    .accordian {
+      box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      input {
+        display: none;
+      }
+
+      label {
+        padding: 0px 100px;
+        display: block;
+        cursor: pointer;
+        background: $wt;
+        border: none;
+        border-radius: 3px;
+        border-bottom: 1px solid $lt-gray;
+        position: relative;
+        color: $bl;
+        transition: ease 0.5s;
+        padding: 18px;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+
+      label::after {
+        content: "+";
+        font-size: 30px;
+        color: #d1c6c6;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      input:checked + label::after {
+        content: "-";
+        font-size: 30px;
+        right: 20px;
+        top: 10px;
+      }
+
+      .content {
+        background: $wt;
+        padding: 40px;
+        border: 1px solid $lt-gray;
+        font-size: 14px;
+        margin: 0px;
+        border-radius: 3px;
+        color: $bl;
+      }
+
+      input + label + .content {
+        display: none;
+      }
+
+      input:checked + label + .content {
+        display: block;
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      margin: 0px auto;
+      padding: 20px;
+      padding-top: 0px;
+      label::after {
+        content: "+";
+        font-size: 20px;
+        color: #d1c6c6;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+    }
+  }
+
+  .dropdown {
+    margin-top: 1px;
+    input {
+      display: none;
+    }
+    label {
+      padding: 0px 170px;
+      display: block;
+      cursor: pointer;
+      background: $background-pale;
+      border: 1px solid $lt-gray;
+      position: relative;
+      color: $bl;
+      transition: ease 0.5s;
+      padding: 18px;
+      padding-left: 100px;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    label::after {
+      content: "v";
+      font-size: 20px;
+      color: $lt-gray;
+      position: absolute;
+      right: 40px;
+      top: 20px;
+    }
+
+    input:checked + label::after {
+      content: "^";
+      font-size: 30px;
+      right: 40px;
+      top: 20px;
+    }
+
+    .content {
+      background: $wt;
+      padding: 50px;
+      padding-left: 100px;
+      border: 1px solid $lt-gray;
+      font-size: 14px;
+      margin: 0px;
+      border-radius: 3px;
+      color: $bl;
+    }
+
+    input + label + .content {
+      display: none;
+    }
+
+    input:checked + label + .content {
+      display: block;
+    }
+  }
+}
+
+.join {
+  width: 100%;
+  min-height: 350px;
+  padding-top: 0px;
+  margin: 0px;
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: black;
+  img {
+    min-width: 100%;
+    max-height: 360px;
+    width: auto;
+    height: auto;
+    opacity: 0.4;
+    object-fit: cover;
+  }
+  .mainInfo {
+    .overlay {
+      margin: 90px 157px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .text {
+      color: $wt;
+      display: inline;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+      margin: 50px auto;
+      h2 {
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+        padding-top: 10px;
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-weight: 800;
+        vertical-align: middle;
+        color: $orange;
+        padding-bottom: 20px;
+        word-spacing: 5px;
+        font-size: 50px;
+      }
+    }
+  }
+  @media screen and (max-width: $break-small) {
+    .mainInfo {
+      .overlay {
+        margin: 40px 10px;
+      }
+      .text {
+        font-size: 25px;
+        margin: 10px auto;
+        h2 {
+          font-size: 30px;
+        }
+        h1 {
+          font-size: 30px;
+          display: flex;
+        }
+      }
+
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+      padding: 0px 0px;
+    }
+  }
+}
+.join-button {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  margin-top: 40px;
+  @media screen and (max-width: $break-small) {
+    margin-top: 40px;
+  }
+
+  a {
+    font-size: 15px;
+    padding: 10px 50px 10px 50px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $wt;
+    border-radius: 30px;
+    text-decoration: none;
+    color: $wt;
+  }
+}

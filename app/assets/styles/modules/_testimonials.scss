@@ -38,6 +38,73 @@
   }
 }
 
+.discussions {
+  width: 769px;
+  min-height: 300px;
+  height: auto;
+  margin: 30px 0;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  @include atSize424 {
+    width: 100%;
+  }
+  .posts {
+    display: flex;
+    border-bottom: solid 1px #f3f5f8;
+    margin: 15px 0;
+    .single-post {
+      display: flex;
+      margin: 10px 0;
+      cursor: pointer;
+      .profile-img {
+        img {
+          border-radius: 50px;
+          width: 44px;
+          height: 44px;
+        }
+      }
+      .post-thread {
+        padding: 0 12px;
+        width: 470px;
+        @include atSize424 {
+          width: 90%;
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: $primaryColor;
+          font-family: Lato;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+        .author-info {
+          opacity: 0.7;
+          font-family: Lato;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 4px 0;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+      }
+    }
+    .arrow {
+      display: flex;
+      width: 30%;
+      cursor: pointer;
+      justify-content: flex-end;
+      border: none;
+    }
+  }
+}
+
 .search-insights {
   width: 359px;
   height: 150px;
@@ -173,6 +240,9 @@
     height: auto;
     opacity: 0.4;
     object-fit: cover;
+    @include atSize424 {
+      display: none;
+    }
   }
 
   .mainInfo {
