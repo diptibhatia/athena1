@@ -220,14 +220,26 @@
         .about {
 
             i {
-                width: 12.5px;
-                height: 12.5px;
+                width: 11px;
+                height: 11px;
                 position: relative;
-                top: -2px;
+                top: -3px;
+                right: 0;
+                opacity: .7;
                 border-color: #979797;
                 margin-left: 13px;
-                transition: transform .2s ease-out;
+                transition: transform .2s ease-out, top .2s ease-out;
                 transform-origin: center center;
+
+                @include atSize700 {
+                    position: absolute;
+                    top: 9px;
+                    right: -8px;
+                } 
+
+                @include atSize850 {
+                    top: 17px;
+                }
             }
 
             @include atSize700 {
@@ -236,11 +248,12 @@
 
                     i {
                         transform: rotate(225deg);
-                        top: 2px;
+                        top: 22px;
                     }
 
                     .secondary-nav {
                         transform: scaleY(1);
+                        opacity: 1;
                     }
                 }
             }
@@ -249,6 +262,7 @@
         .secondary-nav {
             display: none;
             list-style: none;
+            opacity: 0;
             padding: 0;
             background-color: #fff;
             border-radius: 3px;
@@ -256,7 +270,7 @@
             padding-top: 6px;
             padding-bottom: 6px;
             transform-origin: 0 0;
-            transition: transform .2s ease-out;
+            transition: transform .2s ease-out, opacity .2s ease-out;
 
             a {
                 white-space: nowrap;
@@ -273,12 +287,14 @@
 
             &.show {
                 display: block;
+                opacity: 1;
             }
 
             @include atSize700 {
                 right: -20px;
                 position: absolute;
                 transform: scaleY(0);
+                opacity: 0;
                 display: block;
                 width: 245px;
             }
@@ -301,10 +317,6 @@
         transition: background-color .3s ease-out;
         position: relative;
 
-        &:hover {
-            background-color: #eff1fe;
-        }
-
         @include atSize700 {
             padding: 1rem 1rem;
             display: inline-flex;
@@ -325,7 +337,7 @@
                 &::after {
                     position: absolute;
                     content: '';
-                    width: 75%;
+                    width: 70%;
                     height: 2px;
                     display: block;
                     background: linear-gradient( 90deg, $titlePink, $titlePink 84%, #fff 84%, #fff 88%, $titlePink 88%, $titlePink 92%, #fff 92%, #fff 96%, $titlePink 96%, $titlePink 100%);
