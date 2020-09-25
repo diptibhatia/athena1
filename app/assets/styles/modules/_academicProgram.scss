@@ -1,0 +1,136 @@
+.academic-program-wrapper {
+	.academic-header {
+		font-size: $line-height-md;
+
+		@include atSize700 { 
+			font-size: 32px;
+		}
+	}
+
+	.card-title {
+		font-size : 1.5rem;
+		line-height: 1.8;
+		margin: 0;
+	}
+
+	.box {		
+
+		margin-top: 10px;
+
+		@include atSize700 { 
+			padding: 0 20px;
+			margin: 0;
+		}
+
+		&:after {
+			content: ' \2193';
+			color: $purpleColor;
+		    position: absolute;
+		    font-size: $line-height-md;
+		    bottom: -10px;
+
+			@include atSize700 { 
+				content: ' \2192';		    	
+			    top: 50%;
+			    right: -6px;			    
+			}	    	
+		}
+
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+
+		p {
+			color: #6d7783;
+		}
+	}
+
+	.academic-content {
+		.page-title {
+
+		}
+
+		p {
+				font-size: 14px;
+			}
+
+		ul {
+			li {
+				font-size: 14px;
+			    padding: 0 15px;
+			    border-right: 1px solid $purpleColor;
+			    color: $purpleColor;
+
+			    &:first-child {
+			    	padding-left: 0;
+			    }
+
+			    &:last-child {
+			    	border: none;
+			    }
+			}
+		}
+
+		.academic-card {
+			img {
+				float: left;
+				padding-right: 4px;
+			}
+
+			p {
+				float: left;
+				margin: 0;
+				font-size: 14px;
+				line-height: 1.5em;
+			}
+		}
+
+		.academic-price {
+			text-align: right;
+
+			span {
+				padding: 10px 20px;
+    			border-radius: 15px 0 0 15px;
+    			background-color: #ffc300;
+    			font-weight: bold;
+			}
+		}
+	}
+
+	.title {
+		font-size: 24px;
+
+		@include atSize700 {
+			font-size: 32px;
+		}
+	}
+
+	.carousel-caption {
+
+		@include atSize424 {
+			top: 5%;
+			left: 0;
+		}
+
+		@include atSize700 {
+			bottom: 40%;
+		}
+
+		.banner_text {
+			@include atSize700 { 
+				width: 50%;
+			}
+		}
+	}
+
+	.btn-outline-violet {
+		border-color: $purpleColor;
+		color: $purpleColor;
+		font-size: 16px;
+		padding: 5px 15px;
+	}
+
+	
+}

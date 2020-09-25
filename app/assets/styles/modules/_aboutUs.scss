@@ -129,29 +129,6 @@
 		}
 	}
 
-	.athena-btn {
-		 border-radius: 30px;
-	      border: solid 2px white;
-	      color: white;
-	      padding: 10px 30px;
-	      cursor: pointer;
-	      outline: none;
-	      background: none;
-
-	     &.violet-btn{
-			border-color: $voilet;
-			border-radius: 20px;
-			color: $voilet;
-		}
-
-		&.white-btn {
-			border-color: $primaryWhite;
-			border-radius: 20px;
-			color: $primaryWhite;
-			background-color: transparent;
-		}
-	}
-
 	.list-group-item {
 		
 	}

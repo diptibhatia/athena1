@@ -53,6 +53,11 @@ body {
 	line-height: 1.5em;
 }
 
+.txt-18 {
+	font-size: 18px;
+	line-height: 1.8em;
+}
+
 .txt-16, p {
 	font-size: $font-size-lg;
 	line-height: 1.8em;
@@ -77,6 +82,35 @@ body {
 }
 .shadow-none {
 	box-shadow: none !important;
+}
+
+.athena-btn {
+	 border-radius: 30px;
+      border: solid 2px white;
+      color: white;
+      padding: 5px 30px;
+      cursor: pointer;
+      outline: none;
+      background: none;
+
+     &.violet-btn{
+		border-color: $voilet;
+		border-radius: 20px;
+		color: $voilet;
+	}
+
+	&.purple-btn{
+		border-color: $purpleColor;
+		border-radius: 20px;
+		color: $purpleColor;
+	}
+
+	&.white-btn {
+		border-color: $primaryWhite;
+		border-radius: 20px;
+		color: $primaryWhite;
+		background-color: transparent;
+	}
 }
 
 blockquote {
