@@ -13,11 +13,31 @@
 	}
 }
 
+.container-fluid {
+	@include atSize424 {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+}
+
 .my-container {
 	@include atSizeXXLarge {
 		width: 1200px !important;
 		margin: 0 auto !important;
 	}
+}
+
+.highlighter {
+	width: 224px;
+    height: 251px;
+    border: solid 10px #ffc400;
+    position: absolute;
+    right: 437px;
+    top: 89px;
+    @include atSize424 {
+    	display: none;
+    }
 }	
 
 .explore-courses {
@@ -163,6 +183,28 @@
 			  				width: 350px;
 			  				height: 165px;
 			  			}
+			  		}
+			  		.price-tag {
+			  			width: 113px;
+    					height: 39px;
+    					border-radius: 100px 0px 0 100px;
+    					background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+					    position: absolute;
+					    top: 7px;
+					    right: 0;
+    					margin: 10px 0;
+    					p {
+					 		font-family: Lato;
+					  		font-size: 16px;
+					  		font-weight: bold;
+					  		font-stretch: normal;
+					  		font-style: normal;
+					  		line-height: normal;
+					  		letter-spacing: normal;
+					  		color: #ffffff;
+					  		margin: 0;
+					  		padding: 8px;
+    					}
 			  		}
 			  		.course-details {
 			  			width: 331px;
@@ -1054,6 +1096,29 @@
 	  				width: 350px;
 	  				height: 165px;
 	  			}
+	  		}
+	  		.price-tag {
+	  			width: 113px;
+				height: 39px;
+				border-radius: 100px 0px 0 100px;
+				background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+			    position: absolute;
+			    top: 7px;
+			    right: 0;
+				margin: 10px 0;
+				p {
+			 		font-family: Lato;
+			  		font-size: 16px;
+			  		font-weight: bold;
+			  		font-stretch: normal;
+			  		font-style: normal;
+			  		line-height: normal;
+			  		letter-spacing: normal;
+			  		color: #ffffff;
+			  		margin: 0;
+			  		padding: 8px;
+			  		text-align: center;
+				}
 	  		}
 	  		.course-details {
 	  			width: 331px;
