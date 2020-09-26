@@ -1,0 +1,62 @@
+.insight-wrapper {
+	.card-text {
+		font-size: 14px;
+		line-height: 1.5;
+		padding-top: 10px;
+
+	}
+
+	.card-title {
+		font-size: 18px;
+		line-height: 1.5;
+		margin: 0
+	}
+
+	.insight-card-footer {
+		border-top: 1px solid $purpleColor;
+		padding: 10px 0;
+	}
+
+	.insight-card-body {
+		padding: 10px 0;
+	}
+
+	.sidebar {
+		.list-group-item {
+			padding: 20px 1.25rem;
+
+			a {
+				color: $primaryColor;
+				text-decoration: none;
+				padding: 18px 0;
+
+				&.is-active {
+					color: $purpleColor;
+					background-color: transparent;
+
+					&::after {
+						content: "";
+					    display: block;
+					    border-bottom: 2px solid $purpleColor;
+					    width: 25%;
+					    position: relative;
+					    bottom: -7px;
+					}
+				}				
+
+				&:hover {
+					color: $purpleColor;
+				}
+			}
+		}		
+	}
+
+	.navigation {
+		float: right;
+		padding-top: 10px;
+
+		a {
+			border: none;
+		}
+	}
+}
