@@ -1,0 +1,289 @@
+<div class="fyi-tabs">
+    <div class="wrapper">
+        <div class="classic-tabs"> <!-- Bootstrap Tabs -->
+
+            <ul class="nav tabs-cyan" id="myClassicTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link waves-light show active" id="overview-tab-classic" data-toggle="tab" href="#overview" role="tab" aria-controls="overview-classic" aria-selected="true">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" id="course-module-tab-classic" data-toggle="tab" href="#course-module" role="tab" aria-controls="course-module-classic" aria-selected="false">Course Modules &amp; Fee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" id="eligibility-tab-classic" data-toggle="tab" href="#eligibility" role="tab" aria-controls="eligibility-classic" aria-selected="false">Eligibility</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" id="why-athena-tab-classic" data-toggle="tab" href="#why-athena" role="tab" aria-controls="why-athena-classic" aria-selected="false">Why athena?</a>
+                </li>
+            </ul>
+            <div class="tab-content rounded-bottom" id="myClassicTabContent">
+                <div class="tab-pane fade active show" id="overview" role="tabpanel" aria-labelledby="overview-tab-classic">
+                    <div class="fyi-tabs__overview">
+                        <div class="fyi-tabs__overview-list">
+                            {{overview | raw}}
+                        </div>
+                        <div class="overview-points-card">
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/fee.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>${{total_fee}} Total Fee</h3>
+                                    <p>Pay Per Module</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Flexible</h3>
+                                    <p>{{duration}} months</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>{{certification_label}}</h3>
+                                    <p>{{certification}}</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/cousre-completlyonline.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Completely Online</h3>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Accreditations</h3>
+                                    <p>Ministry of Education, Italy</p>
+                                    <p>Scottish Qualification Authority, UK</p>
+                                    
+                                    {% for accreditation in accreditations %}
+                                       <p>{{accreditation.content}}</p>
+                                    {% endfor %}
+                                    
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <a href="#">Take a Free Trial Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="course-module" role="tabpanel" aria-labelledby="course-module-tab-classic">
+                    <div class="fyi-tabs__course-modules">
+                        <div class="fyi-tabs__course-modules__details">
+                            <h2>Course Details</h2>
+                            <p class="text">
+                              {{course_details | raw}}
+                            </p>
+                            <div class="headings">
+                                <h3 class="module">Modules</h3>
+                                <h3 class="fee">Fees</h3>
+                                <h3 class="credit">Ects Credits</h3>
+                            </div>
+                            {% for module in node.field_course_modules %}
+                            <div class="content">
+                                <p class="module">  {{ module.entity.field_course_module_name.value }}</p>
+                                  {{ drupal_entity('paragraph', module.field_course_module_name) }}
+                                <p class="fee">$ {{ module.entity.field_course_module_fees.value }}</p>
+                                <p class="credit">{{ module.entity.field_course_module_ects_credit.value }} Credits (ECTS)</p>
+                            </div>
+                            {% endfor %}
+                            <div class="total">
+                                <p class="module">Total</p>
+                                <p class="fee">$ {{total_fee}}</p>
+                                <p class="credit">{{total_credits}} Credits (ECTS)</p>
+                            </div>
+                            <p><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect 
+                                the exact mapping information, however the final MBA awarded by the University will 
+                                carry 60 ECTS credits. <a href="#">What Is ECTS?</a></p>
+                        </div>
+                        <div class="overview-points-card">
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/fee.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>$5,000 Total Fee</h3>
+                                    <p>Pay Per Module</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Flexible</h3>
+                                    <p>9-36 months</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Dual Certification</h3>
+                                    <p>IMBA &amp; Scottish Diploma</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/cousre-completlyonline.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Completely Online</h3>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Accreditations</h3>
+                                    <p>Ministry of Education, Italy</p>
+                                    <p>Scottish Qualification Authority, UK</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <a href="#">Take a Free Trial Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="eligibility" role="tabpanel" aria-labelledby="eligibility-tab-classic">
+                    <div class="fyi-tabs__eligibility">
+                        <div class="fyi-tabs__eligibility_details">
+                            <h2>Admission requirement</h2>
+                            <div>
+                                <h3>Bachelor's degree</h3>
+                                <p>Bachelor’s degree from an accredited university (or academic equivalent) in any 
+                                    subject.</p>
+                            </div>
+                            <div>
+                                <h3>Mature Entry Route</h3>
+                                <p>If you don’t have a bachelor’s degree, you can apply through our mature entry 
+                                    route. You’ll need to provide evidence of 3 years (Minimum) of relevant managerial 
+                                    work experience, along with certificates of your highest diplomas/degrees/professional 
+                                    certifications and an updated resume. Applications are assessed on a case-by-case 
+                                    basis. Please send these details to support@athena.edu. Applicants should be 23 
+                                    years of age or above. Admission through Mature Entry Route will be subject to the 
+                                    discretion of the Athena Global Education and the respective Awarding 
+                                    Bodies/Universities.</p>
+                            </div>
+                            <div>
+                                <h3>English Language Proficiency</h3>
+                                <p>If you are not a native speaker, you should have an appropriate English proficiency 
+                                    level, e.g. an IELTS score of 5.5 or equivalent in all bands or possess a bachelor’s 
+                                    degree delivered and assessed in English, or proof of work experience in an 
+                                    English-speaking environment.</p>
+                            </div>
+                            <p class="knowmore">To know more about our partnership with Guglielmo Marconi University, please visit their 
+                                official website - 
+                                <a href="https://www.gmuonline.org/en/partnerships/collaboration-agreements">
+                                    https://www.gmuonline.org/en/partnerships/collaboration-agreements</a></p>
+                        </div>
+                        <div class="overview-points-card">
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/fee.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>$5,000 Total Fee</h3>
+                                    <p>Pay Per Module</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Flexible</h3>
+                                    <p>9-36 months</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Dual Certification</h3>
+                                    <p>IMBA &amp; Scottish Diploma</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/cousre-completlyonline.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Completely Online</h3>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Accreditations</h3>
+                                    <p>Ministry of Education, Italy</p>
+                                    <p>Scottish Qualification Authority, UK</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <a href="#">Take a Free Trial Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="why-athena" role="tabpanel" aria-labelledby="why-athena-tab-classic">
+                    <div class="fyi-tabs__why-athena">
+                        <div class="fyi-tabs__why-athena_details">
+                            <h2>Why Athena ?</h2>
+                            <div>
+                                <h3>Flexibility</h3>
+                                <p>With AGE, you are in charge of your learning! You decide the timing of your learning 
+                                    and the pace of your education – you can complete each module by the 21st day of enrollment 
+                                    up until the 90th day. This means you can earn an MBA in 12 months or 36 months depending 
+                                    on your pace.</p>
+                            </div>
+                            <div>
+                                <h3>Affordable (Pay per Module - Easy Instalments)</h3>
+                                <p>The ‘Pay per Module’ payment model gives you financial freedom, 
+                                    unlike most MBA’s. Now, you can start your MBA by paying only for 
+                                    the 1st Module. Earn this coveted degree for a fraction of the cost 
+                                    of most online MBA programs.</p>
+                            </div>
+                            <div>
+                                <h3>Accredited &amp; Globaly  Accepted</h3>
+                                <p>The ‘Pay per Module’ payment model gives you financial freedom, 
+                                    unlike most MBA’s. Now, you can start your MBA by paying only for 
+                                    the 1st Module. Earn this coveted degree for a fraction of the cost 
+                                    of most online MBA programs.</p>
+                            </div>
+                        </div>
+                        <div class="overview-points-card">
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/fee.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>$5,000 Total Fee</h3>
+                                    <p>Pay Per Module</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Flexible</h3>
+                                    <p>9-36 months</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Dual Certification</h3>
+                                    <p>IMBA &amp; Scottish Diploma</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/cousre-completlyonline.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Completely Online</h3>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <img src="http://localhost/webhtml/master/app/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
+                                <div class="overview-points-card__container-contains">
+                                    <h3>Accreditations</h3>
+                                    <p>Ministry of Education, Italy</p>
+                                    <p>Scottish Qualification Authority, UK</p>
+                                </div>
+                            </div>
+                            <div class="overview-points-card__container">
+                                <a href="#">Take a Free Trial Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>

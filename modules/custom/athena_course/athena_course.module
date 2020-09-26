@@ -16,5 +16,21 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'node' => NULL,
       ],
     ],
+    
+    'course_description_tabs' => [
+      'variables' => [
+      'overview' => NULL,
+      'node' => NULL,
+      'total_fee' => NULL,
+      'duration' => NULL,
+      'certification_label' => NULL,
+      'certification' => NULL,
+      'accreditations' => NULL,
+      'course_details' => NULL,
+      'course_modules' => NULL,
+      'total_credits' => NULL,
+      ],
+    ],
+    
   ];
 }

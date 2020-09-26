@@ -7,17 +7,38 @@ class AthenaCourseController {
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();  
 $node = Node::load(14);
-     return [
-      '#theme' => 'course_banner',
-      '#course_title' => $node->get('title')->value,
-      '#ects_credit' => $node->get('field_course_ects_credit')->value,
-      '#awarding_body' => $node->get('field_course_awarding_body')->value,
-      '#description' => $node->get('field_course_banner_description')->value,
-      '#category' => $node->get('field_course_category')->value,
-      '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
-      '#node' => $node,
-    ];    
-      
-      
+
+$banner_block =  [
+  '#theme' => 'course_banner',
+  '#course_title' => $node->get('title')->value,
+  '#ects_credit' => $node->get('field_course_ects_credit')->value,
+  '#awarding_body' => $node->get('field_course_awarding_body')->value,
+  '#description' => $node->get('field_course_banner_description')->value,
+  '#category' => $node->get('field_course_category')->value,
+  '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
+  '#node' => $node
+];    
+
+
+
+$course_description_tabs =  [
+  '#theme' => 'course_description_tabs',
+  '#overview' => $node->get('field_course_overview')->value,
+  '#node' => $node,
+  '#total_fee' => $node->get('field_course_total_fee')->value,
+  '#duration' => $node->get('field_course_duration')->value,
+  '#certification_label' => $node->get('field_course_certification_label')->value,
+  '#certification' => $node->get('field_course_certification')->value,
+  '#accreditations' => $node->get('field_course_accreditations')->value,
+  '#course_details' => $node->get('field_course_details')->value,
+  '#course_modules' => $node->get('field_course_modules')->value,
+  '#total_credits' => $node->get('field_course_total_credits')->value,
+];    
+
+return array(
+   $banner_block,
+   $course_description_tabs,
+);
+
   }
 }
