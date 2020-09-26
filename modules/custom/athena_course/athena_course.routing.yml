@@ -5,3 +5,11 @@ athena_course.course:
     _title: 'Custom athena course module'
   requirements: 
     _permission: 'access content'
+
+athena_course.import:
+  path: '/import-courses'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::import'
+    _title: 'import courses'
+  requirements: 
+    _permission: 'access content'
