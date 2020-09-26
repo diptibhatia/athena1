@@ -164,8 +164,8 @@
 					  	h3 {
 							font-size: 14px;
   							color: $primaryColor;
-  							text-align: left;
-    						padding-left: 24px;
+  							text-align: center;
+    						padding: 20px 0;
   							span {
   								font-weight: bold;
   							}
@@ -259,7 +259,8 @@
 			img {
 				position: relative;
 			    top: 120px;
-			    right: -32px;
+			    right: -42px;
+			    width: 530px;
 			    @include atSize424 {
 			    	top: 0;
 					right: 0;
@@ -285,6 +286,8 @@
   			cursor: pointer;
   			background: white;
   			outline: none;
+  			width: 186px;
+  			height: 50px;
 		}
 	}
 	.collaborate {
@@ -338,7 +341,7 @@
 	}
 	.testimonials {
 		position: relative;
-		top: 70px;
+		top: 200px;
 		.testimonials-item {
 			display: flex;
 			.item-one {
@@ -361,6 +364,9 @@
 	  				cursor: pointer;
 	  				outline: none;
 	  				background: white;
+	  				width: 213px;
+  					height: 50px;
+  					margin: 30px 0;
 				}
 			}
 			.item-two {
@@ -577,6 +583,8 @@
 		cursor: pointer;
 		outline: none;
 		background: white;
+		width: 213px;
+  		height: 50px;
 	} 
 }
 .reason-section {
@@ -605,6 +613,7 @@
 				  	line-height: 2.0;
 				  	letter-spacing: normal;
 				  	color: #222222;
+				  	padding: 5px 0;
 				}
 			}
 			.actions {
@@ -914,6 +923,8 @@
 			cursor: pointer;
 			outline: none;
 			background: white;
+			width: 213px;
+  			height: 50px;
 		}
 	}
 }
@@ -980,7 +991,8 @@
 				  	p {
 					  font-size: 14px;
 					  color: $primaryColor;
-					  padding: 7px;
+					  padding: 3px;
+					  text-align: center;
 					  span {
 					  	color: white;
 					  	padding: 0 5px;
@@ -1005,8 +1017,8 @@
 			  	h3 {
 					font-size: 14px;
 					color: $primaryColor;
-					text-align: left;
-					padding-left: 24px;
+					text-align: center;
+					padding: 5px 0;
 			    	margin: 10px 0;
 			    	width: 100%;
 						span {
@@ -1103,6 +1115,8 @@
 			cursor: pointer;
 			outline: none;
 			background: none;
+			width: 175px;
+  			height: 50px;
 		}
 	}
 	@include atSize424 {
