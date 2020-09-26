@@ -33,6 +33,13 @@ $course_description_tabs =  [
   '#course_details' => $node->get('field_course_details')->value,
   '#course_modules' => $node->get('field_course_modules')->value,
   '#total_credits' => $node->get('field_course_total_credits')->value,
+  '#academic_route' => $node->get('field_course_academic_route')->value,
+  '#academic_route_desc' => $node->get('field_course_academic_route_desc')->value,
+  '#mature_entry_label' => $node->get('field_course_mature_entry_label')->value,
+  '#mature_entry_desc' => $node->get('field_course_mature_desc')->value,
+  '#language_prof_label' => $node->get('field_course_language_prof_label')->value,
+  '#language_prof_desc' => $node->get('field_course_language_prof_desc')->value,
+  '#why_athena' => $node->get('field_course_why_athena')->value,
 ];    
 
 return array(

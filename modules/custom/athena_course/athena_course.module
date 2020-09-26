@@ -29,6 +29,13 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'course_details' => NULL,
       'course_modules' => NULL,
       'total_credits' => NULL,
+      'academic_route' => NULL,
+      'academic_route_desc' => NULL,
+      'mature_entry_label' => NULL,
+      'mature_entry_desc' => NULL,
+      'language_prof_label' => NULL,
+      'language_prof_desc' => NULL,
+      'why_athena' => NULL,
       ],
     ],
     
