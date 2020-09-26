@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_why_athena
+    - node.type.course
+  module:
+    - text
+id: node.course.field_course_why_athena
+field_name: field_course_why_athena
+entity_type: node
+bundle: course
+label: course_why_athena
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    summary: ''
+    value: "<div>\r\n<h3>Flexibility</h3>\r\n\r\n<p>With AGE, you are in charge of your learning! You decide the timing of your learning and the pace of your education – you can complete each module by the 21st day of enrollment up until the 90th day. This means you can earn an MBA in 12 months or 36 months depending on your pace.</p>\r\n</div>\r\n\r\n<div>\r\n<h3>Affordable (Pay per Module - Easy Instalments)</h3>\r\n\r\n<p>The ‘Pay per Module’ payment model gives you financial freedom, unlike most MBA’s. Now, you can start your MBA by paying only for the 1st Module. Earn this coveted degree for a fraction of the cost of most online MBA programs.</p>\r\n</div>\r\n\r\n<div>\r\n<h3>Accredited &amp; Globaly Accepted</h3>\r\n\r\n<p>The ‘Pay per Module’ payment model gives you financial freedom, unlike most MBA’s. Now, you can start your MBA by paying only for the 1st Module. Earn this coveted degree for a fraction of the cost of most online MBA programs.</p>\r\n</div>\r\n"
+    format: full_html
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

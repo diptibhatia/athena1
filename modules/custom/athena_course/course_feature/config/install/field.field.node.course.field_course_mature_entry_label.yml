@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_mature_entry_label
+    - node.type.course
+id: node.course.field_course_mature_entry_label
+field_name: field_course_mature_entry_label
+entity_type: node
+bundle: course
+label: 'Course Mature Entry Label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
