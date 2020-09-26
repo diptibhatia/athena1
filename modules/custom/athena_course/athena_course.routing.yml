@@ -1,0 +1,7 @@
+athena_course.course:
+  path: '/course/{nid}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::course'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'

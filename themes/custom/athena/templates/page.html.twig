@@ -55,28 +55,33 @@
     </aside>
     </div>
 {% endif %}
-<div class="main-wrapper container-fluid p-0 about-us-wrapper">
-{% if page.featured_top %}
-        {{ page.featured_top }}
-{% endif %}
-  <div class="pt-4 container bg-white">
-    <div class="row">
-      {% if page.sidebar_first %}
-          <div class="col-md-4 col-sm-12 pb-5">
-              {{ page.sidebar_first }}
+
+{% if athena_exclude %}
+  {{ page.content }}
+{% else %}
+    <div class="main-wrapper container-fluid p-0 about-us-wrapper">
+    {% if page.featured_top %}
+            {{ page.featured_top }}
+    {% endif %}
+      <div class="pt-4 container bg-white">
+        <div class="row">
+          {% if page.sidebar_first %}
+              <div class="col-md-4 col-sm-12 pb-5">
+                  {{ page.sidebar_first }}
+              </div>
+          {% endif %}
+          <div class="col-md-8 col-sm-12">
+              {{ page.content }}
           </div>
-      {% endif %}
-      <div class="col-md-8 col-sm-12">
-          {{ page.content }}
+          {% if page.sidebar_second %}
+              <div class="col-md-4 col-sm-12">
+                  {{ page.sidebar_second }}
+              </div>
+          {% endif %}
+        </div>
       </div>
-      {% if page.sidebar_second %}
-          <div class="col-md-4 col-sm-12">
-              {{ page.sidebar_second }}
-          </div>
-      {% endif %}
     </div>
-  </div>
-</div>
+{% endif %}
 {% if page.featured_bottom %}
     <div class="featured-bottom">
     <aside class="layout-container clearfix" role="complementary">

@@ -26,3 +26,12 @@ function athena_preprocess_image(&$variables) {
     $variables['attributes']['class'][] = 'col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0';
   }
 }
+
+
+function athena_preprocess_page(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/course') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
+
+}

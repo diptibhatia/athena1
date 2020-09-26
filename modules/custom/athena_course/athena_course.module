@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function athena_course_theme($existing, $type, $theme, $path) {
+  return [
+    'course_banner' => [
+      'variables' => [
+      'course_title' => NULL,
+      'ects_credit' => NULL,
+      'awarding_body' => NULL,
+      'description' => NULL,
+      'category' => NULL,
+      'banner' => NULL,
+      'node' => NULL,
+      ],
+    ],
+  ];
+}

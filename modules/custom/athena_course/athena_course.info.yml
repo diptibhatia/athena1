@@ -1,0 +1,6 @@
+name: Course Module
+type: module
+description: 'Custom module for course related pages.'
+package: Custom
+version: 1.0
+core: 8.x
