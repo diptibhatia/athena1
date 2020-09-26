@@ -6,7 +6,8 @@ class AthenaCourseController {
   public function course($nid) {
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();  
-$node = Node::load(14);
+
+$node = Node::load($nid);
 
 // Base theme path.
 global $base_url;
