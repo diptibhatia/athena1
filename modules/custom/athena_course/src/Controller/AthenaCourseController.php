@@ -8,6 +8,11 @@ class AthenaCourseController {
    $parameters = \Drupal::routeMatch()->getParameters();  
 $node = Node::load(14);
 
+// Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+$base_path = $base_url.'/'. $theme->getPath();
+
 $banner_block =  [
   '#theme' => 'course_banner',
   '#course_title' => $node->get('title')->value,
@@ -16,6 +21,7 @@ $banner_block =  [
   '#description' => $node->get('field_course_banner_description')->value,
   '#category' => $node->get('field_course_category')->value,
   '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
+  '#base_path' => $base_path,
   '#node' => $node
 ];    
 
@@ -40,6 +46,7 @@ $course_description_tabs =  [
   '#language_prof_label' => $node->get('field_course_language_prof_label')->value,
   '#language_prof_desc' => $node->get('field_course_language_prof_desc')->value,
   '#why_athena' => $node->get('field_course_why_athena')->value,
+    '#base_path' => $base_path,
 ];    
 
 return array(

@@ -14,6 +14,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'category' => NULL,
       'banner' => NULL,
       'node' => NULL,
+      'base_path' => NULL,
       ],
     ],
     
@@ -36,6 +37,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'language_prof_label' => NULL,
       'language_prof_desc' => NULL,
       'why_athena' => NULL,
+      'base_path' => NULL,
       ],
     ],
     
