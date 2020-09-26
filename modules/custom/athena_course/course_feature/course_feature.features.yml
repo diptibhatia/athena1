@@ -1,1 +1,3 @@
+excluded:
+  - field.field.node.course.field_short_description
 required: true
