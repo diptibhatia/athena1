@@ -4,6 +4,8 @@
 @import "base/mixins";
 @import "base/global";
 @import "base/assets";
+@import "base/owlCarouselMin";
+@import "base/owlThemeDefaultMin";
 @import "modules/wrapper";
 @import "modules/menubar";
 @import "modules/footer";
@@ -18,6 +20,8 @@
 @import "modules/courseResourcesCard.scss";
 @import "modules/whatLearn";
 @import "modules/coursesIntroCard";
+@import "modules/courseTeamSection";
+@import "modules/courseTeamCard";
 @import "modules/aboutUs";
 @import "modules/homePage";
 @import "modules/testimonials";
