@@ -11,16 +11,73 @@
 		width: 100%;
 		padding: 0;	
 	}
+}
+
+.container-fluid {
+	@include atSize424 {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.my-container {
+	@include atSizeXXLarge {
+		width: 1200px !important;
+		margin: 0 auto !important;
+	}
+}
+
+.highlighter {
+	width: 224px;
+    height: 251px;
+    border: solid 10px #ffc400;
+    position: absolute;
+    right: 437px;
+    top: 89px;
+    @include atSize424 {
+    	display: none;
+    }
 }	
 
 .explore-courses {
 	text-align: center;
+	h2 {
+		font-family: Lato;
+	    font-size: 42px;
+	    font-weight: bold;
+	    font-stretch: normal;
+	    font-style: normal;
+	    line-height: normal;
+	    letter-spacing: normal;
+	    text-align: center;
+	    color: #303030;
+	    margin: 10px 0;
+	}
+	p {
+		font-family: Lato;
+	    font-size: 16px;
+	    font-weight: 100;
+	    font-stretch: normal;
+	    font-style: normal;
+	    line-height: 1.72;
+	    letter-spacing: normal;
+	    text-align: center;
+	    color: #606060;
+	}
+	.course-text-info {
+		width: 580px;
+		margin: 0 auto;
+		@include atSize424 {
+			width: 100%;
+		}
+	}
 	.tabs {
 		display: flex;
 	    margin: 30px auto;
 	    height: 78px;
 	    align-items: center;
-	    border-bottom: solid 3px $border;
+	    border-bottom: solid 6px $border;
 	    width: 784px;
 	    @include atSize424 {
     		width: 100%
@@ -43,10 +100,10 @@
 	  			color: $buttonPink;
 	  			height: 12px;
 	  			a {
-	  				color: #303030;
+	  				color: $buttonPink;
 	  				&.active {
 	  					color: $buttonPink;
-	  					border-bottom: solid 2px $buttonPink;
+	  					border-bottom: solid 4px $buttonPink;
 	  				}
 	  			}
 			}
@@ -67,13 +124,16 @@
 		.info {
 			flex: 0.5;
 			text-align: left;
+			padding: 60px 0;
 			h2 {
 				font-size: 32px;
-			  	font-weight: bold;			  	
+			  	font-weight: bold;	
+			  	text-align: left;		  	
 			  	color: $primaryColor;
 			}
 			p {
 				font-size: 16px;
+				text-align: left;		  	
 			  	color: $secondaryColor;
 			}
 			button {
@@ -84,12 +144,15 @@
   				cursor: pointer;
   				outline: none;
   				background: white;
+  				width: 186px;
+  				height: 50px
 			}
 		}
 		.courses {
 			flex: 1;
 			padding: 5px;
-			margin: 0 0 20px 0;
+			margin: 60px 0 20px 0;
+			background: none;
 			.course-list {
 				margin: 20px 10px;
 				display: flex;
@@ -104,12 +167,12 @@
 				}
 				.course-item {
 					width: 350px;
-			  		height: 402px;
+			  		height: 450px;
 			  		border-radius: 6px;
 			  		box-shadow: 0 2px 25px 2px #d5dbfb;
 			  		background-color: #ffffff;
 			  		position: relative;
-			  		margin: 0 10px;
+			  		margin: 0 20px;
 			  		@include atSize424 {
 			  			margin: 20px 0;
 			  			left: -30px;
@@ -120,6 +183,28 @@
 			  				width: 350px;
 			  				height: 165px;
 			  			}
+			  		}
+			  		.price-tag {
+			  			width: 113px;
+    					height: 39px;
+    					border-radius: 100px 0px 0 100px;
+    					background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+					    position: absolute;
+					    top: 7px;
+					    right: 0;
+    					margin: 10px 0;
+    					p {
+					 		font-family: Lato;
+					  		font-size: 16px;
+					  		font-weight: bold;
+					  		font-stretch: normal;
+					  		font-style: normal;
+					  		line-height: normal;
+					  		letter-spacing: normal;
+					  		color: #ffffff;
+					  		margin: 0;
+					  		padding: 8px;
+    					}
 			  		}
 			  		.course-details {
 			  			width: 331px;
@@ -139,7 +224,8 @@
 						  	p {
 							  font-size: 14px;
 							  color: $primaryColor;
-							  padding: 7px;
+							  padding: 3px;
+							  text-align: center;
 							  span {
 							  	color: white;
 							  	padding: 0 5px;
@@ -164,8 +250,8 @@
 					  	h3 {
 							font-size: 14px;
   							color: $primaryColor;
-  							text-align: left;
-    						padding-left: 24px;
+  							text-align: center;
+    						padding: 20px 0;
   							span {
   								font-weight: bold;
   							}
@@ -230,7 +316,27 @@
 			z-index: 10;
 			flex: 1.4;
 			padding: 5px 0 0 30px;
+			h1 {
+				font-family: Lato;
+			  	font-size: 42px;
+			  	font-weight: bold;
+			  	font-stretch: normal;
+			  	font-style: normal;
+			  	line-height: 1.33;
+			  	letter-spacing: normal;
+			  	color: $primaryColor;
+			  	margin: 0 0 5px 0;
+			}
+			.underline-heading {
+				width: 70px;
+    			border: solid 2px $buttonPink;
+    			border-radius: 4px;
+    			@include atSize424 {
+					display: none;
+		  		}
+			}
 			.info {
+				margin: 25px 0;
 				.info-item {
 					.item {
 						img {
@@ -247,7 +353,7 @@
 						span {
 							font-size: 17px;
 						  	font-weight: bold;
-						  	color: $itemColor;
+						  	color: $buttonPink;
 						}
 					}
 				}
@@ -259,7 +365,8 @@
 			img {
 				position: relative;
 			    top: 120px;
-			    right: -32px;
+			    right: 0px;
+			    width: 530px;
 			    @include atSize424 {
 			    	top: 0;
 					right: 0;
@@ -285,6 +392,8 @@
   			cursor: pointer;
   			background: white;
   			outline: none;
+  			width: 186px;
+  			height: 50px;
 		}
 	}
 	.collaborate {
@@ -300,6 +409,15 @@
 		  	line-height: 1.33;
 		  	letter-spacing: normal;
 		  	color: $primaryColor;
+		  	margin: 0;
+    	}
+    	.collaorate-heading {
+    		width: 334px;
+		    border: solid 2px $buttonPink;
+		    margin: 6px 0 0 216px;
+		    @include atSize424 {
+				display: none;
+		  	}
     	}
     	.collaborate-section {
     		display: flex;
@@ -318,14 +436,21 @@
     			&.img-placeholder {
     				width: 627px;
 				  	height: 470px;
-				  	opacity: 0.1;
-				  	background-color: #ff008e;
+				  	/*opacity: 0.1;*/
+				  	/*background-color: #ff008e;*/
+				  	img {
+				  		width: auto;
+				  		height: auto;
+				  	}
 				  	@include atSize424 {
 				  		width: 100%;
+				  		img {
+				  			width: 100%;
+				  		}
 				  	}
     			}
     			h2 {
-    				color: #6f009d;
+    				color: $buttonPink;
     				font-weight: bold;
 				  	font-size: 20px;
     			}
@@ -338,7 +463,7 @@
 	}
 	.testimonials {
 		position: relative;
-		top: 70px;
+		top: 200px;
 		.testimonials-item {
 			display: flex;
 			.item-one {
@@ -361,6 +486,9 @@
 	  				cursor: pointer;
 	  				outline: none;
 	  				background: white;
+	  				width: 213px;
+  					height: 50px;
+  					margin: 30px 0;
 				}
 			}
 			.item-two {
@@ -577,6 +705,8 @@
 		cursor: pointer;
 		outline: none;
 		background: white;
+		width: 213px;
+  		height: 50px;
 	} 
 }
 .reason-section {
@@ -605,6 +735,7 @@
 				  	line-height: 2.0;
 				  	letter-spacing: normal;
 				  	color: #222222;
+				  	padding: 5px 0;
 				}
 			}
 			.actions {
@@ -816,11 +947,15 @@
 	background: #eff1fe;
 	width: 100%;
 	height: 496px;
+	font-family: Lato;
 	.courses-list {
-		margin: 50px 50px 10px 50px;
+		/*margin: 50px 50px 10px 50px;*/
 		display: flex;
+		position: relative;
+		top: 72px;
 		.course-item {
-			margin: 0 10px;
+			/*margin: 0 10px;*/
+			margin: 0 20px;
 			.course-image {
 				img {
 					width: 365px;
@@ -906,6 +1041,7 @@
 	.view-all {
 		width: 100%;
 		text-align: center;
+		margin: 50px 0;
 		button {
 			border-radius: 30px;
 			border: solid 2px $buttonPink;
@@ -914,6 +1050,8 @@
 			cursor: pointer;
 			outline: none;
 			background: white;
+			width: 213px;
+  			height: 50px;
 		}
 	}
 }
@@ -934,18 +1072,27 @@
   		color: #606060;
   		width: 50%;
   		margin: 20px auto;
+  		font-family: Lato;
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.63;
+		letter-spacing: normal;
+		text-align: center;
 	}
 	.courses {
 		display: flex;
 		margin: 50px auto;
+		background: none;
 		.course-item {
 			width: 350px;
-	  		height: 402px;
+	  		height: 450px;
 	  		border-radius: 6px;
 	  		box-shadow: 0 2px 25px 2px #d5dbfb;
 	  		background-color: #ffffff;
 	  		position: relative;
-	  		margin: 0 10px;
+	  		margin: 0 20px;
 	  		@include atSize424 {
 	  			margin: 20px 6px;
 	  		}
@@ -961,6 +1108,29 @@
 	  				width: 350px;
 	  				height: 165px;
 	  			}
+	  		}
+	  		.price-tag {
+	  			width: 113px;
+				height: 39px;
+				border-radius: 100px 0px 0 100px;
+				background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+			    position: absolute;
+			    top: 7px;
+			    right: 0;
+				margin: 10px 0;
+				p {
+			 		font-family: Lato;
+			  		font-size: 16px;
+			  		font-weight: bold;
+			  		font-stretch: normal;
+			  		font-style: normal;
+			  		line-height: normal;
+			  		letter-spacing: normal;
+			  		color: #ffffff;
+			  		margin: 0;
+			  		padding: 8px;
+			  		text-align: center;
+				}
 	  		}
 	  		.course-details {
 	  			width: 331px;
@@ -980,7 +1150,8 @@
 				  	p {
 					  font-size: 14px;
 					  color: $primaryColor;
-					  padding: 7px;
+					  padding: 3px;
+					  text-align: center;
 					  span {
 					  	color: white;
 					  	padding: 0 5px;
@@ -1005,8 +1176,8 @@
 			  	h3 {
 					font-size: 14px;
 					color: $primaryColor;
-					text-align: left;
-					padding-left: 24px;
+					text-align: center;
+					padding: 5px 0;
 			    	margin: 10px 0;
 			    	width: 100%;
 						span {
@@ -1031,6 +1202,12 @@
 			    background-image: linear-gradient(89deg, $knowMoreTag1 0%, $knowMoreTag2 100%, $knowMoreTag3 100%);
 			    float: right;
 			    margin: 10px 0;
+			    /*&:first-child {
+			    	background-image: linear-gradient(89deg, #9400e2 0%, #540081 100%, #65008e 100%);
+			    }
+			    &:last-child {
+			    	background-image: linear-gradient(89deg, #00a1e8 0%, #004fa1 100%);
+			    }*/
 			    p {
 			    	color: white;
 					margin: 10px 0;
@@ -1073,6 +1250,8 @@
 			cursor: pointer;
 			outline: none;
 			background: white;
+			width: 213px;
+  			height: 50px;
 		}
 	}
 }
@@ -1087,6 +1266,9 @@
 		position: relative;
 		top: -274px;
 		text-align: center;
+		@include atSizeXXLarge {
+			top: -557px;
+		}
 		h1 {
 			font-size: 52px;
   			font-weight: bold;
@@ -1103,6 +1285,8 @@
 			cursor: pointer;
 			outline: none;
 			background: none;
+			width: 175px;
+  			height: 50px;
 		}
 	}
 	@include atSize424 {
@@ -1150,6 +1334,7 @@
 	width: 100%;
 	margin: 0 0 30px 0;
 	font-family: 'Lato', sans-serif;
+	position: relative;
 	.sections {
 		display: flex;
 		flex-direction: row;
