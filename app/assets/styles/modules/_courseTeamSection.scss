@@ -3,10 +3,23 @@
     padding-top: 21px;
     padding-bottom: 53px;
     position: relative;
+    overflow: hidden;
 
     @include atSize850 {
         padding-top: 68px;
         padding-bottom: 34px;
+    }
+
+    .wrapper {
+        padding: 0;
+
+        @include atSize480 {
+            padding: 0 12px;
+        }
+
+        @include atSize1100 {
+            padding: 0 4rem;
+        }
     }
 
     h2 {
