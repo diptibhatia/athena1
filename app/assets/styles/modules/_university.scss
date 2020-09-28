@@ -1,0 +1,330 @@
+.university-wrapper {
+
+	.card-icons {
+		padding: 10px;
+	}
+	
+	.main-content {
+	  width: 100%;
+	  min-height: 350px;
+	  padding: 0px;
+	  display: flex;
+	  text-align: left;
+	  flex-wrap: wrap;
+	  position: relative;
+	  background-color: rgba(0, 0, 0, 0.1);
+	  border-bottom-left-radius: 10%;
+	  video[poster] {
+	    object-fit: fill;
+	  }
+	  video {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    -o-object-fit: cover;
+	    object-fit: cover;
+	    -o-object-position: center;
+	    object-position: center;
+	  }
+
+	  .overlay {
+	    color: $wt;
+	    display: block;
+	    align-items: center;
+	    justify-content: center;
+	    padding: 70px 150px;
+	    button {
+	      background-color: $wt;
+	      border: 5px solid rgba(224, 212, 212, 0.9);
+	      border-radius: 50%;
+
+	      color: $boldtext;
+	      display: block;
+	      font-size: 18px;
+	      left: 0;
+	      margin: 0 auto;
+	      padding: 8px 16px;
+	      position: absolute;
+	      right: 0;
+	      top: 50%;
+	      mix-blend-mode: screen;
+	    }
+	    h2 {
+	      font-size: 40px;
+	      color: $wt;
+	      mix-blend-mode: screen;
+	      text-align: left;
+	      span {
+	        color: $boldtext;
+	      }
+	    }
+	    p {
+	      margin-top: 10px;
+	      justify-content: center;
+	      font-size: 14px;
+	      mix-blend-mode: screen;
+	    }
+
+	    @media screen and (max-width: $break-small) {
+	      font-size: inherit;
+	      flex: 100%;
+	      align-items: flex-start;
+	      display: inline;
+	      justify-content: start;
+	      margin: 0;
+	      padding: 0;
+	      padding-top: 30px;
+	      p {
+	        display: none;
+	      }
+	    }
+	  }
+}
+
+.informations {
+  .col-1 {
+    padding: 30px 150px;
+    padding-right: 10px;
+    font-size: 16px;
+    word-spacing: 3px;
+    .heading {
+      margin-top: 50px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #fbc826;
+    }
+    p {
+      text-align: left;
+    }
+    @media screen and (max-width: $break-small) {
+      padding: 30px;
+    }
+  }
+  .col-2 {
+    :root {
+      --card-img-height: 250px;
+    }
+    .card-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px;
+      margin: 20px auto;
+    }
+    .card {
+      margin-left: -15%;
+      padding: 4px 2px;
+      box-shadow: $boxshadow;
+      align-self: flex-start;
+      position: relative;
+      width: 325px;
+      min-width: 255px;
+      margin: 1.25rem 0.75rem 0rem;
+      background: $wt;
+      margin-top: 10px;
+
+      .card-icons {
+        display: flex;
+        justify-content: space-evenly;
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+    @media screen and (min-width: 700px) and (max-width: 1085px) {
+      padding: 20px;
+      iframe {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.people {
+  background: linear-gradient(
+    rgba(240, 242, 254, 0.7),
+    rgba(255, 255, 255, 0.8)
+  );
+  padding-top: 30px;
+  padding-bottom: 10px;
+  .card {
+    margin: 40px;
+    background: transparent;
+    width: 80%;
+    max-width: 400px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: none;
+
+    .profile-sidebar {
+      padding-top: 2em;
+      .profile-img {
+        border-radius: 100%;
+        border: 2px solid $orange;
+        margin: 0;
+        padding: 0;
+        max-width: 90%;
+        max-height: 50%;
+        object-fit: cover;
+      }
+      .profile-title {
+        text-align: center;
+        color: $bl;
+        padding: 5px;
+        font-size: large;
+      }
+      .profile-partner {
+        text-align: center;
+        color: $bl;
+        font-size: small;
+        padding-bottom: 2em;
+      }
+    }
+
+    .profile-main {
+      padding: 5px;
+      box-shadow: $boxshadow;
+      font-size: 15px;
+      color: $bl;
+      background-color: $wt;
+      p {
+        margin-top: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: $boldtext;
+        font-weight: 500;
+      }
+    }
+  }
+  .card-2 {
+    margin: 20px;
+    background-color: transparent;
+    video {
+      border: 10px solid $wt;
+      max-width: 380px;
+      width: 340px;
+      height: auto;
+      margin: auto;
+    }
+    .profile-sidebar {
+      padding-left: 80px;
+      padding-top: 20px;
+    }
+    .profile-img {
+      padding-left: 300px;
+      padding-top: 20px;
+    }
+    .profile-main {
+      display: none;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1099px) {
+    .card {
+      max-width: 1500px;
+      // max-height: 700px;
+      margin: 30px 50px;
+      background: transparent;
+      flex-direction: row;
+      .profile-sidebar {
+        padding-right: 170px;
+        padding-top: 20px;
+        background: transparent;
+      }
+      .profile-img {
+        background: transparent;
+        min-width: 200px;
+        max-height: 300px;
+        padding-top: 40px;
+      }
+      .profile-main {
+        padding: 5px;
+        margin: 0;
+      }
+    }
+    .card-2 {
+      video {
+        width: 450px;
+        border: 10px solid $wt;
+      }
+      .profile-sidebar {
+        padding-top: 40px;
+        padding-left: 100px;
+      }
+      .profile-img {
+        padding-left: 350px;
+        padding-top: 20px;
+      }
+      .profile-main {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .card {
+      max-width: 1150px;
+      // max-height: 350px;
+      margin: 40px 50px;
+      width: auto;
+      flex-direction: row;
+      .profile-sidebar {
+        padding: 30px;
+        padding-right: 100px;
+      }
+      .profile-img {
+        min-width: 200px;
+        max-width: 200px;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .profile-main {
+        border-radius: 10px;
+        // height: 320px;
+        p {
+          font-size: medium;
+          padding: 10px;
+          word-spacing: 2px;
+        }
+      }
+    }
+    .card-2 {
+      padding-top: 50px;
+      video {
+        max-width: 500px;
+        margin: 0;
+        padding: 0;
+        padding-left: -200px;
+        width: 1000px;
+        height: auto;
+      }
+      .profile-sidebar {
+        width: 400px;
+        padding: 0px;
+        margin-left: 100px;
+        padding-left: 200px;
+        padding-top: 0px;
+        .profile-img {
+          img {
+            border-radius: 100%;
+          }
+        }
+
+        .profile-main {
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+}
