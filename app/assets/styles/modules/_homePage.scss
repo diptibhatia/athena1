@@ -21,6 +21,61 @@
 	}
 }
 
+    .owl-stage-outer {
+        margin-bottom: 15px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: -85px;
+        right: 0;
+        display: none;
+
+        @include atSize850 {
+            display: block;
+        }
+    }
+
+    button.owl-prev {
+        background: url('images/coursepage/previous.svg') no-repeat !important;
+        width: 50px !important;
+        height: 27px !important;
+        position: relative;
+        top: 2px;
+        margin-right: 36px !important;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.disabled {
+            width: 31px !important;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    button.owl-next {
+        background: url('images/coursepage/previous.svg') no-repeat !important;
+        width: 50px !important;
+        height: 27px !important;
+        transform: rotate(180deg);
+
+        &:focus {
+            outline: none;
+        }
+
+        &.disabled {
+            width: 31px !important;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
 .my-container {
 	@include atSizeXXLarge {
 		width: 1200px !important;
@@ -658,8 +713,8 @@
 		}
 	}
 	.partner-logos {
-		display: flex;
-		flex-direction: row;
+		/*display: flex;
+		flex-direction: row;*/
 		margin: 30px 0;
 		@include atSize424 {
 			flex-direction: column;
@@ -671,14 +726,17 @@
 			flex-direction: column;
 		}
 		.logo {
-			width: 301px;
-			margin: 0 14px;
-		  	height: 226px;
+			width: 256px;
+			margin: 10px;
+		  	height: 193px;
 		  	border-radius: 6px;
 		  	box-shadow: 0 2px 9px 3px rgba(0, 0, 0, 0.08), 0 2px 21px 2px rgba(213, 219, 251, 0.83);
 		  	background-color: #ffffff;
 		  	justify-content: center;
 		  	display: flex;
+		  	img {
+		  		width: 200px;
+		  	}
 		  	@include atSize424 {
 				margin: 20px auto;
 				width: 100%;

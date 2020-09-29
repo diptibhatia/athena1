@@ -377,7 +377,44 @@
                   industry's standard dummy
                </h3>
             </div>
-            <div class="partner-logos">
+            <div class="owl-carousel owl-theme partner-logos">
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/cmi-logo.svg" />
+                     </div>
+                </div>
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/ciq-logo.svg" />
+                     </div>
+                </div>
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/sqa-logo.svg" />
+                     </div>
+                </div>
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/ucam-logo.svg" />
+                     </div>
+                </div>
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/cmi-logo.svg" />
+                     </div>
+                </div>
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/ucam-logo.svg" />
+                     </div>
+                </div>
+                <div class="item">
+                     <div class="logo">
+                        <img src="images/ciq-logo.svg" />
+                     </div>
+                </div>
+            </div>
+<!--             <div class="partner-logos">
                <div class="logo">
                   <img src="images/cmi-logo.svg" />
                </div>
@@ -390,7 +427,7 @@
                <div class="logo">
                   <img src="images/ucam-logo.svg" />
                </div>
-            </div>
+            </div> -->
          </div>
          <div class="know-more">
             <button>Know More</button>
@@ -589,8 +626,35 @@
              }
          }
       </script>
+      <script src="jquery.min.js"></script>
+      <script src="owl.carousel.js"></script>
+      <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoWidth: true,
+                responsiveClass: true,
+                responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+                }
+            })
+        })
+    </script>
       <script src="bundled.js"></script>
-      <script src="assets/scripts/jquery.min.js"></script>
       <script src="assets/scripts/bootstrap.min.js"></script>
       <script src="assets/scripts/fontawesome.min.js"></script>
       <script src="assets/scripts/regular.min.js"></script>
