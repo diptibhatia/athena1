@@ -1,4 +1,26 @@
 .insight-wrapper {
+
+	.progress-bar {		
+		width: 100%;
+		background-color: transparent;
+
+		.fill {
+			background-color: $purpleColor;
+			padding: 2px;
+			width: 30%;
+			display: block;
+		}	
+		
+	}
+
+	h3 {
+
+		&.page-title {
+			font-size : 1.5rem;
+			line-height: 1.8;
+		}
+	}
+
 	.card-text {
 		font-size: 14px;
 		line-height: 1.5;
@@ -197,5 +219,22 @@
 	      }
 	    }
 	  }
+	}
+
+	.insight {
+
+		&-modal {
+			p {
+				font-size: 14px;
+				line-height: 1.5;
+			}
+
+			.close {
+				float: none;
+				position: absolute;
+				right: 0;
+				top: 0
+			}
+		}		
 	}
 }
