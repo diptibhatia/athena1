@@ -12,6 +12,9 @@
 <body>
 <div w3-include-html="header.html"></div>
     <div class="main-wrapper container-fluid p-0 insight-wrapper">
+        <div id="progress-bar" class="progress-bar">
+            <div class="fill"></div>
+        </div>
         <div class="pt-4 container bg-white pb-5 d-flex">
             <div class="col-md-8 col-sm-12 border-right">
                 <div class="container txt-14">
@@ -140,6 +143,27 @@ Does it have a direct impact on the business or job you do? If yes, please elabo
                 }
             }
         }
+
+        const progressBar = document.getElementById("progress-bar");
+        const progressFill = progressBar.firstElementChild;
+
+        window.addEventListener("scroll", () => {
+            updateProgress();
+        });
+
+        function updateProgress() {
+            let width = progressBar.clientWidth;
+            let progress =
+                window.pageYOffset / (document.body.scrollHeight - window.innerHeight);
+            // fill progress bar
+            if(Math.ceil(100 * progress) <= 20) {
+                progressFill.style.width = "30%";
+            }else {
+                progressFill.style.width = Math.ceil(100 * progress) + "%";
+            }            
+        }
+
+        updateProgress();
     </script>
 
     <script src="bundled.js"></script>

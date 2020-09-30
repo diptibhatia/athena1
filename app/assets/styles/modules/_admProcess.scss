@@ -29,4 +29,12 @@
             font-size: 1.125rem;
         }
     }
+
+    .admission-steps-card-container {
+
+        @include atSize1250 {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }

@@ -59,6 +59,7 @@
         position: relative;
         top: 2px;
         margin-right: 36px !important;
+        transition: width .2s ease-out;
 
         &:focus {
             outline: none;
@@ -78,6 +79,7 @@
         width: 50px !important;
         height: 27px !important;
         transform: rotate(180deg);
+        transition: width .2s ease-out;
 
         &:focus {
             outline: none;

@@ -12,6 +12,9 @@
 <body>
     <div w3-include-html="header.html"></div>
     <div class="main-wrapper container-fluid p-0 insight-wrapper">
+        <div id="progress-bar" class="progress-bar">
+            <div class="fill"></div>
+        </div>
         <div class="pt-4 container bg-white pb-5 d-flex">
             <div class="col-md-8 col-sm-12 border-right">
                 <div class="container txt-14">
@@ -99,6 +102,8 @@
         <div class="container-fluid p-0 mt-4 mb-5">
            <div w3-include-html="about-popular.html"></div>
         </div>
+
+        <div w3-include-html="insight-popup.html"></div>
     </div>
 
     <div w3-include-html="footer.html"></div>
@@ -132,6 +137,27 @@
                 }
             }
         }
+
+        const progressBar = document.getElementById("progress-bar");
+        const progressFill = progressBar.firstElementChild;
+
+        window.addEventListener("scroll", () => {
+            updateProgress();
+        });
+
+        function updateProgress() {
+            let width = progressBar.clientWidth;
+            let progress =
+                window.pageYOffset / (document.body.scrollHeight - window.innerHeight);
+            // fill progress bar
+            if(Math.ceil(100 * progress) <= 20) {
+                progressFill.style.width = "30%";
+            }else {
+                progressFill.style.width = Math.ceil(100 * progress) + "%";
+            }            
+        }
+
+        updateProgress();
     </script>
 
     <script src="bundled.js"></script>

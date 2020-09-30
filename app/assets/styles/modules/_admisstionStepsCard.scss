@@ -15,12 +15,9 @@
 
     @include atSize1250 {
         display: inline-block;
-        margin-right: 13px;
-        width: 336px;
-
-        &:nth-last-of-type(1) {
-            margin-right: 0;
-        }
+        margin-right: 0;
+        margin-left: 0;
+        width: 32%;
     }
 
     > div {
@@ -37,6 +34,10 @@
          span {
              display: block;
          }
+
+         @include atSize1250 {
+             font-size: 1.25rem;
+         }
     }
 
     p {
@@ -44,5 +45,9 @@
         font-size: .9rem;
         line-height: 27px;
         text-align: left;
+
+        @include atSize1250 {
+            font-size: 1rem;
+        }
     }
 }
