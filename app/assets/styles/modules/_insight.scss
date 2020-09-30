@@ -1,4 +1,26 @@
 .insight-wrapper {
+
+	.progress-bar {		
+		width: 100%;
+		background-color: transparent;
+
+		.fill {
+			background-color: $purpleColor;
+			padding: 2px;
+			width: 30%;
+			display: block;
+		}	
+		
+	}
+
+	h3 {
+
+		&.page-title {
+			font-size : 1.5rem;
+			line-height: 1.8;
+		}
+	}
+
 	.card-text {
 		font-size: 14px;
 		line-height: 1.5;
@@ -58,5 +80,161 @@
 		a {
 			border: none;
 		}
+	}
+
+	.events {
+	  background-color: $background-pale;
+	  border-top-left-radius: 0;
+
+	  .title {
+	    text-align: center;
+	    display: flex;
+	    justify-content: center;
+	    margin: 0;
+
+	    h1 {    
+	      color: $primaryColor;
+	      font-size: 32px;
+	      text-shadow: 5px 5px 10px $lt-gray;
+	      padding-top: 0;
+	    }
+	  }
+
+	  .view {
+	    text-align: center;
+	    display: block;	   
+	    background-color: $background-pale;	    
+
+	    a {
+	      font-size: 18px;
+	      align-items: center;
+	      border: none;
+	      padding: 0;
+	      margin: 0;
+	    }
+	  }
+
+	  :root {
+	    --card-img-height: 170px;
+	  }
+	  .card-container {
+	    width: 100%;
+	    height: auto;
+	    display: flex;
+	    flex-flow: row wrap;
+	    justify-content: center;
+	    align-items: center;
+	    border-bottom: 2px;
+	  }
+
+	  .card {
+	    align-self: flex-start;
+	    position: relative;
+	    width: 500px;
+	    min-width: 200px;
+	    margin: 0 1.05rem 0rem;
+	    background: $background-pale;
+	    border: none;
+
+	    .card-img {
+	      width: 100%;
+	      height: 170px;
+	      img {
+	        object-fit: cover;
+	      }
+	      --card-img-overlay: $gradient;
+	      .text-block {
+	        position: absolute;
+	        top: 46%;
+	        padding: 12px;
+	        padding-left: 16px;
+	        color: $wt;
+	        filter: none;
+	        p {
+	          position: relative;
+	          font-size: 8px;
+	          &:first-of-type {
+	            margin-top: 1px;
+	            &:before {
+	              content: "";
+	              position: absolute;
+	              height: 18px;
+	              background: $boldtext;
+	              opacity: 0.6;
+	              width: 15px;
+	              top: -1.2rem;
+	              border-radius: 3px;
+	            }
+	          }
+	        }
+	      }
+	      .img-txt {
+	        position: absolute;
+	        top: 49%;
+	        right: 14px;
+	        background-color: $wt;
+	        border: 1px solid transparent;
+	        border-radius: 30px;
+	        color: $bl;
+	        padding: 3px;
+	        font-size: 11px;
+	      }
+	    }
+
+	    .card-info {
+	      position: relative;
+	      padding: 0.75rem 1.25rem;
+	      border: 1px solid $lt-gray;
+	      background-color: $wt;
+	      box-shadow: $boxshadow;
+	      .card-title {
+	        z-index: 10;
+	        font-size: 1.25rem;
+	        padding-bottom: 0.75rem;
+	        padding-top: 0.75rem;
+	      }
+
+	      .card-creator {
+	        padding-bottom: 40px;
+	        align-items: left;
+	      }
+	      span {
+	        text-transform: uppercase;
+	      }
+	      p {
+	        font-size: 14px;
+	        
+	        i {
+	          margin-top: 20px;
+	          margin-right: 4px;
+	          color: $boldtext;
+	        }
+	      }
+	    }
+	    @media screen and (max-width: $break-small) {
+	      .card-img {
+	        img {
+	          width: 100%;
+	        }
+	      }
+	    }
+	  }
+	}
+
+	.insight {
+
+		&-modal {
+			p {
+				font-size: 14px;
+				line-height: 1.5;
+			}
+
+			.close {
+				float: none;
+				position: absolute;
+				right: 0;
+				top: 0
+			}
+		}		
 	}
 }

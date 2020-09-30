@@ -21,10 +21,96 @@
 	}
 }
 
+.testimonial-bg-image {
+	img {
+		position: absolute;
+    	width: 100%;
+    	top: 187rem;
+    	z-index: -10;
+    	@include atSize424 {
+    		display: none;
+    	}
+	}
+}
+
+.free-trial-bg-image {
+	img {
+		position: absolute;
+    	width: 100%;
+    	top: 280rem;
+    	z-index: -10;
+    	@include atSize424 {
+    		display: none;
+    	}
+	}
+}
+
+    .owl-stage-outer {
+        margin-bottom: 15px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: -85px;
+        right: 0;
+        display: none;
+
+        @include atSize850 {
+            display: block;
+        }
+    }
+
+    button.owl-prev {
+        background: url('images/coursepage/previous.svg') no-repeat !important;
+        width: 50px !important;
+        height: 27px !important;
+        position: relative;
+        top: 2px;
+        margin-right: 36px !important;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.disabled {
+            width: 31px !important;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    button.owl-next {
+        background: url('images/coursepage/previous.svg') no-repeat !important;
+        width: 50px !important;
+        height: 27px !important;
+        transform: rotate(180deg);
+
+        &:focus {
+            outline: none;
+        }
+
+        &.disabled {
+            width: 31px !important;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
 .my-container {
+	width: 1200px !important;
+	margin: 0 auto !important;
+	padding: 0 !important;
+	@include atSize424 {
+		width: 100% !important;
+	}
 	@include atSizeXXLarge {
 		width: 1200px !important;
 		margin: 0 auto !important;
+		padding: 0 15px !important;
 	}
 }
 
@@ -106,6 +192,10 @@
 	  					border-bottom: solid 4px $buttonPink;
 	  				}
 	  			}
+	  			@include atSize424 {
+	  				font-size: 14px;
+	  				height: 0px;
+	  			}
 			}
     	}
 	}
@@ -125,6 +215,9 @@
 			flex: 0.5;
 			text-align: left;
 			padding: 60px 0;
+			@include atSize424 {
+				padding: 10px 0;
+			}
 			h2 {
 				font-size: 32px;
 			  	font-weight: bold;	
@@ -173,6 +266,7 @@
 			  		background-color: #ffffff;
 			  		position: relative;
 			  		margin: 0 20px;
+			  		z-index: 10;
 			  		@include atSize424 {
 			  			margin: 20px 0;
 			  			left: -30px;
@@ -208,12 +302,13 @@
 			  		}
 			  		.course-details {
 			  			width: 331px;
-					  	height: 146px;
+					  	min-height: 136px;
+					  	height: auto;
 					  	border-radius: 6px;
 					  	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
 					  	background-color: #ffffff;
 					  	position: absolute;
-					  	top: 90px;
+					  	top: 130px;
 					  	left: 10px;
 					  	.course-tags {
 					  		width: 315px;
@@ -250,15 +345,15 @@
 					  	h3 {
 							font-size: 14px;
   							color: $primaryColor;
-  							text-align: center;
-    						padding: 20px 0;
+  							text-align: left;
+    						padding: 15px 25px;
   							span {
   								font-weight: bold;
   							}
 					  	}
 			  		}
 			  		.course-info {
-			  			margin: 100px 15px 0 15px;
+			  			margin: 138px 15px 0 15px;
 			  			font-size: 14px;
 			  			text-align: left;
   						color: $secondaryColor;
@@ -285,6 +380,16 @@
 	}
 }
 
+.back-images {
+	position: absolute;
+    left: 27%;
+	img {
+		position: absolute;
+    	left: 50%;
+    	top: -199px;
+	}
+}
+
 .why-athena {
 	display: flex;
 	.athena-background-image {
@@ -293,13 +398,13 @@
 		img {
 			width: 100%;
 			position: absolute;
-			top: 117px;
+			top: 25px;
 		}
 	}
 	.athena-section {
 		display: flex;
 		width: 100%;
-		margin: 83px 0;
+		margin: 83px 0 0 0;
 		@include atSize424 {
 			flex-direction: column;
 			width: 100%;
@@ -339,6 +444,7 @@
 				margin: 25px 0;
 				.info-item {
 					.item {
+						padding: 15px 0;
 						img {
 							position: relative;
 							top: 49px;
@@ -349,11 +455,15 @@
 						  	color: $primaryColor;
 						  	list-style-type:none;
 						  	padding-left: 48px;
+						  	line-height: 26px;
+						  	margin: 0;
 						}
 						span {
-							font-size: 17px;
+							font-size: 20px;
 						  	font-weight: bold;
 						  	color: $buttonPink;
+						  	position: relative;
+						  	top: 10px;
 						}
 					}
 				}
@@ -364,7 +474,7 @@
 			z-index: 10;
 			img {
 				position: relative;
-			    top: 120px;
+			    top: 170px;
 			    right: 0px;
 			    width: 530px;
 			    @include atSize424 {
@@ -426,7 +536,7 @@
 		  	line-height: 1.63;
 		  	letter-spacing: normal;
 		  	position: relative;
-		  	top: 35px;
+		  	top: 60px;
 		  	@include atSize424 {
 		  		flex-direction: column;
 		  	}
@@ -435,12 +545,13 @@
     			padding: 0 30px;
     			&.img-placeholder {
     				width: 627px;
-				  	height: 470px;
-				  	/*opacity: 0.1;*/
-				  	/*background-color: #ff008e;*/
+				  	height: 385px;
+				  	background-color: rgba(234, 237, 249, 0.6);
 				  	img {
-				  		width: auto;
+				  		width: 100%;
 				  		height: auto;
+				  		position: relative;
+    					top: -61px;
 				  	}
 				  	@include atSize424 {
 				  		width: 100%;
@@ -477,6 +588,7 @@
 				h3 {
 		  			font-size: 16px;
 		  			color: $primaryColor;
+		  			line-height: 26px;
 				}
 				button {
 					border-radius: 30px;
@@ -514,23 +626,36 @@
     					top: 15px;
     					left: -50px;
 					    img {
-					    	width: 98px;
-    						height: 98px;
+					    	width: 102px;
+    						height: 102px;
+						    position: relative;
+						    top: -3px;
+						    left: -3px;
 					    }
 				 	}
 				 	.info {
+				 		margin: 0 0 0 -30px;
 				 		h3 {
 				 			color: $buttonPink;
 				 			font-weight: bold;
-				 			margin: 14px 0;
-				 			font-size: 20px;
+				 			padding: 2px 0 0 0;
+				 			font-size: 18px;
+				 			span {
+				 				font-size: 42px;
+				 			}
 				 		}
 				 		p {
 				 			color: $primaryColor;
 				 			font-size: 14px;
+				 			width: 92%;
 				 			span {
 				 				font-weight: bold;
+				 				color: $buttonPink;
 				 			}
+				 		}
+				 		.student-info {
+				 			color: $primaryColor;
+				 			font-size: 14px;
 				 		}
 				 	}
 				}
@@ -541,6 +666,9 @@
 					padding: 0;
 					width: 100%;
 					text-align: center;
+					img {
+						width: 100%;
+					}
 				}
 				.item-two {
 					margin: 0;
@@ -578,6 +706,7 @@
 					.student-review {
 						margin: 30px 0;
 						width: 100%;
+						height: 246px;
 						.student-image {
 							width: 48px;
   							height: 48px;
@@ -609,6 +738,7 @@
 					.student-review {
 						margin: 30px 0;
 						width: 100%;
+						height: 246px;
 						.student-image {
 							width: 48px;
   							height: 48px;
@@ -635,7 +765,18 @@
 .partners {
 	margin: 140px 30px 50px 30px;
 	.info {
-		width: 440px;
+		width: 600px;
+		@include atSize424 {
+			width: 100%;
+		}
+		img {
+			position: relative;
+		    top: 44px;
+		    z-index: -10;
+		    @include atSize424 {
+		    	width: 100%;
+		    }
+		}
 		@include atSize424 {
 			width: 100%;
 		}
@@ -655,11 +796,12 @@
 			font-size: 16px;
 	  		color: $primaryColor;
 	  		margin: 0;
+	  		line-height: 26px;
 		}
 	}
 	.partner-logos {
-		display: flex;
-		flex-direction: row;
+		/*display: flex;
+		flex-direction: row;*/
 		margin: 30px 0;
 		@include atSize424 {
 			flex-direction: column;
@@ -671,14 +813,17 @@
 			flex-direction: column;
 		}
 		.logo {
-			width: 301px;
-			margin: 0 14px;
-		  	height: 226px;
+			width: 250px;
+			margin: 10px;
+		  	height: 185px;
 		  	border-radius: 6px;
 		  	box-shadow: 0 2px 9px 3px rgba(0, 0, 0, 0.08), 0 2px 21px 2px rgba(213, 219, 251, 0.83);
 		  	background-color: #ffffff;
 		  	justify-content: center;
 		  	display: flex;
+		  	img {
+		  		width: 200px;
+		  	}
 		  	@include atSize424 {
 				margin: 20px auto;
 				width: 100%;
@@ -710,7 +855,7 @@
 	} 
 }
 .reason-section {
-	margin: 100px 0;
+	margin: 100px 0 0 0;
 	display: flex;
 	.reason-section-item {
 		flex: 1;
@@ -728,19 +873,28 @@
 			  	font-weight: bold;
 			  	color: $primaryColor;
 			  	margin: 0;
+			  	position: relative;
+			  	top: -15px;
 			}
 			ul {
+				margin: 0;
+				padding: 0;
 				li {
 				  	font-size: 17px;
 				  	line-height: 2.0;
 				  	letter-spacing: normal;
-				  	color: #222222;
+				  	color: #606060;
 				  	padding: 5px 0;
+				  	list-style: none;
+				  	span {
+				  		padding: 0 0 0 15px;
+				  	}
 				}
 			}
 			.actions {
 				display: flex;
 				flex-direction: row;
+				margin: 35px 0;
 				button {
 					border-radius: 4.1px;
 				  	box-shadow: 0 5px 21px 0 rgba(90, 202, 157, 0.05);
@@ -750,6 +904,8 @@
 				  	outline: none;
 				  	border: none;
 				  	cursor: pointer;
+			  	    width: 160px;
+					height: 50px;
 				}
 				p {
 					font-stretch: normal;
@@ -757,7 +913,12 @@
 				  	line-height: 1.47;
 				  	letter-spacing: normal;
 				  	color: $buttonPink;
-				  	margin: 5px 30px;
+				  	margin: 11px 30px;
+				  	img {
+				  		width: 31px;
+					    height: 31px;
+					    margin: 0 0 0 10px;
+				  	}
 				}
 			}
 		}
@@ -771,6 +932,22 @@
 			}
 			.steps {
 				padding: 20px;
+				ul {
+					li {
+						img {
+							width: auto;
+						}
+					}
+				}
+				.actions {
+					p {
+						img {
+						    position: relative;
+							top: -25px;
+							left: 82px;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -802,19 +979,36 @@
 .insights-section {
 	width: 100%;
 	text-align: center;
+	.img-heading {
+		position: relative;
+	    top: 56px;
+	    z-index: -1;
+	    @include atSize424 {
+	    	width: 100%;
+	    }
+	}
 	h2 {
 		font-size: 42px;
   		font-weight: bold;
   		color: $primaryColor;
   		margin: 10px 0;
+  		@include atSize424 {
+	    	font-size: 32px;
+	    }
 	}
 	h3 {
 		font-size: 16px;
   		color: $primaryColor;
+  		width: 540px;
+	    margin: 0 auto;
+	    line-height: 26px;
+	    @include atSize424 {
+	    	width: 100%;
+	    }
 	}
 	.section-items {
 		display: flex;
-		margin: 90px 0;
+		margin: 35px 0;
 		.section-item-one {
 			flex: 1;
 			.section-image {
@@ -889,15 +1083,20 @@
 						  	font-weight: 500;
 						  	color: $primaryColor;
 						  	border: none;
+						  	line-height: 28px;
 						}
 						p {
 							font-size: 14px;
 						  	font-weight: 500;
 						  	color: $primaryColor;
+						  	span {
+						  		padding: 0 0 0 10px;
+						  	}
 						}
 						h5 {
 							font-size: 14px;
   							color: $buttonPink;
+  							padding: 10px 0;
   							span {
   								float: right;
   								margin: 0 36px 0 0;
@@ -975,15 +1174,16 @@
 				position: relative;
 				top: -42px;
 				h1 {
-					font-size: 24px;
+					font-size: 20px;
 				  	font-weight: bold;
 				  	color: #2f281e;
+				  	line-height: 30px;
 				  	&.active {
 				  		color: $buttonPink;
 				  	}
 				}
 				h2 {
-					font-size: 16.8px;
+					font-size: 16px;
 				  	font-weight: 500;
 				  	color: #5d523d;
 				}
@@ -1041,7 +1241,7 @@
 	.view-all {
 		width: 100%;
 		text-align: center;
-		margin: 50px 0;
+		margin: 60px 0;
 		button {
 			border-radius: 30px;
 			border: solid 2px $buttonPink;
@@ -1057,6 +1257,19 @@
 }
 
 .popular-courses {
+	.heading-image {
+		width: 100%;
+		text-align: center;
+		img {
+			position: relative;
+    		top: 52px;
+    		z-index: -1;
+    		@include atSize424 {
+    			width: 100%;
+    			top: 35px;
+    		}
+		}
+	}
 	h1 {
 		text-align: center;
 	}
@@ -1065,13 +1278,16 @@
   		color: $primaryColor;
   		text-align: center;
   		margin: 0;
+  		@include atSize424 {
+    		font-size: 32px;
+    	}
 	}
 	h3 {
 		font-size: 16px;
   		text-align: center;
   		color: #606060;
-  		width: 50%;
-  		margin: 20px auto;
+  		width: 42%;
+  		margin: 10px auto;
   		font-family: Lato;
 		font-size: 16px;
 		font-weight: normal;
@@ -1083,7 +1299,7 @@
 	}
 	.courses {
 		display: flex;
-		margin: 50px auto;
+		margin: 50px auto 0;
 		background: none;
 		.course-item {
 			width: 350px;
@@ -1093,6 +1309,7 @@
 	  		background-color: #ffffff;
 	  		position: relative;
 	  		margin: 0 20px;
+	  		z-index: 10;
 	  		@include atSize424 {
 	  			margin: 20px 6px;
 	  		}
@@ -1139,7 +1356,7 @@
 			  	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
 			  	background-color: #ffffff;
 			  	position: absolute;
-			  	top: 90px;
+			  	top: 134px;
 			  	left: 10px;
 			  	.course-tags {
 			  		width: 315px;
@@ -1176,8 +1393,8 @@
 			  	h3 {
 					font-size: 14px;
 					color: $primaryColor;
-					text-align: center;
-					padding: 5px 0;
+					text-align: left;
+					padding: 5px 0 0 26px;
 			    	margin: 10px 0;
 			    	width: 100%;
 						span {
@@ -1186,7 +1403,7 @@
 			  	}
 	  		}
 	  		.course-info {
-	  			margin: 100px 15px 0 15px;
+	  			margin: 138px 15px 0 15px;
 	  			font-size: 14px;
 	  			text-align: left;
 					color: $secondaryColor;
@@ -1332,7 +1549,7 @@
 	background-color: #eff1fe;
 	height: auto;
 	width: 100%;
-	margin: 0 0 30px 0;
+	margin-top: 0 !important;
 	font-family: 'Lato', sans-serif;
 	position: relative;
 	.sections {
