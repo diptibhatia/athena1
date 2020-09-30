@@ -630,6 +630,23 @@
 			.item-two {
 				flex: 1;
 				margin: 0 0 0 85px;
+				.image-dot-testimonials-one {
+					position: absolute;
+				    right: -29px;
+				    top: -58px;
+				    z-index: -10;
+				    @include atSize424 {
+				    	display: none;
+				    }
+				}
+				.image-dot-testimonials-two {
+					position: absolute;
+				    left: 452px;
+				    z-index: -10;
+				    @include atSize424 {
+				    	display: none;
+				    }
+				}
 				.student-review {
 					width: 572px;
 				 	height: 202px;
@@ -655,6 +672,23 @@
 						    position: relative;
 						    top: -3px;
 						    left: -3px;
+					    }
+					    .social-icon-linkedin {
+					    	position: absolute;
+					    	top: 79px;
+							right: 5px;
+					    	img {
+					    		width: 28px;
+  								height: 28px;
+					    	}
+					    	@include atSize424 {
+								top: 20px;
+    							right: -16px;
+    							img {
+    								width: 21px;
+  									height: 21px;	
+    							}
+							}
 					    }
 				 	}
 				 	.info {
