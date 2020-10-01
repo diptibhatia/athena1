@@ -7,20 +7,53 @@
   flex-wrap: wrap;
   position: relative;
   background-color: $background-pale;
-  padding: 10px 0px 10px 40px;
+  padding: 10px 0px 10px 0px;
   border: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   .container {
-    margin: 10px 80px 20px 50px;
+    margin: 10px 80px 20px 34px;
     padding: 10px;
     .search {
       overflow: auto;
+      .search-form {
+        .search-courses {
+          width: 51px;
+          height: 45px;
+          border-radius: 4px;
+          background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
+          position: absolute;
+          left: 44%;
+          top: 15%;
+          img {
+            width: 28px;
+            height: 17px;
+            opacity: 0.84;
+            min-width: 28px;
+            position: relative;
+            top: 8px;
+            left: 11px;
+          }
+          @include atSize424 {
+            left: 77%;
+            top: 16.5%;
+            img {
+                  top: 15px;
+    left: 12px;
+    display: block;
+            }
+          }
+        }
+      }
 
       input[type="text"] {
         border: 0px;
-        width: 32%;
+        width: 570px;
+        height: 56px;
         padding: 10px 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+        background-color: #ffffff;
       }
 
       i {
@@ -42,14 +75,21 @@
       width: auto;
       padding: 10px;
       margin: 7px 0px 1px 10px;
+      font-size: 16px;
     }
     h4 {
       margin-left: -10px;
+      @include atSize424 {
+        display: none !important;
+      }
     }
     .filter {
       display: inline;
       justify-content: left;
       text-align: left;
+      @include atSize424 {
+        display: none !important;
+      }
 
       .filter-type {
         display: inline;
@@ -58,11 +98,22 @@
         margin: 30px auto;
         select {
           padding: 5px;
-          float: left;
-          margin-right: 40px;
-          margin-bottom: 0px;
-          border: 1px solid #ccc;
-          width: 234px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 0px;
+    /* border: 1px solid #ccc; */
+    width: 238px;
+    height: 44px;
+    color: #606060;
+    font-size: 14px;
+    border-radius: 3px;
+    border: solid 1px rgba(151, 151, 151, 0.25);
+    &.partner {
+      width: 300px;
+    }
+    &.non-partner {
+      width: 150px;
+    }
         }
       }
     }
@@ -122,6 +173,7 @@
 }
 
 .courses {
+  background: none;
   .card {
     margin: 20px auto;
     padding: 0;
@@ -133,6 +185,7 @@
     background: $wt;
     text-align: left;
     padding: 0px;
+    border: none;
     .course-img {
       margin: 0;
       padding: 0;
@@ -145,17 +198,20 @@
         text-align: left;
         color: $bl;
         padding: 10px;
-        font-size: large;
+        font-size: 18px;
+        margin: 0px 30px;
       }
       .course-partner {
         padding-left: 10px;
         color: $boldtext;
-        font-size: small;
+        font-size: 14px;
+        margin: -6px 30px 0 30px;
       }
       .course-info {
         padding-left: 10px;
         font-size: 14px;
-        color: $bl;
+        color: #606060;
+        margin: 0 30px;
       }
       .tag {
         position: absolute;
@@ -194,6 +250,10 @@
           padding: 0px;
           width: 100%;
           z-index: 10;
+          color: #303030;
+          span {
+            margin: 0 9px;
+          }
 
           &::before {
             content: "\2022";
@@ -306,16 +366,20 @@
   }
 
   @media (min-width: 1100px) {
-    margin: 40px;
-    margin-left: 40px;
+    margin: 40px 0;
+    /*margin-left: 40px;*/
     padding: 5px 40px;
     margin-bottom: 10px;
     .card {
-      max-width: 1150px;
+      max-width: 1170px;
       max-height: 200px;
       padding: 0;
       width: auto;
       flex-direction: row;
+      margin: 20px 0;
+      border-radius: 5.9px;
+  box-shadow: 0 2px 25px 2px rgba(213, 219, 251, 0.47);
+  background-color: #ffffff;
       .course-img {
         min-width: 250px;
         max-width: 200px;
@@ -326,13 +390,13 @@
         margin-left: 50px;
       }
       .course-main .duration {
-        margin-top: 20px;
+        margin-top: 35px;
         padding: 15px 20px;
 
         .column-1 {
           margin: 0px;
-          padding: 0px;
-          width: 60%;
+          padding: 0px 31px;
+          width: 80%;
           &::before {
             content: "\2022";
             color: $boldtext;
@@ -366,8 +430,8 @@
     }
   }
   max-width: 1900px;
-  margin: 20px 50px;
-  padding: 10px 40px;
+  margin: 20px 22px;
+    padding: 10px 0px;
   .item1 {
     grid-area: one;
   }
@@ -390,9 +454,11 @@
     grid-gap: 10px;
     padding: 10px;
     .item1 {
+      width: 580px;
+      height: 447px;
       img {
-        width: 500px;
-        height: 510px;
+        width: 580px;
+      height: 447px;
         opacity: 0.3;
       }
       background-color: rgb(255, 36, 114);
@@ -406,9 +472,11 @@
       border-radius: 5px;
     }
     .item2 {
+       width: 571px;
+  height: 214px;
       img {
-        width: 520px;
-        height: 250px;
+         width: 571px;
+  height: 214px;
         opacity: 0.3;
       }
       background-color: rgb(129, 48, 174);
@@ -422,9 +490,11 @@
       border-radius: 2px;
     }
     .item3 {
+       width: 571px;
+  height: 214px;
       img {
-        width: 520px;
-        height: 250px;
+         width: 571px;
+  height: 214px;
         opacity: 0.3;
       }
       background-color: rgb(255, 299, 44);
@@ -529,19 +599,19 @@
 .questions {
   background-color: white;
   h1 {
-    margin: 20px 100px 30px;
+    margin: 20px 34px 30px;
     @media screen and (max-width: $break-small) {
       font-size: 20px;
       margin: 20px 50px;
     }
   }
   .about-course {
-    background-color: $background-pale;
     margin: 20px auto;
     margin-bottom: 0px;
-    padding: 10px 100px;
+    padding: 10px 31px;
     justify-content: center;
-    border: 1px solid $lt-gray;
+    border: solid 1px #e4e7e9;
+    background-color: #fafbfc;
     h4 {
       margin: 30px 0px;
       text-align: left;
@@ -641,11 +711,13 @@
       color: $bl;
       transition: ease 0.5s;
       padding: 18px;
-      padding-left: 100px;
+      padding-left: 33px;
       text-align: left;
       outline: none;
       font-size: 15px;
       font-weight: 600;
+          border: solid 1px #e4e7e9;
+    background-color: #fafbfc;
     }
     label::after {
       content: "v";

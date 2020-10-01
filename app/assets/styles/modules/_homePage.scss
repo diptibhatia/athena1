@@ -25,7 +25,7 @@
 	img {
 		position: absolute;
     	width: 100%;
-    	top: 187rem;
+    	top: 194rem;
     	z-index: -10;
     	@include atSize424 {
     		display: none;
@@ -37,7 +37,7 @@
 	img {
 		position: absolute;
     	width: 100%;
-    	top: 280rem;
+    	top: 289rem;
     	z-index: -10;
     	@include atSize424 {
     		display: none;
@@ -238,7 +238,11 @@
   				outline: none;
   				background: white;
   				width: 186px;
-  				height: 50px
+  				height: 50px;
+  				&:hover {
+					color: white;
+					background: $buttonPink;
+				}
 			}
 		}
 		.courses {
@@ -442,6 +446,10 @@
 			}
 			.info {
 				margin: 25px 0;
+				width: 470px;
+				@include atSize424 {
+					width: 100%;
+				}
 				.info-item {
 					.item {
 						padding: 15px 0;
@@ -474,9 +482,9 @@
 			z-index: 10;
 			img {
 				position: relative;
-			    top: 170px;
+			    top: 199px;
 			    right: 0px;
-			    width: 530px;
+			    width: 694px;
 			    @include atSize424 {
 			    	top: 0;
 					right: 0;
@@ -504,6 +512,10 @@
   			outline: none;
   			width: 186px;
   			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
 		}
 	}
 	.collaborate {
@@ -584,11 +596,17 @@
 				    font-size: 42px;
 				    font-weight: bold;
 				    color: $primaryColor;
+				    position: relative;
+				    top: -57px;
+				    left: 22px;
 				}
 				h3 {
 		  			font-size: 16px;
 		  			color: $primaryColor;
 		  			line-height: 26px;
+		  			position: relative;
+				    top: -45px;
+				    left: 22px;
 				}
 				button {
 					border-radius: 30px;
@@ -597,15 +615,38 @@
 	  				padding: 5px 10px;
 	  				cursor: pointer;
 	  				outline: none;
-	  				background: white;
 	  				width: 213px;
   					height: 50px;
   					margin: 30px 0;
+  					position: relative;
+  					top: -52px;
+    				left: 22px;
+  					&:hover {
+						color: white;
+						background: $buttonPink;
+					}
 				}
 			}
 			.item-two {
 				flex: 1;
 				margin: 0 0 0 85px;
+				.image-dot-testimonials-one {
+					position: absolute;
+				    right: -29px;
+				    top: -58px;
+				    z-index: -10;
+				    @include atSize424 {
+				    	display: none;
+				    }
+				}
+				.image-dot-testimonials-two {
+					position: absolute;
+				    left: 452px;
+				    z-index: -10;
+				    @include atSize424 {
+				    	display: none;
+				    }
+				}
 				.student-review {
 					width: 572px;
 				 	height: 202px;
@@ -631,6 +672,23 @@
 						    position: relative;
 						    top: -3px;
 						    left: -3px;
+					    }
+					    .social-icon-linkedin {
+					    	position: absolute;
+					    	top: 79px;
+							right: 5px;
+					    	img {
+					    		width: 28px;
+  								height: 28px;
+					    	}
+					    	@include atSize424 {
+								top: 20px;
+    							right: -16px;
+    							img {
+    								width: 21px;
+  									height: 21px;	
+    							}
+							}
 					    }
 				 	}
 				 	.info {
@@ -852,6 +910,10 @@
 		background: white;
 		width: 213px;
   		height: 50px;
+  		&:hover {
+			color: white;
+			background: $buttonPink;
+		}
 	} 
 }
 .reason-section {
@@ -1249,9 +1311,12 @@
 			padding: 5px 20px;
 			cursor: pointer;
 			outline: none;
-			background: white;
 			width: 213px;
   			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
 		}
 	}
 }
@@ -1469,6 +1534,10 @@
 			background: white;
 			width: 213px;
   			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
 		}
 	}
 }
