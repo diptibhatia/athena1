@@ -154,10 +154,30 @@
                             transition: opacity .2s ease-out;
                         }
 
+                        &::before {
+                            content: '';
+                            border: none;
+                            background: url('images/coursepage/hide.png') no-repeat;
+                            padding: 0;
+                            width: 20px;
+                            height: 2px;
+                            display: inline-block;
+                            opacity: 1;
+                            transition: opacity .2s ease-out;
+                            top: 50%;
+                            transform: translateY(-50%) scale(.75);
+                            right: 12px;
+                            position: absolute;
+                        }
+
                         &[aria-expanded="false"] {
 
                             &::after {
                                 opacity: 1;
+                            }
+
+                            &::before {
+                                opacity: 0;
                             }
                         }
 
@@ -165,7 +185,7 @@
                             font-size: 1rem;
                             min-height: 75px;
 
-                            &::after {
+                            &::after, &::before {
                                 right: 30px;
                                 transform: translateY(-50%) scale(.9);
                             }
