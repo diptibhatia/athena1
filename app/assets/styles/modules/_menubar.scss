@@ -358,6 +358,7 @@
 
     .getStartedBtn {
         position: relative;
+        padding-right: 0;
 
         @include atSize700 {
 

@@ -312,15 +312,29 @@
   background-color: #d5e2e5;
   margin: 20px 0;
   .insights-search-option {
-    padding: 26px 10px;
-    h1 {
+    padding: 20px 10px;
+    h3, h2, h1 {
+      font-weight: 800
+    }
+
+    h3 {
       font-size: 16px;
       font-weight: 500;
       color: $primaryColor;
       margin: 0 0 12px 0;
+      padding-left: 18px;
     }
+
+    .popular-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: $primaryColor;
+      margin: 0 0 12px 0;
+      padding-left: 18px;
+    }
+
     input {
-      width: 308px;
+      width: 296px;
       height: 52px;
       border-radius: 6px;
       box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
@@ -330,6 +344,11 @@
       font-size: 15px;
       font-weight: 500;
       color: $primaryColor;
+      margin-left: 18px;
+
+      &:focus {
+        border: none;
+      }
     }
     .search-icon {
       width: 52px;
@@ -338,7 +357,7 @@
       background-image: linear-gradient(to right, #ffc300, #ffac00);
       position: relative;
       top: -52px;
-      left: 256px;
+      left: 262px;
       img {
         position: relative;
         top: 12px;
@@ -361,7 +380,7 @@
 
 .testimonials-popular-courses {
   // width: 357px;
-  height: 433px;
+  height: 422px;
   border-radius: 6px;
   background-color: rgba(255, 0, 142, 0.06);
   .popular-course-item {
@@ -392,13 +411,11 @@
         img {
           width: 58px;
           height: 58px;
-          border: solid 1px #ffb400;
-          border-radius: 50px;
         }
       }
     }
     .learn-more {
-      margin: 30px 0 0 40px;
+      margin: 18px 0 0 58px;
       p {
         font-size: 14px;
         font-weight: 500;
