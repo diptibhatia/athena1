@@ -15,12 +15,20 @@
         height: 227px;
     }
 
-    img {
+    .img {
         display: none;
 
         @include atSize850 {
             display: block;
             margin-right: 18px;
+            position: relative;
+
+            a {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
     }
 

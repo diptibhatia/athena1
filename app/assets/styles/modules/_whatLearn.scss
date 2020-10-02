@@ -53,9 +53,21 @@
             font-weight: bold;
             margin-top: 30px;
             margin-left: 60px;
+            letter-spacing: .2px;
+            position: relative;
 
             @include atSize850 {
                 margin: 20px auto 0;
+            }
+
+            &:hover {
+                background-color: $titlePink;
+                color: #fff;
+                transition: background-color .2s ease-out, color .2s ease-out;
+            }
+
+            &:focus {
+                outline: none;
             }
         }
     }
@@ -66,27 +78,32 @@
         padding-left: 10px;
         max-width: 400px;
 
+        &.hide {
+            display: none;
+        }
+
+        &.show {
+            display: block;
+        }
+
         @include atSize850 {
             max-width: 720px;
             margin: 0 auto;
         }
 
-        &:nth-of-type(1), &:nth-of-type(2) {
+        &::before {
+            content: '';
+            width: 2px;
+            height: 110%;
+            background-color: $titlePink;
+            display: inline-block;
+            position: absolute;
+            left: -1px;
+            top: -3px;
 
-            &::before {
-                content: '';
-                width: 2px;
-                height: 110%;
-                background-color: $titlePink;
-                display: inline-block;
-                position: absolute;
-                left: -1px;
-                top: -3px;
-
-                @include atSize1100 {
-                    top: 21px;
-                    left: -15px;
-                }
+            @include atSize1100 {
+                top: 21px;
+                left: -15px;
             }
         }
 
@@ -118,6 +135,13 @@
             } 
         }
 
+        &:nth-last-of-type(2) {
+
+            &::before {
+                display: none;
+            }
+        }
+
         h3 {
             font-size: .875rem;
             font-weight: bold;
@@ -128,25 +152,31 @@
                 position: absolute;
                 left: -115px;
                 top: 23px;
+                z-index: 1;
             }
         }
     }
 
     .module-overlay {
-        width: 330px;
+        width: 340px;
         height: 210px;
         margin: 0 auto;
-        left: 0;
-        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        left: -10px;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
         position: absolute;
         bottom: 50px;
 
         @include atSize850 {
             right: 0;
             width: 800px;
-            height: 350px;
-            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, 
+            height: 375px;
+            margin-bottom: -25px;
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, 
             rgba(255,255,255,0) 100%);
+        }
+
+        &.hide {
+            display: none;
         }
     }
 }

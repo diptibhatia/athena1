@@ -7,7 +7,7 @@
 
     @include atSize850 {
         padding-top: 68px;
-        padding-bottom: 34px;
+        padding-bottom: 68px;
     }
 
     .wrapper {
@@ -107,5 +107,6 @@
         display: block;
         text-align: center;
         margin: 40px auto 0;
+        display: none;
     }
 }
