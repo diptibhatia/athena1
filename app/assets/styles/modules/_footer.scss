@@ -1,9 +1,13 @@
+.main-wrapper {
+	background-color: rgba(239, 241, 254, 0.5);
+}
 .footer {
 	a {
 		color: $secondaryColor;
 	}
 
 	.new-footer {
+		padding: 50px 0;
 		.right-border {
 			border : none;
 
