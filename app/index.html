@@ -17,7 +17,7 @@
          <img src="images/Banner.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
          <img src="images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
          <div class="container carousel-caption text-left p-0">
-             <h1 class="top-search-section__title"><span>Learn & Upskill</span> in an easy way !</h1>
+             <h1 class="top-search-section__title"><span>Learn &amp; Upskill</span> in an easy way !</h1>
               <p class="top-search-section__text">Its never too late to Learn. The whole world of opportunities infront of you - We make learning <span>easy, affordable</span> and <span>flexible</span> for you.</p>
               <form class="top-search-section__search">
                  <input class="top-search-section__search-input" type="text"
@@ -639,6 +639,34 @@
                 }
             }
         }
+    </script>
+    <script src="jquery.min.js"></script>
+      <script src="owl.carousel.js"></script>
+      <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoWidth: true,
+                responsiveClass: true,
+                responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+                }
+            })
+        })
     </script>
 
     <script src="bundled.js"></script>
