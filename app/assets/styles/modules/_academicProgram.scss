@@ -1,4 +1,15 @@
 .academic-program-wrapper {
+
+	
+	a {
+		color: $purpleColor;
+		font-weight: 600;
+
+		&:hover {
+			color: $purpleColor;
+		}
+	}
+
 	.academic-header {
 		font-size: $line-height-md;
 		margin-bottom: 32px;
@@ -12,6 +23,7 @@
 		font-size : 1.5rem;
 		line-height: 1.8;
 		margin: 0;
+		font-weight: 600;
 	}
 
 	.academic-btn {
@@ -154,6 +166,10 @@
 				padding: 0;
 			}
 
+			.testimonial-img {
+				padding: 15px 0 38px 0;
+			}
+
 			.owl-nav {
 				bottom: -20px;
 				top: unset;
@@ -175,7 +191,7 @@
 			li {
 				font-size: 14px;
 			    padding: 0 15px;
-			    border-right: 1px solid $purpleColor;
+			    border-right: 1px solid $primaryColor;
 			    color: $purpleColor;
 
 			    &:first-child {
@@ -207,9 +223,10 @@
 
 			span {
 				padding: 10px 20px;
-    			border-radius: 15px 0 0 15px;
-    			background-color: #ffc300;
+    			border-radius: 25px 0 0 25px;
+    			background: linear-gradient(to right, #ffc300,#ffac00);
     			font-weight: bold;
+    			font-style: italic;
 			}
 		}
 	}
