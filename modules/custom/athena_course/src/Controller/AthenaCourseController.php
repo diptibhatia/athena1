@@ -111,4 +111,57 @@ return array(
   }
   
 
+function search($word = false){
+    
+ if (isset($_POST['submit_form']) ){
+     
+   /* $nodes =  \Drupal::entityTypeManager()->getStorage('node')
+  ->loadByProperties(['type' => 'course', 'status' => 1]);*/
+  
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('title' ,$_POST['search_key'] ,'CONTAINS');
+    $query->condition('type', $bundle);
+    $entity_ids = $query->execute();
+
+        
+ } 
+    
+    // Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+
+if(!empty($entity_ids)) {
+$nodes = node_load_multiple($entity_ids);
+}
+
+
+
+
+
+
+$base_path = $base_url.'/'. $theme->getPath();
+  $banner_block =  [
+  '#theme' => 'course_search',
+ '#base_path' => $base_path,
+ '#node' => $nodes,
+ '#count' => count($nodes)
+ 
+];   
+    
+
+    
+    return array(
+   $banner_block
+  );
+    
+  return array(
+  '#markup' => '<h2>COooll</h2>',
+);   
+    
+}
+
+
+
 }
