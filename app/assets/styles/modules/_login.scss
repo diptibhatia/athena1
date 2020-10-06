@@ -1,3 +1,20 @@
+.auth-images {
+	img {
+		width: 100%;
+	}
+}
+.register-images {
+	@media (max-width: 770px) {
+		display: none;
+	}
+	img {
+		width: 1439px;
+	    height: 961px;
+	    position: absolute;
+	    right: -45px;
+	    top: -9%;
+	}
+}
 .login-wrapper {
 	h1 {
 		font-family: Lato;
