@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <title>Register</title>
+</head>
+
+<body>
+    <div w3-include-html="header.html"></div>
+    <div class="container-fluid p-0 about-us-wrapper">
+
+        <div class="container bg-white login-wrapper">
+            <div class="row">                
+                <div class="col-md-6 col-sm-12">
+                    <h1>Register <span>Now</span></h1>
+                    <h3>Start Learning in 60 Seconds - No need for any payment details!</h3>
+                    <h4>If you are a  Existing user please <span>Sign In</span></h4>
+                    <div class="login-details">
+                        <div class="login-item names">
+                            <div class="name-item">
+                                <p>First Name</p>
+                                <input type="email" placeholder="Enter First Name" />
+                            </div>
+                            <div class="name-item">
+                                <p>Last Name</p>
+                                <input type="email" placeholder="Enter Last Name" />
+                            </div>
+                        </div>
+                        <div class="login-item">
+                            <p>Email</p>
+                            <input type="password" placeholder="Enter Email Address" />
+                        </div>
+                        <div class="login-item">
+                            <p>Mobile Number</p>
+                            <input type="password" placeholder="Enter Mobile number" />
+                        </div>
+                        <div class="login-item">
+                            <p>Choose your Course</p>
+                            <select name="course" id="course">
+                                <option value="course 1" default>course 1</option>
+                                <option value="course 2">course 2</option>
+                                <option value="coourse 3">course 3</option>
+                            </select>
+                        </div>
+                        <div class="login-item">
+                            <p>Highest Qualification</p>
+                            <select name="course" id="course">
+                                <option value="course 1" default>course 1</option>
+                                <option value="course 2">course 2</option>
+                                <option value="coourse 3">course 3</option>
+                            </select>
+                        </div>
+                        <div class="login-item names">
+                            <div class="name-item">
+                                <p>Year of Experience</p>
+                                <input type="email" placeholder="YY" />
+                            </div>
+                            <div class="name-item">
+                                <p>&nbsp;</p>
+                                <input type="email" placeholder="MM" />
+                            </div>
+                        </div>
+                        <div class="login-item">
+                            <p>Level of Employment</p>
+                            <input type="password" placeholder="Employment Level" />
+                        </div>
+                        <!-- <div class="forgot-password">
+                            Forgot Password?
+                        </div> -->
+                        <div class="button">
+                            <input type="checkbox" id="vehicle1" name="vehicle1">
+                            <label for="vehicle1"> I agree with Terms & Conditions</label>
+                            <button>Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    image
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script type="text/javascript">
+        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+
+    <script src="bundled.js"></script>
+</body>
+
+</html>
