@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <title>Login</title>
+</head>
+
+<body>
+    <div w3-include-html="header.html"></div>
+    <div class="container-fluid p-0 about-us-wrapper">
+
+        <div class="container bg-white login-wrapper">
+            <div class="row">                
+                <div class="col-md-6 col-sm-12">
+                    <h1>Welcome <span>Back</span></h1>
+                    <h3>Learning is never too late. The whole world is in front of you ——  Forward to the dream</h3>
+                    <div class="login-details">
+                        <div class="login-item">
+                            <p>Email Address</p>
+                            <input type="email" value="email" placeholder="Enter Email Address" />
+                        </div>
+                        <div class="login-item">
+                            <p>Password</p>
+                            <input type="password" value="email" placeholder="Enter Password" />
+                            <!-- <span>Forgot Password?</span> -->
+                        </div>
+                        <div class="forgot-password">
+                            Forgot Password?
+                        </div>
+                        <div class="button">
+                            <button>Log in</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    image
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script type="text/javascript">
+        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+
+    <script src="bundled.js"></script>
+</body>
+
+</html>
