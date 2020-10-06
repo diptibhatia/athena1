@@ -62,7 +62,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'node' => NULL,
       'count' => NULL,
       'duration' => NULL,
-      'certification_label' => NULL,
+      'search_key' => NULL,
       'certification' => NULL,
       'accreditations' => NULL,
       'course_details' => NULL,

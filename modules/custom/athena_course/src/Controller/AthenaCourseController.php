@@ -233,6 +233,7 @@ $base_path = $base_url.'/'. $theme->getPath();
   '#theme' => 'course_search',
  '#base_path' => $base_path,
  '#node' => $nodes,
+ '#search_key' => $_POST['search_key'],
  '#count' => count($nodes)
  
 ];   
