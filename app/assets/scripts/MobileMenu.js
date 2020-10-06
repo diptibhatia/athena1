@@ -2,7 +2,9 @@ class MobileMenu {
     constructor() {
         this.MenuIcon = document.querySelector(".site-header__menu-icon");
         this.MenuContent = document.querySelector(".site-header__menu-content");
+        this.About = document.querySelector(".primary-nav .about");
         this.AboutMenu = document.querySelector(".primary-nav .about a");
+        this.AboutMenuArrow = document.querySelector(".primary-nav .about a i");
         this.AboutSubMenu = document.querySelector(".about .secondary-nav");
         this.events();
     }
@@ -10,7 +12,7 @@ class MobileMenu {
     events() {
         //event.preventDefault();
         this.MenuIcon.addEventListener("click", () => this.toggleTheMenu());
-        this.AboutMenu.addEventListener("click", () => this.toggleTheAbout());
+        this.AboutMenu.addEventListener("click", () => this.toggleTheAboutMenu());
     }
 
     toggleTheMenu() {
@@ -18,7 +20,9 @@ class MobileMenu {
         this.MenuIcon.classList.toggle("site-header__menu-icon--close-x");
     }
 
-    toggleTheAbout() {
+    toggleTheAboutMenu() {
+        this.About.classList.toggle("show");
+        this.AboutMenuArrow.classList.toggle("up");
         this.AboutSubMenu.classList.toggle("show");
     }
 }
