@@ -1,0 +1,8 @@
+uuid: 43a5e978-1949-4152-90f2-b7bcb752a1a2
+langcode: en
+status: true
+dependencies: {  }
+id: about-us-menu
+label: 'About us menu'
+description: 'These are the links that are going to be display on about us page right sidebar'
+locked: false

@@ -1,0 +1,23 @@
+uuid: ea9150b2-e2e2-4562-bd24-89588e903d4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_course_module_fees
+    - paragraphs.paragraphs_type.course_module_details
+id: paragraph.course_module_details.field_course_module_fees
+field_name: field_course_module_fees
+entity_type: paragraph
+bundle: course_module_details
+label: 'Course Module Fees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

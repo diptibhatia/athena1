@@ -1,0 +1,21 @@
+uuid: 068294ef-2754-4139-a523-42034f831d87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_modules_fees
+    - node.type.course
+  module:
+    - text
+id: node.course.field_course_modules_fees
+field_name: field_course_modules_fees
+entity_type: node
+bundle: course
+label: 'Course Modules & Fees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

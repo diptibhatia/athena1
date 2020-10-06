@@ -1,0 +1,22 @@
+uuid: d0efaf43-71af-457e-8ab7-e6c3a44d96d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.paragraph_enabled_page.field_paragraph_content
+    - node.type.paragraph_enabled_page
+  module:
+    - user
+id: node.paragraph_enabled_page.teaser
+targetEntityType: node
+bundle: paragraph_enabled_page
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_paragraph_content: true

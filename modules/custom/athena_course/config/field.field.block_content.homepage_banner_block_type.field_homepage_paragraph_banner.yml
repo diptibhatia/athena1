@@ -1,0 +1,37 @@
+uuid: b6450ffe-aefa-47bc-a4ee-ecf163bd5743
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.homepage_banner_block_type
+    - field.storage.block_content.field_homepage_paragraph_banner
+    - paragraphs.paragraphs_type.homepage_banner
+  module:
+    - entity_reference_revisions
+id: block_content.homepage_banner_block_type.field_homepage_paragraph_banner
+field_name: field_homepage_paragraph_banner
+entity_type: block_content
+bundle: homepage_banner_block_type
+label: 'Homepage paragraph banner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      homepage_banner: homepage_banner
+    target_bundles_drag_drop:
+      homepage_banner:
+        enabled: true
+        weight: 4
+      homepage_content:
+        weight: 5
+        enabled: false
+      homepage_top_slider:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,543 @@
+<section class="main">
+      <div class="container">
+        <div class="search">
+          <form class="search-form" method = "post" id="course-search--form">
+            <input type="text" placeholder="Enter text to search" name="search_key">
+            <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+            <input type="hidden" name="submit_form"> 
+            <div class="search-courses">
+               <a href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="{{base_path}}/images/search.svg" alt="search"></a>
+            </div>
+          
+        </div>
+        <p style="display:hidden">Showing {{count}} results for "imba"</p>
+        <h4>Filter By</h4>
+
+        <div class="filter">
+          <div class="filter-type">
+            <select id="partner hell" name="partner" class="partner">
+              <option value="partner">Partner</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+
+            <select id="language" name="language" class="non-partner">
+              <option value="language">Language</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+
+            <select id="level" name="level" class="non-partner">
+              <option value="level">Level</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+
+            <select id="duration" name="duration" class="non-partner">
+              <option value="duration">Duration</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+   
+    <section class="courses">
+       {% for nodedata in node %}
+      <div class="card">
+        <div class="course-sidebar">
+          <img class="course-img" src="{{base_path}}/images/1.jpg" alt="Course">
+        </div>
+        <div class="course-main">
+          <h2 class="course-title"><a href="{{ url('<front>') }}course/{{nodedata.id}}" style=" text-decoration: inherit;
+    color: inherit;font-weight:inherit;padding-left:0px;background-color:inherit;text-transform:inherit;" >{{nodedata.label}}</a></h2>
+          <h4 class="course-partner">{{nodedata.field_course_awarding_body.value|raw }}</h4>
+          <p class="course-info">
+            {{nodedata.field_course_banner_description.value}}
+          </p>
+          <div class="tag">
+            <p>{{nodedata.field_course_category.value}}</p>
+          </div>
+          <div class="duration">
+            <div class="row">
+              <li class="column-1" style="list-style: none">
+                <span>Masters (EQF evel 7)<span> | <span>{{nodedata.field_course_ects_credit.value}} credit(ECTS)</span> | <span>Duration: {{nodedata.field_course_duration.value}}</span>
+              </span></span></li>
+
+              <a class="column-2" href="#">Apply Now</a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    {% endfor %}
+    </section>
+    
+    
+    
+    <section class="explore">
+      <h1>Explore Topics and Skills</h1>
+      <div class="grid-container">
+        <div class="item item1">
+          <img src="{{base_path}}/images/acadamics-bg.png" alt="item1">
+          <div class="text">
+            <h3>Academic</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem
+              ipsum dolor sit Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit Lorem ipsum dolor sit amet, amet, consectetur
+              adipisicing elit
+            </p>
+          </div>
+        </div>
+
+        <div class="item item2">
+          <img src="{{base_path}}/images/mastercredits-img.png" alt="item2">
+          <div class="text">
+            <h3>Master credit</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem
+              ipsum dolor sit amet, consectetur adipisicing elit ipsum dolor sit
+              amet, consectetur.
+            </p>
+          </div>
+        </div>
+
+        <div class="item item3">
+          <img src="{{base_path}}/images/microcerdentials-img.png" alt="item3">
+          <div class="text">
+            <h3>Microcredential</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem
+              ipsum dolor sit amet, consectetur adipisicing elit
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <div class="course-faq">
+        <div class="wrapper">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#sectionOne" aria-expanded="true" aria-controls="collapseOne">
+                            About the Course
+                        </button>
+                        </h5>
+                    </div>
+            
+                    <div id="sectionOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="accordion-inner" id="inner-accordion1">
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                What is the MBA (Executive) with specialisation in Business Analytics?
+                                            </button>
+                                        </h5>
+                                    </div>
+                              
+                                    <div id="firstCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion1" style="">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingTwo">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstCollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Is there any minimum educational qualification required to take this program?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="firstCollapseTwo" class="collapse" aria-labelledby="innerHeadingTwo" data-parent="#inner-accordion1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingThree">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstCollapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            How do I know if the program is right for me?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="firstCollapseThree" class="collapse" aria-labelledby="innerHeadingThree" data-parent="#inner-accordion1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingThree">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstCollapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                            My current role does not include exposure to analytics. Does it make sense for me to opt for an MBA with Business Analytics specialisation?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="firstCollapseFour" class="collapse" aria-labelledby="innerHeadingFour" data-parent="#inner-accordion1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingThree">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstCollapseFive" aria-expanded="false" aria-controls="collapseThree">
+                                            What sets this program apart from other programs?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="firstCollapseFive" class="collapse" aria-labelledby="innerHeadingFive" data-parent="#inner-accordion1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#sectionTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Admission &amp; Fee
+                        </button>
+                        </h5>
+                    </div>
+                    <div id="sectionTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="accordion-inner" id="inner-accordion2">
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#secondCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                Question #1
+                                            </button>
+                                        </h5>
+                                    </div>
+                              
+                                    <div id="secondCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion2">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingTwo">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#secondCollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Question #2
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="secondCollapseTwo" class="collapse" aria-labelledby="innerHeadingTwo" data-parent="#inner-accordion2">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingThree">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#secondCollapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Question #3
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="secondCollapseThree" class="collapse" aria-labelledby="innerHeadingThree" data-parent="#inner-accordion2">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#sectionThree" aria-expanded="false" aria-controls="collapseThree">
+                            Academics &amp; Learning Exeperience
+                        </button>
+                        </h5>
+                    </div>
+                    <div id="sectionThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="accordion-inner" id="inner-accordion3">
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#thirdCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                Question #1
+                                            </button>
+                                        </h5>
+                                    </div>
+                              
+                                    <div id="thirdCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion3">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingTwo">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#thirdCollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Question #2
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="thirdCollapseTwo" class="collapse" aria-labelledby="innerHeadingTwo" data-parent="#inner-accordion3">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingThree">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#thirdCollapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Question #3
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="thirdCollapseThree" class="collapse" aria-labelledby="innerHeadingThree" data-parent="#inner-accordion3">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <section class="opinions">
+         <div><div class="footer-banner">
+  <img src="{{base_path}}/images/footer-bg.png">
+  <div class="footer-info">
+    <h1>It's Time to Start <br><span>Investing</span> In <span>Yourself</span> </h1>
+    <button>Join Now</button>
+  </div>
+</div>
+<div class="all-courses mt-3">
+  <div class="sections container-fluid my-container">
+    <div class="section-item">
+      <h1>Top Online Courses</h1>
+      AI for Everyone<br>
+      Introduction to TensorFlow<br>
+      Neural Networks and Deep Learning<br>
+      Algorithms, Part 1<br>
+      Algorithms, Part 2<br>
+      Machine Learning<br>
+      Machine Learning with Python<br>
+      Machine Learning Using Sas Viya<br>
+      R Programming<br>
+      Intro to Programming with Matlab<br>
+      Data Analysis with Python<br>
+      AWS Fundamentals: Going Cloud Native<br>
+      Google Cloud Platform Fundamentals<br>
+      Site Reliability Engineering<br>
+      Speak English Professionally<br>
+      The Science of Well Being<br>
+      Learning How to Learn<br>
+      Financial Markets<br>
+      Hypothesis Testing in Public Health<br>
+      Foundations of Everyday Leadership<br>
+    </div>
+    <div class="section-item">
+      <h1>Top Online Specializations</h1>
+      Deep Learning<br>
+      Python for Everybody<br>
+      Data Science<br>
+      Applied Data Science with Python<br>
+      Business Foundations<br>
+      Architecting with Google Cloud Platform<br>
+      Data Engineering on Google Cloud Platform<br>
+      Excel to MySQL<br>
+      Advanced Machine Learning<br>
+      Mathematics for Machine Learning<br>
+      Self-Driving Cars<br>
+      Blockchain Revolution for the Enterprise<br>
+      Business Analytics<br>
+      Excel Skills for Business<br>
+      Digital Marketing<br>
+      Statistical Analysis with R for Public Health<br>
+      Fundamentals of Immunology<br>
+      Anatomy<br>
+      Managing Innovation and Design Thinking<br>
+      Foundations of Positive Psychology<br>
+    </div>
+    <div class="section-item">
+      <h1>Online Certificates</h1>
+      Google IT Support<br>
+      IBM Customer Engagement Specialist<br>
+      IBM Data Science<br>
+      Applied Project Management<br>
+      IBM Applied AI Professional Certificate<br>
+      Machine Learning for Analytics<br>
+      Spatial Data Analysis and Visualization<br>
+      Construction Engineering and Management<br>
+      Instructional Design<br>
+    </div>
+    <div class="section-item pb-3">
+      <h1>Online Degree Programs</h1>
+      Master's in Data Science<br>
+      Bachelors Degree in Computer Science<br>
+      Computer Science and Engineering Degrees<br>
+      Master's in Machine Learning<br>
+      MBA and Business Degrees<br>
+      Master's in Electrical Engineering<br>
+      Master's in Public Health<br>
+      Master's in Information Technology<br>
+    </div>
+  </div>
+</div>
+<footer class="main-wrapper container-fluid p-0">
+  <div class="footer container pt-3">
+    <div class="new-footer col-md-12 row">
+      <div class="col-md-4">
+        <div class="subscribe">
+          <img src="{{base_path}}/images/athena-logo.svg" class="img-fluid pb-3">
+          <p>
+            Athena Global Education is a subsidiary of Westford Education
+            Group, a higher education services provider since 2009, providing
+            quality UK, Italian and Spanish Bachelor and Master level degrees.
+          </p>
+          <div class="social-icons mb-3">
+            <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="{{base_path}}/images/facebook-footer.svg"></a>
+            <a href=" https://www.linkedin.com/company/14607715/" target="_blank"><img src="{{base_path}}/images/instagram-footer.svg"></a>
+            <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="{{base_path}}/images/linkedin-footer.svg"></a>
+            <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="{{base_path}}/images/twitter-footer.svg"></a>
+          </div>
+          <span>Subscribe to our newsletter</span>
+          <div class="news-letter">
+            <input type="email" class="form-control" placeholder="abc@xyz.com">
+          </div>
+          <button type="button" class="btn btn-sm mt-3 btn-outline violet-btn">Subscribe</button>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="col-md-12 site-links row">
+          <div class="col-md-4 links">
+            <p><a href="https://athena.edu/Aboutus.aspx">About us</a></p>
+            <p>
+              <a href="https://athena.edu/PartnersAccreditation.aspx">
+                Partnership</a>
+            </p>
+            <p><a href="https://athena.edu/OurCourse.aspx">Courses</a></p>
+            <p><a href="https://athena.edu/Policy.aspx">Policy</a></p>
+            <div class="address">
+              <strong>UK</strong>
+              <p class="txt-12">
+                Athena Global Education LTD<br>
+                The Sherrington Building, Magdalen Centre,<br>
+                The Oxford Science Park,<br>
+                Oxford OX4 4GA. UK<br>
+                Phone : +44 186 578 4545
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 links ">
+            <p><a href="https://athena.edu/faq">FAQ Glossary</a></p>
+            <p>
+              <a href="https://athena.edu/Privacy-policy.aspx">Privacy Policy</a>
+            </p>
+            <p><a href="https://athena.edu/Terms.aspx">Terms &amp; Conditions</a></p>
+            <p><a href="https://athena.edu/apl_Policy.aspx">APL policy</a></p>
+            <div class="address">
+              <strong>USA</strong>
+              <p class="txt-12">
+                Athena Global Education LTD <br>
+                500 Willow Street,<br>
+                Suite 510, Council Bluffs,<br>
+                Iowa 51503, USA<br>
+                Phone : +1 712 283 6085
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 links">
+            <p><a href="https://athena.edu/ContactUs.aspx">Contact us</a></p>
+            <p><a href="https://athena.edu/Disclamer.aspx">Disclaimer</a></p>
+            <p><a>Admin Login</a></p>
+            <p class="d-none d-md-block d-sm-none">&nbsp;</p>
+            <div class="address">
+              <strong>MIDDLE EAST</strong>
+              <p class="txt-12">
+                Athena Global Education FZE<br>
+                Block L-3, First Floor,<br>
+                P O Box 519265,<br>
+                Sharjah Publishing City,<br>
+                Free Zone, Sharjah, UAE<br>
+                Phone : +971 55 667 7221
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center bg-dark p-2 text-white mt-3">
+    <div class="txt-12">All Copyrights reserved @ Athena Global Education 2020</div>
+  </div>
+</footer></div>
+         <script type="text/javascript">
+            includeHTML();
+            function includeHTML() {
+                var z, i, elmnt, file, xhttp;
+                /* Loop through a collection of all HTML elements: */
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[i];
+                    /*search for elements with a certain atrribute:*/
+                    file = elmnt.getAttribute("w3-include-html");
+                    if (file) {
+                        /* Make an HTTP request using the attribute value as the file name: */
+                        xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4) {
+                                if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                                if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                                /* Remove the attribute, and call this function once more: */
+                                elmnt.removeAttribute("w3-include-html");
+                                includeHTML();
+                            }
+                        }
+                        xhttp.open("GET", file, true);
+                        xhttp.send();
+                        /* Exit the function: */
+                        return;
+                    }
+                }
+            }
+         </script>
+      </section>

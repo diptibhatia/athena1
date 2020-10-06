@@ -1,0 +1,155 @@
+<div class="container-fluid my-container">
+             <div class="explore-courses">
+                <div class="wrapper">
+                   <h2>Explore our Courses</h2>
+                   <div class="course-text-info">
+                      <p>
+                         We have a multitude of courses tailored to your career goals and busy schedule. These courses have been developed to enhance your knowledge and critical thinking abilities and make you an expert in your domain.
+                      </p>
+                   </div>
+                </div>
+                <div class="tabs">
+                   <ul class="nav tabs-cyan tab-list" id="myClassicTab" role="tablist">
+                      <li class="nav-item tab-item">
+                         <a class="nav-link waves-light show active" id="overview-tab-classic" data-toggle="tab" href="#acadamic" role="tab" aria-controls="overview-classic" aria-selected="true">Acadamic</a>
+                      </li>
+                      <li class="nav-item tab-item">
+                         <a class="nav-link waves-light" id="course-module-tab-classic" data-toggle="tab" href="#micro-credits" role="tab" aria-controls="course-module-classic" aria-selected="false">Micro Credits</a>
+                      </li>
+                      <li class="nav-item tab-item">
+                         <a class="nav-link waves-light" id="eligibility-tab-classic" data-toggle="tab" href="#certifications" role="tab" aria-controls="eligibility-classic" aria-selected="false">Certifications</a>
+                      </li>
+                   </ul>
+                </div>
+                <div class="tab-content rounded-bottom" id="myClassicTabContent">
+                   <div class="tab-pane fade active show" id="acadamic" role="tabpanel" aria-labelledby="acadamic-tab-classic">
+                      <div class="fyi-tabs__overview">
+                         <div class="courses-offered">
+                            <div class="info">
+                               <h2>Our Acadamic Courses</h2>
+                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               </p>
+                               <button>View All Courses</button>
+                            </div>
+                            <div class="courses">
+                               <div class="course-list">
+                                 {% for academicdata in academic %}
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                                     </div>
+                                     <div class="price-tag">
+                                        <p>${{academicdata.field_course_total_fee.value}}</p>
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>{{academicdata.label}}</h1>
+                                        <h2>{{academicdata.field_course_awarding_body.value|raw }}</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>{{academicdata.field_course_ects_credit.value}} Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( {{academicdata.field_course_duration.value}})</h3>
+                                     </div>
+                                     <div class="course-info">
+                                       {{academicdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p><a href="{{ url('<front>') }}course/{{academicdata.id}}" >Know More</a></p>
+                                     </div>
+                                  </div>
+                        {% endfor %}
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="tab-pane fade" id="micro-credits" role="tabpanel" aria-labelledby="micro-credits-tab-classic">
+                      <div class="fyi-tabs__micro-credits">
+                         <div class="courses-offered">
+                            <div class="info">
+                               <h2>Our Micro Credits Courses</h2>
+                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               </p>
+                               <button>View All Courses</button>
+                            </div>
+                            <div class="courses">
+                               <div class="course-list">
+                                  
+                                  <div class="course-list">
+                                 {% for microdata in micro %}
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                                     </div>
+                                     <div class="price-tag">
+                                        <p>${{microdata.field_course_total_fee.value}}</p>
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>{{microdata.label}}</h1>
+                                        <h2>{{microdata.field_course_awarding_body.value|raw }}</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>{{microdata.field_course_ects_credit.value}} Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( {{microdata.field_course_duration.value}})</h3>
+                                     </div>
+                                     <div class="course-info">
+                                       {{microdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p><a href="{{ url('<front>') }}course/{{microdata.id}}" >Know More</a></p>
+                                     </div>
+                                  </div>
+        {% endfor %}
+                               </div>
+                                  
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="tab-pane fade" id="certifications" role="tabpanel" aria-labelledby="certifications-tab-classic">
+                      <div class="fyi-certifications">
+                         <div class="courses-offered">
+                            <div class="info">
+                               <h2>Our Certifications Courses</h2>
+                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               </p>
+                               <button>View All Courses</button>
+                            </div>
+                            <div class="courses">
+                               <div class="course-list">
+                                  
+                                   {% for certificationsdata in certifications %}
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                                     </div>
+                                     <div class="price-tag">
+                                        <p>${{certificationsdata.field_course_total_fee.value}}</p>
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>{{certificationsdata.label}}</h1>
+                                        <h2>{{certificationsdata.field_course_awarding_body.value|raw }}</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>{{certificationsdata.field_course_ects_credit.value}} Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( {{certificationsdata.field_course_duration.value}})</h3>
+                                     </div>
+                                     <div class="course-info">
+                                       {{certificationsdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p><a href="{{ url('<front>') }}course/{{certificationsdata.id}}" >Know More</a></p>
+                                     </div>
+                                  </div>
+   {% endfor %}
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        </div>

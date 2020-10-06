@@ -1,0 +1,17 @@
+uuid: 1eb3ecc7-e284-49b8-ba93-daac82b7b66f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Course
+type: course
+description: 'This content type is for managing course contents'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

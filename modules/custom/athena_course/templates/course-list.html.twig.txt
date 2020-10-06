@@ -1,0 +1,23 @@
+<div class="course-main">
+          <h2 class="course-title">Master of Business Administration</h2>
+          <h4 class="course-partner">Some University,Italy</h4>
+          <p class="course-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit ad minim.
+            Lorem ipsum dolor Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+            ipsum dolor Lorem ipsum olor sit amet Lorem ipsum dolor sit amet,
+            consectetur adipisicing
+          </p>
+          <div class="tag">
+            <p>Academic</p>
+          </div>
+          <div class="duration">
+            <div class="row">
+              <li class="column-1" style="list-style: none">
+                <span>Masters (EQF evel 7)<span> | <span>60 credit(ECTS)</span> | <span>Duration: Flexible(9 to
+                36 Months)</span>
+              </span></span></li>
+
+              <a class="column-2" href="#">Apply Now</a>
+            </div>
+          </div>
+        </div>

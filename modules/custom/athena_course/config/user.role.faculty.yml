@@ -1,0 +1,18 @@
+uuid: 594e4e7c-4991-421f-a8fd-d459651901b6
+langcode: en
+status: true
+dependencies: {  }
+id: faculty
+label: Faculty
+weight: 3
+is_admin: null
+permissions:
+  - 'administer blocks'
+  - 'create course content'
+  - 'delete any course content'
+  - 'delete course revisions'
+  - 'delete own course content'
+  - 'edit any course content'
+  - 'edit own course content'
+  - 'revert course revisions'
+  - 'view course revisions'

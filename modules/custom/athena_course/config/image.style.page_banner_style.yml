@@ -1,0 +1,7 @@
+uuid: a23d0a3d-a42d-4005-af3a-c4c23d85e23f
+langcode: en
+status: true
+dependencies: {  }
+name: page_banner_style
+label: page_banner_style
+effects: {  }

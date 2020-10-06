@@ -1,0 +1,37 @@
+uuid: 6189cf06-6382-49fd-8dea-bbd8c2313499
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_modules
+    - node.type.course
+    - paragraphs.paragraphs_type.course_module_details
+  module:
+    - entity_reference_revisions
+id: node.course.field_course_modules
+field_name: field_course_modules
+entity_type: node
+bundle: course
+label: 'Course Modules'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      course_module_details: course_module_details
+    target_bundles_drag_drop:
+      course_module_details:
+        enabled: true
+        weight: 4
+      homepage_banner:
+        weight: 5
+        enabled: false
+      homepage_content:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

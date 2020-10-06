@@ -1,0 +1,19 @@
+uuid: de6a5af1-4cc7-4307-8262-d46a6f78fe3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_course_language_prof_desc
+field_name: field_course_language_prof_desc
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

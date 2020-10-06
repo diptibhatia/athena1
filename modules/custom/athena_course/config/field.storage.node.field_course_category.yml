@@ -1,0 +1,30 @@
+uuid: 76ee0870-8cc3-45f6-aef4-e0f51cb213dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_course_category
+field_name: field_course_category
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Academic
+      label: Academic
+    -
+      value: 'Micro Credits'
+      label: 'Micro Credits'
+    -
+      value: Certifications
+      label: Certifications
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

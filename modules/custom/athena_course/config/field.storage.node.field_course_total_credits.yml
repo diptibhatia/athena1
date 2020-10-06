@@ -1,0 +1,20 @@
+uuid: a9d89301-1d66-457d-9e39-c8ff69cd8bbd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_course_total_credits
+field_name: field_course_total_credits
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

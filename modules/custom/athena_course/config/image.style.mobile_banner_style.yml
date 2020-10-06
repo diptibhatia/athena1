@@ -1,0 +1,7 @@
+uuid: 32080d79-f7a2-40c5-98d5-d9e0a3c7f85a
+langcode: en
+status: true
+dependencies: {  }
+name: mobile_banner_style
+label: mobile_banner_style
+effects: {  }

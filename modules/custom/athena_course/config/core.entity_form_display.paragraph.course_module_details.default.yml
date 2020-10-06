@@ -1,0 +1,39 @@
+uuid: 9fc88ef0-4ae2-4a43-93c4-2cf1d6a54486
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.course_module_details.field_course_module_ects_credit
+    - field.field.paragraph.course_module_details.field_course_module_fees
+    - field.field.paragraph.course_module_details.field_course_module_name
+    - paragraphs.paragraphs_type.course_module_details
+id: paragraph.course_module_details.default
+targetEntityType: paragraph
+bundle: course_module_details
+mode: default
+content:
+  field_course_module_ects_credit:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_course_module_fees:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_course_module_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

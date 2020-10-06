@@ -1,0 +1,19 @@
+uuid: a631d9ff-b1c5-4a54-b1a0-118f6ea83729
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_course_module_name
+    - paragraphs.paragraphs_type.course_module_details
+id: paragraph.course_module_details.field_course_module_name
+field_name: field_course_module_name
+entity_type: paragraph
+bundle: course_module_details
+label: 'Course Module Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

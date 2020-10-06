@@ -1,0 +1,8 @@
+uuid: ef40ac98-4f7d-4efb-99ac-e4b5b4a15800
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_banner_block_type
+label: 'Homepage banner block type'
+revision: 0
+description: 'The block type is for creating blocks with Homepage banner paragraph type'

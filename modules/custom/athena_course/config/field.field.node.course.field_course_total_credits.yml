@@ -1,0 +1,23 @@
+uuid: bdd3dcc1-09b7-4173-814a-6844cbdc916e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_total_credits
+    - node.type.course
+id: node.course.field_course_total_credits
+field_name: field_course_total_credits
+entity_type: node
+bundle: course
+label: 'Course Total Credits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

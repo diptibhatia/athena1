@@ -1,0 +1,19 @@
+uuid: 5cae9e29-6836-47fc-9933-955d3a332c2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.page_heading_banner_block
+    - field.storage.block_content.field_block_heading
+id: block_content.page_heading_banner_block.field_block_heading
+field_name: field_block_heading
+entity_type: block_content
+bundle: page_heading_banner_block
+label: 'Page heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
