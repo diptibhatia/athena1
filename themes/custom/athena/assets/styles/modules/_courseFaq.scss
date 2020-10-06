@@ -1,0 +1,219 @@
+.course-faq {
+    padding: 28px 0 0;
+    background-color: #fff;
+
+    @include atSize850 {
+        padding-top: 60px;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1.33;
+        letter-spacing: .4px;
+        text-align: center;
+        margin-bottom: 28px;
+        padding: 0 12px;
+
+        @include atSize850 {
+            font-size: 2rem;
+            text-align: left;
+            margin: 0 auto 50px;
+            max-width: 1170px;
+        }
+
+        @include atSize1100 {
+            padding: 0 4rem;
+        }
+
+        @include atSize1250 {
+            padding: 0;
+        }
+    }
+
+    .wrapper {
+        padding: 0;
+        max-width: none;
+    }
+
+    .accordion {
+
+        .card {
+            margin: 0 0 5px;
+            width: 100%;
+            border-radius: 0;
+            border: solid 1px #e4e7e9;
+
+            &-header {
+                padding: 0;
+                border-bottom: none;
+                background-color: #fafbfc;
+
+                button.btn-link {
+                    width: 100%;
+                    display: block;
+                    color: $titlePink;
+                    text-decoration: none;
+                    transition: color .2s ease-out;
+                    height: 80px;
+                    box-sizing: border-box;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    letter-spacing: .3px;
+                    text-align: left;
+                    background-color: #fafbfc;
+                    overflow-y: auto;
+                    position: relative;
+                    padding: 0 12px;
+                    padding-right: 28px;
+                    max-width: 1170px;
+                    margin: 0 auto;
+
+                    &::after {
+                        content: '';
+                        border: solid black;
+                        border-width: 0 2px 2px 0;
+                        transform: rotate(-135deg);
+                        display: inline-block;
+                        padding: 4.5px;
+                        position: absolute;
+                        right: 12px;
+                        top: 32.5px;
+                        opacity: 0.6;
+                        transition: transform .2s ease-out;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    &[aria-expanded="false"] {
+                        color: $primaryColor;
+
+                        &::after {
+                            transform: rotate(45deg);
+                        }
+                    }
+
+                    @include atSize850 {
+                        font-size: 1.125rem;
+                        height: 100px;
+                    }
+
+                    @include atSize1100 {
+                        padding: 0 4rem;
+
+                        &::after {
+                            right: 30px;
+                        }
+                    }
+
+                    @include atSize1250 {
+                        padding: 0 28px 0 0;
+                    }
+                }
+            }
+
+            &-body {
+                padding: 0;
+                box-shadow: 0 2px 25px 2px #d5dbfb;
+                max-width: 1170px;
+                margin: 0 auto;
+                position: relative;
+
+                .card {
+                    border: none;
+                    border-bottom: solid 1px rgba(151, 151, 151, 0.3);
+                    margin-bottom: 0;
+
+                    &:nth-last-of-type(1) {
+                        border-bottom: none;
+                    }
+
+                    button.btn-link {
+                        background-color: #fff;
+                        font-size: .75rem;
+                        font-weight: normal;
+                        color: $secondaryColor;
+                        min-height: 50px;
+                        height: auto;
+                        max-height: 80px;
+                        padding: 0 12px;
+                        padding-right: 40px;
+                        position: relative;
+
+                        &::after {
+                            border: none;
+                            background: url('images/coursepage/faq-add.svg') no-repeat;
+                            padding: 0;
+                            width: 20px;
+                            height: 20px;
+                            top: 50%;
+                            transform: translateY(-50%) scale(.75);
+                            opacity: 0;
+                            transition: opacity .2s ease-out;
+                        }
+
+                        &::before {
+                            content: '';
+                            border: none;
+                            background: url('images/coursepage/hide.png') no-repeat;
+                            padding: 0;
+                            width: 20px;
+                            height: 2px;
+                            display: inline-block;
+                            opacity: 1;
+                            transition: opacity .2s ease-out;
+                            top: 50%;
+                            transform: translateY(-50%) scale(.75);
+                            right: 12px;
+                            position: absolute;
+                        }
+
+                        &[aria-expanded="false"] {
+
+                            &::after {
+                                opacity: 1;
+                            }
+
+                            &::before {
+                                opacity: 0;
+                            }
+                        }
+
+                        @include atSize850 {
+                            font-size: 1rem;
+                            min-height: 75px;
+
+                            &::after, &::before {
+                                right: 30px;
+                                transform: translateY(-50%) scale(.9);
+                            }
+                        }
+
+                        @include atSize1100 {
+                            padding: 0 4rem;
+                        }
+
+                        @include atSize1250 {
+                            padding: 0 60px 0 20px;
+                        } 
+                    }
+
+                    &-body {
+                        padding: 6px 12px;
+                        font-size: .75rem;
+                        color: $secondaryColor;
+                        letter-spacing: .1px;
+
+                        @include atSize850 {
+                            font-size: .875rem;
+                            padding: 10px 20px;
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

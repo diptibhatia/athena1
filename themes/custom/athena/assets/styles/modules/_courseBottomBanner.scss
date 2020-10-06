@@ -1,0 +1,51 @@
+.course-bottom-banner {
+    padding: 75px 0 71px;
+    background-image: url('images/coursepage/footer-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+
+    @include atSize850 {
+        padding: 66px 0 62px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.28;
+        margin: 0 auto 43px;
+        padding: 0 18px;
+        text-align: center;
+        color: #fff;
+        letter-spacing: .4px;
+        max-width: 400px;
+        box-sizing: border-box;
+
+        span {
+            color: #ffb800;
+        }
+
+        @include atSize850 {
+            font-size: 2.625rem;
+            line-height: 1.24;
+            margin-bottom: 38px;
+            padding: 0;
+        }
+    }
+
+    a {
+        width: 175px;
+        height: 50px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        background: transparent;
+        border: solid 2px #fff;
+        line-height: 46px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 25px;
+        text-align: center;
+    }
+}
