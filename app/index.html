@@ -1,259 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
-      <link href='assets/styles/main.css' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="assets/styles/modules/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/styles/modules/bootstrap-grid.min.css">
-      <link rel="stylesheet" href="assets/styles/modules/bootstrap-reboot.min.css">
-      <link rel="stylesheet" href="assets/styles/modules/fontawesome.min.css">
-      <link rel="stylesheet" href="assets/styles/modules/regular.min.css">
-      <title>Home</title>
-   </head>
-   <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <title>Home</title>
+</head>
+
+<body>
     <div w3-include-html="header.html"></div>
-    <div class="testimonial-bg-image"><img src="images/testimonial-bg.png" alt=""/></div>
-    <div class="free-trial-bg-image"><img src="images/bg-take7daytrial.png" alt=""/></div>
-      <div class="top-search-section">
-         <div class="grid-view">
-            <div class="wrapper">
-               <!-- <div class="highlighter"></div> -->
-               <h1 class="top-search-section__title"><span>Learn & Upskill</span> in an easy way !</h1>
-               <p class="top-search-section__text">Its never too late to Learn. The whole world of opportunities 
-                  infront of you —  We make learning <span>easy, affordable</span> and <span>flexible</span> for you.
-               </p>
-               <form class="top-search-section__search">
-                  <input class="top-search-section__search-input" type="text"
-                     placeholder="What do you want to learn ?">
-                  <input class="top-search-section__search-btn" type="submit" value="Search">
-                  <div class="search-icon">
-                     <img src="images/search.svg" alt="search icon">
-                  </div>
-               </form>
-               <div class="top-search-section__background-image">
-                  <img src="images/Banner.png" alt="background image">
-               </div>
-               <div class="top-search-section__mobile-background-image">
-                  <img src="images/mob-bg.svg" alt="background image">
-               </div>
-            </div>
+    <div class="main-wrapper container-fluid p-0 home-wrapper">
+
+        <div class="banner container-fluid banner-image p-0 bg-white">
+         <img src="images/Banner.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
+         <img src="images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
+         <div class="container carousel-caption text-left p-0">
+             <h1 class="top-search-section__title"><span>Learn &amp; Upskill</span> in an easy way !</h1>
+              <p class="top-search-section__text">Its never too late to Learn. The whole world of opportunities infront of you - We make learning <span>easy, affordable</span> and <span>flexible</span> for you.</p>
+              <form class="top-search-section__search">
+                 <input class="top-search-section__search-input" type="text"
+                    placeholder="What do you want to learn ?">
+                 <input class="top-search-section__search-btn" type="submit" value="Search">
+                 <div class="search-icon">
+                    <img src="images/search.svg" alt="search icon">
+                 </div>
+              </form>
          </div>
-      </div>
-      <div class="container-fluid my-container">
-         <div class="explore-courses">
-            <div class="wrapper">
-               <h2>Explore our Courses</h2>
-               <div class="course-text-info">
-                  <p>
-                     We have a multitude of courses tailored to your career goals and busy schedule. These courses have been developed to enhance your knowledge and critical thinking abilities and make you an expert in your domain.
-                  </p>
-               </div>
-            </div>
-            <div class="tabs">
-               <ul class="nav tabs-cyan tab-list" id="myClassicTab" role="tablist">
-                  <li class="nav-item tab-item">
-                     <a class="nav-link  waves-light active show" id="overview-tab-classic" data-toggle="tab" href="#acadamic"
-                        role="tab" aria-controls="overview-classic" aria-selected="true">Acadamic</a>
-                  </li>
-                  <li class="nav-item tab-item">
-                     <a class="nav-link waves-light" id="course-module-tab-classic" data-toggle="tab" href="#micro-credits" role="tab"
-                        aria-controls="course-module-classic" aria-selected="false">Micro Credits</a>
-                  </li>
-                  <li class="nav-item tab-item">
-                     <a class="nav-link waves-light" id="eligibility-tab-classic" data-toggle="tab" href="#certifications" role="tab"
-                        aria-controls="eligibility-classic" aria-selected="false">Certifications</a>
-                  </li>
-               </ul>
-            </div>
-            <div class="tab-content rounded-bottom" id="myClassicTabContent">
-               <div class="tab-pane fade active show" id="acadamic" role="tabpanel" aria-labelledby="acadamic-tab-classic">
-                  <div class="fyi-tabs__overview">
-                     <div class="courses-offered">
-                        <div class="info">
-                           <h2>Our Acadamic Courses</h2>
-                           <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                              typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
-                           </p>
-                           <button>View All Courses</button>
-                        </div>
-                        <div class="courses">
-                           <div class="course-list">
-                              <div class="course-item">
-                                 <div class="image">
-                                    <img src="images/course-image1.png" alt="course-image" />
-                                 </div>
-                                 <div class="price-tag">
-                                    <p>$4400.00</p>
-                                 </div>
-                                 <div class="course-details">
-                                    <h1>Master of Business Administration</h1>
-                                    <h2>Guglielmo Marconi University, Italy</h2>
-                                    <div class="course-tags">
-                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                    </div>
-                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                                 </div>
-                                 <div class="course-info">
-                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy<br><span>Read More</span>
-                                 </div>
-                                 <div class="know-more">
-                                    <p>Know More</p>
-                                 </div>
-                              </div>
-                              <div class="course-item">
-                                 <div class="image">
-                                    <img src="images/course-image2.png" alt="course-image" />
-                                 </div>
-                                 <div class="price-tag">
-                                    <p>$4400.00</p>
-                                 </div>
-                                 <div class="course-details">
-                                    <h1>Master of Business Administration</h1>
-                                    <h2>Guglielmo Marconi University, Italy</h2>
-                                    <div class="course-tags">
-                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                    </div>
-                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                                 </div>
-                                 <div class="course-info">
-                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy <br><span>Read More</span>
-                                 </div>
-                                 <div class="know-more">
-                                    <p>Know More</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="tab-pane fade" id="micro-credits" role="tabpanel" aria-labelledby="micro-credits-tab-classic">
-                  <div class="fyi-tabs__micro-credits">
-                     <div class="courses-offered">
-                        <div class="info">
-                           <h2>Our Micro Credits Courses</h2>
-                           <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                              typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
-                           </p>
-                           <button>View All Courses</button>
-                        </div>
-                        <div class="courses">
-                           <div class="course-list">
-                              <div class="course-item">
-                                 <div class="image">
-                                    <img src="images/course-image1.png" alt="course-image" />
-                                 </div>
-                                 <div class="course-details">
-                                    <h1>Master of Business Administration</h1>
-                                    <h2>Guglielmo Marconi University, Italy</h2>
-                                    <div class="course-tags">
-                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                    </div>
-                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                                 </div>
-                                 <div class="course-info">
-                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                                    text of the <span>Read More</span>
-                                 </div>
-                                 <div class="know-more">
-                                    <p>Know More</p>
-                                 </div>
-                              </div>
-                              <div class="course-item">
-                                 <div class="image">
-                                    <img src="images/course-image2.png" alt="course-image" />
-                                 </div>
-                                 <div class="course-details">
-                                    <h1>Master of Business Administration</h1>
-                                    <h2>Guglielmo Marconi University, Italy</h2>
-                                    <div class="course-tags">
-                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                    </div>
-                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                                 </div>
-                                 <div class="course-info">
-                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                                    text of the <span>Read More</span>
-                                 </div>
-                                 <div class="know-more">
-                                    <p>Know More</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="tab-pane fade" id="certifications" role="tabpanel" aria-labelledby="certifications-tab-classic">
-                  <div class="fyi-certifications">
-                     <div class="courses-offered">
-                        <div class="info">
-                           <h2>Our Certifications Courses</h2>
-                           <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                              typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
-                           </p>
-                           <button>View All Courses</button>
-                        </div>
-                        <div class="courses">
-                           <div class="course-list">
-                              <div class="course-item">
-                                 <div class="image">
-                                    <img src="images/course-image1.png" alt="course-image" />
-                                 </div>
-                                 <div class="course-details">
-                                    <h1>Master of Business Administration</h1>
-                                    <h2>Guglielmo Marconi University, Italy</h2>
-                                    <div class="course-tags">
-                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                    </div>
-                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                                 </div>
-                                 <div class="course-info">
-                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                                    text of the <span>Read More</span>
-                                 </div>
-                                 <div class="know-more">
-                                    <p>Know More</p>
-                                 </div>
-                              </div>
-                              <div class="course-item">
-                                 <div class="image">
-                                    <img src="images/course-image2.png" alt="course-image" />
-                                 </div>
-                                 <div class="course-details">
-                                    <h1>Master of Business Administration</h1>
-                                    <h2>Guglielmo Marconi University, Italy</h2>
-                                    <div class="course-tags">
-                                       <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
-                                    </div>
-                                    <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
-                                 </div>
-                                 <div class="course-info">
-                                    Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
-                                    text of the <span>Read More</span>
-                                 </div>
-                                 <div class="know-more">
-                                    <p>Know More</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="back-images">
+        </div>
+
+        <div class="container-fluid my-container">
+             <div class="explore-courses">
+                <div class="wrapper">
+                   <h2>Explore our Courses</h2>
+                   <div class="course-text-info">
+                      <p>
+                         We have a multitude of courses tailored to your career goals and busy schedule. These courses have been developed to enhance your knowledge and critical thinking abilities and make you an expert in your domain.
+                      </p>
+                   </div>
+                </div>
+                <div class="tabs">
+                   <ul class="nav tabs-cyan tab-list" id="myClassicTab" role="tablist">
+                      <li class="nav-item tab-item">
+                         <a class="nav-link  waves-light active show" id="overview-tab-classic" data-toggle="tab" href="#acadamic"
+                            role="tab" aria-controls="overview-classic" aria-selected="true">Acadamic</a>
+                      </li>
+                      <li class="nav-item tab-item">
+                         <a class="nav-link waves-light" id="course-module-tab-classic" data-toggle="tab" href="#micro-credits" role="tab"
+                            aria-controls="course-module-classic" aria-selected="false">Micro Credits</a>
+                      </li>
+                      <li class="nav-item tab-item">
+                         <a class="nav-link waves-light" id="eligibility-tab-classic" data-toggle="tab" href="#certifications" role="tab"
+                            aria-controls="eligibility-classic" aria-selected="false">Certifications</a>
+                      </li>
+                   </ul>
+                </div>
+                <div class="tab-content rounded-bottom" id="myClassicTabContent">
+                   <div class="tab-pane fade active show" id="acadamic" role="tabpanel" aria-labelledby="acadamic-tab-classic">
+                      <div class="fyi-tabs__overview">
+                         <div class="courses-offered">
+                            <div class="info">
+                               <h2>Our Acadamic Courses</h2>
+                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               </p>
+                               <button>View All Courses</button>
+                            </div>
+                            <div class="courses">
+                               <div class="course-list">
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="images/course-image1.png" alt="course-image" />
+                                     </div>
+                                     <div class="price-tag">
+                                        <p>$4400.00</p>
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>Master of Business Administration</h1>
+                                        <h2>Guglielmo Marconi University, Italy</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                     </div>
+                                     <div class="course-info">
+                                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy<br><span>Read More</span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p>Know More</p>
+                                     </div>
+                                  </div>
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="images/course-image2.png" alt="course-image" />
+                                     </div>
+                                     <div class="price-tag">
+                                        <p>$4400.00</p>
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>Master of Business Administration</h1>
+                                        <h2>Guglielmo Marconi University, Italy</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                     </div>
+                                     <div class="course-info">
+                                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy <br><span>Read More</span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p>Know More</p>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="tab-pane fade" id="micro-credits" role="tabpanel" aria-labelledby="micro-credits-tab-classic">
+                      <div class="fyi-tabs__micro-credits">
+                         <div class="courses-offered">
+                            <div class="info">
+                               <h2>Our Micro Credits Courses</h2>
+                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               </p>
+                               <button>View All Courses</button>
+                            </div>
+                            <div class="courses">
+                               <div class="course-list">
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="images/course-image1.png" alt="course-image" />
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>Master of Business Administration</h1>
+                                        <h2>Guglielmo Marconi University, Italy</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                     </div>
+                                     <div class="course-info">
+                                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                                        text of the <span>Read More</span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p>Know More</p>
+                                     </div>
+                                  </div>
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="images/course-image2.png" alt="course-image" />
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>Master of Business Administration</h1>
+                                        <h2>Guglielmo Marconi University, Italy</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                     </div>
+                                     <div class="course-info">
+                                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                                        text of the <span>Read More</span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p>Know More</p>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="tab-pane fade" id="certifications" role="tabpanel" aria-labelledby="certifications-tab-classic">
+                      <div class="fyi-certifications">
+                         <div class="courses-offered">
+                            <div class="info">
+                               <h2>Our Certifications Courses</h2>
+                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
+                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               </p>
+                               <button>View All Courses</button>
+                            </div>
+                            <div class="courses">
+                               <div class="course-list">
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="images/course-image1.png" alt="course-image" />
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>Master of Business Administration</h1>
+                                        <h2>Guglielmo Marconi University, Italy</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                     </div>
+                                     <div class="course-info">
+                                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                                        text of the <span>Read More</span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p>Know More</p>
+                                     </div>
+                                  </div>
+                                  <div class="course-item">
+                                     <div class="image">
+                                        <img src="images/course-image2.png" alt="course-image" />
+                                     </div>
+                                     <div class="course-details">
+                                        <h1>Master of Business Administration</h1>
+                                        <h2>Guglielmo Marconi University, Italy</h2>
+                                        <div class="course-tags">
+                                           <p>Masters ( EQF Level 7) <span>|</span>60 Credits (ECTS)</p>
+                                        </div>
+                                        <h3><b>Duration : </b>Flexible ( 9 to 36 Months)</h3>
+                                     </div>
+                                     <div class="course-info">
+                                        Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy
+                                        text of the <span>Read More</span>
+                                     </div>
+                                     <div class="know-more">
+                                        <p>Know More</p>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        </div>
+        <div class="back-images">
          <img src="images/dots-course.svg" alt=""/>
-      </div>
-      <div class="why-athena">
+        </div>
+
+        <div class="why-athena">
          <div class="athena-background-image">
             <img src="images/bg-whyathena.png" />
          </div>
+         <div class="img-placeholder"></div>
          <div class="container-fluid my-container">
             <div class="athena-section">
                <div class="why-athena-item-one">
@@ -285,8 +275,11 @@
                      </div>
                   </div>
                </div>
+               <div class="laptop-bg">
+                  <img src="images/laptop-bg1.svg" alt=""/>
+               </div>
                <div class="why-athena-item-two">
-                  <img src="images/why-athea-home.png" />
+                  <img src="images/why-athea-home.png" alt=""/>
                </div>
             </div>
             <div class="get-started">
@@ -296,7 +289,7 @@
                <h1>Collaborate, Learn and Network Globally</h1>
                <div class="collaorate-heading"></div>
                <div class="collaborate-section">
-                  <div class="collaborate-item img-placeholder">
+                  <div class="collaborate-item">
                      <img src="images/collaborate-bg.png" />
                   </div>
                   <div class="collaborate-item">
@@ -389,14 +382,14 @@
                         </div>
                      </div>
                   </div>
-               </div>
+                 </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="container-fluid my-container">
+        </div>
+        <div class="container-fluid my-container">
          <div class="partners">
             <div class="info shawdow-effect">
-               <!-- <h1>Our Partners</h1> -->
+               
                <img src="images/partners-text.svg" alt="" />
                <h2>Universities we Partner <br>With</h2>
                <h3>We partner with some of the renowned universities of the world to develop and deliver our programs like Guglielmo Marconi University, Italy, Universidad Catolica De Murcia (UCAM), Spain and Bellevue University, USA. They are all top ranking universities.
@@ -439,20 +432,7 @@
                      </div>
                 </div>
             </div>
-<!--             <div class="partner-logos">
-               <div class="logo">
-                  <img src="images/cmi-logo.svg" />
-               </div>
-               <div class="logo">
-                  <img src="images/ciq-logo.svg" />
-               </div>
-               <div class="logo">
-                  <img src="images/sqa-logo.svg" />
-               </div>
-               <div class="logo">
-                  <img src="images/ucam-logo.svg" />
-               </div>
-            </div> -->
+
          </div>
          <div class="know-more">
             <button>Know More</button>
@@ -538,7 +518,9 @@
             </div>
          </div>
       </div>
+
       <div w3-include-html="insights-courses.html"></div>
+
       <div class="container-fluid my-container">
          <div class="popular-courses shawdow-effect">
             <!-- <h1>Popular Courses</h1> -->
@@ -624,38 +606,41 @@
             </div>
          </div>
       </div>
-      <div w3-include-html="footer.html"></div>
-      <script type="text/javascript">
-         includeHTML();
-         function includeHTML() {
-             var z, i, elmnt, file, xhttp;
-             /* Loop through a collection of all HTML elements: */
-             z = document.getElementsByTagName("*");
-             for (i = 0; i < z.length; i++) {
-                 elmnt = z[i];
-                 /*search for elements with a certain atrribute:*/
-                 file = elmnt.getAttribute("w3-include-html");
-                 if (file) {
-                     /* Make an HTTP request using the attribute value as the file name: */
-                     xhttp = new XMLHttpRequest();
-                     xhttp.onreadystatechange = function () {
-                         if (this.readyState == 4) {
-                             if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                             if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                             /* Remove the attribute, and call this function once more: */
-                             elmnt.removeAttribute("w3-include-html");
-                             includeHTML();
-                         }
-                     }
-                     xhttp.open("GET", file, true);
-                     xhttp.send();
-                     /* Exit the function: */
-                     return;
-                 }
-             }
-         }
-      </script>
-      <script src="jquery.min.js"></script>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script type="text/javascript">
+        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+    <script src="jquery.min.js"></script>
       <script src="owl.carousel.js"></script>
       <script>
         $(document).ready(function() {
@@ -683,9 +668,8 @@
             })
         })
     </script>
-      <script src="bundled.js"></script>
-      <script src="assets/scripts/bootstrap.min.js"></script>
-      <script src="assets/scripts/fontawesome.min.js"></script>
-      <script src="assets/scripts/regular.min.js"></script>
-   </body>
+
+    <script src="bundled.js"></script>
+</body>
+
 </html>

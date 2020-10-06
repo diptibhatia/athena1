@@ -18,8 +18,24 @@ body {
 	}
 }
 
+.rounded-md {
+	border-radius: 1rem !important;
+}
+
 .bg-purple {
 	background-color: $purpleColor !important;
+}
+
+.bg-highlight-blue {
+	background-color: $highlight-blue;
+}
+
+.highlight-blue-txt {
+	color: $highlight-blue;
+}
+
+.bg-light-grey {
+	background-color: $light-grey;
 }
 
 .bg-blue {
@@ -143,4 +159,11 @@ blockquote {
 
 .more-link:after {
 	content: ' \2192'
+}
+
+
+.container {
+	@include atSize1250 {
+		max-width: 1170px;
+	}
 }
