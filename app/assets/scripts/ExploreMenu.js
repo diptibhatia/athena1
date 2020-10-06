@@ -47,6 +47,9 @@ function showHide(list, length, className) {
                 if((list[j] != evt.target) && (list[j].querySelector(className))) {
                     list[j].classList.remove('show');
                     list[j].querySelector(className).classList.remove('show');
+                    if(list[j].querySelector(".secondary-arrow")) {
+                        list[j].querySelector(".secondary-arrow").classList.remove('show');
+                    }
                 }
             }  
         });
