@@ -151,31 +151,81 @@
 		}
 	}
 
-	.testimonials {
-		position: relative;
-		top: 0;
+	.why-athena {
 
-		.shawdow-effect {
-			h1 {
-				margin-top: 0;
+		.testimonials {
+			position: relative;
+			top: 0;
+
+			.shawdow-effect {
+				h1 {
+					margin-top: 0;
+				}
 			}
+
+			.testimonials-item {
+				.item-one {
+					padding: 0;
+				}
+
+				.testimonial-img {
+					padding: 15px 0 38px 0;
+				}
+
+				.back-images {
+
+					right: 6%;
+					top: 50%;
+					@include atSize700 { 
+						right: -15%;
+						top: 35%;
+					}				
+				}
+
+				.owl-nav {
+					bottom: -20px;
+					top: unset;
+				}
+
+				.student-image {
+					img {
+						@include atSize424 {
+							width: 140px !important;
+    						height: 88px !important;
+						}
+						
+
+						&.link_img {
+							width: 40px !important;
+						    height: 40px !important;
+					     	top: -45px;
+							left: 86px;
+							
+							@include atSize700 {
+							    top: -40px;
+							    left: 100px;	
+							}
+							
+						}
+					}
+				}
+
+				.student-review {
+					.info {
+						h3 {
+							.quotes {
+							    font-size: 30px;
+							    right: 8px;
+							    position: relative;
+							}
+							@include atSize424 {
+								padding: 40px 0 0 0;
+							}
+						}
+					}
+				}
+			}		
 		}
-
-		.testimonials-item {
-			.item-one {
-				padding: 0;
-			}
-
-			.testimonial-img {
-				padding: 15px 0 38px 0;
-			}
-
-			.owl-nav {
-				bottom: -20px;
-				top: unset;
-			}
-		}
-		
 	}
 
 	.academic-content {
