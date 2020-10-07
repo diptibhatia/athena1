@@ -9,6 +9,15 @@
 		}
 	}
 
+	.aboutus-modal {
+		.right-img {
+			img {
+				width: 284px;
+				height: 284px;
+			}
+		}
+	}
+
 	.award-content {
 		p {
 			font-size : 18px; 
@@ -220,7 +229,6 @@
 
 .bg-skyblue {
 	background-color: $skyblue;
-	// color: $secondaryColor;
 }
 
 .txt-blue {

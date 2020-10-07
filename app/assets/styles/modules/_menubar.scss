@@ -255,8 +255,9 @@
 
                 @include atSize1100 {
                     width: 279px;
-                    height: 38px;
-                    line-height: 38px;
+                    height: 50px;
+                    line-height: 50px;
+                    max-height: none;
                     font-size: 1rem;
                     font-weight: bold;
                     font-style: italic;
@@ -273,7 +274,7 @@
                         opacity: .4;
                         position: absolute;
                         right: 18px;
-                        margin-top: 14px;
+                        margin-top: 20px;
                     }
                 }
                 
