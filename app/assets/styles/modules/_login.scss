@@ -8,11 +8,10 @@
 		display: none;
 	}
 	img {
-		width: 1439px;
-	    height: 961px;
-	    position: absolute;
-	    right: -45px;
-	    top: -9%;
+		width: 100%;
+	    height: auto;
+	    position: relative;
+	    top: 8rem;
 	}
 }
 .login-wrapper {
