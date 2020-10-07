@@ -4,6 +4,8 @@ use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph; 
 use Drupal\Component\Serialization\Json;
 
+use \Drupal\Core\Url;
+
 class AthenaCourseController {
   public function course($nid) {
     // New D8 procedural code.
@@ -251,5 +253,186 @@ $base_path = $base_url.'/'. $theme->getPath();
 }
 
 
+function academic(){
+ // Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+$base_path = $base_url.'/'. $theme->getPath();
+
+
+$alias = \Drupal::service('path.alias_manager')->getPathByAlias('/explore-courses');
+$params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+$entity_type = key($params);
+$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+$paragraph_data = $node->field_explore_course_details->referencedEntities();
+
+
+foreach($paragraph_data as $explore_data) {
+    
+    $type = $explore_data->get('field_explore_course_type')->value;
+    
+    if($type == 'Academic') {
+        $title1 = 'Academic';
+        $title2 = 'Programs';
+        $desc = $explore_data->get('field_explore_course_banner_desc')->value;
+        $header_image = $explore_data->get('field_header_background_image')->value;
+        $header_image = $explore_data->get('field_header_background_image')->entity->getFileUri();
+        $url = file_create_url($header_image);
+        break;
+    }
+    
+}
+
+
+// Course list
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition('field_course_category', 'Academic');
+    $query->condition('type', $bundle);
+    $academic_list = $query->execute();
+    
+   $academicnodes = node_load_multiple($academic_list);
+
+$academic =  [
+  '#theme' => 'course_academic',
+  '#title1' => $title1,  
+  '#title2' => $title2,  
+  '#desc' => $desc,  
+  '#header_image' => $url,  
+  '#paragraph' => $type,  
+  '#course_list' => $academicnodes,  
+  '#base_path' => $base_path,  
+]; 
+
+
+return array($academic);
+   
+    
+}
+
+
+function micro_credits(){
+ // Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+$base_path = $base_url.'/'. $theme->getPath();
+
+
+$alias = \Drupal::service('path.alias_manager')->getPathByAlias('/explore-courses');
+$params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+$entity_type = key($params);
+$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+$paragraph_data = $node->field_explore_course_details->referencedEntities();
+
+
+foreach($paragraph_data as $explore_data) {
+    
+    $type = $explore_data->get('field_explore_course_type')->value;
+    
+    if($type == 'Micro Credits') {
+        $title1 = 'Micro';
+        $title2 = 'Credits';
+        $desc = $explore_data->get('field_explore_course_banner_desc')->value;
+        $header_image = $explore_data->get('field_header_background_image')->value;
+        $header_image = $explore_data->get('field_header_background_image')->entity->getFileUri();
+        $url = file_create_url($header_image);
+        break;
+    }
+    
+}
+
+
+// Course list
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition('field_course_category', 'Micro Credits');
+    $query->condition('type', $bundle);
+    $academic_list = $query->execute();
+    
+   $academicnodes = node_load_multiple($academic_list);
+
+$academic =  [
+  '#theme' => 'course_academic',
+  '#title1' => $title1,  
+  '#title2' => $title2,  
+  '#desc' => $desc,  
+  '#header_image' => $url,  
+  '#paragraph' => $type,  
+  '#course_list' => $academicnodes,  
+  '#base_path' => $base_path,  
+]; 
+
+
+return array($academic);
+   
+    
+}
+
+
+function certifications(){
+ // Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+$base_path = $base_url.'/'. $theme->getPath();
+
+
+$alias = \Drupal::service('path.alias_manager')->getPathByAlias('/explore-courses');
+$params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+$entity_type = key($params);
+$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+$paragraph_data = $node->field_explore_course_details->referencedEntities();
+
+
+foreach($paragraph_data as $explore_data) {
+    
+    $type = $explore_data->get('field_explore_course_type')->value;
+    
+    if($type == 'Certifications') {
+        $title1 = 'Certifications';
+        
+        $desc = $explore_data->get('field_explore_course_banner_desc')->value;
+        $header_image = $explore_data->get('field_header_background_image')->value;
+        $header_image = $explore_data->get('field_header_background_image')->entity->getFileUri();
+        $url = file_create_url($header_image);
+        break;
+    }
+    
+}
+
+
+// Course list
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition('field_course_category', 'Certifications');
+    $query->condition('type', $bundle);
+    $academic_list = $query->execute();
+    
+   $academicnodes = node_load_multiple($academic_list);
+
+$academic =  [
+  '#theme' => 'course_academic',
+  '#title1' => $title1,  
+  '#title2' => $title2,  
+  '#desc' => $desc,  
+  '#header_image' => $url,  
+  '#paragraph' => $type,  
+  '#course_list' => $academicnodes,  
+  '#base_path' => $base_path,  
+]; 
+
+
+return array($academic);
+   
+    
+}
 
 }

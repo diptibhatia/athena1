@@ -7,6 +7,8 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 
+use \Drupal\Core\Url;
+
 /**
  * Provides a block with a simple text.
  *
@@ -56,6 +58,45 @@ $query->condition('field_course_category', 'Academic');
     $certificationsnodes =  array_slice($certificationsnodes, 0, 2);
     
    // print_r($certificationsnodes);exit;
+   $alias = \Drupal::service('path.alias_manager')->getPathByAlias('/explore-courses');
+$params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+$entity_type = key($params);
+$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+$paragraph_data = $node->field_explore_course_details->referencedEntities();
+   
+   foreach($paragraph_data as $explore_data) {
+    
+    $type = $explore_data->get('field_explore_course_type')->value;
+    
+    if($type == 'Academic') {
+        $title1 = 'Academic';
+        $title2 = 'Programs';
+        $acaddesc = $explore_data->get('field_explore_course_banner_desc')->value;
+        $header_image = $explore_data->get('field_header_background_image')->value;
+        $header_image = $explore_data->get('field_header_background_image')->entity->getFileUri();
+        $url = file_create_url($header_image);
+       
+    }elseif ($type == 'Micro Credits') {
+        $title1 = 'Academic';
+        $title2 = 'Programs';
+        $microdesc = $explore_data->get('field_explore_course_banner_desc')->value;
+        $header_image = $explore_data->get('field_header_background_image')->value;
+        $header_image = $explore_data->get('field_header_background_image')->entity->getFileUri();
+        $url = file_create_url($header_image);
+       
+    }
+    elseif ($type == 'Certifications') {
+        $title1 = 'Certifications';
+        $title2 = 'Programs';
+        $cerdesc = $explore_data->get('field_explore_course_banner_desc')->value;
+        $header_image = $explore_data->get('field_header_background_image')->value;
+        $header_image = $explore_data->get('field_header_background_image')->entity->getFileUri();
+        $url = file_create_url($header_image);
+       
+    }
+    
+}
 
     
     // Base theme path.
@@ -67,6 +108,9 @@ $base_path = $base_url.'/'. $theme->getPath();
   '#academic' => $academicnodes,
   '#micro' => $micronodes,
   '#certifications' => $certificationsnodes,
+  '#acaddesc' => $acaddesc,
+  '#microdesc' => $microdesc,
+  '#cerdesc' => $cerdesc,
   '#base_path' => $base_path,
 
 ]; 

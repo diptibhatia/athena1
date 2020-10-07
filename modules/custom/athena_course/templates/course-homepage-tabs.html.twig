@@ -27,10 +27,9 @@
                          <div class="courses-offered">
                             <div class="info">
                                <h2>Our Acadamic Courses</h2>
-                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               <p>{{acaddesc | raw}} 
                                </p>
-                               <form class="top-search-section__search" action="{{ url('<front>') }}search-results/abc" method="POST">
+                               <form class="top-search-section__search" action="{{ url('<front>') }}academic-program" method="POST">
                                 <input type="hidden" name="course_category" value="Academic">
                                 <input type="hidden" name="submit_form" value="submit_form">
                                <button type="submit">View All Courses</button>
@@ -58,7 +57,7 @@
                                        {{academicdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
                                      </div>
                                      <div class="know-more">
-                                        <p><a href="{{ url('<front>') }}course/{{academicdata.id}}" >Know More</a></p>
+                                        <p><a style="color:inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Know More</a></p>
                                      </div>
                                   </div>
                         {% endfor %}
@@ -72,10 +71,9 @@
                          <div class="courses-offered">
                             <div class="info">
                                <h2>Our Micro Credits Courses</h2>
-                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               <p>{{microdesc | raw}} 
                                </p>
-                               <form class="top-search-section__search" action="{{ url('<front>') }}search-results/abc" method="POST">
+                               <form class="top-search-section__search" action="{{ url('<front>') }}micro-credits" method="POST">
                                 <input type="hidden" name="course_category" value="Micro Credits">
                                 <input type="hidden" name="submit_form" value="submit_form">
                                <button type="submit">View All Courses</button>
@@ -105,7 +103,7 @@
                                        {{microdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
                                      </div>
                                      <div class="know-more">
-                                        <p><a href="{{ url('<front>') }}course/{{microdata.id}}" >Know More</a></p>
+                                        <p><a style="color:inherit" href="{{ url('<front>') }}course/{{microdata.id}}" >Know More</a></p>
                                      </div>
                                   </div>
         {% endfor %}
@@ -121,10 +119,9 @@
                          <div class="courses-offered">
                             <div class="info">
                                <h2>Our Certifications Courses</h2>
-                               <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the printing and
-                                  typesetting industry.Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply 
+                               <p>{{cerdesc | raw}}  
                                </p>
-                                <form class="top-search-section__search" action="{{ url('<front>') }}search-results/abc" method="POST">
+                                <form class="top-search-section__search" action="{{ url('<front>') }}certifications" method="POST">
                                 <input type="hidden" name="course_category" value="Certifications">
                                 <input type="hidden" name="submit_form" value="submit_form">
                                <button type="submit">View All Courses</button>
@@ -153,7 +150,7 @@
                                        {{certificationsdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
                                      </div>
                                      <div class="know-more">
-                                        <p><a href="{{ url('<front>') }}course/{{certificationsdata.id}}" >Know More</a></p>
+                                        <p><a style="color:inherit" href="{{ url('<front>') }}course/{{certificationsdata.id}}" >Know More</a></p>
                                      </div>
                                   </div>
    {% endfor %}

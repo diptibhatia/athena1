@@ -21,3 +21,27 @@ athena_course.search-results:
     _title: 'Custom athena course module'
   requirements: 
     _permission: 'access content'
+    
+athena_course.academic-program:
+  path: '/academic-program'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::academic'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'
+    
+athena_course.micro-credits:
+  path: '/micro-credits'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::micro_credits'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'
+    
+athena_course.certifications:
+  path: '/certifications'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::certifications'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'    

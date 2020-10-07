@@ -29,6 +29,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'category' => NULL,
       'banner' => NULL,
       'node' => NULL,
+      'acaddesc' => NULL,
+      'microdesc' => NULL,
+      'cerdesc' => NULL,
       'base_path' => NULL,
       ],
     ],
@@ -79,6 +82,32 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
+
+
+ 'course_academic' => [
+      'variables' => [
+      'overview' => NULL,
+      'title1' => NULL,
+      'title2' => NULL,
+      'desc' => NULL,
+      'header_image' => NULL,
+      'paragraph' => NULL,
+      'course_list' => NULL,
+      'course_details' => NULL,
+      'course_modules' => NULL,
+      'total_credits' => NULL,
+      'academic_route' => NULL,
+      'academic_route_desc' => NULL,
+      'mature_entry_label' => NULL,
+      'mature_entry_desc' => NULL,
+      'language_prof_label' => NULL,
+      'language_prof_desc' => NULL,
+      'why_athena' => NULL,
+ 'nids' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
+
 
 
  'course_list' => [
