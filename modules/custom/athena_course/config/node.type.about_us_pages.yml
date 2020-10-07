@@ -1,0 +1,17 @@
+uuid: b997db16-874f-4591-928b-891a47343e70
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'About us pages'
+type: about_us_pages
+description: 'This content type manages about us pages contents'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

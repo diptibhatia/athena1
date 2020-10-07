@@ -1,0 +1,23 @@
+uuid: a00db1ca-5529-4ae2-a6ad-3ae78c0b0489
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_course_module_ects_credit
+    - paragraphs.paragraphs_type.course_module_details
+id: paragraph.course_module_details.field_course_module_ects_credit
+field_name: field_course_module_ects_credit
+entity_type: paragraph
+bundle: course_module_details
+label: 'Course Module ECTS Credit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

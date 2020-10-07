@@ -1,0 +1,33 @@
+uuid: 7b0d0f64-f4b2-43aa-afb1-d9cd1786f9f9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:dae08840-fe65-46a9-9ed3-8eec4bab1643'
+  module:
+    - block_content
+    - node
+  theme:
+    - athena
+id: footerbanner
+theme: athena
+region: featured_bottom
+weight: -8
+provider: null
+plugin: 'block_content:dae08840-fe65-46a9-9ed3-8eec4bab1643'
+settings:
+  id: 'block_content:dae08840-fe65-46a9-9ed3-8eec4bab1643'
+  label: 'Footer banner'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      about_us_pages: about_us_pages
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

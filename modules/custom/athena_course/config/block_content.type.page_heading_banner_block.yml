@@ -1,0 +1,8 @@
+uuid: b981a11a-73f5-4e14-8818-231a2e4b51e2
+langcode: en
+status: true
+dependencies: {  }
+id: page_heading_banner_block
+label: 'Page Heading banner block'
+revision: 0
+description: 'This block type is used to create the page heading banner blocks in most pages such as about us page '

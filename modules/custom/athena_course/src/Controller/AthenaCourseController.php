@@ -1,6 +1,7 @@
 <?php
 namespace Drupal\athena_course\Controller;
 use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph; 
 use Drupal\Component\Serialization\Json;
 
 class AthenaCourseController {
@@ -74,25 +75,107 @@ return array(
      foreach($nodes as $node_key => $node) {
        $node_ids[] =  $node->get('field_cid')->value;
       }
-
+      
+      
+     // print_r($courses);exit;
+$i = 0;
     foreach ($courses as $key => $course_data) {
       $cid = $course_data['cid'];
-       
+      
+      
+$field_course_category = "Certifications";
+      if($i>=0 && $i<=5)
+      {
+          $field_course_category = 'Academic';
+      }elseif($i>5 && $i<9) {
+          $field_course_category = 'Micro Credits'; 
+      }
+      
+      $i++;
+      $fee = 0;
+      foreach($course_data['modular_fee'] as $module_data) {
+          
+         $fee = $fee+ $module_data['fee'];
+      }
+      
+      if(empty($course_data['modular_fee'] )) {
+          $fee = 600;
+      }
+      
+      if(empty ($course_data['ects_credit'])) {
+          
+          $course_data['ects_credit'] = 18;
+      }
+      
+      
+      if (empty($course_data['course_introduction'])) {
+                
+             $course_data['course_introduction']   ="This course covers key disciplines such as sustainability, management, marketing, research, operations and strategy, through which learners will gain the skills and knowledge needed to manage across departments, markets and entire organizations in the global context. This MBA program is structured to satisfy the needs of international business markets and will also enable learners to network with other learners from across the globe.
+
+Additionally, after completing the course modules, learners are eligible for a ‘Certified Manager’ certification from the Chartered Management Institute (CMI), UK. This certification is optional and will also include a one-year complimentary affiliate membership with CMI.";
+            }
+     $eligibility =   Json::decode( $course_data['eligibility_requirements']);
         if(!in_array($cid, $node_ids)) {
+            
+            
+            
           $new_node = Node::create(['type' => 'course']);
           $new_node->set('title',$course_data['course_name']);
           $new_node->set('field_course_total_credits', $course_data['ects_credit']);
+          $new_node->set('field_course_category', $field_course_category);
           $new_node->set('field_course_awarding_body', $course_data['awarded_by']);
           $new_node->set('field_course_overview', $course_data['course_introduction']);
+          $new_node->set('field_course_total_fee', $fee);
+          $new_node->set('field_course_academic_route',  $eligibility['academic_route']);
+          $new_node->set('field_course_mature_entry_label', $eligibility['adult_entry_route']);
+          $new_node->set('field_course_language_prof_label', $eligibility['language_proficiency']);
+          $new_node->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today
+
+");
+          $new_node->set('field_course_duration', '9-36 months');
           $new_node->set('field_cid', $cid);
           $new_node->save();      
         } else {
                foreach($nodes as $node_key => $oldnode) {
                 if($oldnode->get('field_cid')->value == $cid) {
-                         $oldnode->set('title',$course_data['course_name']);
-            $oldnode->set('field_course_total_credits', $course_data['ects_credit']);
-             $oldnode->set('field_course_awarding_body', $course_data['awarded_by']);
-            $oldnode->set('field_course_overview', $course_data['course_introduction']);
+          $oldnode->set('title',$course_data['course_name']);
+          $oldnode->set('field_course_total_credits', $course_data['ects_credit']);
+          $oldnode->set('field_course_awarding_body', $course_data['awarded_by']);
+          $oldnode->set('field_course_overview', $course_data['course_introduction']);
+          $oldnode->set('field_course_total_fee', $fee);
+          $oldnode->set('field_course_category', $field_course_category);
+          $oldnode->set('field_course_academic_route',  $eligibility['academic_route']);
+          $oldnode->set('field_course_mature_entry_label', $eligibility['adult_entry_route']);
+          $oldnode->set('field_course_language_prof_label', $eligibility['language_proficiency']);
+          $oldnode->set('field_course_duration', '9-36 months');
+          $oldnode->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today
+
+");
+            $current = array();
+            
+            if(empty ($course_data['modular_fee'])) {
+                
+                $course_data['modular_fee'][]  = array('fee' => 200, 'module_name'=>'module 1');
+                $course_data['modular_fee'][]  = array('fee' => 200, 'module_name'=>'module 2');
+                $course_data['modular_fee'][]  = array('fee' => 200, 'module_name'=>'module 3');
+            }
+            
+            foreach($course_data['modular_fee'] as $module_data) {
+                $fee = $fee+ $module_data['fee'];
+                $paragraph = Paragraph::create(['type' => 'course_module_details']);
+                  $paragraph->set('field_course_module_fees', $module_data['fee']); 
+                  $paragraph->set('field_course_module_ects_credit', 6); 
+                  $paragraph->set('field_course_module_name', $module_data['module_name']); 
+                  $paragraph->save();
+                   $current[] = array(
+      'target_id' => $paragraph->id(),
+      'target_revision_id' => $paragraph->getRevisionId(),
+    );
+            }
+            
+          
+    
+    $oldnode->set('field_course_modules', $current);
 
             $oldnode->save();
                    //     break;
@@ -110,5 +193,63 @@ return array(
 
   }
   
+
+function search($word = false){
+    
+ if (isset($_POST['submit_form']) ){
+     
+   /* $nodes =  \Drupal::entityTypeManager()->getStorage('node')
+  ->loadByProperties(['type' => 'course', 'status' => 1]);*/
+  
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('title' ,$_POST['search_key'] ,'CONTAINS');
+    
+    if(isset ($_POST['course_category'])) {
+        $query->condition('field_course_category', $_POST['course_category']);
+    }
+    $query->condition('type', $bundle);
+    $entity_ids = $query->execute();
+
+        
+ } 
+    
+    // Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+
+if(!empty($entity_ids)) {
+$nodes = node_load_multiple($entity_ids);
+}
+
+
+
+
+
+
+$base_path = $base_url.'/'. $theme->getPath();
+  $banner_block =  [
+  '#theme' => 'course_search',
+ '#base_path' => $base_path,
+ '#node' => $nodes,
+ '#search_key' => $_POST['search_key'],
+ '#count' => count($nodes)
+ 
+];   
+    
+
+    
+    return array(
+   $banner_block
+  );
+    
+  return array(
+  '#markup' => '<h2>COooll</h2>',
+);   
+    
+}
+
+
 
 }

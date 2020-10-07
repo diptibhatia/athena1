@@ -1,0 +1,19 @@
+uuid: a41ace77-536a-444a-8b13-90687aaa7f7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_banner_title_part_with_nor
+    - paragraphs.paragraphs_type.homepage_banner
+id: paragraph.homepage_banner.field_banner_title_part_with_nor
+field_name: field_banner_title_part_with_nor
+entity_type: paragraph
+bundle: homepage_banner
+label: 'Banner title part with normal color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

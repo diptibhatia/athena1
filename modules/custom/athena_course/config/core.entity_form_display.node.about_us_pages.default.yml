@@ -1,0 +1,51 @@
+uuid: ad1a9863-c23c-423f-8a89-197cbdc03a68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about_us_pages.body
+    - node.type.about_us_pages
+  module:
+    - path
+    - text
+id: node.about_us_pages.default
+targetEntityType: node
+bundle: about_us_pages
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true

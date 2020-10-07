@@ -1,0 +1,23 @@
+uuid: c920825d-ec96-4beb-b359-5013e875cfec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cid
+    - node.type.course
+id: node.course.field_cid
+field_name: field_cid
+entity_type: node
+bundle: course
+label: cid
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

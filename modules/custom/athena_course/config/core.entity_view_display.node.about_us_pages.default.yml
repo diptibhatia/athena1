@@ -1,0 +1,24 @@
+uuid: f667489d-650b-4843-8366-215ae0bcba2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about_us_pages.body
+    - node.type.about_us_pages
+  module:
+    - text
+    - user
+id: node.about_us_pages.default
+targetEntityType: node
+bundle: about_us_pages
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true

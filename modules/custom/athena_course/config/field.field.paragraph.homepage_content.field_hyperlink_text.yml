@@ -1,0 +1,21 @@
+uuid: 4f81ac70-f61c-41c5-bbbd-be8b5d7063d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hyperlink_text
+    - paragraphs.paragraphs_type.homepage_content
+  module:
+    - text
+id: paragraph.homepage_content.field_hyperlink_text
+field_name: field_hyperlink_text
+entity_type: paragraph
+bundle: homepage_content
+label: 'HyperLink Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

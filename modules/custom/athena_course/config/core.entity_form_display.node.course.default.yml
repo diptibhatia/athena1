@@ -1,0 +1,285 @@
+uuid: b2021e9a-e037-42f2-a942-95383ac3d7f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.course.field_cid
+    - field.field.node.course.field_course_academic_route
+    - field.field.node.course.field_course_academic_route_desc
+    - field.field.node.course.field_course_accreditations
+    - field.field.node.course.field_course_awarding_body
+    - field.field.node.course.field_course_awarding_body_logos
+    - field.field.node.course.field_course_banner
+    - field.field.node.course.field_course_banner_description
+    - field.field.node.course.field_course_banner_image
+    - field.field.node.course.field_course_category
+    - field.field.node.course.field_course_certification
+    - field.field.node.course.field_course_certification_label
+    - field.field.node.course.field_course_details
+    - field.field.node.course.field_course_duration
+    - field.field.node.course.field_course_ects_credit
+    - field.field.node.course.field_course_language_prof_desc
+    - field.field.node.course.field_course_language_prof_label
+    - field.field.node.course.field_course_mature_desc
+    - field.field.node.course.field_course_mature_entry_label
+    - field.field.node.course.field_course_modules
+    - field.field.node.course.field_course_modules_fees
+    - field.field.node.course.field_course_overview
+    - field.field.node.course.field_course_total_credits
+    - field.field.node.course.field_course_total_fee
+    - field.field.node.course.field_course_why_athena
+    - field.field.node.course.field_short_description
+    - image.style.thumbnail
+    - node.type.course
+  module:
+    - image
+    - paragraphs
+    - path
+    - text
+id: node.course.default
+targetEntityType: node
+bundle: course
+mode: default
+content:
+  field_cid:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_course_academic_route:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_academic_route_desc:
+    weight: 37
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_course_accreditations:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_awarding_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_course_awarding_body_logos:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_course_banner:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_course_banner_description:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_course_banner_image:
+    weight: 15
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_course_category:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_course_certification:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_certification_label:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_details:
+    weight: 33
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_course_duration:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_ects_credit:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_course_language_prof_desc:
+    weight: 42
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_course_language_prof_label:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_mature_desc:
+    weight: 40
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_course_mature_entry_label:
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_course_modules:
+    type: entity_reference_paragraphs
+    weight: 34
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_course_modules_fees:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_course_overview:
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_course_total_credits:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_course_total_fee:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_course_why_athena:
+    weight: 43
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_short_description:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  path:
+    type: path
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true

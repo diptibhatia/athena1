@@ -1,0 +1,21 @@
+uuid: 405b8fd3-846f-4d41-8deb-4aaca1bbe223
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_banner_title_part_with_nor
+field_name: field_banner_title_part_with_nor
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

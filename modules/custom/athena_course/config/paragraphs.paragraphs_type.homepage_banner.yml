@@ -1,0 +1,10 @@
+uuid: 768a9075-c83f-4b0f-9749-048c5945f37d
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_banner
+label: 'Homepage Banner'
+icon_uuid: null
+icon_default: null
+description: 'Paragraph content type for Homepage Banner display'
+behavior_plugins: {  }

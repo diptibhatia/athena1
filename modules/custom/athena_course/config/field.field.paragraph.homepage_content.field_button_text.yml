@@ -1,0 +1,21 @@
+uuid: 91f9bb19-05bd-47b0-ba8f-c337ca02b9ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_text
+    - paragraphs.paragraphs_type.homepage_content
+  module:
+    - text
+id: paragraph.homepage_content.field_button_text
+field_name: field_button_text
+entity_type: paragraph
+bundle: homepage_content
+label: 'Button Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

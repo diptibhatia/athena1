@@ -1,0 +1,17 @@
+uuid: 6b0f850e-fc0c-4b2c-b69c-71ba03e686a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Paragraph Enabled Page'
+type: paragraph_enabled_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

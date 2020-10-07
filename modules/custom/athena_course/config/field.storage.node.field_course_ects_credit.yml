@@ -1,0 +1,20 @@
+uuid: 5a4bfe2c-25e0-40d0-a12f-02a0f8f1e2c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_course_ects_credit
+field_name: field_course_ects_credit
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

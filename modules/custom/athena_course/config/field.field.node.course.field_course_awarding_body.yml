@@ -1,0 +1,19 @@
+uuid: 4c9210d5-36ad-4197-8333-0a21df64d7b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_awarding_body
+    - node.type.course
+id: node.course.field_course_awarding_body
+field_name: field_course_awarding_body
+entity_type: node
+bundle: course
+label: 'Course Awarding Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

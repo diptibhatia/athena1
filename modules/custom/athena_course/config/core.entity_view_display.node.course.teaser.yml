@@ -1,0 +1,72 @@
+uuid: f9ce8222-8ceb-45a9-84b4-2dfd4f963238
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_cid
+    - field.field.node.course.field_course_academic_route
+    - field.field.node.course.field_course_academic_route_desc
+    - field.field.node.course.field_course_accreditations
+    - field.field.node.course.field_course_awarding_body
+    - field.field.node.course.field_course_awarding_body_logos
+    - field.field.node.course.field_course_banner
+    - field.field.node.course.field_course_banner_description
+    - field.field.node.course.field_course_banner_image
+    - field.field.node.course.field_course_category
+    - field.field.node.course.field_course_certification
+    - field.field.node.course.field_course_certification_label
+    - field.field.node.course.field_course_details
+    - field.field.node.course.field_course_duration
+    - field.field.node.course.field_course_ects_credit
+    - field.field.node.course.field_course_language_prof_desc
+    - field.field.node.course.field_course_language_prof_label
+    - field.field.node.course.field_course_mature_desc
+    - field.field.node.course.field_course_mature_entry_label
+    - field.field.node.course.field_course_modules
+    - field.field.node.course.field_course_modules_fees
+    - field.field.node.course.field_course_overview
+    - field.field.node.course.field_course_total_credits
+    - field.field.node.course.field_course_total_fee
+    - field.field.node.course.field_course_why_athena
+    - field.field.node.course.field_short_description
+    - node.type.course
+  module:
+    - user
+id: node.course.teaser
+targetEntityType: node
+bundle: course
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_cid: true
+  field_course_academic_route: true
+  field_course_academic_route_desc: true
+  field_course_accreditations: true
+  field_course_awarding_body: true
+  field_course_awarding_body_logos: true
+  field_course_banner: true
+  field_course_banner_description: true
+  field_course_banner_image: true
+  field_course_category: true
+  field_course_certification: true
+  field_course_certification_label: true
+  field_course_details: true
+  field_course_duration: true
+  field_course_ects_credit: true
+  field_course_language_prof_desc: true
+  field_course_language_prof_label: true
+  field_course_mature_desc: true
+  field_course_mature_entry_label: true
+  field_course_modules: true
+  field_course_modules_fees: true
+  field_course_overview: true
+  field_course_total_credits: true
+  field_course_total_fee: true
+  field_course_why_athena: true
+  field_short_description: true

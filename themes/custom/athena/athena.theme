@@ -33,6 +33,9 @@ function athena_preprocess_page(&$variables) {
   if (strpos($current_path, '/course') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
+    if (strpos($current_path, '/search-results') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
 
 }
 

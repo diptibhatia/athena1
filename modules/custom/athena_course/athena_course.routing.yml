@@ -13,3 +13,11 @@ athena_course.import:
     _title: 'import courses'
   requirements: 
     _permission: 'access content'
+    
+athena_course.search-results:
+  path: '/search-results/{word}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::search'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'

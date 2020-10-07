@@ -1,0 +1,19 @@
+uuid: 7c2a9a1b-012f-45a0-bda4-d292c02e53bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_course_modules_fees
+field_name: field_course_modules_fees
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -18,6 +18,21 @@ function athena_course_theme($existing, $type, $theme, $path) {
       ],
     ],
     
+    'course_homepage_tabs' => [
+      'variables' => [
+      'academic' => NULL,
+      'certifications' => NULL,
+      'micro' => NULL,
+      'ects_credit' => NULL,
+      'awarding_body' => NULL,
+      'description' => NULL,
+      'category' => NULL,
+      'banner' => NULL,
+      'node' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
+    
     'course_description_tabs' => [
       'variables' => [
       'overview' => NULL,
@@ -40,6 +55,39 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
+    
+    'course_search' => [
+      'variables' => [
+      'overview' => NULL,
+      'node' => NULL,
+      'count' => NULL,
+      'duration' => NULL,
+      'search_key' => NULL,
+      'certification' => NULL,
+      'accreditations' => NULL,
+      'course_details' => NULL,
+      'course_modules' => NULL,
+      'total_credits' => NULL,
+      'academic_route' => NULL,
+      'academic_route_desc' => NULL,
+      'mature_entry_label' => NULL,
+      'mature_entry_desc' => NULL,
+      'language_prof_label' => NULL,
+      'language_prof_desc' => NULL,
+      'why_athena' => NULL,
+ 'nids' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
+
+
+ 'course_list' => [
+      'variables' => [
+      'base_path' => NULL,
+      ],
+    ],
+    
+    
     
   ];
 }

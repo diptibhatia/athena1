@@ -1,0 +1,20 @@
+uuid: d3eed8a7-9642-44b8-bf9c-7937547bff9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_hyperlink_text
+field_name: field_hyperlink_text
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

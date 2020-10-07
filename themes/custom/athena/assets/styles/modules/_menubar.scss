@@ -648,6 +648,7 @@
                 transition: transform .2s ease-out, top .2s ease-out;
                 transform-origin: center center;
 
+<<<<<<< HEAD
                 &.up {
                     transform: rotate(-135deg);
                     top: 2px;
@@ -662,6 +663,8 @@
                     }
                 }
 
+=======
+>>>>>>> 9335d995e37de46d935efeeeeb662b13df9c848c
                 @include atSize700 {
                     position: absolute;
                     top: 9px;
@@ -717,7 +720,11 @@
             }
 
             &.show {
+<<<<<<< HEAD
                 transform: scaleY(1);
+=======
+                display: block;
+>>>>>>> 9335d995e37de46d935efeeeeb662b13df9c848c
                 opacity: 1;
             }
 

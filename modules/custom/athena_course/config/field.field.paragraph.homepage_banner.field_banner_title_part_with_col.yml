@@ -1,0 +1,19 @@
+uuid: 70cdc7d5-7f41-4a96-bf40-5d770a4a305a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_banner_title_part_with_col
+    - paragraphs.paragraphs_type.homepage_banner
+id: paragraph.homepage_banner.field_banner_title_part_with_col
+field_name: field_banner_title_part_with_col
+entity_type: paragraph
+bundle: homepage_banner
+label: 'Banner title part with color text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

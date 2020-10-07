@@ -1,0 +1,14 @@
+uuid: a426a31d-5a68-49f2-a6b6-37a186ec9e6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.faculty
+  module:
+    - user
+id: user_remove_role_action.faculty
+label: 'Remove the Faculty role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: faculty

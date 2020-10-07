@@ -1,0 +1,31 @@
+uuid: 36ef316d-2072-477f-9616-a107439cb340
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:homepage_banner_block_type:0ce8e566-b983-4766-accc-e4719d4e7c53'
+  module:
+    - block_content
+    - system
+  theme:
+    - athena
+id: homepagebannerimageandtexts
+theme: athena
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:0ce8e566-b983-4766-accc-e4719d4e7c53'
+settings:
+  id: 'block_content:0ce8e566-b983-4766-accc-e4719d4e7c53'
+  label: 'Homepage banner image and texts'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
