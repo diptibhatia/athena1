@@ -1,0 +1,334 @@
+
+<header class="site-header">
+    <div class="wrapper">
+    {{ page.header }}
+</header>
+<div class="top-gap"></div>
+{% if page.highlighted %}
+    <div class="highlighted">
+    <aside class="layout-container section clearfix" role="complementary">
+        {{ page.highlighted }}
+    </aside>
+    </div>
+{% endif %}
+
+{% if athena_exclude %}
+  {{ page.content }}
+{% else %}
+    <div class="main-wrapper container-fluid p-0 insight-wrapper">
+    {% if page.featured_top %}
+            {{ page.featured_top }}
+    {% endif %}
+      <div id="progress-bar" class="progress-bar">
+          <div class="fill"></div>
+      </div>
+      <div class="pt-4 container bg-white pb-5 d-flex pl-0">
+        <div class="col-md-8 col-sm-12 border-right pl-0">
+            <div class="container txt-14 pl-0">
+                {{ page.content }}
+            </div>
+        
+    
+        <div class="col-md-4 col-sm-12 bg-white">
+          {% if page.sidebar_second %}
+              <div class="col-md-4 col-sm-12">
+                  {{ page.sidebar_second }}
+              </div>
+          {% endif %}
+                <h5 class="insight-sidebar-title">Latest Insights From Athena</h5>
+                <div class="container">
+                    <div class="row mb-1">
+  <div class="col-md-4 d-flex align-items-center p-0">
+    <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article1.png" >
+  </div>
+  <div class="col-md-8">                    
+    <p class="strong yellow-txt m-0">Article</p>
+    <p>Beating Procrastination - The Never - Ending Struggle</p>
+  </div>
+  </div>
+  <div class="row mb-1">
+  <div class="col-md-4 d-flex align-items-center p-0">
+    <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article2.png" >
+  </div>
+  <div class="col-md-8">                    
+    <p class="strong yellow-txt m-0">Article</p>
+    <p>Beating Procrastination - The Never - Ending Struggle</p>
+  </div>
+  </div>
+  <div class="row mb-1">
+  <div class="col-md-4 d-flex align-items-center p-0">
+    <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article1.png" >
+  </div>
+  <div class="col-md-8">                    
+    <p class="strong yellow-txt m-0">Article</p>
+    <p>Beating Procrastination - The Never - Ending Struggle</p>
+  </div>
+  </div>
+  <div class="row mb-3">
+  <div class="col-md-4 d-flex align-items-center p-0">
+    <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article2.png" >
+  </div>
+  <div class="col-md-8">                    
+    <p class="strong yellow-txt m-0">Article</p>
+    <p>Beating Procrastination - The Never - Ending Struggle</p>
+  </div>
+</div>
+<p class="purple-txt"><a href="#" class="more-link">VIEW ALL INSIGHTS</a></p>
+                </div>                
+                <div class="container">
+<h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
+<div class="row mb-2 shadow-sm rounded">
+  <div class="col-md-12 col-sm-12 p-3">
+    <p class="m-0"><strong>Master of Business Administration</strong></p>
+    <p class="mb-1">Guglielmo Marconi University, Italy</p>
+    <p class="m-0">
+        <img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle" ><img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle">
+        <a href="#" class="text-right purple-txt">Learn More</a>
+    </p>
+  </div>
+</div>
+ <div class="row mb-2 shadow-sm rounded">
+  <div class="col-md-12 col-sm-12 p-3">
+    <p class="m-0"><strong>Master of Business Administration</strong></p>
+    <p class="mb-1">Guglielmo Marconi University, Italy</p>
+    <p class="m-0">
+        <img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle" ><img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle">
+        <a href="#" class="text-right purple-txt">Learn More</a>
+    </p>
+  </div>
+</div>
+ <div class="row mb-4 shadow-sm rounded">
+  <div class="col-md-12 col-sm-12 p-3">
+    <p class="m-0"><strong>Master of Business Administration</strong></p>
+    <p class="mb-1">Guglielmo Marconi University, Italy</p>
+    <p class="m-0">
+        <img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle" ><img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle">
+        <a href="#" class="text-right purple-txt">Learn More</a>
+    </p>
+  </div>
+</div>
+<p class="purple-txt"><a href="#" class="more-link">VIEW ALL COURSE</a></p>
+                </div>
+                <div class="container bg-skyblue p-0 mt-5">
+<p class="text-center pt-2 m-0 strong">Get in Touch</p>
+<p class="text-center p-2">Fill your details in the form below and we will be in touch to discuss your learning needs</p>
+<form class="">
+    <div class="container">
+      <div class="form-group">                       
+        <input type="text" class="form-control txt-12" placeholder="What are you looking for ?">
+      </div>
+      <div class="form-group">                       
+        <input type="text" class="form-control txt-12" placeholder="First Name">
+      </div>
+       <div class="form-group">                       
+        <input type="text" class="form-control txt-12" placeholder="Last Name">
+      </div>
+       <div class="form-group">                       
+        <input type="email" class="form-control txt-12" placeholder="Email Address">
+      </div>
+      <div class="form-group d-flex">
+        <div class="input-group-prepend">
+          <div class="input-group-text txt-12">+91</div>
+        </div>
+        <select class="custom-select txt-12">
+            <option selected>Choose...</option>                            
+        </select>
+      </div>
+      <div class="form-check mb-2">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement.</label>
+      </div>
+        <p class="txt-12">Do you want to hear about the latest insights, Newsletters and professional networking events that are relevant to you?</p>
+        <div class="form-group txt-12">  
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline1">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline2">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group"> 
+        <button type="submit" class="btn pink-bg btn-lg btn-block">Submit</button>
+    </div>
+</form>
+                </div>
+        </div>
+      </div>
+    </div>
+{% endif %}
+{% if page.featured_bottom %}
+    <div class="featured-bottom">
+    <aside class="layout-container clearfix" role="complementary">
+        {{ page.featured_bottom }}
+    </aside>
+    </div>
+{% endif %}
+
+<div class="all-courses mt-3">
+  <div class="sections">
+    <div class="section-item">
+      <h1>Top Online Courses</h1>
+      AI for Everyone<br>
+      Introduction to TensorFlow<br>
+      Neural Networks and Deep Learning<br>
+      Algorithms, Part 1<br>
+      Algorithms, Part 2<br>
+      Machine Learning<br>
+      Machine Learning with Python<br>
+      Machine Learning Using Sas Viya<br>
+      R Programming<br>
+      Intro to Programming with Matlab<br>
+      Data Analysis with Python<br>
+      AWS Fundamentals: Going Cloud Native<br>
+      Google Cloud Platform Fundamentals<br>
+      Site Reliability Engineering<br>
+      Speak English Professionally<br>
+      The Science of Well Being<br>
+      Learning How to Learn<br>
+      Financial Markets<br>
+      Hypothesis Testing in Public Health<br>
+      Foundations of Everyday Leadership<br>
+    </div>
+    <div class="section-item">
+      <h1>Top Online Specializations</h1>
+      Deep Learning<br>
+      Python for Everybody<br>
+      Data Science<br>
+      Applied Data Science with Python<br>
+      Business Foundations<br>
+      Architecting with Google Cloud Platform<br>
+      Data Engineering on Google Cloud Platform<br>
+      Excel to MySQL<br>
+      Advanced Machine Learning<br>
+      Mathematics for Machine Learning<br>
+      Self-Driving Cars<br>
+      Blockchain Revolution for the Enterprise<br>
+      Business Analytics<br>
+      Excel Skills for Business<br>
+      Digital Marketing<br>
+      Statistical Analysis with R for Public Health<br>
+      Fundamentals of Immunology<br>
+      Anatomy<br>
+      Managing Innovation and Design Thinking<br>
+      Foundations of Positive Psychology<br>
+    </div>
+    <div class="section-item">
+      <h1>Online Certificates</h1>
+      Google IT Support<br>
+      IBM Customer Engagement Specialist<br>
+      IBM Data Science<br>
+      Applied Project Management<br>
+      IBM Applied AI Professional Certificate<br>
+      Machine Learning for Analytics<br>
+      Spatial Data Analysis and Visualization<br>
+      Construction Engineering and Management<br>
+      Instructional Design<br>
+    </div>
+    <div class="section-item">
+      <h1>Online Degree Programs</h1>
+      Master's in Data Science<br>
+      Bachelors Degree in Computer Science<br>
+      Computer Science and Engineering Degrees<br>
+      Master's in Machine Learning<br>
+      MBA and Business Degrees<br>
+      Master's in Electrical Engineering<br>
+      Master's in Public Health<br>
+      Master's in Information Technology<br>
+    </div>
+  </div>
+</div>
+<footer class="main-wrapper container-fluid p-0">
+  <div class="footer container">
+    <div class="new-footer col-md-12 row">
+      <div class="col-md-4 border-right">
+        <div class="subscribe">
+          <img src="/themes/custom/athena/images/athena-logo.svg" class="img-fluid pb-3" />
+          <p>
+            Athena Global Education (AGE) is a subsidiary of Westford Education
+            Group, a higher education services provider since 2009, providing
+            quality UK, Italian and Spanish Bachelor and Master level degrees.
+          </p>
+          <div class="social-icons mb-3">
+            <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img
+                src="/themes/custom/athena/images/facebook-footer.svg" /></a>
+            <a href=" https://www.linkedin.com/company/14607715/" target="_blank"><img src="/themes/custom/athena/images/instagram-footer.svg" /></a>
+            <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img
+                src="/themes/custom/athena/images/linkedin-footer.svg" /></a>
+            <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img
+                src="/themes/custom/athena/images/twitter-footer.svg" /></a>
+          </div>
+          <span>Subscribe to our newsletter</span>
+          <div class="news-letter">
+            <input type="email" class="form-control" placeholder="abc@xyz.com" />
+          </div>
+          <button type="button" class="btn btn-sm mt-3 btn-outline violet-btn">Subscribe</button>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="col-md-12 site-links row">
+          <div class="col-md-4 links border-right">
+            <p><a href="https://athena.edu/Aboutus.aspx">About us</a></p>
+            <p>
+              <a href="https://athena.edu/PartnersAccreditation.aspx">
+                Partnership</a>
+            </p>
+            <p><a href="https://athena.edu/OurCourse.aspx">Courses</a></p>
+            <p><a href="https://athena.edu/Policy.aspx">Policy</a></p>
+            <div class="address">
+              <strong>USA</strong>
+              <p class="txt-12">
+                Athena Global Education LTD <br />
+                500 Willow Street,<br />
+                Suite 510, Council Bluffs,<br />
+                Iowa 51503, USA<br />
+                Phone : +1 712 283 6085
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 links border-right">
+            <p><a href="https://athena.edu/faq">FAQ Glossary</a></p>
+            <p>
+              <a href="https://athena.edu/Privacy-policy.aspx">Privacy Policy</a>
+            </p>
+            <p><a href="https://athena.edu/Terms.aspx">Terms & Conditions</a></p>
+            <p><a href="https://athena.edu/apl_Policy.aspx">APL policy</a></p>
+            <div class="address">
+              <strong>UK</strong>
+              <p class="txt-12">
+                Athena Global Education LTD<br />
+                The Sherrington Building, Magdalen Centre,<br />
+                The Oxford Science Park,<br />
+                Oxford OX4 4GA. UK<br />
+                Phone : +44 186 578 4545
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 links">
+            <p><a href="https://athena.edu/ContactUs.aspx">Contact us</a></p>
+            <p><a href="https://athena.edu/Disclamer.aspx">Disclaimer</a></p>
+            <p><a>Admin Login</a></p>
+            <p>&nbsp;</p>
+            <div class="address">
+              <strong>MIDDLE EAST</strong>
+              <p class="txt-12">
+                Athena Global Education FZE<br />
+                Block L-3, First Floor,<br />
+                P O Box 519265,<br />
+                Sharjah Publishing City,<br />
+                Free Zone, Sharjah, UAE<br />
+                Phone : +971 55 667 7221
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center bg-dark p-2 text-white mt-3">
+    <div class="txt-12">All Cpyrights reserved @ Athena Global Education 2020</div>
+  </div>
+</footer>
+

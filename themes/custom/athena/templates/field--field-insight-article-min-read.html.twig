@@ -1,0 +1,26 @@
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes }}>
+      {% for item in items %}
+       {{ item.content }}</span>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+        {{ item.content }}</span>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes }} >
+    {{ label }}
+    {% if multiple %}
+      <div>
+    {% endif %}
+    {% for item in items %}
+      {{ item.content }}</span>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

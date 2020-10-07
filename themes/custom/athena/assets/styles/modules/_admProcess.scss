@@ -1,0 +1,40 @@
+.adm-process {
+    background-color: $skyblue;
+    padding: 30px 0;
+
+    @include atSize1250 {
+        padding: 60px 0 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+
+        @include atSize1250 {
+            font-size: 2rem;
+            text-align: left;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 23px;
+        text-align: center;
+        margin: 5px 0 30px;
+
+        @include atSize1250 {
+            text-align: left;
+            font-size: 1.125rem;
+        }
+    }
+
+    .admission-steps-card-container {
+
+        @include atSize1250 {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

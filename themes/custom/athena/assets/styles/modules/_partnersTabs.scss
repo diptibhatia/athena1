@@ -20,6 +20,12 @@
         border-bottom: solid 1px rgba(151, 151, 151, 0.4);
         margin-bottom: 15px;
         overflow-x: auto;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+        &::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
 
         @include atSize850 {
             margin-bottom: 35px;
@@ -206,12 +212,12 @@
     &__msg {
         background-color: #fff;
         margin: 0 -12px;
-        padding: 0 12px;
+        padding: 0 12px 30px;
         position: relative;
 
         @include atSize1100 {
             margin: 0 -10rem;
-            padding: 0 10rem;
+            padding: 0 10rem 40px;
             display: flex;
         }
 
@@ -289,6 +295,69 @@
                     color: $titlePink;
                     font-weight: bold;
                 }
+            }
+        }
+    }
+
+    &__msgvideo {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include atSize1100 {
+            flex-direction: row;
+        }
+
+        &-video {
+            
+            .video {
+                border-radius: 3.3px;
+                box-shadow: 0 1px 14px 1px #d5dbfb;
+                width: 340px;
+                height: 214px;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+
+                @include atSize700 {
+                    width: 668px;
+                    height: 389px;
+                }
+
+                @include atSize1100 {
+                    width: 668px;
+                    height: 389px;
+                    margin-right: 20px;
+                }
+
+                h2 {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+
+        &-person {
+            margin-bottom: 17px;
+
+            @include atSize1100 {
+                justify-content: center;
+            }
+
+            >img {
+                margin-top: 0;
+                width: 208px;
+            }
+
+            h3 {
+                font-size: 1.75rem;
+                margin-top: 15px;
+                letter-spacing: .4px;
+            }
+
+            p {
+                font-size: 1rem;
+                letter-spacing: .1px;
             }
         }
     }

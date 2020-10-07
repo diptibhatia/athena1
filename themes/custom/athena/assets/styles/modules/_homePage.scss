@@ -1,5 +1,5 @@
 .grid-view {
-	width:1200px;
+	width:1170px;
 	height:auto;
 	padding:10px 15px;
 	margin:0px auto;
@@ -11,16 +11,176 @@
 		width: 100%;
 		padding: 0;	
 	}
+}
+
+.container-fluid {
+	@include atSize424 {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.testimonial-bg-image {
+	img {
+		position: absolute;
+    	width: 100%;
+    	top: 194rem;
+    	z-index: -10;
+    	@include atSize424 {
+    		display: none;
+    	}
+	}
+}
+
+.free-trial-bg-image {
+	img {
+		position: absolute;
+    	width: 100%;
+    	top: 289rem;
+    	z-index: -10;
+    	@media (min-width: 1281px) {
+    		top: 284rem;
+    	}
+    	@include atSize424 {
+    		display: none;
+    	}
+	}
+}
+
+    .owl-stage-outer {
+        margin-bottom: 15px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: -85px;
+        right: 0;
+        display: none;
+
+        @include atSize850 {
+            display: block;
+        }
+    }
+
+    button.owl-prev {
+        background: url('images/coursepage/previous.svg') no-repeat !important;
+        width: 50px !important;
+        height: 27px !important;
+        position: relative;
+        top: 2px;
+        margin-right: 36px !important;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.disabled {
+            width: 31px !important;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    button.owl-next {
+        background: url('images/coursepage/previous.svg') no-repeat !important;
+        width: 50px !important;
+        height: 27px !important;
+        transform: rotate(180deg);
+
+        &:focus {
+            outline: none;
+        }
+
+        &.disabled {
+            width: 31px !important;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+.my-container {
+	width: 1170px !important;
+	margin: 0 auto !important;
+	padding: 0 !important;
+	@include atSize424 {
+		width: 100% !important;
+	}
+	@include atSizeXXLarge {
+		width: 1170px !important;
+		margin: 0 auto !important;
+		padding: 0 15px !important;
+	}
+}
+
+.img-placeholder {
+	position: absolute;
+    top: 165rem;
+    width: 618px;
+    height: 397px;
+    background-color: #eaedf9;
+    @media (max-width: 770px) {
+    	display: none;
+    }
+    @media (min-width: 1281px) {
+    	width: 703px;
+    }
+}
+
+.highlighter {
+	width: 224px;
+    height: 251px;
+    border: solid 10px #ffc400;
+    position: absolute;
+    right: 437px;
+    top: 89px;
+    @include atSize424 {
+    	display: none;
+    }
 }	
 
 .explore-courses {
 	text-align: center;
+	h2 {
+		font-family: Lato;
+	    font-size: 42px;
+	    font-weight: bold;
+	    font-stretch: normal;
+	    font-style: normal;
+	    line-height: normal;
+	    letter-spacing: normal;
+	    text-align: center;
+	    color: #303030;
+	    margin: 10px 0;
+	}
+	p {
+		font-family: Lato;
+	    font-size: 16px;
+	    font-weight: 100;
+	    font-stretch: normal;
+	    font-style: normal;
+	    line-height: 1.72;
+	    letter-spacing: normal;
+	    text-align: center;
+	    color: #606060;
+	}
+	.course-text-info {
+		width: 580px;
+		margin: 0 auto;
+		@include atSize424 {
+			width: 100%;
+		}
+	}
 	.tabs {
 		display: flex;
 	    margin: 30px auto;
 	    height: 78px;
 	    align-items: center;
-	    border-bottom: solid 3px $border;
+	    border-bottom: solid 6px $border;
 	    width: 784px;
 	    @include atSize424 {
     		width: 100%
@@ -41,6 +201,18 @@
 	  			cursor: pointer;
 	  			font-weight: 500;
 	  			color: $buttonPink;
+	  			height: 12px;
+	  			a {
+	  				color: $buttonPink;
+	  				&.active {
+	  					color: $buttonPink;
+	  					border-bottom: solid 4px $buttonPink;
+	  				}
+	  			}
+	  			@include atSize424 {
+	  				font-size: 14px;
+	  				height: 0px;
+	  			}
 			}
     	}
 	}
@@ -59,13 +231,19 @@
 		.info {
 			flex: 0.5;
 			text-align: left;
+			padding: 60px 0;
+			@include atSize424 {
+				padding: 10px 0;
+			}
 			h2 {
 				font-size: 32px;
-			  	font-weight: bold;			  	
+			  	font-weight: bold;	
+			  	text-align: left;		  	
 			  	color: $primaryColor;
 			}
 			p {
 				font-size: 16px;
+				text-align: left;		  	
 			  	color: $secondaryColor;
 			}
 			button {
@@ -76,10 +254,19 @@
   				cursor: pointer;
   				outline: none;
   				background: white;
+  				width: 186px;
+  				height: 50px;
+  				&:hover {
+					color: white;
+					background: $buttonPink;
+				}
 			}
 		}
 		.courses {
 			flex: 1;
+			padding: 5px;
+			margin: 60px 0 20px 0;
+			background: none;
 			.course-list {
 				margin: 20px 10px;
 				display: flex;
@@ -94,12 +281,13 @@
 				}
 				.course-item {
 					width: 350px;
-			  		height: 402px;
+			  		height: 450px;
 			  		border-radius: 6px;
 			  		box-shadow: 0 2px 25px 2px #d5dbfb;
 			  		background-color: #ffffff;
 			  		position: relative;
-			  		margin: 0 10px;
+			  		margin: 0 20px;
+			  		z-index: 10;
 			  		@include atSize424 {
 			  			margin: 20px 0;
 			  			left: -30px;
@@ -111,14 +299,37 @@
 			  				height: 165px;
 			  			}
 			  		}
+			  		.price-tag {
+			  			width: 113px;
+    					height: 39px;
+    					border-radius: 100px 0px 0 100px;
+    					background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+					    position: absolute;
+					    top: 7px;
+					    right: 0;
+    					margin: 10px 0;
+    					p {
+					 		font-family: Lato;
+					  		font-size: 16px;
+					  		font-weight: bold;
+					  		font-stretch: normal;
+					  		font-style: normal;
+					  		line-height: normal;
+					  		letter-spacing: normal;
+					  		color: #ffffff;
+					  		margin: 0;
+					  		padding: 8px;
+    					}
+			  		}
 			  		.course-details {
 			  			width: 331px;
-					  	height: 146px;
+					  	min-height: 136px;
+					  	height: auto;
 					  	border-radius: 6px;
 					  	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
 					  	background-color: #ffffff;
 					  	position: absolute;
-					  	top: 90px;
+					  	top: 130px;
 					  	left: 10px;
 					  	.course-tags {
 					  		width: 315px;
@@ -129,7 +340,8 @@
 						  	p {
 							  font-size: 14px;
 							  color: $primaryColor;
-							  padding: 7px;
+							  padding: 3px;
+							  text-align: center;
 							  span {
 							  	color: white;
 							  	padding: 0 5px;
@@ -155,14 +367,14 @@
 							font-size: 14px;
   							color: $primaryColor;
   							text-align: left;
-    						padding-left: 24px;
+    						padding: 15px 25px;
   							span {
   								font-weight: bold;
   							}
 					  	}
 			  		}
 			  		.course-info {
-			  			margin: 100px 15px 0 15px;
+			  			margin: 138px 15px 0 15px;
 			  			font-size: 14px;
 			  			text-align: left;
   						color: $secondaryColor;
@@ -189,6 +401,16 @@
 	}
 }
 
+.back-images {
+	position: absolute;
+    left: 27%;
+	img {
+		position: absolute;
+    	left: 50%;
+    	top: -199px;
+	}
+}
+
 .why-athena {
 	display: flex;
 	.athena-background-image {
@@ -197,13 +419,13 @@
 		img {
 			width: 100%;
 			position: absolute;
-			top: 117px;
+			top: 25px;
 		}
 	}
 	.athena-section {
 		display: flex;
 		width: 100%;
-		margin: 83px 0;
+		margin: 83px 0 0 0;
 		@include atSize424 {
 			flex-direction: column;
 			width: 100%;
@@ -220,9 +442,34 @@
 			z-index: 10;
 			flex: 1.4;
 			padding: 5px 0 0 30px;
+			h1 {
+				font-family: Lato;
+			  	font-size: 42px;
+			  	font-weight: bold;
+			  	font-stretch: normal;
+			  	font-style: normal;
+			  	line-height: 1.33;
+			  	letter-spacing: normal;
+			  	color: $primaryColor;
+			  	margin: 0 0 5px 0;
+			}
+			.underline-heading {
+				width: 70px;
+    			border: solid 2px $buttonPink;
+    			border-radius: 4px;
+    			@include atSize424 {
+					display: none;
+		  		}
+			}
 			.info {
+				margin: 25px 0;
+				width: 470px;
+				@include atSize424 {
+					width: 100%;
+				}
 				.info-item {
 					.item {
+						padding: 15px 0;
 						img {
 							position: relative;
 							top: 49px;
@@ -233,23 +480,42 @@
 						  	color: $primaryColor;
 						  	list-style-type:none;
 						  	padding-left: 48px;
+						  	line-height: 26px;
+						  	margin: 0;
 						}
 						span {
-							font-size: 17px;
+							font-size: 20px;
 						  	font-weight: bold;
-						  	color: $itemColor;
+						  	color: $buttonPink;
+						  	position: relative;
+						  	top: 10px;
 						}
 					}
 				}
 			}
+		}
+		.laptop-bg {
+			position: absolute;
+    		right: 117px;
+    		margin: 15px 0 0 0;
+    		@media (max-width: 440px) {
+    			display: none;
+    		}
+    		@media (min-width: 1281px) and (max-width: 1440px) {
+    			right: 211px;
+    		}
+    		@media (min-width: 1441px) {
+    			right: 48rem;
+    		}
 		}
 		.why-athena-item-two {
 			flex: 0.6;
 			z-index: 10;
 			img {
 				position: relative;
-			    top: 120px;
-			    right: -32px;
+			    top: 199px;
+			    right: 0px;
+			    width: 694px;
 			    @include atSize424 {
 			    	top: 0;
 					right: 0;
@@ -275,11 +541,83 @@
   			cursor: pointer;
   			background: white;
   			outline: none;
+  			width: 186px;
+  			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
 		}
+	}
+	.collaborate {
+		position: relative;
+    	top: 100px;
+    	h1 {
+    		text-align: center;
+    		font-family: Lato;
+		  	font-size: 42px;
+		  	font-weight: bold;
+		  	font-stretch: normal;
+		  	font-style: normal;
+		  	line-height: 1.33;
+		  	letter-spacing: normal;
+		  	color: $primaryColor;
+		  	margin: 0;
+    	}
+    	.collaorate-heading {
+    		width: 334px;
+		    border: solid 2px $buttonPink;
+		    margin: 6px 0 0 216px;
+		    @include atSize424 {
+				display: none;
+		  	}
+    	}
+    	.collaborate-section {
+    		display: flex;
+    		font-stretch: normal;
+		  	font-style: normal;
+		  	line-height: 1.63;
+		  	letter-spacing: normal;
+		  	position: relative;
+		  	top: 60px;
+		  	@include atSize424 {
+		  		flex-direction: column;
+		  	}
+    		.collaborate-item {
+    			flex: 1;
+    			padding: 0 30px;
+    			/*&.img-placeholder {*/
+    				/*width: 627px;*/
+				  	/*height: 385px;*/
+				  	/*background-color: rgba(234, 237, 249, 0.6);*/
+				  	img {
+				  		width: 100%;
+				  		height: auto;
+				  		position: relative;
+    					top: -61px;
+				  	}
+				  	@include atSize424 {
+				  		width: 100%;
+				  		img {
+				  			width: 100%;
+				  		}
+				  	}
+    			/*}*/
+    			h2 {
+    				color: $buttonPink;
+    				font-weight: bold;
+				  	font-size: 20px;
+    			}
+    			p {
+    				color: $primaryColor;
+    				font-size: 16px;
+    			}
+    		}
+    	}
 	}
 	.testimonials {
 		position: relative;
-		top: 70px;
+		top: 200px;
 		.testimonials-item {
 			display: flex;
 			.item-one {
@@ -289,10 +627,17 @@
 				    font-size: 42px;
 				    font-weight: bold;
 				    color: $primaryColor;
+				    position: relative;
+				    top: -40px;
+				    left: 8px;
 				}
 				h3 {
 		  			font-size: 16px;
 		  			color: $primaryColor;
+		  			line-height: 26px;
+		  			position: relative;
+				    top: -48px;
+				    left: 8px;
 				}
 				button {
 					border-radius: 30px;
@@ -301,15 +646,41 @@
 	  				padding: 5px 10px;
 	  				cursor: pointer;
 	  				outline: none;
-	  				background: white;
+	  				width: 213px;
+  					height: 50px;
+  					margin: 30px 0;
+  					position: relative;
+  					top: -52px;
+    				left: 22px;
+  					&:hover {
+						color: white;
+						background: $buttonPink;
+					}
 				}
 			}
 			.item-two {
 				flex: 1;
 				margin: 0 0 0 85px;
+				.image-dot-testimonials-one {
+					position: absolute;
+				    right: -29px;
+				    top: -58px;
+				    z-index: -10;
+				    @include atSize424 {
+				    	display: none;
+				    }
+				}
+				.image-dot-testimonials-two {
+					position: absolute;
+				    left: 452px;
+				    z-index: -10;
+				    @include atSize424 {
+				    	display: none;
+				    }
+				}
 				.student-review {
 					width: 572px;
-				 	height: 202px;
+				 	height: 262px;
 				 	border-radius: 6px;
 				 	box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
 				 	background-color: #ffffff;
@@ -319,31 +690,60 @@
 				 		margin: 30px 0;
 				 	}
 				 	.student-image {
-				 		width: 102px;
-					    height: 102px;
-					    border: solid 3px #feb80d;
-					    border-radius: 56px;
+				 		width: 150px;
+					    height: 150px;					    
+					    
 					    position: relative;
     					top: 15px;
-    					left: -50px;
+    					left: -66px;
 					    img {
-					    	width: 98px;
-    						height: 98px;
+					    	width: 150px;
+    						height: 150px;
+						    position: relative;
+						    top: -3px;
+						    left: -3px;
+					    }
+					    .social-icon-linkedin {
+					    	position: absolute;
+					    	top: 79px;
+							right: 5px;
+					    	img {
+					    		width: 28px;
+  								height: 28px;
+					    	}
+					    	@include atSize424 {
+								top: 20px;
+    							right: -16px;
+    							img {
+    								width: 21px;
+  									height: 21px;	
+    							}
+							}
 					    }
 				 	}
 				 	.info {
+				 		margin: 0 0 0 -30px;
 				 		h3 {
 				 			color: $buttonPink;
 				 			font-weight: bold;
-				 			margin: 14px 0;
-				 			font-size: 20px;
+				 			padding: 20px 0 0 0;
+				 			font-size: 18px;
+				 			span {
+				 				font-size: 42px;
+				 			}
 				 		}
 				 		p {
 				 			color: $primaryColor;
 				 			font-size: 14px;
+				 			width: 92%;
 				 			span {
 				 				font-weight: bold;
+				 				color: $buttonPink;
 				 			}
+				 		}
+				 		.student-info {
+				 			color: $primaryColor;
+				 			font-size: 14px;
 				 		}
 				 	}
 				}
@@ -354,6 +754,9 @@
 					padding: 0;
 					width: 100%;
 					text-align: center;
+					img {
+						width: 100%;
+					}
 				}
 				.item-two {
 					margin: 0;
@@ -391,6 +794,7 @@
 					.student-review {
 						margin: 30px 0;
 						width: 100%;
+						height: 246px;
 						.student-image {
 							width: 48px;
   							height: 48px;
@@ -422,6 +826,7 @@
 					.student-review {
 						margin: 30px 0;
 						width: 100%;
+						height: 246px;
 						.student-image {
 							width: 48px;
   							height: 48px;
@@ -448,7 +853,18 @@
 .partners {
 	margin: 140px 30px 50px 30px;
 	.info {
-		width: 440px;
+		width: 600px;
+		@include atSize424 {
+			width: 100%;
+		}
+		img {
+			position: relative;
+		    top: 44px;
+		    z-index: -10;
+		    @include atSize424 {
+		    	width: 100%;
+		    }
+		}
 		@include atSize424 {
 			width: 100%;
 		}
@@ -468,11 +884,12 @@
 			font-size: 16px;
 	  		color: $primaryColor;
 	  		margin: 0;
+	  		line-height: 26px;
 		}
 	}
 	.partner-logos {
-		display: flex;
-		flex-direction: row;
+		/*display: flex;
+		flex-direction: row;*/
 		margin: 30px 0;
 		@include atSize424 {
 			flex-direction: column;
@@ -484,14 +901,17 @@
 			flex-direction: column;
 		}
 		.logo {
-			width: 301px;
-			margin: 0 14px;
-		  	height: 226px;
+			width: 250px;
+			margin: 10px;
+		  	height: 185px;
 		  	border-radius: 6px;
 		  	box-shadow: 0 2px 9px 3px rgba(0, 0, 0, 0.08), 0 2px 21px 2px rgba(213, 219, 251, 0.83);
 		  	background-color: #ffffff;
 		  	justify-content: center;
 		  	display: flex;
+		  	img {
+		  		width: 200px;
+		  	}
 		  	@include atSize424 {
 				margin: 20px auto;
 				width: 100%;
@@ -518,10 +938,16 @@
 		cursor: pointer;
 		outline: none;
 		background: white;
+		width: 213px;
+  		height: 50px;
+  		&:hover {
+			color: white;
+			background: $buttonPink;
+		}
 	} 
 }
 .reason-section {
-	margin: 100px 0;
+	margin: 100px 0 0 0;
 	display: flex;
 	.reason-section-item {
 		flex: 1;
@@ -539,18 +965,28 @@
 			  	font-weight: bold;
 			  	color: $primaryColor;
 			  	margin: 0;
+			  	position: relative;
+			  	top: -15px;
 			}
 			ul {
+				margin: 0;
+				padding: 0;
 				li {
 				  	font-size: 17px;
 				  	line-height: 2.0;
 				  	letter-spacing: normal;
-				  	color: #222222;
+				  	color: #606060;
+				  	padding: 5px 0;
+				  	list-style: none;
+				  	span {
+				  		padding: 0 0 0 15px;
+				  	}
 				}
 			}
 			.actions {
 				display: flex;
 				flex-direction: row;
+				margin: 35px 0;
 				button {
 					border-radius: 4.1px;
 				  	box-shadow: 0 5px 21px 0 rgba(90, 202, 157, 0.05);
@@ -560,6 +996,8 @@
 				  	outline: none;
 				  	border: none;
 				  	cursor: pointer;
+			  	    width: 160px;
+					height: 50px;
 				}
 				p {
 					font-stretch: normal;
@@ -567,7 +1005,12 @@
 				  	line-height: 1.47;
 				  	letter-spacing: normal;
 				  	color: $buttonPink;
-				  	margin: 5px 30px;
+				  	margin: 11px 30px;
+				  	img {
+				  		width: 31px;
+					    height: 31px;
+					    margin: 0 0 0 10px;
+				  	}
 				}
 			}
 		}
@@ -581,6 +1024,22 @@
 			}
 			.steps {
 				padding: 20px;
+				ul {
+					li {
+						img {
+							width: auto;
+						}
+					}
+				}
+				.actions {
+					p {
+						img {
+						    position: relative;
+							top: -25px;
+							left: 82px;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -612,19 +1071,36 @@
 .insights-section {
 	width: 100%;
 	text-align: center;
+	.img-heading {
+		position: relative;
+	    top: 56px;
+	    z-index: -1;
+	    @include atSize424 {
+	    	width: 100%;
+	    }
+	}
 	h2 {
 		font-size: 42px;
   		font-weight: bold;
   		color: $primaryColor;
   		margin: 10px 0;
+  		@include atSize424 {
+	    	font-size: 32px;
+	    }
 	}
 	h3 {
 		font-size: 16px;
   		color: $primaryColor;
+  		width: 540px;
+	    margin: 0 auto;
+	    line-height: 26px;
+	    @include atSize424 {
+	    	width: 100%;
+	    }
 	}
 	.section-items {
 		display: flex;
-		margin: 90px 0;
+		margin: 35px 0;
 		.section-item-one {
 			flex: 1;
 			.section-image {
@@ -699,15 +1175,20 @@
 						  	font-weight: 500;
 						  	color: $primaryColor;
 						  	border: none;
+						  	line-height: 28px;
 						}
 						p {
 							font-size: 14px;
 						  	font-weight: 500;
 						  	color: $primaryColor;
+						  	span {
+						  		padding: 0 0 0 10px;
+						  	}
 						}
 						h5 {
 							font-size: 14px;
   							color: $buttonPink;
+  							padding: 10px 0;
   							span {
   								float: right;
   								margin: 0 36px 0 0;
@@ -757,11 +1238,17 @@
 	background: #eff1fe;
 	width: 100%;
 	height: 496px;
+	font-family: Lato;
 	.courses-list {
-		margin: 50px 50px 10px 50px;
+		/*margin: 50px 50px 10px 50px;*/
 		display: flex;
+		position: relative;
+		top: 72px;
+		justify-content: center;
 		.course-item {
-			margin: 0 10px;
+			/*margin: 0 10px;*/
+			margin: 0 20px;
+			width: 365px;
 			.course-image {
 				img {
 					width: 365px;
@@ -781,15 +1268,16 @@
 				position: relative;
 				top: -42px;
 				h1 {
-					font-size: 24px;
+					font-size: 20px;
 				  	font-weight: bold;
 				  	color: #2f281e;
+				  	line-height: 30px;
 				  	&.active {
 				  		color: $buttonPink;
 				  	}
 				}
 				h2 {
-					font-size: 16.8px;
+					font-size: 16px;
 				  	font-weight: 500;
 				  	color: #5d523d;
 				}
@@ -847,6 +1335,7 @@
 	.view-all {
 		width: 100%;
 		text-align: center;
+		margin: 60px 0;
 		button {
 			border-radius: 30px;
 			border: solid 2px $buttonPink;
@@ -854,12 +1343,30 @@
 			padding: 5px 20px;
 			cursor: pointer;
 			outline: none;
-			background: white;
+			width: 213px;
+  			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
 		}
 	}
 }
 
 .popular-courses {
+	.heading-image {
+		width: 100%;
+		text-align: center;
+		img {
+			position: relative;
+    		top: 52px;
+    		z-index: -1;
+    		@include atSize424 {
+    			width: 100%;
+    			top: 35px;
+    		}
+		}
+	}
 	h1 {
 		text-align: center;
 	}
@@ -868,25 +1375,38 @@
   		color: $primaryColor;
   		text-align: center;
   		margin: 0;
+  		@include atSize424 {
+    		font-size: 32px;
+    	}
 	}
 	h3 {
 		font-size: 16px;
   		text-align: center;
   		color: #606060;
-  		width: 50%;
-  		margin: 20px auto;
+  		width: 42%;
+  		margin: 10px auto;
+  		font-family: Lato;
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.63;
+		letter-spacing: normal;
+		text-align: center;
 	}
 	.courses {
 		display: flex;
-		margin: 50px auto;
+		margin: 50px auto 0;
+		background: none;
 		.course-item {
 			width: 350px;
-	  		height: 402px;
+	  		height: 450px;
 	  		border-radius: 6px;
 	  		box-shadow: 0 2px 25px 2px #d5dbfb;
 	  		background-color: #ffffff;
 	  		position: relative;
-	  		margin: 0 10px;
+	  		margin: 0 20px;
+	  		z-index: 10;
 	  		@include atSize424 {
 	  			margin: 20px 6px;
 	  		}
@@ -903,6 +1423,29 @@
 	  				height: 165px;
 	  			}
 	  		}
+	  		.price-tag {
+	  			width: 113px;
+				height: 39px;
+				border-radius: 100px 0px 0 100px;
+				background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+			    position: absolute;
+			    top: 7px;
+			    right: 0;
+				margin: 10px 0;
+				p {
+			 		font-family: Lato;
+			  		font-size: 16px;
+			  		font-weight: bold;
+			  		font-stretch: normal;
+			  		font-style: normal;
+			  		line-height: normal;
+			  		letter-spacing: normal;
+			  		color: #ffffff;
+			  		margin: 0;
+			  		padding: 8px;
+			  		text-align: center;
+				}
+	  		}
 	  		.course-details {
 	  			width: 331px;
 			  	height: 146px;
@@ -910,7 +1453,7 @@
 			  	box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
 			  	background-color: #ffffff;
 			  	position: absolute;
-			  	top: 90px;
+			  	top: 134px;
 			  	left: 10px;
 			  	.course-tags {
 			  		width: 315px;
@@ -921,7 +1464,8 @@
 				  	p {
 					  font-size: 14px;
 					  color: $primaryColor;
-					  padding: 7px;
+					  padding: 3px;
+					  text-align: center;
 					  span {
 					  	color: white;
 					  	padding: 0 5px;
@@ -947,7 +1491,7 @@
 					font-size: 14px;
 					color: $primaryColor;
 					text-align: left;
-					padding-left: 24px;
+					padding: 5px 0 0 26px;
 			    	margin: 10px 0;
 			    	width: 100%;
 						span {
@@ -956,7 +1500,7 @@
 			  	}
 	  		}
 	  		.course-info {
-	  			margin: 100px 15px 0 15px;
+	  			margin: 138px 15px 0 15px;
 	  			font-size: 14px;
 	  			text-align: left;
 					color: $secondaryColor;
@@ -972,6 +1516,12 @@
 			    background-image: linear-gradient(89deg, $knowMoreTag1 0%, $knowMoreTag2 100%, $knowMoreTag3 100%);
 			    float: right;
 			    margin: 10px 0;
+			    /*&:first-child {
+			    	background-image: linear-gradient(89deg, #9400e2 0%, #540081 100%, #65008e 100%);
+			    }
+			    &:last-child {
+			    	background-image: linear-gradient(89deg, #00a1e8 0%, #004fa1 100%);
+			    }*/
 			    p {
 			    	color: white;
 					margin: 10px 0;
@@ -1014,6 +1564,12 @@
 			cursor: pointer;
 			outline: none;
 			background: white;
+			width: 213px;
+  			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
 		}
 	}
 }
@@ -1028,6 +1584,15 @@
 		position: relative;
 		top: -274px;
 		text-align: center;
+		@include atSizeXXLarge {
+			top: -557px;
+		}
+		@media (min-width: 1281px) and (max-width: 1440px){
+			top: -318px;
+		}
+		@media (min-width: 1441px) {
+			top: -35rem;
+		}
 		h1 {
 			font-size: 52px;
   			font-weight: bold;
@@ -1044,6 +1609,8 @@
 			cursor: pointer;
 			outline: none;
 			background: none;
+			width: 175px;
+  			height: 50px;
 		}
 	}
 	@include atSize424 {
@@ -1089,12 +1656,17 @@
 	background-color: #eff1fe;
 	height: auto;
 	width: 100%;
-	margin: 0 0 30px 0;
-	font-family: 'Opens Sans', sans-serif;
+	margin-top: 0 !important;
+	font-family: 'Lato', sans-serif;
+	position: relative;
 	.sections {
 		display: flex;
 		flex-direction: row;
 		margin: 20px 50px;
+		padding: 20px !important;
+		@media (min-width: 1281px) {
+			padding: 20px !important;
+		}
 		.section-item {
 			flex: 1;
 			line-height: 1.8;
@@ -1122,6 +1694,79 @@
 		.sections {
 			flex-direction: column;
 			margin: 20px;
+		}
+	}
+}
+
+.home-wrapper {
+	.banner {
+
+		&-image {			
+			position: relative;
+
+			@include atSize700 { 
+				bottom: 20px;
+			}
+			@include atSize1350 { 
+				bottom: 20px;
+			}
+
+			.carousel-caption {
+				top: 10%;
+				width: 90%;
+				left: 0%;
+				right:0%;				
+
+				@include atSize700 { 
+					bottom: 25%;
+					width: 100%;
+					padding-left: 3rem;
+				}
+				@include atSize1350 { 
+					bottom: 25%;
+					width: 100%;
+					padding-left: 3rem;
+				}
+
+			}
+		}
+
+		&_title {
+			font-size: 2.19rem;
+        	font-weight: bold;
+	        line-height: 1.29;
+	        letter-spacing: .8px;
+        	margin: 0;
+
+	        @include atSize700 {
+	            font-size: 4rem;        
+	            line-height: 1.8;	  
+	            letter-spacing: normal;
+	                 
+	        }
+
+	        @include atSize1350 {	            
+	            font-size: 4rem;
+	            line-height: 1.8;
+
+	        }
+		}
+
+		&_text {
+			font-size: .875rem;
+        	line-height: 1.8;
+
+			@include atSize700 {
+	           font-size: 1rem;        
+	        	line-height: 1.8;
+	        	width: 50%;
+	        }
+
+	        @include atSize1350 {
+	            font-size: 1rem;	        
+	        	line-height: 1.8;
+	        	width: 50%;
+	        }
 		}
 	}
 }

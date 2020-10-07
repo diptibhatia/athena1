@@ -1,0 +1,28 @@
+<p>
+<small class="d-flex justify-content-between mt-1 strong">
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes }}>
+      {% for item in items %}
+        <span{{ item.attributes }}>{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <span{{ attributes }} >{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes }} >
+    <span{{ title_attributes.addClass(title_classes) }} >{{ label }}&nbsp;&nbsp;|&nbsp;&nbsp;
+    {% if multiple %}
+      <div>
+    {% endif %}
+    {% for item in items %}
+      <span{{ item.attributes }} >{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

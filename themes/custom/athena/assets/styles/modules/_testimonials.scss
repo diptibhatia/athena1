@@ -38,23 +38,303 @@
   }
 }
 
+.discussions {
+  width: 769px;
+  min-height: 300px;
+  height: auto;
+  margin: 0px 0;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  @include atSize424 {
+    width: 100%;
+  }
+  .posts {
+    display: flex;
+    border-bottom: solid 1px #f3f5f8;
+    margin: 15px 0;
+    .single-post {
+      display: flex;
+      margin: 10px 0;
+      cursor: pointer;
+      .profile-img {
+        img {
+          border-radius: 50px;
+          width: 44px;
+          height: 44px;
+        }
+      }
+      .post-thread {
+        padding: 0 12px;
+        width: 470px;
+        @include atSize424 {
+          width: 90%;
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: $primaryColor;
+          font-family: Lato;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+        .author-info {
+          opacity: 0.7;
+          font-family: Lato;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 4px 0;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+      }
+    }
+    .arrow {
+      display: flex;
+      width: 30%;
+      cursor: pointer;
+      justify-content: flex-end;
+      border: none;
+    }
+  }
+}
+
+.single-discussion {
+    margin: 50px 0;
+    .new-discussion {
+      .single-post {
+      display: flex;
+      margin: 10px 0;
+      cursor: pointer;
+      .profile-img {
+        img {
+          border-radius: 50px;
+          width: 44px;
+          height: 44px;
+        }
+      }
+      .post-thread {
+        padding: 0 12px;
+        width: 470px;
+        @include atSize424 {
+          width: 90%;
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: #5b1a87;
+          font-family: Lato;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+        .author-info {
+          opacity: 0.7;
+          font-family: Lato;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 4px 0;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #949494;
+        }
+      }
+    }
+        .user-thread {
+      margin: 20px;
+      padding: 0 45px;
+      font-family: Lato;
+      font-size: 16px;
+      line-height: 1.63;
+      color: #303030;
+      @include atSize424 {
+        padding: 0 10px;
+      }
+      .reply {
+        display: flex;
+        img {
+          padding: 0 4px;
+        }
+        p {
+          color: #f00297;
+          margin: 0;
+          display: inline;
+          padding: 0 40px 0 0;
+          cursor: pointer;
+          @include atSize424 {
+            padding: 0 30px 0 0;
+          }
+        }
+        .submit {
+          width: 84%;
+          margin: 16px 0;
+          button {
+            border-radius: 3px;
+            background-image: linear-gradient(to left, #5c1a88, #300051 1%);
+            font-family: Lato;
+            font-size: 16px;
+            padding: 10px 40px;
+            border: none;
+            font-weight: bold;
+            color: #ffffff;
+          }
+          .cancel {
+            font-family: Lato;
+            font-size: 12px;
+            font-weight: bold;
+            color: #919191;
+            padding: 14px 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 0 30px;
+          }
+        }
+      }
+    }
+    }
+
+        .new-discussion-reply {
+          margin: 2px 22px 0 70px;
+          @include atSize424 {
+            margin: 0;
+          }
+      .single-post {
+      display: flex;
+      margin: 10px 0;
+      cursor: pointer;
+      .profile-img {
+        img {
+          border-radius: 50px;
+          width: 44px;
+          height: 44px;
+        }
+      }
+      .post-thread {
+        padding: 0 12px;
+        width: 470px;
+        @include atSize424 {
+          width: 90%;
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: #5b1a87;
+          font-family: Lato;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+        .author-info {
+          opacity: 0.7;
+          font-family: Lato;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 4px 0;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #949494;
+        }
+      }
+    }
+        .user-thread {
+      margin: 20px;
+      padding: 0 45px;
+      font-family: Lato;
+      font-size: 16px;
+      line-height: 1.63;
+      color: #303030;
+      @include atSize424 {
+            padding: 0 10px;
+          }
+      .reply {
+        display: flex;
+        img {
+          padding: 0 4px;
+        }
+        p {
+          color: #f00297;
+          margin: 0;
+          display: inline;
+          padding: 0 40px 0 0;
+          cursor: pointer;
+          @include atSize424 {
+            padding: 0 30px 0 0;
+          }
+        }
+        .submit {
+          width: 84%;
+          margin: 16px 0;
+          button {
+            border-radius: 3px;
+            background-image: linear-gradient(to left, #5c1a88, #300051 1%);
+            font-family: Lato;
+            font-size: 16px;
+            padding: 10px 40px;
+            border: none;
+            font-weight: bold;
+            color: #ffffff;
+          }
+          .cancel {
+            font-family: Lato;
+            font-size: 12px;
+            font-weight: bold;
+            color: #919191;
+            padding: 14px 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 0 30px;
+          }
+        }
+      }
+    }
+    }
+}
+
 .search-insights {
-  width: 359px;
+  // width: 359px;
   height: 150px;
   border-radius: 6px;
   box-shadow: 0 2px 25px 2px rgba(213, 219, 251, 0.67);
   background-color: #d5e2e5;
   margin: 20px 0;
   .insights-search-option {
-    padding: 26px 22px;
-    h1 {
+    padding: 20px 10px;
+    h3, h2, h1 {
+      font-weight: 800
+    }
+
+    h3 {
       font-size: 16px;
       font-weight: 500;
       color: $primaryColor;
       margin: 0 0 12px 0;
+      padding-left: 18px;
     }
+
+    .popular-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: $primaryColor;
+      margin: 0 0 12px 0;
+      padding-left: 18px;
+    }
+
     input {
-      width: 308px;
+      width: 296px;
       height: 52px;
       border-radius: 6px;
       box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
@@ -64,6 +344,11 @@
       font-size: 15px;
       font-weight: 500;
       color: $primaryColor;
+      margin-left: 18px;
+
+      &:focus {
+        border: none;
+      }
     }
     .search-icon {
       width: 52px;
@@ -72,7 +357,7 @@
       background-image: linear-gradient(to right, #ffc300, #ffac00);
       position: relative;
       top: -52px;
-      left: 256px;
+      left: 262px;
       img {
         position: relative;
         top: 12px;
@@ -94,12 +379,12 @@
 }
 
 .testimonials-popular-courses {
-  width: 357px;
-  height: 433px;
+  // width: 357px;
+  height: 422px;
   border-radius: 6px;
   background-color: rgba(255, 0, 142, 0.06);
   .popular-course-item {
-    width: 310px;
+    // width: 310px;
     height: 145px;
     border-radius: 6px;
     box-shadow: 0 2px 9px 3px rgba(0, 0, 0, 0.08);
@@ -126,13 +411,11 @@
         img {
           width: 58px;
           height: 58px;
-          border: solid 1px #ffb400;
-          border-radius: 50px;
         }
       }
     }
     .learn-more {
-      margin: 30px 0 0 40px;
+      margin: 18px 0 0 58px;
       p {
         font-size: 14px;
         font-weight: 500;
@@ -173,6 +456,9 @@
     height: auto;
     opacity: 0.4;
     object-fit: cover;
+    @include atSize424 {
+      display: none;
+    }
   }
 
   .mainInfo {
@@ -287,7 +573,17 @@
     text-align: left;
     margin: -40px auto;
     justify-content: left;
+    flex-direction: column;
     width: 100%;
+    img {
+      width: 566px;
+      z-index: -10;
+      position: relative;
+      top: 15px;
+      @media (min-width: 320px) and (max-width: 770px){
+        width: 100%;
+      }
+    }
     h2 {
       margin: 50px 0px 100px;
       color: $lt-gray;
@@ -311,6 +607,29 @@
       justify-content: start;
       margin: 5px 5px;
       padding: 7px 57x;
+    }
+    h3 {
+      font-family: Lato;
+      font-size: 24px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #303030;
+    }
+    h4 {
+      font-family: Lato;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #919191;
+      span {
+        color: #5b1a87;
+      }
     }
   }
   .blog-card {

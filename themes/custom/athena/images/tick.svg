@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape 2</title>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="website-home" transform="translate(-817.000000, -4776.000000)" fill="#FE1F9C" fill-rule="nonzero">
+            <g id="Shape-2" transform="translate(817.000000, 4776.000000)">
+                <path d="M12.5,0 C5.59375,0 0,5.59375 0,12.5 C0,19.4 5.59375,25 12.5,25 C19.4,25 25,19.4 25,12.5 C25,5.59375 19.4,0 12.5,0 Z M10.1132686,17.1925566 L5.0566343,12.3374109 L6.48766181,10.9634046 L10.1132686,14.4445441 L17.7841828,7.07928803 L19.2152104,8.45329427 L10.1132686,17.1925566 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
