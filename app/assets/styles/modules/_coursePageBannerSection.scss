@@ -24,6 +24,11 @@
         padding: 1.625rem 0;
     }
 
+    @include atSizeXXLarge {
+        overflow: hidden;
+        background-color: #631683;
+    }
+
     &__breadcrumbs {
         margin-bottom: 1.125rem;
 
@@ -273,6 +278,18 @@
                 width: 100%;
                 margin-top: -75px;
             }
+        }
+
+        @include atSizeXXLarge {
+            top: -20px; 
+        }
+
+        @include atSize1500 {
+            top: -30px;
+        }
+
+        @include atSize2000 {
+            top: -60px;
         }
     }
 }

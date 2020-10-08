@@ -63,3 +63,15 @@
         @content;
     }
 }
+
+@mixin atSize1500 {
+    @media (min-width: 1500px) {
+        @content;
+    }
+}
+
+@mixin atSize2000 {
+    @media (min-width: 1500px) {
+        @content;
+    }
+}
