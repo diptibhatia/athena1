@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_explore_course_details
+    - node.type.explore_courses
+    - paragraphs.paragraphs_type.explore_courses_paragraph
+  module:
+    - entity_reference_revisions
+id: node.explore_courses.field_explore_course_details
+field_name: field_explore_course_details
+entity_type: node
+bundle: explore_courses
+label: 'Explore Course Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      explore_courses_paragraph: explore_courses_paragraph
+    target_bundles_drag_drop:
+      course_module_details:
+        weight: 5
+        enabled: false
+      explore_courses_paragraph:
+        enabled: true
+        weight: 6
+      homepage_banner:
+        weight: 7
+        enabled: false
+      homepage_content:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

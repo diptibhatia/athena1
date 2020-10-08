@@ -1,4 +1,5 @@
 <?php
+use \Drupal\Core\Url;
 /**
  * @file
  * Functions to support theming in the Athena theme.
@@ -49,10 +50,13 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
   
-  
-  
-  
-
+  //print $current_path;exit;
+   if (strpos($current_path, '/node/7') !== false) {
+    
+ $variables['enable_popup'] = TRUE;
+  //print $current_path;exit;
+  }
+ 
 }
 
 /**
@@ -62,4 +66,59 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__' . $node->bundle();
   }
+}
+
+
+
+
+function athena_preprocess_node(&$variables) {
+      $current_path = \Drupal::service('path.current')->getPath();
+     if ($variables['node']->getType() === 'about_us_pages') {
+    if (strpos($current_path, 'node/7') !== false) {
+
+
+
+$alias = \Drupal::service('path.alias_manager')->getPathByAlias('/about-board-of-governance');
+$params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+$entity_type = key($params);
+$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+//print_r($node);exit;
+
+$paragraph_data = $node->field_about_us_profile->referencedEntities();
+
+$profile = array();
+$i=0;
+foreach($paragraph_data as $profile_data) {
+    
+        $designation = $profile_data->get('field_designation')->value;
+        $name = $profile_data->get('field_profile_name')->value;
+        $field_profile_desc = $profile_data->get('field_profile_desc')->value;
+        $popup_image = $profile_data->get('field_popup_image')->entity->getFileUri();
+        $profile_image = $profile_data->get('field_abiut_us_profile_img')->entity->getFileUri();
+        $p_image = file_create_url($popup_image);
+        $prof_image = file_create_url($profile_image);
+    
+
+
+$profile[] =  array(
+ 'designation' =>$designation,
+ 'name' =>$name,
+ 'desc' =>$field_profile_desc,
+ 'prof_image' =>$prof_image,
+ 'p_image' =>$p_image,
+ 'unique_id' => "popup_about_".$i,
+);
+
+
+$i++;
+    
+}
+
+
+ $variables['about_profile'] = $profile;
+ $variables['enable_popup'] = TRUE;
+ 
+  }
+ }
 }

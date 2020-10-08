@@ -1,3 +1,57 @@
+{% if enable_popup %}
+<!-- Modal -->
+
+{% for profile in about_profile %}
+<div class="aboutus-modal modal fade" id="{{profile.unique_id}}" tabindex="-1" role="dialog" aria-labelledby="aboutUsModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <div class="row">
+            <div class="col-md-4 right-img pl-0">
+              <img src="{{profile.p_image}}" class="img-fluid mx-auto brd-0" >
+            </div>
+            <div class="col-md-8">
+              <h3 class="purple-txt mb-0">{{profile.name}}</h3>
+              <p class="purple-txt"> {{profile.designation}}</p>
+              <p>{{profile.desc | raw}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<div class="col-md-12 col-sm-12">
+                   <div class="container txt-14">
+                        <h3 class="page-title">Governace Board</h3>
+                        <p>Governance Board of Athena comprises various external experts, including experienced academics, legal and industry representatives. The Board monitors the organisationalperformance in terms of corporate governance, academic independence, ethics and integrity. It also provides strategic, academic and developmental advice, as well as direction and assistanceto the Executive and Academic Councils agendas, which are the two higher level councilsresponsible for overall  executive and academic operations of the organisation.GovernanceBoard will also appoint independent auditors to carry out financial and academic audits. Theseindependent bodies will directly report to the Board, the audit reports will be discussed in theBoard Meetings and disseminated for advice and action to the Executive and AcademicCouncils.</p>
+                       <div class="row mb-3">
+					   
+					      {% for profile in about_profile %}
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="{{profile.prof_image}}" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">{{profile.name}} </p>
+                                <p> {{profile.designation}} </p>
+                            </div>
+                            <p>{{profile.desc|truncate(205) }}</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button" data-toggle="modal" data-target="#{{profile.unique_id}}">Read More..</a></p>
+                          </div>
+						  
+						  {% endfor %}
+                        </div>
+                       
+                    </div> 
+                </div>
+
+
+{% else %}
+
+
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
@@ -19,3 +73,5 @@
   <div{{ content_attributes }}>
     {{ content }}
   </div>
+  
+  {% endif %}
