@@ -1,4 +1,7 @@
 excluded:
   - field.storage.node.field_about_us_profile
   - field.storage.node.field_explore_course_details
-required: true
+  - node.type.about_us_readmore_pages
+  - core.entity_form_display.node.about_us_readmore_pages.default
+  - core.entity_view_display.node.about_us_readmore_pages.default
+  - core.entity_view_display.node.about_us_readmore_pages.teaser
