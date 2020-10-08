@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.explore_courses.field_explore_course_details
+    - node.type.explore_courses
+  module:
+    - user
+id: node.explore_courses.teaser
+targetEntityType: node
+bundle: explore_courses
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_explore_course_details: true

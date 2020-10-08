@@ -1,0 +1,14 @@
+name: 'Course Type'
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - field
+  - image
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - path
+  - text
+  - user

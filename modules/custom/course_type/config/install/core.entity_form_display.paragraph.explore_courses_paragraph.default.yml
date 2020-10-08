@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.explore_courses_paragraph.field_explore_course_banner_desc
+    - field.field.paragraph.explore_courses_paragraph.field_explore_course_type
+    - field.field.paragraph.explore_courses_paragraph.field_header_background_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.explore_courses_paragraph
+  module:
+    - image
+    - text
+id: paragraph.explore_courses_paragraph.default
+targetEntityType: paragraph
+bundle: explore_courses_paragraph
+mode: default
+content:
+  field_explore_course_banner_desc:
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_explore_course_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_header_background_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

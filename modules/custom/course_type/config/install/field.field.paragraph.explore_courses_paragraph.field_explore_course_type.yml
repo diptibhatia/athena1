@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_explore_course_type
+    - paragraphs.paragraphs_type.explore_courses_paragraph
+  module:
+    - options
+id: paragraph.explore_courses_paragraph.field_explore_course_type
+field_name: field_explore_course_type
+entity_type: paragraph
+bundle: explore_courses_paragraph
+label: 'Explore course Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

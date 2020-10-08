@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: explore_courses_paragraph
+label: 'Explore courses paragraph'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
