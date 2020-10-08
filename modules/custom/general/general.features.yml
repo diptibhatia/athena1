@@ -1,1 +1,4 @@
+excluded:
+  - field.storage.node.field_about_us_profile
+  - field.storage.node.field_explore_course_details
 required: true
