@@ -167,7 +167,7 @@ Additionally, after completing the course modules, learners are eligible for a â
                 $paragraph = Paragraph::create(['type' => 'course_module_details']);
                   $paragraph->set('field_course_module_fees', $module_data['fee']); 
                   $paragraph->set('field_course_module_ects_credit', 6); 
-                  $paragraph->set('field_course_module_name', $module_data['module_name']); 
+                  $paragraph->set('field_course_module_name', $module_data['fk_module_name']); 
                   $paragraph->save();
                    $current[] = array(
       'target_id' => $paragraph->id(),
