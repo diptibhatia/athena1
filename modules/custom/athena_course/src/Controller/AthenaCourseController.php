@@ -143,7 +143,7 @@ Additionally, after completing the course modules, learners are eligible for a â
           $oldnode->set('title',$course_data['course_name']);
           $oldnode->set('field_course_total_credits', $course_data['ects_credit']);
           $oldnode->set('field_course_awarding_body', $course_data['awarded_by']);
-          $oldnode->set('field_course_overview', $course_data['course_introduction']);
+          //$oldnode->set('field_course_overview', $course_data['course_introduction']);
           $oldnode->set('field_course_total_fee', $fee);
           $oldnode->set('field_course_category', $field_course_category);
           $oldnode->set('field_course_academic_route',  $eligibility['academic_route']);
