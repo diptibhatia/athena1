@@ -86,27 +86,30 @@
 
         &-list {
             max-width: 670px;
+            margin-bottom: 30px;
 
             @include atSize1250 {
                 margin-right: 20px;
+                margin-bottom: 0;
             }
 
             ul {
                 list-style: none;
                 padding: 0;
-                margin-bottom: 0;
+                margin-bottom: 15;
             }
     
             li {
-                line-height: 30px;
+                line-height: 1.6;
                 text-indent: 12px;
                 position: relative;
+                margin-bottom: 10px;
 
                 @include atSize1250 {
                     text-indent: 0;
                     padding-left: 25px;
                     font-size: 1rem;
-                    line-height: 2.5;
+                    line-height: 1.8;
                 }
     
                 &::before {
@@ -137,13 +140,13 @@
             }
     
             p {
-                font-weight: bold;
-                line-height: 30px;
-                margin-bottom: 30px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+                font-size: .875rem;
 
                 @include atSize1250 {
                     font-size: 1rem;
-                    line-height: 2.5;
+                    line-height: 1.8;
                 }
             }
         }
