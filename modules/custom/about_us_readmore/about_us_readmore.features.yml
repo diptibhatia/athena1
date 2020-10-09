@@ -1,1 +1,11 @@
+excluded:
+  - core.entity_form_display.node.about_us_pages.default
+  - core.entity_form_display.node.about_us_readmore_pages.default
+  - core.entity_form_display.paragraph.about_us_read_more_paragraph.default
+  - core.entity_view_display.node.about_us_pages.default
+  - core.entity_view_display.node.about_us_pages.teaser
+  - core.entity_view_display.node.about_us_readmore_pages.default
+  - core.entity_view_display.node.about_us_readmore_pages.teaser
+  - core.entity_view_display.paragraph.about_us_read_more_paragraph.default
+  - field.storage.node.field_about_us_profile
 required: true
