@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_us_read_more_paragraph.field_abiut_us_profile_img
+    - field.field.paragraph.about_us_read_more_paragraph.field_designation
+    - field.field.paragraph.about_us_read_more_paragraph.field_popup_image
+    - field.field.paragraph.about_us_read_more_paragraph.field_profile_desc
+    - field.field.paragraph.about_us_read_more_paragraph.field_profile_name
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.about_us_read_more_paragraph
+  module:
+    - image
+    - text
+id: paragraph.about_us_read_more_paragraph.default
+targetEntityType: paragraph
+bundle: about_us_read_more_paragraph
+mode: default
+content:
+  field_abiut_us_profile_img:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_designation:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_popup_image:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_profile_desc:
+    weight: 5
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_profile_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
