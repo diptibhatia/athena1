@@ -37,6 +37,10 @@
 
 	.academic-bg-wrap {		
 
+		@include atSize424 {
+			margin-top: 30px;
+		}		
+
 	    @include atSize700 { 
 			background: url("images/academic-bg.png");
 			background-position-y: 290px;
@@ -185,6 +189,10 @@
 				.owl-nav {
 					bottom: -20px;
 					top: unset;
+
+					@include atSize424 {
+						display: flex;
+					}
 				}
 
 				.student-image {
@@ -219,7 +227,8 @@
 							    position: relative;
 							}
 							@include atSize424 {
-								padding: 40px 0 0 0;
+								padding: 66px 0 0 0;
+								font-size: 16px;
 							}
 						}
 					}
