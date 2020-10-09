@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about_us_pages.field_about_us_page_description
+    - field.field.node.about_us_pages.field_profile_details
+    - node.type.about_us_pages
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.about_us_pages.default
+targetEntityType: node
+bundle: about_us_pages
+mode: default
+content:
+  field_about_us_page_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_profile_details:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true

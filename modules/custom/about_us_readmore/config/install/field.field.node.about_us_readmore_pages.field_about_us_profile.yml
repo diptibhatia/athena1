@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_about_us_profile
+    - node.type.about_us_readmore_pages
+    - paragraphs.paragraphs_type.about_us_read_more_paragraph
+  module:
+    - entity_reference_revisions
+id: node.about_us_readmore_pages.field_about_us_profile
+field_name: field_about_us_profile
+entity_type: node
+bundle: about_us_readmore_pages
+label: 'About us profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      about_us_read_more_paragraph: about_us_read_more_paragraph
+    target_bundles_drag_drop:
+      about_us_read_more_paragraph:
+        enabled: true
+        weight: 6
+      course_module_details:
+        weight: 7
+        enabled: false
+      explore_courses_paragraph:
+        weight: 8
+        enabled: false
+      homepage_banner:
+        weight: 9
+        enabled: false
+      homepage_content:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_profile_desc
+    - paragraphs.paragraphs_type.about_us_read_more_paragraph
+  module:
+    - text
+id: paragraph.about_us_read_more_paragraph.field_profile_desc
+field_name: field_profile_desc
+entity_type: paragraph
+bundle: about_us_read_more_paragraph
+label: 'Profile description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

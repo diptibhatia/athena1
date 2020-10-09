@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_designation
+    - paragraphs.paragraphs_type.about_us_read_more_paragraph
+id: paragraph.about_us_read_more_paragraph.field_designation
+field_name: field_designation
+entity_type: paragraph
+bundle: about_us_read_more_paragraph
+label: Designation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
