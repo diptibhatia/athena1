@@ -1,5 +1,5 @@
 .partners-tabs {
-    background-color: $skyblue;
+    background-color: #eff1fe;
     padding-top: 46px;
     overflow: hidden;
 
@@ -68,8 +68,16 @@
     &__mba {
         padding-bottom: 184px;
 
+        &.no-bottom-video {
+            padding-bottom: 110px;
+        }
+
         @include atSize1100 {
             padding-bottom: 140px;
+
+            &.no-bottom-video {
+                padding-bottom: 80px;
+            }
         }
 
         &-text {

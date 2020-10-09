@@ -50,11 +50,12 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
   
-  //print $current_path;exit;
-   if (strpos($current_path, '/node/7') !== false) {
+$current_uri = \Drupal::request()->getRequestUri();
+
+   if (strpos($current_uri, 'about-us/governance-structure') !== false) {
     
  $variables['enable_popup'] = TRUE;
-  //print $current_path;exit;
+
   }
  
 }
@@ -91,13 +92,13 @@ $profile = array();
 $i=0;
 foreach($paragraph_data as $profile_data) {
     
-        $designation = $profile_data->get('field_designation')->value;
-        $name = $profile_data->get('field_profile_name')->value;
-        $field_profile_desc = $profile_data->get('field_profile_desc')->value;
-        $popup_image = $profile_data->get('field_popup_image')->entity->getFileUri();
-        $profile_image = $profile_data->get('field_abiut_us_profile_img')->entity->getFileUri();
-        $p_image = file_create_url($popup_image);
-        $prof_image = file_create_url($profile_image);
+    $designation = $profile_data->get('field_designation')->value;
+    $name = $profile_data->get('field_profile_name')->value;
+    $field_profile_desc = $profile_data->get('field_profile_desc')->value;
+    $popup_image = $profile_data->get('field_popup_image')->entity->getFileUri();
+    $profile_image = $profile_data->get('field_abiut_us_profile_img')->entity->getFileUri();
+    $p_image = file_create_url($popup_image);
+    $prof_image = file_create_url($profile_image);
     
 
 
