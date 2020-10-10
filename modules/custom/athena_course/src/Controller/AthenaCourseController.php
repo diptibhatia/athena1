@@ -30,6 +30,8 @@ $banner_block =  [
   '#node' => $node
 ]; 
 
+
+//print_r($node);exit;
 $course_description_tabs =  [
   '#theme' => 'course_description_tabs',
   '#overview' => $node->get('field_course_overview')->value,
@@ -149,7 +151,7 @@ Additionally, after completing the course modules, learners are eligible for a â
           $oldnode->set('field_course_academic_route',  $eligibility['academic_route']);
           $oldnode->set('field_course_mature_entry_label', $eligibility['adult_entry_route']);
           $oldnode->set('field_course_language_prof_label', $eligibility['language_proficiency']);
-          $oldnode->set('field_course_duration', '9-36 months');
+            $oldnode->set('field_course_duration', '9-36 months');
           $oldnode->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italyâ€™s top B-School - Guglielmo Marconi University. Start your MBA journey today
 
 ");

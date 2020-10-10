@@ -54,11 +54,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                    <p>Ministry of Education, Italy</p>
-                                    <p>Scottish Qualification Authority, UK</p>
-                                    
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
                                     {% for accreditation in accreditations %}
-                                       <p>{{accreditation.content}}</p>
+                                       <p>{{accreditation}}</p>
                                     {% endfor %}
                                     
                                 </div>
@@ -130,8 +129,9 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                    <p>Ministry of Education, Italy</p>
-                                    <p>Scottish Qualification Authority, UK</p>
+                                     {% for accreditation in accreditations %}
+                                       <p>{{accreditation.content}}</p>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -193,8 +193,9 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                    <p>Ministry of Education, Italy</p>
-                                    <p>Scottish Qualification Authority, UK</p>
+                                    {% for accreditation in accreditations %}
+                                       <p>{{accreditation.content}}</p>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -241,8 +242,9 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                    <p>Ministry of Education, Italy</p>
-                                    <p>Scottish Qualification Authority, UK</p>
+                                     {% for accreditation in accreditations %}
+                                       <p>{{accreditation.content}}</p>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
