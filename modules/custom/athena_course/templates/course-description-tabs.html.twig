@@ -56,9 +56,7 @@
                                     <h3>Accreditations</h3>
                                         <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
-                                    {% for accreditation in accreditations %}
-                                       <p>{{accreditation}}</p>
-                                    {% endfor %}
+                                   
                                     
                                 </div>
                             </div>
@@ -109,14 +107,14 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>9-36 months</p>
+                                    <p>{{duration}} months</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
                                 <img src="{{base_path}}/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>Dual Certification</h3>
-                                    <p>IMBA &amp; Scottish Diploma</p>
+                                    <h3>{{certification_label}}</h3>
+                                    <p>{{certification}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -129,9 +127,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                     {% for accreditation in accreditations %}
-                                       <p>{{accreditation.content}}</p>
-                                    {% endfor %}
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
+                                   
+                                    
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -173,14 +172,14 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>9-36 months</p>
+                                    <p>{{duration}} months</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
                                 <img src="{{base_path}}/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>Dual Certification</h3>
-                                    <p>IMBA &amp; Scottish Diploma</p>
+                                    <h3>{{certification_label}}</h3>
+                                    <p>{{certification}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -193,9 +192,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                    {% for accreditation in accreditations %}
-                                       <p>{{accreditation.content}}</p>
-                                    {% endfor %}
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
+                                   
+                                    
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -214,7 +214,7 @@
                             <div class="overview-points-card__container">
                                 <img src="{{base_path}}/images/coursepage/fee.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>$5,000 Total Fee</h3>
+                                    <h3>${{total_fee}} Total Fee</h3>
                                     <p>Pay Per Module</p>
                                 </div>
                             </div>
@@ -222,14 +222,14 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>9-36 months</p>
+                                    <p>{{duration}} months</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
                                 <img src="{{base_path}}/images/coursepage/course-certification.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>Dual Certification</h3>
-                                    <p>IMBA &amp; Scottish Diploma</p>
+                                    <h3>{{certification_label}}</h3>
+                                    <p>{{certification}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -242,9 +242,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                     {% for accreditation in accreditations %}
-                                       <p>{{accreditation.content}}</p>
-                                    {% endfor %}
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
+                                   
+                                    
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
