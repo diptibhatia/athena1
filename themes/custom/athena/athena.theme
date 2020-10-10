@@ -122,6 +122,8 @@ $i++;
  $variables['about_profile'] = $profile;
  $variables['enable_popup'] = TRUE;
  
-  }
+  }else {
+$variables['enable_popup'] = FALSE;
+}
  }
 }
