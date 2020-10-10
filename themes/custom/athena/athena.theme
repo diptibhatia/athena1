@@ -74,8 +74,9 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
 
 function athena_preprocess_node(&$variables) {
       $current_path = \Drupal::service('path.current')->getPath();
+$current_uri = \Drupal::request()->getRequestUri();
      if ($variables['node']->getType() === 'about_us_pages') {
-    if (strpos($current_path, 'node/7') !== false) {
+      if (strpos($current_uri, 'about-us/governance-structure') !== false) {
 
 
 
