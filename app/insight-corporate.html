@@ -116,6 +116,7 @@
 
     <div w3-include-html="footer.html"></div>
 
+     <script src="jquery.min.js"></script>
     <script type="text/javascript">
         includeHTML();
         function includeHTML() {
@@ -166,7 +167,19 @@
         }
 
         updateProgress();
+
+        $(document).scroll(function() {
+            var y = $(document).scrollTop(),
+                header = $(".share-icon ul");
+            if(y <= 1600)  {
+                header.css({position: "fixed"});
+            } else {
+                header.css("position", "relative");
+            }
+        });
     </script>
+
+
 
     <script src="bundled.js"></script>
 </body>
