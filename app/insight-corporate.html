@@ -20,7 +20,7 @@
                 <div class="col-md-8 col-sm-12 border-right pl-0">
                     <div class="container txt-14 pl-0">
                         <h3 class="strong corporate-title">A Strong Corporate Culture Is Important, Now More Than Ever</h3>
-                        <div class="col-md-12 col-sm-12 insight-banner d-flex p-0 mb-3">
+                        <div class="col-md-12 col-sm-12 insight-banner row p-0 mb-3">
                             <div class="col-md-11 col-sm-11 p-0">
                                 <img src="images/insight-corporate.png" class="img-fluid" alt="Insight" />
                                 <p>
@@ -29,7 +29,7 @@
                                     </small>
                                 </p>
                             </div>
-                            <div class="col-md-1 col-sm-1 share-icon">
+                            <div class="col-md-1 col-sm-1 share-icon mobile-share-icon">
                                 <ul class="list-unstyled">
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/share.svg" /></a></li>
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/facebook.svg" /></a></li>
@@ -172,6 +172,16 @@
             var y = $(document).scrollTop(),
                 header = $(".share-icon ul");
             if(y <= 1600)  {
+                header.css({position: "fixed"});
+            } else {
+                header.css("position", "relative");
+            }
+        });
+
+        $(document).scroll(function() {
+            var y = $(document).scrollTop(),
+                header = $(".mobile-share-icon ul");
+            if(y <= 3200)  {
                 header.css({position: "fixed"});
             } else {
                 header.css("position", "relative");
