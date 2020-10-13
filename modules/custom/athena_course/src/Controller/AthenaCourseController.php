@@ -60,6 +60,43 @@ return array(
 );
 
   }
+  
+  public function registration() {
+    // New D8 procedural code.
+   $parameters = \Drupal::routeMatch()->getParameters();  
+   
+     $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('type', $bundle);
+    $entity_ids = $query->execute();
+if(!empty($entity_ids)) {
+$nodes = node_load_multiple($entity_ids);
+}
+
+
+//$node = Node::load($nid);
+
+// Base theme path.
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+$base_path = $base_url.'/'. $theme->getPath();
+
+
+
+
+//print_r($node);exit;
+$registration =  [
+  '#theme' => 'course_registration',
+  '#base_path' => $base_path,
+  '#nodes' => $nodes,
+];    
+
+return array(
+   $registration
+);
+
+  }
 
   public function import(){
 
@@ -436,5 +473,7 @@ return array($academic);
    
     
 }
+
+
 
 }

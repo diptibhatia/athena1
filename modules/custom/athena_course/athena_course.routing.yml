@@ -44,4 +44,13 @@ athena_course.certifications:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::certifications'
     _title: 'Custom athena course module'
   requirements: 
-    _permission: 'access content'    
+    _permission: 'access content'
+    
+athena_course.registration:
+  path: '/registration'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::registration'
+    _title: 'Course Registration'
+  requirements: 
+    _permission: 'access content'
+    

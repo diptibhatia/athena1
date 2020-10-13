@@ -113,6 +113,13 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'course' => NULL,
       ],
     ],
+    
+    'course_registration' => [
+      'variables' => [
+      'base_path' => NULL,
+      'nodes' => NULL,
+      ],
+    ],
 
 
  'course_list' => [
