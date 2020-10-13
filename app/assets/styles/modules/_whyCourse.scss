@@ -1,5 +1,8 @@
 .why-course {
     padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ff459a;
+    color: #fff;
 
     @include atSize1100 {
         padding-top: 31px;
@@ -42,7 +45,7 @@
 
             &::first-letter {
                 font-size: 3.44rem;
-                opacity: .1;
+                opacity: .5;
                 margin-right: 8px;
                 vertical-align: sub;
 

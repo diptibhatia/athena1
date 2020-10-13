@@ -1,0 +1,93 @@
+.what-you-get {
+    padding: 23px 0 300px;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 14px;
+
+        @include atSize850 {
+            font-size: 2rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 6%;
+                height: 3.5px;
+                border-radius: 1.5px;
+                background-color: $titlePink;
+                position: absolute;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    .msg {
+        max-width: 830px;
+        line-height: 1.44;
+        color: $secondaryColor;
+        margin-bottom: 37px;
+        font-size: 1rem;
+
+        @include atSize850 {
+            font-size: 1.125rem;
+        }
+    }
+
+    .container-box {
+        border-radius: 6px;
+        box-shadow: 0 2px 25px 2px #d5dbfb;
+        padding: 30px;
+
+        @include atSize850 {
+            padding: 44px 35px 44px 60px;
+        }
+
+        .contains {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+
+            &:nth-last-of-type(1) {
+                margin-bottom: 0;
+            }
+
+            p {
+                margin: 0;
+                line-height: 1.44;
+                padding-left: 22px;
+                font-size: 1rem;
+
+                @include atSize850 {
+                    font-size: 1.125rem;
+                }
+
+                span {
+                    color: #ff0992;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                font-style: italic;
+                font-size: .9rem;
+                color: $secondaryColor;
+                transition: color .2s ease-out;
+                cursor: pointer;
+
+                @include atSize850 {
+                    font-size: 1rem;
+                }
+
+                &:hover {
+                    color: #ff0992;
+                }
+            }
+
+            .modal-body img {
+                width: 100%;
+            }
+        }
+    }
+}
