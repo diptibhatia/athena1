@@ -200,7 +200,7 @@ return array(
 
 function search($word = false){
     
- if (isset($_POST['submit_form']) ){
+
      
    /* $nodes =  \Drupal::entityTypeManager()->getStorage('node')
   ->loadByProperties(['type' => 'course', 'status' => 1]);*/
@@ -217,7 +217,7 @@ function search($word = false){
     $entity_ids = $query->execute();
 
         
- } 
+ 
     
     // Base theme path.
 global $base_url;

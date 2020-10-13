@@ -107,7 +107,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-
+'popular_course' => [
+      'variables' => [
+      'base_path' => NULL,
+      'course' => NULL,
+      ],
+    ],
 
 
  'course_list' => [

@@ -1,0 +1,133 @@
+.course-login-wrapper {
+	width: 500px;
+  	height: 813px;
+  	border-radius: 6px;
+  	box-shadow: 0 2px 25px 2px #d5dbfb;
+  	
+  	background-color: #ffffff;
+	.login-details {
+		padding: 20px;
+		h2 {
+		font-family: Lato;
+	  	font-size: 20px;
+	  	margin: 0;
+	  	font-weight: bold;
+	  	font-stretch: normal;
+	  	font-style: normal;
+	  	line-height: 1.46;
+	  	letter-spacing: normal;
+	  	color: $primaryColor;
+		}
+		h3 {
+			span {
+				content: '';
+			    width: 19%;
+			    height: 0px;
+			    display: inline-block;
+			    position: absolute;
+			    top: 72px;
+			    margin-left: 10px;
+			    border: solid 2px #ff459a;
+			}
+		}
+		p {
+			font-family: Lato;
+		 	font-size: 16px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.75;
+			letter-spacing: normal;
+			color: $secondaryColor;
+		}
+		.login-item {
+			padding: 10px 0;
+			p {
+				font-family: Lato;
+			    font-size: 16px;
+			    font-weight: normal;
+			    font-stretch: normal;
+			    font-style: normal;
+			    line-height: normal;
+			    letter-spacing: normal;
+			    color: $primaryColor;
+			    margin: 0;
+			}
+			input, select {
+				height: 50px;
+			    border-radius: 6px;
+			    box-shadow: 0 2px 18px -1px #d5dbfb;
+			    border: solid 1.2px rgba(255, 61, 144, 0.18);
+			    background-color: #ffffff;
+			    width: 450px;
+			    padding: 10px;
+			    margin: 4px 0 20px 0;
+			    font-family: Lato;
+			    font-size: 16px;
+			    font-weight: 500;
+			    font-stretch: normal;
+			    font-style: normal;
+			    line-height: normal;
+			    letter-spacing: normal;
+			    color: rgba(24,43,79, 0.3);
+			}
+		}
+		.names {
+			display: flex;
+			.name-item {
+				flex-direction: row;
+				input {
+					width: 219px;
+					margin: 0 10px 0 0;
+				}
+			}
+		}
+		.button {
+			width: 100%;
+			text-align: left;
+			padding: 10px 30px;
+			button {
+				width: 347px;
+			  	height: 50px;
+			  	border-radius: 6px;
+			  	box-shadow: 0 2px 25px 2px #d5dbfb;
+			  	background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
+			  	font-family: Lato;
+			  	font-size: 16px;
+			  	font-weight: normal;
+			  	font-stretch: normal;
+			  	font-style: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;
+			  	color: #ffffff;
+			  	border: none;
+			  	margin: 30px 0;
+			}
+		}
+	}
+	@media (max-width: 424px) {
+		h3 {
+			width: 100%;
+		}
+		.login-details {
+			.login-item {
+				input, select {
+					width: 100%;
+				}
+			}
+			.names {
+				.name-item {
+					input, select {
+						width: 100%;
+					}
+				}
+			}
+			.button {
+				width: 100%;
+				button {
+					width: 300px;
+				}
+			}
+		}
+	}
+}
