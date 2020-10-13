@@ -208,16 +208,31 @@
 </div>
 <div class="site-header__menu-content">
   <nav class="primary-nav">
-  {# Label. If not displayed, we still provide it for screen readers. #}
-  {% if not configuration.label_display %}
-    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-  {% endif %}
-  {{ title_suffix }}
-
-  {# Menu. #}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+  <ul>
+                        <li class="about"><a href="{{ url('<front>') }}about-us/our-background">About Us <i class="arrow arrow--down"></i></a>
+                           <ul class="secondary-nav">
+                              <li><a href="{{ url('<front>') }}about-us/our-background/">Our Background</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/founder-and-ceo">Founder &amp; CEO</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/board-of-governance">Board of Governance</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/athena-governance-structure">Governance Structure</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/academic-director">Academic Director</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/dean">Dean</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/executive-council">Executive Council</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/academic-council">Academic Council</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/core-principles">Core Principles</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/key-staffs-and-contacts">Key Staffs & Contacts</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/accreditation-and-partnerships">Accreditation & Partnerships</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/athena-and-associated-entities">Associated Entities</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Awards & Recognitions</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policies & Procedures</a></li>
+                              <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Insights</a></li>
+                        <li><a class="loginBtn" href="#">Log in</a></li>
+                        <li><a class="getStartedBtn" href="#">Get Started</a></li>
+                    </ul>
   </nav>
 </div>
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
