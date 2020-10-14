@@ -34,7 +34,7 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>{{duration}} months</p>
+                                    <p>{{duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -51,14 +51,16 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
+                                {% if node.field_courses_credit_type.0.value != 'CIQ' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
-                                <div class="overview-points-card__container-contains">
+                               <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
                                         <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
                                    
                                     
                                 </div>
+                                {% endif %}
                             </div>
                             <div class="overview-points-card__container">
                                 <a href="{{ url('<front>') }}registration" >Take a Free Trial Now</a>
@@ -107,7 +109,7 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>{{duration}} months</p>
+                                    <p>{{duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -124,14 +126,16 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
+                                {% if node.field_courses_credit_type.0.value != 'CIQ' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
-                                <div class="overview-points-card__container-contains">
+                               <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
                                         <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
                                    
                                     
                                 </div>
+                                {% endif %}
                             </div>
                             <div class="overview-points-card__container">
                                 <a href="{{ url('<front>') }}registration" >Take a Free Trial Now</a>
@@ -172,7 +176,7 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>{{duration}} months</p>
+                                    <p>{{duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -189,14 +193,16 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
+                                {% if node.field_courses_credit_type.0.value != 'CIQ' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
-                                <div class="overview-points-card__container-contains">
+                               <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
                                         <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
                                    
                                     
                                 </div>
+                                {% endif %}
                             </div>
                             <div class="overview-points-card__container">
                                 <a href="{{ url('<front>') }}registration" >Take a Free Trial Now</a>
@@ -222,7 +228,7 @@
                                 <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
                                     <h3>Flexible</h3>
-                                    <p>{{duration}} months</p>
+                                    <p>{{duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -239,14 +245,17 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
+                                 {% if node.field_courses_credit_type.0.value != 'CIQ' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
-                                <div class="overview-points-card__container-contains">
+                               <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
                                         <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
                                    
                                     
                                 </div>
+                                {% endif %}
+                                
                             </div>
                             <div class="overview-points-card__container">
                                 <a href="{{ url('<front>') }}registration" >Take a Free Trial Now</a>
