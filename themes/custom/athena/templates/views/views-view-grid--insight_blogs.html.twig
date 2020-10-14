@@ -27,7 +27,11 @@
 {% endif %}
 {% if options.alignment == 'horizontal' %}
   {% for row in items %}
-    <div class="row pt-3" {{ 'row-' ~ loop.index}} >
+    {% if loop.index ==1 %}
+      <div class="row" {{ 'row-' ~ loop.index}} >
+    {% else %}
+      <div class="row pt-3" {{ 'row-' ~ loop.index}} >
+    {% endif %}
       {% for column in row.content %}
         {% if loop.index % 3 %}
           <div class="col-md-4 shadow-sm rounded p-0 mr-2 insight-cards">
