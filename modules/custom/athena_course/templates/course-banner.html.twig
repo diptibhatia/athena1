@@ -16,7 +16,10 @@
             <div class="course-banner__apply-btn">
                 <button><a href="{{ url('<front>') }}registration" style=" text-decoration: inherit;
     color: inherit;font-weight:inherit;padding-left:0px;text-transform:inherit;" >Apply now</a></button>
-                <p>*{{ects_credit}} Credits (ECTS)</p>
+    {% if node.field_courses_credit_type.0.value %}
+                                
+                <p>*{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
+                {% endif %}
             </div>
             <!-- <div class="course-banner__watch-intro">
                 <a href="#">
