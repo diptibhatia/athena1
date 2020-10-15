@@ -10,6 +10,7 @@ global-js:
   version: VERSION
   js:
     js/main.js: {}
+    script.js: {}
     js/bootstrap.min.js: {}
     js/fontawesome.min.js: {}
     js/jquery.min.js: {}
