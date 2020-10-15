@@ -1,132 +1,199 @@
 .course-login-wrapper {
-	width: 500px;
-  	height: 813px;
   	border-radius: 6px;
-  	box-shadow: 0 2px 25px 2px #d5dbfb;
-  	
-  	background-color: #ffffff;
+	box-shadow: 0 2px 25px 2px #d5dbfb;
+	position: relative;
+	z-index: 10; 
+	background-color: #ffffff; 
+
+	@include atSize700 {
+		width: 500px;
+		height: 813px;
+		right: -40px; 
+	}
+	  
 	.login-details {
-		padding: 20px;
+		padding: 20px 23px;
+
 		h2 {
-		font-family: Lato;
-	  	font-size: 20px;
-	  	margin: 0;
-	  	font-weight: bold;
-	  	font-stretch: normal;
-	  	font-style: normal;
-	  	line-height: 1.46;
-	  	letter-spacing: normal;
-	  	color: $primaryColor;
+			font-size: 1rem;
+			margin: 0;
+			font-weight: bold;
+			line-height: 1.46;
+			color: $primaryColor;
+
+			@include atSize700 {
+				font-size: 1.25rem;
+			} 
+		  
+			&::after {
+				content: none;	
+			}
 		}
+
 		h3 {
+			font-weight: bold;
+			margin-bottom: 5px;
+			font-size: 1.125rem;
+
+			@include atSize700 {
+				margin-bottom: 15px;
+				font-size: 1.5rem;
+			}
+
 			span {
 				content: '';
-			    width: 19%;
+			    width: 43%;
 			    height: 0px;
-			    display: inline-block;
+			    display: none;
 			    position: absolute;
 			    top: 72px;
 			    margin-left: 10px;
-			    border: solid 2px #ff459a;
+				border: solid 2px #ff459a;
+				
+				@include atSize700 {
+					display: inline-block;
+				}
 			}
 		}
+
 		p {
-			font-family: Lato;
-		 	font-size: 16px;
-			font-weight: normal;
-			font-stretch: normal;
-			font-style: normal;
-			line-height: 1.75;
-			letter-spacing: normal;
+		 	font-size: .9rem;
+			line-height: 1.65;
 			color: $secondaryColor;
+			margin-bottom: 10px;
+
+			@include atSize700 {
+				font-size: 1rem;
+				line-height: 1.75;
+				margin-bottom: 16px;
+			}
 		}
+
 		.login-item {
 			padding: 10px 0;
+
 			p {
-				font-family: Lato;
-			    font-size: 16px;
-			    font-weight: normal;
-			    font-stretch: normal;
-			    font-style: normal;
-			    line-height: normal;
-			    letter-spacing: normal;
+			    font-size: .9rem;
 			    color: $primaryColor;
-			    margin: 0;
+				margin: 0 0 7px 2px;
+				
+				@include atSize700 {
+					font-size: 1rem;
+				}
 			}
+
 			input, select {
 				height: 50px;
 			    border-radius: 6px;
 			    box-shadow: 0 2px 18px -1px #d5dbfb;
-			    border: solid 1.2px rgba(255, 61, 144, 0.18);
+				border: solid 1.2px rgba(255, 61, 144, 0.18);
+				border: none;
 			    background-color: #ffffff;
 			    width: 450px;
 			    padding: 10px;
-			    margin: 4px 0 20px 0;
-			    font-family: Lato;
+				margin: 4px 0 20px 0;
+				margin: 0;
 			    font-size: 16px;
-			    font-weight: 500;
-			    font-stretch: normal;
-			    font-style: normal;
-			    line-height: normal;
-			    letter-spacing: normal;
-			    color: rgba(24,43,79, 0.3);
-			}
-		}
-		.names {
-			display: flex;
-			.name-item {
-				flex-direction: row;
-				input {
-					width: 219px;
-					margin: 0 10px 0 0;
+				
+				&::-webkit-input-placeholder { /* Edge */
+					opacity: .4;
+				  }
+				  
+				&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+					opacity: .4;
+				  }
+				  
+				&::placeholder {
+					opacity: .4;
+				  }
+
+				&:focus {
+					outline: none;
 				}
 			}
 		}
+
+		.names {
+			display: flex;
+
+			.name-item {
+				flex-direction: row;
+				margin-right: 10px;
+
+				&:nth-last-of-type(1) {
+					margin-right: 0;
+				}
+
+				@include atSize700 {
+					margin-right: 0;
+				}
+
+				input {
+					width: 219px;
+
+					@include atSize700 {
+						margin: 0 10px 0 0;
+					}
+				}
+			}
+		}
+
 		.button {
 			width: 100%;
 			text-align: left;
 			padding: 10px 30px;
+
 			button {
-				width: 347px;
+				width: 100%;
 			  	height: 50px;
 			  	border-radius: 6px;
 			  	box-shadow: 0 2px 25px 2px #d5dbfb;
 			  	background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
-			  	font-family: Lato;
 			  	font-size: 16px;
-			  	font-weight: normal;
-			  	font-stretch: normal;
-			  	font-style: normal;
-			  	line-height: normal;
-			  	letter-spacing: normal;
 			  	color: #ffffff;
 			  	border: none;
-			  	margin: 30px 0;
+				margin: 22px auto 0;
+				display: block;
+
+				@include atSize700 {
+					width: 347px;
+					margin-bottom: 28px;
+				}
+			}
+
+			.form-check-label {
+				color: $secondaryColor;
 			}
 		}
 	}
-	@media (max-width: 424px) {
+
+	@media (max-width: 699px) {
+
 		h3 {
 			width: 100%;
 		}
+
 		.login-details {
+
 			.login-item {
+
 				input, select {
 					width: 100%;
 				}
 			}
+
 			.names {
+
 				.name-item {
+
 					input, select {
 						width: 100%;
 					}
 				}
 			}
+
 			.button {
 				width: 100%;
-				button {
-					width: 300px;
-				}
 			}
 		}
 	}

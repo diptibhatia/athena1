@@ -1312,6 +1312,116 @@
             </div>
         </div>
     </div>
+    <div class="our-students-say">
+        <div class="wrapper">
+            <h2>And Our Students Says</h2>
+            <div class="testimonials">
+                <div id="carouseIndicators" class="carousel slide" data-ride="carousel" data-interval="3500">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial">
+                                <div>
+                                    <img src="images/coursepage/courseteam.png" alt="student" class="studentImg">
+                                    <p class="msg">With AGE, you are in charge of your learning! You decide the timing of 
+                                        your learning and the pace of your education – you can complete each module by the 
+                                        21st day of enrollment up until th</p>
+                                    <div class="detail">
+                                        <p class="name">Abygail Kuttin</p>
+                                        <p class="department">Bachelor of Science Geological Engineering,</p>
+                                        <p class="college">Kwame Nkrumah University ghana -</p>
+                                    </div>
+                                    <a href="#" class="linkedin"><img src="images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <div>
+                                    <img src="images/coursepage/courseteam.png" alt="student" class="studentImg">
+                                    <p class="msg">With AGE, you are in charge of your learning! You decide the timing of 
+                                        your learning and the pace of your education – you can complete each module by the 
+                                        21st day of enrollment up until th</p>
+                                    <div class="detail">
+                                        <p class="name">Abygail Kuttin</p>
+                                        <p class="department">Bachelor of Science Geological Engineering,</p>
+                                        <p class="college">Kwame Nkrumah University ghana -</p>
+                                    </div>
+                                    <a href="#" class="linkedin"><img src="images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <div>
+                                    <img src="images/coursepage/courseteam.png" alt="student" class="studentImg">
+                                    <p class="msg">With AGE, you are in charge of your learning! You decide the timing of 
+                                        your learning and the pace of your education – you can complete each module by the 
+                                        21st day of enrollment up until th</p>
+                                    <div class="detail">
+                                        <p class="name">Abygail Kuttin</p>
+                                        <p class="department">Bachelor of Science Geological Engineering,</p>
+                                        <p class="college">Kwame Nkrumah University ghana -</p>
+                                    </div>
+                                    <a href="#" class="linkedin"><img src="images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forms">
+                <div class="register">
+                    <h3>Ready to Start ?</h3>
+                    <p>Its really easy to start with us. You can Register for this Course with Minimum Details. 
+                        and you will have an access to one of the module of this course for a 7 Days Period. 
+                        During this period you may take a decision to enroll this course by submitting the 
+                        requirment documents and making a module fee.</p>
+                    <a href="#">Register Now for 7 day trial</a>
+                </div>
+                <div class="container-fluid p-0 about-us-wrapper form">
+                    <div class="course-login-wrapper">
+                        <div class="login-details">
+                            <h2>Still Not Sure ?</h2>
+                            <h3>Speak to an Advisor<span>&nbsp;</span></h3>
+                            <p>Not sure if this course  is right for you? Fill in your details below and one of our Course Advisors will be in contact to provide you with the information you need to make a decision.</p>
+                            <div class="login-item names">
+                                <div class="name-item">
+                                    <p>First Name</p>
+                                    <input type="text" placeholder="Enter First Name" />
+                                </div>
+                                <div class="name-item">
+                                    <p>Last Name</p>
+                                    <input type="text" placeholder="Enter Last Name" />
+                                </div>
+                            </div>
+                            <div class="login-item">
+                                <p>Email</p>
+                                <input type="email" placeholder="Enter Email Address" />
+                            </div>
+                            <div class="login-item">
+                                <p>Country</p>
+                                <input type="text" placeholder="Country" />
+                            </div>
+                            <div class="login-item">
+                                <p>Mobile Number</p>
+                                <input type="number" placeholder="Enter Mobile number" />
+                            </div>
+                            <div class="button">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement & I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="course-team">
         <div class="wrapper">
             <h2>Course Team</h2>
@@ -1640,6 +1750,18 @@
                     loop: false,
                     margin: 20
                 }
+                }
+            })
+            $(window).scroll(function() {
+                if($(window).width() > 1249) {
+                    if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) && 
+                    ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() - 
+                    $(".testimonials").height() + 10))) {
+                        $(".testimonials").css("position", "fixed");
+                        console.log("Yo");
+                    } else {
+                        $(".testimonials").css("position", "static");
+                    }
                 }
             })
         })
