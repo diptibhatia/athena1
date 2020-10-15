@@ -1,0 +1,58 @@
+{%
+  set classes = [
+    'views-view-grid',
+    options.alignment,
+    'cols-' ~ options.columns,
+    'clearfix',
+  ]
+%}
+{% if options.row_class_default %}
+  {%
+    set row_classes = [
+      'row pt-3',
+      options.alignment == 'horizontal' ? 'clearfix',
+    ]
+  %}
+{% endif %}
+{% if options.col_class_default %}
+  {%
+    set col_classes = [
+      'col-md-4 shadow-sm rounded p-0 mr-2 insight-cards',
+      options.alignment == 'vertical' ? 'clearfix',
+    ]
+  %}
+{% endif %}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% if options.alignment == 'horizontal' %}
+  {% for row in items %}
+    {% if loop.index ==1 %}
+      <div class="row" {{ 'row-' ~ loop.index}} >
+    {% else %}
+      <div class="row pt-3" {{ 'row-' ~ loop.index}} >
+    {% endif %}
+      {% for column in row.content %}
+        {% if loop.index % 3 %}
+          <div class="col-md-4 shadow-sm rounded p-0 mr-2 insight-cards">
+            {{- column.content -}}
+          </div>
+        {% else %}
+          <div class="col-md-4 shadow-sm rounded p-0">
+            {{- column.content -}}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% else %}
+  {% for column in items %}
+    <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+      {% for row in column.content %}
+        <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+          {{- row.content -}}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% endif %}
