@@ -6,12 +6,7 @@
       <div class="courses-list">
 
           {% for row in rows %}
-            {%
-              set row_classes = [
-                default_row_class ? 'course-item',
-              ]
-            %}
-            <div{{ row.attributes.addClass(row_classes) }}>
+            <div class="course-item" >
               {{- row.content -}}
             </div>
           {% endfor %}
