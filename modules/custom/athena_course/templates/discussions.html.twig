@@ -1,0 +1,42 @@
+<div class="col-md-8 col-sm-12">
+               <div class="title">
+                  <!-- <h2>Our Discussions</h2> -->
+                  <img src="{{base_path}}/images/discussions.jpeg" alt="">
+               </div>
+               <div class="discussions">
+               
+                {% for discussion in discussions %}
+                  <div class="posts">
+                     <div class="single-post">
+                        <div class="profile-img">
+                           <img src="{{discussion.author_profile_pic}}" alt="avatar">
+                        </div>
+                        <div class="post-thread">
+                           <p>
+                             <a href="{{discussion.nav_link}}" target="_blank"> {{discussion.title}} |
+                              {{discussion.category_title}}</a>
+                           </p>
+                           <div class="author-info">
+                              Author: {{discussion.author_firstname}} {{discussion.author_lastname}}
+                              | {{discussion.time_ago}} |
+                              {{discussion.comments_count}}
+                              <img src="{{base_path}}/images/comment.svg">
+                              | {{discussion.views_count}}
+                              <img src="{{base_path}}/images/eye.svg">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="arrow">
+                        <img src="{{base_path}}/images/arrow-discussion.svg">
+                     </div>
+                  </div>
+                  
+                 {% endfor %}
+                 
+                  
+                 
+                 
+                  
+                 
+               </div>
+            </div>
