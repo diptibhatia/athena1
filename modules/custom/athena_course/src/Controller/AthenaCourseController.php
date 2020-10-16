@@ -12,7 +12,7 @@ class AthenaCourseController {
    $parameters = \Drupal::routeMatch()->getParameters();  
 
 $node = Node::load($nid);
-
+// print_r($node);exit;
 // Base theme path.
 global $base_url;
 $theme = \Drupal::theme()->getActiveTheme();
@@ -31,13 +31,50 @@ $banner_block =  [
   '#node' => $node
 ]; 
 
+$paragraph_univ_data = $node->field_link_universities->referencedEntities();
 
-//print_r($node);exit;
+
+foreach($paragraph_univ_data as $explore_data) {
+    
+        $university_nid = $explore_data->get('field_university')->value;
+   //     $certificates = $explore_data->get('field_certificate')[1]->entity->getFileUri();
+     //  print  $url = file_create_url($certificates);exit;
+       
+       foreach($explore_data->get('field_certificate') as $key=>$images) {
+           
+           $certificates[]  = file_create_url($images->entity->getFileUri());
+       }
+        
+        //print "abcs"
+       //print_r($certificates);exit;
+        
+        if (!empty($university_nid)) {
+       $univ_node = Node::load($university_nid);
+       $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+        $univ_data[] = array(
+        'university' =>Node::load($university_nid),
+        'certificates' =>$certificates,
+        'univ_logo' =>$univ_logo,
+        
+        );
+        }
+        
+        
+    
+  
+}
+
+
+//\print_r($univ_data);exit;
+
+//print_r($node->get('field_course_modules')->value);exit;
 $course_description_tabs =  [
   '#theme' => 'course_description_tabs',
   '#overview' => $node->get('field_course_overview')->value,
   '#node' => $node,
   '#total_fee' => $node->get('field_course_total_fee')->value,
+  '#univ_data' => $univ_data,
+  '#logo' => $univ_data,
   '#duration' => $node->get('field_course_duration')->value,
   '#certification_label' => $node->get('field_course_certification_label')->value,
   '#certification' => $node->get('field_course_certification')->value,
@@ -214,10 +251,27 @@ Additionally, after completing the course modules, learners are eligible for a â
       'target_revision_id' => $paragraph->getRevisionId(),
     );
             }
+                $oldnode->set('field_course_modules', $current);
+            
+            foreach($course_data['fee_details'] as $module_fee_data) {
+                $feeparagraph = Paragraph::create(['type' => 'course_fee_details']);
+                  $feeparagraph->set('field_fee_label', $module_fee_data['fk_fee_detail']); 
+                  $feeparagraph->set('field_paragraphh_module_fees', $module_fee_data['fee']); 
+                 
+                  $feeparagraph->save();
+                   $feecurrent[] = array(
+      'target_id' => $feeparagraph->id(),
+      'target_revision_id' => $feeparagraph->getRevisionId(),
+    );
+            }
+            
+            
+            
+            
             
           
     
-    $oldnode->set('field_course_modules', $current);
+    $oldnode->set('field_course_module_fees', $feecurrent);
 
             $oldnode->save();
                    //     break;
