@@ -1,21 +1,13 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<div class="insights-courses">
-  <div class="container-fluid">
-    <div class="courses-list">
-      
-        {% for row in rows %}
-          {%
-            set row_classes = [
-              default_row_class ? 'views-row course-item',
-            ]
-          %}
-          <div{{ row.attributes.addClass(row_classes) }}>
-            {{- row.content -}}
-          </div>
-        {% endfor %}
-
-    </div>
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{- row.content -}}
   </div>
-</div>
+{% endfor %}

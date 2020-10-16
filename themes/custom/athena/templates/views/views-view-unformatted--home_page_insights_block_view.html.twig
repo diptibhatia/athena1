@@ -4,11 +4,11 @@
   <div class="insights-courses">
     <div class="container-fluid">
       <div class="courses-list">
-      
+
           {% for row in rows %}
             {%
               set row_classes = [
-                default_row_class ? 'views-row',
+                default_row_class ? 'course-item',
               ]
             %}
             <div{{ row.attributes.addClass(row_classes) }}>
