@@ -18,6 +18,21 @@ function athena_course_theme($existing, $type, $theme, $path) {
       ],
     ],
     
+    
+     'discussions' => [
+      'variables' => [
+      'course_title' => NULL,
+      'discussions' => NULL,
+      'course_title' => NULL,
+      'ects_credit' => NULL,
+      'awarding_body' => NULL,
+      'description' => NULL,
+      'category' => NULL,
+      'banner' => NULL,
+      'node' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
     'course_homepage_tabs' => [
       'variables' => [
       'academic' => NULL,
