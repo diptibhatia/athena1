@@ -1,6 +1,6 @@
 .overview-points-card {
     width: 336px;
-    height: 530px;
+    height: 605px;
     border-radius: 6px;
     box-shadow: 0 2px 11px 2px rgba(213, 219, 251, 0.72);
     padding: 26px 16px;
@@ -50,7 +50,7 @@
         }
 
         @include atSize1250 {
-            &:nth-last-of-type(2) {
+            &:nth-last-of-type(3) {
 
                 h3::after {
                     content: '';
@@ -70,12 +70,31 @@
             color: #fff;
             text-decoration: none;
             padding: 15px 77px;
+            margin-bottom: -15px;
             display: block;
+            width: 100%;
+            text-align: center;
             border-radius: 3px;
             background-image: linear-gradient(to right, #ff006e 0%, #ff4e9a 100%, #ffffff 100%);
 
             @include atSize480 {
                 padding: 15px 80px;
+            }
+        }
+
+        &:nth-last-of-type(1) {
+
+            > a {
+                background: #fff;
+                color: #ff006e;
+                padding: 13px 75px;
+                border: 2px solid #ff006e;
+                transition: all .2s ease-out;
+
+                &:hover {
+                    background: #ff006e;
+                    color: #fff;
+                }
             }
         }
     }
