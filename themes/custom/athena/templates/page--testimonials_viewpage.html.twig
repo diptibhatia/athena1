@@ -4,25 +4,25 @@
 </header>
 <div class="top-gap"></div>
 <div class="main-wrapper container-fluid p-0 insight-wrapper">
-{% if page.featured_top %}
-    {{ page.featured_top }}
-{% endif %}
-{% if athena_exclude %}
-  {{ page.content }}
-{% else %}
-<div class="pt-4 container bg-white pb-5 d-flex pr-0 pl-0">
-    <div class="row pr-0 pl-0">
-        <div class="col-md-4 col-sm-12 pb-5 pl-0 insight-sidebar-wrapper">
-               {% if page.sidebar_first %}
-                        {{ page.sidebar_first }}
-                {% endif %}
+  {% if page.featured_top %}
+      {{ page.featured_top }}
+  {% endif %}
+</div>
+<section class="testimonials">
+    <div class="row grid-view">
+        <div class="col-md-4 col-sm-12 pb-5">
+            {% if page.sidebar_first %}
+                <div class="col-md-4 col-sm-12 pb-5">
+                    {{ page.sidebar_first }}
+                </div>
+            {% endif %}
         </div>
         <div class="col-md-8 col-sm-12">
-                {{ page.content }}
+            {{ page.content }}
+  
         </div>
     </div>
-</div>
-{% endif %}
+</section>
 {% if page.featured_bottom %}
     <div class="featured-bottom">
     <aside class="layout-container clearfix" role="complementary">
