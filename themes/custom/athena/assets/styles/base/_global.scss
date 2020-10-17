@@ -127,6 +127,11 @@ body {
 		border-color: $purpleColor;
 		border-radius: 20px;
 		color: $purpleColor;
+
+		&:hover {
+			background-color: $purpleColor;
+			color: white;
+		}
 	}
 
 	&.white-btn {
