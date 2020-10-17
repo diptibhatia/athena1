@@ -82,6 +82,7 @@
 
         @include atSize1250 {
             display: flex;
+            justify-content: space-between;
         }
 
         &-list {
@@ -91,6 +92,7 @@
             @include atSize1250 {
                 margin-right: 20px;
                 margin-bottom: 0;
+                max-width: 790px;
             }
 
             ul {
@@ -156,6 +158,7 @@
 
         @include atSize1250 {
             display: flex;
+            justify-content: space-between;
         }
 
         &__details {
@@ -165,7 +168,6 @@
 
             @include atSize1250 {
                 max-width: 800px;
-                width: 63%;
                 margin-right: 39px;
             }
 
@@ -320,6 +322,7 @@
         
         @include atSize1250 {
             display: flex;
+            justify-content: space-between;
         }
 
         &_details {
@@ -329,6 +332,11 @@
             @include atSize480 {
                 width: 60%;
                 margin-right: 50px;
+            }
+
+            @include atSize1250 {
+                width: 85%;
+                margin-right: 20px;
             }
 
             h2 {
