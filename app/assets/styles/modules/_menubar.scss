@@ -761,7 +761,7 @@
             font-size: 1rem;
         }
 
-        &.active {
+        &.is-active {
             position: relative;
 
             @include atSize700 {
