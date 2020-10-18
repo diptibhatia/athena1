@@ -9,22 +9,21 @@
       {{ page.featured_top }}
   {% endif %}
 </div>
-    <section class="testimonials">
-        <div class="row grid-view">
-            <div class="col-md-4 col-sm-12 pb-5">
-               {% if page.sidebar_first %}
-                    <div class="col-md-4 col-sm-12 pb-5">
-                        {{ page.sidebar_first }}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="col-md-8 col-sm-12">
-                {{ page.content }}
-      
-            </div>
+<section class="testimonials">
+    <div class="row grid-view">
+        <div class="col-md-4 col-sm-12 pb-5">
+            {% if page.sidebar_first %}
+                <div class="col-md-4 col-sm-12 pb-5">
+                    {{ page.sidebar_first }}
+                </div>
+            {% endif %}
         </div>
-    </section>
-{% endif %}
+        <div class="col-md-8 col-sm-12">
+            {{ page.content }}
+  
+        </div>
+    </div>
+</section>
 {% if page.featured_bottom %}
     <div class="featured-bottom">
     <aside class="layout-container clearfix" role="complementary">
