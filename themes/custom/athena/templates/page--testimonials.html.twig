@@ -3,22 +3,12 @@
     {{ page.header }}
 </header>
 <div class="top-gap"></div>
-{% if page.highlighted %}
-    <div class="highlighted">
-    <aside class="layout-container section clearfix" role="complementary">
-        {{ page.highlighted }}
-    </aside>
-    </div>
-{% endif %}
-
-{% if athena_exclude %}
-  {{ page.content }}
-{% else %}
-    <section class="main">
-    {% if page.featured_top %}
-            {{ page.featured_top }}
-    {% endif %}
-    </section>
+<div class="top-gap"></div>
+<div class="main-wrapper container-fluid p-0 insight-wrapper">
+  {% if page.featured_top %}
+      {{ page.featured_top }}
+  {% endif %}
+</div>
     <section class="testimonials">
         <div class="row grid-view">
             <div class="col-md-4 col-sm-12 pb-5">
