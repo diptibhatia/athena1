@@ -448,24 +448,16 @@
             <h1>Why this Course ?</h1>
             <div class="cover">
                 <div class="why-course__text">
+                
+                 {% set whynum = 1 %}
+                {% for whycourse in node.field_why_this_course %}
                     <div>
-                        <h2>1 Global Perception</h2>
-                        <p>Our faculty has carefully curated the learning content in order to keep it relevant 
-                            in the global context. This will help you develop a keen understanding of the 
-                            business challenges faced worldwide and prepare you for the global workplace.</p>
+                        <h2>{{whynum}} {{ whycourse.entity.field_title.value }}</h2>
+                        <p>{{ whycourse.entity.field_description.value|raw }}</p>
                     </div>
-                    <div>
-                        <h2>2 Real-life Application</h2>
-                        <p>Each module is graded based on your work on a research-oriented project. These 
-                            projects are created using current and real-world scenarios, thus enabling a 
-                            practical application of the learning you receive through our learning resources.</p>
-                    </div>
-                    <div>
-                        <h2>3 Recognized Worldwide</h2>
-                        <p>Each module is graded based on your work on a research-oriented project. These projects 
-                            are created using current and real-world scenarios, thus enabling a practical application 
-                            of the learning you receive through our learning resources.</p>
-                    </div>
+                    {% set whynum = whynum+1 %}
+                {% endfor %}
+                   
                 </div>
                 <div class="course-resources-card">
                     <h3>Course Resourses</h3>
