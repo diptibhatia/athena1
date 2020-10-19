@@ -1,0 +1,18 @@
+<div class="why-athena">
+<div class="container-fluid my-container">
+<div class="testimonials">
+<div class="testimonials-item"><!-- <img src="/themes/custom/athena/images/testimonial-bg.png" alt=""/> -->
+<div class="item-one shawdow-effect"><!-- <h1>Testimonials</h1> --><img src="/themes/custom/athena/images/testimonial-text.svg" />
+<h2>Our Students Say<br />
+About Us</h2>
+
+<h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.</h3>
+<button>View All</button></div>
+
+<div class="item-two">
+
+{% for row in rows %}
+  <div class="{{ 'testi-row-' ~ loop.index}}" >
+      {{- row.content -}}
+  </div>
+{% endfor %}
