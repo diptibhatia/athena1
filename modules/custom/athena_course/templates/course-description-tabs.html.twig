@@ -305,6 +305,7 @@
                                         
                                         
                                          {% set carouselnum = 1 %}
+                                        <div class="carousel-inner">
                                            {% for certificate in universities.certificates %}
                                          {% if carouselnum == 1 %} 
                   {% set carouselnumclass = 'active' %}
@@ -314,8 +315,7 @@
                     
                     
                                         
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item {{carouselnumclass}}">
+                                            <div class="carousel-item {{carouselnumclass}} ">
                                                 <!-- Button to trigger Modal -->
                                                 <button type="button" class="cover" data-toggle="modal" data-target="#certificate{{carouselnum}}">
                                                     <img class="d-block w-100" src="{{ certificate}}" alt="First slide">
@@ -337,11 +337,12 @@
                                                 </div>
                                             </div>
                     
-{% set carouselnum =  carouselnum+1 %}                    
                                             
-                                        </div>
+{% set carouselnum =  carouselnum+1 %}                    
+                                        
                                         
                                         {% endfor %}
+                                        </div>
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                                             <img src="{{base_path}}/images/coursepage/prev.svg" alt="previous">
                                             <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -508,3 +509,67 @@
             </div>
         </div>
     </div>
+    <div class="how-learn course-team">
+        <div class="wrapper">
+            <h2>How You Learn</h2>
+            <p class="msg">We have Developed a learning pedagogy which ensures the students will be able to learn 
+               the course successfuly regardless of the student is beginner or expert Level.</p>
+            <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                
+                
+                
+                
+                
+            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1495px;"><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/video-class.svg" alt="image" style="opacity: 1;">
+                        </div>
+                        <h3>Video Classes</h3>   
+                        <p>The well developed purpose 
+                            built video lessons designed by our faculties will lay the foundation for your 
+                            learning</p>
+                    </div>
+                </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/text-learning.svg" alt="image" style="opacity: 1;">
+                        </div>
+                        <h3>Text Learning Contents</h3>   
+                        <p>Multi level learning resourse
+                            developed by our faculties including articles , case studies,quizes etc. will 
+                            enhance your learning exposure</p>
+                    </div>
+                </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/personal-tutor.svg" alt="image" style="opacity: 1;">
+                        </div>
+                        <h3>Personal Tutor</h3>   
+                        <p>One to one personal tutor meetings will help to clarify your doubts and also 
+                            provide guidance on your assignments.</p>
+                    </div>
+                </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/online-library.svg" alt="image" style="opacity: 1;">
+                        </div>
+                        <h3>Online Library</h3>   
+                        <p>Unlimeted access to the online library consist of a large collection of books, 
+                            journals , and other publications</p>
+                    </div>
+                </div></div><div class="owl-item" style="width: auto; margin-right: 20px;"><div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/collaborative-learning.svg" alt="image" style="opacity: 1;">
+                        </div>
+                        <h3>Collaborative Learning</h3>   
+                        <p>Discussion Forum, webinars business secenario presentations, debates etc will 
+                            take you to a different level of learning.
+                        </p>
+                    </div>
+                </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+            <a class="button" href="#">View All</a>
+        </div>
+    </div>
+    
