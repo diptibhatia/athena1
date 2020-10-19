@@ -187,12 +187,7 @@ $field_course_category = "Certifications";
       }
       
       
-      if (empty($course_data['course_introduction'])) {
-                
-             $course_data['course_introduction']   ="This course covers key disciplines such as sustainability, management, marketing, research, operations and strategy, through which learners will gain the skills and knowledge needed to manage across departments, markets and entire organizations in the global context. This MBA program is structured to satisfy the needs of international business markets and will also enable learners to network with other learners from across the globe.
-
-Additionally, after completing the course modules, learners are eligible for a ‘Certified Manager’ certification from the Chartered Management Institute (CMI), UK. This certification is optional and will also include a one-year complimentary affiliate membership with CMI.";
-            }
+   
      $eligibility =   Json::decode( $course_data['eligibility_requirements']);
         if(!in_array($cid, $node_ids)) {
             
@@ -203,7 +198,7 @@ Additionally, after completing the course modules, learners are eligible for a �
           $new_node->set('field_course_total_credits', $course_data['ects_credit']);
           $new_node->set('field_course_category', $field_course_category);
           $new_node->set('field_course_awarding_body', $course_data['awarded_by']);
-          $new_node->set('field_course_overview', $course_data['course_introduction']);
+          //$new_node->set('field_course_overview', $course_data['course_introduction']);
           $new_node->set('field_course_total_fee', $fee);
           $new_node->set('field_course_academic_route',  $eligibility['academic_route']);
           $new_node->set('field_course_mature_entry_label', $eligibility['adult_entry_route']);
