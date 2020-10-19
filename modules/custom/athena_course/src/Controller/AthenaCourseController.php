@@ -195,36 +195,32 @@ $field_course_category = "Certifications";
             
           $new_node = Node::create(['type' => 'course']);
           $new_node->set('title',$course_data['course_name']);
-          $new_node->set('field_course_total_credits', $course_data['ects_credit']);
+         // $new_node->set('field_course_total_credits', $course_data['ects_credit']);
           $new_node->set('field_course_category', $field_course_category);
-          $new_node->set('field_course_awarding_body', $course_data['awarded_by']);
+         // $new_node->set('field_course_awarding_body', $course_data['awarded_by']);
           //$new_node->set('field_course_overview', $course_data['course_introduction']);
-          $new_node->set('field_course_total_fee', $fee);
+        //  $new_node->set('field_course_total_fee', $fee);
           $new_node->set('field_course_academic_route',  $eligibility['academic_route']);
           $new_node->set('field_course_mature_entry_label', $eligibility['adult_entry_route']);
           $new_node->set('field_course_language_prof_label', $eligibility['language_proficiency']);
-          $new_node->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today
-
-");
-          $new_node->set('field_course_duration', '9-36 months');
+   //       $new_node->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today");
+          //$new_node->set('field_course_duration', '9-36 months');
           $new_node->set('field_cid', $cid);
           $new_node->save();      
         } else {
                foreach($nodes as $node_key => $oldnode) {
                 if($oldnode->get('field_cid')->value == $cid) {
-          $oldnode->set('title',$course_data['course_name']);
-          $oldnode->set('field_course_total_credits', $course_data['ects_credit']);
-          $oldnode->set('field_course_awarding_body', $course_data['awarded_by']);
+          //$oldnode->set('title',$course_data['course_name']);
+          //$oldnode->set('field_course_total_credits', $course_data['ects_credit']);
+          //$oldnode->set('field_course_awarding_body', $course_data['awarded_by']);
           //$oldnode->set('field_course_overview', $course_data['course_introduction']);
-          $oldnode->set('field_course_total_fee', $fee);
-          $oldnode->set('field_course_category', $field_course_category);
+          //$oldnode->set('field_course_total_fee', $fee);
+       //   $oldnode->set('field_course_category', $field_course_category);
           $oldnode->set('field_course_academic_route',  $eligibility['academic_route']);
           $oldnode->set('field_course_mature_entry_label', $eligibility['adult_entry_route']);
           $oldnode->set('field_course_language_prof_label', $eligibility['language_proficiency']);
-            $oldnode->set('field_course_duration', '9-36 months');
-          $oldnode->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today
-
-");
+            //$oldnode->set('field_course_duration', '9-36 months');
+//$oldnode->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today");
             $current = array();
             
             if(empty ($course_data['modular_fee'])) {
