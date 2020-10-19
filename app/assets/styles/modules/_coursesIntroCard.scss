@@ -24,10 +24,21 @@
             position: relative;
 
             a {
+                cursor: pointer;
                 position: absolute;
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
+            }
+        }
+
+        .modal-dialog {
+            max-width: none;
+            width: 700px;
+
+            .modal-body {
+                display: flex;
+                margin: auto;
             }
         }
     }
