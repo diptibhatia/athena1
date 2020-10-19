@@ -461,8 +461,7 @@
                 </div>
                 <div class="course-resources-card">
                     <h3>Course Resourses</h3>
-                    <p>Lorem Ipsum is simply dummy text of the 
-                        printing and typesetting industry. Lorem Ipsum</p>
+                    <p>For more detailed information about the course, please click on the links below.</p>
                     <div>
                         <a href="#">Download Brochure</a>
                         <a href="#">Course Specifications</a>
@@ -494,7 +493,7 @@
                         <div>
                             <h4>{{ module.entity.field_course_module_name.value }}</h4>
                             <p class="duration"><span>Duration:</span> 4  to 12 weeks</p>
-                            <p class="text">{{ module.entity.field_coursemodule_description.value }}
+                            <p class="text">{{ module.entity.field_coursemodule_description.value|raw }}
                             </p>
                             <p class="level"><span>Level:</span> {{ module.entity.field_module_level.value }}</p>
                             <p class="credit"><span>Credits:</span> {{ module.entity.field_course_module_ects_credit.value }} ({{node.field_courses_credit_type.0.value|raw }})</p>
