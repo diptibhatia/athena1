@@ -29,7 +29,7 @@
                                     </small>
                                 </p>
                             </div>
-                            <div class="col-md-1 col-sm-1 share-icon mobile-share-icon">
+                            <div class="col-md-1 col-sm-1 share-icon">
                                 <ul class="list-unstyled">
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/share.svg" /></a></li>
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/facebook.svg" /></a></li>
@@ -180,13 +180,19 @@
 
         $(document).scroll(function() {
             var y = $(document).scrollTop(),
-                header = $(".mobile-share-icon ul");
+                header = $(".share-icon.mobile-share-icon ul");
             if(y <= 3200)  {
                 header.css({position: "fixed"});
             } else {
                 header.css("position", "relative");
             }
         });
+
+        const mq = window.matchMedia( "(max-width: 700px)" );
+
+        if (mq.matches) {
+          $('.insight-wrapper .share-icon').addClass('mobile-share-icon');
+        } 
     </script>
 
 

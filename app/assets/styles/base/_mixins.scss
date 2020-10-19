@@ -28,6 +28,12 @@
     }
 }
 
+@mixin belowSize1250 {
+    @media (min-width: 700px) and (max-width: 1249px) {
+        @content;
+    }
+}
+
 @mixin atSize700 {
     @media (min-width: 700px) {
         @content;
