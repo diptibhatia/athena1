@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
-                                {% if node.field_courses_credit_type.0.value != 'CIQ' %}
+                                {% if node.field_course_accreditations.0.value != '' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
-                                {% if node.field_courses_credit_type.0.value != 'CIQ' %}
+                                {% if node.field_course_accreditations.0.value != '' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
-                                 {% if node.field_courses_credit_type.0.value != 'CIQ' %}
+                                 {% if node.field_course_accreditations.0.value != '' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
@@ -493,7 +493,7 @@
                         <div>
                             <h4>{{ module.entity.field_course_module_name.value }}</h4>
                             <p class="duration"><span>Duration:</span> 4  to 12 weeks</p>
-                            <p class="text">{{ module.entity.field_coursemodule_description.value|raw }}
+                            <p class="text" style="line-height: initial;">{{ module.entity.field_coursemodule_description.value|raw }}
                             </p>
                             <p class="level"><span>Level:</span> {{ module.entity.field_module_level.value }}</p>
                             <p class="credit"><span>Credits:</span> {{ module.entity.field_course_module_ects_credit.value }} ({{node.field_courses_credit_type.0.value|raw }})</p>
