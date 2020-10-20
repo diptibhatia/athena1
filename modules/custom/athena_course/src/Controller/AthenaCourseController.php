@@ -64,8 +64,28 @@ foreach($paragraph_univ_data as $explore_data) {
   
 }
 
-
-//\print_r($univ_data);exit;
+$paragraph_why_course = $node->field_what_you_get->referencedEntities();
+$why_course = array();
+//print_r($paragraph_why_course);exit;
+foreach($paragraph_why_course as $why_course_data) {
+	$degree = $why_course_data->get('field_degree')->value;
+	$issued_by = $why_course_data->get('field_issued_by')->value;
+    
+    $logo_url = '';
+    if(is_object( $why_course_data->get('field_logo')->entity)){
+	$logo = $why_course_data->get('field_logo')->entity->getFileUri();
+    }
+	$logo_url = file_create_url($logo);
+    
+	$certificate = $why_course_data->get('field_sample_certification')->entity->getFileUri();
+	$certificates_url = file_create_url($certificate);
+	$why_course[] = array(
+	  'degree' => $degree,
+	  'issued_by' => $issued_by,
+	  'logo_url' => $logo_url,
+	  'certificates_url' => $certificates_url,
+	);  
+}
 
 //print_r($node->get('field_course_modules')->value);exit;
 $course_description_tabs =  [
@@ -75,6 +95,7 @@ $course_description_tabs =  [
   '#total_fee' => $node->get('field_course_total_fee')->value,
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
+  '#why_course' => $why_course,
   '#duration' => $node->get('field_course_duration')->value,
   '#certification_label' => $node->get('field_course_certification_label')->value,
   '#certification' => $node->get('field_course_certification')->value,

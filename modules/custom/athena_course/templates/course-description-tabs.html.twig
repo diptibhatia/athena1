@@ -573,3 +573,40 @@
         </div>
     </div>
     
+    
+    <div class="what-you-get">
+        <div class="wrapper">
+            <h2>What You Get</h2>
+            <p class="msg">You will be Receiving the following certificates and credentials as follows.</p>
+            <div class="container-box">
+				 {% for why_coursedata in why_course %}
+				  {% set whynum = 1 %}
+                <div class="contains">
+                    <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
+                    <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
+                        <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a></p>
+                    <!-- Modal Starts -->
+                    <div class="modal fade" id="certificateModal{{whynum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{why_coursedata.certificates_url}}" alt="First slide">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends -->
+                </div>
+                {% set whynum = whynum+1 %}
+                {% endfor %}
+               
+                
+                
+            </div>
+        </div>
+    </div>

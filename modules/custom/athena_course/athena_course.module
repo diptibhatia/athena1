@@ -57,6 +57,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'node' => NULL,
       'total_fee' => NULL,
       'univ_data' => NULL,
+      'why_course' => NULL,
       'duration' => NULL,
       'certification_label' => NULL,
       'certification' => NULL,
