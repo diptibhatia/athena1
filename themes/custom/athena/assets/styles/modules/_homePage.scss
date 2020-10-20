@@ -639,6 +639,14 @@
 			.item-one {
 				flex: 0.6;
 				padding: 170px 0;
+				img {
+					width: 398px;
+    				position: relative;
+    				top: -30px;
+    				@media (max-width: 424px) {
+    					width: 100%;
+    				}
+				}
 				h2 {
 				    font-size: 42px;
 				    font-weight: bold;
@@ -1265,6 +1273,9 @@
 			/*margin: 0 10px;*/
 			margin: 0 20px;
 			width: 365px;
+			@include atSize479 {
+				width: 100%;
+			}
 			.course-image {
 				img {
 					width: 365px;
@@ -1306,6 +1317,7 @@
 			flex-direction: column;
 			margin: 0px 20px;
 		    padding: 25px 0;
+		    align-items: center;
 			.course-item {
 				.course-image {
 					img {

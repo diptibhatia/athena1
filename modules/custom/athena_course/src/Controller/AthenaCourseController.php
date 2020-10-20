@@ -296,19 +296,22 @@ $field_course_category = "Certifications";
                 $course_data['modular_fee'][]  = array('fee' => 200, 'module_name'=>'module 3');
             }
             
+            $module_fee_array=array();
             foreach($course_data['modular_fee'] as $module_data) {
                 $fee = $fee+ $module_data['fee'];
                 $paragraph = Paragraph::create(['type' => 'course_module_details']);
                   $paragraph->set('field_course_module_fees', $module_data['fee']); 
-                //  $paragraph->set('field_course_module_ects_credit', 6); 
+                  $paragraph->set('field_coursemodule_description', $module_data['module_desc']); 
+                  $paragraph->set('field_module_level', $module_data['module_level']); 
+                  $paragraph->set('field_module_credit', $module_data['module_credits']); 
                   $paragraph->set('field_course_module_name', $module_data['fk_module_name']); 
                   $paragraph->save();
-                   $current[] = array(
-      'target_id' => $paragraph->id(),
-      'target_revision_id' => $paragraph->getRevisionId(),
-    );
+                   $module_fee_array[] = array(
+                      'target_id' => $paragraph->id(),
+                      'target_revision_id' => $paragraph->getRevisionId(),
+                    );
             }
-             //   $oldnode->set('field_course_modules', $current);
+                $oldnode->set('field_course_modules', $module_fee_array);
             
             foreach($course_data['fee_details'] as $module_fee_data) {
                 $feeparagraph = Paragraph::create(['type' => 'course_fee_details']);
