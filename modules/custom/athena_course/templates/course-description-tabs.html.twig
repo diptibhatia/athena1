@@ -79,7 +79,7 @@
                                    {% for module_fee_data in node.field_course_module_fees %}
                                     <div class="desc">
                                         <p>{{ module_fee_data.entity.field_fee_label.value }}</p>
-                                        <p><span>${{ module_fee_data.entity.field_paragraphh_module_fees.value }}</span></p>
+                                        <p><span>${{ module_fee_data.entity.field_paragraphh_module_fees.value }}</span>{{ module_fee_data.entity.field_fee_description.value|raw }}</p>
                                     </div>
                                     
                                     {% endfor %}
