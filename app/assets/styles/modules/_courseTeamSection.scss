@@ -1,11 +1,12 @@
 .course-team {
     padding-top: 21px;
     padding-bottom: 53px;
+    background-color: #eff1fe;
     position: relative;
     overflow: hidden;
 
     @include atSize850 {
-        padding-top: 68px;
+        padding-top: 24px;
         padding-bottom: 68px;
     }
 
