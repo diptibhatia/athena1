@@ -13,11 +13,11 @@ use \Drupal\Core\Url;
  * Provides a block with a simple text.
  *
  * @Block(
- *   id = "athena_mba_program_courses_block",
- *   admin_label = @Translation("Mba Program Courses Block"),
+ *   id = "athena_certification_program_courses_block",
+ *   admin_label = @Translation("Certification Program Courses Block"),
  * )
  */
-class MbaProgramCoursesBlock extends BlockBase {
+class CertificationProgramCoursesBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
@@ -26,7 +26,7 @@ class MbaProgramCoursesBlock extends BlockBase {
   global $base_url;
 
     $key = "field_course_category";
-    $value = "Academic";
+    $value = "Certifications";
 
 
     $bundle='course';
@@ -44,7 +44,7 @@ class MbaProgramCoursesBlock extends BlockBase {
         $query = \Drupal::entityQuery('node');
         $query->condition('status', 1);
         //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-        $query->condition('field_course_category', 'Academic', '=');
+        $query->condition('field_course_category', 'Certifications', '=');
         $query->condition('type', $bundle);
         $academic = $query->execute();
     
@@ -62,7 +62,7 @@ class MbaProgramCoursesBlock extends BlockBase {
 
     $base_path = $base_url.'/'. $theme->getPath();
     $homepage_course_tabs =  [
-      '#theme' => 'mba_program_courses',
+      '#theme' => 'certification_program_courses',
       '#course' => $popular_courses,
       '#base_path' => $base_path,
     ]; 

@@ -1,1 +1,5 @@
 .addtoany_list > a {padding-bottom: 10px;}
+.about-us-wrapper .aboutus-modal .right-img img {
+    width: 160px !important;
+    height: 160px !important;
+}
