@@ -1,8 +1,8 @@
 
-        $(document).ready(function() {
+        jQuery(document).ready(function() {
             
             console.log("hellooooooooo")
-            $('.owl-carousel').owlCarousel({
+            jQuery('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
                 autoWidth: true,
@@ -24,15 +24,15 @@
                 }
                 }
             })
-            $(window).scroll(function() {
-                if($(window).width() > 1249) {
-                    if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) && 
-                    ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() - 
-                    $(".testimonials").height() + 10))) {
-                        $(".testimonials").css("position", "fixed");
+            jQuery(window).scroll(function() {
+                if(jQuery(window).width() > 1249) {
+                    if((jQuery(window).scrollTop() > jQuery(".course-login-wrapper").offset().top) && 
+                    (jQuery(window).scrollTop() < (jQuery(".course-login-wrapper").offset().top + jQuery(".course-login-wrapper").height() - 
+                    jQuery(".testimonials").height() + 10))) {
+                        jQuery(".testimonials").css("position", "fixed");
                         console.log("Yo");
                     } else {
-                        $(".testimonials").css("position", "static");
+                        jQuery(".testimonials").css("position", "static");
                     }
                 }
             })
