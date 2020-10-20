@@ -110,6 +110,27 @@ foreach($paragraph_course_team as $attached_node){
   );
     
 }
+
+$paragraph_faq = $node->field_faq->referencedEntities();
+$faq = array();
+
+
+foreach($paragraph_faq as $faq_data){
+    //print $faq_data->get('field_category')->value;
+    
+    if(!empty($faq_data->get('field_category')->value)) {
+    $faq[$faq_data->get('field_category')->value][] = array(
+       'question' => $faq_data->get('field_question')->value,
+       'answer' => $faq_data->get('field_answer')->value
+    );
+    }
+    
+    
+}
+
+
+
+
 $course_description_tabs =  [
   '#theme' => 'course_description_tabs',
   '#overview' => $node->get('field_course_overview')->value,
@@ -118,6 +139,7 @@ $course_description_tabs =  [
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
   '#course_team' => $course_team,
+  '#faq' => $faq,
   '#why_course' => $why_course,
   '#duration' => $node->get('field_course_duration')->value,
   '#certification_label' => $node->get('field_course_certification_label')->value,
@@ -278,7 +300,7 @@ $field_course_category = "Certifications";
                 $fee = $fee+ $module_data['fee'];
                 $paragraph = Paragraph::create(['type' => 'course_module_details']);
                   $paragraph->set('field_course_module_fees', $module_data['fee']); 
-                  $paragraph->set('field_course_module_ects_credit', 6); 
+                //  $paragraph->set('field_course_module_ects_credit', 6); 
                   $paragraph->set('field_course_module_name', $module_data['fk_module_name']); 
                   $paragraph->save();
                    $current[] = array(
@@ -301,6 +323,19 @@ $field_course_category = "Certifications";
             }
             
             
+            
+             foreach($course_data['faqs'] as $faq_data) {
+                $paragraph_course_team = Paragraph::create(['type' => 'faq']);
+                  $paragraph_course_team->set('field_question', $faq_data['question']); 
+                  $paragraph_course_team->set('field_answer', $faq_data['answer']); 
+                  $paragraph_course_team->set('field_category', 'About_the_Course'); 
+                  $paragraph_course_team->save();
+                   $course_faq[] = array(
+      'target_id' => $paragraph_course_team->id(),
+      'target_revision_id' => $paragraph_course_team->getRevisionId(),
+    );
+            }
+                $oldnode->set('field_faq', $course_faq);
             
             
             
