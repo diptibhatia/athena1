@@ -482,6 +482,22 @@
 						  	padding-left: 48px;
 						  	line-height: 26px;
 						  	margin: 0;
+						  	button {
+						  		margin: 30px 0;
+			border-radius: 30px;
+  			border: solid 2px $titlePink;
+  			color: $titlePink;
+  			padding: 5px 20px;
+  			cursor: pointer;
+  			background: white;
+  			outline: none;
+  			width: 186px;
+  			height: 50px;
+  			&:hover {
+				color: white;
+				background: $buttonPink;
+			}
+		}
 						}
 						span {
 							font-size: 20px;
@@ -1398,6 +1414,7 @@
 		display: flex;
 		margin: 50px auto 0;
 		background: none;
+		padding: 0;
 		.course-item {
 			width: 350px;
 	  		height: 450px;
@@ -1577,14 +1594,19 @@
 .footer-banner {
 	margin: 50px 0 0px 0;
 	height: 283px;
+	position: relative;
+
 	img {
 		width: 100%;
 	}
 	.footer-info {
-		position: relative;
-		top: -274px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
 		text-align: center;
-		@include atSizeXXLarge {
+		/*@include atSizeXXLarge {
 			top: -557px;
 		}
 		@media (min-width: 1281px) and (max-width: 1440px){
@@ -1592,7 +1614,7 @@
 		}
 		@media (min-width: 1441px) {
 			top: -35rem;
-		}
+		}*/
 		h1 {
 			font-size: 52px;
   			font-weight: bold;
@@ -1600,6 +1622,14 @@
   			span {
   				color: #ffb800;
   			}
+  			@include belowSize700 {
+				font-size: 34px;
+				margin: 15px 0;
+			}
+  			@include belowSize1250 {
+				font-size: 34px;
+				margin: 15px 0;
+			}
 		}
 		button {
 			border-radius: 30px;
@@ -1613,42 +1643,18 @@
   			height: 50px;
 		}
 	}
-	@include atSize424 {
+
+	@include belowSize700 {
 		height: 180px;
 		img {
 			height: 177px;
 		}
-		.footer-info {
-			top: -192px;
+		/*.footer-info {			
 			h1 {
 				font-size: 34px;
 			}
-		}
-	}
-	@include atSize430 {
-		height: 180px;
-		img {
-			height: 177px;
-		}
-		.footer-info {
-			top: -192px;
-			h1 {
-				font-size: 34px;
-			}
-		}
-	}
-	@include atSize479 {
-		height: 180px;
-		img {
-			height: 177px;
-		}
-		.footer-info {
-			top: -192px;
-			h1 {
-				font-size: 34px;
-			}
-		}
-	}
+		}*/
+	}	
 }
 
 .all-courses {
@@ -1659,6 +1665,7 @@
 	margin-top: 0 !important;
 	font-family: 'Lato', sans-serif;
 	position: relative;
+
 	.sections {
 		display: flex;
 		flex-direction: row;
@@ -1667,6 +1674,7 @@
 		@media (min-width: 1281px) {
 			padding: 20px !important;
 		}
+
 		.section-item {
 			flex: 1;
 			line-height: 1.8;
@@ -1678,19 +1686,7 @@
 			font-size: 14px;
 		}
 	}
-	@include atSize424 {
-		.sections {
-			flex-direction: column;
-			margin: 20px;
-		}
-	}
-	@include atSize430 {
-		.sections {
-			flex-direction: column;
-			margin: 20px;
-		}
-	}
-	@include atSize479 {
+	@include belowSize700 {
 		.sections {
 			flex-direction: column;
 			margin: 20px;
