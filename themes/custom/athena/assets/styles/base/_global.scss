@@ -85,6 +85,20 @@ body {
 .txt-16, p {
 	font-size: $font-size-lg;
 	line-height: 1.8em;
+
+	&.short-desc {
+		max-height: 140px;
+		min-height: 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&-text {
+			max-height: 110px;
+			min-height: 10px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
 }
 
 .cursor {
