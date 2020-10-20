@@ -610,3 +610,50 @@
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
+    <!--   Course Team -->
+    
+    <div class="course-team">
+        <div class="wrapper">
+            <h2>Course Team</h2>
+            <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                
+                
+                
+                
+                
+                
+                
+            <div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(-299px, 0px, 0px); transition: all 0.25s ease 0s; width: 2093px;">
+             {% set courseteamnum = 1 %}
+             {% for course_team_data in course_team %}
+             {% if courseteamnum == 1 %} 
+                  {% set cactiveclass = '' %}
+                  {% else %}
+                        {% set cactiveclass = 'active' %}
+                    {% endif %}
+             
+            <div class="owl-item {{courseteamnum}}" style="width: auto; margin-right: 20px;"><div class="item">
+                    <div class="course-team-card">
+                        <div class="team-img">
+                            <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;">
+                        </div>
+                        <h3>{{course_team_data.title}}</h3>   
+                        <h4>{{course_team_data.designation}}</h4>
+                        <p>{{course_team_data.description | raw}}</p>
+                        <a href="#">Readmore</a>
+                    </div>
+                </div>
+              </div>
+              {% set courseteamnum = courseteamnum+1 %}
+                {% endfor %} 
+              </div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+            <a class="button" href="#">View All</a>
+        </div>
+    </div>
+    

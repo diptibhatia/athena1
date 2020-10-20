@@ -87,7 +87,29 @@ foreach($paragraph_why_course as $why_course_data) {
 	);  
 }
 
-//print_r($node->get('field_course_modules')->value);exit;
+$paragraph_course_team = $node->field_course_team_member->referencedEntities();
+$course_team = array();
+foreach($paragraph_course_team as $attached_node){
+  $name =  $attached_node->get('title')->value;
+  $designation =  $attached_node->get('field_designation')->value;
+  $linked_in =  $attached_node->get('field_linked_in_link')->value;
+  $user_pic= '';
+  if(is_object( $attached_node->get('field_user_photo')->entity)){
+	$user_pic = $attached_node->get('field_user_photo')->entity->getFileUri();
+    }
+	$user_pic_url = file_create_url($user_pic);
+  $description =  $attached_node->get('field_user_description')->value;
+  $course_team[] = array(
+  'name' => $name,
+  'designation' => $designation,
+  'user_pic' => $user_pic_url,
+  'linked_in' => $linked_in,
+  'description' => $description,
+  
+  
+  );
+    
+}
 $course_description_tabs =  [
   '#theme' => 'course_description_tabs',
   '#overview' => $node->get('field_course_overview')->value,
@@ -95,6 +117,7 @@ $course_description_tabs =  [
   '#total_fee' => $node->get('field_course_total_fee')->value,
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
+  '#course_team' => $course_team,
   '#why_course' => $why_course,
   '#duration' => $node->get('field_course_duration')->value,
   '#certification_label' => $node->get('field_course_certification_label')->value,

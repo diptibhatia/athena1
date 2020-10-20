@@ -1,0 +1,7 @@
+cuddly-slider:
+  version: 1.x
+  js:
+    js/owl.carousel.js: {}
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery

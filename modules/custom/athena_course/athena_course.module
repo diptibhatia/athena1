@@ -56,6 +56,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'overview' => NULL,
       'node' => NULL,
       'total_fee' => NULL,
+      'course_team' => NULL,
       'univ_data' => NULL,
       'why_course' => NULL,
       'duration' => NULL,
@@ -154,4 +155,13 @@ function athena_course_theme($existing, $type, $theme, $path) {
     
     
   ];
+}
+
+
+function athena_course_page_attachments(array &$attachments) {
+    $account = \Drupal::currentUser();
+    if ($account->id() != 1) {
+   
+  $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
+  }
 }
