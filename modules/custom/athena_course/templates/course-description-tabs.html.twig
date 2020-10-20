@@ -361,6 +361,8 @@
                             </div>
                             <div class="partners-tabs__mba-img"></div>
                         </div>
+                          {% set numm = numm+1 %}
+                    {% endfor %}   
                         <div class="partners-tabs__msg">
                             <div class="partners-tabs__msg-person">
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
@@ -398,8 +400,7 @@
                             </div>
                         </div>
                     </div>
-                       {% set numm = numm+1 %}
-                    {% endfor %}   
+                     
                 </div>
 
             </div>
@@ -461,7 +462,7 @@
                    
                 </div>
                 <div class="course-resources-card">
-                    <h3>Course Resourses</h3>
+                    <h3>Course Resources</h3>
                     <p>For more detailed information about the course, please click on the links below.</p>
                     <div>
                         <a href="#">Download Brochure</a>
