@@ -133,6 +133,13 @@ function athena_course_theme($existing, $type, $theme, $path) {
       ],
     ],
     
+    'mba_program_courses' => [
+      'variables' => [
+      'base_path' => NULL,
+      'course' => NULL,
+      ],
+    ],
+    
     'course_registration' => [
       'variables' => [
       'base_path' => NULL,
