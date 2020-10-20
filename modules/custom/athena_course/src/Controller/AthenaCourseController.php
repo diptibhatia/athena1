@@ -308,7 +308,7 @@ $field_course_category = "Certifications";
       'target_revision_id' => $paragraph->getRevisionId(),
     );
             }
-                $oldnode->set('field_course_modules', $current);
+             //   $oldnode->set('field_course_modules', $current);
             
             foreach($course_data['fee_details'] as $module_fee_data) {
                 $feeparagraph = Paragraph::create(['type' => 'course_fee_details']);
@@ -341,7 +341,7 @@ $field_course_category = "Certifications";
             
           
     
-    $oldnode->set('field_course_module_fees', $feecurrent);
+   // $oldnode->set('field_course_module_fees', $feecurrent);
 
             $oldnode->save();
                    //     break;
