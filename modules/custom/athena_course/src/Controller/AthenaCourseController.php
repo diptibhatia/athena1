@@ -304,6 +304,7 @@ $field_course_category = "Certifications";
                   $paragraph->set('field_coursemodule_description', $module_data['module_desc']); 
                   $paragraph->set('field_module_level', $module_data['module_level']); 
                   $paragraph->set('field_module_credit', $module_data['module_credits']); 
+                  $paragraph->enforceIsNew();
                   $paragraph->set('field_course_module_name', $module_data['fk_module_name']); 
                   $paragraph->save();
                    $module_fee_array[] = array(
@@ -313,11 +314,13 @@ $field_course_category = "Certifications";
             }
                 $oldnode->set('field_course_modules', $module_fee_array);
             
+            // $feecurrent = $oldnode->get('field_course_module_fees')->getValue();
             foreach($course_data['fee_details'] as $module_fee_data) {
                 $feeparagraph = Paragraph::create(['type' => 'course_fee_details']);
                   $feeparagraph->set('field_fee_label', $module_fee_data['fk_fee_detail']); 
                   $feeparagraph->set('field_paragraphh_module_fees', $module_fee_data['fee']); 
-                 
+                 $feeparagraph->enforceIsNew();
+                // enforceIsNew();
                   $feeparagraph->save();
                    $feecurrent[] = array(
       'target_id' => $feeparagraph->id(),
@@ -333,6 +336,7 @@ $field_course_category = "Certifications";
                   $paragraph_course_team->set('field_question', $faq_data['question']); 
                   $paragraph_course_team->set('field_answer', $faq_data['answer']); 
                   $paragraph_course_team->set('field_category', 'About_the_Course'); 
+                  $paragraph_course_team->enforceIsNew();
                   $paragraph_course_team->save();
                    $course_faq[] = array(
       'target_id' => $paragraph_course_team->id(),
