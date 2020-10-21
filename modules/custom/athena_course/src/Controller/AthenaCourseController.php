@@ -324,6 +324,7 @@ $field_course_category = "Certifications";
       'target_revision_id' => $feeparagraph->getRevisionId(),
     );
             }
+            $oldnode->set('field_course_module_fees', $feecurrent);
             
             
             
@@ -344,7 +345,6 @@ $field_course_category = "Certifications";
             
           
     
-   // $oldnode->set('field_course_module_fees', $feecurrent);
 
             $oldnode->save();
                    //     break;
