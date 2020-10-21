@@ -288,7 +288,12 @@
                 <div class="tab-content rounded-bottom" id="myClassicTabContent">
                 {% set numm = 1 %}
                  {% for universities in univ_data	 %}
-                    <div class="tab-pane fade active show" id="guglielmo{{numm}}" role="tabpanel" aria-labelledby="guglielmo-tab-classic">
+                  {% if numm == 1 %} 
+                  {% set activeclasstab = 'active show' %}
+                  {% else %}
+                        {% set activeclasstab = '' %}
+                    {% endif %}
+                    <div class="tab-pane fade {{activeclasstab}}" id="guglielmo{{numm}}" role="tabpanel" aria-labelledby="guglielmo-tab-classic">
                         <div class="partners-tabs__mba">
                             <div class="partners-tabs__mba-text">
                                 <div class="content">
