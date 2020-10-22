@@ -9,7 +9,7 @@
     <title>Insight Corporate</title>
 </head>
 
-<body>
+<body class="insight-corporate-page">
     <div w3-include-html="header.html"></div>
     <div class="main-wrapper container-fluid p-0 insight-wrapper">
         <div id="progress-bar" class="progress-bar">
@@ -159,8 +159,8 @@
             let progress =
                 window.pageYOffset / (document.body.scrollHeight - window.innerHeight);
             // fill progress bar
-            if(Math.ceil(100 * progress) <= 20) {
-                progressFill.style.width = "30%";
+            if(Math.ceil(100 * progress) <= 5) {
+                progressFill.style.width = "5%";
             }else {
                 progressFill.style.width = Math.ceil(100 * progress) + "%";
             }            

@@ -19,6 +19,9 @@
 	.progress-bar {		
 		width: 100%;
 		background-color: transparent;
+		position: fixed;
+		top: 0;
+		z-index: 999;
 
 		.fill {
 			background-color: $purpleColor;
