@@ -194,3 +194,38 @@ blockquote {
 		max-width: 1170px;
 	}
 }
+
+.short-title {
+	min-height: 52px;
+	max-height: 52px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+}
+
+h5.card-title a {
+    color: #303030;
+
+    &:hover {
+    	text-decoration: none;
+	}
+}
+
+.course-info h1 a {
+    color: #303030;
+
+    &:hover {
+    	text-decoration: none;	
+    }
+}
+
+.image_icon {
+	position: relative;
+	width: 140px;
+
+	.link_img {
+		position: absolute;
+		bottom: 0;
+		right: -10px;
+	}
+}
