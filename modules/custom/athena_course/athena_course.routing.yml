@@ -54,3 +54,11 @@ athena_course.registration:
   requirements: 
     _permission: 'access content'
     
+athena_course.university:
+  path: '/university'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::university'
+    _title: 'Course Registration'
+  requirements: 
+    _permission: 'access content'
+    

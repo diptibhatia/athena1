@@ -614,6 +614,20 @@ return array($academic);
     
 }
 
+public function university(){
+global $base_url;
+$theme = \Drupal::theme()->getActiveTheme();
+$base_path = $base_url.'/'. $theme->getPath();   
+   
+$academic =  [
+  '#theme' => 'university',
+  '#title1' => $title1,  
+  '#base_path' => $base_path,  
+]; 
 
+
+return array($academic);
+   
+}
 
 }
