@@ -312,6 +312,9 @@ $field_course_category = "Certifications";
                       'target_revision_id' => $paragraph->getRevisionId(),
                     );
             }
+            
+            $oldnode->field_course_modules->setValue(array());
+             $oldnode->save();
                 $oldnode->set('field_course_modules', $module_fee_array);
             
             // $feecurrent = $oldnode->get('field_course_module_fees')->getValue();
@@ -327,6 +330,9 @@ $field_course_category = "Certifications";
       'target_revision_id' => $feeparagraph->getRevisionId(),
     );
             }
+            $oldnode->field_course_module_fees->setValue(array());
+            $oldnode->save();
+            
             $oldnode->set('field_course_module_fees', $feecurrent);
             
             
@@ -343,8 +349,9 @@ $field_course_category = "Certifications";
       'target_revision_id' => $paragraph_course_team->getRevisionId(),
     );
             }
+             $oldnode->field_faq->setValue(array());
+             $oldnode->save();
                 $oldnode->set('field_faq', $course_faq);
-            
             
             
           
