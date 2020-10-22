@@ -164,8 +164,8 @@
             let progress =
                 window.pageYOffset / (document.body.scrollHeight - window.innerHeight);
             // fill progress bar
-            if(Math.ceil(100 * progress) <= 20) {
-                progressFill.style.width = "30%";
+            if(Math.ceil(100 * progress) <= 5) {
+                progressFill.style.width = "5%";
             }else {
                 progressFill.style.width = Math.ceil(100 * progress) + "%";
             }            
