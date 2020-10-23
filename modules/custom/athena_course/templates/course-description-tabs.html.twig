@@ -595,8 +595,8 @@
             <h2>What You Get</h2>
             <p class="msg">You will be Receiving the following certificates and credentials as follows.</p>
             <div class="container-box">
-				 {% for why_coursedata in why_course %}
 				  {% set whynum = 1 %}
+				 {% for why_coursedata in why_course %}
                 <div class="contains">
                     <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
                     <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
