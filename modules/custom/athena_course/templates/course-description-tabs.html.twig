@@ -502,8 +502,7 @@
                         <div>
                             <h4>{{ module.entity.field_course_module_name.value }}</h4>
                             <p class="duration"><span>Duration:</span> 4  to 12 weeks</p>
-                            <p class="text" style="line-height: initial;">{{ module.entity.field_coursemodule_description.value|striptags }}
-                            </p>
+                            <p class="text">{{ module.entity.field_coursemodule_description.value|striptags }}</p>
                             <p class="level"><span>Level:</span> {{ module.entity.field_module_level.value }}</p>
                             <p class="credit"><span>Credits:</span> {{ module.entity.field_module_credit.value }} ({{node.field_courses_credit_type.0.value|raw }})</p>
                         </div>
