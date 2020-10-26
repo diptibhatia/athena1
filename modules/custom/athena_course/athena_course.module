@@ -146,7 +146,14 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'course' => NULL,
       ],
     ],
-
+    'event_page_tabs' => [
+      'variables' => [
+      'upcoming' => NULL,
+      'past' => NULL,
+      'node' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
     'course_registration' => [
       'variables' => [
       'base_path' => NULL,
