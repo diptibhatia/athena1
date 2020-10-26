@@ -23,10 +23,11 @@
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
                            <p>
-sdff
+                              {% set text = testidata.field_testimonial_text|render|striptags %}
+                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
                               &nbsp;<span><a href="/testimonials/flexibitliy-and-content" hreflang="en">ReadMore</a></span>
                            </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
                         </div>
                      </div>   
                   {% elseif loop.index ==2 %}
@@ -39,10 +40,10 @@ sdff
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
                            <p>
-sdff
+                              {{testidata.field_testimonial_text.value}}
                               &nbsp;<span><a href="/node/141" hreflang="en">ReadMore</a></span>
                            </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
                         </div>
                      </div>
                   {% elseif loop.index ==3 %}
@@ -54,11 +55,10 @@ sdff
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
                            <p>
-                              {% set text = testidata.field_testimonial_text|render|striptags|trim %}
-                              {{ (text|length > 70 ? text|slice(0, 201)|split(' ')|slice(0, -1)|join(' ') ~ '&hellip;' : text)|raw }}
+dff
                               &nbsp;<span><a href="/node/142" hreflang="en">ReadMore</a></span>
                            </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
                         </div>
                      </div>
                   {% endif %}
