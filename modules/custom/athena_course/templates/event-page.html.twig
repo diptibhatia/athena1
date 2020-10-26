@@ -12,10 +12,10 @@
        {% for upcomingdata in upcoming %}
          <div class="row bg-white shadow-sm rounded mr-1 mb-4">
             <div class="col-md-3 d-flex align-items-center p-0">
-               {{upcomingdata.field_event_image}}
+               {{upcomingdata.field_event_image.value}}
             </div>
             <div class="col-md-9">                    
-               <h6>{{upcomingdata.field_title}}</h6>
+               <h6>{{upcomingdata.field_title.value}}</h6>
                 <div class="short-text">{{upcomingdata.field_event_description.value}}</div>
                <p>
                  <img src="/themes/custom/athena/images/calender.svg" />
