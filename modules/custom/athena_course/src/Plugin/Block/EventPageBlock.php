@@ -47,8 +47,8 @@ class EventPageBlock extends BlockBase {
     $upcomingnodes =  array_slice($upcomingnodes, 0, 2);
     $pastnodes =  array_slice($pastnodes, 0, 2);
     
-    echo "<pre>";
-  print_r($upcomingnodes);exit;
+    //echo "<pre>";
+    //print_r($upcomingnodes);exit;
     
     // Base theme path.
     $theme = \Drupal::theme()->getActiveTheme();
