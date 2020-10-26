@@ -21,10 +21,13 @@
                            <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
-                           <h3><span>“</span>{{testidata.title.value}}</h3>
+                           <h3><span>“</span>
+                              {% set text = testidata.title.value|render|striptags %}
+                              {{ text|length > 40 ? text|slice(0, 40) : text }}
+                           </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
-                              {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
-                              &nbsp;<span><a href="/testimonials/flexibitliy-and-content" hreflang="en">ReadMore</a></span>
+                              {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
+                              &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
                         </div>
@@ -37,10 +40,13 @@
                            <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
-                           <h3><span>“</span>{{testidata.title.value}}</h3>
+                           <h3><span>“</span>
+                              {% set text = testidata.title.value|render|striptags %}
+                              {{ text|length > 40 ? text|slice(0, 40) : text }}
+                           </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
-                              {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
-                              &nbsp;<span><a href="/node/141" hreflang="en">ReadMore</a></span>
+                              {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
+                              &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
                         </div>
@@ -52,9 +58,12 @@
                            <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
-                           <h3><span>“</span>{{testidata.title.value}}</h3>
+                           <h3><span>“</span>
+                              {% set text = testidata.title.value|render|striptags %}
+                              {{ text|length > 40 ? text|slice(0, 40) : text }}
+                           </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
-                              {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}dff
+                              {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
                               &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
