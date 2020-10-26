@@ -13,7 +13,7 @@ use \Drupal\Core\Url;
  * Provides a block with a simple text.
  *
  * @Block(
- *   id = "athena_certification_program_courses_block",
+ *   id = "athena_event_page_block",
  *   admin_label = @Translation("Event page Block"),
  * )
  */
