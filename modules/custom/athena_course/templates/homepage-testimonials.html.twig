@@ -22,9 +22,8 @@
                         </div>
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
-                           <p>
-                              {% set text = testidata.field_testimonial_text.value|render|striptags %}
-                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
+                           <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
+                              {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
                               &nbsp;<span><a href="/testimonials/flexibitliy-and-content" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
@@ -39,8 +38,8 @@
                         </div>
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
-                           <p>
-                              {{testidata.field_testimonial_text.value}}
+                           <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
+                              {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
                               &nbsp;<span><a href="/node/141" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
@@ -54,8 +53,8 @@
                         </div>
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
-                           <p>
-dff
+                           <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
+                              {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}dff
                               &nbsp;<span><a href="/node/142" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>

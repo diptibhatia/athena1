@@ -36,8 +36,8 @@ class HomepageTestimonialsBlock extends BlockBase {
     $testinodes = node_load_multiple($latest);
         
     $testimo =  array_slice($testinodes, 0, 3);
-         
-    //print_r($testimo);exit;
+    echo "<pre>";     
+    print_r($testimo);exit;
 
   // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();
