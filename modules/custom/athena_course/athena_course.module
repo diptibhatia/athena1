@@ -150,7 +150,6 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'variables' => [
       'upcoming' => NULL,
       'past' => NULL,
-      'node' => NULL,
       'base_path' => NULL,
       ],
     ],

@@ -43,7 +43,7 @@ class EventPageBlock extends BlockBase {
     $theme = \Drupal::theme()->getActiveTheme();
 
     $base_path = $base_url.'/'. $theme->getPath();
-      $event_page_tabs =  [
+    $event_page_tabs =  [
       '#theme' => 'event_page',
       '#upcoming' => $upcomingnodes,
       '#past' => $pastnodes,
