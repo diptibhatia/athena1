@@ -26,16 +26,16 @@ class LatestInsightsSidebarBlock extends BlockBase {
     global $base_url;
 
     $bundle='insight_article';
+
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('type', $bundle);
-    $insights = $query->execute();
+    $latest = $query->execute();
         
     
-    $insightsnodes = node_load_multiple($insights);
+    $insightsnodes = node_load_multiple($latest);
         
-    }
-     $latest_insights =  array_slice($insightsnodes, 0, 5);
+    $latest_insights =  array_slice($insightsnodes, 0, 5);
          
   // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();
