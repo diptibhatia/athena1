@@ -138,7 +138,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'insig' => NULL,
       ],
     ],
-    
+    'homepage_testimonials' => [
+      'variables' => [
+      'base_path' => NULL,
+      'testi' => NULL,
+      ],
+    ],
     'mba_program_courses' => [
       'variables' => [
       'base_path' => NULL,
