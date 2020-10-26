@@ -9,7 +9,7 @@ use Drupal\Core\Session\AccountInterface;
 
 use \Drupal\Core\Url;
 
-class EventBlock extends BlockBase {
+class EventPageBlock extends BlockBase {
 
   public function build() {
       
@@ -44,7 +44,7 @@ class EventBlock extends BlockBase {
 
     $base_path = $base_url.'/'. $theme->getPath();
       $event_page_tabs =  [
-      '#theme' => 'event_page_tabs',
+      '#theme' => 'event_page',
       '#upcoming' => $upcomingnodes,
       '#past' => $pastnodes,
       '#base_path' => $base_path,
