@@ -18,16 +18,16 @@
                      <div class="student-review">
                         <div class="student-image">
                            <img alt="" data-entity-type="file" data-entity-uuid="0b022aa1-1b88-46ac-aea5-a7f890279dcf" height="150" src="/sites/default/files/Insights%20Images/markus.jpg" style="border-radius: 50%;border: 3px solid orange;" width="150" />
-                           <div class="social-icon-linkedin"><a href="https://www.linkedin.com/in/gbenga-olagoke-47088a91" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+                           <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
-                           <h3><span>“</span>The best option for the busy Working professionals</h3>
-                           <p>My MBA journey with Athena has been a blast! I have gained so much&nbsp;<span><a href="/testimonials/flexibitliy-and-content" hreflang="en">ReadMore</a></span></p>
-                           <div class="student-info"><span>Lisa Reburn</span><br />
-                              Chief Executive Officer l MC Donalds<br />
-                              Germany
-                           </div>
-                           <p>&nbsp;</p>
+                           <h3><span>“</span>{{testidata.title.value}}</h3>
+                           <p>
+                              {% set text = testidata.field_testimonial_text|render|striptags %}
+                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
+                              &nbsp;<span><a href="/testimonials/flexibitliy-and-content" hreflang="en">ReadMore</a></span>
+                           </p>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
                         </div>
                      </div>   
                   {% elseif loop.index ==2 %}
@@ -35,32 +35,32 @@
                      <div class="student-review two">
                         <div class="student-image">
                            <img alt="" height="150" src="/sites/default/files/Insights%20Images/olugbemiga%20thumb.jpg" style="border-radius: 50%;border: 3px solid orange;" width="150" />
-                           <div class="social-icon-linkedin"><a href="https://www.linkedin.com/in/gbenga-olagoke-47088a91" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+                           <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
-                           <h3><span>“</span>Adding education to my busy schedule</h3>
-                           <p>Making a choice is not a challenge but making the right choice is&nbsp;<span><a href="/node/141" hreflang="en">ReadMore</a></span></p>
-                           <div class="student-info">Olugbemiga Moses Olagoke</div>
-                           <div class="student-info">Managing Partner</div>
-                           <div class="student-info">Olugbenga Fabunmi &amp; Co (Chartered Accountants)</div>
-                           <div class="student-info">Nigeria</div>
-                           <p>&nbsp;</p>
+                           <h3><span>“</span>{{testidata.title.value}}</h3>
+                           <p>
+                              {% set text = testidata.field_testimonial_text|render|striptags %}
+                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
+                              &nbsp;<span><a href="/node/141" hreflang="en">ReadMore</a></span>
+                           </p>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
                         </div>
                      </div>
                   {% elseif loop.index ==3 %}
                      <div class="student-review">
                         <div class="student-image">
                            <img alt="" src="/sites/default/files/Insights%20Images/andrew%20thumb.jpg" style="border-radius: 50%;border: 3px solid orange;" width="150" />
-                           <div class="social-icon-linkedin"><a href="https://www.linkedin.com/in/andrew-vadas-0a14171" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+                           <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
-                           <h3><span>“</span>Athena has made my learning journey</h3>
-                           <p>I cannot speak highly enough of the professional and diligent staff&nbsp;<span><a href="/node/142" hreflang="en">ReadMore</a></span></p>
-                           <div class="student-info"><span>Andrew George</span><br />
-                              Vadas Education Consultant<br />
-                              China
-                           </div>
-                           <p>&nbsp;</p>
+                           <h3><span>“</span>{{testidata.title.value}}</h3>
+                           <p>
+                              {% set text = testidata.field_testimonial_text|render|striptags %}
+                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
+                              &nbsp;<span><a href="/node/142" hreflang="en">ReadMore</a></span>
+                           </p>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
                         </div>
                      </div>
                   {% endif %}
