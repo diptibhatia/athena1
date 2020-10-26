@@ -132,10 +132,10 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'course' => NULL,
       ],
     ],
-    'event_tab' => [
+    'latest_insights' => [
       'variables' => [
       'base_path' => NULL,
-      'course' => NULL,
+      'insights' => NULL,
       ],
     ],
     

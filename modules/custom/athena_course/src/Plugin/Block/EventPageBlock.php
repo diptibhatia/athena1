@@ -44,8 +44,8 @@ class EventPageBlock extends BlockBase {
     $upcomingnodes = node_load_multiple($upcoming);
     $pastnodes = node_load_multiple($past);
     
-    $upcomingnodes =  array_slice($upcomingnodes, 0, 2);
-    $pastnodes =  array_slice($pastnodes, 0, 2);
+    $upcomingnodes =  array_slice($upcomingnodes, 0, 5);
+    $pastnodes =  array_slice($pastnodes, 0, 5);
     
     //echo "<pre>";
     //print_r($upcomingnodes);exit;
