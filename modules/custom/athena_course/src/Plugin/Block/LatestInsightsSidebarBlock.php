@@ -13,11 +13,11 @@ use \Drupal\Core\Url;
  * Provides a block with a simple text.
  *
  * @Block(
- *   id = "latest_insights_block",
- *   admin_label = @Translation("Latest Insights Block"),
+ *   id = "latest_insights_sidebar_block",
+ *   admin_label = @Translation("Latest Insights Sidebar Block"),
  * )
  */
-class LatestInsightsBlock extends BlockBase {
+class LatestInsightsSidebarBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
@@ -42,7 +42,7 @@ class LatestInsightsBlock extends BlockBase {
 
   $base_path = $base_url.'/'. $theme->getPath();
     $latest_insights_sidebar =  [
-    '#theme' => 'latest_insights',
+    '#theme' => 'latest_insights_sidebar',
     '#insights' => $latest_insights,
     '#base_path' => $base_path,
 
