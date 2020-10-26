@@ -43,7 +43,7 @@ class LatestInsightsSidebarBlock extends BlockBase {
   $base_path = $base_url.'/'. $theme->getPath();
     $latest_insights_sidebar =  [
     '#theme' => 'latest_insights_sidebar',
-    '#insights' => $latest_insights,
+    '#insig' => $latest_insights,
     '#base_path' => $base_path,
 
   ]; 
