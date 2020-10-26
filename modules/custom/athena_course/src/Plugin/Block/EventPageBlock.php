@@ -9,8 +9,18 @@ use Drupal\Core\Session\AccountInterface;
 
 use \Drupal\Core\Url;
 
+/**
+ * Provides a block with a simple text.
+ *
+ * @Block(
+ *   id = "athena_certification_program_courses_block",
+ *   admin_label = @Translation("Event page Block"),
+ * )
+ */
 class EventPageBlock extends BlockBase {
-
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
       
     global $base_url;
