@@ -23,47 +23,14 @@
                         <div class="info">
                            <h3><span>“</span>{{testidata.title.value}}</h3>
                            <p>
-                              {% set text = testidata.field_testimonial_text|render|striptags %}
-                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
+                              {% set text = testidata.field_testimonial_text|render %}
+                              {{ text|length > 80 ? text|slice(0, 80)|raw ~ '...' : text|raw }}
                               &nbsp;<span><a href="/testimonials/flexibitliy-and-content" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
                         </div>
                      </div>   
-                  {% elseif loop.index ==2 %}
-                     <div class="image-dot-testimonials-two"><img src="/themes/custom/athena/images/dots-course.svg" /></div>
-                     <div class="student-review two">
-                        <div class="student-image">
-                           <img alt="" height="150" src="/sites/default/files/Insights%20Images/olugbemiga%20thumb.jpg" style="border-radius: 50%;border: 3px solid orange;" width="150" />
-                           <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
-                        </div>
-                        <div class="info">
-                           <h3><span>“</span>{{testidata.title.value}}</h3>
-                           <p>
-                              {% set text = testidata.field_testimonial_text|render|striptags %}
-                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
-                              &nbsp;<span><a href="/node/141" hreflang="en">ReadMore</a></span>
-                           </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
-                        </div>
-                     </div>
-                  {% elseif loop.index ==3 %}
-                     <div class="student-review">
-                        <div class="student-image">
-                           <img alt="" src="/sites/default/files/Insights%20Images/andrew%20thumb.jpg" style="border-radius: 50%;border: 3px solid orange;" width="150" />
-                           <div class="social-icon-linkedin"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
-                        </div>
-                        <div class="info">
-                           <h3><span>“</span>{{testidata.title.value}}</h3>
-                           <p>
-                              {% set text = testidata.field_testimonial_text|render|striptags %}
-                              {{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}
-                              &nbsp;<span><a href="/node/142" hreflang="en">ReadMore</a></span>
-                           </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value}}</div>
-                        </div>
-                     </div>
-                  {% endif %}
+
                {% endfor %}
 
             </div>
