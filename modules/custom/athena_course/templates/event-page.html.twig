@@ -1,0 +1,66 @@
+<div class="events-wrapper">
+<section class="tab-section container">
+   <ul class="nav nav-tabs eventsTab" id="eventsTab" role="tablist">
+     <li class="nav-item">
+       <a class="nav-link active" id="upcomingEvent-tab" data-toggle="tab" href="#upcomingEvent" role="tab" aria-controls="upcomingEvent" aria-selected="true">Upcoming Events</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" id="pastEvent-tab" data-toggle="tab" href="#pastEvent" role="tab" aria-controls="pastEvent" aria-selected="false">Past Events</a>
+     </li>
+   </ul>
+   <div class="tab-content eventTabContent container">
+     <div class="tab-pane fade show active" id="upcomingEvent" role="tabpanel" aria-labelledby="upcomingEvent-tab">
+       {% for upcomingdata in upcoming %}
+         <div class="row bg-white shadow-sm rounded mr-1 mb-4">
+            <div class="col-md-3 d-flex align-items-center p-0">
+               <!-- {{upcomingdata.field_event_image.value}} -->
+               <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/events-1.png">
+            </div>
+            <div class="col-md-9">                    
+               <h6>{{upcomingdata.title.value}}</h6>
+                <div class="short-text">{{upcomingdata.field_event_description.value}}</div>
+               <p>
+                 <img src="/themes/custom/athena/images/calender.svg" />
+                 {{upcomingdata.field_event_date.value}}                      
+               </p>                                 
+               <div class="d-flex justify-content-between">
+                  <p >                                       
+                     <img src="/themes/custom/athena/images/location.svg" /> {{upcomingdata.field_event_location.value}}  | {{upcomingdata.field_event_registration.value}} 
+                  </p>
+                  <p>
+                     <span class="purple-txt"><a href="{{upcomingdata.field_event_link.value}}">Know More</a></span>
+                  </p>
+               </div>
+            </div>
+         </div>
+        {% endfor %}
+     </div>
+     <div class="tab-pane fade" id="pastEvent" role="tabpanel" aria-labelledby="pastEvent-tab">
+      {% for pastdata in past %}
+         <div class="row bg-white shadow-sm rounded mr-1 mb-4">
+            <div class="col-md-3 d-flex align-items-center p-0">
+               <!-- {{upcomingdata.field_event_image.value}} -->
+               <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/events-1.png">
+            </div>
+            <div class="col-md-9">                    
+               <h6>{{pastdata.title.value}}</h6>
+                <div class="short-text">{{pastdata.field_event_description.value}}</div>
+               <p>
+                 <img src="/themes/custom/athena/images/calender.svg" />
+                 {{pastdata.field_event_date.value}}                      
+               </p>                                 
+               <div class="d-flex justify-content-between">
+                  <p >                                       
+                     <img src="/themes/custom/athena/images/location.svg" /> {{pastdata.field_event_location.value}}  | {{pastdata.field_event_registration.value}} 
+                  </p>
+                  <p>
+                     <span class="purple-txt"><a href="{{pastdata.field_event_link.value}}">Know More</a></span>
+                  </p>
+               </div>
+            </div>
+         </div>
+        {% endfor %}
+     </div>                   
+   </div>
+</section>
+</div>

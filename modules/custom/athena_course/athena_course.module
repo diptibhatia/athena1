@@ -140,13 +140,24 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-'popular_course' => [
+  'popular_course' => [
       'variables' => [
       'base_path' => NULL,
       'course' => NULL,
       ],
     ],
-    
+    'latest_insights_sidebar' => [
+      'variables' => [
+      'base_path' => NULL,
+      'insig' => NULL,
+      ],
+    ],
+    'homepage_testimonials' => [
+      'variables' => [
+      'base_path' => NULL,
+      'testi' => NULL,
+      ],
+    ],
     'mba_program_courses' => [
       'variables' => [
       'base_path' => NULL,
@@ -160,7 +171,13 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'course' => NULL,
       ],
     ],
-
+    'event_page' => [
+      'variables' => [
+      'upcoming' => NULL,
+      'past' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
     'course_registration' => [
       'variables' => [
       'base_path' => NULL,

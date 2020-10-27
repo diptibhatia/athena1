@@ -1,0 +1,16 @@
+<h5 class="insight-sidebar-title">Latest Insights From Athena</h5>
+<div class="container">
+   {% for insightsdata in insig %}
+   <div class="row mb-1">
+      <div class="col-md-4 d-flex align-items-center p-0">
+         <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article1.png">
+      </div>
+      <div class="col-md-8">                    
+         <p class="strong yellow-txt m-0">Article</p>
+         <p>{{ insightsdata.title.value}}</p>
+      </div>
+   </div>
+   {% endfor %}
+
+<p class="purple-txt"><a href="/insights/all" class="more-link">VIEW ALL INSIGHTS</a></p>
+</div>
