@@ -1,7 +1,37 @@
 
         jQuery(document).ready(function() {
             
-            console.log("hellooooooooo")
+            jQuery("#speak_submit").click(function() {
+                var msg = '';
+                if(jQuery("#speak_first_name").val() == '') {
+                    msg += '\n\u2022  First name cannot be empty';
+                }
+                if(jQuery("#speak_last_name").val() == '') {
+                    msg += '\n\u2022  Last name cannot be empty';
+                }
+                if(jQuery("#speak_email").val() == '') {
+                    msg += '\n\u2022  Email cannot be empty';
+                }
+                if(jQuery("#speak_first_name").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
+                 if(jQuery("#speak_country").val() == '') {
+                    msg += '\n\u2022  Country cannot be empty';
+                }
+                 if(jQuery("#speak_mobile_number").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
+                if(!$("#speak_consent").prop('checked') == true){
+                     msg += '\n\u2022 please accept consent terms';
+                }
+                
+                if(msg == ''){
+                    alert("Data Submitted, will reach out to you shortly")
+                }else {
+                    
+                    alert(msg)
+                }
+});
             jQuery('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
