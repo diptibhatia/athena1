@@ -81,3 +81,15 @@
         @content;
     }
 }
+
+@mixin atSize450to700 {
+     @media (min-width: 450px) and (max-width: 699px) {
+        @content;
+    }
+}
+
+@mixin atSizeIpodPotrait {
+    @media (min-width: 735px) and (max-width: 850px) {
+        @content;
+    }
+}
