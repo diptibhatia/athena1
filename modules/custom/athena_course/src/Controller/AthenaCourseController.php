@@ -215,6 +215,73 @@ return array(
     $response = $client->get('courselist');
 
     $courses = Json::decode($response->getBody());
+    
+    
+    
+    $partenr_client = \Drupal::service('http_client_factory')->fromOptions([
+      'base_uri' => 'http://3.7.173.255/athenadev/api/',
+    ]);
+    $partner_response = $partenr_client->get('courses/partners');
+    $partners = Json::decode($partner_response->getBody());
+    foreach($partners as $partner) {
+        
+        $partners_univ[$partner['cid']] = 
+       $partner['partner_universities_name']
+        ;
+    }
+   
+   $team_client = \Drupal::service('http_client_factory')->fromOptions([
+      'base_uri' => 'http://3.7.173.255/athenadev/api/',
+    ]);
+    $teams_res = $team_client->get('courses/teams');
+    $teams = Json::decode($teams_res->getBody());
+    
+    $team_course = array();
+    foreach($teams as $team) {
+       $team_course[$team['cid']] = $team['course_team_name'];
+    }
+   
+   
+   
+   
+   
+   
+   
+     $bundle='course_team';
+     $teamquery = \Drupal::entityQuery('node');
+    $teamquery->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+    $teamquery->condition('type', $bundle);
+    $team_ids = $teamquery->execute();
+        $teamnodes = node_load_multiple($team_ids);
+    foreach($teamnodes as  $team_data){
+        $team_data_array[] = array(
+          'nid' => $team_data->id(),
+          'title' =>$team_data->get('title')->value
+        );
+        
+    }   
+    
+     $bundle='universities';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+    $query->condition('type', $bundle);
+    $univ_ids = $query->execute();
+        $univnodes = node_load_multiple($univ_ids);
+    foreach($univnodes as  $univ_data){
+        $univ_node_array[] = array(
+          'nid' => $univ_data->id(),
+          'title' =>$univ_data->get('title')->value
+        );
+        
+    }   
+        
+     //   print_r($univ_ids);exit;
+      //  print_r($univ_node_array);exit;
+    
+    
+    
     $items = [];
     $node_ids = array();
      foreach($nodes as $node_key => $node) {
@@ -274,6 +341,85 @@ $field_course_category = "Certifications";
           $new_node->set('field_cid', $cid);
           $new_node->save();      
         } else {
+            
+            
+          //  univ_node_array
+            
+        //    print_r($partners_univ);exit;
+            // Attach Parteners.
+            
+            
+            foreach($nodes as $node_key => $oldnode) {
+               if($oldnode->get('field_cid')->value == $cid) {  
+              if(!empty($partners_univ[$oldnode->get('field_cid')->value])) {
+               // $oldnode->field_link_universities->entity = Node::load(209);;
+               
+               $univ_dd = array();
+               foreach($partners_univ[$oldnode->get('field_cid')->value] as $course_unive_linked_data) {
+                   
+               // $univ_node_array   
+                 foreach($univ_node_array as $map_univ) {
+                     if(strtolower($map_univ['title']) == strtolower($course_unive_linked_data)) {
+                           $paragraph = Paragraph::create(['type' => 'unversities_linked_to_content']);
+                  $paragraph->set('field_university', $map_univ['nid']); 
+                  $paragraph->save();
+                   $univ_dd[] = array(
+                      'target_id' => $paragraph->id(),
+                      'target_revision_id' => $paragraph->getRevisionId(),
+                    );
+                         break;
+                     }
+                 }  
+                 }     
+                    
+
+                 $oldnode->set('field_link_universities',$univ_dd);
+                $oldnode->save();
+                      
+            }  
+            
+             $oldnode->set('field_link_universities',$univ_dd);
+                $oldnode->save();
+            
+            
+            if(!empty($team_course[$oldnode->get('field_cid')->value])) {
+               // $oldnode->field_link_universities->entity = Node::load(209);;
+               
+               $team_nid_array = array();
+               foreach($team_course[$oldnode->get('field_cid')->value] as $team_linked_data) {
+                   
+               // $univ_node_array   
+                 foreach($team_data_array as $map_course_univ) {
+                     if(strtolower($team_linked_data) == strtolower($map_course_univ['title'])) {
+                        $team_nid_array[] = $map_course_univ['nid'];
+                    
+                    
+                    //
+                         break;
+                     }
+                 }  
+                 }     
+                    
+                 $oldnode->set('field_course_team_member',$team_nid_array);
+                $oldnode->save();
+                
+                      
+            }  
+            
+            if($cid == 7) {
+                
+                //print $oldnode->id();exit;
+            }
+            
+            
+               }
+            }
+            
+            
+            
+            
+            
+            /*
                foreach($nodes as $node_key => $oldnode) {
                 if($oldnode->get('field_cid')->value == $cid) {
           //$oldnode->set('title',$course_data['course_name']);
@@ -360,8 +506,9 @@ $field_course_category = "Certifications";
 
             $oldnode->save();
                    //     break;
-                        }
-                }
+                
+                        } 
+                }*/
                 
 
  
