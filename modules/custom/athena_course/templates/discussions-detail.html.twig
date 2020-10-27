@@ -1,0 +1,93 @@
+<div class="col-md-8 col-sm-12">
+               <div class="title">
+                  <h2>Our Discussions</h2>
+                  <h3> {{discussion.title}}</h3>
+                  <h4>in <span>{{discussion.category_title}}</span></h4>
+               </div>
+               <div class="single-discussion">
+                  <div class="new-discussion">
+                     <div class="single-post">
+                           <div class="profile-img">
+                              <img src="{{discussion.author_profile_pic}}" alt="avatar">
+                           </div>
+                           <div class="post-thread">
+                              <p>
+                                 {{discussion.author_firstname}} {{discussion.author_lastname}}
+                              </p>
+                              <div class="author-info">
+                                 {{discussion.course_name}}
+                              </div>
+                           </div>
+                        </div>
+                     <div class="user-thread">
+                        <p>{{discussion.description|striptags}}</p>
+                        <div class="reply">
+                           <p>
+                              <img src="{{base_path}}/images/like-discussion.svg">
+                              <span>{{discussion.views_count}}</span>
+                           </p>
+                           <p> Reply </p>
+                           <p style="float: right; color: #919191;"> {{discussion.time_ago}} </p>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  {% for posts in post %}
+                  <div class="new-discussion-reply">
+                     <div class="single-post">
+                           <div class="profile-img">
+                              <img src="{{posts.author_profile_pic}}" alt="avatar">
+                           </div>
+                           <div class="post-thread">
+                              <p>
+                                 {{posts.author_firstname}} {{posts.author_lastname}}
+                              </p>
+                              <div class="author-info">
+                                  {{posts.course_name}}
+                              </div>
+                           </div>
+                        </div>
+                     <div class="user-thread">
+                        <p>{{posts.content|raw}}</p>
+                        <div class="reply">
+                           <p>
+                              <img src="{{base_path}}/images/like-discussion.svg">
+                              <span>{{posts.views_count}}</span>
+                           </p>
+                           <p> <a href="http://newlms.athena.edu/athenafront/thread/{{discussion.discussion_id}}" target="_blank"> {{discussion.title}} |
+                              Reply</a> </p>
+                           <p style="float: right; color: #919191;"> {{posts.time_ago}} </p>
+                        </div>
+                     </div>
+                  </div>
+                  
+                   {% endfor %}
+                  
+                  <div class="new-discussion">
+                     <div class="single-post">
+                           <div class="profile-img">
+                              <img src="{{base_path}}/images/1.jpg" alt="avatar">
+                           </div>
+                           <div class="post-thread">
+                              <p>
+                                 Daniels Jeasus
+                              </p>
+                              <div class="author-info">
+                                 Master of Business Administration
+                              </div>
+                           </div>
+                        </div>
+                     <div class="user-thread">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+                        <div class="reply">
+                           <p>
+                              <img src="{{base_path}}/images/like-discussion.svg">
+                              <span>0</span>
+                           </p>
+                           <p> Reply </p>
+                           <p style="float: right; color: #919191;"> 11 days ago </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>

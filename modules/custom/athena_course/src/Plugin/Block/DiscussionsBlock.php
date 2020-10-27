@@ -22,10 +22,20 @@ class DiscussionsBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
+   
+     public function getCacheMaxAge() {
+    return 0;
+  }
   public function build() {
       
-      
-       $client = \Drupal::service('http_client_factory')->fromOptions([
+         $parameters = \Drupal::routeMatch()->getParameters(); 
+     
+    if(isset($_REQUEST['discussion_id'])) {
+      $discussion_id = $_REQUEST['discussion_id'];
+    }
+    
+     
+    $client = \Drupal::service('http_client_factory')->fromOptions([
       'base_uri' => 'http://3.7.173.255/athenadev/api/',
     ]);
 
@@ -45,6 +55,38 @@ $base_path = $base_url.'/'. $theme->getPath();
   '#base_path' => $base_path,
 
 ]; 
+
+if(!empty($discussion_id)) {
+     $client_detal = \Drupal::service('http_client_factory')->fromOptions([
+      'base_uri' => 'http://3.7.173.255/athenadev/api/',
+    ]);
+
+$discussion_id  =209;
+    $response_detail = $client_detal->get('discussions/'.$discussion_id);
+    $post = $client_detal->get('wreply/'.$discussion_id);
+
+
+    $discussion = Json::decode($response_detail->getBody());
+    $posts = Json::decode($post->getBody());
+   // print_r($posts['data']['posts']);exit;
+   // print_r($discussion['data']);exit;
+    
+  /*  $data['title'] = $discussion['data']['data']['title'];
+    $data['category_title'] = $discussion['data']['data']['category_title'];
+    $data['author_firstname'] = $discussion['data']['data']['author_firstname'];
+    $data['author_lastname'] = $discussion['data']['data']['author_lastname'];
+    $data['course_name'] = $discussion['data']['data']['course_name'];
+    $data['author_profile_pic'] = $discussion['data']['data']['author_profile_pic'];
+    $data['description'] = $discussion['data']['data']['description'];
+    $data['time_ago'] = $discussion['data']['data']['time_ago']; */
+   $discussion_detail =  [
+  '#theme' => 'discussions_detail',
+  '#discussion' => $discussion['data'],
+  '#post' => $posts['data']['posts'],
+  '#base_path' => $base_path,
+ ];  
+ return array($discussion_detail);
+}
 
     return array($homepage_course_tabs);
   }

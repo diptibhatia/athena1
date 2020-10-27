@@ -33,6 +33,20 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
+     'discussions_detail' => [
+      'variables' => [
+      'course_title' => NULL,
+      'discussion' => NULL,
+      'post' => NULL,
+      'ects_credit' => NULL,
+      'awarding_body' => NULL,
+      'description' => NULL,
+      'category' => NULL,
+      'banner' => NULL,
+      'node' => NULL,
+      'base_path' => NULL,
+      ],
+    ],
     'course_homepage_tabs' => [
       'variables' => [
       'academic' => NULL,
@@ -187,3 +201,4 @@ function athena_course_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
   }
 }
+
