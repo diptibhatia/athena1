@@ -26,7 +26,8 @@
                               <img src="{{base_path}}/images/like-discussion.svg">
                               <span>{{discussion.views_count}}</span>
                            </p>
-                           <p> Reply </p>
+                           <a href="http://newlms.athena.edu/athenafront/discussionboard/{{discussion.discussion_id}}" style="color:initial" target="_blank"> {{discussion.title}} |
+                              Reply</a>
                            <p style="float: right; color: #919191;"> {{discussion.time_ago}} </p>
                         </div>
                      </div>
@@ -54,7 +55,7 @@
                               <img src="{{base_path}}/images/like-discussion.svg">
                               <span>{{posts.views_count}}</span>
                            </p>
-                           <p> <a href="http://newlms.athena.edu/athenafront/thread/{{discussion.discussion_id}}" target="_blank"> {{discussion.title}} |
+                           <p> <a href="http://newlms.athena.edu/athenafront/discussionboard/{{discussion.discussion_id}}" style="color:initial" target="_blank"> {{discussion.title}} |
                               Reply</a> </p>
                            <p style="float: right; color: #919191;"> {{posts.time_ago}} </p>
                         </div>
