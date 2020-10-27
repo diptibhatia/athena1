@@ -44,7 +44,7 @@
 					padding-bottom : 1rem;
 				}
 
-				width : 340px;
+				width : 316px;
 				height : 400px;	
 			}			
 		}
@@ -79,6 +79,10 @@
 				bottom: 20px;
 			}
 
+			@include atSizeIpodPotrait {
+				bottom: 0;
+			}
+
 			.carousel-caption {
 				bottom: 20%;
 				width: 90%;
@@ -94,6 +98,10 @@
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
+				}
+
+				@include atSize450to700 {
+					bottom: 40%;
 				}
 
 			}

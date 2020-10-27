@@ -23,7 +23,7 @@
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
-                              {{ text|length > 40 ? text|slice(0, 40) : text }}
+                              {{ text|length > 45 ? text|slice(0, 45) : text }}
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
@@ -42,7 +42,7 @@
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
-                              {{ text|length > 40 ? text|slice(0, 40) : text }}
+                              {{ text|length > 45 ? text|slice(0, 45) : text }}
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
@@ -60,7 +60,7 @@
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
-                              {{ text|length > 40 ? text|slice(0, 40) : text }}
+                              {{ text|length > 45 ? text|slice(0, 45) : text }}
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
