@@ -347,10 +347,445 @@ $field_course_category = "Certifications";
             
         //    print_r($partners_univ);exit;
             // Attach Parteners.
-            
+      $what_you_get = array(
+ 1=>array(
+"cid"=>1,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Master of International Business Administration',
+		'univ'=>'Guglielmo Marconi University'),
+	2=> array(
+		'course'=>'Detailed Transcript with 60 ECTS Credits (IMBA)',
+		'univ'=>'Guglielmo Marconi University',
+		),
+	3=>array(
+		'course'=>'SCQF level 11 Extended Diploma in International Business and Strategy',
+		'univ'=>'Scottish Qualifications Authority',	
+	),
+	4=>array(
+		'course'=>'Detailed Transcript with 120 SCQF Credits',
+		'univ'=>'Scottish Qualifications Authority',	
+	),
+	5=>array(
+		'course'=>'Certified Manager Certification',
+		'univ'=>'Chartered Management Institute',	
+	)
+    
+    )
+),
+ 2=>array(
+"cid"=>2,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'SCQF Level 11 Extended Diploma in International Business & Strategy',
+		'univ'=>'Scottish Qualifications Authority'),
+	2=> array(
+		'course'=>'Detailed Transcript with 120 SCQF Credits',
+		'univ'=>'Scottish Qualifications Authority',
+		),
+    
+    )
+),
+
+
+ 4=>array(
+"cid"=>4,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'SCQF Level 11  Diploma in Supply Chain and Logistics Management',
+		'univ'=>'Scottish Qualifications Authority'),
+	2=> array(
+		'course'=>'Detailed Transcript with 40 SCQF Credits',
+		'univ'=>'Scottish Qualifications Authority',
+		),
+    
+    )
+),
+
+
+ 7=>array(
+"cid"=>7,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Strategic Human Resource Management Practitioner - CMI',
+		'univ'=>'Chartered Management Institute'),
+
+    
+    )
+),
+
+
+ 9=>array(
+"cid"=>9,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Procurement & Contracts Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+    
+    )
+),
+
+
+ 10=>array(
+"cid"=>10,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'SCQF Level 11 Diploma in International Business & Strategy',
+		'univ'=>'Scottish Qualifications Authority'
+		),
+2=>array(
+		'course'=>'Detailed Transcript with 60 SCQF Credits',
+		'univ'=>'Scottish Qualifications Authority'
+		),
+    
+    )
+),
+
+
+ 13=>array(
+"cid"=>13,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Master of Business Administration (MBA)',
+		'univ'=>'Guglielmo Marconi University'
+		),
+2=>array(
+		'course'=>'Detailed Transcript with 60 ECTS Credits (MBA)',
+		'univ'=>'Guglielmo Marconi University'
+		),
+		
+3=>array(
+'course'=>'Certified Manager Certification',
+'univ'=>'Chartered Management Institute'
+),
+    
+    )
+),
+
+
+ 15=>array(
+"cid"=>15,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in International Marketing Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+		
+
+    
+    )
+),
+
+
+
+ 16=>array(
+"cid"=>16,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate In International Human Resource Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+		
+
+    
+    )
+),
+
+
+
+ 17=>array(
+"cid"=>17,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Business Sustainability',
+		'univ'=>'Cambridge International Qualifications'
+		),
+2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+		
+
+    
+    )
+),
+
+
+ 18=>array(
+"cid"=>18,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Strategic Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+		
+
+    
+    )
+),
+
+
+ 19=>array(
+"cid"=>19,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Executive MBA',
+		'univ'=>'Universidad Catolica De Murcia (UCAM)'
+		),
+2=>array(
+		'course'=>'Detailed Transcript with 60 ECTS Credits (EMBA)',
+		'univ'=>'Universidad Catolica De Murcia (UCAM)'
+		),
+3=>array(
+		'course'=>'Postgraduate Diploma In Organisational Leadership',
+		'univ'=>'Cambridge International Qualifications'
+		),		
+4=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),	
+5=>array(
+		'course'=>'Certified Manager Certification',
+		'univ'=>'Chartered Management Institute'
+		),	
+    
+    )
+),
+
+ 20=>array(
+"cid"=>20,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Diploma in Procurement & Contracts Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+
+    
+    )
+),
+
+
+ 22=>array(
+"cid"=>22,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Certified Manager Certification',
+		'univ'=>'Chartered Management Institute'
+		),
+
+    
+    )
+),
+
+
+ 25=>array(
+"cid"=>25,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Executive MBA',
+		'univ'=>'Universidad Catolica De Murcia (UCAM)'
+		),
+	2=>array(
+		'course'=>'Detailed Transcript with 60 ECTS Credits (EMBA)',
+		'univ'=>'Universidad Catolica De Murcia (UCAM)'
+		),
+		
+			3=>array(
+		'course'=>'Extended Diploma in Business Analytics',
+		'univ'=>'Scottish Qualifications Authority'
+		),
+    
+	4=>array(
+		'course'=>'Detailed Transcript with 120 SCQF Credits',
+		'univ'=>'Scottish Qualifications Authority'
+		),
+		
+		 
+	5=>array(
+		'course'=>'Certified Manager Certification',
+		'univ'=>'Chartered Management Institute'
+		),
+    )
+),
+
+
+
+ 26=>array(
+"cid"=>26,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Project Management Practitioner Certification',
+		'univ'=>'Chartered Management Institute'
+		),
+	)
+),
+
+
+
+ 27=>array(
+"cid"=>27,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Strategic Supply Chain & Logistics Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	
+	2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'175|Cambridge International Qualifications'
+		),
+	)
+),
+
+
+ 29=>array(
+"cid"=>29,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Strategic Supply Chain & Logistics Management',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	
+	2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	)
+),
+
+ 33=>array(
+"cid"=>33,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Business Analytics',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	
+	2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	)
+),
+
+ 34=>array(
+"cid"=>34,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in HR & Leadership',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	
+	2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	)
+),
+
+
+ 35=>array(
+"cid"=>35,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Supply Chain Design & Implementation',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	
+	2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	)
+),
+
+
+ 36=>array(
+"cid"=>36,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Postgraduate Certificate in Finance for Managers',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	
+	2=>array(
+		'course'=>'Recordes of Achievments with Grade',
+		'univ'=>'Cambridge International Qualifications'
+		),
+	)
+),
+
+
+ 39=>array(
+"cid"=>39,
+"what_you_get" =>array(
+	1=>array(
+		'course'=>'Supply Chain Management Practitioner Certificate',
+		'univ'=>'Chartered Management Institute'
+		),
+	)
+	
+),
+
+
+
+
+
+
+
+
+ );         
             
             foreach($nodes as $node_key => $oldnode) {
+                
+                            
+                
                if($oldnode->get('field_cid')->value == $cid) {  
+               
+               
+               
+                   //print $oldnode->id();exit;
+                  if (!empty($what_you_get[$cid]['what_you_get'])) {
+                  // print_r($what_you_get[$cid]);exit;
+                   $what_dd = array();
+                   foreach($what_you_get[$cid]['what_you_get'] as  $what_data){
+                       $paragraph = Paragraph::create(['type' => 'what_you_get']);
+                  $paragraph->set('field_degree', $what_data['course']); 
+                  $paragraph->set('field_issued_by', $what_data['univ']); 
+                  $paragraph->save();
+                   $what_dd[] = array(
+                      'target_id' => $paragraph->id(),
+                      'target_revision_id' => $paragraph->getRevisionId(),
+                    );
+                       
+                   }
+                   $oldnode->set('field_what_you_get',$what_dd);
+                $oldnode->save();
+                  }
+               
+               
+               /*
               if(!empty($partners_univ[$oldnode->get('field_cid')->value])) {
                // $oldnode->field_link_universities->entity = Node::load(209);;
                
@@ -410,7 +845,7 @@ $field_course_category = "Certifications";
                 
                 //print $oldnode->id();exit;
             }
-            
+            */
             
                }
             }
