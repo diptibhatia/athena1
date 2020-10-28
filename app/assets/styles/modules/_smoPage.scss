@@ -10,12 +10,18 @@
         padding-bottom: 56px;
     }
 
+    .wrapper {
+        z-index: 10;
+        pointer-events: none;
+        position: relative;
+    }
+
     .colorBg {
         position: absolute;
         width: 200%;
         height: 62vw;
         background-color: #ff008e;
-        z-index: -1;
+        z-index: 1;
         top: -10%;
         transform: rotate(-70deg);
         left: -85%;
@@ -34,7 +40,6 @@
         position: absolute;
         left: 0;
         top: 0;
-        z-index: -2;
         overflow: hidden;
         max-width: 1440px;
 
