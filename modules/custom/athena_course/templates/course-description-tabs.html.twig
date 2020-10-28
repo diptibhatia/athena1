@@ -598,7 +598,12 @@
 				  {% set whynum = 1 %}
 				 {% for why_coursedata in why_course %}
                 <div class="contains">
-                    <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
+                 {% if why_coursedata.logo_url is empty %}
+                                    <img src="{{base_path}}/images/coursepage/degree-mba.svg" alt="icon">
+                                    {% else %}
+                                   <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
+                                        {% endif %}
+                    
                     <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
                         <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a></p>
                     <!-- Modal Starts -->
