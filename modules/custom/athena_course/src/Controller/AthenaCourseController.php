@@ -37,6 +37,14 @@ $paragraph_univ_data = $node->field_link_universities->referencedEntities();
 foreach($paragraph_univ_data as $explore_data) {
     
         $university_nid = $explore_data->get('field_university')->value;
+        $university_nid = $explore_data->get('field_university')->value;
+        $message = $explore_data->get('field_message')->value;
+        $msg_title = $explore_data->get('field_message_title')->value;
+        $prof_name = $explore_data->get('field_professor_name')->value;
+        $prof_univ = $explore_data->get('field_prof_university')->value;
+        $dean_univ = $explore_data->get('field_dean_un')->value;
+        $dean_video = $explore_data->get('field_dean_video')->value;
+        $dean_message = $explore_data->get('field_dean_message_la')->value;
    //     $certificates = $explore_data->get('field_certificate')[1]->entity->getFileUri();
      //  print  $url = file_create_url($certificates);exit;
        
@@ -55,6 +63,13 @@ foreach($paragraph_univ_data as $explore_data) {
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
         'univ_logo' =>$univ_logo,
+        'message' =>$message,
+        'msg_title' =>$msg_title,
+        'prof_name' =>$prof_name,
+        'prof_univ' =>$prof_univ,
+        'dean_univ' =>$dean_univ,
+        'dean_video' =>$dean_video,
+        'dean_message' =>$dean_message,
         
         );
         }
@@ -145,6 +160,7 @@ $course_description_tabs =  [
   '#total_fee' => $node->get('field_course_total_fee')->value,
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
+  '#course_title' => $node->get('title')->value,
   '#course_team' => $course_team,
   '#faq' => $faq,
   '#why_course' => $why_course,

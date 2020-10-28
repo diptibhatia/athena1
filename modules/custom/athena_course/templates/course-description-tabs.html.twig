@@ -267,7 +267,8 @@
         <div class="wrapper">
             <h1>Partners of this Programme</h1>
             <div class="classic-tabs"> <!-- Bootstrap Tabs -->
- {% set nummact = 1 %}
+
+                {% set nummact = 1 %}
  {% set activeclass = '' %}
                 <ul class="nav tabs-cyan" id="myClassicTab" role="tablist">
                  {% for universities in univ_data	 %}
@@ -285,19 +286,23 @@
                  {% endfor %}       
                    
                 </ul>
+                
+                
+                
                 <div class="tab-content rounded-bottom" id="myClassicTabContent">
-                {% set numm = 1 %}
-                 {% for universities in univ_data	 %}
+                  {% set numm = 1 %}
+                  {% for universities in univ_data	 %}
                   {% if numm == 1 %} 
                   {% set activeclasstab = 'active show' %}
                   {% else %}
                         {% set activeclasstab = '' %}
                     {% endif %}
+                
                     <div class="tab-pane fade {{activeclasstab}}" id="guglielmo{{numm}}" role="tabpanel" aria-labelledby="guglielmo-tab-classic">
                         <div class="partners-tabs__mba">
                             <div class="partners-tabs__mba-text">
                                 <div class="content">
-                                    <h2>Master of Business Administration (MBA) – 60 ECTS Credits</h2>
+                                    <h2>{{course_title}}</h2>
                                     <p>{{universities.university.field_description.value|raw}} </p>
                                     {% if universities.univ_logo is empty %}
                                     <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
@@ -306,10 +311,8 @@
                                         {% endif %}
                                 </div>
                                 <div class="certificate">
-                                    <div id="carouselExampleIndicators" class="carousel slide pointer-event" data-ride="carousel" data-interval="false">
-                                        
-                                        
-                                         {% set carouselnum = 1 %}
+                                    <div id="carouselExampleIndicators{{numm}}" class="carousel slide" data-ride="carousel" data-interval="false">
+                                        {% set carouselnum = 1 %}
                                         <div class="carousel-inner">
                                            {% for certificate in universities.certificates %}
                                          {% if carouselnum == 1 %} 
@@ -322,11 +325,11 @@
                                         
                                             <div class="carousel-item {{carouselnumclass}} ">
                                                 <!-- Button to trigger Modal -->
-                                                <button type="button" class="cover" data-toggle="modal" data-target="#certificate{{carouselnum}}">
+                                                <button type="button" class="cover" data-toggle="modal" data-target="#certificate{{numm}}{{carouselnum}}">
                                                     <img class="d-block w-100" src="{{ certificate}}" alt="First slide">
                                                 </button>
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="certificate{{carouselnum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="certificate{{numm}}{{carouselnum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -348,12 +351,15 @@
                                         
                                         {% endfor %}
                                         </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        
+                                        
+                                        
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators{{numm}}" role="button" data-slide="prev">
                                             <img src="{{base_path}}/images/coursepage/prev.svg" alt="previous">
                                             <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="sr-only">Previous</span> -->
                                         </a>
-                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators{{numm}}" role="button" data-slide="next">
                                             <img src="{{base_path}}/images/coursepage/next.svg" alt="next">
                                             <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="sr-only">Next</span> -->
@@ -366,48 +372,43 @@
                             </div>
                             <div class="partners-tabs__mba-img"></div>
                         </div>
-                        </div>
                         
-                          {% set numm = numm+1 %}
-                    {% endfor %}   
+                        {% if universities.message|trim is not empty %}
                         <div class="partners-tabs__msg">
                             <div class="partners-tabs__msg-person">
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
-                                <h3>Message from the Rector</h3>
-                                <p>Prof. Alessandra Briganti</p>
-                                <p>Rector Guglielmo Marconi University</p>
+                                <h3>{{universities.msg_title}}</h3>
+                                <p>{{universities.prof_name}}</p>
+                                <p>{{prof_univ}}</p>
                             </div>
                             <div class="partners-tabs__msg-text">
-                                <p>Guglielmo Marconi University, modeled around education and research, promotes innovative ICT-based 
-                                    educational methodologies, stimulating students to develop high cognitive and practical competences. 
-                                    The strong point of this educational system is the focus on the current educational demands required 
-                                    by the ever-changing working environment. By considering these developments, GMU offers students 
-                                    high-quality market-oriented courses. We have been continuously growing our presence around the 
-                                    world through many strategic partnerships during past years and the <span>Westford Education Group</span> was 
-                                    the one of the major partnerships which has been very successful since 2015.</p>
-                                <p>Athena Global Education is a new venture of Westford Education Group. A future ready education 
-                                    solution, Athena Global Education utilizes the latest technology aimed at improving the students’ 
-                                    experience. We are happy to have partnered for this new project and are eager to expand our 
-                                    partnership into different domains. The association with Westford Group has produced hundreds of 
-                                    graduates in past years and we look forward to enhancing the portfolio and <span>providing accessibility 
-                                        to education around the world.</span></p>
+                               {{universities.message|raw}}
                             </div>
                         </div>
                         <div class="partners-tabs__msg partners-tabs__msgvideo">
                             <div class="partners-tabs__msg-video partners-tabs__msgvideo-video">
                                 <div class="video">
                                     <!-- change this test video with real video -->
-                                    <iframe src="https://player.vimeo.com/video/463849042" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+                                    <iframe src=" {{universities.dean_video}}" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
                                 </div>
                             </div>
                             <div class="partners-tabs__msg-person partners-tabs__msgvideo-person">
                                 <img src="{{base_path}}/images/coursepage/dean.svg" alt="Dean">
                                 <h3>Message from the Dean</h3>
-                                <p>GMU Business School, Italy</p>
+                                <p>{{dean_univ}}</p>
                             </div>
                         </div>
+                        
+                       {% endif %} 
                     </div>
-                     
+                    
+                   
+                   
+                    {% set numm = numm+1 %}
+                    {% endfor %} 
+                   
+                   
+                   
                 </div>
 
             </div>

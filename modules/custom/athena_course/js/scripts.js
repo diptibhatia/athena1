@@ -21,7 +21,7 @@
                  if(jQuery("#speak_mobile_number").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
-                if(!$("#speak_consent").prop('checked') == true){
+                if(!jQuery("#speak_consent").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
                 
