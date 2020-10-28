@@ -76,9 +76,10 @@ foreach($paragraph_why_course as $why_course_data) {
 	$logo = $why_course_data->get('field_logo')->entity->getFileUri();
     }
 	$logo_url = file_create_url($logo);
-    
+    if(is_object( $why_course_data->get('field_sample_certification')->entity)){
 	$certificate = $why_course_data->get('field_sample_certification')->entity->getFileUri();
 	$certificates_url = file_create_url($certificate);
+    }
 	$why_course[] = array(
 	  'degree' => $degree,
 	  'issued_by' => $issued_by,
