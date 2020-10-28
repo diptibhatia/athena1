@@ -82,7 +82,7 @@ foreach($paragraph_why_course as $why_course_data) {
     }
     
     if(empty($logo)) {
-       $logo_url = $base_path."images/coursepage/degree-mba.svg";
+       $logo_url = $base_path."/images/coursepage/degree-mba.svg";
     }
 	$why_course[] = array(
 	  'degree' => $degree,
