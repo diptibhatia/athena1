@@ -8,7 +8,6 @@ class CoursePage {
 
     events() {
         this.showBtn.addEventListener("click", evt => {
-            console.log('btn clicked');
             if(evt.target.innerHTML == "Show More") {
                 for (let i = 0; i < this.modules.length; i++) {
                     this.modules[i].classList.remove('hide');
