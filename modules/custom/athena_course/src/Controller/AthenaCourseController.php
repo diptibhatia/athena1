@@ -80,6 +80,10 @@ foreach($paragraph_why_course as $why_course_data) {
 	$certificate = $why_course_data->get('field_sample_certification')->entity->getFileUri();
 	$certificates_url = file_create_url($certificate);
     }
+    
+    if(empty($logo)) {
+       $logo_url = $base_path."images/coursepage/degree-mba.svg";
+    }
 	$why_course[] = array(
 	  'degree' => $degree,
 	  'issued_by' => $issued_by,
@@ -87,6 +91,8 @@ foreach($paragraph_why_course as $why_course_data) {
 	  'certificates_url' => $certificates_url,
 	);  
 }
+
+//print_r($why_course);exit;
 
 $paragraph_course_team = $node->field_course_team_member->referencedEntities();
 $course_team = array();
