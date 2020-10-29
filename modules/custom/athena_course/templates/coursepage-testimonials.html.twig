@@ -17,7 +17,7 @@
 				   <div class="owl-stage-outer">
                   <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2076px;">    
                   {% for testidata in testi %}
-                     <div class="owl-item" style="width: auto; margin-right: 20px;">
+                     <div class="owl-item active" style="width: auto; margin-right: 20px;">
                         <div class="student-review">
                            <div class="student-image">
                               <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
@@ -40,7 +40,14 @@
                   {% endfor %}
 				      </div>
                </div>
-               <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+               <div class="owl-nav">
+                  <button type="button" role="presentation" class="owl-prev">
+                     <span aria-label="Previous">‹</span>
+                  </button>
+                  <button type="button" role="presentation" class="owl-next">
+                     <span aria-label="Next">›</span>
+                  </button>
+               </div>
 			  </div>
 		   </div>
 		</div>
