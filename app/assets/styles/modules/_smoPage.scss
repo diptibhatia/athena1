@@ -4,7 +4,6 @@
     padding-top: 18px;
     padding-bottom: 40px;
     overflow: hidden;
-    margin-bottom: 10rem;
 
     @include atSize700 {
         padding-bottom: 56px;
@@ -73,7 +72,7 @@
             .text {
                 color: $primaryColor;
                 border-radius: 10px;
-                width: 176px;
+                width: 179px;
                 height: 51px;
                 padding: 3px 19px 0 24px;
                 background-image: linear-gradient(89deg, #ffc300 0%, #ffac00 100%, 
@@ -217,6 +216,85 @@
             position: absolute;
             background: url('images/smo/path.svg') no-repeat;
             margin: 5px 0 0 7px;
+        }
+    }
+}
+
+.why-section {
+    color: $primaryColor;
+    margin-bottom: 10rem;
+
+    .usp {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 19px 0 20px;
+        border-radius: 6px;
+        box-shadow: 0 2px 11px 2px rgba(213, 219, 251, 0.72);
+        background-color: #fff;
+        position: relative;
+        z-index: 15;
+        margin-top: -20px;
+
+        @include atSize950 {
+            margin-top: -37px;
+        }
+
+        > div {
+            text-align: center;
+            position: relative;
+            min-width: 150px;
+            padding: 0 8px;
+            margin-bottom: 19px;
+
+            &:nth-last-of-type(1) {
+                margin-bottom: 0;
+            }
+
+            @include atSize950 {
+                width: 20%;
+                margin-bottom: 0;
+
+                &::after {
+                    content: '';
+                    height: 39px;
+                    width: 1px;
+                    display: inline-block;
+                    background-color: #979797;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%)
+                }
+    
+                &:nth-last-of-type(1)::after {
+                    content: none;
+                }
+            }
+
+            img {
+                margin-bottom: 8px;
+            }
+
+            h3 {
+                font-size: 1rem;
+                font-weight: bold;
+                margin: 0;
+                letter-spacing: .1px;
+
+                @include atSize950 {
+                    font-size: 1.125rem;
+                }
+            }
+
+            p {
+                font-size: .8rem;
+                margin: 0;
+
+                @include atSize950 {
+                    font-size: .875rem;
+                }
+            }
         }
     }
 }
