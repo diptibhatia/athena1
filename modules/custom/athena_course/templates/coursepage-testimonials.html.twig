@@ -1,0 +1,48 @@
+<div class="container-fluid">
+	<div class="container why-athena mb-3 p-0">             
+		<div class="testimonials container p-0">
+		   <div class="testimonials-item">
+			  <div class="item-one shawdow-effect col-md-5 col-sm-12">
+				 <img src="{{base_path}}/images/Testimonials-1.png" class="img-fluid testimonial-img">
+				 <h2>Our Students Say About Us</h2>
+				 <h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.
+				 </h3>
+				 <button onclick="window.location='/insights/testimonials';">View All</button>
+			  </div>
+			  <div class="item-two col-md-7 col-sm-12 p-0 m-0">
+				 <div class="back-images">
+				 <img src="{{base_path}}/images/dots-course.svg" alt="">
+				</div>
+				<div class="owl-carousel owl-theme owl-loaded owl-drag">
+				   <div class="owl-stage-outer">
+                  <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2076px;">    
+                  {% for testidata in testi %}
+                     <div class="owl-item" style="width: auto; margin-right: 20px;">
+                        <div class="student-review">
+                           <div class="student-image">
+                              <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
+                              <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linkedin_circle.svg" class="link_img"></a>
+                           </div>
+                           <div class="info">
+                              <h3><span class="quotes purple-txt">"</span>
+                                 {% set text = testidata.title.value|render|striptags %}
+                                 {{ text|length > 45 ? text|slice(0, 45) : text }}
+                              </h3>
+                              <p>
+                              {% set text = testidata.field_testimonial_text.value|render|striptags %}
+                              {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
+                              &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              </p>
+                              <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
+                           </div>
+                        </div>
+                     </div>
+                  {% endfor %}
+				      </div>
+               </div>
+               <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+			  </div>
+		   </div>
+		</div>
+	</div>
+</div>
