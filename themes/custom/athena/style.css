@@ -7,3 +7,6 @@
 .img-placeholder {
     top: 153rem !important
 }
+.testimonials .blog-card .photo img {
+    height: auto !important;
+}
