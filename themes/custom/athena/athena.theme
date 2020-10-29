@@ -21,6 +21,12 @@ function athena_preprocess_image(&$variables) {
     $variables['attributes']['class'][] = 'col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0';
   }
 
+  // Insights Page banner image style.
+  if ($variables['style_name'] == 'insights_page_banner_image_style') {
+    // Set class.
+    $variables['attributes']['class'][] = 'img-fluid';
+  }
+
   // Mobile banner image style.
   if ($variables['style_name'] == 'mobile_banner_style') {
     // Set class.

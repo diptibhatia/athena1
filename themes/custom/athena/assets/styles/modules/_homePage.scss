@@ -1,3 +1,7 @@
+.iti-flag {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/img/flags.png");
+}
+
 .grid-view {
 	width:1170px;
 	height:auto;
@@ -115,6 +119,12 @@
 		margin: 0 auto !important;
 		padding: 0 15px !important;
 	}
+	@media (min-width: 480px) and (max-width: 770px){
+		width: 100% !important;
+	}
+	@media (min-width: 771px) and (max-width: 1024px){
+		width: 100% !important;
+	}
 }
 
 .img-placeholder {
@@ -123,7 +133,7 @@
     width: 618px;
     height: 397px;
     background-color: #eaedf9;
-    @media (max-width: 770px) {
+    @media (max-width: 1024px) {
     	display: none;
     }
     @media (min-width: 1281px) {
@@ -193,6 +203,9 @@
 			width: 100%;
 			padding: 0;		
 		}
+		@media (max-width: 550px){
+			width: 100%;
+		}
     	.tab-list {
     		width: 100%;
     		.tab-item {
@@ -226,6 +239,12 @@
 			flex-direction: column;
 		}
 		@include atSize479 {
+			flex-direction: column;
+		}
+		@media (max-width: 770px) {
+			flex-direction: column;
+		}
+		@media (min-width: 771px) and (max-width: 1024px){
 			flex-direction: column;
 		}
 		.info {
@@ -279,6 +298,9 @@
 				@include atSize479 {
 					flex-direction: column;
 				}
+				@media (max-width: 550px){
+					flex-direction: column;
+				}
 				.course-item {
 					width: 350px;
 			  		height: 450px;
@@ -292,6 +314,16 @@
 			  			margin: 20px 0;
 			  			left: -30px;
 			  		}
+			  		@media (min-width: 760px) and (max-width: 770px) {
+			  			left: -26px;
+    					top: -81px;
+    					margin: 0 8px;
+			  		}
+			  		@media (min-width: 771px) and (max-width: 1024px){
+						left: -26px;
+    					top: -81px;
+    					margin: 0 8px;
+					}
 			  		.image {
 			  			position: relative;
 			  			img {
@@ -442,10 +474,29 @@
 			flex-direction: column;
 			width: 100%;
 		}
+		@media (min-width: 480px) and (max-width: 770px){
+			flex-direction: column-reverse;
+			width: 100%;	
+		}
+		@media (min-width: 771px) and (max-width: 1024px){
+			flex-direction: column-reverse;
+			width: 100%;		
+		}
 		.why-athena-item-one {
 			z-index: 10;
 			flex: 1.4;
 			padding: 5px 0 0 30px;
+			@media (min-width: 480px) and (max-width: 770px){
+				width: 80%;
+				margin: 30px 100px;
+			}
+			@media (min-width: 771px) and (max-width: 1024px){
+				width: 80%;
+				margin: 30px 100px;
+			}
+			@media (max-width: 550px){
+				margin: 30px 8px;
+			}
 			h1 {
 				font-family: Lato;
 			  	font-size: 42px;
@@ -527,6 +578,12 @@
     		@media (min-width: 1441px) {
     			right: 48rem;
     		}
+    		@media (min-width: 480px) and (max-width: 770px){
+    			display: none;
+    		}
+    		@media (min-width: 771px) and (max-width: 1024px){
+    			display: none;
+    		}
 		}
 		.why-athena-item-two {
 			flex: 0.6;
@@ -541,6 +598,14 @@
 					right: 0;
 					width: 100%;
 					margin: 35px auto;
+			    }
+			    @media (min-width: 480px) and (max-width: 770px){
+			    	top: 18px;
+			    	width: 100%;
+			    }
+			    @media (min-width: 771px) and (max-width: 1024px){
+			    	top: 18px;
+			    	width: 100%;	
 			    }
 			}
 		}
@@ -591,6 +656,10 @@
 		    @include atSize424 {
 				display: none;
 		  	}
+		  	@media (max-width: 550px){
+				width: 100%;
+				margin: 6px 0;
+			}
     	}
     	.collaborate-section {
     		display: flex;
@@ -603,6 +672,9 @@
 		  	@include atSize424 {
 		  		flex-direction: column;
 		  	}
+		  	@media (max-width: 550px){
+				flex-direction: column;
+			}
     		.collaborate-item {
     			flex: 1;
     			padding: 0 30px;
@@ -703,6 +775,9 @@
 				    left: 452px;
 				    z-index: -10;
 				    @include atSize424 {
+				    	display: none;
+				    }
+				    @media (max-width: 550px){
 				    	display: none;
 				    }
 				}
@@ -874,15 +949,53 @@
 					}
 				}
 			}
+			@media (min-width: 480px) and (max-width: 770px){
+				flex-direction: column;
+				.item-one {
+					padding: 10px 0;
+					width: 100%;
+					text-align: center;
+				}
+			}
+			@media (max-width: 550px){
+				.item-two {
+					.student-review {
+						margin: 0;
+						width: 100%;
+					}
+				}
+			}
+			@media (min-width: 771px) and (max-width: 1024px){
+				flex-direction: column;
+				.item-one {
+					padding: 10px 0;
+					width: 100%;
+					text-align: center;
+				}
+			}
 		}
 	}
 }
 
 .partners {
 	margin: 140px 30px 50px 30px;
+	@media (min-width: 480px) and (max-width: 770px){
+		margin: 200px 30px 50px 30px;
+		text-align: center;
+	}
+	@media (min-width: 771px) and (max-width: 1024px){
+		margin: 200px 30px 50px 30px;
+		text-align: center;	
+	}
 	.info {
 		width: 600px;
 		@include atSize424 {
+			width: 100%;
+		}
+		@media (min-width: 480px) and (max-width: 770px){
+			width: 100%
+		}
+		@media (min-width: 771px) and (max-width: 1024px){
 			width: 100%;
 		}
 		img {
@@ -1095,6 +1208,24 @@
 			}
 		}
 	}
+	@media (min-width: 480px) and (max-width: 770px){
+		flex-direction: column-reverse;
+		.reason-section-item {
+			width: 100%;
+			/*img {
+				width: 100%;
+			}*/
+		}
+	}
+	@media (min-width: 771px) and (max-width: 1024px){
+		flex-direction: column-reverse;
+		.reason-section-item {
+			width: 100%;
+			/*img {
+				width: 100%;
+			}*/
+		}	
+	}
 }
 .insights-section {
 	width: 100%;
@@ -1163,6 +1294,12 @@
 			@include atSize479 {
 				display: none;
 			}
+			@media (min-width: 480px) and (max-width: 770px){
+				display: none;
+			}
+			@media (min-width: 771px) and (max-width: 1024px){
+				display: none;
+			}
 		}
 		.section-item-two {
 			flex: 1;
@@ -1188,6 +1325,14 @@
   					font-size: 16px;
 				    font-weight: bold;
 				    margin: 6px 4px 0 0;
+  				}
+  				@media (min-width: 480px) and (max-width: 770px){
+  					width: 100%;
+  					padding: 10px 0;
+  				}
+  				@media (min-width: 771px) and (max-width: 1024px){
+  					width: 100%;
+  					padding: 10px 0;
   				}
 			}
 			.event-list {
@@ -1257,6 +1402,15 @@
 							}
 						}
 					}
+					@media (min-width: 580px) and (max-width: 770px){
+						margin: 10px 50px;
+					}
+					@media (max-width: 550px){
+						margin: 10px;
+					}
+					@media (min-width: 771px) and (max-width: 1024px){
+						margin: 10px 50px;
+					}
 				}
 			}
 		}
@@ -1267,12 +1421,19 @@
 	width: 100%;
 	height: 496px;
 	font-family: Lato;
+	@media (max-width: 550px){
+		height: auto;
+	}
 	.courses-list {
 		/*margin: 50px 50px 10px 50px;*/
 		display: flex;
 		position: relative;
 		top: 72px;
 		justify-content: center;
+		@media (max-width: 550px){
+			flex-direction: column;	
+			margin: 0 50px;		
+		}
 		.course-item {
 			/*margin: 0 10px;*/
 			margin: 0 20px;
@@ -1280,10 +1441,24 @@
 			@include atSize479 {
 				width: 100%;
 			}
+			@media (min-width: 580px) and (max-width: 770px){
+				width: 222px;
+			}
+			@media (min-width: 771px) and (max-width: 1024px){
+				width: 222px;
+			}
 			.course-image {
 				img {
 					width: 365px;
   					height: 194px;
+  					@media (min-width: 580px) and (max-width: 770px){
+  						width: 226px;
+    					height: 134px;
+  					}
+  					@media (min-width: 771px) and (max-width: 1024px){
+  						width: 226px;
+    					height: 134px;	
+  					}
 				}
 				.insights {
 					position: relative;
@@ -1585,6 +1760,22 @@
 		.courses {
 			flex-direction: column;
 		}
+	}
+	@media (min-width: 480px) and (max-width: 770px){
+		.courses {
+			flex-direction: column;
+			.course-item {
+				margin: 10px auto;
+			}
+		}
+	}
+	@media (min-width: 771px) and (max-width: 1024px){
+		.courses {
+			flex-direction: column;
+			.course-item {
+				margin: 10px auto;
+			}
+		}	
 	}
 	.show-more {
 		width: 100%;
