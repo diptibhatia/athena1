@@ -7,10 +7,10 @@
 			<div class="card">     
 				<img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
 				<div class="card-body">
-					<h5 class="card-title">{{popudata.title.value}}</h5>
+					<h5 class="card-title short-title">{{popudata.title.value}}</h5>
 					<p class="card-text">
                   {% set text = popudata.body.value|render|striptags %}
-                  {{ text|length > 200 ? text|slice(0, 200) ~ '...' : text }}
+                  {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
                </p>
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
@@ -24,10 +24,10 @@
          <div class="card mr-2">
          	<img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
 				<div class="card-body">
-					<h5 class="card-title">{{popudata.title.value}}</h5>
+					<h5 class="card-title short-title">{{popudata.title.value}}</h5>
 					<p class="card-text">
                   {% set text = popudata.body.value|render|striptags %}
-                  {{ text|length > 200 ? text|slice(0, 200) ~ '...' : text }}
+                  {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
                </p>
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
