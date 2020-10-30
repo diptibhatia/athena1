@@ -40,8 +40,20 @@
     }
 }
 
+@mixin atSize750 {
+    @media (min-width: 750px) {
+        @content;
+    }
+}
+
 @mixin atSize850 {
     @media (min-width: 850px) {
+        @content;
+    }
+}
+
+@mixin atSize1000 {
+    @media (min-width: 1000px) {
         @content;
     }
 }
@@ -90,6 +102,12 @@
 
 @mixin atSizeIpodPotrait {
     @media (min-width: 735px) and (max-width: 850px) {
+        @content;
+    }
+}
+
+@mixin atSize950 {
+    @media (min-width: 950px) {
         @content;
     }
 }
