@@ -1,0 +1,32 @@
+<div class="container-fluid mt-5 mb-5 about-popular-content">
+	<div class="container pt-4">
+		<h2 class="text-center">Our Popular Insights</h2>
+		<div class="card-group">
+      {% for popudata in popu %}
+         {% if loop.index ==3 %}
+			<div class="card>
+         {% else %}
+         <div class="card mr-2>
+         {% endif %}
+				<img alt="Card image cap" class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
+				<div class="card-body">
+					<h5 class="card-title">{{popudata.title.value}}</h5>
+					<p class="card-text">
+                  {% set text = popudata.body.value|render|striptags %}
+                  {{ text|length > 200 ? text|slice(0, 200) ~ '...' : text }}
+               </p>
+				</div>
+				<div class="card-footer d-flex justify-content-between purple-txt">
+					<span class="cursor"></span>
+					<span>
+						<a href="/node/{{popudata.nid.value}}">Read More</a>
+					</span>
+				</div>
+			</div>
+      {% endfor %}
+		</div>
+		<div class="text-center pt-4 pb-4">
+			<button onclick="window.location='/insights/all';" class="athena-btn violet-btn" type="button">View All</button>
+		</div>
+	</div>
+</div>
