@@ -150,12 +150,18 @@ foreach($paragraph_faq as $faq_data){
     
 }
 
-
-
+$testibundle='testimonials';
+$testiquery = \Drupal::entityQuery('node');
+$testiquery->condition('status', 1);
+$testiquery->condition('type', $testibundle);
+$latest = $testiquery->execute();
+$testinodes = node_load_multiple($latest);
+$testimo =  array_slice($testinodes, 0, 3);
 
 $course_description_tabs =  [
   '#theme' => 'course_description_tabs',
   '#overview' => $node->get('field_course_overview')->value,
+  '#testi' => $testimo,
   '#node' => $node,
   '#total_fee' => $node->get('field_course_total_fee')->value,
   '#univ_data' => $univ_data,

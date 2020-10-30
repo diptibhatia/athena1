@@ -645,54 +645,24 @@
                       <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
                     </ol>
                     <div class="carousel-inner">
+                    {% for testidata in testi %}
                         <div class="carousel-item">
                             <div class="testimonial">
                                 <div>
-                                    <img src="{{base_path}}/images/coursepage/courseteam.png" alt="student" class="studentImg">
-                                    <p class="msg">With AGE, you are in charge of your learning! You decide the timing of 
-                                        your learning and the pace of your education – you can complete each module by the 
-                                        21st day of enrollment up until th</p>
+                                    <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" alt="student" class="studentImg">
+                                    <p class="msg">
+                                    {% set text = testidata.field_testimonial_text.value|render|striptags %}
+                                    {{ text|length > 210 ? text|slice(0, 210) ~ '...' : text }}
+                                    &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                                    </p>
                                     <div class="detail">
-                                        <p class="name">Abygail Kuttin</p>
-                                        <p class="department">Bachelor of Science Geological Engineering,</p>
-                                        <p class="college">Kwame Nkrumah University ghana -</p>
+                                        {{testidata.field_testimonial_name_and_desig.value|raw}}
                                     </div>
-                                    <a href="#" class="linkedin"><img src="{{base_path}}/images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
+                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" class="linkedin"><img src="{{base_path}}/images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="testimonial">
-                                <div>
-                                    <img src="{{base_path}}/images/coursepage/courseteam.png" alt="student" class="studentImg">
-                                    <p class="msg">With AGE, you are in charge of your learning! You decide the timing of 
-                                        your learning and the pace of your education – you can complete each module by the 
-                                        21st day of enrollment up until th</p>
-                                    <div class="detail">
-                                        <p class="name">Abygail Kuttin</p>
-                                        <p class="department">Bachelor of Science Geological Engineering,</p>
-                                        <p class="college">Kwame Nkrumah University ghana -</p>
-                                    </div>
-                                    <a href="#" class="linkedin"><img src="{{base_path}}/images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item active">
-                            <div class="testimonial">
-                                <div>
-                                    <img src="{{base_path}}/images/coursepage/courseteam.png" alt="student" class="studentImg">
-                                    <p class="msg">With AGE, you are in charge of your learning! You decide the timing of 
-                                        your learning and the pace of your education – you can complete each module by the 
-                                        21st day of enrollment up until th</p>
-                                    <div class="detail">
-                                        <p class="name">Abygail Kuttin</p>
-                                        <p class="department">Bachelor of Science Geological Engineering,</p>
-                                        <p class="college">Kwame Nkrumah University ghana -</p>
-                                    </div>
-                                    <a href="#" class="linkedin"><img src="{{base_path}}/images/coursepage/courseteam-linkedin.svg" alt="linkedin"></a>
-                                </div>
-                            </div>
-                        </div>
+                    {% endfor %}
                     </div>
                 </div>
             </div>
