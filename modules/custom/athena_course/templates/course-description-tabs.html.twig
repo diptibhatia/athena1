@@ -646,14 +646,13 @@
                     </ol>
                     <div class="carousel-inner">
                     {% for testidata in testi %}
-                        <div class="carousel-item">
+                        <div class="carousel-item active">
                             <div class="testimonial">
                                 <div>
-                                    <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" alt="student" class="studentImg">
+                                    <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" alt="student" class="studentImg" style="border-radius: 50%;">
                                     <p class="msg">
                                     {% set text = testidata.field_testimonial_text.value|render|striptags %}
                                     {{ text|length > 210 ? text|slice(0, 210) ~ '...' : text }}
-                                    &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                                     </p>
                                     <div class="detail">
                                         {{testidata.field_testimonial_name_and_desig.value|raw}}
