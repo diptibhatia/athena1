@@ -222,7 +222,10 @@
 
 .why-section {
     color: $primaryColor;
-    margin-bottom: 10rem;
+
+    @include atSize1250 {
+        height: 915px;
+    }
 
     .usp {
         display: flex;
@@ -293,6 +296,247 @@
 
                 @include atSize950 {
                     font-size: .875rem;
+                }
+            }
+        }
+    }
+
+    .main-section {
+        margin-top: 34px;
+
+        @include atSize1250 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .desc {
+            flex: 1.15;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+
+                @include atSize700 {
+                    font-size: 2rem;
+                    margin-bottom: 24px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+            }
+
+            li {
+                font-size: .9rem;
+                line-height: 2.15;
+
+                @include atSize700 {
+                    font-size: 1rem;
+                    line-height: 2.3;
+                }
+
+                &::before {
+                    content: "\2022";
+                    color: $titlePink;
+                    display: inline-block;
+                    width: 1em;
+                    margin-right: 5px;
+
+                    @include atSize700 {
+                        margin-right: 10px;
+                    }
+                }
+
+                span {
+                    color: $titlePink;
+                    margin-left: 15px;
+
+                    @include atSize700 {
+                        margin-left: 45px;
+                    }
+                }
+            }
+
+            p {
+                font-size: .9rem;
+                font-weight: bold;
+
+                @include atSize700 {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .forms {
+            flex: 1;
+            margin-top: 35px;
+            margin-bottom: 45px;
+
+            @include atSize1250 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .course-login-wrapper {
+                
+                @include belowSize1250 {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.smo-page-section.partners-tabs {
+    background-color: #f4f8fa;
+
+    @include atSize1250 {
+        padding-top: 78px;
+    }
+
+    .nav {
+        border-radius: 5.9px;
+        box-shadow: 0 2px 25px 2px #d5dbfb;
+        background-color: #fff;
+        padding-left: 23px;
+
+        a {
+            z-index: 1;
+            margin-top: -3px;
+
+            &.active {
+                color: #fff;
+            }
+
+            &::after {
+                height: 39px;
+                z-index: -1;
+                border-radius: 19px;
+                top: 12px;
+                width: 110%;
+                left: -5%;
+            }
+        }
+    }
+}
+
+.smo-page-section.how-learn {
+    background-color: #fff;
+
+    .wrapper {
+
+        @include atSize1250 {
+            padding: 0;
+        }
+    }
+}
+
+.what-students-says {
+    background-color: #f4f8fa;
+    padding-top: 30px;
+    padding-bottom: 80px;
+
+    @include atSize750 {
+        padding-top: 49px;
+        padding-bottom: 105px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+
+        @include atSize700 {
+            font-size: 2rem;
+        }
+
+        @include atSize750 {
+            margin-bottom: 104px;
+        }
+
+        &::after {
+            content: none;
+            display: block;
+            width: 6%;
+            height: 3.5px;
+            border-radius: 1.5px;
+            background-color: $titlePink;
+            position: absolute;
+            margin-top: 2px;
+
+            @include atSize850 {
+                content: '';
+            }
+        }
+    }
+
+    .testimonial {
+        margin: 0 auto;
+        position: relative;
+
+        @include atSize750 {
+            width: 600px;
+        }
+
+        @include atSize1000 {
+            width: 720px;
+        }
+
+        @include atSize750 {
+
+            &:after {
+                content: '';
+                width: 326px;
+                height: 435px;
+                display: inline-block;
+                position: absolute;
+                left: -38px;
+                border: solid 8px #303030;
+                z-index: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .carousel {
+            z-index: 2;
+
+            &-control-prev {
+                left: 0;
+                bottom: -50px;
+                align-items: flex-end;  
+
+                @include atSize750 {
+                    left: -50px;
+                    align-items: center;
+                }
+
+                @include atSize1000 {
+                    left: -150px;
+                }
+            }
+
+            &-control-next {
+                right: 0;
+                bottom: -50px;
+                align-items: flex-end;  
+
+                @include atSize750 {
+                    right: -50px;
+                    align-items: center;
+                }
+
+                @include atSize1000 {
+                    right: -120px;
+                }
+            }
+
+            img {
+                
+                @include atSize1000 {
+                    width: 60px;
                 }
             }
         }
