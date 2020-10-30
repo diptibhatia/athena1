@@ -646,7 +646,11 @@
                     </ol>
                     <div class="carousel-inner">
                     {% for testidata in testi %}
+                        {% if loop.index ==1 %}
                         <div class="carousel-item active">
+                        {% else %}
+                        <div class="carousel-item">
+                        {% endif %}
                             <div class="testimonial">
                                 <div>
                                     <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" alt="student" class="studentImg" style="border-radius: 50%;">
