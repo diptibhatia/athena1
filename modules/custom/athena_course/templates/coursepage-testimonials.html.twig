@@ -17,7 +17,11 @@
 				   <div class="owl-stage-outer">
                   <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2076px;">    
                   {% for testidata in testi %}
+                     {% if loop.index ==1 %}
                      <div class="owl-item active" style="width: auto; margin-right: 20px;">
+                     {% else %}
+                     <div class="owl-item" style="width: auto; margin-right: 20px;">
+                     {% endif %}
                         <div class="student-review">
                            <div class="student-image">
                               <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >

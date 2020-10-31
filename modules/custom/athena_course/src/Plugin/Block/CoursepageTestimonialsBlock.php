@@ -35,7 +35,7 @@ class CoursepageTestimonialsBlock extends BlockBase {
     
     $testinodes = node_load_multiple($latest);
         
-    $testimo =  array_slice($testinodes, 0, 3);
+    $testimo =  array_slice($testinodes, 0, 7);
     //echo "<pre>";     
     //print_r($testimo);exit;
 

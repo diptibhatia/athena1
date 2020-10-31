@@ -4,7 +4,7 @@
     background-color: #eff1fe;
 
     @include atSize1250 {
-        margin-bottom: 319px;
+        margin-bottom: 270px;
         margin-top: 257px;
         padding-bottom: 102px;
         height: 613px;
@@ -103,6 +103,17 @@
                     font-size: .875rem;
                     line-height: 1.71;
                     margin-bottom: 27px;
+
+                    @include atSize700 {
+                        height: 75px;
+                        overflow-y: scroll;
+                        scrollbar-width: none; /* Hide scrollbar Firefox */
+                        -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+                        &::-webkit-scrollbar {
+                            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+                        }
+                    }
                 }
     
                 .detail {
