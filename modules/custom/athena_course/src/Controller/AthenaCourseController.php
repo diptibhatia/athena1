@@ -155,13 +155,12 @@ $testimo =  array_slice($testinodes, 0, 7);
       '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
       '#base_path' => $base_path,
       '#node' => $node,
-       '#overview' => $node->get('field_course_overview')->value,
+      '#overview' => $node->get('field_course_overview')->value,
   '#testi' => $testimo,
   '#node' => $node,
   '#total_fee' => $node->get('field_course_total_fee')->value,
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
-  '#course_title' => $node->get('title')->value,
   '#course_team' => $course_team,
   '#faq' => $faq,
   '#why_course' => $why_course,
@@ -1421,5 +1420,35 @@ $academic =  [
 return array($academic);
    
 }
+
+public function smo_list(){
+    $nodes =  \Drupal::entityTypeManager()->getStorage('node')
+  ->loadByProperties(['type' => 'course', 'status' => 1]);
+
+$node_ids = array();
+     foreach($nodes as $node_key => $node) {
+       $node_ids[] =  
+       array(
+       "nid"=>$node->id(),
+       "title"=>$node->label()
+       
+       );
+      }
+ 
+//print_r($node_ids);exit; 
+      
+$academic =  [
+  '#theme' => 'courselist',
+  '#nodeid' => $node_ids,  
+  '#base_path' => $base_path,  
+]; 
+
+
+return array($academic      );
+
+   
+    
+}
+
 
 }

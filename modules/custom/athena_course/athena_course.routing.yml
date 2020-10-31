@@ -5,6 +5,14 @@ athena_course.course:
     _title: 'Custom athena course module'
   requirements: 
     _permission: 'access content'
+    
+athena_smolist.smolist:
+  path: '/smo-list'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::smo_list'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'    
 
 athena_smo.smo:
   path: '/smo/{nid}'
