@@ -33,14 +33,14 @@ foreach($paragraph_univ_data as $explore_data) {
         $dean_message = $explore_data->get('field_dean_message_la')->value;
    //     $certificates = $explore_data->get('field_certificate')[1]->entity->getFileUri();
      //  print  $url = file_create_url($certificates);exit;
-       
+       $certificates = array();
        foreach($explore_data->get('field_certificate') as $key=>$images) {
            
            $certificates[]  = file_create_url($images->entity->getFileUri());
        }
         
         //print "abcs"
-       //print_r($certificates);exit;
+    //   print_r($certificates);
         
         if (!empty($university_nid)) {
        $univ_node = Node::load($university_nid);
@@ -64,7 +64,7 @@ foreach($paragraph_univ_data as $explore_data) {
     
   
 }
-
+//exitl
 $paragraph_why_course = $node->field_what_you_get->referencedEntities();
 $why_course = array();
 //print_r($paragraph_why_course);exit;
@@ -227,7 +227,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $dean_message = $explore_data->get('field_dean_message_la')->value;
    //     $certificates = $explore_data->get('field_certificate')[1]->entity->getFileUri();
      //  print  $url = file_create_url($certificates);exit;
-       
+       $certificates = array();
        foreach($explore_data->get('field_certificate') as $key=>$images) {
            
            $certificates[]  = file_create_url($images->entity->getFileUri());
