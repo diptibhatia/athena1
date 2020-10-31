@@ -2,6 +2,13 @@
   background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/img/flags.png");
 }
 
+.loginBtn {
+	@media (min-width: 1441px) {
+		position: relative;
+		right: -62px;
+	}
+}
+
 .grid-view {
 	width:1170px;
 	height:auto;
@@ -136,8 +143,17 @@
     @media (max-width: 1024px) {
     	display: none;
     }
-    @media (min-width: 1281px) {
+    @media (min-width: 1281px) and (max-width: 1439px){
     	width: 703px;
+    }
+    @media (min-width: 1440px) and (max-width: 2559px){
+    	width: 696px;
+    	height: 372px;
+    }
+    @media (min-width: 2560px) {
+    	width: 1257px;
+    	top: 199rem;
+    	height: 371px;
     }
 }
 
@@ -166,6 +182,9 @@
 	    text-align: center;
 	    color: #303030;
 	    margin: 10px 0;
+	    @include atSize424 {
+	    	margin: 80px 0 10px 0;
+	    }
 	}
 	p {
 		font-family: Lato;
@@ -259,6 +278,15 @@
 			  	font-weight: bold;	
 			  	text-align: left;		  	
 			  	color: $primaryColor;
+			  	@include atSize424 {
+					margin: 10px;
+				    text-align: center;
+				    font-size: 28px;
+				}
+			  	@media (min-width: 1441px) {
+			  		font-size: 27px;
+			  		padding-bottom: 10px;
+			  	}
 			}
 			p {
 				font-size: 16px;
@@ -378,6 +406,11 @@
 							  	color: white;
 							  	padding: 0 5px;
 							  }
+							  .circle:before {
+									content: ' \25CF';
+								  	font-size: 14px;
+								  	color: #ff008e;
+								}
 						  	}
 					  	}
 					  	h1 {
@@ -555,11 +588,18 @@
 		}
 						}
 						span {
-							font-size: 20px;
+							font-size: 19px;
 						  	font-weight: bold;
 						  	color: $buttonPink;
 						  	position: relative;
 						  	top: 10px;
+						}
+						.sub-heading {
+							top: 0;
+							@include atSize424 {
+								font-size: 10px;
+    							top: 0;
+							}
 						}
 					}
 				}
@@ -570,13 +610,20 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-    			display: none;
+    			top: 191rem;
+    			right: 0;
+    			img {
+    				width: 350px;
+    			}
     		}
     		@media (min-width: 1281px) and (max-width: 1440px) {
     			right: 211px;
     		}
-    		@media (min-width: 1441px) {
-    			right: 48rem;
+    		@media (min-width: 1441px) and (max-width: 2559px){
+    			right: 13rem;
+    		}
+    		@media (min-width: 2560px){
+    			right: 47rem;
     		}
     		@media (min-width: 480px) and (max-width: 770px){
     			display: none;
@@ -607,6 +654,13 @@
 			    	top: 18px;
 			    	width: 100%;	
 			    }
+			    @media (min-width: 1441px) and (max-width: 2559px){
+			    	top: 165px;
+			    	width: 750px;
+			    }
+			    @media (min-width: 2560px) {
+			    	width: 860px;
+			    }
 			}
 		}
 	}
@@ -632,6 +686,12 @@
 				color: white;
 				background: $buttonPink;
 			}
+		}
+		@media (min-width: 1281px) and (max-width: 1440px){
+			width: 76%;
+		}
+		@media (min-width: 1441px) {
+			width: 1170px;
 		}
 	}
 	.collaborate {
@@ -752,6 +812,7 @@
   					position: relative;
   					top: -52px;
     				left: 22px;
+    				background: white;
   					&:hover {
 						color: white;
 						background: $buttonPink;
@@ -800,8 +861,8 @@
     					top: 15px;
     					left: -66px;
 					    img {
-					    	width: 150px;
-    						height: 150px;
+					    	width: 123px;
+    						height: 123px;
 						    position: relative;
 						    top: -3px;
 						    left: -3px;
@@ -809,7 +870,7 @@
 					    .social-icon-linkedin {
 					    	position: absolute;
 					    	top: 79px;
-							right: 5px;
+							right: -5px;
 					    	img {
 					    		width: 28px;
   								height: 28px;
@@ -979,6 +1040,9 @@
 
 .partners {
 	margin: 140px 30px 50px 30px;
+	@include atSize424 {
+		margin: 200px 30px 50px 30px;
+	}
 	@media (min-width: 480px) and (max-width: 770px){
 		margin: 200px 30px 50px 30px;
 		text-align: center;
@@ -1451,6 +1515,7 @@
 				img {
 					width: 365px;
   					height: 194px;
+  					border-radius: 15px 15px 0px 0;
   					@media (min-width: 580px) and (max-width: 770px){
   						width: 226px;
     					height: 134px;
@@ -1552,6 +1617,7 @@
 			outline: none;
 			width: 213px;
   			height: 50px;
+  			background: white;
   			&:hover {
 				color: white;
 				background: $buttonPink;
@@ -1678,6 +1744,11 @@
 					  	color: white;
 					  	padding: 0 5px;
 					  }
+					  .circle:before {
+							content: ' \25CF';
+						  	font-size: 14px;
+						  	color: #ff008e;
+						}
 				  	}
 			  	}
 			  	h1 {
