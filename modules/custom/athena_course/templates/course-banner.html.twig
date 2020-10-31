@@ -6,8 +6,13 @@
                 <a href="#">Overview</a>
             </div>
             <div class="course-banner__logos">
-                <img src="{{ file_url(node.field_course_awarding_body_logos[0].entity.uri.value)}}" alt="ucam logo" width="95" height="39">
-                <img src="{{ file_url(node.field_course_awarding_body_logos[1].entity.uri.value)}}" alt="sqa logo" width="95" height="47">
+                <img src="{{ file_url(node.field_course_awarding_body_logos[0].entity.uri.value)}}" alt="ucam logo" width="95">
+{% if node.field_course_awarding_body_logos[1].entity.uri.value is empty %}
+                                   
+                                    {% else %}
+                <img src="{{ file_url(node.field_course_awarding_body_logos[1].entity.uri.value)}}" alt="sqa logo" width="95">
+                               
+                                        {% endif %}
             </div>
             <h1 class="course-banner__title">{{course_title}}</h1>
             <p class="course-banner__uni">{{awarding_body}}</p>

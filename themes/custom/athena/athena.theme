@@ -47,6 +47,10 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
   
+  if (strpos($current_path, '/smo') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
+  
      if (strpos($current_path, '/registration') !== false) {
     $variables['athena_exclude'] = TRUE;
   }

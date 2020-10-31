@@ -7,6 +7,34 @@ use Drupal\Component\Serialization\Json;
 use \Drupal\Core\Url;
 
 class AthenaCourseController {
+
+
+public function smo($nid) {
+    $parameters = \Drupal::routeMatch()->getParameters();  
+    $node = Node::load($nid);
+
+    global $base_url;
+    $theme = \Drupal::theme()->getActiveTheme();
+    $base_path = $base_url.'/'. $theme->getPath();
+    //print $node->get('field_courses_credit_type')->value;exit;
+    $banner_block =  [
+      '#theme' => 'smo',
+      '#course_title' => $node->get('title')->value,
+      '#ects_credit' => $node->get('field_course_ects_credit')->value,
+      '#awarding_body' => $node->get('field_course_awarding_body')->value,
+      '#description' => $node->get('field_course_banner_description')->value,
+      '#category' => $node->get('field_course_category')->value,
+      '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
+      '#base_path' => $base_path,
+      '#node' => $node
+    ];
+
+    return array(
+       $banner_block,
+    );
+}
+
+
   public function course($nid) {
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();  

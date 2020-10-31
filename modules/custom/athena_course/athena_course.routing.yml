@@ -6,6 +6,14 @@ athena_course.course:
   requirements: 
     _permission: 'access content'
 
+athena_smo.smo:
+  path: '/smo/{nid}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::smo'
+    _title: 'Custom athena Smo module'
+  requirements: 
+    _permission: 'access content'
+
 athena_course.import:
   path: '/import-courses'
   defaults:

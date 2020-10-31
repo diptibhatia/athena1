@@ -1,0 +1,381 @@
+ 
+      <div class="top-banner">
+          <div class="colorBg"></div>
+          <div class="wrapper">
+            <div class="logos">
+               
+ <img src="{{ file_url(node.field_course_awarding_body_logos[0].entity.uri.value)}}" width="95">
+{% if node.field_course_awarding_body_logos[1].entity.uri.value is empty %}
+                                   
+                                    {% else %}
+                <img src="{{ file_url(node.field_course_awarding_body_logos[1].entity.uri.value)}}" alt="sqa logo" width="95">
+                               
+                                        {% endif %}
+                </div>
+            <h1>{{course_title}}</h1>
+            <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from 
+                <br>{{awarding_body}}</p>
+            <a href="#" class="trialBtn">Start 7 Day Trial</a>
+          </div>
+          <div class="bg">
+            <img src="{{base_path}}/images/smo/bg.jpg" alt="background-image">
+            <div class="advisor">
+                <div class="text">
+                    <p>Have Questions ?</p>
+                    <p class="content">Speak to an Advisor</p>
+                </div>
+                <div class="img">
+                    <a href="#"><img src="{{base_path}}/images/smo/speak-advisor.svg" alt="icon"></a>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="why-section">
+          <div class="wrapper">
+              <div class="usp">
+                  <div>
+                      <img src="{{base_path}}/images/smo/fee.svg" alt="icon">
+                      <h3>${{total_fee}} Total Fee</h3>
+                      <p>Pay Per Module</p>
+                  </div>
+                  <div>
+                      <img src="{{base_path}}/images/smo/duration.svg" alt="icon">
+                      <h3>Fast Track</h3>
+                      <p>{{duration}}</p>
+                  </div>
+                  <div>
+                      <img src="{{base_path}}/images/smo/dual-certification.svg" alt="icon">
+                      <h3>{{certification_label}}</h3>
+                      <p>{{certification}}</p>
+                  </div>
+                  <div>
+                      <img src="{{base_path}}/images/smo/completly-online.svg" alt="icon">
+                      <h3>Completely Online</h3>
+                      <p>Study at Home</p>
+                  </div>
+ {% if node.field_course_accreditations.0.value != '' %}
+                  <div>
+                      <img src="{{base_path}}/images/smo/accreditation.svg" alt="icon">
+                      <h3>Accreditations</h3>
+                      <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+{% endif %}
+                  </div>
+              </div>
+              <div class="main-section">
+                <div class="desc">
+                    <h2>Why this Course</h2>
+                    <div>            
+                    {{overview | raw}}
+</div>
+                    <p>Build your skills in all areas of managing and leading organizations</p>
+                </div>
+                <div class="forms">
+                    <div class="container-fluid p-0 about-us-wrapper form">
+                        <div class="course-login-wrapper">
+                            
+
+<div class="login-details">
+                        <form>
+                            <h2>Still Not Sure ?</h2>
+                            <h3>Speak to an Advisor<span>&nbsp;</span></h3>
+                            <p>Not sure if this course  is right for you? Fill in your details below and one of our Course Advisors will be in contact to provide you with the information you need to make a decision.</p>
+                            <div class="login-item names">
+                                <div class="name-item">
+                                    <p>First Name</p>
+                                    <input type="text" id="speak_first_name" placeholder="Enter First Name">
+                                </div>
+                                <div class="name-item">
+                                    <p>Last Name</p>
+                                    <input type="text" id="speak_last_name" placeholder="Enter Last Name">
+                                </div>
+                            </div>
+                            <div class="login-item">
+                                <p>Email</p>
+                                <input type="email" id="speak_email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Enter Email Address">
+                            </div>
+                            <div class="login-item">
+                                <p>Country</p>
+                                <input type="text" id="speak_country" placeholder="Country">
+                            </div>
+                            <div class="login-item">
+                                <p>Mobile Number</p>
+                                <input type="number" id="speak_mobile_number" placeholder="Enter Mobile number">
+                            </div>
+                            <div class="button">
+                                <input type="checkbox" class="form-check-input" id="speak_consent">
+                                <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
+                                <button  type="submit" id="speak_submit">Submit</button>
+                            </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="partners-tabs smo-page-section">
+        <div class="wrapper">
+            <h1>Partners of this Programme</h1>
+            <div class="classic-tabs"> <!-- Bootstrap Tabs -->
+
+{% set nummact = 1 %}
+ {% set activeclass = '' %}
+                <ul class="nav tabs-cyan" id="myClassicTab" role="tablist">
+                 {% for universities in univ_data	 %}
+                 
+                  {% if nummact == 1 %} 
+                  {% set activeclass = 'active show' %}
+                  {% else %}
+                        {% set activeclass = '' %}
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link  waves-light {{activeclass}}" id="guglielmo-tab-classic" data-toggle="tab" href="#guglielmo{{nummact}}" role="tab" aria-controls="guglielmo-classic" aria-selected="true">
+                        {{ universities.university.label }}</a>
+                    </li>
+                     {% set nummact = nummact+1 %}
+                 {% endfor %}       
+                   
+                </ul>
+
+                <div class="tab-content rounded-bottom" id="myClassicTabContent">
+                   
+{% set numm = 1 %}
+                  {% for universities in univ_data	 %}
+                  {% if numm == 1 %} 
+                  {% set activeclasstab = 'active show' %}
+                  {% else %}
+                        {% set activeclasstab = '' %}
+                    {% endif %}
+
+                    <div class="tab-pane fade {{activeclasstab}}" id="guglielmo{{numm}}" role="tabpanel" aria-labelledby="guglielmo-tab-classic">
+                        <div class="partners-tabs__mba no-bottom-video">
+                            <div class="partners-tabs__mba-text">
+                                <div class="content">
+                                    <h2>{{course_title}}</h2>
+                                    <p>{{universities.university.field_description.value|raw}} </p>
+                                    {% if universities.univ_logo is empty %}
+                                    <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
+                                    {% else %}
+                                    <img src="{{universities.univ_logo}}" alt="uni-logo">
+                                        {% endif %}
+                                </div>
+                                
+<div class="certificate">
+                                    <div id="carouselExampleIndicators{{numm}}" class="carousel slide" data-ride="carousel" data-interval="false">
+                                        {% set carouselnum = 1 %}
+                                        <div class="carousel-inner">
+                                           {% for certificate in universities.certificates %}
+                                         {% if carouselnum == 1 %} 
+                  {% set carouselnumclass = 'active' %}
+                  {% else %}
+                        {% set carouselnumclass = '' %}
+                    {% endif %}
+                    
+                    
+                                        
+                                            <div class="carousel-item {{carouselnumclass}} ">
+                                                <!-- Button to trigger Modal -->
+                                                <button type="button" class="cover" data-toggle="modal" data-target="#certificate{{numm}}{{carouselnum}}">
+                                                    <img class="d-block w-100" src="{{ certificate}}" alt="First slide">
+                                                </button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="certificate{{numm}}{{carouselnum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="{{ certificate}}" alt="First slide">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            
+{% set carouselnum =  carouselnum+1 %}                    
+                                        
+                                        
+                                        {% endfor %}
+                                        </div>
+                                        
+                                        
+                                        
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators{{numm}}" role="button" data-slide="prev">
+                                            <img src="{{base_path}}/images/coursepage/prev.svg" alt="previous">
+                                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span> -->
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators{{numm}}" role="button" data-slide="next">
+                                            <img src="{{base_path}}/images/coursepage/next.svg" alt="next">
+                                            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span> -->
+                                        </a>
+                                    </div>
+                                    <p>Click to Enlarge</p>
+                                </div>
+
+                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be 
+                                    subject to change at the discretion of respective Universities or Awarding Bodies.</p>
+                            </div>
+                            <div class="partners-tabs__mba-img"></div>
+                        </div>
+                    </div>
+
+  
+                    {% set numm = numm+1 %}
+                    {% endfor %} 
+                   
+
+                    
+                  
+                </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="how-learn course-team smo-page-section">
+        <div class="wrapper">
+            <h2>How You Learn</h2>
+            <p class="msg">We have Developed a learning pedagogy which ensures the students will be able to learn 
+               the course successfuly regardless of the student is beginner or expert Level.</p>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/video-class.svg" alt="image">
+                        </div>
+                        <h3>Video Classes</h3>   
+                        <p>The well developed purpose 
+                            built video lessons designed by our faculties will lay the foundation for your 
+                            learning</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/text-learning.svg" alt="image">
+                        </div>
+                        <h3>Text Learning Contents</h3>   
+                        <p>Multi level learning resourse
+                            developed by our faculties including articles , case studies,quizes etc. will 
+                            enhance your learning exposure</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/personal-tutor.svg" alt="image">
+                        </div>
+                        <h3>Personal Tutor</h3>   
+                        <p>One to one personal tutor meetings will help to clarify your doubts and also 
+                            provide guidance on your assignments.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/online-library.svg" alt="image">
+                        </div>
+                        <h3>Online Library</h3>   
+                        <p>Unlimeted access to the online library consist of a large collection of books, 
+                            journals , and other publications</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="learn-card course-team-card">
+                        <div class="team-img">
+                            <img src="{{base_path}}/images/coursepage/collaborative-learning.svg" alt="image">
+                        </div>
+                        <h3>Collaborative Learning</h3>   
+                        <p>Discussion Forum, webinars business secenario presentations, debates etc will 
+                            take you to a different level of learning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="button" href="#">View All</a>
+        </div>
+      </div>
+      <div class="what-students-says">
+          <div class="wrapper">
+              <h2>What our Students Says</h2>
+              <div class="slider">
+                  <div class="testimonial">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="{{base_path}}/images/smo/tesimonial.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{base_path}}/images/smo/tesimonial.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{base_path}}/images/smo/tesimonial.jpg" alt="First slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <img src="{{base_path}}/images/coursepage/prev.svg" alt="previous">
+                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span> -->
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <img src="{{base_path}}/images/coursepage/next.svg" alt="next">
+                            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span> -->
+                        </a>
+                    </div>  
+                    <!-- <img src="{{base_path}}/images/smo/tesimonial.jpg" alt="students testimonial"> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+     
+
+<div class="what-you-get">
+        <div class="wrapper">
+            <h2>What You Get</h2>
+            <p class="msg">You will be Receiving the following certificates and credentials as follows.</p>
+            <div class="container-box">
+				  {% set whynum = 1 %}
+				 {% for why_coursedata in why_course %}
+                <div class="contains">
+                 {% if why_coursedata.logo_url is empty %}
+                                    <img src="{{base_path}}/images/coursepage/degree-mba.svg" alt="icon">
+                                    {% else %}
+                                   <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
+                                        {% endif %}
+                    
+                    <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
+                        <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a></p>
+                    <!-- Modal Starts -->
+                    <div class="modal fade" id="certificateModal{{whynum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{why_coursedata.certificates_url}}" alt="First slide">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends -->
+                </div>
+                {% set whynum = whynum+1 %}
+                {% endfor %}
+               
+                
+                
+            </div>
+        </div>
+    </div>
+     
