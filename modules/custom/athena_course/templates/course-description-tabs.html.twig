@@ -492,7 +492,13 @@
             <div class="module-container" id="course-intro-card-container">
                 {% set modnum = 1 %}
                 {% for module in node.field_course_modules %}
-                <div class="module show">
+                
+                {% if modnum <=3 %}
+ {% set modnumclass = 'show' %}
+  {% else %}
+   {% set modnumclass = '' %}
+{% endif %}                
+                <div class="module {{modnumclass}}">
                     <h3>Module {{modnum}}</h3>
                     {% set modnum = modnum + 1 %}
                     <div class="courses-intro-card">
