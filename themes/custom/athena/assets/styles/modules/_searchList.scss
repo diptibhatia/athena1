@@ -429,8 +429,8 @@
       margin-left: 40px;
     }
   }
-  max-width: 1900px;
-  margin: 20px 22px;
+  max-width: 1170px;
+  margin: 20px auto;
     padding: 10px 0px;
   .item1 {
     grid-area: one;
@@ -603,9 +603,9 @@
     }
   }
   @media screen and (max-width: $break-small) {
-    margin: 20px 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 20px auto;
+    width: 100%;
+    padding: 0px;
   }
 }
 
