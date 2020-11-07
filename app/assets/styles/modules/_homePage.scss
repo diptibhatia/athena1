@@ -272,6 +272,7 @@
 			padding: 60px 0;
 			@include atSize424 {
 				padding: 10px 0;
+				text-align:center;
 			}
 			h2 {
 				font-size: 32px;
@@ -1405,6 +1406,23 @@
 				.event-item {
 					display: flex;
 					margin: 10px 0;
+					.btm-text{
+						font-size: 18px;
+						text-transform: uppercase;
+						color: #febe01;
+						font-weight: bold;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.44;
+						letter-spacing: normal;
+						position: relative;
+						bottom: 35px;
+						left: 12px;
+
+					}
+					.btm-text.blue{
+						color: #2a8ef3;
+					}
 					.event-info {
 						padding: 0 16px;
 						h4 {
@@ -1417,7 +1435,8 @@
 						p {
 							font-size: 14px;
 						  	font-weight: 500;
-						  	color: $primaryColor;
+							color: $primaryColor;
+							margin-bottom:0.7rem;
 						  	span {
 						  		padding: 0 0 0 10px;
 						  	}
@@ -1627,6 +1646,7 @@
 }
 
 .popular-courses {
+	position:relative;
 	.heading-image {
 		width: 100%;
 		text-align: center;
@@ -1680,7 +1700,11 @@
 	  		background-color: #ffffff;
 	  		position: relative;
 	  		margin: 0 20px;
-	  		z-index: 10;
+			z-index: 10;
+			&:first-child {
+				margin-left: 0;
+			}
+
 	  		@include atSize424 {
 	  			margin: 20px 6px;
 	  		}
@@ -1806,6 +1830,52 @@
 					margin: 10px 0;
 			    }
 	  		}
+		}
+	}
+	.control-arrows{
+		width: 100%;
+		height: 30px;
+		position: absolute;
+		transform: translate(-50%,-50%);
+		left: 50%;
+		top:47.5%;
+			a{width:30px;
+				height:30px;
+				display:block;
+				position:absolute;
+				z-index:99;
+					i{width:22px;
+					 height:22px;
+					 opacity:0.3;
+					}
+			}
+			a.prev{left:-28px;}
+			a.next{right:-28px;}
+	}
+	.pagination{
+		text-align:center;
+		padding:10px 0 30px;
+		ul{
+			padding:0;
+			margin:0 auto;
+			li{
+				display:inline-block;
+				padding:0 5px;
+				margin:0;
+				float:none;
+				a{
+					display:block;
+					width: 13px;
+					height: 13px;
+					opacity: 0.5;
+					border: solid 1.2px #979797;
+					border-radius:20px;
+
+					& :hover{
+						background:#303030;
+					}
+				}
+			}
 		}
 	}
 	@include atSize424 {
@@ -1955,11 +2025,16 @@
 
 		.section-item {
 			flex: 1;
-			line-height: 1.8;
+			line-height: 2;
 			margin: 0 30px;
+			color:#9fa0a6;
 			h1 {
 				font-size: 16px;
-  				color: $primaryColor;
+				  color: $primaryColor;
+				  font-weight:bold;
+			}
+			a{
+				color:#9fa0a6;
 			}
 			font-size: 14px;
 		}
