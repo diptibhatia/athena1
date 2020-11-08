@@ -42,7 +42,10 @@ foreach($paragraph_univ_data as $explore_data) {
  $university_nid = $explore_data->get('field_university')->value;
  
  $univ_node = Node::load($university_nid);
-       $univ_logo[] = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+       $univ_logo[] = array(
+       'label' => $univ_node->label(),
+       'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+       );
           
 }
        $academic_node_ids[] =  
@@ -56,8 +59,61 @@ foreach($paragraph_univ_data as $explore_data) {
       
 
     $variables['academicnodes'] = $academic_node_ids;
-    $variables['micronodes'] = node_load_multiple($micro);
-    $variables['certificationsnodes'] = node_load_multiple($certifications);
+    
+    $micro = node_load_multiple($micro);
+     $academic_node_ids = array();
+      foreach($micro as $node_key => $node) {
+           $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+
+$univ_logo = array();
+foreach($paragraph_univ_data as $explore_data) {
+ $university_nid = $explore_data->get('field_university')->value;
+ 
+ $univ_node = Node::load($university_nid);
+       $univ_logo[] = array(
+       'label' => $univ_node->label(),
+       'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+       );
+          
+}
+       $micro_node_ids[] =  
+       array(
+       "nid"=>$node->id(),
+       "title"=>$node->label(),
+       'universities' => $univ_logo,
+       
+       );
+      }
+      
+    $variables['micronodes'] = $micro_node_ids;
+    
+    
+     $certifications = node_load_multiple($certifications);
+     $certifications_node_ids = array();
+      foreach($certifications as $node_key => $node) {
+           $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+
+$univ_logo = array();
+foreach($paragraph_univ_data as $explore_data) {
+ $university_nid = $explore_data->get('field_university')->value;
+ 
+ $univ_node = Node::load($university_nid);
+       $univ_logo[] = array(
+       'label' => $univ_node->label(),
+       'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+       );
+          
+}
+       $certifications_node_ids[] =  
+       array(
+       "nid"=>$node->id(),
+       "title"=>$node->label(),
+       'universities' => $univ_logo,
+       
+       );
+      }
+      
+    $variables['certificationsnodes'] = $certifications_node_ids;
    
   
   
