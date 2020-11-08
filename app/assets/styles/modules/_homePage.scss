@@ -623,7 +623,12 @@
     			right: 0;
     			img {
     				width: 350px;
-    			}
+					@media (min-width: 376px) and (max-width: 414px) {
+						position:relative;
+						top: -119px;
+						left: -80px;
+					}
+				}
     		}
     		@media (min-width: 1281px) and (max-width: 1440px) {
     			right: 211px;
@@ -777,6 +782,16 @@
     	}
 	}
 	.testimonials {
+		.testimonials-background-image{
+			width: 100%;
+			position: absolute;
+			img{
+				width: 100%;
+				position: absolute;
+				top: 25px;
+				z-index:-1;
+			}
+		}
 		position: relative;
 		top: 200px;
 		@media (max-width:420px){
@@ -792,7 +807,7 @@
 					width: 398px;
     				position: relative;
 					top: -30px;
-					left:-50px;
+					left:0;
     				@media (max-width: 424px) {
 						width: 55% !important;
 						position: relative;
@@ -1073,16 +1088,16 @@
 }
 
 .partners {
-	margin: 140px 30px 50px 30px;
+	margin: 140px 0 50px 0;
 	@include atSize424 {
-		margin: 200px 30px 50px 30px;
+		margin: 200px 20px 50px 20px;
 	}
 	@media (min-width: 480px) and (max-width: 770px){
-		margin: 200px 30px 50px 30px;
+		margin: 200px 0 50px 0;
 		text-align: center;
 	}
 	@media (min-width: 771px) and (max-width: 1024px){
-		margin: 200px 30px 50px 30px;
+		margin: 200px 0 50px 0;
 		text-align: center;	
 	}
 	.info {
@@ -1196,13 +1211,31 @@
 	} 
 }
 .reason-section {
-	margin: 100px 0 0 0;
+	.testimonials-background-image{
+		width: 100%;
+		position: absolute;
+		img{
+			width: 100%;
+			position: absolute;
+			z-index:-1;
+			@media (min-width: 1440px) and (max-width: 2559px){
+				top:0;
+			}
+			@include atSize424{
+				top:-88px;
+			}
+
+
+		}
+	}
+	margin: 100px 0 100px 0;
 	display: flex;
 	@include atSize424 {
 		margin-top:30px;
 	}
 
 	.reason-section-item {
+		img{float:right;}
 		flex: 1;
 		.steps {
 			text-align: left;
@@ -1243,7 +1276,13 @@
 				  	list-style: none;
 				  	span {
 				  		padding: 0 0 0 15px;
-				  	}
+						@include atSize424 {
+							padding: 0;
+						}
+		
+
+
+					}
 				}
 			}
 			.actions {
