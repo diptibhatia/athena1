@@ -1,7 +1,7 @@
 <div class="container-fluid my-container">
          <div class="popular-courses shawdow-effect">
             <!-- <h1>MBA Programs</h1> -->
-            <h2 style="text-align:left">Our MBA Programs</h2>
+            <h2 style="text-align:left" class="title">Our MBA Programs</h2>
             
             <div class="courses">
             
@@ -14,7 +14,7 @@
                      <p>${{coursedata.field_course_total_fee.value}}</p>
                   </div>
                   <div class="course-details">
-                     <h1>{{coursedata.label}}</h1>
+                     <h1 class="headerWrap">{{coursedata.label}}</h1>
                      <h2>{{coursedata.field_course_awarding_body.value|raw }}</h2>
                      <div class="course-tags">
                         <p>Masters ( EQF Level 7) <span>|</span>{{coursedata.field_course_ects_credit.value}} Credits (ECTS)</p>

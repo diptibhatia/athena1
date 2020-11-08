@@ -272,6 +272,7 @@
 			padding: 60px 0;
 			@include atSize424 {
 				padding: 10px 0;
+				text-align:center;
 			}
 			h2 {
 				font-size: 32px;
@@ -414,7 +415,7 @@
 						  	}
 					  	}
 					  	h1 {
-					  		font-size: 18px;
+					  		font-size: 14px;
 					    	font-weight: bold;
 					    	color: $primaryColor;
 					    	margin: 10px 0 0 5px;
@@ -540,14 +541,22 @@
 			  	letter-spacing: normal;
 			  	color: $primaryColor;
 			  	margin: 0 0 5px 0;
+    			@include atSize424 {
+					font-size:28px;
+					position:relative;
+					left:-16px;
+				}
+
 			}
 			.underline-heading {
 				width: 70px;
     			border: solid 2px $buttonPink;
     			border-radius: 4px;
     			@include atSize424 {
-					display: none;
-		  		}
+					border: solid 2px #630097;
+					position:relative;
+					left:-16px;
+				}
 			}
 			.info {
 				margin: 25px 0;
@@ -592,7 +601,15 @@
 						  	font-weight: bold;
 						  	color: $buttonPink;
 						  	position: relative;
-						  	top: 10px;
+							  top: 10px;
+							  @include atSize424 {
+								font-size: 12px;
+    							top: 0;
+							}
+							@include atSize700{
+								font-size: 14px;
+    							top: 0;
+							}
 						}
 						.sub-heading {
 							top: 0;
@@ -610,10 +627,12 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-    			top: 191rem;
+    			//top: 191rem;
     			right: 0;
     			img {
-    				width: 350px;
+					width: 350px;
+					top: 350px;
+					position: relative;
     			}
     		}
     		@media (min-width: 1281px) and (max-width: 1440px) {
@@ -770,6 +789,10 @@
 	.testimonials {
 		position: relative;
 		top: 200px;
+		@media (max-width:420px){
+			padding: 0 10px;
+		    width: 100%;
+		}
 		.testimonials-item {
 			display: flex;
 			.item-one {
@@ -778,9 +801,13 @@
 				img {
 					width: 398px;
     				position: relative;
-    				top: -30px;
+					top: -30px;
+					left:-50px;
     				@media (max-width: 424px) {
-    					width: 100%;
+						width: 55% !important;
+						position: relative;
+						left: -64px;
+						margin-bottom:22px;
     				}
 				}
 				h2 {
@@ -790,6 +817,12 @@
 				    position: relative;
 				    top: -40px;
 				    left: 8px;
+    				@media (max-width: 424px) {
+						font-size:28px;
+						padding:0 12px;
+						text-align:left;
+						margin-bottom:20px;
+    				}
 				}
 				h3 {
 		  			font-size: 16px;
@@ -798,6 +831,12 @@
 		  			position: relative;
 				    top: -48px;
 				    left: 8px;
+    				@media (max-width: 424px) {
+						text-align:left;
+						left:16px;
+    				}
+
+
 				}
 				button {
 					border-radius: 30px;
@@ -817,6 +856,11 @@
 						color: white;
 						background: $buttonPink;
 					}
+    				@media (max-width: 424px) {
+						left:auto;
+    				}
+
+
 				}
 			}
 			.item-two {
@@ -1067,8 +1111,10 @@
 		    top: 44px;
 		    z-index: -10;
 		    @include atSize424 {
-		    	width: 100%;
-		    }
+				width: 78%;
+				position: relative;
+				margin-bottom: 20px;
+			}
 		}
 		@include atSize424 {
 			width: 100%;
@@ -1084,6 +1130,14 @@
 	  		font-weight: bold;
 	  		color: $primaryColor;
 	  		margin: 0;
+			@include atSize424 {
+				font-size: 28px;
+				padding: 0;
+				text-align: left;
+				margin-bottom: 20px;				
+			}
+
+
 		}
 		h3 {
 			font-size: 16px;
@@ -1154,6 +1208,10 @@
 .reason-section {
 	margin: 100px 0 0 0;
 	display: flex;
+	@include atSize424 {
+		margin-top:30px;
+	}
+
 	.reason-section-item {
 		flex: 1;
 		.steps {
@@ -1164,6 +1222,11 @@
 			  	font-weight: bold;
 			  	letter-spacing: normal;
 			  	color: $primaryColor;
+				@include atSize424 {
+					font-size:16px;
+					text-align:center;
+					margin-bottom:28px;
+				}
 			}
 			h2 {
 				font-size: 42px;
@@ -1172,6 +1235,11 @@
 			  	margin: 0;
 			  	position: relative;
 			  	top: -15px;
+				@include atSize424 {
+					font-size:28px;
+					text-align:center;
+					margin-bottom:10px;
+				}
 			}
 			ul {
 				margin: 0;
@@ -1240,9 +1308,13 @@
 					p {
 						img {
 						    position: relative;
-							top: -25px;
-							left: 82px;
+							/*top: -25px;
+							left: 82px;*/
 						}
+					}
+					button{
+						width: 134px;
+						height: 43px;
 					}
 				}
 			}
@@ -1299,7 +1371,8 @@
 	    top: 56px;
 	    z-index: -1;
 	    @include atSize424 {
-	    	width: 100%;
+			width: 84%;
+			margin-bottom:20px;
 	    }
 	}
 	h2 {
@@ -1308,7 +1381,7 @@
   		color: $primaryColor;
   		margin: 10px 0;
   		@include atSize424 {
-	    	font-size: 32px;
+	    	font-size: 28px;
 	    }
 	}
 	h3 {
@@ -1318,7 +1391,8 @@
 	    margin: 0 auto;
 	    line-height: 26px;
 	    @include atSize424 {
-	    	width: 100%;
+			width: 100%;
+			padding:0 20px;
 	    }
 	}
 	.section-items {
@@ -1405,6 +1479,23 @@
 				.event-item {
 					display: flex;
 					margin: 10px 0;
+					.btm-text{
+						font-size: 18px;
+						text-transform: uppercase;
+						color: #febe01;
+						font-weight: bold;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.44;
+						letter-spacing: normal;
+						position: relative;
+						bottom: 35px;
+						left: 12px;
+
+					}
+					.btm-text.blue{
+						color: #2a8ef3;
+					}
 					.event-info {
 						padding: 0 16px;
 						h4 {
@@ -1417,7 +1508,8 @@
 						p {
 							font-size: 14px;
 						  	font-weight: 500;
-						  	color: $primaryColor;
+							color: $primaryColor;
+							margin-bottom:0.7rem;
 						  	span {
 						  		padding: 0 0 0 10px;
 						  	}
@@ -1627,6 +1719,7 @@
 }
 
 .popular-courses {
+	position:relative;
 	.heading-image {
 		width: 100%;
 		text-align: center;
@@ -1636,9 +1729,15 @@
     		z-index: -1;
     		@include atSize424 {
     			width: 100%;
-    			top: 35px;
+				top: 35px;
+				display:none;
     		}
 		}
+	}
+	.title{
+		margin: 100px 0 50px 0;
+		text-align: center;
+		font-size: 36px;
 	}
 	h1 {
 		text-align: center;
@@ -1649,7 +1748,7 @@
   		text-align: center;
   		margin: 0;
   		@include atSize424 {
-    		font-size: 32px;
+    		font-size: 28px;
     	}
 	}
 	h3 {
@@ -1666,6 +1765,11 @@
 		line-height: 1.63;
 		letter-spacing: normal;
 		text-align: center;
+		@include atSize424 {
+    		padding:0 20px;
+    	}
+
+
 	}
 	.courses {
 		display: flex;
@@ -1679,16 +1783,28 @@
 	  		box-shadow: 0 2px 25px 2px #d5dbfb;
 	  		background-color: #ffffff;
 	  		position: relative;
-	  		margin: 0 20px;
-	  		z-index: 10;
+	  		margin: 0 5px;
+			z-index: 10;
+			@include atSize424 {
+				margin:20px auto;
+			}
+
+			&:first-child {
+				margin-left: 0;
+				@include atSize424 {
+					margin:20px auto;
+				}
+		
+			}
+
 	  		@include atSize424 {
-	  			margin: 20px 6px;
+	  			margin: 20px auto;
 	  		}
 	  		@include atSize430 {
-	  			margin: 20px 6px;
+	  			margin: 20px auto;
 	  		}
 	  		@include atSize479 {
-	  			margin: 20px 6px;
+	  			margin: 20px auto;
 	  		}
 	  		.image {
 	  			position: relative;
@@ -1752,7 +1868,7 @@
 				  	}
 			  	}
 			  	h1 {
-			  		font-size: 18px;
+			  		font-size: 14px;
 			    	font-weight: bold;
 			    	color: $primaryColor;
 			    	margin: 10px 0 0 5px;
@@ -1806,6 +1922,52 @@
 					margin: 10px 0;
 			    }
 	  		}
+		}
+	}
+	.control-arrows{
+		width: 100%;
+		height: 30px;
+		position: absolute;
+		transform: translate(-50%,-50%);
+		left: 50%;
+		top:47.5%;
+			a{width:30px;
+				height:30px;
+				display:block;
+				position:absolute;
+				z-index:99;
+					i{width:22px;
+					 height:22px;
+					 opacity:0.3;
+					}
+			}
+			a.prev{left:-28px;}
+			a.next{right:-28px;}
+	}
+	.pagination{
+		text-align:center;
+		padding:10px 0 30px;
+		ul{
+			padding:0;
+			margin:0 auto;
+			li{
+				display:inline-block;
+				padding:0 5px;
+				margin:0;
+				float:none;
+				a{
+					display:block;
+					width: 13px;
+					height: 13px;
+					opacity: 0.5;
+					border: solid 1.2px #979797;
+					border-radius:20px;
+
+					& :hover{
+						background:#303030;
+					}
+				}
+			}
 		}
 	}
 	@include atSize424 {
@@ -1955,11 +2117,16 @@
 
 		.section-item {
 			flex: 1;
-			line-height: 1.8;
+			line-height: 2;
 			margin: 0 30px;
+			color:#9fa0a6;
 			h1 {
 				font-size: 16px;
-  				color: $primaryColor;
+				  color: $primaryColor;
+				  font-weight:bold;
+			}
+			a{
+				color:#9fa0a6;
 			}
 			font-size: 14px;
 		}
@@ -2043,4 +2210,13 @@
 	        }
 		}
 	}
+}
+.headerWrap
+{
+	overflow: hidden;
+	display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+	max-width: 90%;
+	font-size: 13px;
 }
