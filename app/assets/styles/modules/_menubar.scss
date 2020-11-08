@@ -330,7 +330,7 @@
                 background-color: #fff;
                 margin-left: 0;
                 padding: 31px 0 0 0;
-
+                height:auto;
                 &::before {
                     content: '';
                     width: 16px;
@@ -350,6 +350,7 @@
                 padding: 7px 0;
                 max-height: 50px;
                 transition: max-height .2s ease-out, color .2s ease-out;
+                padding-left: 10px;
 
                 &.show {
                     max-height: 900px;
