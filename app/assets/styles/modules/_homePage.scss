@@ -414,7 +414,7 @@
 						  	}
 					  	}
 					  	h1 {
-					  		font-size: 18px;
+					  		font-size: 14px;
 					    	font-weight: bold;
 					    	color: $primaryColor;
 					    	margin: 10px 0 0 5px;
@@ -592,7 +592,15 @@
 						  	font-weight: bold;
 						  	color: $buttonPink;
 						  	position: relative;
-						  	top: 10px;
+							  top: 10px;
+							  @include atSize424 {
+								font-size: 12px;
+    							top: 0;
+							}
+							@include atSize700{
+								font-size: 14px;
+    							top: 0;
+							}
 						}
 						.sub-heading {
 							top: 0;
@@ -610,10 +618,12 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-    			top: 191rem;
+    			//top: 191rem;
     			right: 0;
     			img {
-    				width: 350px;
+					width: 350px;
+					top: 350px;
+					position: relative;
     			}
     		}
     		@media (min-width: 1281px) and (max-width: 1440px) {
@@ -1640,6 +1650,11 @@
     		}
 		}
 	}
+	.title{
+		margin: 100px 0 50px 0;
+		text-align: center;
+		font-size: 36px;
+	}
 	h1 {
 		text-align: center;
 	}
@@ -1679,7 +1694,7 @@
 	  		box-shadow: 0 2px 25px 2px #d5dbfb;
 	  		background-color: #ffffff;
 	  		position: relative;
-	  		margin: 0 20px;
+	  		margin: 0 5px;
 	  		z-index: 10;
 	  		@include atSize424 {
 	  			margin: 20px 6px;
@@ -1752,7 +1767,7 @@
 				  	}
 			  	}
 			  	h1 {
-			  		font-size: 18px;
+			  		font-size: 14px;
 			    	font-weight: bold;
 			    	color: $primaryColor;
 			    	margin: 10px 0 0 5px;
@@ -2043,4 +2058,13 @@
 	        }
 		}
 	}
+}
+.headerWrap
+{
+	overflow: hidden;
+	display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+	max-width: 90%;
+	font-size: 13px;
 }
