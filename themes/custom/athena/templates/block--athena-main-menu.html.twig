@@ -41,54 +41,18 @@
                         <ul class="exp-secondary-menu">
                             <li class="heading">Acadamic</li>
                             <li><a href="#">View all Acadamic Courses</a></li>
-                            <li>Doctorate of Business Administration
-                                <ul class="exp-tertiary-menu">
+                            {% for academic in academicnodes %}
+                               <li>
+                               {{academic.title}}
+                               <ul class="exp-tertiary-menu">
                                     <li>Universities 1</li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                                    {% for univ in academic.universities%}
+                                    <li><a href="#"><img src="{{univ}}" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                                              {% endfor %}
                                 </ul>
-                            </li>
-                            <li>Executive MBA - Business Analytics
-                                <ul class="exp-tertiary-menu">
-                                    <li>Universities 2</li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
-                                </ul>
-                            </li>
-                            <li>Executive MBA
-                                <ul class="exp-tertiary-menu">
-                                    <li>Universities 3</li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
-                                </ul>
-                            </li>
-                            <li>Master of Business Administration
-                                <ul class="exp-tertiary-menu">
-                                    <li>Universities 4</li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
-                                </ul>
-                            </li>
-                            <li>Master of International Business Administration
-                                <ul class="exp-tertiary-menu">
-                                    <li>Universities 5</li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
-                                </ul>
-                            </li>
-                            <li>Executive MBA - Topup
-                                <ul class="exp-tertiary-menu">
-                                    <li>Universities 6</li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
-                                    <li><a href="#"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
-                                </ul>
-                            </li>
+                               </li>
+                            {% endfor %}
+                           
                         </ul>
                     </li>
                     <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/micro-credits.svg" alt="icon"> Micro-Credits 

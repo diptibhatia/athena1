@@ -1,15 +1,75 @@
 <?php
 use \Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph; 
+use Drupal\Component\Serialization\Json;
+
 /**
  * @file
  * Functions to support theming in the Athena theme.
  */
+ 
+function athena_preprocess_block(array &$variables) { 
+  
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition('field_course_category', 'Academic');
+    $query->condition('type', $bundle);
+    $academic = $query->execute();
+    
+    
+     $microquery = \Drupal::entityQuery('node');
+    $microquery->condition('status', 1);
+    $microquery->condition('field_course_category',  'Micro Credits', '=');
+    $microquery->condition('type', $bundle);
+     $micro = $microquery->execute();
+    
+    
+     $querycertification = \Drupal::entityQuery('node');
+    $querycertification->condition('status', 1);
+    $querycertification->condition('field_course_category', 'Certifications', '=');
+    $querycertification->condition('type', $bundle);
+     $certifications = $querycertification->execute();
+     $academic = node_load_multiple($academic);
+     $academic_node_ids = array();
+      foreach($academic as $node_key => $node) {
+           $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+
+$univ_logo = array();
+foreach($paragraph_univ_data as $explore_data) {
+ $university_nid = $explore_data->get('field_university')->value;
+ 
+ $univ_node = Node::load($university_nid);
+       $univ_logo[] = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+          
+}
+       $academic_node_ids[] =  
+       array(
+       "nid"=>$node->id(),
+       "title"=>$node->label(),
+       'universities' => $univ_logo,
+       
+       );
+      }
+      
+
+    $variables['academicnodes'] = $academic_node_ids;
+    $variables['micronodes'] = node_load_multiple($micro);
+    $variables['certificationsnodes'] = node_load_multiple($certifications);
+   
+  
+  
+}
+ 
 
 /**
  * Implements template_preprocess_image() to remove WIDTH and HEIGHT from img-tag
  *
  * Adds body classes if certain regions have content.
  */
+ 
 function athena_preprocess_image(&$variables) {
   if (isset($variables['attributes']['width']) && isset($variables['attributes']['height'])) {
     unset($variables['attributes']['width']);
@@ -33,6 +93,8 @@ function athena_preprocess_image(&$variables) {
     $variables['attributes']['class'][] = 'col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0';
   }
 }
+
+
 
 
 function athena_preprocess_page(&$variables) {
@@ -145,3 +207,4 @@ $variables['enable_popup'] = FALSE;
 }
  }
 }
+
