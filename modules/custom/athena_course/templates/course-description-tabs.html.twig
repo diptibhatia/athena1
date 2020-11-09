@@ -494,9 +494,9 @@
                 {% for module in node.field_course_modules %}
                 
                 {% if modnum <=3 %}
- {% set modnumclass = 'show' %}
+ {% set modnumclass = 'hide show' %}
   {% else %}
-   {% set modnumclass = '' %}
+   {% set modnumclass = 'hide' %}
 {% endif %}                
                 <div class="module {{modnumclass}}">
                     <h3>Module {{modnum}}</h3>
@@ -518,8 +518,8 @@
                 {% endfor %}
                 
                
-                <div class="module-overlay hide"></div>
-                <button id="course-show-more">Show Less</button>
+                <div class="module-overlay"></div>
+                <button id="course-show-more">Show More</button>
             </div>
         </div>
     </div>
