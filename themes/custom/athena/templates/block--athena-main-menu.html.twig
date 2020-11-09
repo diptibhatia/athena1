@@ -40,21 +40,18 @@
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Acadamic</li>
-                            <li><a href="{{url('<front>')}}academic-program">View all Acadamic Courses</a></li>
+                            <a href="{{url('<front>')}}academic-program">View all Acadamic Courses</a>
                             {% for academic in academicnodes %}
                                
-                              <a href="{{url('<front>')}}course/{{academic.nid}}" style="    color: inherit;
-    text-decoration: inherit;
-    padding: inherit;
-    line-height: initial;"> 
-                               <li style="margin-bottom:4px;">
+                              <a href="{{url('<front>')}}course/{{academic.nid}}" style="color:initial;line-height:initial;margin-bottom:8px"> 
+                               <li style="margin-bottom:8px;">
                                 
                                {{academic.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
                                     {% for univ in academic.universities%}
-                                    <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                                              {% endfor %}
+                                    <li><img src="{{univ.logo}}" alt="logo">{{univ.label}}</li>
+                                    {% endfor %}
                                 </ul>
                                
                                </li>
@@ -67,12 +64,9 @@
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Micro Credits</li>
-                            <li><a href="{{url('<front>')}}micro-credits">View all Micro Credits</a></li>
+                             <a href="{{url('<front>')}}micro-credits">View all Micro Credits</a>
                              {% for micro in micronodes %}
-                              <a href="{{ url('<front>') }}course/{{micro.nid}}" style="    color: inherit;
-    text-decoration: inherit;
-    padding: inherit;
-    line-height: initial;"> <li style="margin-bottom:4px">
+                              <a href="{{ url('<front>') }}course/{{micro.nid}}" style="color:initial;line-height:initial;margin-bottom:8px"> <li style="margin-bottom:4px">
 {{micro.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
@@ -88,13 +82,10 @@
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Certifications</li>
-                            <li><a href="{{url('<front>')}}certifications">View all Certifications</a></li>
+                            <a href="{{url('<front>')}}certifications">View all Certifications</a>
                              {% for cert in certificationsnodes %}
-                              <a href="{{ url('<front>') }}course/{{cert.nid}}" style="    color: inherit;
-    text-decoration: inherit;
-    padding: inherit;
-    line-height: initial;">
-                               <li style="margin-botton:4px">
+                              <a href="{{ url('<front>') }}course/{{cert.nid}}" style="color:initial;line-height:initial;margin-bottom:8px">
+                               <li style="margin-botton:8px">
                                {{cert.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
