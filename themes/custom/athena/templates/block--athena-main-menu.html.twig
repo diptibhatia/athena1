@@ -40,9 +40,15 @@
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Acadamic</li>
-                            <li><a href="#">View all Acadamic Courses</a></li>
+                            <li><a href="{{url('<front>')}}academic-program">View all Acadamic Courses</a></li>
                             {% for academic in academicnodes %}
-                               <li>
+                               
+                              <a href="{{url('<front>')}}course/{{academic.nid}}" style="    color: inherit;
+    text-decoration: inherit;
+    padding: inherit;
+    line-height: initial;"> 
+                               <li style="margin-bottom:4px;">
+                                
                                {{academic.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
@@ -50,7 +56,9 @@
                                     <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                                               {% endfor %}
                                 </ul>
+                               
                                </li>
+                               </a>
                             {% endfor %}
                            
                         </ul>
@@ -59,17 +67,20 @@
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Micro Credits</li>
-                            <li><a href="#">View all Micro Credits</a></li>
+                            <li><a href="{{url('<front>')}}micro-credits">View all Micro Credits</a></li>
                              {% for micro in micronodes %}
-                               <li>
-                               {{micro.title}}
+                              <a href="{{ url('<front>') }}course/{{micro.nid}}" style="    color: inherit;
+    text-decoration: inherit;
+    padding: inherit;
+    line-height: initial;"> <li style="margin-bottom:4px">
+{{micro.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
                                     {% for univ in micro.universities%}
                                     <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                                               {% endfor %}
                                 </ul>
-                               </li>
+                               </li></a>
                             {% endfor %}
                         </ul>
                     </li>
@@ -77,9 +88,13 @@
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Certifications</li>
-                            <li><a href="#">View all Certifications</a></li>
+                            <li><a href="{{url('<front>')}}certifications">View all Certifications</a></li>
                              {% for cert in certificationsnodes %}
-                               <li>
+                              <a href="{{ url('<front>') }}course/{{cert.nid}}" style="    color: inherit;
+    text-decoration: inherit;
+    padding: inherit;
+    line-height: initial;">
+                               <li style="margin-botton:4px">
                                {{cert.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
@@ -88,6 +103,7 @@
                                                               {% endfor %}
                                 </ul>
                                </li>
+                               </a>
                             {% endfor %}
                         </ul>
                     </li>
