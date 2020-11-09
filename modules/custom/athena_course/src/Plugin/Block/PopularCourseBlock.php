@@ -64,7 +64,7 @@ $query->condition('field_is_popular_course', '1', '=');
     $academicnodes = node_load_multiple($academic);
         
     }
-     $popular_courses =  array_slice($academicnodes, 0, 3);
+     $popular_courses =  array_slice($academicnodes, 0, 5);
      
      
     
