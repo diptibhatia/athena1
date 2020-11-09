@@ -43,8 +43,8 @@
                             <a href="{{url('<front>')}}academic-program">View all Acadamic Courses</a>
                             {% for academic in academicnodes %}
                                
-                              <a href="{{url('<front>')}}course/{{academic.nid}}" style="color:initial;line-height:initial;margin-bottom:8px"> 
-                               <li style="margin-bottom:8px;">
+                              
+                               <li onclick="location.href='{{url('<front>')}}course/{{academic.nid}}'"  style="margin-bottom:8px;">
                                 
                                {{academic.title}}
                                <ul class="exp-tertiary-menu">
@@ -55,7 +55,7 @@
                                 </ul>
                                
                                </li>
-                               </a>
+                               
                             {% endfor %}
                            
                         </ul>
@@ -66,7 +66,7 @@
                             <li class="heading">Micro Credits</li>
                              <a href="{{url('<front>')}}micro-credits">View all Micro Credits</a>
                              {% for micro in micronodes %}
-                              <a href="{{ url('<front>') }}course/{{micro.nid}}" style="color:initial;line-height:initial;margin-bottom:8px"> <li style="margin-bottom:4px">
+                              <li style="margin-bottom:4px" onclick="location.href='{{url('<front>')}}course/{{micro.nid}}'">
 {{micro.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
@@ -74,7 +74,7 @@
                                     <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                                               {% endfor %}
                                 </ul>
-                               </li></a>
+                               </li>
                             {% endfor %}
                         </ul>
                     </li>
@@ -84,8 +84,8 @@
                             <li class="heading">Certifications</li>
                             <a href="{{url('<front>')}}certifications">View all Certifications</a>
                              {% for cert in certificationsnodes %}
-                              <a href="{{ url('<front>') }}course/{{cert.nid}}" style="color:initial;line-height:initial;margin-bottom:8px">
-                               <li style="margin-botton:8px">
+                              
+                               <li style="margin-botton:8px" onclick="location.href='{{url('<front>')}}course/{{cert.nid}}'">
                                {{cert.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
@@ -94,7 +94,7 @@
                                                               {% endfor %}
                                 </ul>
                                </li>
-                               </a>
+                               
                             {% endfor %}
                         </ul>
                     </li>
