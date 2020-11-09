@@ -619,7 +619,7 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-    			top: 191rem;
+    			top: 169rem;
     			right: 0;
     			img {
     				width: 350px;
@@ -810,7 +810,7 @@
 					width: 398px;
     				position: relative;
 					top: -30px;
-					left:0;
+					left: -25px;
     				@media (max-width: 424px) {
 						width: 55% !important;
 						position: relative;
@@ -929,7 +929,7 @@
 					    	}
 					    	@include atSize424 {
 								top: 20px;
-    							right: -16px;
+    							right: -8px;
     							img {
     								width: 21px;
   									height: 21px;	
