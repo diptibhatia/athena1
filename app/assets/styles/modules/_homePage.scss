@@ -721,7 +721,10 @@
 		  	line-height: 1.33;
 		  	letter-spacing: normal;
 		  	color: $primaryColor;
-		  	margin: 0;
+			margin: 0;
+			@include atSize424{
+				font-size:34px;
+			}
     	}
     	.collaorate-heading {
     		width: 334px;
@@ -1267,6 +1270,9 @@
 			ul {
 				margin: 0;
 				padding: 0;
+				@include atSize424 {
+					padding:0 20px;
+				}
 				li {
 				  	font-size: 17px;
 				  	line-height: 2.0;
@@ -1279,9 +1285,12 @@
 						@include atSize424 {
 							padding: 0;
 						}
-		
-
-
+					}
+					img{
+						float:left;
+						@include atSize424 {
+							padding:0 10px 10px 0;
+						}
 					}
 				}
 			}
@@ -1289,6 +1298,12 @@
 				display: flex;
 				flex-direction: row;
 				margin: 35px 0;
+				@include atSize424{
+					display:inline-flex;
+					float:right;
+				}
+
+
 				button {
 					border-radius: 4.1px;
 				  	box-shadow: 0 5px 21px 0 rgba(90, 202, 157, 0.05);
