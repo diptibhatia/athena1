@@ -10,37 +10,37 @@
             </div>
           
         </div>
+         {%if search_key is empty %}
+        {% else %}
         <p style="display:hidden">Showing {{count}} results for "{{search_key}}"</p>
+                                   
+                                        {% endif %}
         <h4>Filter By</h4>
 
         <div class="filter">
           <div class="filter-type">
             <select id="partner hell" name="partner" class="partner">
               <option value="partner">Partner</option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
+              <option value="Scottish Qualifications Authority, UK">Scottish Qualifications Authority, UK</option>
+              <option value="Guglielmo Marconi University, Italy">Guglielmo Marconi University, Italy</option>
+              <option value="Cambridge International Qualifications, UK">Cambridge International Qualifications, UK</option>
+              <option value="Universidad Catolica De Murcia (UCAM), Spain">Universidad Catolica De Murcia (UCAM), Spain</option>
+              <option value="Chartered Management Institute, UK">Chartered Management Institute, UK</option>
             </select>
 
             <select id="language" name="language" class="non-partner">
               <option value="language">Language</option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
+              <option value="EQF evel 7">English</option>
             </select>
 
             <select id="level" name="level" class="non-partner">
               <option value="level">Level</option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
+              <option value="9-36 months">EQF evel 7</option>
             </select>
 
             <select id="duration" name="duration" class="non-partner">
               <option value="duration">Duration</option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
+              <option value="9-36 months">9-36 months</option>
             </select>
             
             </form>
@@ -72,7 +72,7 @@
                 <span>Masters (EQF evel 7)<span> | <span>{{nodedata.field_course_ects_credit.value}} credit(ECTS)</span> | <span>Duration: {{nodedata.field_course_duration.value}}</span>
               </span></span></li>
 
-              <a class="column-2" href="#">Apply Now</a>
+              <a class="column-2" href="{{ url('<front>') }}registration">Apply Now</a>
             </div>
           </div>
         </div>

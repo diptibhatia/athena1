@@ -310,6 +310,9 @@
                                     <img src="{{universities.univ_logo}}" alt="uni-logo">
                                         {% endif %}
                                 </div>
+                                {% if universities.certificates is empty %}
+                                
+                                {% else %}
                                 <div class="certificate">
                                     <div id="carouselExampleIndicators{{numm}}" class="carousel slide" data-ride="carousel" data-interval="false">
                                         {% set carouselnum = 1 %}
@@ -367,6 +370,7 @@
                                     </div>
                                     <p>Click to Enlarge</p>
                                 </div>
+                                {% endif %}
                                 <p class="note">*All certificate and transcript images are for illustrative purposes only and may be 
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
@@ -700,9 +704,9 @@
                                 <p>Country</p>
                                 <input type="text" id="speak_country" placeholder="Country">
                             </div>
-                            <div class="login-item">
+                            <div class="login-item phone-number">
                                 <p>Mobile Number</p>
-                                <input type="number" id="speak_mobile_number" placeholder="Enter Mobile number">
+                                <input type="tel" id="speak_mobile_number" placeholder="Enter Mobile number">
                             </div>
                             <div class="button">
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
