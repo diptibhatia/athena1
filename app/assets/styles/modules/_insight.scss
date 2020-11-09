@@ -260,9 +260,13 @@
 	}
 
 	.navigation {
-		float: right;
-		padding-top: 10px;
-
+		//float: right;
+		padding-top: 20px;
+		display: flex;
+		padding-left: 0px;
+		list-style: none;
+		border-radius: 0.25rem;
+		justify-content: center;
 		a {
 			border: none;
 		}
