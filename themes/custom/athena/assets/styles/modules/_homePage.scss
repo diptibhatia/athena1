@@ -415,7 +415,7 @@
 						  	}
 					  	}
 					  	h1 {
-					  		font-size: 14px;
+					  		font-size: 18px;
 					    	font-weight: bold;
 					    	color: $primaryColor;
 					    	margin: 10px 0 0 5px;
@@ -601,15 +601,7 @@
 						  	font-weight: bold;
 						  	color: $buttonPink;
 						  	position: relative;
-							  top: 10px;
-							  @include atSize424 {
-								font-size: 12px;
-    							top: 0;
-							}
-							@include atSize700{
-								font-size: 14px;
-    							top: 0;
-							}
+						  	top: 10px;
 						}
 						.sub-heading {
 							top: 0;
@@ -627,13 +619,16 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-    			//top: 191rem;
+    			top: 169rem;
     			right: 0;
     			img {
-					width: 350px;
-					top: 350px;
-					position: relative;
-    			}
+    				width: 350px;
+					@media (min-width: 376px) and (max-width: 414px) {
+						position:relative;
+						top: -119px;
+						left: -80px;
+					}
+				}
     		}
     		@media (min-width: 1281px) and (max-width: 1440px) {
     			right: 211px;
@@ -726,7 +721,10 @@
 		  	line-height: 1.33;
 		  	letter-spacing: normal;
 		  	color: $primaryColor;
-		  	margin: 0;
+			margin: 0;
+			@include atSize424{
+				font-size:34px;
+			}
     	}
     	.collaorate-heading {
     		width: 334px;
@@ -787,6 +785,16 @@
     	}
 	}
 	.testimonials {
+		.testimonials-background-image{
+			width: 100%;
+			position: absolute;
+			img{
+				width: 100%;
+				position: absolute;
+				top: 25px;
+				z-index:-1;
+			}
+		}
 		position: relative;
 		top: 200px;
 		@media (max-width:420px){
@@ -802,7 +810,7 @@
 					width: 398px;
     				position: relative;
 					top: -30px;
-					left:-50px;
+					left: -25px;
     				@media (max-width: 424px) {
 						width: 55% !important;
 						position: relative;
@@ -921,7 +929,7 @@
 					    	}
 					    	@include atSize424 {
 								top: 20px;
-    							right: -16px;
+    							right: -8px;
     							img {
     								width: 21px;
   									height: 21px;	
@@ -1083,16 +1091,16 @@
 }
 
 .partners {
-	margin: 140px 30px 50px 30px;
+	margin: 140px 0 50px 0;
 	@include atSize424 {
-		margin: 200px 30px 50px 30px;
+		margin: 200px 20px 50px 20px;
 	}
 	@media (min-width: 480px) and (max-width: 770px){
-		margin: 200px 30px 50px 30px;
+		margin: 200px 0 50px 0;
 		text-align: center;
 	}
 	@media (min-width: 771px) and (max-width: 1024px){
-		margin: 200px 30px 50px 30px;
+		margin: 200px 0 50px 0;
 		text-align: center;	
 	}
 	.info {
@@ -1206,13 +1214,31 @@
 	} 
 }
 .reason-section {
-	margin: 100px 0 0 0;
+	.testimonials-background-image{
+		width: 100%;
+		position: absolute;
+		img{
+			width: 100%;
+			position: absolute;
+			z-index:-1;
+			@media (min-width: 1440px) and (max-width: 2559px){
+				top:0;
+			}
+			@include atSize424{
+				top:-88px;
+			}
+
+
+		}
+	}
+	margin: 100px 0 100px 0;
 	display: flex;
 	@include atSize424 {
 		margin-top:30px;
 	}
 
 	.reason-section-item {
+		img{float:right;}
 		flex: 1;
 		.steps {
 			text-align: left;
@@ -1244,6 +1270,9 @@
 			ul {
 				margin: 0;
 				padding: 0;
+				@include atSize424 {
+					padding:0 20px;
+				}
 				li {
 				  	font-size: 17px;
 				  	line-height: 2.0;
@@ -1253,13 +1282,28 @@
 				  	list-style: none;
 				  	span {
 				  		padding: 0 0 0 15px;
-				  	}
+						@include atSize424 {
+							padding: 0;
+						}
+					}
+					img{
+						float:left;
+						@include atSize424 {
+							padding:0 10px 10px 0;
+						}
+					}
 				}
 			}
 			.actions {
 				display: flex;
 				flex-direction: row;
 				margin: 35px 0;
+				@include atSize424{
+					display:inline-flex;
+					float:right;
+				}
+
+
 				button {
 					border-radius: 4.1px;
 				  	box-shadow: 0 5px 21px 0 rgba(90, 202, 157, 0.05);
@@ -1734,11 +1778,6 @@
     		}
 		}
 	}
-	.title{
-		margin: 100px 0 50px 0;
-		text-align: center;
-		font-size: 36px;
-	}
 	h1 {
 		text-align: center;
 	}
@@ -1783,7 +1822,7 @@
 	  		box-shadow: 0 2px 25px 2px #d5dbfb;
 	  		background-color: #ffffff;
 	  		position: relative;
-	  		margin: 0 28px;
+	  		margin: 0 20px;
 			z-index: 10;
 			@include atSize424 {
 				margin:20px auto;
@@ -1868,7 +1907,7 @@
 				  	}
 			  	}
 			  	h1 {
-			  		font-size: 14px;
+			  		font-size: 18px;
 			    	font-weight: bold;
 			    	color: $primaryColor;
 			    	margin: 10px 0 0 5px;
@@ -2210,13 +2249,4 @@
 	        }
 		}
 	}
-}
-.headerWrap
-{
-	overflow: hidden;
-	display: -webkit-box;
-			-webkit-line-clamp: 3;
-			-webkit-box-orient: vertical;
-	max-width: 90%;
-	font-size: 13px;
 }
