@@ -619,14 +619,14 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-    			top: 169rem;
-    			right: 0;
-    			img {
+				top: 191rem;
+				right: 2rem;
+				img {
     				width: 350px;
 					@media (min-width: 376px) and (max-width: 414px) {
 						position:relative;
 						top: -119px;
-						left: -80px;
+						left: -33px;
 					}
 				}
     		}
@@ -2043,7 +2043,7 @@
 	}
 	@media (min-width: 771px) and (max-width: 1024px){
 		.courses {
-			flex-direction: column;
+			//flex-direction: column;
 			.course-item {
 				margin: 10px auto;
 			}

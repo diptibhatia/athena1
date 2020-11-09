@@ -37,4 +37,10 @@
 	.addPadding{
 		margin-top: 20px;;
 	}
+	.hideinMobileView{
+		display: block;
+		@include atSize424 {
+			display: none;
+		} 
+	}
 }
