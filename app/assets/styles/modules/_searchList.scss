@@ -25,6 +25,11 @@
           position: relative;
           left: 45%;
           top: -50px;
+          @include atSize424{
+            position: absolute;
+            left: 44%;
+            top: 7%;
+          }
           img {
             width: 28px;
             height: 17px;
