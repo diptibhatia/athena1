@@ -407,7 +407,7 @@
 							  	color: white;
 							  	padding: 0 5px;
 							  }
-							  .circle{
+							  .circle {
 							  	&::before {
 									content: ' \25CF';
 								  	font-size: 14px;
@@ -822,7 +822,7 @@
 					width: 398px;
     				position: relative;
 					top: -30px;
-					left: -25px;
+					left: 8px;
     				@media (max-width: 424px) {
 						width: 55% !important;
 						position: relative;
@@ -1816,11 +1816,11 @@
 	}
 	.title{
 		margin: 100px 0 50px 0;
-			text-align: center;
+			text-align: left;
 			font-size: 36px;
 		}
 	h1 {
-		text-align: center;
+		text-align: left;
 	}
 	h2 {
 		font-size: 42px;
@@ -1941,11 +1941,13 @@
 							color: white;
 							padding: 0 5px;
 						}
-						.circle:before {
-								content: ' \25CF';
-								font-size: 14px;
-								color: #ff008e;
-							}
+						.circle {
+							  	&::before {
+									content: ' \25CF';
+								  	font-size: 14px;
+								  	color: #ff008e;
+							  		}
+							  	}
 						}
 					}
 					h1 {
@@ -2096,11 +2098,13 @@
 							color: white;
 							padding: 0 5px;
 						}
-						.circle:before {
-								content: ' \25CF';
-								font-size: 14px;
-								color: #ff008e;
-							}
+						.circle {
+							  	&::before {
+									content: ' \25CF';
+								  	font-size: 14px;
+								  	color: #ff008e;
+							  		}
+							  	}
 						}
 					}
 					h1 {
@@ -2269,7 +2273,7 @@
 }
 
 .footer-banner {
-	margin: 50px 0 0px 0;
+//	margin: 50px 0 0px 0;
 	height: 283px;
 	position: relative;
 
