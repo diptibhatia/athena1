@@ -407,7 +407,7 @@
 							  	color: white;
 							  	padding: 0 5px;
 							  }
-							  .circle{
+							  .circle {
 							  	&::before {
 									content: ' \25CF';
 								  	font-size: 14px;
@@ -1941,11 +1941,13 @@
 							color: white;
 							padding: 0 5px;
 						}
-						.circle:before {
-								content: ' \25CF';
-								font-size: 14px;
-								color: #ff008e;
-							}
+						.circle {
+							  	&::before {
+									content: ' \25CF';
+								  	font-size: 14px;
+								  	color: #ff008e;
+							  		}
+							  	}
 						}
 					}
 					h1 {
@@ -2096,11 +2098,13 @@
 							color: white;
 							padding: 0 5px;
 						}
-						.circle:before {
-								content: ' \25CF';
-								font-size: 14px;
-								color: #ff008e;
-							}
+						.circle {
+							  	&::before {
+									content: ' \25CF';
+								  	font-size: 14px;
+								  	color: #ff008e;
+							  		}
+							  	}
 						}
 					}
 					h1 {
