@@ -33,11 +33,15 @@
                 </a>
             </div> -->
             <div class="course-banner__share">
-                <a href="#">
+                <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare">
                     <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon">
                     Share
                 </a>
-            </div>
+              </div>  
+
+<!-- Modal -->
+
+            
             <div class="course-banner__background">
          
     <img src="{{base_path}}/images/coursepage/course_banner.png" alt="banner">
@@ -48,3 +52,49 @@
             </div>
         </div>
     </div>
+    
+    
+    <div id="myModalsocialshare" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+        <p><!-- Facebook -->
+<a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}course/{{node.id}}" target="_blank">Share to FaceBook</a><br/>
+
+<!-- Twitter -->
+<a href="http://twitter.com/share?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Twitter</a>
+<br/>
+<!-- Google+ -->
+<a href="https://plus.google.com/share?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Google+</a><br/>
+
+<!-- Digg -->
+<a href="http://www.digg.com/submit?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Digg</a><br/>
+
+<!-- Reddit -->
+<a href="http://reddit.com/submit?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Reddit</a><br/>
+
+<!-- LinkedIn -->
+<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}course/{{node.id}}" target="_blank">LinkedIn</a><br/>
+
+<!-- Pinterest -->
+<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">Pinterest</a>
+<br/>
+<!-- StumbleUpon-->
+<a href="http://www.stumbleupon.com/submit?url={{ url('<front>') }}course/{{node.id}}" target="_blank">StumbleUpon</a><br/>
+
+<!-- Email -->
+</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
