@@ -629,8 +629,8 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-				top: 191rem;
-				right: 2rem;
+				top: 181rem;
+				right: 3rem;
 				img {
     				width: 350px;
 					@media (min-width: 376px) and (max-width: 414px) {
@@ -2306,4 +2306,8 @@
 			-webkit-box-orient: vertical;
 	max-width: 90%;
 	font-size: 13px;
+ }
+ .homeBannerContainer
+ {
+	 width:100%;
  }

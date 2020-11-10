@@ -292,4 +292,21 @@
             top: -60px;
         }
     }
+
+    .shareIcon
+    {
+        margin-top: 16px;font-weight:bold;
+        @include atSize424
+        {
+            margin-top: 4px;
+        }
+        a{
+            
+            color:#fff;text-decoration:none;
+        }
+        img{
+            padding-right: 10px;
+        }
+
+    }
 }
