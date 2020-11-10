@@ -51,7 +51,7 @@ class MbaProgramCoursesBlock extends BlockBase {
         $academicnodes = node_load_multiple($academic);
         
     }
-    $popular_courses =  array_slice($academicnodes, 0, 3);
+    $popular_courses =  array_slice($academicnodes, 0, 10);
      
      
     
