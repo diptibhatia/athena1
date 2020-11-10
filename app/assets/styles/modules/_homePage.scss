@@ -1231,6 +1231,8 @@
 			width: 100%;
 			position: absolute;
 			z-index:-1;
+			transform:translateX(-50%);
+			left:50%;
 			@media (min-width: 1440px) and (max-width: 2559px){
 				top:0;
 			}
@@ -1771,6 +1773,28 @@
 		}
 	}
 }
+.custom-carousel{
+	.owl-carousel{
+		.owl-nav{
+			width:100%;
+			position: absolute;
+			transform: translateY(-50%);
+			top: 50%;
+			z-index: 0;
+			button.owl-prev{
+				float: left;
+				position: relative;
+				left: -24px;
+			}
+			button.owl-next{
+				float: right;
+				position: relative;
+				right: -24px;
+			}
+		}
+	}
+}
+
 
 .popular-courses {
 	position:relative;
