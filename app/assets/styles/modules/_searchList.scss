@@ -200,6 +200,7 @@
       object-fit: cover;
     }
     .course-main {
+      width: 100%;
       .course-title {
         text-align: left;
         color: $bl;
@@ -404,6 +405,7 @@
       }
       .course-main {
         margin-left: 50px;
+        width: 100%;
       }
       .course-main .duration {
         margin-top: 35px;
