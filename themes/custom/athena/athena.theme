@@ -99,7 +99,7 @@ foreach($paragraph_univ_data as $explore_data) {
  
  $univ_node = Node::load($university_nid);
  $label_univ = '';
- if(is_object( $univ_node->label())){
+ if(is_object( $univ_node)){
 	$label_univ = $univ_node->label();
     }
        $univ_logo[] = array(
