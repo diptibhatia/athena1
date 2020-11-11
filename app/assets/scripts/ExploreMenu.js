@@ -12,19 +12,25 @@ class ExploreMenu {
     }
 
     events() {
+       
+        if(this.menuIcon)
+        {
+            this.menuIcon.addEventListener("click", (evt) => {
+                this.primaryMenu.classList.toggle('show');
+                this.close.classList.toggle('show');
+                this.mainMenuArrow.classList.toggle('show');
+            }); 
+        }
 
-        this.menuIcon.addEventListener("click", (evt) => {
-            this.primaryMenu.classList.toggle('show');
-            this.close.classList.toggle('show');
-            this.mainMenuArrow.classList.toggle('show');
-        }); 
-
-        this.close.addEventListener("click", (evt) => {
-            evt.stopPropagation();
-            this.primaryMenu.classList.toggle('show');
-            this.close.classList.toggle('show');
-            this.mainMenuArrow.classList.toggle('show');
-        });
+        if(this.close)
+        {
+            this.close.addEventListener("click", (evt) => {
+                evt.stopPropagation();
+                this.primaryMenu.classList.toggle('show');
+                this.close.classList.toggle('show');
+                this.mainMenuArrow.classList.toggle('show');
+            });
+        }
 
         showHide(this.secondaryMenuList, this.secondaryMenuListLength, ".exp-secondary-menu");
 
