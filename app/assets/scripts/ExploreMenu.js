@@ -20,7 +20,7 @@ class ExploreMenu {
                 this.close.classList.toggle('show');
                 this.mainMenuArrow.classList.toggle('show');
             }); 
-        }
+        } 
 
         if(this.close)
         {
@@ -31,7 +31,7 @@ class ExploreMenu {
                 this.mainMenuArrow.classList.toggle('show');
             });
         }
-
+ 
         showHide(this.secondaryMenuList, this.secondaryMenuListLength, ".exp-secondary-menu");
 
         showHide(this.tertiaryMenuList, this.tertiaryMenuListLength, ".exp-tertiary-menu");

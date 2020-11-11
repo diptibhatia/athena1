@@ -8,7 +8,7 @@ class MobileMenu {
         this.AboutSubMenu = document.querySelector(".about .secondary-nav");
         this.events();
     }
-
+ 
     events() {
         //event.preventDefault();
         if(this.MenuIcon)
