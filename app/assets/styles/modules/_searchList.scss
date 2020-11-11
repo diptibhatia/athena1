@@ -41,7 +41,7 @@
           }
           @include atSize424 {
             left: 77%;
-            top: 6.5%;
+            top: 4.5%;
             img {
                   top: 15px;
     left: 12px;
@@ -147,7 +147,7 @@
         margin-left: 10px;
       }
       .filter {
-        margin-left: 10px;
+        /*margin-left: 10px;*/
         display: inline;
         justify-content: left;
         text-align: left;
@@ -173,7 +173,7 @@
       }
       @media only screen and (min-width: 150px) and (max-width: 780px) {
         .search {
-          width: 90%;
+          width: 93%;
           margin: 0 auto;
         }
       }
