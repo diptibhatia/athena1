@@ -176,6 +176,32 @@
         }
 
         updateProgress();
+
+        $(document).scroll(function() {
+            var y = $(document).scrollTop(),
+                header = $(".share-icon ul");
+            if(y <= 1600)  {
+                header.css({position: "fixed"});
+            } else {
+                header.css("position", "relative");
+            }
+        });
+
+        $(document).scroll(function() {
+            var y = $(document).scrollTop(),
+                header = $(".share-icon.mobile-share-icon ul");
+            if(y <= 3200)  {
+                header.css({position: "fixed"});
+            } else {
+                header.css("position", "relative");
+            }
+        });
+
+        const mq = window.matchMedia( "(max-width: 700px)" );
+
+        if (mq.matches) {
+          $('.insight-wrapper .share-icon').addClass('mobile-share-icon');
+        }
     </script>
         <!-- GetButton.io widget -->
 <script type="text/javascript">
