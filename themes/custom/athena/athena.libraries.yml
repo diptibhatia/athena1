@@ -13,8 +13,6 @@ global-js:
   js:
     js/main.js: {}
     js/jquery.min.js: {}
-    script.js: {}
-    'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js': { type: external }
     js/bootstrap.min.js: {}
     js/fontawesome.min.js: {}
     js/MobileMenu.js: {}
