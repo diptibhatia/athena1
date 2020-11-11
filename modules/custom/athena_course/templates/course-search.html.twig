@@ -50,7 +50,7 @@
     </section>
     
    
-    <section class="courses">
+    <section class="courses my-container">
        {% for nodedata in node %}
       <div class="card">
         <div class="course-sidebar">
@@ -69,7 +69,7 @@
           <div class="duration">
             <div class="row">
               <li class="column-1" style="list-style: none">
-                <span>Masters (EQF evel 7)<span> | <span>{{nodedata.field_course_ects_credit.value}} credit(ECTS)</span> | <span>Duration: {{nodedata.field_course_duration.value}}</span>
+                <span>Masters (EQF evel 7)<span> | <span>{{nodedata.field_course_ects_credit.value}} credit(ECTS)</span> | <span class="duration-text">Duration: {{nodedata.field_course_duration.value}}</span>
               </span></span></li>
 
               <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>

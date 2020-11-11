@@ -41,7 +41,7 @@
           }
           @include atSize424 {
             left: 77%;
-            top: 6.5%;
+            top: 4.5%;
             img {
                   top: 15px;
     left: 12px;
@@ -93,9 +93,9 @@
       display: inline;
       justify-content: left;
       text-align: left;
-      @include atSize424 {
+      /*@include atSize424 {
         display: none !important;
-      }
+      }*/
 
       .filter-type {
         display: inline;
@@ -147,7 +147,7 @@
         margin-left: 10px;
       }
       .filter {
-        margin-left: 10px;
+        /*margin-left: 10px;*/
         display: inline;
         justify-content: left;
         text-align: left;
@@ -157,20 +157,23 @@
           justify-content: left;
           text-align: left;
           margin: 0px 0px 0px 0px;
+          flex-direction: column;
+          width: 100%;
 
           select {
             padding: 5px;
             float: left;
             margin-right: 5px;
-            width: auto;
             border: 1px solid $wt;
             font-size: small;
+            width: 92% !important;
+            margin: 10px auto;
           }
         }
       }
       @media only screen and (min-width: 150px) and (max-width: 780px) {
         .search {
-          width: 90%;
+          width: 93%;
           margin: 0 auto;
         }
       }
@@ -192,6 +195,14 @@
     text-align: left;
     padding: 0px;
     border: none;
+    @media (max-width: 470px) {
+      width: 100%;
+      max-width: 100%;
+      margin: 10px auto;
+      .course-sidebar {
+        display: none;
+      }
+    }
     .course-img {
       margin: 0;
       padding: 0;
@@ -207,18 +218,29 @@
         padding: 10px;
         font-size: 18px;
         margin: 0px 30px;
+        @media (max-width: 470px) {
+          margin: 0 10px;
+        }
       }
       .course-partner {
         padding-left: 10px;
         color: $boldtext;
         font-size: 14px;
         margin: -6px 30px 0 30px;
+        @media (max-width: 470px) {
+          margin: 0 10px;
+        }
       }
       .course-info {
         padding-left: 10px;
         font-size: 14px;
         color: #606060;
         margin: 0 30px;
+        height: 52px;
+        @media (max-width: 470px) {
+          height: 150px;
+          margin: 0 10px;
+        }
       }
       .tag {
         position: absolute;
@@ -265,7 +287,10 @@
             margin: 0 9px;
           }
           @media (max-width: 430px) {
-            padding: 0 17px;
+            padding: 0 35px;
+            .duration-text {
+              padding-left: 18px;
+            }
           }
 
           &::before {
