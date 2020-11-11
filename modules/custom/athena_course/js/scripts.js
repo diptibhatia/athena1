@@ -1,6 +1,21 @@
 
         jQuery(document).ready(function() {
             
+             jQuery("#news-letter-subscribe").click(function() {
+               
+                 
+                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  if(!regex.test(jQuery('#newsletter-email-input').val())) {
+    jQuery("#newsletter-info-box-error").html("Invalid Email id");
+    jQuery("#newsletter-info-box-error").removeClass('hide');
+    jQuery('#newsletter-info-box-error').css('display','inherit');
+  }else{
+       jQuery('#newsletter-info-box-error').css('display','none');
+      jQuery("#newsletter-info-box").html("Subscribed Successfullly");
+       jQuery('#newsletter-info-box').css('display','inherit');
+                 jQuery("#newsletter-info-box").removeClass('hide');
+  }
+                 });
             jQuery("#speak_submit").click(function() {
                 var msg = '';
                 if(jQuery("#speak_first_name").val() == '') {

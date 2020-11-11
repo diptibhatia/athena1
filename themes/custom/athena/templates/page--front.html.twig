@@ -128,10 +128,16 @@
           </div>
           </div>
           <span>Subscribe to our newsletter</span>
-          <div class="news-letter">
-            <input type="email" class="form-control" placeholder="abc@xyz.com" />
+          <div class="alert alert-success hide" style="display:none" id="newsletter-info-box">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+<div class="alert alert-danger" style="display:none" id="newsletter-info-box-error">
+  Invaid Emaill ID
+</div>
+          <div class="news-letter" >
+            <input type="email" id="newsletter-email-input" class="form-control" placeholder="abc@xyz.com" />
           </div>
-          <button type="button" class="btn btn-sm mt-3 btn-outline violet-btn">Subscribe</button>
+          <button id="news-letter-subscribe" type="button" class="btn btn-sm mt-3 btn-outline violet-btn">Subscribe</button>
         </div>
       </div>
       <div class="col-md-6 hideinMobileView">
