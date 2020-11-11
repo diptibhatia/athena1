@@ -266,6 +266,9 @@
           }
           @media (max-width: 430px) {
             padding: 0 17px;
+            .duration-text {
+              padding-left: 18px;
+            }
           }
 
           &::before {
