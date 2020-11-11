@@ -37,10 +37,36 @@
 	.addPadding{
 		margin-top: 20px;;
 	}
-	.hideinMobileView{
+	
+}
+.hideinMobileView{
+	display: block;
+	@include atSize424 {
+		display: none;
+	} 
+}
+.showinMobileView{
+	display: none;
+	padding-bottom: 20px;
+	text-align: center;
+	@include atSize424 {
 		display: block;
-		@include atSize424 {
-			display: none;
-		} 
+	} 
+}
+.Buttoninfo {
+	button {
+		border-radius: 30px;
+		  border: solid 2px $buttonPink;
+		  color: $buttonPink;
+		  padding: 5px 10px;
+		  cursor: pointer;
+		  outline: none;
+		  background: white;
+		  width: 186px;
+		  height: 50px;
+		  &:hover {
+			color: white;
+			background: $buttonPink;
+		}
 	}
 }
