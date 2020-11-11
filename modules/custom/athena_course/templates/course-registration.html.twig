@@ -35,11 +35,15 @@
                         </div>
                         <div class="login-item">
                             <p>Highest Qualification</p>
-                            <select name="course" id="course">
-                                <option value="course 1" default="">course 1</option>
-                                <option value="course 2">course 2</option>
-                                <option value="coourse 3">course 3</option>
-                            </select>
+                           <select name="ctl00$MainContent$ddlQualification" id="MainContent_ddlQualification" tabindex="6" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
+		<option value="">Select your highest qualification</option>
+		<option value="Masters Degree">Masters Degree</option>
+		<option value="Bachelors Degree">Bachelors Degree</option>
+		<option value="Diploma">Diploma</option>
+		<option value="A Level">A Level</option>
+		<option value="Others">Others</option>
+
+	</select>
                         </div>
                         <div class="login-item names">
                             <div class="name-item">
@@ -52,8 +56,17 @@
                             </div>
                         </div>
                         <div class="login-item">
-                            <p>Level of Employment</p>
-                            <input type="text" placeholder="Employment Level">
+                            <p>Level of employment</p>
+                            <select name="ctl00$MainContent$ddlEmployment" id="MainContent_ddlEmployment" tabindex="9" class="form-control">
+		<option selected="selected" value="">Select level of employment</option>
+		<option value="1">Clerical/Support/Entry Level</option>
+		<option value="2">Supervisory/Team Leader Level</option>
+		<option value="3">Manager/Middle Management</option>
+		<option value="4">Heads/Senior Management</option>
+		<option value="5">CEO/COO/CFO/MD/GM- Executive Management </option>
+		<option value="6">Administrative/Officer Level</option>
+
+	</select>
                         </div>
                         <div class="login-item">
                             <p>Password</p>

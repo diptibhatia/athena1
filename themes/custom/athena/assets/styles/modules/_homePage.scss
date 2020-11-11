@@ -136,7 +136,7 @@
 
 .img-placeholder {
 	position: absolute;
-    top: 165rem;
+    top: 164.5rem;
     width: 618px;
     height: 397px;
     background-color: #eaedf9;
@@ -144,11 +144,13 @@
     	display: none;
     }
     @media (min-width: 1281px) and (max-width: 1439px){
-    	width: 703px;
+		width: 728px;
+		height:468px;
     }
     @media (min-width: 1440px) and (max-width: 2559px){
-    	width: 696px;
-    	height: 372px;
+    	width: 803px;
+		height: 448px;
+		top:167.5rem;
     }
     @media (min-width: 2560px) {
     	width: 1257px;
@@ -183,7 +185,7 @@
 	    color: #303030;
 	    margin: 10px 0;
 	    @include atSize424 {
-	    	margin: 80px 0 10px 0;
+	    	margin: 160px 0 10px 0;
 	    }
 	}
 	p {
@@ -658,6 +660,13 @@
     			display: none;
     		}
 		}
+		.laptop-bg-mobile{
+			position: absolute;
+			margin-top: 290px;
+			img{
+				width: 90%;
+			}
+		}
 		.why-athena-item-two {
 			flex: 0.6;
 			z-index: 10;
@@ -746,8 +755,10 @@
 				display: none;
 		  	}
 		  	@media (max-width: 550px){
-				width: 100%;
-				margin: 6px 0;
+				width: 273px;
+				margin: -46px 0 46px 20px;
+				position: relative;
+				
 			}
     	}
     	.collaborate-section {
@@ -757,28 +768,36 @@
 		  	line-height: 1.63;
 		  	letter-spacing: normal;
 		  	position: relative;
-		  	top: 60px;
+		  	top: 45px;
 		  	@include atSize424 {
-		  		flex-direction: column;
+				  flex-direction: column;
+				  top:60px;
 		  	}
 		  	@media (max-width: 550px){
 				flex-direction: column;
 			}
     		.collaborate-item {
     			flex: 1;
-    			padding: 0 30px;
+    			padding: 0 85px;
     			/*&.img-placeholder {*/
     				/*width: 627px;*/
 				  	/*height: 385px;*/
 				  	/*background-color: rgba(234, 237, 249, 0.6);*/
 				  	img {
-				  		width: 100%;
+				  		width: 127%;
 				  		height: auto;
 				  		position: relative;
-    					top: -61px;
-				  	}
+    					top: -38px;
+						@media (min-width: 1440px) and (max-width: 2559px){
+							width: 103%;
+							position:relative;
+							left:120px;
+						}
+					}
 				  	@include atSize424 {
-				  		width: 100%;
+						width: 100%;
+						padding: 0 30px;
+
 				  		img {
 				  			width: 100%;
 				  		}
@@ -787,7 +806,11 @@
     			h2 {
     				color: $buttonPink;
     				font-weight: bold;
-				  	font-size: 20px;
+					font-size: 20px;
+					margin-top:37px; 
+					@include atSize424{
+						margin-top:0; 
+					}
     			}
     			p {
     				color: $primaryColor;
@@ -800,6 +823,9 @@
 		.testimonials-background-image{
 			width: 100%;
 			position: absolute;
+			@include atSize424{
+				display:none;
+			}
 			img{
 				width: 100%;
 				position: absolute;
@@ -956,8 +982,20 @@
 				 			font-weight: bold;
 				 			padding: 20px 0 0 0;
 				 			font-size: 18px;
-				 			span {
-				 				font-size: 42px;
+							 @include atSize424{
+								font-size:13px;
+								position:relative;
+							}
+
+
+							span {
+								 font-size: 42px;
+								@include atSize424{
+								font-size: 36px;
+								position: absolute;
+								left: -15px;
+								top: 3px;
+   									 }
 				 			}
 				 		}
 				 		p {
@@ -988,14 +1026,15 @@
 				}
 				.item-two {
 					margin: 0;
+					padding-left:20px;
 					.student-review {
 						margin: 30px 0;
 						width: 100%;
 						.student-image {
 							width: 48px;
   							height: 48px;
-  							top: -20px;
-    						left: 1px;
+  							top: 22px;
+    						left: -17px;
   							img {
   								width: 48px;
   								height: 48px;
@@ -1003,6 +1042,8 @@
 						}
 						.info {
 							font-size: 15px;
+							margin:0 0 0 6px;
+							
 							p {
 								font-size: 13px;
 							}
@@ -1026,8 +1067,8 @@
 						.student-image {
 							width: 48px;
   							height: 48px;
-  							top: -20px;
-    						left: 1px;
+  							top: 20px;
+    						left: -16px;
   							img {
   								width: 48px;
   								height: 48px;
@@ -1058,8 +1099,8 @@
 						.student-image {
 							width: 48px;
   							height: 48px;
-  							top: -20px;
-    						left: 1px;
+  							top: 20px;
+    						left: -14px;
   							img {
   								width: 48px;
   								height: 48px;
@@ -2382,6 +2423,12 @@
 
 .home-wrapper {
 	.banner {
+		.home-banner-small {
+			@include atSize424{
+				position: relative;
+				top: 138px;
+			}
+		}
 
 		&-image {			
 			position: relative;
