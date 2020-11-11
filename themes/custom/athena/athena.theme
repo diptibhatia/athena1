@@ -98,8 +98,12 @@ foreach($paragraph_univ_data as $explore_data) {
  $university_nid = $explore_data->get('field_university')->value;
  
  $univ_node = Node::load($university_nid);
+ $label_univ = '';
+ if(is_object( $univ_node->label()){
+	$label_univ = $univ_node->label();
+    }
        $univ_logo[] = array(
-       'label' => $univ_node->label(),
+       'label' => $label_univ,
        'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
        );
           

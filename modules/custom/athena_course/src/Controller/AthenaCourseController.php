@@ -1265,7 +1265,7 @@ $query->condition('field_course_category', 'Academic');
     $academic_list = $query->execute();
     
    $academicnodes = node_load_multiple($academic_list);
-
+$academicnodes =  array_slice($academicnodes, 0, 3);
 $academic =  [
   '#theme' => 'course_academic',
   '#title1' => $title1,  
@@ -1326,6 +1326,7 @@ $query->condition('field_course_category', 'Micro Credits');
     $academic_list = $query->execute();
     
    $academicnodes = node_load_multiple($academic_list);
+   $academicnodes =  array_slice($academicnodes, 0, 3);
 
 $academic =  [
   '#theme' => 'course_academic',
@@ -1387,6 +1388,7 @@ $query->condition('field_course_category', 'Certifications');
     $academic_list = $query->execute();
     
    $academicnodes = node_load_multiple($academic_list);
+   $academicnodes =  array_slice($academicnodes, 0, 3);
 
 $academic =  [
   '#theme' => 'course_academic',
