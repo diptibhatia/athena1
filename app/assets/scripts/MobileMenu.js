@@ -13,7 +13,7 @@ class MobileMenu {
         //event.preventDefault();
         if(this.MenuIcon)
         {
-            this.MenuIcon.addEventListener("click", () => this.toggleTheAboutMenu());
+            this.MenuIcon.addEventListener("click", () => this.toggleTheMenu());
         }
         if(this.AboutMenu)
         {
