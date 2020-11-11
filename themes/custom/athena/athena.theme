@@ -102,9 +102,12 @@ foreach($paragraph_univ_data as $explore_data) {
  if(is_object( $univ_node)){
 	$label_univ = $univ_node->label();
     }
+     if(is_object( $univ_node->get('field_logo')->entity)){
+	$uu_logo =file_create_url($univ_node->get('field_logo')->entity->uri->value);
+    }
        $univ_logo[] = array(
        'label' => $label_univ,
-       'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+       'logo'=> $uu_logo
        );
           
 }
