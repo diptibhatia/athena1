@@ -8,11 +8,17 @@ class MobileMenu {
         this.AboutSubMenu = document.querySelector(".about .secondary-nav");
         this.events();
     }
-
+ 
     events() {
         //event.preventDefault();
-        this.MenuIcon.addEventListener("click", () => this.toggleTheMenu());
-        this.AboutMenu.addEventListener("click", () => this.toggleTheAboutMenu());
+        if(this.MenuIcon)
+        {
+            this.MenuIcon.addEventListener("click", () => this.toggleTheAboutMenu());
+        }
+        if(this.AboutMenu)
+        {
+            this.AboutMenu.addEventListener("click", () => this.toggleTheAboutMenu());
+        }
     }
 
     toggleTheMenu() {
