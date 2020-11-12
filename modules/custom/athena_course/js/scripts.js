@@ -64,7 +64,7 @@ IsAccepted:true,
 Employmentlevel:String(jQuery("#reg_level").val())
        };
        
-$.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
+jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
