@@ -185,7 +185,8 @@
 	    color: #303030;
 	    margin: 10px 0;
 	    @include atSize424 {
-	    	margin: 160px 0 10px 0;
+			margin: 168px 0 10px 0;
+			font-size:28px;
 	    }
 	}
 	p {
@@ -493,7 +494,7 @@
 		img {
 			width: 100%;
 			position: absolute;
-			top: 25px;
+			top: 178px;
 		}
 	}
 	.athena-section {
