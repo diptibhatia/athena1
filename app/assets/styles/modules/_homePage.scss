@@ -633,7 +633,7 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-				top: 181rem;
+				top: 193rem;
 				right: 3rem;
 				img {
     				width: 350px;
@@ -752,11 +752,11 @@
 		    border: solid 2px $buttonPink;
 		    margin: 6px 0 0 216px;
 		    @include atSize424 {
-				display: none;
+				display: block;
 		  	}
 		  	@media (max-width: 550px){
 				width: 273px;
-				margin: -46px 0 46px 20px;
+				margin: -46px 0 46px 13px;
 				position: relative;
 				
 			}
@@ -984,19 +984,19 @@
 				 			padding: 20px 0 0 0;
 				 			font-size: 18px;
 							 @include atSize424{
-								font-size:13px;
+								font-size:12px;
 								position:relative;
 							}
 
 
-							span {
-								 font-size: 42px;
+							span{
+								font-size: 42px;
 								@include atSize424{
-								font-size: 36px;
+								font-size: 26px;
 								position: absolute;
-								left: -15px;
-								top: 3px;
-   									 }
+								left: -12px;
+								top: 10px;
+								} 
 				 			}
 				 		}
 				 		p {
@@ -1010,8 +1010,18 @@
 				 		}
 				 		.student-info {
 				 			color: $primaryColor;
-				 			font-size: 14px;
-				 		}
+							 font-size: 14px;
+						}
+						@include atSize479{
+							img{
+								float: right;
+								position: relative;
+								margin: -61px 10px 0 0;
+								width:27px;
+								height:auto;
+							}
+
+						}
 				 	}
 				}
 				button {
@@ -1071,7 +1081,7 @@
 						}
 						.info {
 							font-size: 15px;
-							margin:0 0 0 6px;
+							margin:0 0 0 0;
 							
 							p {
 								font-size: 13px;
@@ -1107,7 +1117,7 @@
 						.info {
 							font-size: 15px;
 							p {
-								font-size: 13px;
+								font-size: 12px;
 							}
 						}
 					}
@@ -1125,7 +1135,7 @@
 					.student-review {
 						margin: 30px 0;
 						width: 100%;
-						height: 264px;
+						height: auto;
 						.student-image {
 							width: 48px;
   							height: 48px;
