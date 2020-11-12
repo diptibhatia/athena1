@@ -1,5 +1,106 @@
 
         jQuery(document).ready(function() {
+             jQuery("#registration_form").click(function() {
+                 
+                 
+                var msg = '';
+                if(jQuery("#reg_first_name").val() == '') {
+                    msg += '\n\u2022  First name cannot be empty';
+                }
+                if(jQuery("#reg_last_name").val() == '') {
+                    msg += '\n\u2022  Last name cannot be empty';
+                }
+                if(jQuery("#reg_email").val() == '') {
+                    msg += '\n\u2022  Email cannot be empty';
+                }
+                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  if(!regex.test(jQuery("#reg_email").val())) {
+    msg += '\n\u2022  Invalid Email id';
+  }
+                if(jQuery("#reg_mobile_num").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
+                 if(jQuery("#reg_qual").val() == '') {
+                    msg += '\n\u2022  please select Qualification';
+                }
+                 if(jQuery("#reg_exp").val() == '') {
+                    msg += '\n\u2022  Enter experience field';
+                }
+                if(jQuery("#reg_months").val() == '') {
+                    msg += '\n\u2022  Enter Months field';
+                }
+                 if(jQuery("#reg_level").val() == '') {
+                    msg += '\n\u2022  Please select Level of employment';
+                }
+                 if(jQuery("#reg_pass").val() == '') {
+                    msg += '\n\u2022  Please Enter password';
+                }
+                 if(jQuery("#reg_confirm_pass").val() == '') {
+                    msg += '\n\u2022 please confirm pass';
+                }
+                
+                if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
+                     msg += '\n\u2022 password and confirm password do not match'; 
+                }
+
+                if(!jQuery("#reg_terms").prop('checked') == true){
+                     msg += '\n\u2022 please accept consent terms';
+                }
+                
+                if(msg == ''){
+                    var sendInfo = {
+           UserName: String(jQuery("#reg_email").val()),
+Password:String(jQuery("#reg_pass").val()),
+FirstName:String(jQuery("#reg_first_name").val()),
+LastName:String(jQuery("#reg_last_name").val()),
+Email:String(jQuery("#reg_email").val()),
+CountryId:99,
+ContactNo:String(jQuery("#reg_mobile_num").val()),
+CourseId:1,
+Highestqualification:String(jQuery("#reg_qual").val()),
+Yearsofexperience:parseInt(jQuery("#reg_exp").val()),
+Monthofexperience:parseInt(jQuery("#reg_months").val()),
+IsAccepted:true,
+Employmentlevel:String(jQuery("#reg_level").val())
+       };
+       
+$.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
+                        type: 'POST',  // http method
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(sendInfo) ,  // data to submit
+                         dataType: 'json',
+                        success: function (data, status, xhr) {
+                            var txt;
+                            var r = confirm("Registration Successful, you will be redirected to login page now.");
+                            if (r == true) {
+                             // txt = "You pressed OK!";
+                            } else {
+                              //txt = "You pressed Cancel!";
+                            }
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                                if(jqXhr.status == 200) {
+                                    var r = confirm("Registration Successful, you will be redirected to login page now.");
+                            if (r == true) {
+                             window.location.replace("http://portal.athena.edu/login");
+                            } else {
+                              //txt = "You pressed Cancel!";
+                            }  
+                                    
+                                }
+                        }
+                    });
+       
+       
+       
+       
+                }else {
+                    
+                    alert(msg)
+                }
+            
+             });
             
              jQuery("#news-letter-subscribe").click(function() {
                
