@@ -1,5 +1,7 @@
 
         jQuery(document).ready(function() {
+            jQuery("#phone").intlTelInput();
+            jQuery("#reg_mobile_num").intlTelInput();
              jQuery("#registration_form").click(function() {
                  
                  

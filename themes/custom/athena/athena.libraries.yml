@@ -15,6 +15,7 @@ global-js:
     js/jquery.min.js: {}
     js/bootstrap.min.js: {}
     js/fontawesome.min.js: {}
+    js/intlTelInput.min.js: {}
     js/MobileMenu.js: {}
     js/regular.min.js: {}
     js/bundled.js: {}

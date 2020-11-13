@@ -1,3 +1,6 @@
+<head>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
+    </head>
 <div class="container-fluid p-0 about-us-wrapper">
 
         <div class="container bg-white login-wrapper">
@@ -21,10 +24,10 @@
                             <p>Email</p>
                             <input type="email" id="reg_email" placeholder="Enter Email Address">
                         </div>
-                        <div class="login-item">
-                            <p>Mobile Number</p>
-                            <input type="number" id="reg_mobile_num" placeholder="Enter Mobile number">
-                        </div>
+                        <div class="login-item phone-number">
+                                <p>Mobile Number</p>
+                                <input type="tel" id="reg_mobile_num" placeholder="Enter Mobile number">
+                            </div>
                         <div class="login-item">
                             <p>Choose your Course</p>
                             <select name="course" id="reg_course">
@@ -92,3 +95,7 @@
             </div>
         </div>
     </div>
+    
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
