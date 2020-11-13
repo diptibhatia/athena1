@@ -185,7 +185,7 @@
 	    color: #303030;
 	    margin: 10px 0;
 	    @include atSize424 {
-			margin: 168px 0 10px 0;
+			margin: 114px 0 10px 0;
 			font-size:28px;
 	    }
 	}
@@ -496,7 +496,7 @@
 			position: absolute;
 			top:0;
 			@include atSize424{
-				top:178px;
+				top:104px;
 			}
 		}
 	}
@@ -537,7 +537,7 @@
 				margin: 30px 100px;
 			}
 			@media (max-width: 550px){
-				margin: 30px 8px;
+				margin: 0 8px 30px;
 			}
 			h1 {
 				font-family: Lato;
