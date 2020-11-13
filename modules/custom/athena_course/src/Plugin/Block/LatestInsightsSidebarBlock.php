@@ -83,7 +83,7 @@ $query->condition('field_is_popular_course', '1', '=');
     $academicnodes = node_load_multiple($academic);
         
     }
-     $popular_courses =  array_slice($academicnodes, 0, 5);
+     $popular_courses =  array_slice($academicnodes, 0, 3);
      
 
   $base_path = $base_url.'/'. $theme->getPath();
