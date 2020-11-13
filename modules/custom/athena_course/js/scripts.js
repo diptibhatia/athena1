@@ -51,6 +51,9 @@
                 if(jQuery("#reg_email").val() == '') {
                     msg += '\n\u2022  Email cannot be empty';
                 }
+                if(jQuery("#reg_country").val() == '') {
+                    msg += '\n\u2022  please select country';
+                }
                  var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   if(!regex.test(jQuery("#reg_email").val())) {
     msg += '\n\u2022  Invalid Email id';
