@@ -90,7 +90,7 @@ $query->condition('field_is_popular_course', '1', '=');
     $latest_insights_sidebar =  [
     '#theme' => 'latest_insights_sidebar',
     '#insig' => $latest_insights,
-    '#popular' => $academicnodes,
+    '#popular' => $popular_courses,
     '#base_path' => $base_path,
 
   ]; 

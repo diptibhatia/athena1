@@ -1,7 +1,43 @@
 
         jQuery(document).ready(function() {
             jQuery("#phone").intlTelInput();
-            jQuery("#reg_mobile_num").intlTelInput();
+            jQuery("#get_in_touch_mobile").intlTelInput();
+            jQuery("#contact_form_phone").intlTelInput();
+            
+            
+            jQuery("#get_in_touch").click(function() {
+                 var msg = '';
+                if(jQuery("#get_in_touch_fname").val() == '') {
+                    msg += '\n\u2022  First name cannot be empty';
+                }
+                if(jQuery("#get_in_touch_lname").val() == '') {
+                    msg += '\n\u2022  Last name cannot be empty';
+                }
+                if(jQuery("#get_in_touch_email").val() == '') {
+                    msg += '\n\u2022  Email cannot be empty';
+                }
+                                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  if(!regex.test(jQuery("#get_in_touch_email").val())) {
+    msg += '\n\u2022  Invalid Email id';
+  }
+  if(!jQuery("#get_in_touch_consent").prop('checked') == true){
+                     msg += '\n\u2022 please accept consent terms';
+                }
+                
+  
+  
+                if(jQuery("#get_in_touch_mobile").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
+                
+                if(msg =='') {
+                    alert("Thank you!! we'll get in touch with you shortly")
+                    
+                }else {
+                    
+                    alert(msg)
+                }
+            });
              jQuery("#registration_form").click(function() {
                  
                  
