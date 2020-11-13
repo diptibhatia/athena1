@@ -58,7 +58,9 @@
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
                               &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}
+                           <img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" />
+                           </div>
                         </div>
                      </div>
                   {% elseif loop.index ==3 %}
@@ -76,7 +78,9 @@
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
                               &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
-                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}</div>
+                           <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}
+                           <img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" />
+                           </div>
                         </div>
                      </div>
                   {% endif %}
