@@ -39,11 +39,58 @@ class LatestInsightsSidebarBlock extends BlockBase {
          
   // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();
+  
+  
+  //popular courses
+  
+    $ip = $_SERVER['REMOTE_ADDR']; // This will contain the ip of the request
+
+// You can use a more sophisticated method to retrieve the content of a webpage with php using a library or something
+// We will retrieve quickly with the file_get_contents
+$dataArray = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip));
+
+
+$ccd = $dataArray->geoplugin_countryCode;
+
+$key = "field_is_popular_course";
+$value = 1;
+if(!empty($ccd)) {
+    
+    $key = "field_course_country";
+    $value = $ccd;
+}
+
+
+  $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition($key, $value, '=');
+    $query->condition('type', $bundle);
+    $academic = $query->execute();
+    
+    //$academicnodes = node_load_multiple($academic);
+    
+    if(empty($academicnodes)) {
+          $bundle='course';
+     $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition('field_is_popular_course', '1', '=');
+    $query->condition('type', $bundle);
+    $academic = $query->execute();
+    
+    $academicnodes = node_load_multiple($academic);
+        
+    }
+     $popular_courses =  array_slice($academicnodes, 0, 5);
+     
 
   $base_path = $base_url.'/'. $theme->getPath();
     $latest_insights_sidebar =  [
     '#theme' => 'latest_insights_sidebar',
     '#insig' => $latest_insights,
+    '#popular' => $academicnodes,
     '#base_path' => $base_path,
 
   ]; 
