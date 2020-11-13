@@ -494,13 +494,16 @@
 		img {
 			width: 100%;
 			position: absolute;
-			top: 178px;
+			top:0;
+			@include atSize424{
+				top:178px;
+			}
 		}
 	}
 	.athena-section {
 		display: flex;
 		width: 100%;
-		margin: 83px 0 0 0;
+		margin: 33px 0 0 0;
 		@include atSize424 {
 			flex-direction: column;
 			width: 100%;
