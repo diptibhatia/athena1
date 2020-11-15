@@ -24,7 +24,7 @@
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
                            
-                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{ url('<front>') }}insights/testimonials" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
                            <h3><span>“</span>
@@ -33,7 +33,7 @@
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
                            </p>
                           
                            <div class="student-info">
@@ -47,7 +47,7 @@
                      <div class="student-review two">
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
-                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{ url('<front>') }}insights/testimonials" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
                            <h3><span>“</span>
@@ -56,7 +56,7 @@
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}
                            <img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" />
@@ -67,7 +67,7 @@
                      <div class="student-review">
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
-                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{ url('<front>') }}insights/testimonials" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
                         </div>
                         <div class="info">
                            <h3><span>“</span>
@@ -76,7 +76,7 @@
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">{{testidata.field_testimonial_name_and_desig.value|raw}}
                            <img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" />
