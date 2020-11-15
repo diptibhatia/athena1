@@ -185,9 +185,21 @@
 	    color: #303030;
 	    margin: 10px 0;
 	    @include atSize424 {
-			margin: 168px 0 10px 0;
+			margin: 114px 0 10px 0;
 			font-size:28px;
 	    }
+		@media screen and (min-width:1441px) and (max-width:1920px){
+			margin-top: 32rem;
+			position: relative;
+			display: block;
+		}
+		@media screen and (min-width:1921px){
+			margin-top: 51rem;
+			position: relative;
+			display: block;
+		}
+		
+
 	}
 	p {
 		font-family: Lato;
@@ -496,7 +508,7 @@
 			position: absolute;
 			top:0;
 			@include atSize424{
-				top:178px;
+				top:104px;
 			}
 		}
 	}
@@ -537,7 +549,7 @@
 				margin: 30px 100px;
 			}
 			@media (max-width: 550px){
-				margin: 30px 8px;
+				margin: 0 8px 30px;
 			}
 			h1 {
 				font-family: Lato;
@@ -590,20 +602,20 @@
 						  	margin: 0;
 						  	button {
 						  		margin: 30px 0;
-			border-radius: 30px;
-  			border: solid 2px $titlePink;
-  			color: $titlePink;
-  			padding: 5px 20px;
-  			cursor: pointer;
-  			background: white;
-  			outline: none;
-  			width: 186px;
-  			height: 50px;
-  			&:hover {
-				color: white;
-				background: $buttonPink;
-			}
-		}
+								border-radius: 30px;
+								border: solid 2px $titlePink;
+								color: $titlePink;
+								padding: 5px 20px;
+								cursor: pointer;
+								background: white;
+								outline: none;
+								width: 186px;
+								height: 50px;
+								&:hover {
+									color: white;
+									background: $buttonPink;
+								}
+							}
 						}
 						span {
 							font-size: 19px;
@@ -617,7 +629,6 @@
 							  	top: 0;
 							  }
 							@include atSize700{
-								font-size: 14px;
 								top: 0;
 							}
 						}
@@ -884,6 +895,7 @@
     				@media (max-width: 424px) {
 						text-align:left;
 						left:16px;
+						width:95%;
     				}
 
 
@@ -1006,7 +1018,7 @@
 				 		p {
 				 			color: $primaryColor;
 				 			font-size: 14px;
-				 			width: 92%;
+				 			width: 88%;
 				 			span {
 				 				font-weight: bold;
 				 				color: $buttonPink;
@@ -1020,7 +1032,7 @@
 							img{
 								float: right;
 								position: relative;
-								margin: -61px 10px 0 0;
+								margin: 22px 10px 0 0;
 								width:27px;
 								height:auto;
 							}
@@ -1312,8 +1324,18 @@
 }
 .reason-section {
 	.testimonials-background-image{
-		width: 96%;
+		width: 100%;
 		position: absolute;
+		z-index:-1;
+		left:50%;
+		transform:translateX(-50%);
+		margin-top:0;
+		@media screen and (min-width:1441px) and (max-width:1920px){
+			margin-top:-16rem;
+		}
+		@media screen and (min-width:1921px){
+			margin-top:-33rem;
+		}
 		img{
 			width: 100%;
 			position: absolute;
