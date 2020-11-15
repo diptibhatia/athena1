@@ -189,12 +189,12 @@
 			font-size:28px;
 	    }
 		@media screen and (min-width:1441px) and (max-width:1920px){
-			margin-top: 32rem;
+			margin-top: 0;
 			position: relative;
 			display: block;
 		}
 		@media screen and (min-width:1921px){
-			margin-top: 51rem;
+			margin-top: 0;
 			position: relative;
 			display: block;
 		}
@@ -838,6 +838,16 @@
 		.testimonials-background-image{
 			width: 100%;
 			position: absolute;
+			transform:translateX(-50%);
+			left:50%;
+			z-index:-1;
+			margin-top:0;
+			@media screen and (min-width:1441px) and (max-width:1920px){
+				margin-top:-16rem;
+			}
+			@media screen and (min-width:1921px){
+				margin-top:-31rem;
+			}
 			@include atSize424{
 				display:none;
 			}
