@@ -176,11 +176,11 @@
 	text-align: center;
 	.wrapper{
 		@media screen and (min-width:1441px) and (max-width:1920px){
-			padding:8rem 0 0;
+			padding:17rem 0 0;
 
 		}
 		@media screen and (min-width:1921px){
-			padding:18rem 0 0;
+			padding:37rem 0 0;
 
 		}
 
@@ -1905,6 +1905,7 @@
 	}
 }
 .custom-carousel{
+	padding:0 0 0 10px !important;
 	.owl-carousel{
 		.owl-nav{
 			width:100%;
@@ -1916,11 +1917,19 @@
 				float: left;
 				position: relative;
 				left: -24px;
+				background: url('images/previous-courses.svg')  no-repeat !important;
+				transform: rotate(0deg);
+				width: 17px !important;
+			    height: 32px !important;
 			}
 			button.owl-next{
 				float: right;
 				position: relative;
 				right: -24px;
+				background: url('images/next-courses.svg') no-repeat !important;
+				transform: rotate(0deg);
+				width: 17px !important;
+			    height: 32px !important;
 			}
 		}
 	}
