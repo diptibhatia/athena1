@@ -136,26 +136,25 @@
 
 .img-placeholder {
 	position: absolute;
-    top: 160.5rem;
-    width: 618px;
+	top: 0;
+	right:0;
+    width: 100%;
     height: 397px;
     background-color: #eaedf9;
     @media (max-width: 1024px) {
     	display: none;
     }
     @media (min-width: 1281px) and (max-width: 1439px){
-		width: 728px;
+		width: 100%;
 		height:468px;
-		top:153rem;
+		top:0;
     }
     @media (min-width: 1440px) and (max-width: 2559px){
-    	width: 803px;
+    	width: 100%;
 		height: 448px;
-		top:186.5rem !important;
     }
     @media (min-width: 2560px) {
-    	width: 1331px;
-    	top: 225rem;
+    	width: 100%;
     	height: 533px;
     }
 }
@@ -804,22 +803,44 @@
 				flex-direction: column;
 			}
     		.collaborate-item {
-    			flex: 1;
-    			padding: 0 85px;
+				&:first-child{
+					padding: 0;
+					width:54%;
+
+				}
+    			flex: none;
+				padding: 0 30px;
+				position:relative;
+				display:inline-block;
+				width:40%;
+				@media screen and (min-width:1441px) and (max-width:1920px){
+					width:31%;
+				}
+				@media screen and (min-width:1921px){
+					width:24%;
+				}
+	
+
+
+
     			/*&.img-placeholder {*/
     				/*width: 627px;*/
 				  	/*height: 385px;*/
 				  	/*background-color: rgba(234, 237, 249, 0.6);*/
 				  	img {
-				  		width: 127%;
+				  		width: 84%;
 				  		height: auto;
 				  		position: relative;
-    					top: -38px;
+						top: -38px;
+						float:right;
 						@media (min-width: 1440px) and (max-width: 2559px){
-							width: 103%;
-							position:relative;
-							left:120px;
+							width: 76%;
 						}
+						@media (min-width: 2560px){
+							width: 50%;
+						}
+
+
 					}
 				  	@include atSize424 {
 						width: 100%;
