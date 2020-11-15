@@ -136,7 +136,7 @@
 
 .img-placeholder {
 	position: absolute;
-    top: 164.5rem;
+    top: 160.5rem;
     width: 618px;
     height: 397px;
     background-color: #eaedf9;
@@ -146,16 +146,17 @@
     @media (min-width: 1281px) and (max-width: 1439px){
 		width: 728px;
 		height:468px;
+		top:153rem;
     }
     @media (min-width: 1440px) and (max-width: 2559px){
     	width: 803px;
 		height: 448px;
-		top:167.5rem;
+		top:186.5rem !important;
     }
     @media (min-width: 2560px) {
-    	width: 1257px;
-    	top: 199rem;
-    	height: 371px;
+    	width: 1331px;
+    	top: 225rem;
+    	height: 533px;
     }
 }
 
@@ -173,6 +174,17 @@
 
 .explore-courses {
 	text-align: center;
+	.wrapper{
+		@media screen and (min-width:1441px) and (max-width:1920px){
+			padding:8rem 0 0;
+
+		}
+		@media screen and (min-width:1921px){
+			padding:18rem 0 0;
+
+		}
+
+	}
 	h2 {
 		font-family: Lato;
 	    font-size: 42px;
