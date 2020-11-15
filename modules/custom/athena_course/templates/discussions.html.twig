@@ -13,7 +13,7 @@
                         </div>
                         <div class="post-thread">
                            <p>
-                             <a href="?discussion_id={{discussion.discussion_id}}" target="_blank"> {{discussion.title}} |
+                             <a href="?discussion_id={{discussion.discussion_id}}"> {{discussion.title}} |
                               {{discussion.category_title}}</a>
                            </p>
                            <div class="author-info">
@@ -27,7 +27,8 @@
                         </div>
                      </div>
                      <div class="arrow">
-                        <img src="{{base_path}}/images/arrow-discussion.svg">
+                        <a href="?discussion_id={{discussion.discussion_id}}"> {{discussion.title}} |
+                               <img src="{{base_path}}/images/arrow-discussion.svg"></a>
                      </div>
                   </div>
                   

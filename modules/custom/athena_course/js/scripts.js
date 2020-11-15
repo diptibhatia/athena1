@@ -31,7 +31,14 @@
                 }
                 
                 if(msg =='') {
-                    alert("Thank you!! we'll get in touch with you shortly")
+                    jQuery('#get_in_touch_course').val("");
+                    jQuery('#get_in_touch_fname').val("");
+                    jQuery('#get_in_touch_lname').val("");
+                    jQuery('#get_in_touch_email').val("");
+                    jQuery('#get_in_touch_mobile').val("");
+                    //jQuery('#get_in_touch_consent').val("");
+                    jQuery('#get_in_touch_consent').prop('checked', false);
+                    alert("Thank you!! we'll get in touch with you shortly");
                     
                 }else {
                     
@@ -185,7 +192,12 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(msg == ''){
                     alert("Data Submitted, will reach out to you shortly")
                 }else {
-                    
+                    jQuery('#speak_first_name').val("");
+                    jQuery('#speak_last_name').val("");
+                    jQuery('#speak_email').val("");
+                    jQuery('#speak_country').val("");
+                    jQuery('#speak_mobile_number').val("");
+                    jQuery('#speak_consent').prop('checked', false);
                     alert(msg)
                 }
 });

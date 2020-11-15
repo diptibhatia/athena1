@@ -13,12 +13,16 @@
                       <li class="nav-item tab-item">
                          <a class="nav-link waves-light show active" id="overview-tab-classic" data-toggle="tab" href="#acadamic" role="tab" aria-controls="overview-classic" aria-selected="true">Acadamic</a>
                       </li>
+                      {% if micro is not empty %}
                       <li class="nav-item tab-item">
                          <a class="nav-link waves-light" id="course-module-tab-classic" data-toggle="tab" href="#micro-credits" role="tab" aria-controls="course-module-classic" aria-selected="false">Micro Credits</a>
                       </li>
+                      {% endif %}
+                      {% if certifications is not empty %}
                       <li class="nav-item tab-item">
                          <a class="nav-link waves-light" id="eligibility-tab-classic" data-toggle="tab" href="#certifications" role="tab" aria-controls="eligibility-classic" aria-selected="false">Certifications</a>
                       </li>
+                      {% endif %}
                    </ul>
                 </div>
                 <div class="tab-content rounded-bottom" id="myClassicTabContent">
@@ -67,6 +71,8 @@
                          </div>
                       </div>
                    </div>
+                   
+                   {% if micro is not empty %}
                    <div class="tab-pane fade" id="micro-credits" role="tabpanel" aria-labelledby="micro-credits-tab-classic">
                       <div class="fyi-tabs__micro-credits">
                          <div class="courses-offered">
@@ -116,6 +122,8 @@
                          </div>
                       </div>
                    </div>
+                    {% endif %}
+                   {% if certifications is not empty %}
                    <div class="tab-pane fade" id="certifications" role="tabpanel" aria-labelledby="certifications-tab-classic">
                       <div class="fyi-certifications">
                          <div class="courses-offered">
@@ -162,6 +170,8 @@
                          </div>
                       </div>
                    </div>
+                   
+                   {% endif %}
                 </div>
              </div>
         </div>
