@@ -188,6 +188,18 @@
 			margin: 114px 0 10px 0;
 			font-size:28px;
 	    }
+		@media screen and (min-width:1441px) and (max-width:1920px){
+			margin-top: 32rem;
+			position: relative;
+			display: block;
+		}
+		@media screen and (min-width:1921px){
+			margin-top: 51rem;
+			position: relative;
+			display: block;
+		}
+		
+
 	}
 	p {
 		font-family: Lato;
@@ -590,20 +602,20 @@
 						  	margin: 0;
 						  	button {
 						  		margin: 30px 0;
-			border-radius: 30px;
-  			border: solid 2px $titlePink;
-  			color: $titlePink;
-  			padding: 5px 20px;
-  			cursor: pointer;
-  			background: white;
-  			outline: none;
-  			width: 186px;
-  			height: 50px;
-  			&:hover {
-				color: white;
-				background: $buttonPink;
-			}
-		}
+								border-radius: 30px;
+								border: solid 2px $titlePink;
+								color: $titlePink;
+								padding: 5px 20px;
+								cursor: pointer;
+								background: white;
+								outline: none;
+								width: 186px;
+								height: 50px;
+								&:hover {
+									color: white;
+									background: $buttonPink;
+								}
+							}
 						}
 						span {
 							font-size: 19px;
@@ -617,7 +629,6 @@
 							  	top: 0;
 							  }
 							@include atSize700{
-								font-size: 14px;
 								top: 0;
 							}
 						}
@@ -1313,8 +1324,18 @@
 }
 .reason-section {
 	.testimonials-background-image{
-		width: 96%;
+		width: 100%;
 		position: absolute;
+		z-index:-1;
+		left:50%;
+		transform:translateX(-50%);
+		margin-top:0;
+		@media screen and (min-width:1441px) and (max-width:1920px){
+			margin-top:-16rem;
+		}
+		@media screen and (min-width:1921px){
+			margin-top:-33rem;
+		}
 		img{
 			width: 100%;
 			position: absolute;
