@@ -130,45 +130,24 @@
                   </div>
                </div>
                <div class="section-item-two">
-                  <h4>Upcoming Events <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
-                  <div class="event-list">
-                     <div class="event-item">
-                        <div class="event-images">
-                           <img src="{{base_path}}/images/events-bg.png">
-                           <div class="btm-text"> webinar </div>
-                        </div>
-                        <div class="event-info">
-                           <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                           <p><img src="{{base_path}}/images/calender.svg" alt=""><span>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</span></p>
-                           <p><img src="{{base_path}}/images/location.svg" alt=""><span>Open For all</span></p>
-                           <h5>More Details <span>Register Now<img src="{{base_path}}/images/register.svg" alt=""></span></h5>
-                        </div>
-                     </div>
-                     <div class="event-item">
-                        <div class="event-images">
-                           <img src="{{base_path}}/images/events-bg-2.png">
-                           <div class="btm-text blue">Open House</div>
-                        </div>
-                        <div class="event-info">
-                           <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                           <p><img src="{{base_path}}/images/calender.svg" alt=""><span>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</span></p>
-                           <p><img src="{{base_path}}/images/location.svg" alt=""><span>Open For all</span></p>
-                           <h5>More Details <span>Register Now<img src="{{base_path}}/images/register.svg" alt=""></span></h5>
-                        </div>
-                     </div>
-                     <div class="event-item">
-                        <div class="event-images">
-                           <img src="{{base_path}}/images/events-bg-3.png">
-                           <div class="btm-text"> webinar </div>
-                        </div>
-                        <div class="event-info">
-                           <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                           <p><img src="{{base_path}}/images/calender.svg" alt=""><span>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</span></p>
-                           <p><img src="{{base_path}}/images/location.svg" alt=""><span>Open For all</span></p>
-                           <h5>More Details <span>Register Now<img src="{{base_path}}/images/register.svg" alt=""></span></h5>
-                        </div>
-                     </div>
-                  </div>
+                  <h4>Latest Articles <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
+                   
+                   
+                   <div class="container">
+   {% for insightsdata in insig %}
+   <div class="row mb-1">
+      <div class="col-md-4 d-flex align-items-center p-0">
+         <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article1.png">
+      </div>
+      <div class="col-md-8">                    
+         <p class="strong yellow-txt m-0">Article</p>
+         <p>{{ insightsdata.title.value}}</p>
+      </div>
+   </div>
+   {% endfor %}
+
+<p class="purple-txt"><a href="/insights/all" class="more-link">VIEW ALL INSIGHTS</a></p>
+</div>
                </div>
             </div>
          </div>

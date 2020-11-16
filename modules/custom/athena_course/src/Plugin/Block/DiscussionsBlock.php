@@ -61,7 +61,6 @@ if(!empty($discussion_id)) {
       'base_uri' => 'http://3.7.173.255/athenadev/api/',
     ]);
 
-$discussion_id  =209;
     $response_detail = $client_detal->get('discussions/'.$discussion_id);
     $post = $client_detal->get('wreply/'.$discussion_id);
 

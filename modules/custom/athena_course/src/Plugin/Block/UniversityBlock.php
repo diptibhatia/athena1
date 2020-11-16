@@ -37,6 +37,18 @@ $query->condition('field_is_popular_course', '1', '=');
     
     $academicnodes = node_load_multiple($academic);
      $popular_courses =  array_slice($academicnodes, 0, 3);
+     
+      $bundle='insight_article';
+
+    $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('type', $bundle);
+    $latest = $query->execute();
+        
+    
+    $insightsnodes = node_load_multiple($latest);
+        
+    $latest_insights =  array_slice($insightsnodes, 0, 5);
     
   //  print_r($academicnodes);exit;
     
@@ -47,6 +59,7 @@ $base_path = $base_url.'/'. $theme->getPath();
    $homepage_course_tabs =  [
   '#theme' => 'universities',
   '#course' => $popular_courses,
+  '#insig' => $latest_insights,
   '#base_path' => $base_path,
 
 ]; 

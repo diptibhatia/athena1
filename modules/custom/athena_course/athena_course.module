@@ -252,6 +252,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
     'universities' => [
       'variables' => [
       'base_path' => NULL,
+      'insig' => NULL,
       'nodes' => NULL,
       ],
     ],
