@@ -1176,14 +1176,17 @@ function search($word = false){
   $bundle='course';
      $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
-    $query->condition('title' ,$_POST['search_key'] ,'CONTAINS');
-    $query->condition('field_course_banner_description' ,$_POST['search_key'] ,'CONTAINS');
+    
+    $grp = $query->orConditionGroup()
+    ->condition('title' ,$_POST['search_key'] ,'CONTAINS')
+    ->condition('field_course_banner_description.value' ,$_POST['search_key'] , 'CONTAINS');
     
     if(isset ($_POST['course_category'])) {
         $query->condition('field_course_category', $_POST['course_category']);
     }
     $query->condition('type', $bundle);
-    $entity_ids = $query->execute();
+   // $entity_ids = $query->execute();
+   $entity_ids = $query->condition($grp)->execute();
     
     $partners = array(
     'Scottish Qualifications Authority, UK',
