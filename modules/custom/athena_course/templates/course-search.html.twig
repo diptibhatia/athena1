@@ -50,7 +50,13 @@
        {% for nodedata in node %}
       <div class="card">
         <div class="course-sidebar">
+         {% if node.field_search_list_image.entity.uri.value is not empty %}
+         
+       
+         <img class="course-img" src=" {{ file_url(node.field_search_list_image.entity.uri.value)}}" style="witdth:250px;height:200px" alt="Course">
+         {% else %}
           <img class="course-img" src="{{base_path}}/images/1.jpg" alt="Course">
+           {% endif %}
         </div>
         <div class="course-main">
           <h2 class="course-title"><a href="{{ url('<front>') }}course/{{nodedata.id}}" style=" text-decoration: inherit;
