@@ -480,9 +480,15 @@
                     <h3>Course Resources</h3>
                     <p>For more detailed information about the course, please click on the links below.</p>
                     <div>
-                        <a href="#">Download Brochure</a>
-                        <a href="#">Course Specifications</a>
-                        <a href="#">Fact Sheet</a>
+                     {% if node.field_brochure.value is not empty %}
+                        <a href="{{node.field_brochure.value}}" target="_blank">Download Brochure</a>
+                     {% endif %}
+                     {% if node.field_specifications.value is not empty %}
+                        <a href="{{node.field_specifications.value}}" target="_blank">Course Specifications</a>
+                     {% endif %} 
+                     {% if node.field_fact_sheet.value is not empty %} 
+                        <a href="{{node.field_fact_sheet.value}}" target="_blank">Fact Sheet</a>
+                     {% endif %}   
                     </div>
                 </div>
             </div>

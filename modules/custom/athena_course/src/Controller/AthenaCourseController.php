@@ -1183,10 +1183,25 @@ function search($word = false){
     }
     $query->condition('type', $bundle);
     $entity_ids = $query->execute();
-
-        
- 
     
+    $partners = array(
+    'Scottish Qualifications Authority, UK',
+    'Guglielmo Marconi University, Italy',
+    'Cambridge International Qualifications, UK',
+    'Universidad Catolica De Murcia (UCAM), Spain',
+    'Chartered Management Institute, UK',
+    );
+    
+    $partner_list = '';
+    foreach($partners as $partner) {
+        
+        if(isset($_REQUEST['univ']) && $_REQUEST['univ'] == $partner) {
+           $partner_list .=  '<option value="'.$partner.'" selected>'.$partner.'</option>';
+        }else {
+            $partner_list .=  '<option value="'.$partner.'">'.$partner.'</option>';
+        }
+        
+    }
     // Base theme path.
 global $base_url;
 $theme = \Drupal::theme()->getActiveTheme();
@@ -1205,6 +1220,7 @@ $base_path = $base_url.'/'. $theme->getPath();
   '#theme' => 'course_search',
  '#base_path' => $base_path,
  '#node' => $nodes,
+ '#partner_list' => $partner_list,
  '#search_key' => $_POST['search_key'],
  '#count' => count($nodes)
  

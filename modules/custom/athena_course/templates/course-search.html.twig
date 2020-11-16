@@ -2,7 +2,7 @@
       <div class="container my-container">
         <div class="search">
           <form class="search-form" method = "post" id="course-search--form">
-            <input type="text" placeholder="Enter text to search" name="search_key">
+            <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
             <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
             <input type="hidden" name="submit_form"> 
             <div class="search-courses">
@@ -19,26 +19,22 @@
 
         <div class="filter">
           <div class="filter-type">
-            <select id="partner hell" name="partner" class="partner">
+            <select id="partner_search" name="partner" class="partner">
               <option value="partner">Partner</option>
-              <option value="Scottish Qualifications Authority, UK">Scottish Qualifications Authority, UK</option>
-              <option value="Guglielmo Marconi University, Italy">Guglielmo Marconi University, Italy</option>
-              <option value="Cambridge International Qualifications, UK">Cambridge International Qualifications, UK</option>
-              <option value="Universidad Catolica De Murcia (UCAM), Spain">Universidad Catolica De Murcia (UCAM), Spain</option>
-              <option value="Chartered Management Institute, UK">Chartered Management Institute, UK</option>
+              {{partner_list|raw}}
             </select>
 
-            <select id="language" name="language" class="non-partner">
+            <select id="language_search" name="language" class="non-partner">
               <option value="language">Language</option>
               <option value="EQF evel 7">English</option>
             </select>
 
-            <select id="level" name="level" class="non-partner">
+            <select id="level_search" name="level" class="non-partner">
               <option value="level">Level</option>
               <option value="9-36 months">EQF evel 7</option>
             </select>
 
-            <select id="duration" name="duration" class="non-partner">
+            <select id="duration_search" name="duration" class="non-partner">
               <option value="duration">Duration</option>
               <option value="9-36 months">9-36 months</option>
             </select>

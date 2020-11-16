@@ -4,7 +4,14 @@
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
             
-            
+            jQuery("#partner_search" ).change(function() {
+              var partner =  jQuery("#partner_search").val();
+              var search_key =  jQuery("#search_key").val();
+              var lang =  jQuery("#language_search").val();
+              var level =  jQuery("#level_search").val();
+              var duration =  jQuery("#duration_search").val();
+              window.location='http://localhost/athenawebsite/search-results/abc?univ=' + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+            });
             jQuery("#get_in_touch").click(function() {
                  var msg = '';
                 if(jQuery("#get_in_touch_fname").val() == '') {
