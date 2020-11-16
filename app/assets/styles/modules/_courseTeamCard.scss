@@ -1,6 +1,29 @@
+.course-team{
+    .wrapper {
+        h2{
+            margin-bottom:25px;
+        }
+        padding: 0 0;
+        .owl-carousel{
+                      margin-left:-20px;
+                    .owl-item{
+                        .item{
+                            padding:20px 10px;
+                        }
+                        &:first-child{
+                            .item{
+                                padding-left: 20px;
+                            }
+                        }
+                    }
+        }
+    }
+}
+
+
 .course-team-card {
     background-color: #fff;
-    width: 279px;
+    width: 269px;
     height: 391px;
     border-radius: 6px;
     box-shadow: 0 2px 25px 2px #d5dbfb;
@@ -9,7 +32,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 27px 25px;
+    padding: 27px 21px;
     color: $primaryColor;
     position: relative;
     overflow: auto;
@@ -49,6 +72,7 @@
         font-size: 1rem;
         text-align: center;
         margin: 0;
+        color:$black;
 
         span {
             display: block;
@@ -67,6 +91,7 @@
         text-align: center;
         line-height: 1.63;
         margin: 20px 0 0;
+        max-height:110px;
     }
 
     a {
