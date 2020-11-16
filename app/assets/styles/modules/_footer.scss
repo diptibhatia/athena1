@@ -1,15 +1,18 @@
 
 .main-wrapper {
 	/*background-color: rgba(239, 241, 254, 0.5);*/
+	background-color: #F7F8FE;
 }
 
 .footer {
+
 	a {
 		color: $secondaryColor;
 	}
 
 	.new-footer {
 		padding: 50px 0;
+	
 		.right-border {
 			border : none;
 
@@ -23,9 +26,11 @@
 	}
 
 	.social-icons {
+
+		padding-top:20px;
 		img {
-			width : 40px;
-			height : 40px;
+			width : 45px;
+			height : 45px;
 		}
 	}
 
@@ -36,6 +41,22 @@
 	}
 	.addPadding{
 		margin-top: 20px;;
+	}
+
+	.subscribe-newsletter{
+		font-size:13px;
+	}
+	.news-letter{
+		input{
+			margin-top: 10px;width:85%;
+		}
+	}
+	.subscribe-button{
+		padding-left: 25px;padding-right: 25px;padding-top:5px;padding-bottom: 5px;
+	}
+	.athena-des-footer{
+		position: relative;
+          left: -15px;
 	}
 	
 }
