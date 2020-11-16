@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'> -->
     <title>Insight Corporate</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <body>
 <div w3-include-html="header.html"></div>
@@ -94,6 +95,9 @@
 
                         <p>Ways to maintain a strong company culture during tough times So you know what corporate culture is and a bit about why it's so important to preserve, but how can you go about it? </p>
                     </div>
+                    <div class="stopScroll">
+
+                    </div>
                     <div class="container">
                         <p>
                             <span class="text-left strong mr-3">TAGS :</span>
@@ -125,7 +129,6 @@
     </div>
 
     <div w3-include-html="footer.html"></div>
-
     <script type="text/javascript">
         includeHTML();
         function includeHTML() {
@@ -176,32 +179,48 @@
         }
 
         updateProgress();
-
-        $(document).scroll(function() {
-            var y = $(document).scrollTop(),
-                header = $(".share-icon ul");
-            if(y <= 1600)  {
-                header.css({position: "fixed"});
+        function scrollEvent(){
+        $(function(){
+            var stopFloating = $('.stopScroll');
+            if (stopFloating) {
+            var stop = stopFloating.offset().top;
+            $(window).scroll(function() {
+            var y = $(window).scrollTop(),
+            header = $(".share-icon ul");
+            if(y <= stop-200)  {
+            header.css({position: "fixed"});
             } else {
-                header.css("position", "relative");
+            header.css("position", "static");
             }
-        });
+            });
+        }
+       
+    });
 
-        $(document).scroll(function() {
-            var y = $(document).scrollTop(),
-                header = $(".share-icon.mobile-share-icon ul");
-            if(y <= 3200)  {
-                header.css({position: "fixed"});
+    $(function(){
+        var stopFloating = $('.stopScroll');
+            if (stopFloating) {
+            var stop = stopFloating.offset().top;
+            $(window).scroll(function() {
+            var y = $(window).scrollTop(),
+            header = $(".share-icon ul");
+            if(y <= stop-200)  {
+            header.css({position: "fixed"});
             } else {
-                header.css("position", "relative");
+            header.css("position", "static");
             }
-        });
+            });
+        }
+    });
+}
 
         const mq = window.matchMedia( "(max-width: 700px)" );
 
         if (mq.matches) {
           $('.insight-wrapper .share-icon').addClass('mobile-share-icon');
         }
+
+        window.onload = scrollEvent();
     </script>
         <!-- GetButton.io widget -->
 <script type="text/javascript">
