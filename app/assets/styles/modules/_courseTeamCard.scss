@@ -17,6 +17,9 @@
                         }
                     }
         }
+        .owl-dots{
+            display:none;
+        }
     }
 }
 
@@ -102,6 +105,5 @@
         letter-spacing: .2px;
         position: absolute;
         bottom: 27px;
-        display: none;
     }
 }
