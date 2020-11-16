@@ -124,8 +124,9 @@
                   <div class="section-image">
                      <img src="{{base_path}}/images/blog-bg.png">
                      <h4>ARTICLE</h4>
-                     <h5>A Strong Corporate Culture Is Important, Now More</h5>
-                     <p>When a crisis happens and times are tough it can be easy to lose focus on the importance of supporting and growing a strong corporate…
+                      <h5>{{ insig.0.title.value }}</h5>
+                     <p>{{insig.0.body.value|striptags|truncate(100)}}…<a href="{{ url('<front>') }}node/{{insig.0.id}}">Read more</a>
+
                      </p>
                   </div>
                </div>
