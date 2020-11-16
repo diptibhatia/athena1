@@ -3,15 +3,40 @@
             jQuery("#phone").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
-            
+            var search_url = 'http://website.athena.edu/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
               var search_key =  jQuery("#search_key").val();
               var lang =  jQuery("#language_search").val();
               var level =  jQuery("#level_search").val();
               var duration =  jQuery("#duration_search").val();
-              window.location='http://localhost/athenawebsite/search-results/abc?univ=' + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
             });
+            jQuery("#language_search" ).change(function() {
+              var partner =  jQuery("#partner_search").val();
+              var search_key =  jQuery("#search_key").val();
+              var lang =  jQuery("#language_search").val();
+              var level =  jQuery("#level_search").val();
+              var duration =  jQuery("#duration_search").val();
+              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+            });
+            jQuery("#level_search" ).change(function() {
+              var partner =  jQuery("#partner_search").val();
+              var search_key =  jQuery("#search_key").val();
+              var lang =  jQuery("#language_search").val();
+              var level =  jQuery("#level_search").val();
+              var duration =  jQuery("#duration_search").val();
+              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+            });
+            jQuery("#duration_search" ).change(function() {
+              var partner =  jQuery("#partner_search").val();
+              var search_key =  jQuery("#search_key").val();
+              var lang =  jQuery("#language_search").val();
+              var level =  jQuery("#level_search").val();
+              var duration =  jQuery("#duration_search").val();
+              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+            });
+            
             jQuery("#get_in_touch").click(function() {
                  var msg = '';
                 if(jQuery("#get_in_touch_fname").val() == '') {

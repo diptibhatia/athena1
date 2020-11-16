@@ -1177,6 +1177,7 @@ function search($word = false){
      $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('title' ,$_POST['search_key'] ,'CONTAINS');
+    $query->condition('field_course_banner_description' ,$_POST['search_key'] ,'CONTAINS');
     
     if(isset ($_POST['course_category'])) {
         $query->condition('field_course_category', $_POST['course_category']);
