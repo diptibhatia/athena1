@@ -122,9 +122,13 @@
 <footer class="main-wrapper container-fluid p-0">
   <div class="footer container">
     <div class="new-footer col-md-12 row">
-      <div class="col-md-4 border-right">
+      <div class="col-md-6 border-right">
         <div class="subscribe">
+        <div class="col-md-12 row">
+           <div class=col-md-4">
           <img src="/themes/custom/athena/images/athena-logo.svg" class="img-fluid pb-3" />
+          </div>
+        <div class=col-md-8>
           <p>
             Athena Global Education (AGE) is a subsidiary of Westford Education
             Group, a higher education services provider since 2009, providing
@@ -139,72 +143,100 @@
             <a href="https://twitter.com/AthenaGlobalEdu" target="_blank"><img
                 src="/themes/custom/athena/images/twitter-footer.svg" /></a>
           </div>
-          <span>Subscribe to our newsletter</span>
-          <div class="news-letter">
-            <input type="email" class="form-control" placeholder="abc@xyz.com" />
           </div>
-          <button type="button" class="btn btn-sm mt-3 btn-outline violet-btn">Subscribe</button>
+          </div>
+          <span>Subscribe to our newsletter</span>
+          <div class="alert alert-success hide" style="display:none" id="newsletter-info-box">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+<div class="alert alert-danger" style="display:none" id="newsletter-info-box-error">
+  Invaid Emaill ID
+</div>
+          <div class="news-letter" >
+            <input type="email" id="newsletter-email-input" class="form-control" placeholder="abc@xyz.com" />
+          </div>
+          <button id="news-letter-subscribe" type="button" class="btn btn-sm mt-3 btn-outline violet-btn">Subscribe</button>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6 hideinMobileView">
+        
         <div class="col-md-12 site-links row">
-          <div class="col-md-4 links border-right">
-            <p><a href="https://athena.edu/Aboutus.aspx">About us</a></p>
+            <div class="col-md-12 row">
+              <div class="col-md-4 links">
+            <p><a href="{{ url('<front>') }}about-us/our-background">About us</a></p>
             <p>
-              <a href="https://athena.edu/PartnersAccreditation.aspx">
+              <a href="{{ url('<front>') }}about-us/accreditation-and-partnerships">
                 Partnership</a>
             </p>
-            <p><a href="https://athena.edu/OurCourse.aspx">Courses</a></p>
-            <p><a href="https://athena.edu/Policy.aspx">Policy</a></p>
-            <div class="address">
-              <strong>USA</strong>
-              <p class="txt-12">
-                Athena Global Education LTD <br />
-                500 Willow Street,<br />
-                Suite 510, Council Bluffs,<br />
-                Iowa 51503, USA<br />
-                Phone : +1 712 283 6085
-              </p>
+            <p><a href="{{ url('<front>') }}search-results/abc">Courses</a></p>
+            <p><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policy</a></p>
             </div>
-          </div>
-          <div class="col-md-4 links border-right">
-            <p><a href="https://athena.edu/faq">FAQ Glossary</a></p>
-            <p>
-              <a href="https://athena.edu/Privacy-policy.aspx">Privacy Policy</a>
-            </p>
-            <p><a href="https://athena.edu/Terms.aspx">Terms & Conditions</a></p>
-            <p><a href="http://website.athena.edu/sites/default/files/pdf-files/Policies/ACCREDITATION_OF_PRIOR_LEARNING.pdf">APL policy</a></p>
-            <div class="address">
-              <strong>UK</strong>
-              <p class="txt-12">
-                Athena Global Education LTD<br />
-                The Sherrington Building, Magdalen Centre,<br />
-                The Oxford Science Park,<br />
-                Oxford OX4 4GA. UK<br />
-                Phone : +44 186 578 4545
+
+            <div class="col-md-4 links">
+              <p><a href="{{ url('<front>') }}about-us/policies-and-procedures">FAQ Glossary</a></p>
+              <p>
+                <a href="{{ url('<front>') }}about-us/policies-and-procedures">Privacy Policy</a>
               </p>
+              <p><a href="https://athena.edu/Terms.aspx">Terms & Conditions</a></p>
+              <p><a href="http://website.athena.edu/sites/default/files/pdf-files/Policies/ACCREDITATION_OF_PRIOR_LEARNING.pdf">APL policy</a></p>
             </div>
-          </div>
-          <div class="col-md-4 links">
-            <p><a href="/sites/default/files/footer/_ANTI-BRIBERY%20%26%20CORRUPTION%20POLICY.pdf"> Anti-Bribery & Corruption Policy</a></p>
-            <p><a href="/sites/default/files/footer/Modern%20Slavery%20Policy.pdf">Modern Slavery Policy</a></p>
-            <p><a href="https://athena.edu/ContactUs.aspx">Contact us</a></p>
-            <p><a href="https://athena.edu/Disclamer.aspx">Disclaimer</a></p>
-            <p><a>Admin Login</a></p>
-            <div class="address">
-              <strong>MIDDLE EAST</strong>
-              <p class="txt-12">
-                Athena Global Education FZE<br />
-                Block L-3, First Floor,<br />
-                P O Box 519265,<br />
-                Sharjah Publishing City,<br />
-                Free Zone, Sharjah, UAE<br />
-                Phone : +971 56 994 8640
-              </p>
+
+            <div class="col-md-4 links">
+
+              <p><a href="">Contact us</a></p>
+              <p><a href="">Disclaimer</a></p>
+              <p><a>Admin Login</a></p>
+              <p class="d-none d-md-block d-sm-none">&nbsp;</p>
             </div>
-          </div>
+
+            </div>
+
+            <div class="col-md-12 row">
+              <div class="col-md-4">
+                <div class="address">
+                  <strong>UK</strong>
+                  <p class="txt-12">
+                    Athena Global Education LTD<br />
+                    The Sherrington Building, Magdalen Centre,<br />
+                    The Oxford Science Park,<br />
+                    Oxford OX4 4GA. UK<br />
+                    Phone : <br/>+44 186 578 4545
+                  </p>
+                </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="address">
+                    <strong>USA</strong>
+                    <p class="txt-12">
+                      Athena Global Education LTD <br />
+                      500 Willow Street,<br />
+                      Suite 510, Council Bluffs,<br />
+                      Iowa 51503, USA<br />
+                      Phone :<br/> +1 712 283 6085
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+
+                  <div class="address">
+                    <strong>MIDDLE EAST</strong>
+                    <p class="txt-12">
+                      Athena Global Education FZE<br />
+                      Block L-3, First Floor,<br />
+                      P O Box 519265,<br />
+                      Sharjah Publishing City,<br />
+                      Free Zone, Sharjah, UAE<br />
+                      Phone : <br/>+971 56 994 8640
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
         </div>
       </div>
+    </div>
     </div>
   </div>
   <div class="container-fluid text-center bg-dark p-2 text-white mt-3">
