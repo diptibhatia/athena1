@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="39px" height="39px" viewBox="0 0 39 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>linkedin (2)</title>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
     <defs>
-        <filter x="-57.1%" y="-57.1%" width="214.3%" height="214.3%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+        <path d="M18.81,0 C8.42311205,0 0,8.42311205 0,18.81 C0,29.196888 8.42311205,37.62 18.81,37.62 C29.196888,37.62 37.62,29.196888 37.62,18.81 C37.62,8.42311205 29.196888,0 18.81,0 Z M13.3440326,28.4354297 L8.76294115,28.4354297 L8.76294115,14.6531209 L13.3440326,14.6531209 L13.3440326,28.4354297 Z M11.0536304,12.771145 L11.0237805,12.771145 C9.48651306,12.771145 8.49228333,11.7129103 8.49228333,10.3903322 C8.49228333,9.03790419 9.51693699,8.00894531 11.0840542,8.00894531 C12.6511716,8.00894531 13.6155515,9.03790419 13.6454013,10.3903322 C13.6454013,11.7129103 12.6511716,12.771145 11.0536304,12.771145 Z M29.8624823,28.4354297 L25.2819649,28.4354297 L25.2819649,21.0622289 C25.2819649,19.2092418 24.6186667,17.9455023 22.9611388,17.9455023 C21.6956772,17.9455023 20.9419684,18.7979453 20.6107498,19.6208253 C20.4896283,19.9153057 20.4600654,20.3268892 20.4600654,20.7387598 L20.4600654,28.4354297 L15.879261,28.4354297 C15.879261,28.4354297 15.9392478,15.9461362 15.879261,14.6531209 L20.4600654,14.6531209 L20.4600654,16.6045551 C21.0688303,15.6654327 22.1580629,14.3296518 24.5885298,14.3296518 C27.6025039,14.3296518 29.8624823,16.2994551 29.8624823,20.5326809 L29.8624823,28.4354297 Z" id="path-1"></path>
+        <filter x="-8.0%" y="-8.0%" width="115.9%" height="115.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.251830201 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
+            <feColorMatrix values="0 0 0 0 0.105882353   0 0 0 0 0.180392157   0 0 0 0 0.317647059  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
-    <g id="Registration/login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="discussion1" transform="translate(-1240.000000, -1725.000000)" fill="#FFFFFF" fill-rule="nonzero">
-            <g id="Group-5" transform="translate(0.000000, 1712.000000)">
-                <g id="linkedin-(2)" filter="url(#filter-1)" transform="translate(1249.000000, 22.000000)">
-                    <path d="M10.45,0 C4.67950669,0 0,4.67950669 0,10.45 C0,16.2204933 4.67950669,20.9 10.45,20.9 C16.2204933,20.9 20.9,16.2204933 20.9,10.45 C20.9,4.67950669 16.2204933,0 10.45,0 Z M7.41335144,15.7974609 L4.86830064,15.7974609 L4.86830064,8.1406227 L7.41335144,8.1406227 L7.41335144,15.7974609 Z M6.14090576,7.09508057 L6.12432251,7.09508057 C5.27028503,7.09508057 4.71793518,6.50717238 4.71793518,5.77240676 C4.71793518,5.02105788 5.28718722,4.44941406 6.1578079,4.44941406 C7.02842867,4.44941406 7.56419527,5.02105788 7.58077852,5.77240676 C7.58077852,6.50717238 7.02842867,7.09508057 6.14090576,7.09508057 Z M16.5902679,15.7974609 L14.045536,15.7974609 L14.045536,11.7012383 C14.045536,10.671801 13.6770371,9.96972351 12.7561882,9.96972351 C12.053154,9.96972351 11.6344269,10.4433029 11.4504165,10.9004585 C11.3831268,11.0640587 11.366703,11.2927162 11.366703,11.5215332 L11.366703,15.7974609 L8.82181167,15.7974609 C8.82181167,15.7974609 8.85513765,8.85896456 8.82181167,8.1406227 L11.366703,8.1406227 L11.366703,9.22475281 C11.7049057,8.70301819 12.3100349,7.96091768 13.6602943,7.96091768 C15.3347244,7.96091768 16.5902679,9.05525283 16.5902679,11.407045 L16.5902679,15.7974609 Z" id="Shape"></path>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="login-" transform="translate(-235.000000, -1888.000000)">
+            <g id="Group-17" transform="translate(134.000000, 1889.000000)">
+                <g id="Group-3" transform="translate(103.000000, 1.000000)">
+                    <rect id="Rectangle" fill="#1B2E51" x="7" y="7.8" width="23.4" height="21"></rect>
+                    <g id="linkedin-(2)" fill-rule="nonzero">
+                        <g id="Shape">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
                 </g>
             </g>
         </g>

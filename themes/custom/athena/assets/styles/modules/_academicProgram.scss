@@ -314,7 +314,7 @@
 
 		.academic-price {
 			text-align: right;
-
+            left:30px;
 			span {
 				padding: 10px 20px;
     			border-radius: 25px 0 0 25px;
@@ -363,4 +363,7 @@
 .OuterContainer{
 	background-color: #eff1fe;
 	margin: 80px 0 0 0;
+}
+.content{
+	display: none;
 }

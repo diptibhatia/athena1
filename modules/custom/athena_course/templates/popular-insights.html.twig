@@ -6,6 +6,8 @@
          {% if loop.index ==3 %}
 			<div class="card">     
 				<img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
+                <div class="insight-logo"><img class="card-img-top" src="{{base_path}}/images/insights.svg" alt="Card image cap"></div>
+          <div class="readTime">11 min Read</div>
 				<div class="card-body">
 					<h5 class="card-title short-title">{{popudata.title.value}}</h5>
 					<p class="card-text">
@@ -14,7 +16,7 @@
                </p>
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
-					<span class="cursor"></span>
+					<span class="cursor shareText"><img src="{{base_path}}/images/share.svg" height=18 />&nbsp;&nbsp;Share</span>
 					<span>
 						<a href="/node/{{popudata.nid.value}}">Read More</a>
 					</span>
@@ -23,6 +25,7 @@
          {% else %}
          <div class="card mr-2">
          	<img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
+            <div class="insight-logo"><img class="card-img-top" src="{{base_path}}/images/insights.svg" alt="Card image cap"></div>
 				<div class="card-body">
 					<h5 class="card-title short-title">{{popudata.title.value}}</h5>
 					<p class="card-text">
@@ -31,7 +34,7 @@
                </p>
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
-					<span class="cursor"></span>
+					<span class="cursor shareText"><img src="{{base_path}}/images/share.svg" height=18 />&nbsp;&nbsp;Share</span>
 					<span>
 						<a href="/node/{{popudata.nid.value}}">Read More</a>
 					</span>
