@@ -69,32 +69,49 @@
         
       </div>
       <div class="modal-body">
-        <p><!-- Facebook -->
-<a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}course/{{node.id}}" target="_blank">Share to FaceBook</a><br/>
+       <div class="col-md-12">
+  <div class="col-md-12">
+    <h2>Share this page</h2>
+    <h6>Show your friends and family what they can learn from athena</h6>
+  </div>
+  <div class="col-md-12 row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}course/{{node.id}}" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" style="width:45;"></div>
+    <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}course/{{node.id}}" target="_blank"><img src="/themes/custom/athena/images/tw-ico.png" style="width:45;"></div>
+    <div class="col-md-2"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}course/{{node.id}}" target="_blank"><img src="/themes/custom/athena/images/in-ico.png" style="width:45;"></div>
+   <!--  <div class="col-md-2"><img src="/themes/custom/athena/images/wt-ico.png" style="width:45;"></div> -->
+    
+    <div class="col-md-1"></div>
+    
+    
+  </div>
 
-<!-- Twitter -->
-<a href="http://twitter.com/share?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Twitter</a>
-<br/>
-<!-- Google+ -->
-<a href="https://plus.google.com/share?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Google+</a><br/>
-
-<!-- Digg -->
-<a href="http://www.digg.com/submit?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Digg</a><br/>
-
-<!-- Reddit -->
-<a href="http://reddit.com/submit?url={{ url('<front>') }}course/{{node.id}}" target="_blank">Reddit</a><br/>
-
-<!-- LinkedIn -->
-<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}course/{{node.id}}" target="_blank">LinkedIn</a><br/>
-
-<!-- Pinterest -->
-<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">Pinterest</a>
-<br/>
-<!-- StumbleUpon-->
-<a href="http://www.stumbleupon.com/submit?url={{ url('<front>') }}course/{{node.id}}" target="_blank">StumbleUpon</a><br/>
-
-<!-- Email -->
-</p>
+<div class="col-md-12">
+    <div class="bg-white sidebar shadow-lg rounded p-3">
+	<div class="col-md-12 row">
+		<div class="col-md-10" style="
+   /* width: 300px; */
+   overflow: hidden;
+   background: -webkit-linear-gradient(left, black , #eeeeee);
+   background: -o-linear-gradient(right, black, #eeeeee);
+   background: -moz-linear-gradient(right, black, #eeeeee);
+   background: linear-gradient(to right, black , #eeeeee);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   white-space: nowrap;
+   ">
+        		This is the url This is the url This is the url This is the url This is the url
+    		</div>
+   		<div class="col-md-2" style="position: relative;padding-left: 40px;color: #ff0068;font-weight: bold;">
+			COPY
+		<div>
+	</div>
+    
+ 
+    </div>
+</div>
+</div>
+      </div></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
