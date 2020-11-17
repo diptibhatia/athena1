@@ -59,7 +59,8 @@
                 
                 <div class="col-md-8 col-sm-12 academic-content pt-4">
                     <h2 class="title">Find Your Course</h2>
-                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2">
+                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content">
+                        <div class="col-md-12 col-sm-12 row">
                         <div class="col-md-9 col-sm-9">
                             <h3 class="card-title">Executive Master of Business Administration</h3>
                             <ul class="list-unstyled d-flex m-0">
@@ -70,6 +71,7 @@
                         </div>
                         <div class="col-md-3 col-sm-3 academic-price p-0 pt-2">
                             <span class="">$5300</span>
+                        </div>
                         </div>
                         <div class="row m-0 academic-card p-3 w-100">
                             <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text.  <a href="#" class="purple-txt">Read More</a></p>
@@ -89,7 +91,8 @@
                         </div>
                     </div>
 
-                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2">
+                    <div  class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content">
+                        <div class="col-md-12 col-sm-12 row">
                         <div class="col-md-9 col-sm-9">
                             <h3 class="card-title">Master of Business Administration</h3>
                             <ul class="list-unstyled d-flex m-0">
@@ -100,6 +103,7 @@
                         </div>
                         <div class="col-md-3 col-sm-3 academic-price p-0 pt-2">
                             <span class="">$5300</span>
+                        </div>
                         </div>
                         <div class="row m-0 academic-card p-3 w-100">
                             <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text.<a href="#" class="purple-txt">Read More</a></p>
@@ -119,7 +123,8 @@
                         </div>
                     </div>
 
-                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2">
+                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content">
+                        <div class="col-md-12 col-sm-12 row">
                         <div class="col-md-9 col-sm-9">
                             <h3 class="card-title">Master of Business Administration</h3>
                             <ul class="list-unstyled d-flex m-0">
@@ -130,6 +135,7 @@
                         </div>
                         <div class="col-md-3 col-sm-3 academic-price p-0 pt-2">
                             <span class="">$5300</span>
+                        </div>
                         </div>
                         <div class="row m-0 academic-card p-3 w-100">
                             <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text.<a href="#" class="purple-txt">Read More</a></p>
@@ -148,8 +154,42 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content">
+                        <div class="col-md-12 col-sm-12 row">
+                        <div class="col-md-9 col-sm-9">
+                            <h3 class="card-title">Master of Business Administration</h3>
+                            <ul class="list-unstyled d-flex m-0">
+                                <li>Guglielmo Marconi University, Italy</li>
+                                <li>60 ECTS Credits</li>
+                                <li>100% Online</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-3 academic-price p-0 pt-2">
+                            <span class="">$5300</span>
+                        </div>
+                        </div>
+                        <div class="row m-0 academic-card p-3 w-100">
+                            <p>Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text.<a href="#" class="purple-txt">Read More</a></p>
+                        
+                            <div class="col-md-3 col-sm-3 p-0 pt-3">
+                               <img src="images/coursepage/course-flexible.svg" alt="icon" class="">
+                                <p>Flexible <br /> 9-36 months</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 p-0 pt-3">
+                               <img src="images/coursepage/course-certification.svg" alt="icon" class="">
+                                <p>Dual Certification <br /> IMBA &amp; Scottish Diploma</p>
+                            </div>
+                            <div class="col-md-5 col-sm-5 p-0 pt-3">
+                               <img src="images/coursepage/course-accreditation.svg" alt="icon" class="">
+                               <p>Accreditations <br /> Ministry of Education, Italy <br /> Scottish Qualification Authority, UK</p>
+                            </div>
+                        </div>
+                    </div>
+                
+
                     <div class="row d-flex justify-content-center">
-                        <button class="btn athena-btn purple-btn">View all</button>
+                        <button id="loadMore" class="btn athena-btn purple-btn">View all</button>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 pt-4">
@@ -388,6 +428,19 @@
         s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
+
+
+    $(document).ready(function(){
+  $(".content").slice(0, 3).show();
+  $("#loadMore").on("click", function(e){
+    e.preventDefault();
+    $(".content:hidden").slice(0, 3).slideDown();
+    if($(".content:hidden").length == 0) {
+      $("#loadMore").text("No Content").addClass("noContent");
+    }
+  });
+  
+})
 </script>
 <!-- /GetButton.io widget -->
     <script src="bundled.js"></script>
