@@ -1628,7 +1628,7 @@
 		font-size: 16px;
   		color: $primaryColor;
   		width: 540px;
-	    margin: 0 auto;
+	    margin: 0 auto 30px; 
 	    line-height: 26px;
 	    @include atSize424 {
 			width: 100%;
