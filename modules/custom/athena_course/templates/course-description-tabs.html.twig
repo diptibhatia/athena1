@@ -981,7 +981,7 @@
     <div class="course-team">
         <div class="wrapper">
             <h2>Course Team</h2>
-            <div class="owl-carousel owl-theme owl-loaded owl-drag">
+            <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
                 
                 
                 
@@ -1006,7 +1006,7 @@
                         </div>
                         <h3>{{course_team_data.title}}</h3>   
                         <h4>{{course_team_data.designation}}</h4>
-                        <p>{{course_team_data.description | raw}}</p>
+                        <p>{{course_team_data.description|striptags|truncate(100)}}</p>
                         <a href="#">Readmore</a>
                     </div>
                 </div>
