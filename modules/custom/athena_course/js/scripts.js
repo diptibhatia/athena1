@@ -256,29 +256,6 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
             })
             
-             jQuery('.course-team-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                autoWidth: true,
-                responsiveClass: true,
-                responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                },
-                600: {
-                    items: 3,
-                    nav: false
-                },
-                1000: {
-                    items: 4,
-                    nav: true,
-                    loop: false,
-                    margin: 0
-                }
-                }
-            })
-            
             
             jQuery(window).scroll(function() {
                 if(jQuery(window).width() > 1249) {
