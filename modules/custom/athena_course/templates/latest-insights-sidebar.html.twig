@@ -6,7 +6,7 @@
    {% for insightsdata in insig %}
    <div class="row mb-1">
       <div class="col-md-4 d-flex align-items-center p-0">
-         <img class="img-fluid mx-auto brd-0" src="/themes/custom/athena/images/insight-article1.png">
+         <img class="img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}">
       </div>
       <div class="col-md-8">                    
          <p class="strong yellow-txt m-0">Article</p>
