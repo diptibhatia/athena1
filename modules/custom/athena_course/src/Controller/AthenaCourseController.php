@@ -199,17 +199,7 @@ $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();
 
 //print $node->get('field_courses_credit_type')->value;exit;
-$banner_block =  [
-  '#theme' => 'course_banner',
-  '#course_title' => $node->get('title')->value,
-  '#ects_credit' => $node->get('field_course_ects_credit')->value,
-  '#awarding_body' => $node->get('field_course_awarding_body')->value,
-  '#description' => $node->get('field_course_banner_description')->value,
-  '#category' => $node->get('field_course_category')->value,
-  '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
-  '#base_path' => $base_path,
-  '#node' => $node
-]; 
+
 
 $paragraph_univ_data = $node->field_link_universities->referencedEntities();
 
@@ -239,10 +229,39 @@ foreach($paragraph_univ_data as $explore_data) {
         if (!empty($university_nid)) {
        $univ_node = Node::load($university_nid);
        $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+       
+        
+       $white_log  = '';
+       switch($univ_node->get('title')->value){
+           case 'Scottish Qualifications Authority, UK':
+             $white_log = "sqalogo";
+             break;
+           case 'Guglielmo Marconi University, Italy':
+           $white_log = "gmu-white";
+             break;
+           case 'Cambridge International Qualifications, UK':
+           $white_log = "ciq-white";
+             break;
+
+            case 'Universidad Catolica De Murcia (UCAM), Spain':
+                       $white_log = "ucam-logo";
+                         break;
+
+            case 'Chartered Management Institute, UK':
+                       $white_log = "cmi-white";
+                         break;    
+            default:
+                    break;
+             
+             
+             
+       }
+       
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
         'univ_logo' =>$univ_logo,
+        'white_log' =>$white_log,
         'message' =>$message,
         'msg_title' =>$msg_title,
         'prof_name' =>$prof_name,
@@ -329,6 +348,19 @@ foreach($paragraph_faq as $faq_data){
     
     
 }
+
+$banner_block =  [
+  '#theme' => 'course_banner',
+  '#course_title' => $node->get('title')->value,
+  '#ects_credit' => $node->get('field_course_ects_credit')->value,
+  '#univ_data' => $univ_data,
+  '#awarding_body' => $node->get('field_course_awarding_body')->value,
+  '#description' => $node->get('field_course_banner_description')->value,
+  '#category' => $node->get('field_course_category')->value,
+  '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
+  '#base_path' => $base_path,
+  '#node' => $node
+]; 
 
 $testibundle='testimonials';
 $testiquery = \Drupal::entityQuery('node');

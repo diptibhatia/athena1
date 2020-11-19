@@ -6,14 +6,11 @@
                 <a href="#">Overview</a>
             </div>
             <div class="course-banner__logos">
-
-                <img src="{{ file_url(node.field_course_awarding_body_logos[0].entity.uri.value)}}" alt="ucam logo" width="95">
-{% if node.field_course_awarding_body_logos[1].entity.uri.value is empty %}
-                                   
-                                    {% else %}
-                <img src="{{ file_url(node.field_course_awarding_body_logos[1].entity.uri.value)}}" alt="sqa logo" width="95">
-                               
-                                        {% endif %}
+ {% for universities in univ_data	 %}
+   <img src="{{base_path}}/images/icons/{{ universities.white_log}}.svg" alt="ucam logo" width="95">
+ 
+ {% endfor %}
+                
                                         <a href="#" class="showinMobileView" style="position: relative;float:right;color:white;">
                                            <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon" style="width:30px;">
                                         Share

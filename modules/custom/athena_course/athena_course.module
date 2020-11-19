@@ -9,6 +9,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'variables' => [
       'course_title' => NULL,
       'ects_credit' => NULL,
+      'univ_data' => NULL,
       'awarding_body' => NULL,
       'description' => NULL,
       'category' => NULL,

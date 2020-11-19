@@ -211,9 +211,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(jQuery("#speak_first_name").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
-                 if(jQuery("#speak_country").val() == '') {
-                    msg += '\n\u2022  Country cannot be empty';
-                }
+                
                  if(jQuery("#speak_mobile_number").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
