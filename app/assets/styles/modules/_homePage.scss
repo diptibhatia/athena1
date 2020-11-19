@@ -599,17 +599,17 @@
 				}
 				.info-item {
 					.item {
-						padding: 15px 0;
+						padding: 15px 15px 15px 39px;
+						position:relative;
 						img {
-							position: relative;
-							top: 49px;
-							left: -20px;
+							position: absolute;
+							top: 52px;
+							left: -27px;
 						}
 						p {
 							font-size: 16px;
 						  	color: $primaryColor;
 						  	list-style-type:none;
-						  	padding-left: 48px;
 						  	line-height: 26px;
 						  	margin: 0;
 						  	button {
@@ -637,7 +637,6 @@
 							  top: 10px;
 							  top: 10px;
 							  @include atSize424 {
-							  	font-size: 12px;
 							  	top: 0;
 							  }
 							@include atSize700{
@@ -660,7 +659,7 @@
     		right: 117px;
     		margin: 15px 0 0 0;
     		@media (max-width: 440px) {
-				top: 193rem;
+				top: 181rem;
 				right: 3rem;
 				img {
     				width: 350px;
@@ -699,14 +698,14 @@
 			z-index: 10;
 			img {
 				position: relative;
-			    top: 199px;
+			    top: 60px;
 			    right: 0px;
 			    width: 694px;
 			    @include atSize424 {
 			    	top: 0;
 					right: 0;
 					width: 100%;
-					margin: 35px auto;
+					margin: 0 auto;
 			    }
 			    @media (min-width: 480px) and (max-width: 770px){
 			    	top: 18px;
@@ -717,7 +716,7 @@
 			    	width: 100%;	
 			    }
 			    @media (min-width: 1441px) and (max-width: 2559px){
-			    	top: 165px;
+			    	top: 84px;
 			    	width: 750px;
 			    }
 			    @media (min-width: 2560px) {

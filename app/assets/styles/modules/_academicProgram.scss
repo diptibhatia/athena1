@@ -1,6 +1,6 @@
 .academic-program-wrapper {
 
-	
+	display:none;
 	a {
 		color: $purpleColor;
 		font-weight: 600;
@@ -227,6 +227,27 @@
 								margin:30px auto;
 								top:0;
 							}
+					}
+				}
+				.owl-dots {
+					position: absolute;
+					width: 158px;
+					height: 30px;
+					top: 100%;
+					transform: translateY(-50%);
+					@include atSize424 {
+						display: flex;
+					}
+					button {
+						@media (max-width: 424px) {
+							left: auto;
+							display: inline-block;
+							margin: 0 auto;
+							top: 0;
+							width: auto;
+							border: none;
+							height: auto;
+						}
 					}
 				}
 
