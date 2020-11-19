@@ -383,7 +383,12 @@
                         {% if universities.message|trim is not empty %}
                         <div class="partners-tabs__msg">
                             <div class="partners-tabs__msg-person">
+                            
+                             {% if universities.recortimage|trim is not empty %}
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
+                               {% else %}
+                             <img src="universities.recortimage" alt="msg author">
+                                         {% endif %}     
                                 <h3>{{universities.msg_title}}</h3>
                                 <p>{{universities.prof_name}}</p>
                                 <p>{{prof_univ}}</p>
