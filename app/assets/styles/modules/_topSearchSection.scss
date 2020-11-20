@@ -282,6 +282,16 @@
         background:#EAEDF9;
 
         img {
+            width: 60%;
+            margin-top:-29px;
+        }
+        img.homepage--banner-curve{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -3px;
+            z-index: 4;
             width: 100%;
         }
 
