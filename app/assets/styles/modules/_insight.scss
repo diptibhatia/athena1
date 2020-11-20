@@ -68,6 +68,7 @@
 	.insight-sidebar-wrapper {
 		@include atSize700 {
 			//max-width: 360px;
+			padding:0 1rem !important;
 		}
 	}
 
@@ -117,9 +118,24 @@
 	}
 
 	.insight-cards {
-
 		@include atSize700 {
 			max-width: 252px;
+			margin:0.5rem auto !important;
+			width:91%;
+			background:#fff;
+		}
+		img{
+			@include atSize700 {
+				width: 100%;
+				height:auto;
+			}
+		}
+		.insight-card-footer{
+			.readMin{
+				padding: 1rem 0;
+				line-height: 38px;
+				margin:1rem 0;
+			}
 		}
 	}
 

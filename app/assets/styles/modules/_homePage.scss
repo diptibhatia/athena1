@@ -576,7 +576,7 @@
     			@include atSize424 {
 					font-size:28px;
 					position:relative;
-					left:-16px;
+					left:0;
 				}
 
 			}
@@ -588,7 +588,7 @@
     			@include atSize424 {
 					border: solid 2px #630097;
 					position:relative;
-					left:-16px;
+					left:0;
 				}
 			}
 			.info {
@@ -600,6 +600,9 @@
 				.info-item {
 					.item {
 						padding: 15px 15px 15px 39px;
+						@include atSize479{
+							padding:15px 0;
+						}
 						position:relative;
 						img {
 							position: absolute;
@@ -897,6 +900,7 @@
 		@media (max-width:420px){
 			padding: 0 10px;
 		    width: 100%;
+			top: 0;
 		}
 		.testimonials-item {
 			display: flex;
@@ -909,9 +913,9 @@
 					top: -30px;
 					left: 8px;
     				@media (max-width: 424px) {
-						width: 55% !important;
+						width: 75% !important;
 						position: relative;
-						left: -64px;
+						left: -30px;
 						margin-bottom:22px;
     				}
 				}
@@ -1264,6 +1268,9 @@
 				right: auto;
 				width: 694px;
 				left: 0;
+				@include atSize479{
+					width: 100%;
+				}
 			}
 		}
 		.why-athena-item-one{
@@ -1271,6 +1278,9 @@
 			.info{
 				margin: 0 0 0;
 				width: 293px;
+				@include atSize479{
+					width:100%;
+				}
 			}
 		}
 	}
@@ -1820,6 +1830,7 @@
 	font-family: Lato;
 	@media (max-width: 550px){
 		height: auto;
+		padding-bottom:10px;
 	}
 	.courses-list {
 		/*margin: 50px 50px 10px 50px;*/
@@ -1995,6 +2006,9 @@
 
 .popular-courses {
 	position:relative;
+	@include atSize479{
+		padding-top:20px;
+	}
 	.heading-image {
 		width: 100%;
 		text-align: center;
@@ -2010,9 +2024,12 @@
 		}
 	}
 	.title{
-		margin: 100px 0 50px 0;
+			margin: 100px 0 50px 0;
 			text-align: left;
 			font-size: 36px;
+			@include atSize479{
+				margin: 50px 0 50px 0;
+			}
 		}
 	h1 {
 		text-align: left;
