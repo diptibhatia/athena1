@@ -842,9 +842,13 @@
 				  		position: relative;
 						top: -38px;
 						float:right;
-						@media (min-width: 1440px) and (max-width: 2559px){
+						@media (min-width: 1440px){
 							width: 76%;
 						}
+						@media (min-width: 1920px){
+							width: 57%;
+						}
+
 						@media (min-width: 2560px){
 							width: 50%;
 						}
