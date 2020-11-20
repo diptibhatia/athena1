@@ -175,12 +175,17 @@
 .explore-courses {
 	text-align: center;
 	.wrapper{
-		@media screen and (min-width:1441px) and (max-width:1920px){
+		@media screen and (min-width:1441px) and (max-width:1919px){
 			padding:17rem 0 0;
 
 		}
-		@media screen and (min-width:1921px){
-			padding:30rem 0 0;
+
+		@media screen and (min-width:1920px){
+			padding:4rem 0 0;
+
+		}
+		@media screen and (min-width:2560px){
+			padding:8rem 0 0;
 
 		}
 
@@ -837,9 +842,13 @@
 				  		position: relative;
 						top: -38px;
 						float:right;
-						@media (min-width: 1440px) and (max-width: 2559px){
+						@media (min-width: 1440px){
 							width: 76%;
 						}
+						@media (min-width: 1920px){
+							width: 57%;
+						}
+
 						@media (min-width: 2560px){
 							width: 50%;
 						}
@@ -900,7 +909,6 @@
 		@media (max-width:420px){
 			padding: 0 10px;
 		    width: 100%;
-			top: 0;
 		}
 		.testimonials-item {
 			display: flex;
