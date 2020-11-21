@@ -169,7 +169,8 @@
           color: #f00297;
           margin: 0;
           display: inline;
-          padding: 0 40px 0 0;
+          margin-left: 10px;
+        //  padding: 0 40px 0 0;
           cursor: pointer;
           @include atSize424 {
             padding: 0 30px 0 0;
@@ -269,7 +270,8 @@
           color: #f00297;
           margin: 0;
           display: inline;
-          padding: 0 40px 0 0;
+         // padding: 0 40px 0 0;
+         margin-left: 10px;
           cursor: pointer;
           @include atSize424 {
             padding: 0 30px 0 0;
@@ -829,9 +831,10 @@
       }
     }
 
+
     @media (min-width: $break-small) {
       margin-top: 20px;
-
+     // height:315px;
       flex-direction: row;
       max-width: 1000px;
       .meta {
