@@ -177,12 +177,10 @@
 	.wrapper{
 		@media screen and (min-width:1441px) and (max-width:1919px){
 			padding:17rem 0 0;
-
 		}
 
 		@media screen and (min-width:1920px){
 			padding:14rem 0 0;
-
 		}
 		@media screen and (min-width:2560px){
 			padding:30rem 0 0;
@@ -291,6 +289,8 @@
 		}
 		@include atSize479 {
 			flex-direction: column;
+			margin:0;
+			padding:0;
 		}
 		@media (max-width: 770px) {
 			flex-direction: column;
@@ -302,8 +302,8 @@
 			flex: 0.5;
 			text-align: left;
 			padding: 60px 0;
-			@include atSize424 {
-				padding: 10px 0;
+			@include atSize479 {
+				padding: 15px;
 				text-align:center;
 			}
 			h2 {
@@ -347,6 +347,11 @@
 			padding: 5px;
 			margin: 60px 0 20px 0;
 			background: none;
+			width:400px;
+			@include atSize479 {
+				width:100%;
+				margin: 0 0 20px;
+			}
 			.course-list {
 				margin: 20px 10px;
 				display: flex;
@@ -358,6 +363,7 @@
 				}
 				@include atSize479 {
 					flex-direction: column;
+					margin: 20px 0;
 				}
 				@media (max-width: 550px){
 					flex-direction: column;
@@ -372,8 +378,7 @@
 			  		margin: 0 20px;
 			  		z-index: 10;
 			  		@include atSize424 {
-			  			margin: 20px 0;
-			  			left: -30px;
+			  			margin: 20px 13px;
 			  		}
 			  		@media (min-width: 760px) and (max-width: 770px) {
 			  			left: -26px;
