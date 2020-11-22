@@ -220,7 +220,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
                 
                 if(msg == ''){
-                    alert("Data Submitted, will reach out to you shortly")
+                    alert("Thank you for submitting the registration form. Will reach out to you shortly")
                 }else {
                     jQuery('#speak_first_name').val("");
                     jQuery('#speak_last_name').val("");
