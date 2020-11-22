@@ -1322,10 +1322,23 @@ $query->condition('field_course_category', 'Academic');
     
    $academicnodes = node_load_multiple($academic_list);
 $academicnodes =  array_slice($academicnodes, 0, 3);
+
+ $bundle='insight_article';
+
+    $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('type', $bundle);
+    $latest = $query->execute();
+        
+    
+    $insightsnodes = node_load_multiple($latest);
+        
+    $latest_insights =  array_slice($insightsnodes, 0, 5);
 $academic =  [
   '#theme' => 'course_academic',
   '#title1' => $title1,  
   '#title2' => $title2,  
+  '#insig' => $latest_insights,  
   '#desc' => $desc,  
   '#header_image' => $url,  
   '#paragraph' => $type,  
