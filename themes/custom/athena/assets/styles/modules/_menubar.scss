@@ -329,7 +329,7 @@
                 height: 467px;
                 background-color: #fff;
                 margin-left: 0;
-                padding: 31px 0 0 0;
+                padding: 31px 0 20px 0;
                 height:auto;
                 &::before {
                     content: '';
@@ -436,6 +436,7 @@
             transition: transform .2s ease-out, opacity .2s ease-out;
             width: 100%;
             padding-top: 20px;
+            padding-bottom:20px;
 
             &.show {
                 transform: scaleY(1);
