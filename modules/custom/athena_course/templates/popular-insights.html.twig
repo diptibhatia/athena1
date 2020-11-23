@@ -5,11 +5,11 @@
       {% for popudata in popu %}
          {% if loop.index ==3 %}
 			<div class="card">     
-				<img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
+				<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" /></a>
                 <div class="insight-logo"><img class="card-img-top" src="{{base_path}}/images/insights.svg" alt="Card image cap"></div>
           <div class="readTime">{{popudata.field_insight_article_min_read.value}}</div>
 				<div class="card-body">
-					<h5 class="card-title short-title">{{popudata.title.value}}</h5>
+					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
 					<p class="card-text">
                   {% set text = popudata.body.value|render|striptags %}
                   {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
@@ -24,11 +24,11 @@
 			</div>
          {% else %}
          <div class="card mr-2">
-         	<img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
+         	<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" /></a>
             <div class="insight-logo"><img class="card-img-top" src="{{base_path}}/images/insights.svg" alt="Card image cap"></div>
             <div class="readTime">{{popudata.field_insight_article_min_read.value}}</div>
 				<div class="card-body">
-					<h5 class="card-title short-title">{{popudata.title.value}}</h5>
+					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
 					<p class="card-text">
                   {% set text = popudata.body.value|render|striptags %}
                   {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}

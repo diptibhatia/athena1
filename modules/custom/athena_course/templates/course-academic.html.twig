@@ -32,22 +32,23 @@
                         <div class="col-md-3 col-sm-12 text-center box">
                             <img class="rounded-circle" src="{{base_path}}/images/find-program.svg">
                             <h3 class="card-title">Find a Program</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>                            
+                            <p>Select a program from Athena’s wide array of courses which include academic and professional certification programs. All are internationally accredited  and help to advance your career.</p>                            
                         </div>
                         <div class="col-md-3 col-sm-12 text-center box">
                             <img class="rounded-circle" src="{{base_path}}/images/enroll.svg">
                             <h3 class="card-title">Enroll For a Module</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>                            
+                            <p>Register for a course and get complete access to the first module of any program for 7 days totally free. You can access the learning materials and the e-library.</p>                            
                         </div>
                         <div class="col-md-3 col-sm-12 text-center box">
                             <img class="rounded-circle" src="{{base_path}}/images/assesment.svg">
                             <h3 class="card-title">Online Assesments</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>                            
+                            <p>There are no written exams for any program. All the modules are assessed online based on the module-specific project. The number of days within which you have to submit your assignment depends on the particular program you have enrolled for.
+</p>                            
                         </div>
                         <div class="col-md-3 col-sm-12 text-center box">
                             <img class="rounded-circle" src="{{base_path}}/images/getdegree.svg">
                             <h3 class="card-title">Get a Degree</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>                            
+                            <p>After completion of the course modules, you get a degree which is recognized worldwide and helps you to take a giant leap forward in your career.</p>                            
                         </div>                         
                     </div>
                 </div>           
@@ -154,59 +155,43 @@
         <div class="container-fluid"> 
             <div class="container p-0">
                  <div class="insights-section shawdow-effect">
-                    <h1>News &amp; Updates</h1>
-                    <h2>From Our Insights</h2>
-                    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
-                    <div class="section-items">
-                       <div class="section-item-one">
-                          <div class="section-image">
-                             <img src="{{base_path}}/images/blog-bg.png">
-                             <h4>ARTICLE</h4>
-                             <h5>A Strong Corporate Culture Is Important, Now More</h5>
-                             <p>When a crisis happens and times are tough it can be easy to lose focus on the importance of supporting and growing a strong corporate…
-                             </p>
-                          </div>
-                       </div>
-                       <div class="section-item-two">
-                          <h4>Upcoming Events <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
-                          <div class="event-list">
-                             <div class="event-item">
-                                <div class="event-images">
-                                   <img src="{{base_path}}/images/events-bg.png">
-                                </div>
-                                <div class="event-info">
-                                   <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                                   <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
-                                   <p>Open For all</p>
-                                   <h5>More Details <span>Register Now</span></h5>
-                                </div>
-                             </div>
-                             <div class="event-item">
-                                <div class="event-images">
-                                   <img src="{{base_path}}/images/events-bg-2.png">
-                                </div>
-                                <div class="event-info">
-                                   <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                                   <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
-                                   <p>Open For all</p>
-                                   <h5>More Details <span>Register Now</span></h5>
-                                </div>
-                             </div>
-                             <div class="event-item">
-                                <div class="event-images">
-                                   <img src="{{base_path}}/images/events-bg-3.png">
-                                </div>
-                                <div class="event-info">
-                                   <h4>Beating Procrastination - The Never- Ending Struggle</h4>
-                                   <p>26th June 2020 I Friday I 03:00 Pm to 04:30Pm (GST)</p>
-                                   <p>Open For all</p>
-                                   <h5>More Details <span>Register Now</span></h5>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                </div>
+            <!-- <h1>News & Updates</h1> -->
+            <img class="img-heading" src="{{base_path}}/images/news-updates.svg" alt="">
+            <h2>From Our Insights</h2>
+            <h3>We keep you informed and engaged. Blogs on diverse subjects. Candid interviews of students and employees. Reviews of books that can change your life. Testimonials from our satisfied students.</h3>
+            <div class="section-items">
+               <div class="section-item-one">
+                  <div class="section-image">
+                    <a href="{{ url('<front>') }}node/{{insig.0.id}}"> <img style="padding:8px" src="{{ file_url(insig.0.field_insight_article_image_thum.entity.uri.value)}}"></a>
+                     <h4>ARTICLE</h4>
+                      <h5>{{ insig.0.title.value }}</h5>
+                     <p>{{insig.0.body.value|striptags|truncate(100)}}…<a href="{{ url('<front>') }}node/{{insig.0.id}}">Read more</a>
+
+                     </p>
+                  </div>
+               </div>
+               <div class="section-item-two">
+                  <h4>Latest Articles <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
+                   
+                   
+                   <div class="container">
+   {% for insightsdata in insig %}
+   <div class="row mb-1">
+      <div class="col-md-4 d-flex align-items-center p-0">
+        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> <img class="img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
+      </div>
+      <div class="col-md-8">                    
+         <p class="strong yellow-txt m-0">Article</p>
+         <p><a href="{{ url('<front>') }}node/{{insightsdata.id}}">{{ insightsdata.title.value}}</a></p>
+      </div>
+   </div>
+   {% endfor %}
+
+<p class="purple-txt"><a href="/insights/all" class="more-link">VIEW ALL INSIGHTS</a></p>
+</div>
+               </div>
+            </div>
+         </div>
             </div>           
         </div>
     </div>

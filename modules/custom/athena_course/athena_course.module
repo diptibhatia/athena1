@@ -178,6 +178,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'desc' => NULL,
       'header_image' => NULL,
       'paragraph' => NULL,
+      'insig' => NULL,
       'course_list' => NULL,
       'course_details' => NULL,
       'course_modules' => NULL,
