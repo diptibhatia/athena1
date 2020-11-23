@@ -282,6 +282,7 @@
         background:#EAEDF9;
         @include atSize479{
             display:block;
+            min-height:320px;
         }
 
         span.homepage--banner-image {
