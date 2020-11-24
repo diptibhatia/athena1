@@ -1254,7 +1254,7 @@ $merged_nodes =  $nodes ;
     if(strpos(strtolower($_POST['search_key']), 'diploma') !== false){
     $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
 ->latestRevision()
-->condition('field_tag_course‎', 9, '=')
+->condition('field_tagtaxanomy', 9, '=')
 ->condition('type', $bundle)
 ->execute();
     
