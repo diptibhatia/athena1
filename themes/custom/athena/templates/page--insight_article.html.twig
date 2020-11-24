@@ -255,39 +255,42 @@ Doctorate in Business Administration<br/>
 
         updateProgress();
 
-       function scrollEvent(){
-        $(function(){
-            var stopFloating = $('.stopScroll');
-            if (stopFloating) {
-            var stop = stopFloating.offset().top;
-            $(window).scroll(function() {
-            var y = $(window).scrollTop(),
-            header = $(".share-icon ul");
-            if(y <= stop-200)  {
-            header.css({position: "fixed"});
-            } else {
-            header.css("position", "static");
-            }
-            });
-        }
-      });
+        function scrollEvent(){
+                $(function(){
+                    var stopFloating = $('.stopScroll');
+                    if (stopFloating) {
+                    var stop = stopFloating.offset().top;
+                    $(window).scroll(function() {
+                    var y = $(window).scrollTop(),
+                    header = $(".share-icon ul");
+                    if(y <= stop-200)  {
+                        header.css({display: "block"});
+                    header.css({position: "fixed"});
+                    } else {
+                        header.css({display: "none"});
+                    }
+                    });
+                }
 
-  $(function(){
-        var stopFloating = $('.stopScroll');
-            if (stopFloating) {
-            var stop = stopFloating.offset().top;
-            $(window).scroll(function() {
-            var y = $(window).scrollTop(),
-            header = $(".share-icon ul");
-            if(y <= stop-200)  {
-            header.css({position: "fixed"});
-            } else {
-            header.css("position", "static");
-            }
+            });
+
+            $(function(){
+                var stopFloating = $('.stopScroll');
+                    if (stopFloating) {
+                    var stop = stopFloating.offset().top;
+                    $(window).scroll(function() {
+                    var y = $(window).scrollTop(),
+                    header = $(".share-icon ul");
+                    if(y <= stop-200)  {
+                        header.css({display: "block"});
+                    header.css({position: "fixed"});
+                    } else {
+                        header.css({display: "none"});
+                    }
+                    });
+                }
             });
         }
-    });
-}
 
         const mq = window.matchMedia( "(max-width: 700px)" );
 
