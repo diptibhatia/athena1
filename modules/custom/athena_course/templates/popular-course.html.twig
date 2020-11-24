@@ -23,9 +23,15 @@
                      <h2>{{coursedata.field_course_awarding_body.value|raw }}</h2>
                      <div class="course-tags">
                      
-                        <p><span class="circle"></span>Masters ( EQF Level 7) <span>|</span>{{coursedata.field_course_ects_credit.value}} Credits (ECTS)</p>
+                        <p><span class="circle"></span>Masters ( EQF Level 7) <span>|</span>
+                        
+                                 {% if coursedata.field_course_ects_credit.value is not empty %}
+                        {{coursedata.field_course_ects_credit.value}} Credits (ECTS)
+                        {% endif %}
+                        
+                        </p>
                      </div>
-                     <h3><b>Duration : </b>Flexible ( ( {{coursedata.field_course_duration.value}}))</h3>
+                     <h3><b>Duration : </b>Flexible ( {{coursedata.field_course_duration.value}} )</h3>
                   </div>
                   <div class="course-info">
                      {{coursedata.field_course_banner_description.value | truncate(60, true)}} 
