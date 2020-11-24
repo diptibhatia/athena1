@@ -28,7 +28,7 @@
                 {{ page.content }}
             </div>
             <div class="stopScroll"></div>
-        
+
 
         <div class="col-md-4 col-sm-12 bg-white">
           {% if page.sidebar_second %}
@@ -131,9 +131,9 @@ Doctorate in Business Administration<br/>
             Group, a higher education services provider since 2009, providing
             quality UK, Italian and Spanish Bachelor and Master level degrees.
           </p>
-          
+
         </div>
-          
+
           <span class="subscribe-newsletter" >Subscribe to our newsletter</span>
           <div class="news-letter">
             <input type="email" class="form-control"
@@ -170,7 +170,7 @@ Doctorate in Business Administration<br/>
                 <p><a href="#">Anti-Bribery Policy</a></p>
                 <p><a href="#">Equal Oppurtunity Policy</a></p>
                 <p><a href="#">Cookies Policy</a></p>
-            
+
             </div>
 
             <div class="col-md-6 links" style="text-align: center;top:30%;">
@@ -247,54 +247,56 @@ Doctorate in Business Administration<br/>
                 progressFill.style.width = "5%";
             }else {
                 progressFill.style.width = Math.ceil(100 * progress) + "%";
-            }            
+            }
         }
 
         updateProgress();
 
-       function scrollEvent(){
-        $(function(){
-            var stopFloating = $('.stopScroll');
-            if (stopFloating) {
-            var stop = stopFloating.offset().top;
-            $(window).scroll(function() {
-            var y = $(window).scrollTop(),
-            header = $(".share-icon ul");
-            if(y <= stop-200)  {
-            header.css({position: "fixed"});
-            } else {
-            header.css("position", "static");
-            }
+        function scrollEvent(){
+                $(function(){
+                    var stopFloating = $('.stopScroll');
+                    if (stopFloating) {
+                    var stop = stopFloating.offset().top;
+                    $(window).scroll(function() {
+                    var y = $(window).scrollTop(),
+                    header = $(".share-icon ul");
+                    if(y <= stop-200)  {
+                        header.css({display: "block"});
+                    header.css({position: "fixed"});
+                    } else {
+                        header.css({display: "none"});
+                    }
+                    });
+                }
+
+            });
+
+            $(function(){
+                var stopFloating = $('.stopScroll');
+                    if (stopFloating) {
+                    var stop = stopFloating.offset().top;
+                    $(window).scroll(function() {
+                    var y = $(window).scrollTop(),
+                    header = $(".share-icon ul");
+                    if(y <= stop-200)  {
+                        header.css({display: "block"});
+                    header.css({position: "fixed"});
+                    } else {
+                        header.css({display: "none"});
+                    }
+                    });
+                }
             });
         }
-       
- 
-  $(function(){
-        var stopFloating = $('.stopScroll');
-            if (stopFloating) {
-            var stop = stopFloating.offset().top;
-            $(window).scroll(function() {
-            var y = $(window).scrollTop(),
-            header = $(".share-icon ul");
-            if(y <= stop-200)  {
-            header.css({position: "fixed"});
-            } else {
-            header.css("position", "static");
-            }
-            });
-        }
-    });
-}
 
         const mq = window.matchMedia( "(max-width: 700px)" );
 
         if (mq.matches) {
           $('.insight-wrapper .share-icon').addClass('mobile-share-icon');
-        } 
+        }
         window.onload = scrollEvent();
     </script>
 
 
 
     <script src="bundled.js"></script>
-    
