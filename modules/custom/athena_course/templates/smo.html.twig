@@ -15,7 +15,7 @@
             <h1>{{course_title}}</h1>
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from 
                 <br>{{awarding_body}}</p>
-            <a href="#" class="trialBtn">Start 7 Day Trial</a>
+            <a href="{{ url('<front>') }}registration" class="trialBtn">Start 7 Day Trial</a>
           </div>
           <div class="bg">
             <img src="{{base_path}}/images/smo/bg.jpg" alt="background-image">
@@ -65,7 +65,7 @@
               <div class="main-section" style="width:initial">
                 <div class="desc">
                     <h2>Why this Course</h2>
-                    <div>            
+                    <div style="text-align:left">            
                     {{overview | raw}}
 </div>
                     <p>Build your skills in all areas of managing and leading organizations</p>
@@ -310,13 +310,16 @@
                     <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{base_path}}/images/smo/tesimonial.jpg" alt="First slide">
+                                <a href="https://www.linkedin.com/in/amara-vandi-fomba-b6429316a/"><img class="d-block w-100" src="{{base_path}}/images/smo/testimonial1.png" alt="First slide"></a>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{base_path}}/images/smo/tesimonial.jpg" alt="First slide">
+                                <a href="https://www.linkedin.com/in/nazeer-hussein-4a861530/"><img class="d-block w-100" src="{{base_path}}/images/smo/testimonial2.png" alt="First slide"></a>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{base_path}}/images/smo/tesimonial.jpg" alt="First slide">
+                                <a href="https://www.linkedin.com/in/coillard-hamusimbi-55525812a"><img class="d-block w-100" src="{{base_path}}/images/smo/testimonial3.png" alt="First slide"></a>
+                            </div>
+                             <div class="carousel-item">
+                               <a href="https://www.linkedin.com/in/dr-ing-viswa/"> <img class="d-block w-100" src="{{base_path}}/images/smo/testimonial4.png" alt="First slide"></a>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
@@ -352,7 +355,10 @@
                                         {% endif %}
                     
                     <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
-                        <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a></p>
+                    {% if why_coursedata.certificates_url is not empty %}
+                        <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a>
+                     {% endif %}   
+                        </p>
                     <!-- Modal Starts -->
                     <div class="modal fade" id="certificateModal{{whynum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog">

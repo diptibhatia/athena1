@@ -50,7 +50,7 @@
        {% for nodedata in node %}
       <div class="card">
         <div class="course-sidebar">
-         {% if node.field_search_list_image.entity.uri.value is not empty %}
+         {% if nodedata.field_search_list_image.entity.uri.value is not empty %}
          
        
          <img class="course-img" src=" {{ file_url(node.field_search_list_image.entity.uri.value)}}" style="witdth:250px;height:200px" alt="Course">
@@ -71,7 +71,16 @@
           <div class="duration">
             <div class="row">
               <li class="column-1" style="list-style: none">
-                <span>Masters (EQF evel 7)<span> | <span>{{nodedata.field_course_ects_credit.value}} credit(ECTS)</span> | <span class="duration-text">Duration: {{nodedata.field_course_duration.value}}</span>
+                
+                  {% if nodedata.field_course_ects_credit.value|trim is not empty %}       
+                <span>{{nodedata.field_course_ects_credit.value}} 
+                {% if node.field_courses_credit_type.0.value|trim is not empty %}
+                            ({{node.field_courses_credit_type.0.value|raw }})
+                             {% endif %}
+                </span>
+                {% endif %}
+
+                | <span class="duration-text">Duration: {{nodedata.field_course_duration.value}}</span>
               </span></span></li>
 
               <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>

@@ -53,8 +53,8 @@
                                     <h3>Completely Online</h3>
                                 </div>
                             </div>
+                                {% if node.field_course_accreditations.0.value is not empty %}
                             <div class="overview-points-card__container">
-                                {% if node.field_course_accreditations.0.value != '' %}
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
@@ -63,8 +63,8 @@
                                    
                                     
                                 </div>
-                                {% endif %}
                             </div>
+                                {% endif %}
                             <div class="overview-points-card__container">
                                 <a href="{{ url('<front>') }}registration" >Take a Free Trial Now</a>
                             </div>
@@ -552,8 +552,16 @@
                             <h4>{{ module.entity.field_course_module_name.value }}</h4>
                             <p class="duration"><span>Duration:</span> 4  to 12 weeks</p>
                             <p class="text">{{ module.entity.field_coursemodule_description.value|striptags }}</p>
+                            {% if module.entity.field_module_level.value|trim is not empty %}
                             <p class="level"><span>Level:</span> {{ module.entity.field_module_level.value }}</p>
-                            <p class="credit"><span>Credits:</span> {{ module.entity.field_module_credit.value }} ({{node.field_courses_credit_type.0.value|raw }})</p>
+                            {% endif %}
+                            {% if module.entity.field_module_credit.value|trim is not empty %}
+                            <p class="credit"><span>Credits:</span> {{ module.entity.field_module_credit.value }}
+                             {% if node.field_courses_credit_type.0.value|trim is not empty %}
+                            ({{node.field_courses_credit_type.0.value|raw }})
+                             {% endif %}
+                            </p>
+                            {% endif %} 
                         </div>
                     </div>
                 </div>
@@ -641,7 +649,11 @@
                                         {% endif %}
                     
                     <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
-                        <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a></p>
+                     {% if why_coursedata.certificates_url is not empty %}
+                        <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a>
+                         {% endif %}
+                        </p>
+                        
                     <!-- Modal Starts -->
                     <div class="modal fade" id="certificateModal{{whynum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog">

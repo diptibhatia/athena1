@@ -112,12 +112,18 @@ Doctorate in Business Administration<br/>
           </p>
 
         </div>
+<div id="newsletter-info-box" id="newsletter-info-box" class="alert alert-info" style="display:none">
+  
+</div>
+<div id="newsletter-info-box-error" class="alert alert-danger"  style="display:none">
+  
+</div>
 
           <span class="subscribe-newsletter">Subscribe to our newsletter</span>
           <div class="news-letter">
-            <input type="email" class="form-control">
+            <input type="email" id="newsletter-email-input" class="form-control">
           </div>
-          <button type="button" class="btn btn-sm mt-3 btn-outline violet-btn subscribe-button">Subscribe</button>
+          <button type="button"  id="news-letter-subscribe" class="btn btn-sm mt-3 btn-outline violet-btn subscribe-button">Subscribe</button>
         </div>
       </div>
 
@@ -128,15 +134,15 @@ Doctorate in Business Administration<br/>
     left: -30px;
 ">
 
-                <p><a href="https://athena.edu/Aboutus.aspx">About Us</a></p>
+                <p><a href="{{ url('<front>') }}about-us/our-background">About Us</a></p>
                 <p><a href="#">Governance</a></p>
 
-              <p><a href="https://athena.edu/Policy.aspx">Policies &amp; Procedures</a></p>
-              <p><a href="#">Board of Governance</a></p>
-              <p><a href="#">Acadamic Council</a></p>
+              <p><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policies &amp; Procedures</a></p>
+              <p><a href="{{ url('<front>') }}about-us/board-of-governance">Board of Governance</a></p>
+              <p><a href="{{ url('<front>') }}about-us/academic-council">Acadamic Council</a></p>
 
-              <p><a href="#">Executive Council</a></p>
-              <p><a href="#">Core Principles</a></p>
+              <p><a href="{{ url('<front>') }}about-us/executive-council">Executive Council</a></p>
+              <p><a href="{{ url('<front>') }}about-us/core-principles">Core Principles</a></p>
               <p><a href="https://athena.edu/ContactUs.aspx">Contact Us</a></p>
             </div>
 
