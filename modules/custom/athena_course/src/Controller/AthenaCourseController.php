@@ -1249,20 +1249,29 @@ $theme = \Drupal::theme()->getActiveTheme();
 if(!empty($entity_ids)) {
 $nodes = node_load_multiple($entity_ids);
 }
-
-
-
-
-
-
+   
+$merged_nodes =  $nodes ;  
+    if(strpos(strtolower($_POST['search_key']), 'diploma') !== false){
+    $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+->latestRevision()
+->condition('field_tag_course‎', 1, '=')
+->condition('type', $bundle)
+->execute();
+    
+    $tnodes = node_load_multiple($term_node);
+$merged_nodes = array_merge($nodes, $tnodes);
+    
+    }
+  
+  
 $base_path = $base_url.'/'. $theme->getPath();
   $banner_block =  [
   '#theme' => 'course_search',
  '#base_path' => $base_path,
- '#node' => $nodes,
+ '#node' => $merged_nodes,
  '#partner_list' => $partner_list,
  '#search_key' => $_POST['search_key'],
- '#count' => count($nodes)
+ '#count' => count($merged_nodes)
  
 ];   
     
