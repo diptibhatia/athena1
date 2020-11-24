@@ -1489,10 +1489,118 @@ public function university(){
 global $base_url;
 $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();   
+
+$univ = $_REQUEST['univ'];
+
+$data = array();
+
+switch($univ) {
+case 'ucam':
+
+$data = array(
+'univ_label' => $univ,
+'title' => 'Universidad Católica de Murcia, Spain',
+'about' => "Universidad Católica De Murcia (UCAM) is a university par excellence based out of Murcia, Spain. Established in 1996, UCAM has an active student base of 17,0000 learners and an academic staff of more than 1000. The university is accredited by the Ministry of Education, Spain and National Agency for Quality Assessment and Accreditation of Spain (ANECA). UCAM is a member of The European Association for Quality Assurance in Higher Education (ENQA), Universia and European University association (EUA). It has a strategic partnership network with more than 280 universities including UC Berkeley, Stanford, Università di Bologna, National University of Singapore and Nanyang Technological University. UCAM centres in Cuba, Jakarta, Singapore, and Brussels work together to further develop the university’s international strategy. 
+UCAM is strongly linked to the business world through study plans responsive to market exigencies, obligatory internships in public and private institutions and enterprises as part of every undergraduate and master's degree, as well as research programs in collaboration with large regional, national and multinational companies.The university has corporate strategic partnership with industry leaders like Coca Cola, DANONE, Vodafone and Siemens including Microsoft, and SAP. 
+UCAM is also known as the University of Sports. It is the only European university with a professional basketball team in the first national league (ACB League Spain) and counts more than 80 Olympiads as its alumni.
+",
+'acc' => "UCAM is accredited by ANECA (National Agency for Quality Assessment and Accreditation of Spain) as well as by the Ministry of Education, Spain with regards to 17 of its undergraduate degrees.
+UCAM is a member of The European Association for Quality Assurance in Higher Education (ENQA), Universia and European University association (EUA).
+",
+"rank" => "The Europe Teaching Rankings is published by Times Higher Education (THE), which is one of the three most important ranking organisations of the world, together with the QS and the Shanghai ranking. UCAM is ranked among the 200 best universities in Europe and the 10 best  valued by its students by The Times Higher Education World University Rankings 2021.
+UCAM has obtained the tenth place in four large areas of study, which assesses the satisfaction of the services provided, the quality of teaching and the general assessment of the institution by the student. In the list, the Spanish university education stands out as the second best assessed one, behind the UK, with 14 universities among the first 100 positions.
+",
+'desc' => "Universidad Católica De Murcia (UCAM) is a university par excellence based out of Murcia, Spain. Established in 1996, the university is accredited by the Ministry of Education, Spain, ANECA and is a member of ENQA, Universia and EUA. UCAM is ranked among the 200 best universities in Europe and the 10 best  valued by its students by The Times Higher Education World University Rankings 2021. UCAM has a strategic partnership network with more than 280 universities."
+);
+break;
+
+case 'gmu':
+$data = array(
+'univ_label' => $univ,
+'title' => 'Guglielmo Marconi University (GMU)',
+'about' => "
+Guglielmo Marconi University (GMU) is based in Rome, Italy and  it is the first Italian Open University recognized by the Italian Ministry of Education, University and Research (MIUR) Presently, GMU has a community of over 16.000 students enrolled in graduate and postgraduate programs, a team of 300 faculty members and academic advisors and more than 200 tutoring experts. It appears among the 25 top performers worldwide in the categories of the U-Multirank ranking system for open access publications, international joint publications and regional joint publications.
+GMU is a world-class Italian university offering a wide range of lectures, workshops, and research ventures, promoting innovative learning methodologies, exploring the use of technological advancements in education, providing interdisciplinary knowledge, skills and competences, with a particular focus on global perspectives, contemporary culture and Industry. 
+GMU distinguishes itself by the operational blended format that combines traditional learning with advanced technological solutions, offering distance learning methodologies (online classes, virtual labs and simulations) and interpersonal training activities (lectures, seminars, laboratories, review and in-depth sessions). This format provides students a valuable experience both online and offline, by preserving face-to-face interactions with professors, seminars and lessons within the athenaeum, and by granting access to intranet and institutional resources.
+Since 1999, Italian Universities abided to the ‘Bologna Process’, launched with the Bologna Declaration of 1999 and defined by the European Higher Education Area (EHEA).In relation to this reform, the university system is organized in 3 cycles: Bachelor Degree, Master degree and Doctorates in all different schools.
+
+",
+'acc' => "GMU is the first online university accredited to the Italian Ministry of Education (MIUR). It has been accredited since 2010 to the Hellenic National Center for Information and Academic Recognition (DOATAP) and offers degrees in modern languages ​​and literature, psychology and education sciences, as well as a master's degree in leadership, management and technologies of education.
+Guglielmo Marconi University has collaboration agreements with European, American, African, Middle Eastern, Central and South American institutions. These agreements mainly foresee transactional mobility, generate bilateral and multilateral partnerships, develop activities and study programs among institutions that release dual or joint degrees, promote and diffuse the Italian language and culture, ultimately enhancing the quality of academic systems.
+
+",
+"rank" => "GMU appears among the 25 top performers worldwide in the categories of the U-Multirank ranking system for open access publications, international joint publications and regional joint publications.
+
+",
+'desc' => "Universidad Católica De Murcia (UCAM) is a university par excellence based out of Murcia, Spain. Established in 1996, the university is accredited by the Ministry of Education, Spain, ANECA and is a member of ENQA, Universia and EUA. UCAM is ranked among the 200 best universities in Europe and the 10 best  valued by its students by The Times Higher Education World University Rankings 2021. UCAM has a strategic partnership network with more than 280 universities."
+);
+
+break;
+
+case 'sqa':
+$data = array(
+'univ_label' => $univ,
+'title' => 'Scottish Qualifications Authority (SQA)',
+'about' => "
+Scottish Qualifications Authority (SQA) is the executive public body of Scottish government responsible for accrediting educational awards and is accredited by the UK government to offer educational qualifications. Being one of the four partner national organisations in the Curriculum for Excellence, SQA designs and develops new qualifications and assessments, validates qualifications and reviews them to ensure they are up to date.  It has created the Scottish Credit and Qualifications Framework (SCQF).
+The SCQF supports lifelong learning and can help:
+People of all ages and circumstances to access appropriate education and training over their lifetime, so as to fulfil their personal, social and economic potential
+Employers, learners and the general public to understand the full range of Scottish qualifications, how qualifications relate to each other and to other forms of learning, and how different types of qualification can contribute to improving the skills of the workforce.
+The SCQF helps describe both programmes of learning and qualifications, support the development of progression routes and maximise the opportunities to transfer credit points between qualifications to ensure that a learner does not have to repeat any learning they have already undertaken. The SCQF also helps to illustrate the relationships between Scottish qualifications and those in the rest of the UK, Europe and beyond, which can clarify opportunities for international progression routes and credit transfer.
+
+",
+'acc' => "GMU is the first online university accredited to the Italian Ministry of Education (MIUR). It has been accredited since 2010 to the Hellenic National Center for Information and Academic Recognition (DOATAP) and offers degrees in modern languages ​​and literature, psychology and education sciences, as well as a master's degree in leadership, management and technologies of education.
+Guglielmo Marconi University has collaboration agreements with European, American, African, Middle Eastern, Central and South American institutions. These agreements mainly foresee transactional mobility, generate bilateral and multilateral partnerships, develop activities and study programs among institutions that release dual or joint degrees, promote and diffuse the Italian language and culture, ultimately enhancing the quality of academic systems.
+
+",
+"rank" => '',
+'desc' => ''
+);
+
+break;
+
+case 'ciq':
+$data = array(
+'univ_label' => $univ,
+'title' => 'Cambridge International Qualifications (CIQ), UK',
+'about' => "
+Cambridge International Qualifications (CIQ), UK is a professional awarding body based in the United Kingdom and its subsidiary of Westford Education Group which is in higher education since 2009. CIQ is founded on the vision of helping individual learners and employers in attaining quality accredited awards. With centres across the Middle East, Europe and African region, CIQ is a proud certification partner for more than 100 organizations and has a progression pathway with some of the leading universities across the world.
+CIQ offers credit rated programmes under Scottish Credit Qualification Framework (SCQF) through the credit rating agency Scottish Qualification Authority which enables the student to attain UK regulated qualifications. Apart from the credit rated programmes, CIQ also offers stand-alone professional diploma and certification programmes which have been developed based on the current need of the industry. CIQ also partnered with NCFE-UK (Northern Council for Further Education) and TQUK (Training Qualifications, UK) for joint certification for the courses developed by CIQ.
+ CIQ has gained a reputation for the high-quality support services provided to the education sector. CIQ works with schools, colleges, universities, and corporate bodies as well as Government agencies to provide relevant, effective, and flexible programmes. Its qualification and assessment framework is up-to-date, result oriented and meets the defined values as per international standards. CIQ qualifications are approved for progression to higher qualifications offered by international universities around the globe. 
+The CIQ qualification and assessment framework have been developed in consultation with leaders from various corporate bodies, government agencies, and universities around the world. CIQ programmes are frequently assessed to enhance quality and ensure they are relevant for the rapidly changing global market as well as career opportunities for ambitious individuals. The CIQ Qualification and assessment framework is available throughout the world and may be accessed via their “Approved Centre Network”.
+
+",
+'acc' => '',
+"rank" => '',
+'desc' =>''
+);
+
+break;
+
+case 'cmi':
+$data = array(
+'univ_label' => $univ,
+'title' => 'Chartered Management Institute (CMI), UK',
+'about' => "
+Chartered Management Institute, backed by Royal Charter, is the only Chartered body dedicated to promoting the highest standards in management and leadership excellence. CMI’s management qualifications are recognized throughout the UK and Europe and provide a progressive framework that enables one to develop and broaden management skills. Their qualifications are designed in consultation with employers to meet today's demands and therefore they are valued by them. 
+Their certification is flexible. One can study locally via their 600+ approved centres or through a Distance Learning Provider. Their resources are designed specifically for the qualification to ensure that the student has the correct support and free access to all key membership services for the duration of his study.
+Practical help whenever you need it; tools and techniques to save time and stress; new ways to enhance your professional reputation; qualifications that show the world you mean business – that’s what CMI is all about.
+
+",
+'acc' => '',
+"rank" => '',
+'desc' => ''
+);
+
+break;
+
+
+}
    
 $academic =  [
   '#theme' => 'university',
   '#title1' => $title1,  
+  '#data' => $data,  
   '#base_path' => $base_path,  
 ]; 
 

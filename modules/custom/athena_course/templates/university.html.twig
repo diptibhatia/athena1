@@ -4,10 +4,10 @@
             <img src="{{base_path}}/images/Ucam-banner.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
             <img src="{{base_path}}/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
             <div class="container carousel-caption text-left pl-0">
-                <h1 class="strong banner_title"><span class="purple-txt">UCAM</span> Universidad Católica de Murcia</h1>
+                <h1 class="strong banner_title"><span class="purple-txt">{{data.univ_label}}</span> {{data.title}}</h1>
                 <div class="row">
                     <div class="col-md-6">
-                    Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem Lorem ipsum dolor Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem Lorem ipsum dolor Lorem ipsum dolor sit Lorem ipsum dolor sit.
+                    {{data.desc}}
                     </div>
                     <div class="col-md-6">
                       <a href="#">
@@ -23,31 +23,26 @@
             <section class="informations">
                 <div class="row">
                    <div class="col-md-8 col-sm-12">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis 
-                        </p>
                           <div class="info-1">
-                            <h2 class="heading ">About UCAM</h2>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam
-                              eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam 
-                              voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
-                             n numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere</p>
+                            <h2 class="heading ">About {{data.label}}</h2>
+                            <p>
+                            {{data.about}}
+                            </p>
                           </div>
-                     
+                      {% if data.acc is not empty %}
                           <div class="info-2">
                             <h2 class="heading ">Accrediation And Membership</h2>
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. . Nulla consequat massa quis enim. Donec pede justo
-                                fringilla vel, aliquet nec. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet necNulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vNulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vAsodales, augue velit cursus nunc,. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v</p>
+                              <p>
+                              {{data.acc}}
+                              </p>
                           </div>
+                          {% endif %}
+                           {% if data.rank is not empty %}
                           <div class="info-3">
                             <h2 class="heading ">Rankings</h2>
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. . Nulla consequat massa quis enim. Donec
-                                 pede justo, fringilla vel, aliquet nec.Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec
-                                 Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet 
-                                 Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vNulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vAsodales, augue velit cursus 
-                                 Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v</p>
-                          </div>  
+                              <p>{{data.rank}}</p>
+                          </div> 
+ {% endif %}                          
                    </div>
 
                    <div class="col-md-4 col-sm-12">
@@ -82,7 +77,7 @@
                    </div>
                 </div>
             </div></section>
-
+ {% if data.label == 'gmu' %}
             <section class="people">
                 <div class="card">
                     <div class="profile-sidebar">
@@ -92,23 +87,12 @@
                     </div>
                     <div class="profile-main">                  
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit ad minim.
-                          Lorem ipsum dolor Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                          ipsum dolor Lorem ipsum olor sit amet Lorem ipsum dolor sit amet,
-                          consectetur adipisicing   Lrem ipsum dolor sit amet, consectetur adipisicing elit ad minim.
-                          Lorem ipsum dolo ipsum dolor sit amet,
-                          consectetur    Lorem ipsum dolor sit amet, consectetur adipisicing elit ad minim.
-                          Lorem ipsum dolor Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                          ipsum dolor Lorem ipsum olor sit amet Lorem ipsum dolor sit amet,
-                          consectetur adipisicing<a href="#">lorem ipsum dolor sit</a> sit amet Lorem ipsum dolor sit
+                          Guglielmo Marconi University, modeled around education and research, promotes innovative ICT-based educational methodologies, stimulating students to develop high cognitive and practical competences. The strong point of this educational system is the focus on the current educational demands required by the ever-changing working environment. By considering these developments, GMU offers students high-quality market-oriented courses. We have been continuously growing our presence around the world through many strategic partnerships during past years and the Westford Education Group was the one of the major partnerships which has been very successful since 2015.
+Athena Global Education is a new venture of Westford Education Group. A future ready education solution, Athena Global Education utilizes the latest technology aimed at improving the students’ experience. We are happy to have partnered for this new project and are eager to expand our partnership into different domains. The association with Westford Group has produced hundreds of graduates in past years and we look forward to enhancing the portfolio and providing accessibility to education around the world.
+We welcome the students of Athena Global Education to our qualifications and wish them the very best on their future endeavours.
+
                         </p>  
-                       <p> Lorem ipsum dolor Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                        ipsum dolor Lorem ipsum olor sit amet Lorem ipsum dolor sit amet,
-                        consectetur    Lorem ipsum dolor sit amet, consectetur adipisicing elit ad minim.
-                        Lorem ipsum dolor Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                        ipsum dolor Lorem ipsum olor sit amet Lorem ipsum dolor sit amet,
-                        consectetur adipisicing<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit ad minim.</a>
-                      </p>
+                       
                     </div>
                 </div>
 
@@ -124,5 +108,7 @@
                     </div>
                 </div>
             </section>
+            
+            {% endif %}
         </div>
     </div>
