@@ -1,6 +1,7 @@
 
         jQuery(document).ready(function() {
             jQuery("#phone").intlTelInput();
+            jQuery("#speak_mobile_number").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
             var search_url = 'http://website.athena.edu/search-results/abc?univ=';
