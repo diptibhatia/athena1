@@ -1,19 +1,19 @@
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'> 
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
       <div class="top-banner">
           <div class="colorBg"></div>
           <div class="wrapper">
             <div class="logos">
-               
+
  <img src="{{ file_url(node.field_course_awarding_body_logos[0].entity.uri.value)}}" width="95">
 {% if node.field_course_awarding_body_logos[1].entity.uri.value is empty %}
-                                   
+
                                     {% else %}
                 <img src="{{ file_url(node.field_course_awarding_body_logos[1].entity.uri.value)}}" alt="sqa logo" width="95">
-                               
+
                                         {% endif %}
                 </div>
             <h1>{{course_title}}</h1>
-            <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from 
+            <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
                 <br>{{awarding_body}}</p>
             <a href="{{ url('<front>') }}registration" class="trialBtn">Start 7 Day Trial</a>
           </div>
@@ -57,15 +57,15 @@
                   <div>
                       <img src="{{base_path}}/images/smo/accreditation.svg" alt="icon">
                       <h3>Accreditations</h3>
-                      <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
+                      <p>{{ node.field_course_accreditations.0.value|raw }}</p>
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>
 {% endif %}
                   </div>
-           
+
               <div class="main-section" style="width:initial">
                 <div class="desc">
                     <h2>Why this Course</h2>
-                    <div style="text-align:left">            
+                    <div style="text-align:left">
                     {{overview | raw}}
 </div>
                     <p>Build your skills in all areas of managing and leading organizations</p>
@@ -73,7 +73,7 @@
                 <div class="forms">
                     <div class="container-fluid p-0 about-us-wrapper form">
                         <div class="course-login-wrapper">
-                            
+
 
 <div class="login-details">
                         <form style="text-align:left">
@@ -124,8 +124,8 @@
  {% set activeclass = '' %}
                 <ul class="nav tabs-cyan" id="myClassicTab" role="tablist">
                  {% for universities in univ_data	 %}
-                 
-                  {% if nummact == 1 %} 
+
+                  {% if nummact == 1 %}
                   {% set activeclass = 'active show' %}
                   {% else %}
                         {% set activeclass = '' %}
@@ -135,15 +135,23 @@
                         {{ universities.university.label }}</a>
                     </li>
                      {% set nummact = nummact+1 %}
-                 {% endfor %}       
-                   
+                 {% endfor %}
+
+                  {% set univ_data_length = univ_data|length %}
+                  {% set univ_data_length_var = univ_data_length - 1 %}
+                  {% if univ_data_length < 3 %}
+                    {% for i in range(1, univ_data_length_var)  %}
+                       <li class="nav-item"></li>
+                    {% endfor %}
+                  {% endif %}
+
                 </ul>
 
                 <div class="tab-content rounded-bottom" id="myClassicTabContent">
-                   
+
 {% set numm = 1 %}
                   {% for universities in univ_data	 %}
-                  {% if numm == 1 %} 
+                  {% if numm == 1 %}
                   {% set activeclasstab = 'active show' %}
                   {% else %}
                         {% set activeclasstab = '' %}
@@ -161,20 +169,20 @@
                                     <img src="{{universities.univ_logo}}" alt="uni-logo">
                                         {% endif %}
                                 </div>
-                                
+
 <div class="certificate">
                                     <div id="carouselExampleIndicators{{numm}}" class="carousel slide" data-ride="carousel" data-interval="false">
                                         {% set carouselnum = 1 %}
                                         <div class="carousel-inner">
                                            {% for certificate in universities.certificates %}
-                                         {% if carouselnum == 1 %} 
+                                         {% if carouselnum == 1 %}
                   {% set carouselnumclass = 'active' %}
                   {% else %}
                         {% set carouselnumclass = '' %}
                     {% endif %}
-                    
-                    
-                                        
+
+
+
                                             <div class="carousel-item {{carouselnumclass}} ">
                                                 <!-- Button to trigger Modal -->
                                                 <button type="button" class="cover" data-toggle="modal" data-target="#certificate{{numm}}{{carouselnum}}">
@@ -196,16 +204,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                    
-                                            
-{% set carouselnum =  carouselnum+1 %}                    
-                                        
-                                        
+
+
+{% set carouselnum =  carouselnum+1 %}
+
+
                                         {% endfor %}
                                         </div>
-                                        
-                                        
-                                        
+
+
+
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators{{numm}}" role="button" data-slide="prev">
                                             <img src="{{base_path}}/images/coursepage/prev.svg" alt="previous">
                                             <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -220,20 +228,20 @@
                                     <p>Click to Enlarge</p>
                                 </div>
 
-                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be 
+                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
                             <div class="partners-tabs__mba-img"></div>
                         </div>
                     </div>
 
-  
-                    {% set numm = numm+1 %}
-                    {% endfor %} 
-                   
 
-                    
-                  
+                    {% set numm = numm+1 %}
+                    {% endfor %}
+
+
+
+
                 </div>
 
             </div>
@@ -242,7 +250,7 @@
       <div class="how-learn course-team smo-page-section">
         <div class="wrapper">
             <h2>How You Learn</h2>
-            <p class="msg">We have Developed a learning pedagogy which ensures the students will be able to learn 
+            <p class="msg">We have Developed a learning pedagogy which ensures the students will be able to learn
                the course successfuly regardless of the student is beginner or expert Level.</p>
             <div class="owl-carousel owl-theme">
                 <div class="item">
@@ -250,9 +258,9 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/video-class.svg" alt="image">
                         </div>
-                        <h3>Video Classes</h3>   
-                        <p>The well developed purpose 
-                            built video lessons designed by our faculties will lay the foundation for your 
+                        <h3>Video Classes</h3>
+                        <p>The well developed purpose
+                            built video lessons designed by our faculties will lay the foundation for your
                             learning</p>
                     </div>
                 </div>
@@ -261,9 +269,9 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/text-learning.svg" alt="image">
                         </div>
-                        <h3>Text Learning Contents</h3>   
+                        <h3>Text Learning Contents</h3>
                         <p>Multi level learning resourse
-                            developed by our faculties including articles , case studies,quizes etc. will 
+                            developed by our faculties including articles , case studies,quizes etc. will
                             enhance your learning exposure</p>
                     </div>
                 </div>
@@ -272,8 +280,8 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/personal-tutor.svg" alt="image">
                         </div>
-                        <h3>Personal Tutor</h3>   
-                        <p>One to one personal tutor meetings will help to clarify your doubts and also 
+                        <h3>Personal Tutor</h3>
+                        <p>One to one personal tutor meetings will help to clarify your doubts and also
                             provide guidance on your assignments.</p>
                     </div>
                 </div>
@@ -282,8 +290,8 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/online-library.svg" alt="image">
                         </div>
-                        <h3>Online Library</h3>   
-                        <p>Unlimeted access to the online library consist of a large collection of books, 
+                        <h3>Online Library</h3>
+                        <p>Unlimeted access to the online library consist of a large collection of books,
                             journals , and other publications</p>
                     </div>
                 </div>
@@ -292,8 +300,8 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/collaborative-learning.svg" alt="image">
                         </div>
-                        <h3>Collaborative Learning</h3>   
-                        <p>Discussion Forum, webinars business secenario presentations, debates etc will 
+                        <h3>Collaborative Learning</h3>
+                        <p>Discussion Forum, webinars business secenario presentations, debates etc will
                             take you to a different level of learning.
                         </p>
                     </div>
@@ -332,13 +340,13 @@
                             <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span> -->
                         </a>
-                    </div>  
+                    </div>
                     <!-- <img src="{{base_path}}/images/smo/tesimonial.jpg" alt="students testimonial"> -->
                   </div>
               </div>
           </div>
       </div>
-     
+
 
 <div class="what-you-get">
         <div class="wrapper">
@@ -353,11 +361,11 @@
                                     {% else %}
                                    <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
                                         {% endif %}
-                    
-                    <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
+
+                    <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>.
                     {% if why_coursedata.certificates_url is not empty %}
                         <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a>
-                     {% endif %}   
+                     {% endif %}
                         </p>
                     <!-- Modal Starts -->
                     <div class="modal fade" id="certificateModal{{whynum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true" style="display: none;">
@@ -378,14 +386,14 @@
                 </div>
                 {% set whynum = whynum+1 %}
                 {% endfor %}
-               
-                
-                
+
+
+
             </div>
         </div>
     </div>
-     
-     
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
