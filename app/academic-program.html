@@ -7,6 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
     <title>Academic Program</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -373,8 +374,25 @@
     </script>
     <script src="jquery.min.js"></script>
     <script src="owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
+    <script src="bundled.js"></script>
+
     <script>
         $(document).ready(function() {
+
+
+//TelInput Js Starts //
+            $("#phone").intlTelInput();
+            $(".selected-flag").after("<div class='country-code' />");
+            var CountryCode = $(".country.active .dial-code").text();
+            $(".country-code").text(CountryCode);
+
+            $(".country-list").click(function(){
+                var CountryCode = $(".country.active .dial-code").text();
+                $(".country-code").text(CountryCode);
+            });
+//TelInput Js Ends //
+
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,

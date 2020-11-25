@@ -387,3 +387,25 @@
 .content{
 	display: none;
 }
+.form-control{height:calc(1.5em + 1rem + 2px);font-size:16px;}
+.select-option{height:calc(1.5em + 1rem + 2px) !important;font-size:16px;}
+.intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb;width:100%;background:#fff;border:1px solid #ced4da;border-radius:0.25rem;}
+.intl-tel-input .country-list{margin-top:49px;}
+.intl-tel-input.allow-dropdown input{width: 67%;float: right;text-align: left;padding: 10px;box-shadow:none;border:transparent;padding-left:9px !important;background:transparent;}
+.intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
+	width: 46px;
+	z-index: 1;
+	position: relative;
+	height: 100%;
+	padding: 12px 0 0 8px;
+	float:left;
+}
+.intl-tel-input.allow-dropdown .country-code{
+	padding: 0 8px 0 8px;
+	margin: 6px 0;
+	height: 58%;
+	border-left: #979797 solid 1px;
+	border-right: #979797 solid 1px;
+	width: 60px;
+	text-align:center;
+}
