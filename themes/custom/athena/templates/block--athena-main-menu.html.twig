@@ -36,16 +36,16 @@
     <a href="#">Explore Courses <i class="arrow arrow--down arrow--white"></i></a>
 <img class="close-btn" src="http://website.athena.edu/themes/custom/athena/images/coursepage/faq-add.svg" alt="close">
                 <ul class="exp-primary-menu">
-                    <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon"> Academic Programs 
+                    <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon"> Academic Programs
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Acadamic</li>
                             <a href="{{url('<front>')}}academic-program">View all Acadamic Courses</a>
                             {% for academic in academicnodes %}
-                               
-                              
+
+
                                <li onclick="location.href='{{url('<front>')}}course/{{academic.nid}}'"  style="margin-bottom:8px;">
-                                
+
                                {{academic.title}}
                                <ul class="exp-tertiary-menu">
                                     <li>Universities</li>
@@ -53,14 +53,14 @@
                                     <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                     {% endfor %}
                                 </ul>
-                               
+
                                </li>
-                               
+
                             {% endfor %}
-                           
+
                         </ul>
                     </li>
-                    <li style="display:none"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/micro-credits.svg" alt="icon"> Micro-Credits 
+                    <li style="display:none"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/micro-credits.svg" alt="icon"> Micro-Credits
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Micro Credits</li>
@@ -78,13 +78,13 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon"> Certifications 
+                    <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon"> Certifications
                         <i class="arrow arrow--right secondary-arrow"></i>
                         <ul class="exp-secondary-menu">
                             <li class="heading">Certifications</li>
                             <a href="{{url('<front>')}}certifications">View all Certifications</a>
                              {% for cert in certificationsnodes %}
-                              
+
                                <li style="margin-botton:8px" onclick="location.href='{{url('<front>')}}course/{{cert.nid}}'">
                                {{cert.title}}
                                <ul class="exp-tertiary-menu">
@@ -94,7 +94,7 @@
                                                               {% endfor %}
                                 </ul>
                                </li>
-                               
+
                             {% endfor %}
                         </ul>
                     </li>
@@ -125,11 +125,24 @@
                               <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
                            </ul>
                         </li> -->
-                        <li><a href="{{ url('<front>') }}course-home">Courses</a></li>
-                        <li><a href="{{ url('<front>') }}insights/all">Insights</a></li>
+                        <li><a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a></li>
+                        <li><a id="insights" href="{{ url('<front>') }}insights/all">Insights</a></li>
                         <li><a class="loginBtn" href="http://portal.athena.edu/login">Log in</a></li>
                         <li><a class="getStartedBtn" href="{{ url('<front>') }}registration">Get Started</a></li>
                     </ul>
   </nav>
 </div>
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
+
+<script type="text/javascript">
+  var pathname = window.location.href;
+  var element = '';
+  if (pathname.indexOf("course-home") > -1) {
+    element = document.getElementById("courses-home");
+    element.classList.add("is-active");
+  }
+  if (pathname.indexOf("insights") > -1) {
+    element = document.getElementById("insights");
+    element.classList.add("is-active");
+  }
+</script>
