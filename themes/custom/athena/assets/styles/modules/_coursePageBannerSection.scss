@@ -79,11 +79,15 @@
             width: 76px;
 
             &:nth-child(1) {
-                margin-right: 20px;
+                margin-left: 0;
             }
 
             @include atSize700 {
                 width: 95px;
+                height: auto;
+                margin: 0px 20px;
+                position: relative;
+                display: inline-block;
             }
         }
     }
