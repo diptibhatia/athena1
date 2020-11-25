@@ -59,28 +59,28 @@
            {% endif %}
         </div>
         <div class="course-main">
-          <h2 class="course-title"><a href="{{ url('<front>') }}course/{{nodedata.id}}" style=" text-decoration: inherit;
+          <h2 class="course-title"><a  href="{{ url('<front>') }}course/{{nodedata.id}}" style="all:inherit; text-decoration: inherit;
     color: inherit;font-weight:inherit;padding-left:0px;background-color:inherit;text-transform:inherit;" >{{nodedata.label}}</a></h2>
-          <h4 class="course-partner"><a href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_awarding_body.value|raw }}</a></h4>
+          <h4 class="course-partner"><a style="all:inherit" href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_awarding_body.value|raw }}</a></h4>
           <p class="course-info">
-           <a href="{{ url('<front>') }}course/{{nodedata.id}}">  {{nodedata.field_course_banner_description.value}}</a>
+           <a style="all:inherit" href="{{ url('<front>') }}course/{{nodedata.id}}">  {{nodedata.field_course_banner_description.value}}</a>
           </p>
           <div class="tag">
-            <p><a href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_category.value}}</a></p>
+            <p><a style="all:inherit" href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_category.value}}</a></p>
           </div>
           <div class="duration">
             <div class="row">
               <li class="column-1" style="list-style: none">
                 
                   {% if nodedata.field_course_ects_credit.value|trim is not empty %}       
-                <span><a href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_ects_credit.value}} 
+                <span><a style="all:inherit" href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_ects_credit.value}} 
                 {% if node.field_courses_credit_type.0.value|trim is not empty %}
                             ({{node.field_courses_credit_type.0.value|raw }})
                              {% endif %}
                 {% endif %}</a>
                 </span>
 
-                | <span class="duration-text"><a href="{{ url('<front>') }}course/{{nodedata.id}}"> Duration: {{nodedata.field_course_duration.value}} </a></span>
+                | <span class="duration-text"><a style="all:inherit" href="{{ url('<front>') }}course/{{nodedata.id}}"> Duration: {{nodedata.field_course_duration.value}} </a></span>
               </span></span></li>
 
               <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
