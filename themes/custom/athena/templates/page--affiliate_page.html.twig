@@ -1,0 +1,99 @@
+{{ attach_library('athena/affiliate-page') }}
+<header>
+  <div class="navbar navbar-default default header1" role="navigation">
+    <div class="container">
+      <div class="col-xs-6">
+        <div class="navbar-header">
+          <div class="navbar-brand"><a href="https://athena.edu/"><img src="https://athena.edu/portal/Images/athenanew-logo.svg"
+                alt="Athena Logo" /></a></div>
+        </div>
+      </div>
+      <div class="col-xs-6 text-right top-social">
+        <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img
+            src="{{base_path}}themes/custom/athena/images/affiliatepage/facebook.svg"></a>
+        <a href="https://twitter.com/AthenaGlobalEdu" target="_blank"><img
+            src="{{base_path}}themes/custom/athena/images/affiliatepage/twitter.svg"></a>
+        <a href="https://www.instagram.com/age_athena/" target="_blank"><img
+            src="{{base_path}}themes/custom/athena/images/affiliatepage/instagram.svg"></a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="bg-design">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 european-accredited ">
+
+        {{node.field_banner_title.value|raw}}
+
+        {{node.field_banner_blurb.value|raw}}
+        {# {{file_url(node.field_banner_image.entity.fileuri)}} #}
+        <div class="col-md-5 col-xs-9 btn-course"><a href="#courses-block"> See all Courses <img
+              src="{{base_path}}themes/custom/athena/images/affiliatepage/right-arrow.svg"
+              style="margin-left:20px;  "></a></div>
+        </div>
+
+      <div class="col-md-6 text-center hidden-xs  hidden-sm">
+        <img src="{{file_url(node.field_banner_image.entity.fileuri)}}" alt=""
+          style="width:75%;  margin-top: 67px;" />
+      </div>
+    </div>
+  </div>
+</div>
+{% if page.content %}
+    <div class="main-content">
+        {{ page.content }}
+    </div>
+{% endif %}
+{% if page.content %}
+  <div class="dark-wrapper" style="padding:10px 0 30px">
+    {{node.body.value|raw}}
+  </div>
+{% endif %}
+{% set view = drupal_view_result('affiliate_page', 'afpage_courses_block')|length %}
+{% if view > 0 %}
+<div id="courses-block" class="light-wrapper">
+  <div class="container inner">
+    <div class="col-md-12">
+      <div class="section-title text-center">
+        <h3>{{node.field_course_block_title.value|raw}}</h3>
+        <h2>{{node.field_course_block_blurb.value|raw}}</h2>
+      </div>
+      {{ drupal_view('affiliate_page', 'afpage_courses_block') }}
+    </div>
+  </div>
+  <!--/.container -->
+</div>
+<!--/.light-wrapper -->
+{% endif %}
+
+{% set view = drupal_view_result('affiliate_page', 'afpage_testimonial_block')|length %}
+{% if view > 0 %}
+<div class="dark-wrapper">
+  <div class="container inner"
+    style="background-image:url({{base_path}}themes/custom/athena/images/affiliatepage/testimonial.svg);background-repeat:no-repeat;background-position:top left;padding-top: 146px;">
+    <div class="col-md-12">
+      <div class="section-title text-center">
+        <h3>{{node.field_testimonial_block_title.value|raw}}</h3>
+        <h2>{{node.field_testimonial_block_blurb.value|raw}}</h2>
+      </div>
+      {{ drupal_view('affiliate_page', 'afpage_testimonial_block') }}
+      <div class="divide30"></div>
+    </div>
+    <!-- /.container -->
+  </div>
+</div>
+{% endif %}
+
+
+
+<footer class="footer inverse-wrapper">
+  <div class="sub-footer">
+    <div class="container inner3">
+      <p class="text-center">© All Copyrights reserved @ <a href="https://athena.edu/">Athena Global
+          Education</a>2020.</p>
+    </div>
+    <!-- .container -->
+  </div>
+  <!-- .sub-footer -->
+</footer>
