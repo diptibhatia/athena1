@@ -280,7 +280,7 @@
 	}
 	.courses-offered {
 		display: flex;
-		margin: 0 30px;
+		margin: 0 0;
 		@include atSize424 {
     		flex-direction: column;
     	}
@@ -1395,7 +1395,11 @@
 		  	justify-content: center;
 		  	display: flex;
 		  	img {
-		  		width: 200px;
+				width: 200px;
+				position: absolute;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				top: 50%;
 		  	}
 		  	@include atSize424 {
 				margin: 20px auto;
