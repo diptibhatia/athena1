@@ -22,3 +22,8 @@ global-js:
     prodbundled.js: {}
   dependencies:
     - core/jquery
+
+affiliate-page:
+  js:
+    js/af-page.js: {}
+    js/owl.carousel.js: {}
