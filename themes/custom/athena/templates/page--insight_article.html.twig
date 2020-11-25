@@ -26,9 +26,8 @@
         <div class="col-md-8 col-sm-12 border-right pl-0">
             <div class="container txt-14 pl-0">
                 {{ page.content }}
+                <div class="stopScroll"></div>
             </div>
-            <div class="stopScroll"></div>
-
 
         <div class="col-md-4 col-sm-12 bg-white">
           {% if page.sidebar_second %}
@@ -269,23 +268,6 @@ Doctorate in Business Administration<br/>
                     });
                 }
 
-            });
-
-            $(function(){
-                var stopFloating = $('.stopScroll');
-                    if (stopFloating) {
-                    var stop = stopFloating.offset().top;
-                    $(window).scroll(function() {
-                    var y = $(window).scrollTop(),
-                    header = $(".share-icon ul");
-                    if(y <= stop-200)  {
-                        header.css({display: "block"});
-                    header.css({position: "fixed"});
-                    } else {
-                        header.css({display: "none"});
-                    }
-                    });
-                }
             });
         }
 
