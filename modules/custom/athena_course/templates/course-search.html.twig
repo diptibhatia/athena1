@@ -59,9 +59,9 @@
            {% endif %}
         </div>
         <div class="course-main">
-          <h2 class="course-title"><a  href="{{ url('<front>') }}course/{{nodedata.id}}" style="all:inherit; text-decoration: initial;
+          <h2 class="course-title"><a  href="{{ url('<front>') }}course/{{nodedata.id}}" style="all:initial; text-decoration: initial;
     color: inherit;font-weight:inherit;padding-left:0px;background-color:inherit;text-transform:inherit;cursor:pointer;" >{{nodedata.label}}</a></h2>
-          <h4 class="course-partner"><a style="all:inherit;cursor:pointer;" href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_awarding_body.value|raw }}</a></h4>
+          <h4 class="course-partner"><a style="all:initial;cursor:pointer;" href="{{ url('<front>') }}course/{{nodedata.id}}"> {{nodedata.field_course_awarding_body.value|raw }}</a></h4>
           <p class="course-info">
            <a style="all:initial;cursor: pointer;" href="{{ url('<front>') }}course/{{nodedata.id}}">  {{nodedata.field_course_banner_description.value}}</a>
           </p>
