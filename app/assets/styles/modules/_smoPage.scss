@@ -339,6 +339,8 @@
             li {
                 font-size: .9rem;
                 line-height: 2.15;
+                position:relative;
+                padding:0 0 0 1.7rem;
 
                 @include atSize700 {
                     font-size: 1rem;
@@ -351,6 +353,8 @@
                     display: inline-block;
                     width: 1em;
                     margin-right: 5px;
+                    position:absolute;
+                    left:0;
 
                     @include atSize700 {
                         margin-right: 10px;
@@ -393,6 +397,26 @@
                     left: 0;
                 }
             }
+        
+        .intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb;width:100%;}
+        .intl-tel-input .country-list{margin-top:49px;}
+        .intl-tel-input.allow-dropdown input{width: 75%;float: right;text-align: left;padding: 10px;box-shadow:none;}
+        .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
+            width: 46px;
+            z-index: 1;
+            position: relative;
+            height: 100%;
+            padding: 12px 0 0 8px;
+            float:left;
+        }
+        .intl-tel-input.allow-dropdown .country-code{
+            padding: 0 8px 0 8px;
+            margin: 9px 0;
+            height: 58%;
+            border-left: #979797 solid 1px;
+            border-right: #979797 solid 1px;
+            width: 60px;
+        }
         }
     }
 }

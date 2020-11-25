@@ -891,9 +891,18 @@
     </div>
     <script src="jquery.min.js"></script>
     <script src="owl.carousel.js"></script>
+
     <script>
     $(document).ready(function() {
         $("#phone").intlTelInput();
+        $(".selected-flag").after("<div class='country-code' />");
+        var CountryCode = $(".country.active .dial-code").text();
+        $(".country-code").text(CountryCode);
+
+        $(".country-list").click(function(){
+            var CountryCode = $(".country.active .dial-code").text();
+            $(".country-code").text(CountryCode);
+        });
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 10,

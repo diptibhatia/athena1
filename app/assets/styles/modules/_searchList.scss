@@ -40,8 +40,8 @@
             left: 11px;
           }
           @include atSize424 {
-            left: 77%;
-            top: 4.5%;
+            left: 79%;
+            top: 5%;
             img {
                   top: 15px;
     left: 12px;
@@ -93,6 +93,8 @@
       display: inline;
       justify-content: left;
       text-align: left;
+      position:relative;
+      z-index:99;
       /*@include atSize424 {
         display: none !important;
       }*/
@@ -175,6 +177,9 @@
         .search {
           width: 93%;
           margin: 0 auto;
+          position:relative;
+          z-index:99;
+          overflow:hidden;
         }
       }
     }
