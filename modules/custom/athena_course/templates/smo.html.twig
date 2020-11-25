@@ -99,9 +99,9 @@
                                 <p>Country</p>
                                 <input type="text" id="speak_country" placeholder="Country">
                             </div>
-                            <div class="login-item">
+                            <div class="login-item phone-number">
                                 <p>Mobile Number</p>
-                                <input type="number" id="speak_mobile_number" placeholder="Enter Mobile number">
+                                <input type="tel" id="phone" placeholder="Enter Mobile number">
                             </div>
                             <div class="button">
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
@@ -398,3 +398,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
+
+<script src="bundled.js"></script>
+
+<script>
+  jQuery(document).ready(function() {
+      jQuery("#phone").intlTelInput();
+      jQuery(".selected-flag").after("<div class='country-code' />");
+      var CountryCode = jQuery(".country.active .dial-code").text();
+      jQuery(".country-code").text(CountryCode);
+
+      jQuery(".country-list").click(function(){
+          var CountryCode = jQuery(".country.active .dial-code").text();
+          jQuery(".country-code").text(CountryCode);
+      });
+
+  })(jQuery);
+</script>
