@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="col-md-1 col-sm-1 share-icon">
-                                <ul class="list-unstyled">
+                                <div class="list-unstyled">
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/share.svg" /></a></li>
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/facebook.svg" /></a></li>
                                      <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/twitter.svg" /></a></li>
@@ -55,7 +55,7 @@
                                     <li><a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img src="images/icons/print.svg" /></a></li>
                                     
                                     <!-- <li></li> -->
-                                </ul>
+                                </div>
                             </div>
                         </div>
                         <blockquote class="purple-brd">
@@ -186,11 +186,12 @@
             var stop = stopFloating.offset().top;
             $(window).scroll(function() {
             var y = $(window).scrollTop(),
-            header = $(".share-icon ul");
+            header = $(".share-icon div");
             if(y <= stop-200)  {
+                header.css({display: "block"});
             header.css({position: "fixed"});
             } else {
-            header.css("position", "static");
+                header.css({display: "none"});
             }
             });
         }
@@ -203,11 +204,12 @@
             var stop = stopFloating.offset().top;
             $(window).scroll(function() {
             var y = $(window).scrollTop(),
-            header = $(".share-icon ul");
+            header = $(".share-icon div");
             if(y <= stop-200)  {
+                header.css({display: "block"});
             header.css({position: "fixed"});
             } else {
-            header.css("position", "static");
+                header.css({display: "none"});
             }
             });
         }
