@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/navigation/arrow_forward_24px</title>
+    <defs>
+        <path d="M6.10916037,14.0833258 L19.2100626,14.0833258 L13.4864813,19.3699924 C13.029064,19.7924924 13.029064,20.4858258 13.4864813,20.9083258 C13.9438987,21.3308258 14.6828036,21.3308258 15.140221,20.9083258 L22.8694014,13.7691591 C23.3268188,13.3466591 23.3268188,12.6641591 22.8694014,12.2416591 L15.1519496,5.09165911 C14.9328215,4.88880205 14.6353233,4.7747997 14.3250798,4.7747997 C14.0148363,4.7747997 13.7173381,4.88880205 13.49821,5.09165911 C13.0407926,5.51415911 13.0407926,6.19665911 13.49821,6.61915911 L19.2100626,11.9166591 L6.10916037,11.9166591 C5.46408461,11.9166591 4.93629536,12.4041591 4.93629536,12.9999924 C4.93629536,13.5958258 5.46408461,14.0833258 6.10916037,14.0833258 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MBA-affiliate-new" transform="translate(-334.000000, -530.000000)">
+            <g id="Group-11" transform="translate(128.000000, 504.000000)">
+                <g id="Group-14">
+                    <g id="icon/navigation/arrow_forward_24px" transform="translate(201.371901, 22.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
