@@ -45,7 +45,7 @@
         {{ page.content }}
     </div>
 {% endif %}
-{% if page.content %}
+{% if node.body.value %}
   <div class="dark-wrapper" style="padding:10px 0 30px">
     <div class="container ">
       {{node.body.value|raw}}

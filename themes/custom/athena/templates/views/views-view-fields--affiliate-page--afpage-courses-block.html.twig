@@ -56,32 +56,7 @@
   </h6>
   <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{fields.field_afpage_course_lrnsuprt.content|raw}}</span>
   </h6>
-
-  <div class=" btn-try"><a href="#">Try Us free for 7 days</a></div>
+  
+  <div class=" btn-try"><a href="{{ fields.field_afpage_course_id.content ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ fields.field_afpage_course_id.content : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">Try Us free for 7 days</a></div>
 
 </div>
-{# {% for item in row._entity %}
-  <p>{{ dump(item.title.value) }}</p>
-{% endfor %} #}
-{# {{dump()}} #}
-{# {% for field in fields -%}
-  {{ field.separator }}
-  {%- if field.wrapper_element -%}
-    <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
-  {%- endif %}
-  {%- if field.label -%}
-    {%- if field.label_element -%}
-      <{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
-    {%- else -%}
-      {{ field.label }}{{ field.label_suffix }}
-    {%- endif %}
-  {%- endif %}
-  {%- if field.element_type -%}
-    <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
-  {%- else -%}
-    {{ field.content }}
-  {%- endif %}
-  {%- if field.wrapper_element -%}
-    </{{ field.wrapper_element }}>
-  {%- endif %}
-{%- endfor %} #}
