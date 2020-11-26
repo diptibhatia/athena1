@@ -58,10 +58,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
- <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
-                                   
-                                    
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p>
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+
+
                                 </div>
                             </div>
                                 {% endif %}
@@ -78,19 +78,19 @@
                                 <p>{{course_details | raw}}
                                 </p>
                                 <div class="desc-container">
-                                
+
                                    {% for module_fee_data in node.field_course_module_fees %}
                                     <div class="desc">
                                         <p>{{ module_fee_data.entity.field_fee_label.value }}</p>
                                         <p><span>${{ module_fee_data.entity.field_paragraphh_module_fees.value|striptags }}</span>{{ module_fee_data.entity.field_fee_description.value|striptags }}</p>
                                     </div>
-                                    
+
                                     {% endfor %}
-                                   
+
                                 </div>
                                 <a href="#whatYouLearn">Go to Module Details</a>
-                                <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect 
-                                    the exact mapping information, however the final MBA awarded by the University will 
+                                <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
+                                    the exact mapping information, however the final MBA awarded by the University will
                                     carry 60 ECTS credits. <a href="#">What Is ECTS?</a></p>
                             </div>
                         <div class="overview-points-card">
@@ -126,10 +126,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
- <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
-                                   
-                                    
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p>
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+
+
                                 </div>
                                 {% endif %}
                             </div>
@@ -155,8 +155,8 @@
                                 <h3>{{language_prof_label}}</h3>
                                 <p>{{language_prof_desc | raw}}</p>
                             </div>
-                      <!--      <p class="knowmore">To know more about our partnership with Guglielmo Marconi University, please visit their 
-                                official website - 
+                      <!--      <p class="knowmore">To know more about our partnership with Guglielmo Marconi University, please visit their
+                                official website -
                                 <a href="https://www.gmuonline.org/en/partnerships/collaboration-agreements">
                                     https://www.gmuonline.org/en/partnerships/collaboration-agreements</a></p> -->
                         </div>
@@ -193,10 +193,10 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
- <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
-                                   
-                                    
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p>
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+
+
                                 </div>
                                 {% endif %}
                             </div>
@@ -269,13 +269,13 @@
                                 <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="overview-points-card__container-img">
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
-                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p> 
- <p>{{ node.field_course_accreditations.1.value|raw }}</p>    
-                                   
-                                    
+                                        <p>{{ node.field_course_accreditations.0.value|raw }}</p>
+ <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+
+
                                 </div>
                                 {% endif %}
-                                
+
                             </div>
                             <div class="overview-points-card__container">
                                 <a href="{{ url('<front>') }}registration" >Take a Free Trial Now</a>
@@ -284,7 +284,7 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </div>
 </div>
@@ -299,8 +299,8 @@
  {% set activeclass = '' %}
                 <ul class="nav tabs-cyan" id="myClassicTab" role="tablist">
                  {% for universities in univ_data	 %}
-                 
-                  {% if nummact == 1 %} 
+
+                  {% if nummact == 1 %}
                   {% set activeclass = 'active show' %}
                   {% else %}
                         {% set activeclass = '' %}
@@ -310,21 +310,21 @@
                         {{ universities.university.label }}</a>
                     </li>
                      {% set nummact = nummact+1 %}
-                 {% endfor %}       
-                   
+                 {% endfor %}
+
                 </ul>
-                
-                
-                
+
+
+
                 <div class="tab-content rounded-bottom" id="myClassicTabContent">
                   {% set numm = 1 %}
                   {% for universities in univ_data	 %}
-                  {% if numm == 1 %} 
+                  {% if numm == 1 %}
                   {% set activeclasstab = 'active show' %}
                   {% else %}
                         {% set activeclasstab = '' %}
                     {% endif %}
-                
+
                     <div class="tab-pane fade {{activeclasstab}}" id="guglielmo{{numm}}" role="tabpanel" aria-labelledby="guglielmo-tab-classic">
                         <div class="partners-tabs__mba">
                             <div class="partners-tabs__mba-text">
@@ -338,21 +338,21 @@
                                         {% endif %}
                                 </div>
                                 {% if universities.certificates is empty %}
-                                
+
                                 {% else %}
                                 <div class="certificate">
                                     <div id="carouselExampleIndicators{{numm}}" class="carousel slide" data-ride="carousel" data-interval="false">
                                         {% set carouselnum = 1 %}
                                         <div class="carousel-inner">
                                            {% for certificate in universities.certificates %}
-                                         {% if carouselnum == 1 %} 
+                                         {% if carouselnum == 1 %}
                   {% set carouselnumclass = 'active' %}
                   {% else %}
                         {% set carouselnumclass = '' %}
                     {% endif %}
-                    
-                    
-                                        
+
+
+
                                             <div class="carousel-item {{carouselnumclass}} ">
                                                 <!-- Button to trigger Modal -->
                                                 <button type="button" class="cover" data-toggle="modal" data-target="#certificate{{numm}}{{carouselnum}}">
@@ -374,16 +374,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                    
-                                            
-{% set carouselnum =  carouselnum+1 %}                    
-                                        
-                                        
+
+
+{% set carouselnum =  carouselnum+1 %}
+
+
                                         {% endfor %}
                                         </div>
-                                        
-                                        
-                                        
+
+
+
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators{{numm}}" role="button" data-slide="prev">
                                             <img src="{{base_path}}/images/coursepage/prev.svg" alt="previous">
                                             <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -398,21 +398,21 @@
                                     <p>Click to Enlarge</p>
                                 </div>
                                 {% endif %}
-                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be 
+                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
                             <div class="partners-tabs__mba-img"></div>
                         </div>
-                        
+
                         {% if universities.message|trim is not empty %}
                         <div class="partners-tabs__msg">
                             <div class="partners-tabs__msg-person">
-                            
+
                              {% if universities.recortimage|trim is not empty %}
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
                                {% else %}
                              <img src="universities.recortimage" alt="msg author">
-                                         {% endif %}     
+                                         {% endif %}
                                 <h3>{{universities.msg_title}}</h3>
                                 <p>{{universities.prof_name}}</p>
                                 <p>{{prof_univ}}</p>
@@ -434,24 +434,24 @@
                                 <p>{{dean_univ}}</p>
                             </div>
                         </div>
-                        
-                       {% endif %} 
+
+                       {% endif %}
                     </div>
-                    
-                   
-                   
+
+
+
                     {% set numm = numm+1 %}
-                    {% endfor %} 
-                   
-                   
-                   
+                    {% endfor %}
+
+
+
                 </div>
 
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="adm-process">
         <div class="wrapper">
             <h1>Admission Process</h1>
@@ -462,7 +462,7 @@
                         <img src="{{base_path}}/images/coursepage/admission1.svg" alt="icon">
                         <h3>Step 1 :<span style="font-weight:bold">Register for a free trial</span></h3>
                     </div>
-                    <p>Register for a free trial and get complete access to the first module of this MBA program 
+                    <p>Register for a free trial and get complete access to the first module of this MBA program
                         for 7 days without any obligations.</p>
                 </div>
                 <div class="admission-steps-card">
@@ -470,7 +470,7 @@
                         <img src="{{base_path}}/images/coursepage/admission2.svg" alt="icon">
                         <h3>Step 2 :<span style="font-weight:bold">Submit online enrollment form</span></h3>
                     </div>
-                    <p>If you are satisfied with the learning, start your enrollment process by using ‘Enroll Now’ 
+                    <p>If you are satisfied with the learning, start your enrollment process by using ‘Enroll Now’
                         option in the learning dashboard.</p>
                 </div>
                 <div class="admission-steps-card">
@@ -478,14 +478,14 @@
                         <img src="{{base_path}}/images/coursepage/admission3.svg" alt="icon">
                         <h3>Step 3 :<span style="font-weight:bold">Pay &amp; Start</span></h3>
                     </div>
-                    <p>Once your applications is approved, the fee payment option will be activated in your LMS 
+                    <p>Once your applications is approved, the fee payment option will be activated in your LMS
                         and you will be able to make the payment.</p>
                 </div>
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="why-course" style="
     padding-bottom: 20px;
     background-color: #ff459a;
@@ -494,7 +494,7 @@
             <h1>Why this Course ?</h1>
             <div class="cover">
                 <div class="why-course__text">
-                
+
                  {% set whynum = 1 %}
                 {% for whycourse in node.field_why_this_course %}
                     <div>
@@ -503,7 +503,7 @@
                     </div>
                     {% set whynum = whynum+1 %}
                 {% endfor %}
-                   
+
                 </div>
                 <div class="course-resources-card">
                     <h3>Course Resources</h3>
@@ -514,18 +514,18 @@
                      {% endif %}
                      {% if node.field_specifications.value is not empty %}
                         <a href="{{node.field_specifications.value}}" target="_blank">Course Specifications</a>
-                     {% endif %} 
-                     {% if node.field_fact_sheet.value is not empty %} 
+                     {% endif %}
+                     {% if node.field_fact_sheet.value is not empty %}
                         <a href="{{node.field_fact_sheet.value}}" target="_blank">Fact Sheet</a>
-                     {% endif %}   
+                     {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
+
+
+
     <a name="whatYouLearn"></a>
     <div class="what-learn">
         <div class="wrapper">
@@ -534,12 +534,12 @@
             <div class="module-container" id="course-intro-card-container">
                 {% set modnum = 1 %}
                 {% for module in node.field_course_modules %}
-                
+
                 {% if modnum <=3 %}
  {% set modnumclass = 'hide show' %}
   {% else %}
    {% set modnumclass = 'hide' %}
-{% endif %}                
+{% endif %}
                 <div class="module {{modnumclass}}">
                     <h3>Module {{modnum}}</h3>
                     {% set modnum = modnum + 1 %}
@@ -561,13 +561,13 @@
                             ({{node.field_courses_credit_type.0.value|raw }})
                              {% endif %}
                             </p>
-                            {% endif %} 
+                            {% endif %}
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-                
-               
+
+
                 <div class="module-overlay"></div>
                 <button id="course-show-more">Show More</button>
             </div>
@@ -578,17 +578,17 @@
             <h2>How You Learn</h2>
             <p class="msg">Scientifically developed learning pedagogy, which ensures quality and effective learning experience for the learners. We ensure a seamless learning experience for students with varying levels of expertise on the subject matter.</p>
             <div class="owl-carousel owl-theme owl-loaded owl-drag">
-                
-                
-                
-                
-                
+
+
+
+
+
             <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1495px;"><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
                     <div class="learn-card course-team-card">
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/video-class.svg" alt="image" style="opacity: 1;">
                         </div>
-                        <h3>Video Classes</h3>   
+                        <h3>Video Classes</h3>
                         <p>The well developed customized online video lessons designed by our faculty will lay the foundation for your learning.
 </p>
                     </div>
@@ -597,7 +597,7 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/text-learning.svg" alt="image" style="opacity: 1;">
                         </div>
-                        <h3>Text Learning Contents</h3>   
+                        <h3>Text Learning Contents</h3>
                         <p>Multi-level learning resources including relevant journal articles, case studies, quizzes developed by our faculty will enhance your learning experience. These will help you get a multidimensional perspective on the topics in the units.</p>
                     </div>
                 </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
@@ -605,7 +605,7 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/personal-tutor.svg" alt="image" style="opacity: 1;">
                         </div>
-                        <h3>Personal Tutor</h3>   
+                        <h3>Personal Tutor</h3>
                         <p>One to one personal tutor meetings will clarify your doubts and also provide guidance on your assignments.
 </p>
                     </div>
@@ -614,7 +614,7 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/online-library.svg" alt="image" style="opacity: 1;">
                         </div>
-                        <h3>Online Library</h3>   
+                        <h3>Online Library</h3>
                         <p>You get unlimited access to the online library which consists of a large collection of books, journals, articles, white papers, videos, case studies, and other publications.
 </p>
                     </div>
@@ -623,7 +623,7 @@
                         <div class="team-img">
                             <img src="{{base_path}}/images/coursepage/collaborative-learning.svg" alt="image" style="opacity: 1;">
                         </div>
-                        <h3>Collaborative Learning</h3>   
+                        <h3>Collaborative Learning</h3>
                         <p>Discussion Forum, webinars, business scenario presentations, debates will extend your learning beyond the curriculum and open a new world before you.
                         </p>
                     </div>
@@ -632,8 +632,8 @@
             <a class="button" href="#">View All</a>
         </div>
     </div>
-    
-    
+
+
     <div class="what-you-get">
         <div class="wrapper">
             <h2>What You Get</h2>
@@ -647,13 +647,13 @@
                                     {% else %}
                                    <img src="{{why_coursedata.logo_url}}" style="height:45px;width:52px"alt="icon">
                                         {% endif %}
-                    
-                    <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>. 
+
+                    <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>.
                      {% if why_coursedata.certificates_url is not empty %}
                         <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a>
                          {% endif %}
                         </p>
-                        
+
                     <!-- Modal Starts -->
                     <div class="modal fade" id="certificateModal{{whynum}}" tabindex="-1" aria-labelledby="certificate1ModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog">
@@ -673,14 +673,14 @@
                 </div>
                 {% set whynum = whynum+1 %}
                 {% endfor %}
-               
-                
-                
+
+
+
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="our-students-say">
         <div class="wrapper">
             <h2>And Our Students Says</h2>
@@ -994,7 +994,7 @@
                                 <p>Mobile Number</p>
                                 <input type="tel" id="phone" placeholder="Enter Mobile number">
                             </div>
-                            
+
                             <div class="button">
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
@@ -1007,73 +1007,71 @@
             </div>
         </div>
     </div>
-    
-    
-    
+
+
+
+
+    {% if course_team|length > 0%}
     <!--   Course Team -->
-    
-    <div class="course-team">
-        <div class="wrapper">
-            <h2>Course Team</h2>
-            <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
-                
-                
-                
-                
-                
-                
-                
-            <div class="owl-stage-outer">
-            <div class="owl-stage" style="transform: translate3d(-299px, 0px, 0px); transition: all 0.25s ease 0s; width: 2093px;">
-             {% set courseteamnum = 1 %}
-             {% for course_team_data in course_team %}
-             {% if courseteamnum == 1 %} 
-                  {% set cactiveclass = '' %}
-                  {% else %}
-                        {% set cactiveclass = 'active' %}
-                    {% endif %}
-             
-            <div class="owl-item {{courseteamnum}}" style="width: auto;"><div class="item">
-                    <div class="course-team-card">
-                        <div class="team-img">
-                            <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;">
+        <div class="course-team">
+            <div class="wrapper">
+                <h2>Course Team</h2>
+                <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
+
+
+
+
+
+
+
+                <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-299px, 0px, 0px); transition: all 0.25s ease 0s; width: 2093px;">
+                 {% set courseteamnum = 1 %}
+                 {% for course_team_data in course_team %}
+                 {% if courseteamnum == 1 %}
+                      {% set cactiveclass = '' %}
+                      {% else %}
+                            {% set cactiveclass = 'active' %}
+                        {% endif %}
+
+                <div class="owl-item {{courseteamnum}}" style="width: auto;"><div class="item">
+                        <div class="course-team-card">
+                            <div class="team-img">
+                                <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;">
+                            </div>
+                            <h3>{{course_team_data.title}}</h3>
+                            <h4>{{course_team_data.designation}}</h4>
+                            <p>{{course_team_data.description|striptags|truncate(100)}}</p>
+                            <a href="{{ path('entity.node.canonical', {'node': course_team_data.course_nid}) }}">Readmore</a>
                         </div>
-                        <h3>{{course_team_data.title}}</h3>   
-                        <h4>{{course_team_data.designation}}</h4>
-                        <p>{{course_team_data.description|striptags|truncate(100)}}</p>
-                        <a href="#">Readmore</a>
                     </div>
-                </div>
-              </div>
-              {% set courseteamnum = courseteamnum+1 %}
-                {% endfor %} 
-              </div></div>
-              <div class="owl-nav">
-                
-                <button role="button" class="owl-dot">
-                  <span></span>
-                </button>
-                <button role="button" class="owl-dot active">
-                  <span></span>
-                </button>
-                <button role="button" class="owl-dot">
-                  <span></span>
-                </button>
-                <button role="button" class="owl-dot">
-                  <span></span>
-                </button>
-                <button role="button" class="owl-dot">
-                  <span></span>
-                </button>
-                
-                </div></div>
-            <a class="button" href="#">View All</a>
+                  </div>
+                  {% set courseteamnum = courseteamnum+1 %}
+                    {% endfor %}
+                  </div></div>
+                  <div class="owl-nav">
+
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot active">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+
+                    </div></div>
+                <a class="button" href="#">View All</a>
+            </div>
         </div>
-    </div>
-    
-
-
-
+    {% endif %}
 
 
 <div class="course-faq">
@@ -1081,7 +1079,7 @@
             <h2>Frequently Asked Questions</h2>
             <div class="accordion" id="accordion">
                  {% set faqcategorynum = 1 %}
-             {% for faq_category,faq_data in faq %}    
+             {% for faq_category,faq_data in faq %}
                 <div class="card">
                     <div class="card-header" id="headingOne{{faqcategorynum}}">
                         <h5 class="mb-0">
@@ -1092,7 +1090,7 @@
                     </div>
                     <div id="sectionOne{{faqcategorynum}}" class="collapse" aria-labelledby="headingOne{{faqcategorynum}}" data-parent="#accordion" style="">
                      {% set questionsnum = 1 %}
-                    {% for questions in faq_data %}  
+                    {% for questions in faq_data %}
                         <div class="card-body">
                             <div class="accordion-inner" id="inner-accordion1">
                                 <div class="card">
@@ -1103,17 +1101,17 @@
                                             </button>
                                         </h5>
                                     </div>
-                              
+
                                     <div id="firstCollapseOne{{faqcategorynum}}{{questionsnum}}" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion1" style="">
                                         <div class="card-body">
                                            {{questions.answer}}
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
-                               
-                            </div>     
+
+
+
+                            </div>
                         </div>
                         {% set questionsnum = questionsnum+1 %}
                          {% endfor %}

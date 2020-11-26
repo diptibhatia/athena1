@@ -37,7 +37,7 @@
               var duration =  jQuery("#duration_search").val();
               window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
             });
-            
+
             jQuery("#get_in_touch").click(function() {
                  var msg = '';
                 if(jQuery("#get_in_touch_fname").val() == '') {
@@ -56,13 +56,13 @@
   if(!jQuery("#get_in_touch_consent").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
-                
-  
-  
+
+
+
                 if(jQuery("#get_in_touch_mobile").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
-                
+
                 if(msg =='') {
                     jQuery('#get_in_touch_course').val("");
                     jQuery('#get_in_touch_fname').val("");
@@ -72,15 +72,15 @@
                     //jQuery('#get_in_touch_consent').val("");
                     jQuery('#get_in_touch_consent').prop('checked', false);
                     alert("Thank you!! we'll get in touch with you shortly");
-                    
+
                 }else {
-                    
+
                     alert(msg)
                 }
             });
              jQuery("#registration_form").click(function() {
-                 
-                 
+
+
                 var msg = '';
                 if(jQuery("#reg_first_name").val() == '') {
                     msg += '\n\u2022  First name cannot be empty';
@@ -119,15 +119,15 @@
                  if(jQuery("#reg_confirm_pass").val() == '') {
                     msg += '\n\u2022 please confirm pass';
                 }
-                
+
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
-                     msg += '\n\u2022 password and confirm password do not match'; 
+                     msg += '\n\u2022 password and confirm password do not match';
                 }
 
                 if(!jQuery("#reg_terms").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
-                
+
                 if(msg == ''){
                     var sendInfo = {
            UserName: String(jQuery("#reg_email").val()),
@@ -144,7 +144,7 @@ Monthofexperience:parseInt(jQuery("#reg_months").val()),
 IsAccepted:true,
 Employmentlevel:String(jQuery("#reg_level").val())
        };
-       
+
 jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
@@ -167,25 +167,25 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                              window.location.replace("http://portal.athena.edu/login");
                             } else {
                               //txt = "You pressed Cancel!";
-                            }  
-                                    
+                            }
+
                                 }
                         }
                     });
-       
-       
-       
-       
+
+
+
+
                 }else {
-                    
+
                     alert(msg)
                 }
-            
+
              });
-            
+
              jQuery("#news-letter-subscribe").click(function() {
-               
-                 
+
+
                  var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   if(!regex.test(jQuery('#newsletter-email-input').val())) {
     jQuery("#newsletter-info-box-error").html("Invalid Email id");
@@ -212,14 +212,14 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(jQuery("#speak_first_name").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
-                
+
                  if(jQuery("#speak_mobile_number").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
                 if(!jQuery("#speak_consent").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
-                
+
                 if(msg == ''){
                     alert("Thank you for submitting the registration form. Will reach out to you shortly")
                 }else {
@@ -254,12 +254,12 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
                 }
             })
-            
-            
+
+
             jQuery(window).scroll(function() {
                 if(jQuery(window).width() > 1249) {
-                    if((jQuery(window).scrollTop() > jQuery(".course-login-wrapper").offset().top) && 
-                    (jQuery(window).scrollTop() < (jQuery(".course-login-wrapper").offset().top + jQuery(".course-login-wrapper").height() - 
+                    if((jQuery(window).scrollTop() > jQuery(".course-login-wrapper").offset().top) &&
+                    (jQuery(window).scrollTop() < (jQuery(".course-login-wrapper").offset().top + jQuery(".course-login-wrapper").height() -
                     jQuery(".testimonials").height() + 10))) {
                         jQuery(".testimonials").css("position", "fixed");
                         console.log("Yo");
@@ -268,7 +268,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                     }
                 }
             });
-            
+
              jQuery(".content--course").slice(0, 3).show();
               jQuery("#loadMore").on("click", function(e){
                 e.preventDefault();

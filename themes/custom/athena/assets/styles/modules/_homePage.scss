@@ -345,7 +345,7 @@
 		.courses {
 			flex: 1;
 			padding: 5px;
-			margin: 60px 0 20px 0;
+			margin: 0 0 20px 0;
 			background: none;
 			width:400px;
 			@include atSize479 {
@@ -381,7 +381,7 @@
 								box-shadow: 0 2px 25px 2px #d5dbfb;
 								background-color: #ffffff;
 								position: relative;
-								margin: 0 0 0 20px;
+								margin: 0 0 20px 20px;
 								z-index: 10;
 								@include atSize424 {
 									margin: 20px 13px;
@@ -1405,10 +1405,6 @@
 		  	display: flex;
 		  	img {
 				width: 200px;
-				position: absolute;
-				transform: translate(-50%, -50%);
-				left: 50%;
-				top: 50%;
 		  	}
 		  	@include atSize424 {
 				margin: 20px auto;
@@ -1856,6 +1852,14 @@
 					}
 				}
 			}
+		p{
+			a{color:#303030;}
+		}
+		p.purple-txt{
+			a {
+				color: #ff0068 !important;
+			}
+		} 
 		}
 	}
 }
@@ -2513,7 +2517,7 @@
 			width: 213px;
   			height: 50px;
   			&:hover {
-				color: white;
+				color: white !important;
 				background: $buttonPink;
 			}
 		}
