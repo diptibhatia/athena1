@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="21px" viewBox="0 0 13 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>facebook</title>
+    <defs>
+        <path d="M3.4839045,20.7256945 L7.7895139,20.7256945 L7.7895139,12.1039271 L11.6689271,12.1039271 L12.0950695,7.81954408 L7.7895139,7.81954408 L7.7895139,5.65624998 C7.7895139,5.06178192 8.2714132,4.57986108 8.86590279,4.57986108 L12.0950695,4.57986108 L12.0950695,0.274305504 L8.86590279,0.274305504 C5.89345486,0.274305504 3.4839045,2.68388816 3.4839045,5.65624998 L3.4839045,7.81954408 L1.33112671,7.81954408 L0.904995111,12.1039271 L3.4839045,12.1039271 L3.4839045,20.7256945 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MBA-affiliate-new" transform="translate(-1204.000000, -55.000000)">
+            <g id="Group-2" transform="translate(1204.000000, 50.000000)">
+                <g id="facebook" transform="translate(0.000000, 5.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use fill="#3C5B9A" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
