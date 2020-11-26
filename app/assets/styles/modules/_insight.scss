@@ -75,32 +75,19 @@
 	.share-icon {
 		position: relative;		
 		width: 20px;
-		padding-left: 25px;
-		ul {
-			
-			position: fixed;
-			right: 5px;
-			margin-left: 0;
-			top: 25%;
+		padding-left: 35px;
+		
+		li {
+			margin-top: 10px;
 
-			@include atSize700 {
-				right: 37%;
-				top: unset;
-				margin-left: 30px;
-			}
+			img {
+				width: 30px;
+				height: 30px;
 
-			li {
-				margin-top: 10px;
-
-				img {
-					width: 30px;
-					height: 30px;
-
-					@include atSize700 {
-						width: 40px;
-						height: 40px;	
-					}					
-				}
+				@include atSize700 {
+					width: 40px;
+					height: 40px;	
+				}					
 			}
 		}
 	}
