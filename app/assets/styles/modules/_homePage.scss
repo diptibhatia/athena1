@@ -10,7 +10,7 @@
 }
 
 .grid-view {
-	width:1170px;
+	// width:1170px;
 	height:auto;
 	padding:10px 15px;
 	margin:0px auto;
@@ -126,10 +126,8 @@
 		margin: 0 auto !important;
 		padding: 0 15px !important;
 	}
-	@media (min-width: 480px) and (max-width: 770px){
-		width: 100% !important;
-	}
-	@media (min-width: 771px) and (max-width: 1024px){
+	
+	@media (max-width: 1024px){
 		width: 100% !important;
 	}
 }
@@ -280,7 +278,7 @@
 	}
 	.courses-offered {
 		display: flex;
-		margin: 0 0;
+		margin: 0 30px;
 		@include atSize424 {
     		flex-direction: column;
     	}
@@ -301,7 +299,7 @@
 		.info {
 			flex: 0.5;
 			text-align: left;
-			padding: 0 0 60px;
+			padding: 60px 0;
 			@include atSize479 {
 				padding: 15px;
 				text-align:center;
@@ -345,7 +343,7 @@
 		.courses {
 			flex: 1;
 			padding: 5px;
-			margin: 0 0 20px 0;
+			margin: 60px 0 20px 0;
 			background: none;
 			width:400px;
 			@include atSize479 {
@@ -353,7 +351,7 @@
 				margin: 0 0 20px;
 			}
 			.course-list {
-				margin: 20px 0;
+				margin: 20px 10px;
 				display: flex;
 				@include atSize424 {
 					flex-direction: column;
@@ -370,148 +368,139 @@
 				}
 				.owl-item{
 					margin-right:0;
-						.item{
-							background:transparent;
-							box-shadow:none;
-
-							.course-item {
-								width: 350px;
-								height: 450px;
-								border-radius: 6px;
-								box-shadow: 0 2px 25px 2px #d5dbfb;
-								background-color: #ffffff;
+						.course-item {
+							width: 350px;
+							height: 450px;
+							border-radius: 6px;
+							box-shadow: 0 2px 25px 2px #d5dbfb;
+							background-color: #ffffff;
+							position: relative;
+							margin: 0 20px;
+							z-index: 10;
+							@include atSize424 {
+								margin: 20px 13px;
+							}
+							@media (min-width: 760px) and (max-width: 770px) {
+								left: -26px;
+								top: -81px;
+								margin: 0 8px;
+							}
+							@media (min-width: 771px) and (max-width: 1024px){
+								left: -26px;
+								top: -81px;
+								margin: 0 8px;
+							}
+							.image {
 								position: relative;
-								margin: 0 0 20px 20px;
-								z-index: 10;
-								@include atSize424 {
-									margin: 20px 13px;
+								img {
+									width: 350px;
+									height: 165px;
 								}
-								@media (min-width: 760px) and (max-width: 770px) {
-									left: -26px;
-									top: -81px;
-									margin: 0 8px;
+							}
+							.price-tag {
+								width: 113px;
+								height: 39px;
+								border-radius: 100px 0px 0 100px;
+								background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
+								position: absolute;
+								top: 7px;
+								right: 0;
+								margin: 10px 0;
+								p {
+									font-family: Lato;
+									font-size: 16px;
+									font-weight: bold;
+									font-stretch: normal;
+									font-style: normal;
+									line-height: normal;
+									letter-spacing: normal;
+									color: #ffffff;
+									margin: 0;
+									padding: 8px;
 								}
-								@media (min-width: 771px) and (max-width: 1024px){
-									left: -26px;
-									top: -81px;
-									margin: 0 8px;
-								}
-								.image {
-									position: relative;
-									img {
-										width: 350px;
-										height: 165px;
-									}
-								}
-								.price-tag {
-									width: 113px;
-									height: 39px;
-									border-radius: 100px 0px 0 100px;
-									background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
-									position: absolute;
-									top: 7px;
-									right: 0;
-									margin: 10px 0;
+							}
+							.course-details {
+								width: 331px;
+								min-height: 136px;
+								height: auto;
+								border-radius: 6px;
+								box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
+								background-color: #ffffff;
+								position: absolute;
+								top: 130px;
+								left: 10px;
+								.course-tags {
+									width: 315px;
+									height: 30px;
+									border-radius: 3px;
+									background-color: $courseTags;
+									margin: 0 10px;
 									p {
-										font-family: Lato;
-										font-size: 16px;
-										font-weight: bold;
-										font-stretch: normal;
-										font-style: normal;
-										line-height: normal;
-										letter-spacing: normal;
-										color: #ffffff;
-										margin: 0;
-										padding: 8px;
+									font-size: 14px;
+									color: $primaryColor;
+									padding: 3px;
+									text-align: center;
+									span {
+										color: white;
+										padding: 0 5px;
 									}
-								}
-								.course-details {
-									width: 331px;
-									min-height: 136px;
-									height: auto;
-									border-radius: 6px;
-									box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
-									background-color: #ffffff;
-									position: absolute;
-									top: 130px;
-									left: 10px;
-									.course-tags {
-										width: 315px;
-										height: 30px;
-										border-radius: 3px;
-										background-color: $courseTags;
-										margin: 0 10px;
-										p {
-										font-size: 14px;
-										color: $primaryColor;
-										padding: 3px;
-										text-align: center;
-										span {
-											color: white;
-											padding: 0 5px;
-										}
-										.circle {
-											&::before {
-												content: ' \25CF';
-												font-size: 14px;
-												color: #ff008e;
-												}
+									.circle {
+										&::before {
+											content: ' \25CF';
+											font-size: 14px;
+											color: #ff008e;
 											}
 										}
 									}
-									h1 {
-										font-size: 14px;
-										font-weight: bold;
-										color: $primaryColor;
-										margin: 10px 0 0 5px;
-										text-align: left;
-										padding-left: 20px;
-									}
-									h2 {
-										font-size: 14px;
-										color: $buttonPink;
-										margin: 5px 0;
-										text-align: left;
-										padding-left: 24px;
-									}
-									h3 {
-										font-size: 14px;
-										color: $primaryColor;
-										text-align: left;
-										padding: 15px 25px;
-										span {
-											font-weight: bold;
-										}
-									}
 								}
-								.course-info {
-									margin: 138px 15px 0 15px;
+								h1 {
 									font-size: 14px;
+									font-weight: bold;
+									color: $primaryColor;
+									margin: 10px 0 0 5px;
 									text-align: left;
-									color: $secondaryColor;
-									span {
-										color: $buttonPink;
-										cursor: pointer;
-									}
+									padding-left: 20px;
 								}
-								.know-more {
-									width: 113px;
-									height: 44px;
-									border-radius: 100px 0px 0 100px;
-									background-image: linear-gradient(89deg, $knowMoreTag1 0%, $knowMoreTag2 100%, $knowMoreTag3 100%);
-									float: right;
-									margin: 10px 0;
-									p {
-										color: white;
-										margin: 10px 0;
+								h2 {
+									font-size: 14px;
+									color: $buttonPink;
+									margin: 5px 0;
+									text-align: left;
+									padding-left: 24px;
+								}
+								h3 {
+									font-size: 14px;
+									color: $primaryColor;
+									text-align: left;
+									padding: 15px 25px;
+									span {
+										font-weight: bold;
 									}
 								}
 							}
-						
-						
-						
+							.course-info {
+								margin: 138px 15px 0 15px;
+								font-size: 14px;
+								text-align: left;
+								color: $secondaryColor;
+								span {
+									color: $buttonPink;
+									cursor: pointer;
+								}
+							}
+							.know-more {
+								width: 113px;
+								height: 44px;
+								border-radius: 100px 0px 0 100px;
+								background-image: linear-gradient(89deg, $knowMoreTag1 0%, $knowMoreTag2 100%, $knowMoreTag3 100%);
+								float: right;
+								margin: 10px 0;
+								p {
+									color: white;
+									margin: 10px 0;
+								}
+							}
 						}
-						
 				}		
 			}
 		}
@@ -1404,7 +1393,7 @@
 		  	justify-content: center;
 		  	display: flex;
 		  	img {
-				width: 200px;
+		  		width: 200px;
 		  	}
 		  	@include atSize424 {
 				margin: 20px auto;
@@ -1852,14 +1841,6 @@
 					}
 				}
 			}
-		p{
-			a{color:#303030;}
-		}
-		p.purple-txt{
-			a {
-				color: #ff0068 !important;
-			}
-		} 
 		}
 	}
 }
@@ -2517,7 +2498,7 @@
 			width: 213px;
   			height: 50px;
   			&:hover {
-				color: white !important;
+				color: white;
 				background: $buttonPink;
 			}
 		}
