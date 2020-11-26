@@ -42,7 +42,7 @@
   width: 769px;
   min-height: 300px;
   height: auto;
-  margin: 0px 0;
+  margin: 20px 0;
   padding: 25px;
   border-radius: 6px;
   box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
@@ -834,7 +834,7 @@
 
 
     @media (min-width: $break-small) {
-      margin-top: 20px;
+      margin-top: 40px;
      // height:315px;
       flex-direction: row;
       max-width: 1000px;
