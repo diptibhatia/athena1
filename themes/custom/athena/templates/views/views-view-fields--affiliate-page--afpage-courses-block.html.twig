@@ -40,13 +40,13 @@
   <div class="badge green">Total Fee <span>{{fields.field_afpage_course_totfee.content|raw}}</span>
     <em>Pay in Installments</em>
   </div>
-  <a href="#">
+  <a href="{{ fields.field_afpage_course_id.content ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ fields.field_afpage_course_id.content : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">
     {% set url = fields.field_afpage_course_bgimage.content|render|striptags %}
     {% set title = fields.title.content|raw %}
     <img src="{{url|replace({' ':''})}}" alt="{{title}}" title="{{title}}" /></a>
 </figure>
 <div class="post-content tick ">
-  <h4 class="post-title"><a href="#">{{fields.title.content}}</a></h4>
+  <h4 class="post-title"><a href="{{ fields.field_afpage_course_id.content ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ fields.field_afpage_course_id.content : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">{{fields.title.content}}</a></h4>
   <h5>Awarded By : <span> {{fields.field_afpage_course_award_body.content}} </span></h5>
 
   <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee : <span>{{fields.field_afpage_course_fee.content|raw}}</span></h6>

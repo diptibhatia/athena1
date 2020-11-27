@@ -25,5 +25,5 @@ global-js:
 
 affiliate-page:
   js:
-    js/af-page.js: {}
-    js/owl.carousel.js: {}
+    js/owl.carousel.js: {weight: -10}
+    js/af-page.js: {weight: -9}
