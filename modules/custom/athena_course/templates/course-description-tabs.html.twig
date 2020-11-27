@@ -1037,12 +1037,12 @@
                 <div class="owl-item {{courseteamnum}}" style="width: auto;"><div class="item">
                         <div class="course-team-card">
                             <div class="team-img">
-                                <a style="display:none" href="{{ course_team_data.field_linked_in_link}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
+                                <a style="display:none" href="{{ course_team_data.linked_in}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
                             </div>
                             <h3>{{course_team_data.title}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
                             <p>{{course_team_data.description|striptags|truncate(100)}}</p>
-                            <a style="display:none" href="{{ url('<front>') }}/node/{{cours_nid}}">Readmore</a>
+                            <a style="display:none" href="{{ url('<front>') }}/node/{{course_team_data.course_nid}}">Readmore</a>
                         </div>
                     </div>
                   </div>

@@ -9,7 +9,7 @@ use \Drupal\Core\Url;
 class AthenaCourseController {
 
 public function news_subscription(){
-    
+
 }
 
 public function smo($nid) {
@@ -20,9 +20,9 @@ public function smo($nid) {
     $theme = \Drupal::theme()->getActiveTheme();
     $base_path = $base_url.'/'. $theme->getPath();
     //print $node->get('field_courses_credit_type')->value;exit;
-    
+
      if(is_object( $node->field_link_universities)){
-	
+
     $paragraph_univ_data = $node->field_link_universities->referencedEntities();
     }
 
@@ -107,7 +107,6 @@ $paragraph_course_team = $node->field_course_team_member->referencedEntities();
 $course_team = array();
 foreach($paragraph_course_team as $attached_node){
   $name =  $attached_node->get('title')->value;
-  $course_nid =  $attached_node->id;
   $designation =  $attached_node->get('field_designation')->value;
   $linked_in =  $attached_node->get('field_linked_in_link')->value;
   $user_pic= '';
@@ -122,7 +121,6 @@ foreach($paragraph_course_team as $attached_node){
   'user_pic' => $user_pic_url,
   'linked_in' => $linked_in,
   'description' => $description,
-  'course_nid' => $course_nid
   );
 
 }
@@ -325,6 +323,7 @@ $paragraph_course_team = $node->field_course_team_member->referencedEntities();
 $course_team = array();
 foreach($paragraph_course_team as $attached_node){
   $name =  $attached_node->get('title')->value;
+  $course_nid =  $attached_node->id();
   $designation =  $attached_node->get('field_designation')->value;
   $linked_in =  $attached_node->get('field_linked_in_link')->value;
   $user_pic= '';
@@ -339,8 +338,7 @@ foreach($paragraph_course_team as $attached_node){
   'user_pic' => $user_pic_url,
   'linked_in' => $linked_in,
   'description' => $description,
-
-
+  'course_nid' => $course_nid,
   );
 
 }
