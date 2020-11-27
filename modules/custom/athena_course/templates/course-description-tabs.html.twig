@@ -649,7 +649,7 @@
                                         {% endif %}
 
                     <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>.
-                     {% if why_coursedata.certificates_url is not empty %}
+                     {% if why_coursedata.certificates_url|trim is not empty %}
                         <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a>
                          {% endif %}
                         </p>
