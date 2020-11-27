@@ -17,7 +17,11 @@ public function smo($nid) {
     $theme = \Drupal::theme()->getActiveTheme();
     $base_path = $base_url.'/'. $theme->getPath();
     //print $node->get('field_courses_credit_type')->value;exit;
+    
+     if(is_object( $node->field_link_universities)){
+	
     $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+    }
 
 
 foreach($paragraph_univ_data as $explore_data) {
