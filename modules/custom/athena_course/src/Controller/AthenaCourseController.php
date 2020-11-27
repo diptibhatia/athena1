@@ -352,6 +352,10 @@ foreach($paragraph_faq as $faq_data){
 
 
 }
+$banner = '';
+ if(is_object( $node->get('field_course_banner_image')->entity)){
+	$banner =$node->get('field_course_banner_image')->entity->uri->value;
+    }
 
 $banner_block =  [
   '#theme' => 'course_banner',
@@ -361,7 +365,7 @@ $banner_block =  [
   '#awarding_body' => $node->get('field_course_awarding_body')->value,
   '#description' => $node->get('field_course_banner_description')->value,
   '#category' => $node->get('field_course_category')->value,
-  '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
+  '#banner' => $banner,
   '#base_path' => $base_path,
   '#node' => $node
 ];
