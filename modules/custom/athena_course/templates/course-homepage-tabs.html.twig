@@ -46,7 +46,13 @@
                                     <div class="item">
                                       <div class="course-item">
                                          <div class="image">
-                                            <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                                          {% if academicdata.field_search_list_image.entity.uri.value is not empty %}
+         
+       
+        <a href="{{ url('<front>') }}course/{{academicdata.id}}"> <img class="course-img" src=" {{ file_url(academicdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
+         {% else %}
+          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+           {% endif %}
                                          </div>
                                          <div class="price-tag">
                                             <p>${{academicdata.field_course_total_fee.value}}</p>
@@ -98,7 +104,13 @@
                                         <div class="item">
                                           <div class="course-item">
                                              <div class="image">
-                                                <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                                               {% if microdata.field_search_list_image.entity.uri.value is not empty %}
+         
+       
+        <a href="{{ url('<front>') }}course/{{microdata.id}}"> <img class="course-img" src=" {{ file_url(microdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
+         {% else %}
+          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+           {% endif %}
                                              </div>
                                              <div class="price-tag">
                                                 <p>${{microdata.field_course_total_fee.value}}</p>
@@ -151,7 +163,13 @@
                                       <div class="item">
                                         <div class="course-item">
                                            <div class="image">
-                                              <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                                               {% if certificationsdata.field_search_list_image.entity.uri.value is not empty %}
+         
+       
+        <a href="{{ url('<front>') }}course/{{certificationsdata.id}}"> <img class="course-img" src=" {{ file_url(certificationsdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
+         {% else %}
+          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+           {% endif %}
                                            </div>
                                            <div class="price-tag">
                                               <p>${{certificationsdata.field_course_total_fee.value}}</p>

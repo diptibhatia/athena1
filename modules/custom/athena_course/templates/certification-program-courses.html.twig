@@ -9,7 +9,13 @@
              <div class="item">
                <div class="course-item">
                   <div class="image">
-                     <img src="{{base_path}}/images/course-image2.png" alt="course-image">
+                      {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+         
+       
+        <a href="{{ url('<front>') }}course/{{coursedata.id}}"> <img class="course-img" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
+         {% else %}
+          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+           {% endif %}
                   </div>
                   <div class="price-tag">
                      <p>${{coursedata.field_course_total_fee.value}}</p>

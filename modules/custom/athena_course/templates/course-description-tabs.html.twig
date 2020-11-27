@@ -649,7 +649,7 @@
                                         {% endif %}
 
                     <p>{{why_coursedata.degree}} issued by <span>{{why_coursedata.issued_by}} </span>.
-                     {% if why_coursedata.certificates_url is not empty %}
+                     {% if why_coursedata.certificates_url|trim is not empty %}
                         <a class="cover" data-toggle="modal" data-target="#certificateModal{{whynum}}">(view sample)</a>
                          {% endif %}
                         </p>
@@ -1037,12 +1037,12 @@
                 <div class="owl-item {{courseteamnum}}" style="width: auto;"><div class="item">
                         <div class="course-team-card">
                             <div class="team-img">
-                                <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;">
+                                <a style="display:none" href="{{ course_team_data.field_linked_in_link}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
                             </div>
                             <h3>{{course_team_data.title}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
                             <p>{{course_team_data.description|striptags|truncate(100)}}</p>
-                            <a href="{{ url('<front>') }}/node/{{cours_nid}}">Readmore</a>
+                            <a style="display:none" href="{{ url('<front>') }}/node/{{cours_nid}}">Readmore</a>
                         </div>
                     </div>
                   </div>
