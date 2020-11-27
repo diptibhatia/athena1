@@ -3,6 +3,80 @@
 		<h2 class="text-center">Our Popular Insights</h2>
 		<div class="card-group">
       {% for popudata in popu %}
+       <!--  popup -->
+         
+         <div id="myModalsocialshare{{loop.index}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width:475px !important;">
+
+      <!--
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+      -->
+
+
+      <div class="modal-body">
+       <div class="col-md-12">
+  <div class="col-md-12">
+    <h5 style="font-weight: bold;">Share this page</h5>
+
+    <h6>Show your friends and family what they can learn from athena</h6>
+  </div>
+  <div class="col-md-12 row" style="margin-bottom: 20px;">
+    <div class="col-md-1"></div>
+    <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" width="45"></div>
+    <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/tw-co.png" width="45"></div>
+    <div class="col-md-2"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/li-ico.png" width="45"></div>
+    <div class="col-md-2"><img src="/themes/custom/athena/images/wt-ico.png" width="45"></div>
+
+    <div class="col-md-1"></div>
+
+
+  </div>
+
+<div class="col-md-12">
+    <div class="bg-white sidebar shadow-lg rounded p-3">
+	<div class="col-md-12 row">
+		<div class="col-md-8" style="
+   /* width: 300px; */
+   overflow: hidden;
+   background: -webkit-linear-gradient(left, black , #eeeeee);
+   background: -o-linear-gradient(right, black, #eeeeee);
+   background: -moz-linear-gradient(right, black, #eeeeee);
+   background: linear-gradient(to right, black , #eeeeee);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   white-space: nowrap;
+   ">
+        		{{ url('<front>') }}node/{{popudata.nid.value}}
+    		</div>
+   		<div class="col-md-4" style="position: relative;padding-left: 80px;color: #ff0068;font-weight: bold;">
+			COPY
+		<div>
+	</div>
+
+
+    </div>
+</div>
+</div>
+      </div></div>
+      </div>
+      <!--
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      -->
+    </div>
+
+  </div>
+</div>
+
+      
+      
+      
          {% if loop.index ==3 %}
 			<div class="card">     
 				<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" /></a>
@@ -16,7 +90,13 @@
                </p>
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
-					<span class="cursor shareText"><img src="{{base_path}}/images/share.svg" height=18 />&nbsp;&nbsp;Share</span>
+					<span class="cursor shareText">
+                    <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
+                    <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon">
+                    Share
+                </a>
+              </div>
+                    </span>
 					<span>
 						<a href="/node/{{popudata.nid.value}}">Read More</a>
 					</span>
@@ -35,7 +115,10 @@
                </p>
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
-					<span class="cursor shareText"><img src="{{base_path}}/images/share.svg" height=18 />&nbsp;&nbsp;Share</span>
+					<span class="cursor shareText"><a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
+                    <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon">
+                    Share
+                </a></span>
 					<span>
 						<a href="/node/{{popudata.nid.value}}">Read More</a>
 					</span>
@@ -49,3 +132,5 @@
 		</div>
 	</div>
 </div>
+
+ 

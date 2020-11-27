@@ -8,6 +8,9 @@ use \Drupal\Core\Url;
 
 class AthenaCourseController {
 
+public news_subscription(){
+    
+}
 
 public function smo($nid) {
     $parameters = \Drupal::routeMatch()->getParameters();

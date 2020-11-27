@@ -12,7 +12,15 @@ athena_smolist.smolist:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::smo_list'
     _title: 'Custom athena course module'
   requirements: 
-    _permission: 'access content'    
+    _permission: 'access content'
+
+athena_newsletter.news-subscription:
+  path: '/news-subscription'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::news_subscription'
+    _title: 'News letter subscription page'
+  requirements: 
+    _permission: 'access content'      
 
 athena_smo.smo:
   path: '/smo/{nid}'
