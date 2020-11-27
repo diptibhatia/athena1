@@ -48,7 +48,7 @@
 <div class="col-md-12">
     <div class="bg-white sidebar shadow-lg rounded p-3">
 	<div class="col-md-12 row">
-		<div class="col-md-8" style="
+		<div id="shareurl--copy" class="col-md-8" style="
    /* width: 300px; */
    overflow: hidden;
    background: -webkit-linear-gradient(left, black , #eeeeee);
@@ -61,8 +61,8 @@
    ">
         		{{ url('<front>') }}node/{{popudata.nid.value}}
     		</div>
-   		<div class="col-md-4" style="position: relative;padding-left: 80px;color: #ff0068;font-weight: bold;">
-			COPY
+   		<div class="col-md-4 " style="position: relative;padding-left: 80px;color: #ff0068;font-weight: bold;">
+			<a onclick="copy_to_clipboard()">COPY</a>
 		<div>
 	</div>
 

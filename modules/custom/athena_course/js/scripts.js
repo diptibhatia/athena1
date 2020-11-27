@@ -278,3 +278,20 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
               });
         })
+
+
+
+function copy_to_clipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("shareurl--copy").innerHTML;
+  var dummy = document.createElement('input');document.body.appendChild(dummy);dummy.value = copyText;
+  /* Select the text field */
+  dummy.select();
+  dummy.setSelectionRange(0, 99999); /For mobile devices/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+  /* Alert the copied text */
+  alert("Copied url to clipboard: " + dummy.value);
+  document.body.removeChild(dummy);
+}
