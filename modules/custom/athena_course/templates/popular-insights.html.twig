@@ -30,8 +30,16 @@
     <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" width="45"></div>
     <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/tw-co.png" width="45"></div>
     <div class="col-md-2"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/li-ico.png" width="45"></div>
-    <div class="col-md-2"><img src="/themes/custom/athena/images/wt-ico.png" width="45"></div>
-
+    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
+<img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
+</div>
+    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
+<a href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}node/{{popudata.nid.value}}"
+   title="Share by Email">
+  <img src="/themes/custom/athena/images/at-ico.png" width="45">
+</a>
+</div>
+    
     <div class="col-md-1"></div>
 
 
