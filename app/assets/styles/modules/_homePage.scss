@@ -333,7 +333,7 @@
   				padding: 5px 10px;
   				cursor: pointer;
   				outline: none;
-  				background: white;
+  				background:transparent;
   				width: 186px;
   				height: 50px;
   				&:hover {
@@ -644,7 +644,7 @@
 								color: $titlePink;
 								padding: 5px 20px;
 								cursor: pointer;
-								background: white;
+								background:transparent;
 								outline: none;
 								width: 186px;
 								height: 50px;
@@ -995,7 +995,7 @@
   					position: relative;
   					top: -52px;
     				left: 22px;
-    				background: white;
+    				background:transparent;
   					&:hover {
 						color: white;
 						background: $buttonPink;
@@ -1135,7 +1135,7 @@
   					position: relative;
   					top: -52px;
     				left: 22px;
-					background: white;
+					background:transparent;
 					display:none;
   					&:hover {
 						color: white;
@@ -1435,7 +1435,7 @@
 		padding: 5px 10px;
 		cursor: pointer;
 		outline: none;
-		background: white;
+		background:transparent;
 		width: 213px;
   		height: 50px;
   		&:hover {
@@ -2005,7 +2005,7 @@
 			outline: none;
 			width: 213px;
   			height: 50px;
-  			background: white;
+  			background:transparent;
   			&:hover {
 				color: white;
 				background: $buttonPink;
@@ -2517,12 +2517,15 @@
 			padding: 5px 20px;
 			cursor: pointer;
 			outline: none;
-			background: white;
+			background:transparent;
 			width: 213px;
   			height: 50px;
   			&:hover {
 				color: white !important;
 				background: $buttonPink;
+				a{
+					color:#fff !important;
+				}
 			}
 			button:hover {
 				color:#ffffff !important;
