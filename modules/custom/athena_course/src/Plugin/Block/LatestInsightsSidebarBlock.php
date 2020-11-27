@@ -85,6 +85,33 @@ $query->condition('field_is_popular_course', '1', '=');
     }
      $popular_courses =  array_slice($academicnodes, 0, 3);
      
+     
+     foreach($popular_courses as $node) {
+         if(is_object( $node->field_link_universities)){
+	
+    $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+    }
+
+
+foreach($paragraph_univ_data as $explore_data) {
+
+        $university_nid = $explore_data->get('field_university')->value;
+        $university_nid = $explore_data->get('field_university')->value;
+        if (!empty($university_nid)) {
+       $univ_node = Node::load($university_nid);
+       $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+        $univ_data[] = $univ_logo;
+        }
+
+
+
+
+}
+
+     $univ_popular[] = $univ_data;
+
+     }
+     
 
   $base_path = $base_url.'/'. $theme->getPath();
     $latest_insights_sidebar =  [
@@ -92,6 +119,7 @@ $query->condition('field_is_popular_course', '1', '=');
     '#insig' => $latest_insights,
     '#popular' => $popular_courses,
     '#base_path' => $base_path,
+    '#univ_popular' => $univ_popular,
 
   ]; 
 

@@ -20,18 +20,24 @@
 
 <div class="container">
                         <div><h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
-                        
+                    {% set indexno = 1 %}    
 {% for coursedata in popular %}
 <div class="row mb-2 shadow-sm rounded">
   <div class="col-md-12 col-sm-12 p-3">
     <p class="m-0"><strong>{{coursedata.label}}</strong></p>
-    <p class="mb-1">Guglielmo Marconi University, Italy</p>
+    <p class="mb-1">{{coursedata.field_course_awarding_body.value|raw }}</p>
     <p class="m-0">
-        <img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle"><img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle">
+    
+{% for univ.indexno in univ_popular %}
+        <img width="50" height="50" src="{{univ}}" class="rounded-circle">
+        <!-- <img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle"> -->
+{% endfor %}        
+        
         <a href="{{ url('<front>') }}course/{{coursedata.id}}" class="text-right purple-txt">Learn More</a>
     </p>
   </div>
 </div>
+ {% set indexno = indexno+1 %}
 {% endfor %}
 
 <p class="purple-txt"><a href="{{ url('<front>') }}course-home" class="more-link">VIEW ALL COURSE</a></p></div>

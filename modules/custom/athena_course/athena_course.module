@@ -205,6 +205,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       'insig' => NULL,
       'popular' => NULL,
+      'univ_popular' => NULL,
       ],
     ],
     'homepage_testimonials' => [
