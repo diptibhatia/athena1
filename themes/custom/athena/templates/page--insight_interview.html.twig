@@ -24,12 +24,13 @@
       <div class="pt-4 container bg-white pb-5 d-flex pl-0">
         <div class="col-md-8 col-sm-12 border-right pl-0">
             {{ page.content }}
+            <div class="stopScroll"></div>
         </div>
         <div class="col-md-4 col-sm-12 bg-white">
           {% if page.sidebar_second %}
                   {{ page.sidebar_second }}
           {% endif %}
-                
+
         </div>
       </div>
     </div>
@@ -122,9 +123,9 @@ Doctorate in Business Administration<br/>
             Group, a higher education services provider since 2009, providing
             quality UK, Italian and Spanish Bachelor and Master level degrees.
           </p>
-          
+
         </div>
-          
+
           <span class="subscribe-newsletter" >Subscribe to our newsletter</span>
           <div class="news-letter">
             <input type="email" class="form-control"
@@ -161,7 +162,7 @@ Doctorate in Business Administration<br/>
                 <p><a href="#">Anti-Bribery Policy</a></p>
                 <p><a href="#">Equal Oppurtunity Policy</a></p>
                 <p><a href="#">Cookies Policy</a></p>
-            
+
             </div>
 
             <div class="col-md-6 links" style="text-align: center;top:30%;">
@@ -236,7 +237,7 @@ Doctorate in Business Administration<br/>
                 progressFill.style.width = "5%";
             }else {
                 progressFill.style.width = Math.ceil(100 * progress) + "%";
-            }            
+            }
         }
 
         updateProgress();
@@ -265,7 +266,7 @@ Doctorate in Business Administration<br/>
 
         if (mq.matches) {
           $('.insight-wrapper .share-icon').addClass('mobile-share-icon');
-        } 
+        }
     </script>
 
     <script src="bundled.js"></script>
