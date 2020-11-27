@@ -28,7 +28,7 @@
     <p class="mb-1">{{coursedata.field_course_awarding_body.value|raw }}</p>
     <p class="m-0">
     
-{% for univ.indexno in univ_popular %}
+{% for univ in univ_popular.{{indexno}}  %}
         <img width="50" height="50" src="{{univ}}" class="rounded-circle">
         <!-- <img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle"> -->
 {% endfor %}        
