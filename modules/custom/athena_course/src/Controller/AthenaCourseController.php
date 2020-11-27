@@ -8,7 +8,7 @@ use \Drupal\Core\Url;
 
 class AthenaCourseController {
 
-public news_subscription(){
+public function news_subscription(){
     
 }
 
