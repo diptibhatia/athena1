@@ -604,7 +604,7 @@
 			}
 			.underline-heading {
 				width: 70px;
-    			border-bottom: solid 6px $buttonPink;
+    			border-bottom: solid 4px $buttonPink;
 				border-radius: 4px;
 				height:0px;
     			@include atSize424 {
@@ -775,6 +775,9 @@
   			&:hover {
 				color: white;
 				background: $buttonPink;
+				a{
+					color: white;
+				}
 			}
 		}
 		@media (min-width: 1281px) and (max-width: 1440px){
@@ -807,7 +810,7 @@
     	}
     	.collaorate-heading {
     		width: 334px;
-		    border-bottom: solid 6px $buttonPink;
+		    border-bottom: solid 4px $buttonPink;
 			margin: 6px 0 0 216px;
 			height:1px;
 		    @include atSize424 {
