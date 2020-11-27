@@ -2064,7 +2064,7 @@
 		}
 	}
 	.title{
-			margin: 100px 0 50px 0;
+			margin: 20px 0 50px 0;
 			text-align: left;
 			font-size: 36px;
 			@include atSize479{
@@ -2520,6 +2520,11 @@
 				color: white !important;
 				background: $buttonPink;
 			}
+			button:hover {
+				color:#ffffff !important;
+				background: $buttonPink;
+			}
+
 		}
 	}
 }
