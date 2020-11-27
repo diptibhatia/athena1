@@ -4,6 +4,7 @@ namespace Drupal\athena_course\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
+use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 
@@ -88,25 +89,18 @@ $query->condition('field_is_popular_course', '1', '=');
      
      foreach($popular_courses as $node) {
          if(is_object( $node->field_link_universities)){
-	
-    $paragraph_univ_data = $node->field_link_universities->referencedEntities();
-    }
+            $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+        }
 
-
-foreach($paragraph_univ_data as $explore_data) {
-
+    foreach($paragraph_univ_data as $explore_data) {
         $university_nid = $explore_data->get('field_university')->value;
         $university_nid = $explore_data->get('field_university')->value;
         if (!empty($university_nid)) {
        $univ_node = Node::load($university_nid);
        $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
         $univ_data[] = $univ_logo;
-        }
-
-
-
-
-}
+       }
+    }
 
      $univ_popular[] = $univ_data;
 
