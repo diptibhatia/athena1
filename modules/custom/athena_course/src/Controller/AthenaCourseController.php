@@ -103,7 +103,7 @@ $paragraph_course_team = $node->field_course_team_member->referencedEntities();
 $course_team = array();
 foreach($paragraph_course_team as $attached_node){
   $name =  $attached_node->get('title')->value;
-  $course_nid =  $attached_node->get('nid')->value;
+  $course_nid =  $attached_node->id;
   $designation =  $attached_node->get('field_designation')->value;
   $linked_in =  $attached_node->get('field_linked_in_link')->value;
   $user_pic= '';
