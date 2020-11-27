@@ -292,6 +292,6 @@ function copy_to_clipboard() {
   /* Copy the text inside the text field */
   document.execCommand("copy");
   /* Alert the copied text */
-  alert("Copied url to clipboard: " + dummy.value);
+  alert("Copied url to clipboard: ");
   document.body.removeChild(dummy);
 }
