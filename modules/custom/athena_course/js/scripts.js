@@ -79,7 +79,9 @@
                 }
             });
              jQuery("#registration_form").click(function() {
-
+                 jQuery("#registration_form22").click();;
+                 
+                 return false;
 
                 var msg = '';
                 if(jQuery("#reg_first_name").val() == '') {
