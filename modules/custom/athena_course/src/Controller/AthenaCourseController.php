@@ -151,6 +151,7 @@ $testinodes = node_load_multiple($latest);
 $testimo =  array_slice($testinodes, 0, 7);
 
 
+
     $banner_block =  [
       '#theme' => 'smo',
       '#course_title' => $node->get('title')->value,
@@ -206,9 +207,9 @@ $base_path = $base_url.'/'. $theme->getPath();
 
 //print $node->get('field_courses_credit_type')->value;exit;
 
-
+if(is_object( $node->field_link_universities)){
 $paragraph_univ_data = $node->field_link_universities->referencedEntities();
-
+  }
 
 foreach($paragraph_univ_data as $explore_data) {
 
@@ -287,8 +288,9 @@ foreach($paragraph_univ_data as $explore_data) {
 
 
 }
-
+if(is_object( $node->field_what_you_get)){
 $paragraph_why_course = $node->field_what_you_get->referencedEntities();
+}
 $why_course = array();
 //print_r($paragraph_why_course);exit;
 foreach($paragraph_why_course as $why_course_data) {
@@ -318,8 +320,9 @@ foreach($paragraph_why_course as $why_course_data) {
 }
 
 //print_r($why_course);exit;
-
+if(is_object( $node->field_course_team_member)){
 $paragraph_course_team = $node->field_course_team_member->referencedEntities();
+}
 $course_team = array();
 foreach($paragraph_course_team as $attached_node){
   $name =  $attached_node->get('title')->value;
@@ -342,8 +345,9 @@ foreach($paragraph_course_team as $attached_node){
   );
 
 }
-
+if(is_object( $node->field_faq)){
 $paragraph_faq = $node->field_faq->referencedEntities();
+}
 $faq = array();
 
 

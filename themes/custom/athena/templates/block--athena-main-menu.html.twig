@@ -32,74 +32,105 @@
  */
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<div class="site-header__explore-btn"  id="explore-menu-btn"> <div class="btnLink"></div>
-    <a href="#">Explore Courses <i class="arrow arrow--down arrow--white"></i></a>
-<img class="close-btn" src="http://website.athena.edu/themes/custom/athena/images/coursepage/faq-add.svg" alt="close">
-                <ul class="exp-primary-menu">
-                    <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon"> Academic Programs
-                        <i class="arrow arrow--right secondary-arrow"></i>
-                        <ul class="exp-secondary-menu">
-                            <li class="heading">Acadamic</li>
-                            <a href="{{url('<front>')}}academic-program">View all Acadamic Courses</a>
-                            {% for academic in academicnodes %}
+<div class="megamenu-container">
+	<nav class="navbar navbar-expand-lg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main_nav">
 
+<ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
+display: inline-flex;
+border-radius: 5px;
+padding: 0 9px;
+height: 35px;
+justify-content: space-evenly;
+align-items: center;box-sizing: border-box;">
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';"> Explore Courses </a>
+	    <ul class="dropdown-menu" style="height: 383px;
+		left: -10px;
+		top: 55px;
+		box-shadow: 0 2px 13px 0 #8c8c8c;
+		width: 279px;
+		font-family: 'Lato';
+		font-size: 1rem;">
+		  <li class="has-submenu">
+		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="http://website.athena.edu/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
+		  	 <div class="megasubmenu dropdown-menu" style="box-shadow: 0 2px 13px 0 #8c8c8c;
+			   width: 600px;
+			   font-family: 'Lato';
+			   font-size: 1rem;">
+			   <div class="row">
+	                <div class="col-7">
+	                        <ul class="list-unstyled bindWidth">
+								<h5 style="padding-left: 20px;">Academic</h5>
+								<a href="http://website.athena.edu/academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Acadamic Courses</i></b></a><br/>
+								{% set modnum = 1 %}
+                                {% for academic in academicnodes %}
+                                <li>
+                                    <a  onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
+                                    <div style="display:none;" id="secondary-data_{{modnum}}">
+                                        <h6>Universities</h6>
+                                        <ul class="list-unstyled">
+                                        {% for univ in academic.universities%}
+                                            <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                           {% endfor %}	
+                                        </ul>
+                                    </div>
+                                </li>
+                                {% set modnum = modnum + 1 %}
+                                {% endfor %}	
+	                       
+	                        </ul>
+	                </div><!-- end col-3 -->
+	                <div class="col-5" id="three-level">
+	                        
+	                </div><!-- end col-3 -->
+	            </div><!-- end row -->
+			 </div>
+		  </li>
+		  <li class="has-submenu">
+		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="http://website.athena.edu/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
+		  	 <div class="megasubmenu dropdown-menu" style="box-shadow: 0 2px 13px 0 #8c8c8c;
+			   width: 279px;
+			   font-family: 'Lato';
+			   font-size: 1rem;">
+				<div class="row">
+					 <div class="col-6">
+							 <ul class="list-unstyled bindWidth">
+								{% set modnum = 1 %}
+                                {% for cert in certificationsnodes %}
+                                <li>
+                                    <a  onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{cert.title}}</a>
+                                    <div style="display:none;" id="secondary-data_{{modnum}}">
+                                        <h6>Universities</h6>
+                                        <ul class="list-unstyled">
+                                        {% for univ in cert.universities%}
+                                            <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                           {% endfor %}	
+                                        </ul>
+                                    </div>
+                                </li>
+                                {% set modnum = modnum + 1 %}
+                                {% endfor %}	
+							 </ul>
+					 </div><!-- end col-3 -->
+					<!-- end col-3 -->
+				 </div><!-- end row -->
+			  </div>
+		  </li>
+	    </ul>
+	</li>
 
-                               <li onclick="location.href='{{url('<front>')}}course/{{academic.nid}}'"  style="margin-bottom:8px;">
+</ul>
 
-                               {{academic.title}}
-                               <ul class="exp-tertiary-menu">
-                                    <li>Universities</li>
-                                    {% for univ in academic.universities%}
-                                    <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                    {% endfor %}
-                                </ul>
+  </div> <!-- navbar-collapse.// -->
 
-                               </li>
-
-                            {% endfor %}
-
-                        </ul>
-                    </li>
-                    <li style="display:none"><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/micro-credits.svg" alt="icon"> Micro-Credits
-                        <i class="arrow arrow--right secondary-arrow"></i>
-                        <ul class="exp-secondary-menu">
-                            <li class="heading">Micro Credits</li>
-                             <a href="{{url('<front>')}}micro-credits">View all Micro Credits</a>
-                             {% for micro in micronodes %}
-                              <li style="margin-bottom:4px" onclick="location.href='{{url('<front>')}}course/{{micro.nid}}'">
-{{micro.title}}
-                               <ul class="exp-tertiary-menu">
-                                    <li>Universities</li>
-                                    {% for univ in micro.universities%}
-                                    <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                                              {% endfor %}
-                                </ul>
-                               </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li><img src="http://website.athena.edu/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon"> Certifications
-                        <i class="arrow arrow--right secondary-arrow"></i>
-                        <ul class="exp-secondary-menu">
-                            <li class="heading">Certifications</li>
-                            <a href="{{url('<front>')}}certifications">View all Certifications</a>
-                             {% for cert in certificationsnodes %}
-
-                               <li style="margin-botton:8px" onclick="location.href='{{url('<front>')}}course/{{cert.nid}}'">
-                               {{cert.title}}
-                               <ul class="exp-tertiary-menu">
-                                    <li>Universities</li>
-                                    {% for univ in cert.universities%}
-                                    <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                                              {% endfor %}
-                                </ul>
-                               </li>
-
-                            {% endfor %}
-                        </ul>
-                    </li>
-                </ul>
+</nav>
 </div>
+
+
 <div class="site-header__menu-icon">
     <div class="site-header__menu-icon__middle"></div>
 </div>
