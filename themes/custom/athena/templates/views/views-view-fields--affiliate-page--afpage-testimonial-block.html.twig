@@ -31,17 +31,18 @@
  * @ingroup themeable
  */
 #}
-{% set url = fields.field_afpage_testimonial_thumbim.content|render|striptags %}
+{% set url = fields.field_afpage_testimonial_thumbim.content|render|striptags|trim %}
+{% set name = fields.field_afpage_testimonial_name.content|render|striptags|trim %}
 {# <div class="item"> #}
   <div class="quote">
     <div class="author">
     {% if url %}
       <div class="icon"> 
-      <img src="{{url}}" alt="{{fields.field_afpage_testimonial_name.content|striptags|trim}}" title="{{fields.field_afpage_testimonial_name.content|striptags|trim}}" /> 
+      <img src="{{url}}" alt="{{name}}" title="{{name}}" /> 
       </div>
     {% endif %}
       <div class="info">
-        <h5>{{fields.field_afpage_testimonial_name.content}}</h5>
+        <h5>{{name}}</h5>
         <span class="meta">{{fields.field_afpage_testimonial_desig.content}}</span>
       </div>
     </div>
