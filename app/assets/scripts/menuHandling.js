@@ -1,8 +1,8 @@
-$(document).on('click', '.dropdown-menu', function (e) {
+jQuery(document).on('click', '.dropdown-menu', function (e) {
     e.stopPropagation();
   });
 
-  if ($(window).width() < 992) {
+  if (jQuery(document).width() < 992) {
 
       $('.has-submenu a').click(function(e){
          e.preventDefault();
