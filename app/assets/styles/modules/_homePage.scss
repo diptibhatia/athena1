@@ -1114,6 +1114,10 @@
 				 		.student-info {
 				 			color: $primaryColor;
 							 font-size: 14px;
+							 img{
+								position: relative;
+								margin: -79px 0 0 56px;
+							 }
 						}
 						@include atSize479{
 							img{
