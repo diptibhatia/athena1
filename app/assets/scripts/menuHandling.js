@@ -4,12 +4,12 @@ jQuery(document).on('click', '.dropdown-menu', function (e) {
 
   if (jQuery(document).width() < 992) {
 
-      $('.has-submenu a').click(function(e){
+    jQuery('.has-submenu a').click(function(e){
          e.preventDefault();
-         $(this).next('.megasubmenu').toggle();
+         jQuery(this).next('.megasubmenu').toggle();
 
-         $('.dropdown').on('hide.bs.dropdown', function () {
-          $(this).find('.megasubmenu').hide();
+         jQuery('.dropdown').on('hide.bs.dropdown', function () {
+          jQuery(this).find('.megasubmenu').hide();
        })
       });
 
