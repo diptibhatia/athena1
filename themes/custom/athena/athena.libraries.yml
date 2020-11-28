@@ -12,6 +12,7 @@ global-js:
   version: VERSION
   js:
     script.js: {}
+    menuHandling.js: {}
     js/main.js: {}
     js/jquery.min.js: {}
     js/bootstrap.min.js: {}
