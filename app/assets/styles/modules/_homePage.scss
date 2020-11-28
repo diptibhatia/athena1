@@ -176,11 +176,11 @@
 	text-align: center;
 	.wrapper{
 		@media screen and (min-width:1441px) and (max-width:1919px){
-			padding:17rem 0 0;
+			padding:6rem 0 0;
 		}
 
 		@media screen and (min-width:1920px){
-			padding:16rem 0 0;
+			padding:13rem 0 0;
 		}
 		@media screen and (min-width:2560px){
 			padding:30rem 0 0;
@@ -333,7 +333,7 @@
   				padding: 5px 10px;
   				cursor: pointer;
   				outline: none;
-  				background: white;
+  				background:transparent;
   				width: 186px;
   				height: 50px;
   				&:hover {
@@ -604,11 +604,11 @@
 			}
 			.underline-heading {
 				width: 70px;
-    			border: solid 2px $buttonPink;
+    			border-bottom: solid 4px $buttonPink;
 				border-radius: 4px;
 				height:0px;
     			@include atSize424 {
-					border: solid 2px #630097;
+					border-bottom: solid 6px #630097;
 					position:relative;
 					left:0;
 				}
@@ -644,7 +644,7 @@
 								color: $titlePink;
 								padding: 5px 20px;
 								cursor: pointer;
-								background: white;
+								background:transparent;
 								outline: none;
 								width: 186px;
 								height: 50px;
@@ -775,6 +775,9 @@
   			&:hover {
 				color: white;
 				background: $buttonPink;
+				a{
+					color: white;
+				}
 			}
 		}
 		@media (min-width: 1281px) and (max-width: 1440px){
@@ -807,7 +810,7 @@
     	}
     	.collaorate-heading {
     		width: 334px;
-		    border: solid 2px $buttonPink;
+		    border-bottom: solid 4px $buttonPink;
 			margin: 6px 0 0 216px;
 			height:1px;
 		    @include atSize424 {
@@ -852,9 +855,6 @@
 				@media screen and (min-width:1921px){
 					width:24%;
 				}
-	
-
-
 
     			/*&.img-placeholder {*/
     				/*width: 627px;*/
@@ -867,14 +867,21 @@
 						top: -38px;
 						float:right;
 						@media (min-width: 1440px){
-							width: 76%;
+
+							width: auto;
+							height: 487px;
+
 						}
 						@media (min-width: 1920px){
-							width: 57%;
+							width: auto;
+							height: 496px;
+							top:-48px;
 						}
 
 						@media (min-width: 2560px){
-							width: 50%;
+
+							width: auto;
+							height: 571px;
 						}
 
 
@@ -892,14 +899,16 @@
     				color: $buttonPink;
     				font-weight: bold;
 					font-size: 20px;
-					margin-top:37px; 
+					margin-top:0; 
 					@include atSize424{
 						margin-top:0; 
 					}
     			}
     			p {
     				color: $primaryColor;
-    				font-size: 16px;
+					font-size: 16px;
+					margin-bottom:32px;
+					line-height: 30px;
     			}
     		}
     	}
@@ -991,7 +1000,7 @@
   					position: relative;
   					top: -52px;
     				left: 22px;
-    				background: white;
+    				background:transparent;
   					&:hover {
 						color: white;
 						background: $buttonPink;
@@ -1131,7 +1140,7 @@
   					position: relative;
   					top: -52px;
     				left: 22px;
-					background: white;
+					background:transparent;
 					display:none;
   					&:hover {
 						color: white;
@@ -1431,7 +1440,7 @@
 		padding: 5px 10px;
 		cursor: pointer;
 		outline: none;
-		background: white;
+		background:transparent;
 		width: 213px;
   		height: 50px;
   		&:hover {
@@ -2001,7 +2010,7 @@
 			outline: none;
 			width: 213px;
   			height: 50px;
-  			background: white;
+  			background:transparent;
   			&:hover {
 				color: white;
 				background: $buttonPink;
@@ -2513,12 +2522,15 @@
 			padding: 5px 20px;
 			cursor: pointer;
 			outline: none;
-			background: white;
+			background:transparent;
 			width: 213px;
   			height: 50px;
   			&:hover {
 				color: white !important;
 				background: $buttonPink;
+				a{
+					color:#fff !important;
+				}
 			}
 			button:hover {
 				color:#ffffff !important;
