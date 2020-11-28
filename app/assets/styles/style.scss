@@ -80,3 +80,30 @@ img {
     margin: 100px 0 50px 0;
 }
 .corporate-txt img  {height:auto; max-width:100%;}
+.top-banner .logos {width:auto;}
+
+ 
+.insight-wrapper .insight-cards {
+    max-width: 240px;
+    margin: 0.5rem;
+    width: 90%;
+    background: #fff;
+}
+.pagination .page-item { margin:5px;}
+
+.pagination .page-link { border-radius: 50%; color:#000;}
+ 
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #ff026f;
+    border-color: #ff026f;    
+}
+
+.page-item.previous .page-link, .next .page-link { 
+    color: #ff026f;
+}
+.previous .page-link:hover, .next .page-link:hover { 
+    color: #ff026f;
+}
