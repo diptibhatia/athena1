@@ -11,10 +11,9 @@ global-css:
 global-js:
   version: VERSION
   js:
-    js/jquery.min.js: {}
     script.js: {}
-    js/menuHandling.js: {}
     js/main.js: {}
+    menuHandling.js: {}
     js/bootstrap.min.js: {}
     js/fontawesome.min.js: {}
     js/intlTelInput.min.js: {}
