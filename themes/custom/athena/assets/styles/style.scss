@@ -40,3 +40,43 @@
 @import "modules/smoPage";
 @import "modules/affiliatePage";
 @import "modules/aboutPopular";
+
+
+.row { width:100%;}
+
+.partners .partner-logos .logo {
+    align-items: center;
+}
+
+.why-section .main-section .desc p {
+     font-size: .9rem;
+      font-weight: normal;
+}
+
+.insight-wrapper .share-icon {
+    position: relative;
+    width: 20px;
+    padding-left: 30px;
+    top: 110px;
+}
+.footer-banner {
+     height: 100%;
+    position: relative;
+}
+img {
+    border-style: none;
+}
+.footer .new-footer {
+    padding: 30px 0;
+}
+.insights-section .section-items .section-item-two h4 {
+    margin: inherit;
+}
+.get-started button {
+    background: transparent;
+}
+
+.reason-section {
+    margin: 100px 0 50px 0;
+}
+.corporate-txt img  {height:auto; max-width:100%;}
