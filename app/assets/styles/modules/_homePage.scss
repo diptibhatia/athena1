@@ -339,6 +339,12 @@
   				&:hover {
 					color: white;
 					background: $buttonPink;
+					a{
+						&:hover{
+							text-decoration:none;
+						}
+	
+					}
 				}
 			}
 		}
@@ -2537,11 +2543,20 @@
 				background: $buttonPink;
 				a{
 					color:#fff !important;
+					&:hover{
+						text-decoration:none;
+					}
 				}
 			}
 			button:hover {
 				color:#ffffff !important;
 				background: $buttonPink;
+				a{
+					&:hover{
+						text-decoration:none;
+					}
+
+				}
 			}
 
 		}
