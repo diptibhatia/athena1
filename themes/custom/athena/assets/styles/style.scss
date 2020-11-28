@@ -38,6 +38,7 @@
 @import "modules/login";
 @import "modules/courseLoginPage";
 @import "modules/smoPage";
+@import "modules/affiliatePage";
 @import "modules/aboutPopular";
 
 .row { width:100%;}
@@ -47,8 +48,8 @@
 }
 
 .why-section .main-section .desc p {
-     font-size: .9rem; 
-      font-weight: normal;  
+  font-size: .9rem;
+  font-weight: normal;
 }
 
 .insight-wrapper .share-icon {
@@ -62,11 +63,12 @@
     position: relative;
 }
 img {
-    border-style: none; 
-}  
+  border-style: none;
+}
 .footer .new-footer {
     padding: 30px 0;
 }
-.insights-section .section-items .section-item-two h4 { 
+.insights-section .section-items .section-item-two h4 {
     margin: inherit;
 }
+

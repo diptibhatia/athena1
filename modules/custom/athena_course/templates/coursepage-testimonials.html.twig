@@ -47,7 +47,9 @@
                                  <div class="student-info">
                                     <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
                                     {{testidata.field_testimonial_name_and_desig.value|raw}}
-                                    {{testidata.field_testimonials_country_selec.value|raw }}
+                                    {% if testidata.field_testimonials_country_selec.value %}
+                                       <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+                                    {% endif %}
                                  </div>
                               </p>
 
@@ -81,7 +83,9 @@
                                  <div class="student-info">
                                     <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
                                     {{testidata.field_testimonial_name_and_desig.value|raw}}
-                                    {{testidata.field_testimonials_country_selec.value|raw }}
+                                    {% if testidata.field_testimonials_country_selec.value %}
+                                       <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+                                    {% endif %}
                                  </div>
                               </p>
 
@@ -112,7 +116,9 @@
                                  <div class="student-info">
                                     <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
                                     {{testidata.field_testimonial_name_and_desig.value|raw}}
-                                    {{testidata.field_testimonials_country_selec.value|raw }}
+                                    {% if testidata.field_testimonials_country_selec.value %}
+                                       <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+                                    {% endif %}
                                  </div>
                               </p>
 
