@@ -55,7 +55,7 @@
     position: relative;
     width: 20px;
     padding-left: 30px;
-    top: -65px;
+    top: 110px;
 }
 .footer-banner {
      height: 100%;
@@ -70,3 +70,11 @@ img {
 .insights-section .section-items .section-item-two h4 { 
     margin: inherit;
 }
+.get-started button { 
+    background: transparent;
+}
+ 
+.reason-section {
+    margin: 100px 0 50px 0;
+}
+.corporate-txt img  {height:auto; max-width:100%;}
