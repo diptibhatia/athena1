@@ -102,8 +102,8 @@ align-items: center;box-sizing: border-box;">
 								{% set modnum = 1 %}
                                 {% for cert in certificationsnodes %}
                                 <li>
-                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data_cert{{modnum}}')">{{cert.title}}</a>
-                                    <div style="display:none;" id="secondary-data_cert{{modnum}}">
+                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data-cert{{modnum}}')">{{cert.title}}</a>
+                                    <div style="display:none;" id="secondary-data-cert{{modnum}}">
                                         <h6>Universities</h6>
                                         <ul class="list-unstyled">
                                         {% for univ in cert.universities%}
@@ -116,7 +116,7 @@ align-items: center;box-sizing: border-box;">
                                 {% endfor %}	
 							 </ul>
 					 </div><!-- end col-3 -->
-            <div class="col-5 three-level" id="secondary-data_three-level">
+            <div class="col-5 three-level" id="secondary-data-cert_three-level">
 	                        
 	          </div><!-- end col-3 -->
 					<!-- end col-3 -->
