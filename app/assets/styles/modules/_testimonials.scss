@@ -695,6 +695,15 @@
         }
   
       }
+      .photo a.linkedin {
+        position: absolute;
+        width: 30px;
+        background: none !important;
+        left: -55px;
+        .fa-linkedin {
+          margin: -1px 0 0 5px;
+        }
+      }
       img {
         height: 100%;
         width: 100%;
@@ -768,7 +777,24 @@
         font-size: 18px;
         color: #ff008e;
         line-height: 26px;
-      }
+        position:relative;
+/*        &:before {
+          content: '"';
+          font-family: 'Lato';
+          font-size: 39px;
+          position: absolute;
+          left: -15px;
+          top: -8px;
+        }
+        &:after {
+          content: '"';
+          font-family: 'Lato';
+          font-size: 39px;
+          position: absolute;
+          right: 0px;
+          bottom: -10px;
+        }
+ */     }
       h2 {
         font-size: 1rem;
         font-weight: 300;
@@ -1039,12 +1065,21 @@
         color: $wt;
         text-decoration: none;
       }
+      a.views-more-link{
+        position: relative;
+        bottom: auto;
+        right: auto;
+        background: none;
+        color: #ff008e;
+        opacity: 1;
+        font-weight: bold;
+      }
     }
     p {
       position: relative;
       margin: 1rem 0 0;
       &:first-of-type {
-        margin-top: 1.25rem;
+        margin-top: 0.5rem;
         &:before {
           content: "";
           position: absolute;
@@ -1056,7 +1091,6 @@
         }
       }
     }
-
     @media (min-width: $break-small) {
       margin-top: 20px;
 
@@ -1088,6 +1122,12 @@
           }
         }
       }
+    }
+    .countryflag{
+      clear:both;
+      margin: -24px 0 0 61px;
+      display: block;
+      float: left;
     }
   }
 }
