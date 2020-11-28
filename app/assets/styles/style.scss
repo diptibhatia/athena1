@@ -57,9 +57,16 @@
     padding-left: 30px;
     top: -65px;
 }
-
+.footer-banner {
+     height: 100%;
+    position: relative;
+}
 img {
-    border-style: none;
-    max-width: 100%;
-    height:auto !important;
+    border-style: none; 
+}  
+.footer .new-footer {
+    padding: 30px 0;
+}
+.insights-section .section-items .section-item-two h4 { 
+    margin: inherit;
 }
