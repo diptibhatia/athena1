@@ -17,13 +17,18 @@ $(document).on('click', '.dropdown-menu', function (e) {
 
  
 // }); // jquery end
-
+var lastMenuItem;
 function copyDiv(secondary_data) {
  var firstDivContent = document.getElementById(secondary_data);
- var secondDivContent = document.getElementById('three-level');
+ lastMenuItem = secondary_data.split("_")[0]+'_three-level';
+ var secondDivContent = document.getElementById(lastMenuItem);
  secondDivContent.innerHTML = firstDivContent.innerHTML;
  event.stopPropagation();
 }
 function showThirdLevel(secondary_data){
 copyDiv(secondary_data);
+}
+function clearDiv()
+{
+  document.getElementById(lastMenuItem).innerHTML = "No Content";
 }
