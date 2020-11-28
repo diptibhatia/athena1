@@ -39,3 +39,27 @@
 @import "modules/courseLoginPage";
 @import "modules/smoPage";
 @import "modules/aboutPopular";
+
+.row { width:100%;}
+
+.partners .partner-logos .logo {
+    align-items: center;
+}
+
+.why-section .main-section .desc p {
+     font-size: .9rem; 
+      font-weight: normal;  
+}
+
+.insight-wrapper .share-icon {
+    position: relative;
+    width: 20px;
+    padding-left: 30px;
+    top: -65px;
+}
+
+img {
+    border-style: none;
+    max-width: 100%;
+    height:auto !important;
+}
