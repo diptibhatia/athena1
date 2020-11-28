@@ -35,18 +35,19 @@
 
 {# {{fields.field_course_module_fees.content}}
 {{fields.field_course_total_fee.content}} #}
+{% set cid = fields.field_afpage_course_id.content|render|striptags|trim %}
 
 <figure>
   <div class="badge green">Total Fee <span>{{fields.field_afpage_course_totfee.content|raw}}</span>
     <em>Pay in Installments</em>
   </div>
-  <a href="{{ fields.field_afpage_course_id.content ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ fields.field_afpage_course_id.content : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">
-    {% set url = fields.field_afpage_course_bgimage.content|render|striptags %}
-    {% set title = fields.title.content|raw %}
+  <a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">
+    {% set url = fields.field_afpage_course_bgimage.content|render|striptags|trim %}
+    {% set title = fields.title.content|render|striptags|trim %}
     <img src="{{url|replace({' ':''})}}" alt="{{title}}" title="{{title}}" /></a>
 </figure>
 <div class="post-content tick ">
-  <h4 class="post-title"><a href="{{ fields.field_afpage_course_id.content ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ fields.field_afpage_course_id.content : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">{{fields.title.content}}</a></h4>
+  <h4 class="post-title"><a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">{{title}}</a></h4>
   <h5>Awarded By : <span> {{fields.field_afpage_course_award_body.content}} </span></h5>
 
   <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee : <span>{{fields.field_afpage_course_fee.content|raw}}</span></h6>
@@ -57,6 +58,6 @@
   <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{fields.field_afpage_course_lrnsuprt.content|raw}}</span>
   </h6>
   
-  <div class=" btn-try"><a href="{{ fields.field_afpage_course_id.content ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ fields.field_afpage_course_id.content : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">Try Us free for 7 days</a></div>
+  <div class=" btn-try"><a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">Try Us free for 7 days</a></div>
 
 </div>
