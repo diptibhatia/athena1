@@ -213,4 +213,14 @@
       });
 
   })(jQuery);
+
+jQuery(document).ready(function(){
+  jQuery(".content").slice(0, 3).show();
+  jQuery("#loadMore").on("click", function(e){
+    e.preventDefault();
+    jQuery(".content:hidden").slice(0, 3).slideDown();
+    if(jQuery(".content:hidden").length == 0) {
+      jQuery("#loadMore").text("No Content").addClass("noContent");
+    }
+  });
 </script>
