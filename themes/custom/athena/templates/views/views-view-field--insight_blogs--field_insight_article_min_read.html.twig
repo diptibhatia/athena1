@@ -20,6 +20,84 @@
 #}
 
 <div class="insight-card-footer d-flex justify-content-between p-3">
-    <a href="#"><img src="/themes/custom/athena/images/share.svg" alt="share icon"></a>
+    <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare"><img src="/themes/custom/athena/images/share.svg" alt="share icon"></a>
     <span><small class="readMin">{{ output -}}</small></span>
+</div>
+
+    <div id="myModalsocialshare" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width:475px !important;">
+      <div style="
+          text-align: right;
+      ">
+                <button type="button" class="close" data-dismiss="modal" style="
+          top: -5px;
+          position: relative;
+      ">×</button>
+              </div>
+
+      <div class="modal-body">
+       <div class="col-md-12">
+  <div class="col-md-12">
+    <h5 style="font-weight: bold;">Share this page</h5>
+
+    <h6>Show your friends and family what they can learn from athena</h6>
+  </div>
+  <div class="col-md-12 row" style="margin-bottom: 20px;">
+    <div class="col-md-1"></div>
+    <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}insights/all" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" width="45"></div>
+    <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}insights/all" target="_blank"><img src="/themes/custom/athena/images/tw-co.png" width="45"></div>
+    <div class="col-md-2"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}insights/all" target="_blank"><img src="/themes/custom/athena/images/li-ico.png" width="45"></div>
+    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}insights/all" data-action="share/whatsapp/share">
+<img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
+</div>
+    <div class="col-md-2"><a target="_blank" href="https://api.whatsapp.com/send?text={{ url('<front>') }}insights/all" data-action="share/whatsapp/share">
+<a href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}insights/all"
+   title="Share by Email">
+  <img src="/themes/custom/athena/images/at-ico.png" width="45">
+</a>
+</div>
+
+    <div class="col-md-1"></div>
+
+
+  </div>
+
+<div class="col-md-12">
+    <div class="bg-white sidebar shadow-lg rounded p-3">
+	<div class="col-md-12 row">
+		<div class="col-md-8" style="
+   /* width: 300px; */
+   overflow: hidden;
+   background: -webkit-linear-gradient(left, black , #eeeeee);
+   background: -o-linear-gradient(right, black, #eeeeee);
+   background: -moz-linear-gradient(right, black, #eeeeee);
+   background: linear-gradient(to right, black , #eeeeee);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   white-space: nowrap;
+   " id="shareurl--copy">
+        		{{ url('<front>') }}insights/all
+    		</div>
+   		<div class="col-md-4" style="position: relative;padding-left: 80px;color: #ff0068;font-weight: bold;">
+			<a onclick="copy_to_clipboard()">COPY</a>
+		<div>
+	</div>
+
+
+    </div>
+</div>
+</div>
+      </div></div>
+      </div>
+      <!--
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      -->
+    </div>
+
+  </div>
 </div>
