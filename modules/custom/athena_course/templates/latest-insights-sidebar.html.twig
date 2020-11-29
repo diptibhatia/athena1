@@ -24,7 +24,7 @@
 {% for coursedata in popular %}
 <div class="row mb-2 shadow-sm rounded">
   <div class="col-md-12 col-sm-12 p-3">
-    <p class="m-0"><strong>{{coursedata.node.label}}</strong></p>
+    <p class="m-0"><strong><a href=""{{ url('<front>') }}course/{{coursedata.node.id}}" style="color:inherit">{{coursedata.node.label}}</a></strong></p>
     <p class="mb-1">{{coursedata.node.field_course_awarding_body.value|raw }}</p>
     <p class="m-0">
     <div style="padding:10px;">
