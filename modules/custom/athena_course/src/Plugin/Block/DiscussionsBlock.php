@@ -34,9 +34,11 @@ class DiscussionsBlock extends BlockBase {
       $discussion_id = $_REQUEST['discussion_id'];
     }
     
+    $end_url = 'http://3.7.173.255/athenadev/api/';
+    $end_url = 'https://learn.athena.edu/athenaprod/api/';
      
     $client = \Drupal::service('http_client_factory')->fromOptions([
-      'base_uri' => 'http://3.7.173.255/athenadev/api/',
+      'base_uri' => $end_url,
     ]);
 
     $response = $client->get('discussions');
@@ -58,7 +60,7 @@ $base_path = $base_url.'/'. $theme->getPath();
 
 if(!empty($discussion_id)) {
      $client_detal = \Drupal::service('http_client_factory')->fromOptions([
-      'base_uri' => 'http://3.7.173.255/athenadev/api/',
+      'base_uri' => $end_url,
     ]);
 
     $response_detail = $client_detal->get('discussions/'.$discussion_id);
