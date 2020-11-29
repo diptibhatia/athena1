@@ -1279,11 +1279,10 @@ $merged_nodes =  $nodes ;
 $merged_nodes = array_merge($nodes, $tnodes);
 
     }
-    
-        if(strpos(strtolower($_POST['search_key']), 'certification') !== false){
+if(strpos(strtolower($_POST['search_key']), 'degree') !== false){
     $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
 ->latestRevision()
-->condition('field_tagtaxanomy', 11, '=')
+->condition('field_tagtaxanomy', 10, '=')
 ->condition('type', $bundle)
 ->execute();
 
@@ -1292,10 +1291,10 @@ $merged_nodes = array_merge($nodes, $tnodes);
 
     }
     
-        if(strpos(strtolower($_POST['search_key']), 'degree') !== false){
+    if(strpos(strtolower($_POST['search_key']), 'certification') !== false){
     $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
 ->latestRevision()
-->condition('field_tagtaxanomy', 10, '=')
+->condition('field_tagtaxanomy',11, '=')
 ->condition('type', $bundle)
 ->execute();
 
