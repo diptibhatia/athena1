@@ -24,11 +24,11 @@
 {% for coursedata in popular %}
 <div class="row mb-2 shadow-sm rounded">
   <div class="col-md-12 col-sm-12 p-3">
-    <p class="m-0"><strong>{{coursedata.label}}</strong></p>
-    <p class="mb-1">{{coursedata.field_course_awarding_body.value|raw }}</p>
+    <p class="m-0"><strong>{{coursedata.node.label}}</strong></p>
+    <p class="mb-1">{{coursedata.node.field_course_awarding_body.value|raw }}</p>
     <p class="m-0">
     
-{% for univ in univ_popular.indexno  %}
+{% for univ in coursedata.univ  %}
         <img width="50" height="50" src="{{univ}}" class="rounded-circle">
         <!-- <img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle"> -->
 {% endfor %}        

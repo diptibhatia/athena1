@@ -86,7 +86,7 @@ $query->condition('field_is_popular_course', '1', '=');
     }
      $popular_courses =  array_slice($academicnodes, 0, 3);
      
-     
+     $aggregated_data = array();
      foreach($popular_courses as $node) {
          if(is_object( $node->field_link_universities)){
             $paragraph_univ_data = $node->field_link_universities->referencedEntities();
@@ -103,6 +103,11 @@ $query->condition('field_is_popular_course', '1', '=');
     }
 
      $univ_popular[] = $univ_data;
+     $aggregated_data[] = array(
+     'node' => $node,
+     'univ' =>  $univ_data,
+     );
+     
 
      }
      
@@ -111,7 +116,7 @@ $query->condition('field_is_popular_course', '1', '=');
     $latest_insights_sidebar =  [
     '#theme' => 'latest_insights_sidebar',
     '#insig' => $latest_insights,
-    '#popular' => $popular_courses,
+    '#popular' => $aggregated_data,
     '#base_path' => $base_path,
     '#univ_popular' => $univ_popular,
 
