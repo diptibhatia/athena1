@@ -1223,7 +1223,9 @@ function search($word = false){
 
    /* $nodes =  \Drupal::entityTypeManager()->getStorage('node')
   ->loadByProperties(['type' => 'course', 'status' => 1]);*/
-
+   if(isset($_POST['search_key']) && strpos(strtolower($_POST['search_key']), 'certification') !== false){
+       $_POST['search_key'] = 'certificate';
+   }
   $bundle='course';
      $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
