@@ -287,8 +287,8 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
              jQuery(".content--course").slice(0, 3).show();
               jQuery("#loadMore").on("click", function(e){
                 e.preventDefault();
-                jQuery(".content:hidden").slice(0, 3).slideDown();
-                if(jQuery(".content:hidden").length == 0) {
+                jQuery(".content--course:hidden").slice(0, 3).slideDown();
+                if(jQuery(".content--course:hidden").length == 0) {
                   jQuery("#loadMore").text("No Content").addClass("noContent");
                 }
               });
