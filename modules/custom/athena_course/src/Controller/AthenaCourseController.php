@@ -1226,6 +1226,9 @@ function search($word = false){
    if(isset($_POST['search_key']) && strpos(strtolower($_POST['search_key']), 'certification') !== false){
        $_POST['search_key'] = 'certificate';
    }
+   if(isset($_POST['search_key']) && strpos(strtolower($_POST['search_key']), 'certification') !== false){
+       $_POST['search_key'] = 'certificate';
+   }
   $bundle='course';
      $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
