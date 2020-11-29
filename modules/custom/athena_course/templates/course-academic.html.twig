@@ -62,7 +62,7 @@
                     <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content--course">
                     <div class="col-md-12 col-sm-12 row">
                         <div class="col-md-9 col-sm-9">
-                            <h3 class="card-title">{{course_data.label}}</h3>
+                            <h3 class="card-title"><a style="color:inherit" href="{{ url('<front>') }}course/{{course_data.id}}">{{course_data.label}}</a></h3>
                             <ul class="list-unstyled d-flex m-0">
                                 <li>{{course_data.field_course_awarding_body.value|raw }}</li>
                                 <li>{{course_data.field_course_ects_credit.value}} ECTS Credits</li>
