@@ -78,44 +78,11 @@
                     alert(msg)
                 }
             });
-             jQuery("#registration_form").click(function() {
-                 jQuery("#registration_form22").click();;
-                 
-                 return false;
-
-                var msg = '';
-                if(jQuery("#reg_first_name").val() == '') {
-                    msg += '\n\u2022  First name cannot be empty';
-                }
-                if(jQuery("#reg_last_name").val() == '') {
-                    msg += '\n\u2022  Last name cannot be empty';
-                }
-                if(jQuery("#reg_email").val() == '') {
-                    msg += '\n\u2022  Email cannot be empty';
-                }
-                if(jQuery("#reg_country").val() == '') {
-                    msg += '\n\u2022  please select country';
-                }
-                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  if(!regex.test(jQuery("#reg_email").val())) {
-    msg += '\n\u2022  Invalid Email id';
-  }
-                if(jQuery("#reg_mobile_num").val() == '') {
-                    msg += '\n\u2022  Phone number cannot be empty';
-                }
-                 if(jQuery("#reg_qual").val() == '') {
-                    msg += '\n\u2022  please select Qualification';
-                }
-                 if(jQuery("#reg_exp").val() == '') {
-                    msg += '\n\u2022  Enter experience field';
-                }
-                if(jQuery("#reg_months").val() == '') {
-                    msg += '\n\u2022  Enter Months field';
-                }
-                 if(jQuery("#reg_level").val() == '') {
-                    msg += '\n\u2022  Please select Level of employment';
-                }
-                 if(jQuery("#reg_pass").val() == '') {
+            
+            
+             jQuery("#registration_form_passchck").click(function() {
+                 var msg = '';
+                  if(jQuery("#reg_pass").val() == '') {
                     msg += '\n\u2022  Please Enter password';
                 }
                  if(jQuery("#reg_confirm_pass").val() == '') {
@@ -125,13 +92,14 @@
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
                      msg += '\n\u2022 password and confirm password do not match';
                 }
-
-                if(!jQuery("#reg_terms").prop('checked') == true){
-                     msg += '\n\u2022 please accept consent terms';
+                
+                if(msg != '') {
+                    alert(msg);
+                    return false;
+                    
                 }
-
-                if(msg == ''){
-                    var sendInfo = {
+                 
+                 var sendInfo = {
            UserName: String(jQuery("#reg_email").val()),
 Password:String(jQuery("#reg_pass").val()),
 FirstName:String(jQuery("#reg_first_name").val()),
@@ -177,6 +145,51 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
 
 
 
+             });
+            
+             jQuery("#registration_form").click(function() {
+                var msg = '';
+                if(jQuery("#reg_first_name").val() == '') {
+                    msg += '\n\u2022  First name cannot be empty';
+                }
+                if(jQuery("#reg_last_name").val() == '') {
+                    msg += '\n\u2022  Last name cannot be empty';
+                }
+                if(jQuery("#reg_email").val() == '') {
+                    msg += '\n\u2022  Email cannot be empty';
+                }
+                if(jQuery("#reg_country").val() == '') {
+                    msg += '\n\u2022  please select country';
+                }
+                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  if(!regex.test(jQuery("#reg_email").val())) {
+    msg += '\n\u2022  Invalid Email id';
+  }
+                if(jQuery("#reg_mobile_num").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
+                 if(jQuery("#reg_qual").val() == '') {
+                    msg += '\n\u2022  please select Qualification';
+                }
+                 if(jQuery("#reg_exp").val() == '') {
+                    msg += '\n\u2022  Enter experience field';
+                }
+                if(jQuery("#reg_months").val() == '') {
+                    msg += '\n\u2022  Enter Months field';
+                }
+                 if(jQuery("#reg_level").val() == '') {
+                    msg += '\n\u2022  Please select Level of employment';
+                }
+                
+                if(!jQuery("#reg_terms").prop('checked') == true){
+                     msg += '\n\u2022 please accept consent terms';
+                }
+
+                if(msg == ''){
+                      jQuery("#registration_form22").click();;
+               return false;
+               
+                    
 
                 }else {
 

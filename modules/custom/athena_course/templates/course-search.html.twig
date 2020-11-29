@@ -72,20 +72,25 @@
             <div class="row">
               <li class="column-1" style="list-style: none">
                 
+                  <span>
                   {% if nodedata.field_course_ects_credit.value|trim is not empty %}       
-                <span> {{nodedata.field_course_ects_credit.value}} 
-                {% if node.field_courses_credit_type.0.value|trim is not empty %}
-                            ({{node.field_courses_credit_type.0.value|raw }})
+                 {{nodedata.field_course_ects_credit.value}} 
+                            {% if node.field_courses_credit_type.0.value|trim is not empty %}
+                                ({{node.field_courses_credit_type.0.value|raw }})
                              {% endif %}
                 {% endif %}
                 </span>
 
-                | <span class="duration-text"> Duration: {{nodedata.field_course_duration.value}}></span>
+                | <span class="duration-text"> Duration: {{nodedata.field_course_duration.value}}</span>
               </span></span></li>
 
               <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
             </div>
           </div>
+          
+          
+          
+          
         </div>
 
 
