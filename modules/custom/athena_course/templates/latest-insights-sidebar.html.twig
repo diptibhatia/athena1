@@ -27,12 +27,12 @@
     <p class="m-0"><strong>{{coursedata.node.label}}</strong></p>
     <p class="mb-1">{{coursedata.node.field_course_awarding_body.value|raw }}</p>
     <p class="m-0">
-    
+    <div>
 {% for univ in coursedata.univ  %}
-        <img width="50" height="50" src="{{univ}}" class="rounded-circle">
+        <img width="50" height="50" src="{{univ}}" style="margin-right:20px;" class="rounded-circle">
         <!-- <img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle"> -->
 {% endfor %}        
-        
+        </div>
         <a href="{{ url('<front>') }}course/{{coursedata.id}}" class="text-right purple-txt">Learn More</a>
     </p>
   </div>

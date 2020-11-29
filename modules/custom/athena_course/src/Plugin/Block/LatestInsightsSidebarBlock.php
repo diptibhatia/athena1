@@ -91,7 +91,7 @@ $query->condition('field_is_popular_course', '1', '=');
          if(is_object( $node->field_link_universities)){
             $paragraph_univ_data = $node->field_link_universities->referencedEntities();
         }
-
+    $univ_data = array();
     foreach($paragraph_univ_data as $explore_data) {
         $university_nid = $explore_data->get('field_university')->value;
         $university_nid = $explore_data->get('field_university')->value;
