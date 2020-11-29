@@ -863,15 +863,20 @@
             font-size: 14px;
 		}
 		.megasubmenu{ 
-			left:100%; top:0; height: 383px; min-width:500px;
+            left:100%; top:0; height: 383px; min-width:500px;
 			
-		}
+        }
+        .box-shadow{
+            box-shadow: 0 2px 13px 0 #8c8c8c;
+            width: 600px;
+            font-family: 'Lato';
+            font-size: 1rem;
+        }
 		.megasubmenu a {
 				text-decoration: none;
 				color: black;
 				font-family: lato;
                 font-size: 1.0rem;
-                padding-left: 20px;
 			}
 			.megasubmenu a:hover{
 				text-decoration: none;
@@ -909,6 +914,7 @@
             padding-left: 10px;
             padding-right: 5px;
             margin-top: 7px;
+            width:110%;
             }
             .three-level img{
             width: 56px;

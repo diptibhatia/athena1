@@ -762,7 +762,7 @@
         }
     }
     .description {
-      padding: 1rem;
+      padding: 1.2rem;
       background: $wt;
       margin: 10px auto;
       position: relative;
@@ -778,23 +778,25 @@
         color: #ff008e;
         line-height: 26px;
         position:relative;
-/*        &:before {
-          content: '"';
-          font-family: 'Lato';
-          font-size: 39px;
+        &:before {
+          content: '“';
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-size: 44px;
           position: absolute;
-          left: -15px;
-          top: -8px;
+          left: -20px;
+          top: -13px;
+          font-weight: bold;
         }
         &:after {
-          content: '"';
-          font-family: 'Lato';
-          font-size: 39px;
+          content: '„';
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-size: 44px;
           position: absolute;
           right: 0px;
-          bottom: -10px;
+          bottom: 0;
+          font-weight:bold;
         }
- */     }
+      }
       h2 {
         font-size: 1rem;
         font-weight: 300;
@@ -1073,6 +1075,7 @@
         color: #ff008e;
         opacity: 1;
         font-weight: bold;
+        z-index:9;
       }
     }
     p {
@@ -1123,13 +1126,14 @@
         }
       }
     }
-    .countryflag{
-      clear:both;
-      margin: -24px 0 0 61px;
+    .countryflag{float: left;
+      flex: none;
+      clear: both;
+      margin: -23px 0 0 54px;
+      position: relative;
       display: block;
-      float: left;
+      }
     }
-  }
 }
 
 .opinions {
@@ -1403,4 +1407,30 @@
     text-decoration: none;
     color: $wt;
   }
+}
+
+.countryflag{float: left;
+  flex: none;
+  clear: both;
+  margin: -23px 0 0 54px;
+  position: relative;
+  display: block;
+  }
+
+.testimonials .blog-card .description a.views-more-link {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  background: transparent;
+  color: #ff008e;
+  font-weight: bold;
+}
+
+.testimonials .blog-card .description a.linkedin {
+  position: absolute;
+  left: 0;
+  width: 41px;
+  margin: 0 0 0 -68px;
+  bottom: 9px;
 }
