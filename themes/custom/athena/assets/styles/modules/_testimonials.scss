@@ -1123,13 +1123,14 @@
         }
       }
     }
-    .countryflag{
-      clear:both;
-      margin: -24px 0 0 61px;
+    .countryflag{float: left;
+      flex: none;
+      clear: both;
+      margin: -23px 0 0 54px;
+      position: relative;
       display: block;
-      float: left;
+      }
     }
-  }
 }
 
 .opinions {
@@ -1403,4 +1404,30 @@
     text-decoration: none;
     color: $wt;
   }
+}
+
+.countryflag{float: left;
+  flex: none;
+  clear: both;
+  margin: -23px 0 0 54px;
+  position: relative;
+  display: block;
+  }
+
+.testimonials .blog-card .description a.views-more-link {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  background: transparent;
+  color: #ff008e;
+  font-weight: bold;
+}
+
+.testimonials .blog-card .description a.linkedin {
+  position: absolute;
+  left: 0;
+  width: 41px;
+  margin: 0 0 0 -68px;
+  bottom: 9px;
 }
