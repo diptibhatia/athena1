@@ -1266,10 +1266,36 @@ $nodes = node_load_multiple($entity_ids);
 }
 
 $merged_nodes =  $nodes ;
+
+
     if(strpos(strtolower($_POST['search_key']), 'diploma') !== false){
     $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
 ->latestRevision()
 ->condition('field_tagtaxanomy', 9, '=')
+->condition('type', $bundle)
+->execute();
+
+    $tnodes = node_load_multiple($term_node);
+$merged_nodes = array_merge($nodes, $tnodes);
+
+    }
+    
+        if(strpos(strtolower($_POST['search_key']), 'certification') !== false){
+    $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+->latestRevision()
+->condition('field_tagtaxanomy', 11, '=')
+->condition('type', $bundle)
+->execute();
+
+    $tnodes = node_load_multiple($term_node);
+$merged_nodes = array_merge($nodes, $tnodes);
+
+    }
+    
+        if(strpos(strtolower($_POST['search_key']), 'degree') !== false){
+    $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+->latestRevision()
+->condition('field_tagtaxanomy', 10, '=')
 ->condition('type', $bundle)
 ->execute();
 
