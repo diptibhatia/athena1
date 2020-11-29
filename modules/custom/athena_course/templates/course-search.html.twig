@@ -59,7 +59,7 @@
            {% endif %}
         </div>
         <div class="course-main">
-          <h2 class="course-title"><a  href="{{ url('<front>') }}course/{{nodedata.id}}" style="all:initial; text-decoration: initial;
+          <h2 class="course-title"><a  href="{{ url('<front>') }}course/{{nodedata.id}}" style="text-decoration: initial;
     color: inherit;font-weight:inherit;padding-left:0px;background-color:inherit;text-transform:inherit;cursor:pointer;" >{{nodedata.label}}</a></h2>
           <h4 class="course-partner"> {{nodedata.field_course_awarding_body.value|raw }}</h4>
           <p class="course-info">
@@ -69,24 +69,18 @@
             <p> {{nodedata.field_course_category.value}}</p>
           </div>
           <div class="duration">
-            <div class="row">
-              <li class="column-1" style="list-style: none">
-                
-                  <span>
-                  {% if nodedata.field_course_ects_credit.value|trim is not empty %}       
-                 {{nodedata.field_course_ects_credit.value}} 
-                            {% if node.field_courses_credit_type.0.value|trim is not empty %}
-                                ({{node.field_courses_credit_type.0.value|raw }})
-                             {% endif %}
-                {% endif %}
-                </span>
+<div class="row">
+  <li class="column-1" style="list-style: none">
+    <span><span> <span>
+    {% if nodedata.field_courses_credit_type.0.value %}
+    *{{nodedata.field_course_ects_credit.0.value}} Credits ({{nodedata.field_courses_credit_type.0.value|raw }})
+    {% endif %}
+    </span> | <span>Duration: {{nodedata.field_course_duration.value}}</span>
+  </span></span></li>
 
-                | <span class="duration-text"> Duration: {{nodedata.field_course_duration.value}}</span>
-              </span></span></li>
-
-              <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
-            </div>
-          </div>
+   <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
+</div>
+</div>
           
           
           
