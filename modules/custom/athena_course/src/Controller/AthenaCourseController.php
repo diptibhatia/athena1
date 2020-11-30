@@ -1622,7 +1622,7 @@ Guglielmo Marconi University has collaboration agreements with European, America
 "rank" => "GMU appears among the 25 top performers worldwide in the categories of the U-Multirank ranking system for open access publications, international joint publications and regional joint publications.
 
 ",
-'desc' => "Universidad Católica De Murcia (UCAM) is a university par excellence based out of Murcia, Spain. Established in 1996, the university is accredited by the Ministry of Education, Spain, ANECA and is a member of ENQA, Universia and EUA. UCAM is ranked among the 200 best universities in Europe and the 10 best  valued by its students by The Times Higher Education World University Rankings 2021. UCAM has a strategic partnership network with more than 280 universities."
+'desc' => ""
 );
 
 break;
