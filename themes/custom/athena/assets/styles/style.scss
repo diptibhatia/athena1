@@ -100,15 +100,15 @@ img {
 }
 .page-item:first-child .page-link {
     border-radius:50%;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+    // border-top-right-radius: 0.25rem;
+    // border-bottom-right-radius: 0.25rem;
     
 }
 
 .page-item:last-child .page-link {
     border-radius:50%;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+    // border-top-left-radius: 0.25rem;
+    // border-bottom-left-radius: 0.25rem;
    
 }
 // .page-item.previous .page-link, .next .page-link { 
@@ -118,7 +118,12 @@ img {
 //     color: #ff026f;
 // }
 .partners .partner-logos .logo img {width:180px;}
- 
+
+.image_icon a[href='#'], a[href='#'] .link_img { 
+    opacity: 0.3;
+    cursor: not-allowed; 
+}
+
 .know-more button:hover a { 
     text-decoration: none;
 }
