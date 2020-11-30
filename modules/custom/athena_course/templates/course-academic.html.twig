@@ -59,7 +59,7 @@
 
 
  {% for course_data in course_list %}
-                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content--course">
+                    <div class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content--course" style="display:none;">
                     <div class="col-md-12 col-sm-12 row">
                         <div class="col-md-9 col-sm-9">
                             <h3 class="card-title"><a style="color:inherit" href="{{ url('<front>') }}course/{{course_data.id}}">{{course_data.label}}</a></h3>
@@ -211,7 +211,7 @@
       });
 
   });
-    
+
 })
 
 </script>

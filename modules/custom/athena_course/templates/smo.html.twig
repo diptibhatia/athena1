@@ -59,8 +59,12 @@
                       <h3>Accreditations</h3>
                       <p>{{ node.field_course_accreditations.0.value|raw }}</p>
  <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+
+ </div>
+
+
 {% endif %}
-                  </div>
+
                 </div>
 
               <div class="main-section" style="width:initial">
@@ -409,7 +413,7 @@
           var CountryCode = $(".country.active .dial-code").text();
           $(".country-code").text(CountryCode);
       });
-      
+
        $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
@@ -434,8 +438,8 @@
         })
         $(window).scroll(function() {
             if($(window).width() > 1249) {
-                if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) && 
-                ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() - 
+                if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) &&
+                ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() -
                 $(".testimonials").height() + 10))) {
                     $(".testimonials").css("position", "fixed");
                     console.log("Yo");

@@ -78,8 +78,8 @@
                     alert(msg)
                 }
             });
-            
-            
+
+
              jQuery("#registration_form_passchck").click(function() {
                  var msg = '';
                   if(jQuery("#reg_pass").val() == '') {
@@ -92,13 +92,13 @@
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
                      msg += '\n\u2022 password and confirm password do not match';
                 }
-                
+
                 if(msg != '') {
                     alert(msg);
                     return false;
-                    
+
                 }
-                 
+
                  var sendInfo = {
            UserName: String(jQuery("#reg_email").val()),
 Password:String(jQuery("#reg_pass").val()),
@@ -146,7 +146,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
 
 
              });
-            
+
              jQuery("#registration_form").click(function() {
                 var msg = '';
                 if(jQuery("#reg_first_name").val() == '') {
@@ -180,7 +180,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                  if(jQuery("#reg_level").val() == '') {
                     msg += '\n\u2022  Please select Level of employment';
                 }
-                
+
                 if(!jQuery("#reg_terms").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
@@ -188,8 +188,8 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(msg == ''){
                       jQuery("#registration_form22").click();;
                return false;
-               
-                    
+
+
 
                 }else {
 
@@ -284,15 +284,31 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
             });
 
-             jQuery(".content--course").slice(0, 3).show();
-              jQuery("#loadMore").on("click", function(e){
-                e.preventDefault();
-                jQuery(".content--course:hidden").slice(0, 3).slideDown();
-                if(jQuery(".content--course:hidden").length == 0) {
-                  jQuery("#loadMore").text("No Content").addClass("noContent");
-                }
+
+          jQuery(".academic-content .content--course")
+            .slice(0, 3)
+            .show();
+
+          jQuery(".academic-content .content--course:hidden").css("opacity", 0);
+
+          jQuery("#loadMore").on("click", function(e) {
+            jQuery(".academic-content .content--course:hidden")
+              .slice(0, 3)
+              .slideDown("slow")
+              .animate({
+                opacity: 1
+              }, {
+                queue: false,
+                duration: "slow"
               });
-        })
+            if (jQuery(".academic-content .content--course:hidden").length == 0) {
+              jQuery("#loadMore").fadeOut("slow");
+            }
+            e.preventDefault();
+          });
+
+
+        });
 
 
 
