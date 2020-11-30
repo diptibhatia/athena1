@@ -45,9 +45,11 @@
 
 
             <div class="course-banner__background">
-
+                     {% if banner_pic_url is not empty %}
+    <img src="{{banner_pic_url}}" alt="banner">
+    {% else %}
     <img src="{{base_path}}/images/coursepage/course_banner.png" alt="banner">
-
+{% endif %}
             </div>
             <div class="course-banner__mobilebg">
                 <img src="{{base_path}}/images/coursepage/mobile_banner.png" alt="banner">
