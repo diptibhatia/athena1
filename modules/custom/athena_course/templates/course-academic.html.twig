@@ -197,21 +197,3 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
-
-<script>
-  jQuery(document).ready(function() {
-      jQuery("#phone").intlTelInput();
-      jQuery(".selected-flag").after("<div class='country-code' />");
-      var CountryCode = jQuery(".country.active .dial-code").text();
-      jQuery(".country-code").text(CountryCode);
-
-      jQuery(".country-list").click(function(){
-          var CountryCode = jQuery(".country.active .dial-code").text();
-          jQuery(".country-code").text(CountryCode);
-      });
-
-  });
-
-})
-
-</script>

@@ -1,13 +1,15 @@
-/*jQuery(document).scroll(function() {
-    var y = jQuery(document).scrollTop(),
-        header = jQuery(".share-icon ul");
-    if(y <= 1600)  {
-        header.css({position: "fixed"});
-    } else {
-        header.css("position", "relative");
+jQuery(".selected-flag").after("<div class='country-code' />");
+jQuery(document).ready(function() {
+    if (jQuery(".country-code").length == 0) {
+        jQuery(".selected-flag").after("<div class='country-code' />");
+        jQuery(".country-code").text("+1");
     }
+    jQuery("#phone").intlTelInput();
+    jQuery(".country-list li").click(function(){
+        jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
+    });
 });
-*/
+
 
 function scrollEvent(){
         jQuery(function(){
