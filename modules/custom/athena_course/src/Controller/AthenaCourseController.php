@@ -371,7 +371,7 @@ $banner_pic_url = '';
 	$banner_pic_url = file_create_url($banner_pic);
     }
     
-    }
+    
 
 $banner_block =  [
   '#theme' => 'course_banner',
