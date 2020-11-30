@@ -114,10 +114,44 @@ div#block-discussions .title h4 {
   color: #919191;
 }
 
+div#block-discussions .title h3 {
+  font-size: 24px;
+}
+
+div#block-discussions .title h4 {
+  font-size: 16px;
+  color: #919191;
+}
+
 div#block-discussions .title span {
-  color: 5b1a87;
+  color: #5b1a87;
   font-weight:bold;
 }
+
+.single-discussion .new-discussion .user-thread {
+  margin: 20px;
+  padding: 0 37px;
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 1.63;
+  color: #303030;
+}
+
+.single-discussion .new-discussion .user-thread .reply p {
+  margin-left: 0;
+  margin-right:30px;
+}
+
+.single-discussion .new-discussion .user-thread .reply img {
+  padding: 0 4px 0 0;
+}
+
+.single-discussion .new-discussion .user-thread .reply {
+  display: block;
+}
+
+
+
 
 
 .single-discussion {
@@ -132,6 +166,7 @@ div#block-discussions .title span {
         color: #303030;
         .reply{
           display: block;
+
           p {
             margin-left: 0;
             margin-right:30px;
@@ -1165,7 +1200,7 @@ div#block-discussions .title span {
     .countryflag{float: left;
       flex: none;
       clear: both;
-      margin:0;
+      margin: -23px 0 0 54px;
       position: relative;
       display: block;
       }
