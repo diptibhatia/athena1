@@ -51,24 +51,7 @@ foreach($paragraph_univ_data as $explore_data) {
 
         if (!empty($university_nid)) {
        $univ_node = Node::load($university_nid);
-       $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
-        $univ_data[] = array(
-        'university' =>Node::load($university_nid),
-        'certificates' =>$certificates,
-        'white_log' =>$white_log,
-        'univ_logo' =>$univ_logo,
-        'message' =>$message,
-        'msg_title' =>$msg_title,
-        'prof_name' =>$prof_name,
-        'prof_univ' =>$prof_univ,
-        'dean_univ' =>$dean_univ,
-        'dean_video' =>$dean_video,
-        'dean_message' =>$dean_message,
-
-        );
-        }
-
-$white_log  = '';
+       $white_log  = '';
        switch($univ_node->get('title')->value){
            case 'Scottish Qualifications Authority, UK':
              $white_log = "sqalogo";
@@ -97,6 +80,24 @@ $white_log  = '';
 
 
 }
+       $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+        $univ_data[] = array(
+        'university' =>Node::load($university_nid),
+        'certificates' =>$certificates,
+        'white_log' =>$white_log,
+        'univ_logo' =>$univ_logo,
+        'message' =>$message,
+        'msg_title' =>$msg_title,
+        'prof_name' =>$prof_name,
+        'prof_univ' =>$prof_univ,
+        'dean_univ' =>$dean_univ,
+        'dean_video' =>$dean_video,
+        'dean_message' =>$dean_message,
+
+        );
+        }
+
+
 //exitl
 $paragraph_why_course = $node->field_what_you_get->referencedEntities();
 $why_course = array();
