@@ -1589,6 +1589,7 @@ case 'ucam':
 
 $data = array(
 'univ_label' => $univ,
+'univ_banner' => 'Ucam-banner',
 'title' => 'Universidad Católica de Murcia, Spain',
 'about' => "Universidad Católica De Murcia (UCAM) is a university par excellence based out of Murcia, Spain. Established in 1996, UCAM has an active student base of 17,0000 learners and an academic staff of more than 1000. The university is accredited by the Ministry of Education, Spain and National Agency for Quality Assessment and Accreditation of Spain (ANECA). UCAM is a member of The European Association for Quality Assurance in Higher Education (ENQA), Universia and European University association (EUA). It has a strategic partnership network with more than 280 universities including UC Berkeley, Stanford, Università di Bologna, National University of Singapore and Nanyang Technological University. UCAM centres in Cuba, Jakarta, Singapore, and Brussels work together to further develop the university’s international strategy.
 UCAM is strongly linked to the business world through study plans responsive to market exigencies, obligatory internships in public and private institutions and enterprises as part of every undergraduate and master's degree, as well as research programs in collaboration with large regional, national and multinational companies.The university has corporate strategic partnership with industry leaders like Coca Cola, DANONE, Vodafone and Siemens including Microsoft, and SAP.
@@ -1607,6 +1608,7 @@ break;
 case 'gmu':
 $data = array(
 'univ_label' => $univ,
+'univ_banner' => 'gmu-banner',
 'title' => 'Guglielmo Marconi University (GMU)',
 'about' => "
 Guglielmo Marconi University (GMU) is based in Rome, Italy and  it is the first Italian Open University recognized by the Italian Ministry of Education, University and Research (MIUR) Presently, GMU has a community of over 16.000 students enrolled in graduate and postgraduate programs, a team of 300 faculty members and academic advisors and more than 200 tutoring experts. It appears among the 25 top performers worldwide in the categories of the U-Multirank ranking system for open access publications, international joint publications and regional joint publications.
@@ -1630,6 +1632,7 @@ break;
 case 'sqa':
 $data = array(
 'univ_label' => $univ,
+'univ_banner' => 'sqa-banner',
 'title' => 'Scottish Qualifications Authority (SQA)',
 'about' => "
 Scottish Qualifications Authority (SQA) is the executive public body of Scottish government responsible for accrediting educational awards and is accredited by the UK government to offer educational qualifications. Being one of the four partner national organisations in the Curriculum for Excellence, SQA designs and develops new qualifications and assessments, validates qualifications and reviews them to ensure they are up to date.  It has created the Scottish Credit and Qualifications Framework (SCQF).
@@ -1652,6 +1655,7 @@ break;
 case 'ciq':
 $data = array(
 'univ_label' => $univ,
+'univ_banner' => 'ciq-banner',
 'title' => 'Cambridge International Qualifications (CIQ), UK',
 'about' => "
 Cambridge International Qualifications (CIQ), UK is a professional awarding body based in the United Kingdom and its subsidiary of Westford Education Group which is in higher education since 2009. CIQ is founded on the vision of helping individual learners and employers in attaining quality accredited awards. With centres across the Middle East, Europe and African region, CIQ is a proud certification partner for more than 100 organizations and has a progression pathway with some of the leading universities across the world.
@@ -1670,6 +1674,7 @@ break;
 case 'cmi':
 $data = array(
 'univ_label' => $univ,
+'univ_banner' => 'cmi-banner',
 'title' => 'Chartered Management Institute (CMI), UK',
 'about' => "
 Chartered Management Institute, backed by Royal Charter, is the only Chartered body dedicated to promoting the highest standards in management and leadership excellence. CMI’s management qualifications are recognized throughout the UK and Europe and provide a progressive framework that enables one to develop and broaden management skills. Their qualifications are designed in consultation with employers to meet today's demands and therefore they are valued by them.
