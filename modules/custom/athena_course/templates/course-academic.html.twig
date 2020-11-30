@@ -85,10 +85,12 @@
                                <img src="{{base_path}}/images/coursepage/course-certification.svg" alt="icon" class="">
                                 <p>Dual Certification <br> IMBA &amp; Scottish Diploma</p>
                             </div>
+                            {% if course_data.field_course_accreditations.0.value is not empty %}
                             <div class="col-md-5 col-sm-5 p-0 pt-3">
                                <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="">
-                               <p>Accreditations <br> Ministry of Education, Italy <br> Scottish Qualification Authority, UK</p>
+                                <p>Accreditations <br> {{ course_data.field_course_accreditations.0.value|raw }} <br> {{ course_data.field_course_accreditations.1.value|raw }}</p>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
 
