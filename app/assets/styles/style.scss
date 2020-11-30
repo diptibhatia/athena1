@@ -118,7 +118,12 @@ img {
 //     color: #ff026f;
 // }
 .partners .partner-logos .logo img {width:180px;}
- 
+
+.image_icon a[href='#'], a[href='#'] .link_img { 
+    opacity: 0.3;
+    cursor: not-allowed; 
+}
+
 .know-more button:hover a { 
     text-decoration: none;
 }
