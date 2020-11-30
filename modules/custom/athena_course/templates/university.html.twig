@@ -47,9 +47,11 @@
 
                    <div class="col-md-4 col-sm-12">
                      <div class="card-container">
+                     {% if data.univ_label == 'ucam' }}
                         <div class="card">
                             <iframe width="350" height="250" src="https://www.youtube.com/embed/5vejHYeGs3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                         </div>
+                         {% endif %}
                            <div class="card">
                                <div class="card-icons">
                                  <img src="{{base_path}}/images/logo11.jpg" width="30%">
