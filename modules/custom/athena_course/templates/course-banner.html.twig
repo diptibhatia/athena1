@@ -45,10 +45,12 @@
 
 
             <div class="course-banner__background">
-                     {% if banner is not empty %}
-    <img src="{{banner}}" alt="banner">
-    {% else %}
-    <img src="{{base_path}}/images/coursepage/course_banner.png" alt="banner">
+                    
+
+ {% if node.field_course_banner_image.entity.uri.value is not empty %}
+    <img src="{{node.field_course_banner_image.entity.uri.value }}" alt="banner">
+ {% else %}
+ <img src="{{base_path}}/images/coursepage/course_banner.png" alt="banner">
 {% endif %}
             </div>
             <div class="course-banner__mobilebg">
