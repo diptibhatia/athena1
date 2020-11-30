@@ -105,9 +105,43 @@
   }
 }
 
+div#block-discussions .title h3 {
+  font-size: 24px;
+}
+
+div#block-discussions .title h4 {
+  font-size: 16px;
+  color: #919191;
+}
+
+div#block-discussions .title span {
+  color: 5b1a87;
+  font-weight:bold;
+}
+
+
 .single-discussion {
     margin: 50px 0;
     .new-discussion {
+      .user-thread {
+        margin: 20px;
+        padding: 0 37px;
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 1.63;
+        color: #303030;
+        .reply{
+          display: block;
+          p {
+            margin-left: 0;
+            margin-right:30px;
+          }
+          img {
+            padding: 0 4px 0 0;
+          }
+        }
+      
+      }
       .single-post {
       display: flex;
       margin: 10px 0;
