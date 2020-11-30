@@ -87,25 +87,36 @@ img {
     margin: 0.5rem;
     width: 90%;
     background: #fff;
-}
-.pagination .page-item { margin:5px;}
+} 
 
 .pagination .page-link { border-radius: 50%; color:#000;}
  
 
-.is-active {
+.pagination .is-active .page-link {
     z-index: 3;
     color: #fff;
     background-color: #ff026f;
     border-color: #ff026f;    
 }
+.page-item:first-child .page-link {
+    border-radius:50%;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    
+}
 
-.page-item.previous .page-link, .next .page-link { 
-    color: #ff026f;
+.page-item:last-child .page-link {
+    border-radius:50%;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+   
 }
-.previous .page-link:hover, .next .page-link:hover { 
-    color: #ff026f;
-}
+// .page-item.previous .page-link, .next .page-link { 
+//     color: #ff026f;
+// }
+// .previous .page-link:hover, .next .page-link:hover { 
+//     color: #ff026f;
+// }
 .partners .partner-logos .logo img {width:180px;}
  
 .know-more button:hover a { 
