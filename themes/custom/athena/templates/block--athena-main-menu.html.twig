@@ -72,17 +72,22 @@ align-items: center;box-sizing: border-box;">
                                         <ul class="list-unstyled">
                                         {% for univ in academic.universities%}
                                             <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                           {% endfor %}	
+                                           {% endfor %}
                                         </ul>
                                     </div>
                                 </li>
                                 {% set modnum = modnum + 1 %}
-                                {% endfor %}	
-	                       
+                                {% endfor %}
+
 	                        </ul>
 	                </div><!-- end col-3 -->
 	                <div class="col-5 three-level" id="secondary-data_three-level">
-	                        
+                      <h6>Universities</h6>
+                      <ul class="list-unstyled">
+                      {% for univ in universities%}
+                          <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                         {% endfor %}
+                      </ul>
 	                </div><!-- end col-3 -->
 	            </div><!-- end row -->
 			 </div>
@@ -102,16 +107,21 @@ align-items: center;box-sizing: border-box;">
                                         <ul class="list-unstyled">
                                         {% for univ in cert.universities%}
                                             <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                           {% endfor %}	
+                                           {% endfor %}
                                         </ul>
                                     </div>
                                 </li>
                                 {% set modnum = modnum + 1 %}
-                                {% endfor %}	
+                                {% endfor %}
 							 </ul>
 					 </div><!-- end col-3 -->
             <div class="col-5 three-level" id="secondary-data-cert_three-level">
-	                        
+                <h6>Universities</h6>
+                <ul class="list-unstyled">
+                {% for univ in universities%}
+                    <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                   {% endfor %}
+                </ul>
 	          </div><!-- end col-3 -->
 					<!-- end col-3 -->
 				 </div><!-- end row -->

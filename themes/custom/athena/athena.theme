@@ -1,16 +1,31 @@
 <?php
 use \Drupal\Core\Url;
 use Drupal\node\Entity\Node;
-use Drupal\paragraphs\Entity\Paragraph; 
+use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
 
 /**
  * @file
  * Functions to support theming in the Athena theme.
  */
- 
-function athena_preprocess_block(array &$variables) { 
-  
+
+function athena_preprocess_block(array &$variables) {
+
+    $universityContentType = 'universities';
+    $universityQuery = \Drupal::entityQuery('node');
+    $universityQuery->condition('status', 1);
+    $universityQuery->condition('type', $universityContentType);
+    $universityData = $universityQuery->execute();
+
+    foreach($universityData as $univNid) {
+       $univNodeData = Node::load($univNid);
+           $univDataArr[] = array(
+           'label' => $univNodeData->label(),
+           'logo'=> file_create_url($univNodeData->get('field_logo')->entity->uri->value)
+       );
+    }
+    $variables['universities'] = $univDataArr;
+
   $bundle='course';
      $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
@@ -18,15 +33,15 @@ function athena_preprocess_block(array &$variables) {
 $query->condition('field_course_category', 'Academic');
     $query->condition('type', $bundle);
     $academic = $query->execute();
-    
-    
+
+
      $microquery = \Drupal::entityQuery('node');
     $microquery->condition('status', 1);
     $microquery->condition('field_course_category',  'Micro Credits', '=');
     $microquery->condition('type', $bundle);
      $micro = $microquery->execute();
-    
-    
+
+
      $querycertification = \Drupal::entityQuery('node');
     $querycertification->condition('status', 1);
     $querycertification->condition('field_course_category', 'Certifications', '=');
@@ -40,26 +55,26 @@ $query->condition('field_course_category', 'Academic');
 $univ_logo = array();
 foreach($paragraph_univ_data as $explore_data) {
  $university_nid = $explore_data->get('field_university')->value;
- 
+
  $univ_node = Node::load($university_nid);
        $univ_logo[] = array(
        'label' => $univ_node->label(),
        'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
        );
-          
+
 }
-       $academic_node_ids[] =  
+       $academic_node_ids[] =
        array(
        "nid"=>$node->id(),
        "title"=>$node->label(),
        'universities' => $univ_logo,
-       
+
        );
       }
-      
+
 
     $variables['academicnodes'] = $academic_node_ids;
-    
+
     $micro = node_load_multiple($micro);
      $academic_node_ids = array();
       foreach($micro as $node_key => $node) {
@@ -68,26 +83,26 @@ foreach($paragraph_univ_data as $explore_data) {
 $univ_logo = array();
 foreach($paragraph_univ_data as $explore_data) {
  $university_nid = $explore_data->get('field_university')->value;
- 
+
  $univ_node = Node::load($university_nid);
        $univ_logo[] = array(
        'label' => $univ_node->label(),
        'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
        );
-          
+
 }
-       $micro_node_ids[] =  
+       $micro_node_ids[] =
        array(
        "nid"=>$node->id(),
        "title"=>$node->label(),
        'universities' => $univ_logo,
-       
+
        );
       }
-      
+
     $variables['micronodes'] = $micro_node_ids;
-    
-    
+
+
      $certifications = node_load_multiple($certifications);
      $certifications_node_ids = array();
       foreach($certifications as $node_key => $node) {
@@ -96,7 +111,7 @@ foreach($paragraph_univ_data as $explore_data) {
 $univ_logo = array();
 foreach($paragraph_univ_data as $explore_data) {
  $university_nid = $explore_data->get('field_university')->value;
- 
+
  $univ_node = Node::load($university_nid);
  $label_univ = '';
  if(is_object( $univ_node)){
@@ -109,30 +124,30 @@ foreach($paragraph_univ_data as $explore_data) {
        'label' => $label_univ,
        'logo'=> $uu_logo
        );
-          
+
 }
-       $certifications_node_ids[] =  
+       $certifications_node_ids[] =
        array(
        "nid"=>$node->id(),
        "title"=>$node->label(),
        'universities' => $univ_logo,
-       
+
        );
       }
-      
+
     $variables['certificationsnodes'] = $certifications_node_ids;
-   
-  
-  
+
+
+
 }
- 
+
 
 /**
  * Implements template_preprocess_image() to remove WIDTH and HEIGHT from img-tag
  *
  * Adds body classes if certain regions have content.
  */
- 
+
 function athena_preprocess_image(&$variables) {
   if (isset($variables['attributes']['width']) && isset($variables['attributes']['height'])) {
     unset($variables['attributes']['width']);
@@ -171,37 +186,37 @@ function athena_preprocess_page(&$variables) {
     if (strpos($current_path, '/search-results') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
-  
+
   if (strpos($current_path, '/smo') !== false) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
   }
-  
+
      if (strpos($current_path, '/registration') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
-  
-  
+
+
   if (strpos($current_path, '/academic-program') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
-  
+
   if (strpos($current_path, '/certifications') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
-  
+
   if (strpos($current_path, '/micro-credits') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
-  
+
 $current_uri = \Drupal::request()->getRequestUri();
 
    if (strpos($current_uri, 'about-us/governance-structure') !== false) {
-    
+
  $variables['enable_popup'] = TRUE;
 
   }
- 
+
 }
 
 /**
@@ -237,7 +252,7 @@ $paragraph_data = $node->field_about_us_profile->referencedEntities();
 $profile = array();
 $i=0;
 foreach($paragraph_data as $profile_data) {
-    
+
     $designation = $profile_data->get('field_designation')->value;
     $name = $profile_data->get('field_profile_name')->value;
     $field_profile_desc = $profile_data->get('field_profile_desc')->value;
@@ -245,7 +260,7 @@ foreach($paragraph_data as $profile_data) {
     $profile_image = $profile_data->get('field_abiut_us_profile_img')->entity->getFileUri();
     $p_image = file_create_url($popup_image);
     $prof_image = file_create_url($profile_image);
-    
+
 
 
 $profile[] =  array(
@@ -259,13 +274,13 @@ $profile[] =  array(
 
 
 $i++;
-    
+
 }
 
 
  $variables['about_profile'] = $profile;
  $variables['enable_popup'] = TRUE;
- 
+
   }else {
 $variables['enable_popup'] = FALSE;
 }
