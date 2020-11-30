@@ -5,6 +5,8 @@ athena_course.course:
     _title: 'Custom athena course module'
   requirements: 
     _permission: 'access content'
+  options:
+     no_cache: 'TRUE'
     
 athena_smolist.smolist:
   path: '/smo-list'
