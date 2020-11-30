@@ -765,6 +765,7 @@
 
         &.is-active {
             position: relative;
+            background:transparent;
 
             @include atSize700 {
 

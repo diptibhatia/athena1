@@ -786,6 +786,8 @@
           left: -20px;
           top: -13px;
           font-weight: bold;
+          z-index:9;
+
         }
         &:after {
           content: '„';
