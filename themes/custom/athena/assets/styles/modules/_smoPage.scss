@@ -574,3 +574,11 @@
         }
     }
 }
+
+.fyi-tabs__overview-list li ol {
+    padding-top: 10px;
+}
+.fyi-tabs__overview-list li ol li {
+    color: pink;
+    padding-left: 12px;
+}
