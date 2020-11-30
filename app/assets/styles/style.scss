@@ -93,7 +93,7 @@ img {
 .pagination .page-link { border-radius: 50%; color:#000;}
  
 
-.is-active {
+.pagination .is-active .page-link {
     z-index: 3;
     color: #fff;
     background-color: #ff026f;
