@@ -366,9 +366,9 @@ foreach($paragraph_faq as $faq_data){
 $banner = '';
 $banner_pic_url = '';
  if(is_object( $node->get('field_course_banner_image')->entity)){
-	$banner =$node->get('field_course_banner_image')->entity->uri->value;
-    $banner_pic = $node->get('field_course_banner_image')->entity->getFileUri();
-	$banner_pic_url = file_create_url($banner_pic);
+	$banner_pic =$node->get('field_course_banner_image')->entity->uri->value;
+//$banner_pic = $node->get('field_course_banner_image')->entity->getFileUri();
+  $banner_pic_url = file_create_url($banner_pic);
     }
     
     
