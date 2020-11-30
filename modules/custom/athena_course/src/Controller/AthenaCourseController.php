@@ -55,6 +55,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
+        'white_log' =>$white_log,
         'univ_logo' =>$univ_logo,
         'message' =>$message,
         'msg_title' =>$msg_title,
@@ -67,6 +68,31 @@ foreach($paragraph_univ_data as $explore_data) {
         );
         }
 
+$white_log  = '';
+       switch($univ_node->get('title')->value){
+           case 'Scottish Qualifications Authority, UK':
+             $white_log = "sqalogo";
+             break;
+           case 'Guglielmo Marconi University, Italy':
+           $white_log = "gmu-white";
+             break;
+           case 'Cambridge International Qualifications, UK':
+           $white_log = "ciq-white";
+             break;
+
+            case 'Universidad Catolica De Murcia (UCAM), Spain':
+                       $white_log = "ucam-logo";
+                         break;
+
+            case 'Chartered Management Institute, UK':
+                       $white_log = "cmi-white";
+                         break;
+            default:
+                    break;
+
+
+
+       }
 
 
 

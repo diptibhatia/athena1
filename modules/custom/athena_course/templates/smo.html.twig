@@ -3,14 +3,10 @@
           <div class="colorBg"></div>
           <div class="wrapper">
             <div class="logos">
+                                         {% for universities in univ_data	 %}
+   <img src="{{base_path}}/images/icons/{{ universities.white_log}}.svg" alt="ucam logo" width="95">
 
- <img src="{{ file_url(node.field_course_awarding_body_logos[0].entity.uri.value)}}" width="95">
-{% if node.field_course_awarding_body_logos[1].entity.uri.value is empty %}
-
-                                    {% else %}
-                <img src="{{ file_url(node.field_course_awarding_body_logos[1].entity.uri.value)}}" alt="sqa logo" width="95">
-
-                                        {% endif %}
+ {% endfor %}
                 </div>
             <h1>{{course_title}}</h1>
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
