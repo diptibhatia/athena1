@@ -302,11 +302,26 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 duration: "slow"
               });
             if (jQuery(".academic-content .content--course:hidden").length == 0) {
-              jQuery("#loadMore").fadeOut("slow");
+              jQuery("#loadMore").hide();
+              jQuery("#showLess").show();
             }
             e.preventDefault();
           });
 
+          jQuery("#showLess").on("click", function(e) {
+            jQuery(".academic-content .content--course:visible")
+              .slice(3, 1000)
+              .slideUp("slow")
+              .animate({
+                opacity: 1
+              }, {
+                queue: false,
+                duration: "slow"
+              });
+              jQuery("#loadMore").show();
+              jQuery("#showLess").hide();
+            e.preventDefault();
+          });
 
         });
 
