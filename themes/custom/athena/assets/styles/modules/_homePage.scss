@@ -524,10 +524,10 @@
 		  }
 		  .owl-carousel{
 			  .owl-nav {
-				  right: 10px;
-				  bottom: -26px;
-				  top: auto;
-			  }
+				right: 10px;
+				bottom: auto;
+				margin-top: 25px;
+				}
 			  .owl-dots {
 				  @media screen and (min-width:980px){
 					  display:none;
