@@ -2,10 +2,10 @@
     position: relative;
     color: #fff;
     padding: 14px 0;
-    max-height: 415px;
+    max-height: 430px;
     box-sizing: border-box;
     overflow: hidden;
-
+z-index:99;
 
     @include atSize700 {
         z-index: 10;
@@ -299,20 +299,22 @@
 
     .shareIcon
     {
-        margin-top: 16px;font-weight:bold;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 45%;
+       
         @include atSize424
         {
-            margin-top: 4px;
-            position: relative;
-            top: -290px;
-            left: 70%;
+            top: 3rem;
+            bottom:auto;
+            right: 3%;
+            left: auto;
         }
-        a{
-            
-            color:#fff;text-decoration:none;padding:0 0 10px 0;
+        a{            
+            color:#fff;
         }
         img{
-            padding-right: 10px;
+            margin-right: 10px;
         }
 
     }
