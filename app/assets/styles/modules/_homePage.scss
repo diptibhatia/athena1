@@ -525,7 +525,7 @@
 		  .owl-carousel{
 			  .owl-nav {
 				  right: 10px;
-				  bottom: 0;
+				  bottom: -26px;
 				  top: auto;
 			  }
 			  .owl-dots {
@@ -684,286 +684,12 @@
 								@include atSize424 {
 									top: 0;
 								}
-<<<<<<< HEAD
 							  @include atSize700{
 								  top: 0;
 							  }
 						  }
 						  .sub-heading {
 							  top: 0;
-=======
-								.price-tag {
-									width: 113px;
-									height: 39px;
-									border-radius: 100px 0px 0 100px;
-									background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
-									position: absolute;
-									top: 7px;
-									right: 0;
-									margin: 10px 0;
-									p {
-										font-family: Lato;
-										font-size: 16px;
-										font-weight: bold;
-										font-stretch: normal;
-										font-style: normal;
-										line-height: normal;
-										letter-spacing: normal;
-										color: #ffffff;
-										margin: 0;
-										padding: 8px;
-									}
-								}
-								.course-details {
-									width: 331px;
-									min-height: 136px;
-									height: auto;
-									border-radius: 6px;
-									box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
-									background-color: #ffffff;
-									position: absolute;
-									top: 130px;
-									left: 10px;
-									.course-tags {
-										width: 315px;
-										height: 30px;
-										border-radius: 3px;
-										background-color: $courseTags;
-										margin: 0 10px;
-										p {
-										font-size: 14px;
-										color: $primaryColor;
-										padding: 3px;
-										text-align: center;
-										span {
-											color: white;
-											padding: 0 5px;
-										}
-										.circle {
-											&::before {
-												content: ' \25CF';
-												font-size: 14px;
-												color: #ff008e;
-												}
-											}
-										}
-									}
-									h1 {
-										font-size: 14px;
-										font-weight: bold;
-										color: $primaryColor;
-										margin: 10px 0 0 5px;
-										text-align: left;
-										padding-left: 20px;
-									}
-									h2 {
-										font-size: 14px;
-										color: $buttonPink;
-										margin: 5px 0;
-										text-align: left;
-										padding-left: 24px;
-									}
-									h3 {
-										font-size: 14px;
-										color: $primaryColor;
-										text-align: left;
-										padding: 15px 25px;
-										span {
-											font-weight: bold;
-										}
-									}
-								}
-								.course-info {
-									margin: 138px 15px 0 15px;
-									font-size: 14px;
-									text-align: left;
-									color: $secondaryColor;
-									span {
-										color: $buttonPink;
-										cursor: pointer;
-									}
-								}
-								.know-more {
-									width: 113px;
-									height: 44px;
-									border-radius: 100px 0px 0 100px;
-									background-image: linear-gradient(89deg, $knowMoreTag1 0%, $knowMoreTag2 100%, $knowMoreTag3 100%);
-									float: right;
-									margin: 10px 0;
-									p {
-										color: white;
-										margin: 10px 0;
-									}
-								}
-							}
-						
-						
-						
-						}
-						
-				}		
-			}
-		}
-		.owl-carousel{
-			.owl-nav {
-				right: 10px;
-				bottom: -26px;
-				top: auto;
-			}
-			.owl-dots {
-				@media screen and (min-width:980px){
-					display:none;
-				}
-			}
-
-		}
-	}
-}
-
-.back-images {
-	position: absolute;
-    left: 27%;
-	img {
-		position: absolute;
-    	left: 50%;
-    	top: -199px;
-	}
-}
-
-.why-athena-two {
-	flex-direction: column;
-}
-
-.why-athena {
-	display: flex;
-	.athena-background-image {
-		width: 100%;
-		position: absolute;
-		img {
-			width: 100%;
-			position: absolute;
-			top:0;
-			@include atSize424{
-				top:104px;
-			}
-		}
-	}
-	.athena-section {
-		display: flex;
-		width: 100%;
-		margin: 33px 0 0 0;
-		@include atSize424 {
-			flex-direction: column;
-			width: 100%;
-		}
-		@include atSize430 {
-			flex-direction: column;
-			width: 100%;
-		}
-		@include atSize479 {
-			flex-direction: column;
-			width: 100%;
-		}
-		@media (min-width: 480px) and (max-width: 770px){
-			flex-direction: column-reverse;
-			width: 100%;	
-		}
-		@media (min-width: 771px) and (max-width: 1024px){
-			flex-direction: column-reverse;
-			width: 100%;		
-		}
-		.why-athena-item-one {
-			z-index: 10;
-			flex: 1.4;
-			padding: 5px 0 0 30px;
-			@media (min-width: 480px) and (max-width: 770px){
-				width: 80%;
-				margin: 30px 100px;
-			}
-			@media (min-width: 771px) and (max-width: 1024px){
-				width: 80%;
-				margin: 30px 100px;
-			}
-			@media (max-width: 550px){
-				margin: 0 8px 30px;
-			}
-			h1 {
-				font-family: Lato;
-			  	font-size: 42px;
-			  	font-weight: bold;
-			  	font-stretch: normal;
-			  	font-style: normal;
-			  	line-height: 1.33;
-			  	letter-spacing: normal;
-			  	color: $primaryColor;
-			  	margin: 0 0 5px 0;
-    			@include atSize424 {
-					font-size:28px;
-					position:relative;
-					left:0;
-				}
-
-			}
-			.underline-heading {
-				width: 70px;
-    			border-bottom: solid 4px $buttonPink;
-				border-radius: 4px;
-				height:0px;
-    			@include atSize424 {
-					border-bottom: solid 6px #630097;
-					position:relative;
-					left:0;
-				}
-			}
-			.info {
-				margin: 25px 0;
-				width: 470px;
-				@include atSize424 {
-					width: 100%;
-				}
-				.info-item {
-					.item {
-						padding: 15px 15px 15px 39px;
-						@include atSize479{
-							padding:15px 15px 15px 40px;
-						}
-						position:relative;
-						img {
-							position: absolute;
-							top: 52px;
-							left: -27px;
-						}
-						p {
-							font-size: 16px;
-						  	color: $primaryColor;
-						  	list-style-type:none;
-						  	line-height: 26px;
-						  	margin: 0;
-						  	button {
-						  		margin: 30px 0;
-								border-radius: 30px;
-								border: solid 2px $titlePink;
-								color: $titlePink;
-								padding: 5px 20px;
-								cursor: pointer;
-								background:transparent;
-								outline: none;
-								width: 186px;
-								height: 50px;
-								&:hover {
-									color: white;
-									background: $buttonPink;
-								}
-							}
-						}
-						span {
-							font-size: 19px;
-						  	font-weight: bold;
-						  	color: $buttonPink;
-						  	position: relative;
-							  top: 10px;
-							  top: 10px;
->>>>>>> f332e6d0cbc08b51ca19dbb5d9db60f5898d86dd
 							  @include atSize424 {
 								  font-size: 10px;
 								  top: 0;
@@ -2863,9 +2589,9 @@
   }
   
   .footer-banner {
-  /*margin: 50px 0 0px 0;
+  //	margin: 50px 0 0px 0;
 	  height: 283px;
-	  position: relative;*/
+	  position: relative;
   
 	  img {
 		  width: 100%;
@@ -2929,30 +2655,35 @@
   }
   
   .all-courses {
+	  display: flex;
 	  background-color: #eff1fe;
-	  /*display: flex;
-  
 	  height: auto;
 	  width: 100%;
 	  margin-top: 0 !important;
 	  font-family: 'Lato', sans-serif;
-	  position: relative;*/
+	  position: relative;
   
 	  .sections {
 		  display: flex;
 		  flex-direction: row;
-		  padding: 30px 0; 
+		  margin: 20px 50px;
+		  padding: 20px !important;
+		  @media (min-width: 1281px) {
+			  padding: 20px !important;
+		  }
+  
 		  .section-item {
-			  flex: 1; 
-			  margin: 0 30px; 
-			  ul{padding:0; list-style-type:none;}
-			  li {margin-bottom: 10px;}
+			  flex: 1;
+			  line-height: 2;
+			  margin: 0 30px;
+			  color:#9fa0a6;
 			  h1 {
 				  font-size: 16px;
 					color: $primaryColor;
+					font-weight:bold;
 			  }
 			  a{
-				  color: $secondaryColor;
+				  color:#9fa0a6;
 			  }
 			  font-size: 14px;
 		  }
