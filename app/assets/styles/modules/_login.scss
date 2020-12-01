@@ -159,13 +159,20 @@
 		}
 	}
 }
+
 .intl-tel-input.allow-dropdown{
-	width:83.5%;
+width:100%;
 }
+
+.login-wrapper .intl-tel-input.allow-dropdown{
+width:83.5%;
+}
+	
+
 .intl-tel-input.allow-dropdown input#reg_mobile_num{
 	border: none;
     background: none;
-    width: 74%;
+    width: 78%;
     box-shadow: none;
 	height: 40px;
 	padding-left:6px !important;
