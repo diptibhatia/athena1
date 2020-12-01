@@ -19,125 +19,155 @@ function athena_preprocess_block(array &$variables) {
 
     foreach($universityData as $univNid) {
        $univNodeData = Node::load($univNid);
-           $univDataArr[] = array(
-           'label' => $univNodeData->label(),
-           'logo'=> file_create_url($univNodeData->get('field_logo')->entity->uri->value)
+       $univDataArr[$univNid] = array(
+         'label' => $univNodeData->label(),
+         'logo'=> file_create_url($univNodeData->get('field_logo')->entity->uri->value)
        );
     }
-    $variables['universities'] = $univDataArr;
+    $variables['all_universities'] = $univDataArr;
 
-  $bundle='course';
-     $query = \Drupal::entityQuery('node');
+    $bundle='course';
+    $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
-  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-$query->condition('field_course_category', 'Academic');
+    //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+    $query->condition('field_course_category', 'Academic');
     $query->condition('type', $bundle);
     $academic = $query->execute();
 
 
-     $microquery = \Drupal::entityQuery('node');
+    $microquery = \Drupal::entityQuery('node');
     $microquery->condition('status', 1);
     $microquery->condition('field_course_category',  'Micro Credits', '=');
     $microquery->condition('type', $bundle);
-     $micro = $microquery->execute();
+    $micro = $microquery->execute();
 
 
-     $querycertification = \Drupal::entityQuery('node');
+    $querycertification = \Drupal::entityQuery('node');
     $querycertification->condition('status', 1);
     $querycertification->condition('field_course_category', 'Certifications', '=');
     $querycertification->condition('type', $bundle);
-     $certifications = $querycertification->execute();
-     $academic = node_load_multiple($academic);
-     $academic_node_ids = array();
-      foreach($academic as $node_key => $node) {
-           $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+    $certifications = $querycertification->execute();
+    $academic = node_load_multiple($academic);
+    $academic_node_ids = array();
+    foreach($academic as $node_key => $node) {
+      $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+      $univ_logo = array();
+      foreach($paragraph_univ_data as $explore_data) {
+        $university_nid = $explore_data->get('field_university')->value;
 
-$univ_logo = array();
-foreach($paragraph_univ_data as $explore_data) {
- $university_nid = $explore_data->get('field_university')->value;
+        if (!empty($university_nid)) {
+          $univ_node = Node::load($university_nid);
+          $univ_logo[] = array(
+           'label' => $univ_node->label(),
+           'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+          );
+        }
 
- $univ_node = Node::load($university_nid);
-       $univ_logo[] = array(
-       'label' => $univ_node->label(),
-       'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
-       );
 
-}
-       $academic_node_ids[] =
-       array(
-       "nid"=>$node->id(),
-       "title"=>$node->label(),
-       'universities' => $univ_logo,
-
-       );
+        $academicUnivArr[] = $university_nid;
       }
+      $academic_node_ids[] =
+        array(
+          "nid"=>$node->id(),
+          "title"=>$node->label(),
+          'universities' => $univ_logo,
+        );
+    }
+
+
+    $academicUnivIdsFilter = array_filter($academicUnivArr);
+    $academicUnivIds = array_unique($academicUnivIdsFilter);
+    if (count($academicUnivIds) > 0) {
+      foreach ($academicUnivIds as $key => $value) {
+        $academicUniversities[] = $univDataArr[$value];
+      }
+    }
+    $variables['academic_universities'] = $academicUniversities;
 
 
     $variables['academicnodes'] = $academic_node_ids;
 
     $micro = node_load_multiple($micro);
-     $academic_node_ids = array();
-      foreach($micro as $node_key => $node) {
-           $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+    $academic_node_ids = array();
+    foreach($micro as $node_key => $node) {
+      $paragraph_univ_data = $node->field_link_universities->referencedEntities();
 
-$univ_logo = array();
-foreach($paragraph_univ_data as $explore_data) {
- $university_nid = $explore_data->get('field_university')->value;
+      $univ_logo = array();
+      foreach($paragraph_univ_data as $explore_data) {
+        $university_nid = $explore_data->get('field_university')->value;
 
- $univ_node = Node::load($university_nid);
-       $univ_logo[] = array(
-       'label' => $univ_node->label(),
-       'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
-       );
-
-}
-       $micro_node_ids[] =
-       array(
-       "nid"=>$node->id(),
-       "title"=>$node->label(),
-       'universities' => $univ_logo,
-
-       );
+        $univ_node = Node::load($university_nid);
+        $univ_logo[] = array(
+          'label' => $univ_node->label(),
+          'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+        );
+        $mcUnivArr[] = $university_nid;
       }
+      $micro_node_ids[] =
+      array(
+        "nid"=>$node->id(),
+        "title"=>$node->label(),
+        'universities' => $univ_logo,
+      );
+    }
+
+    $mcUnivIdsFilter = array_filter($mcUnivArr);
+    $mcUnivIds = array_unique($mcUnivIdsFilter);
+    if (count($mcUnivIds) > 0) {
+      foreach ($mcUnivIds as $key => $value) {
+        $mcUniversities[] = $univDataArr[$value];
+      }
+    }
+    $variables['mc_universities'] = $mcUniversities;
 
     $variables['micronodes'] = $micro_node_ids;
 
 
-     $certifications = node_load_multiple($certifications);
-     $certifications_node_ids = array();
-      foreach($certifications as $node_key => $node) {
-           $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+    $certifications = node_load_multiple($certifications);
+    $certifications_node_ids = array();
+    foreach($certifications as $node_key => $node) {
+      $paragraph_univ_data = $node->field_link_universities->referencedEntities();
 
-$univ_logo = array();
-foreach($paragraph_univ_data as $explore_data) {
- $university_nid = $explore_data->get('field_university')->value;
+      $univ_logo = array();
+      foreach($paragraph_univ_data as $explore_data) {
+        $university_nid = $explore_data->get('field_university')->value;
 
- $univ_node = Node::load($university_nid);
- $label_univ = '';
- if(is_object( $univ_node)){
-	$label_univ = $univ_node->label();
-    }
-     if(is_object( $univ_node)){
-	$uu_logo =file_create_url($univ_node->get('field_logo')->entity->uri->value);
-    }
-       $univ_logo[] = array(
-       'label' => $label_univ,
-       'logo'=> $uu_logo
-       );
-
-}
-       $certifications_node_ids[] =
-       array(
-       "nid"=>$node->id(),
-       "title"=>$node->label(),
-       'universities' => $univ_logo,
-
-       );
+        $univ_node = Node::load($university_nid);
+        $label_univ = '';
+        if (!empty($university_nid) && is_object($univ_node)) {
+          $label_univ = $univ_node->label();
+          $uu_logo =file_create_url($univ_node->get('field_logo')->entity->uri->value);
+          $univ_logo[] = array(
+            'label' => $label_univ,
+            'logo'=> $uu_logo
+          );
+        }
+        $certificateUnivArr[] = $university_nid;
       }
+      $certifications_node_ids[] =
+      array(
+        "nid"=>$node->id(),
+        "title"=>$node->label(),
+        'universities' => $univ_logo,
+      );
+    }
+
+    $certificateUnivIdsFilter = array_filter($certificateUnivArr);
+    $certificateUnivIds = array_unique($certificateUnivIdsFilter);
+    if (count($certificateUnivIds) > 0) {
+      foreach ($certificateUnivIds as $key => $value) {
+        $certificateUniversities[] = $univDataArr[$value];
+      }
+    }
+    $variables['certifications_universities'] = $certificateUniversities;
+
+    // print "<pre>";
+    // print_r($academicUniversities);
+    // print_r($mcUniversities);
+    // print_r($certificateUniversities);
+    // exit;
 
     $variables['certificationsnodes'] = $certifications_node_ids;
-
-
 
 }
 

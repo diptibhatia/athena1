@@ -84,7 +84,7 @@ align-items: center;box-sizing: border-box;">
 	                <div class="col-5 three-level" id="secondary-data_three-level">
                       <h6>Universities</h6>
                       <ul class="list-unstyled">
-                      {% for univ in universities%}
+                      {% for univ in academic_universities%}
                           <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                          {% endfor %}
                       </ul>
@@ -100,7 +100,7 @@ align-items: center;box-sizing: border-box;">
 							 <ul class="list-unstyled bindWidth">
                	<h5 style="padding-left: 20px;">Certifications</h5>
 								<a href="http://website.athena.edu/certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
-							
+
 								{% set modnum = 1 %}
                                 {% for cert in certificationsnodes %}
                                 <li>
@@ -121,7 +121,7 @@ align-items: center;box-sizing: border-box;">
             <div class="col-5 three-level" id="secondary-data-cert_three-level">
                 <h6>Universities</h6>
                 <ul class="list-unstyled">
-                {% for univ in universities%}
+                {% for univ in certifications_universities%}
                     <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                    {% endfor %}
                 </ul>
