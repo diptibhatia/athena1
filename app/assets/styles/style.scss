@@ -43,6 +43,9 @@
 @import "modules/modalPopup";
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 600;}
+
+a:focus{outline: none;}
+
 .row { width:100%;}
 
 .partners .partner-logos .logo {
