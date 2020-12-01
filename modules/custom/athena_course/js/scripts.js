@@ -320,6 +320,9 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
               });
               jQuery("#loadMore").show();
               jQuery("#showLess").hide();
+              jQuery('html, body').animate({
+                scrollTop: jQuery("#academic-content").offset().top
+            });
             e.preventDefault();
           });
 
