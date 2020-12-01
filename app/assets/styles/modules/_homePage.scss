@@ -2589,9 +2589,9 @@
   }
   
   .footer-banner {
-  //	margin: 50px 0 0px 0;
+  /* margin: 50px 0 0px 0;
 	  height: 283px;
-	  position: relative;
+	  position: relative;*/
   
 	  img {
 		  width: 100%;
@@ -2655,46 +2655,41 @@
   }
   
   .all-courses {
-	  display: flex;
-	  background-color: #eff1fe;
-	  height: auto;
-	  width: 100%;
-	  margin-top: 0 !important;
-	  font-family: 'Lato', sans-serif;
-	  position: relative;
-  
-	  .sections {
-		  display: flex;
-		  flex-direction: row;
-		  margin: 20px 50px;
-		  padding: 20px !important;
-		  @media (min-width: 1281px) {
-			  padding: 20px !important;
-		  }
-  
-		  .section-item {
-			  flex: 1;
-			  line-height: 2;
-			  margin: 0 30px;
-			  color:#9fa0a6;
-			  h1 {
-				  font-size: 16px;
-					color: $primaryColor;
-					font-weight:bold;
-			  }
-			  a{
-				  color:#9fa0a6;
-			  }
-			  font-size: 14px;
-		  }
-	  }
-	  @include belowSize700 {
-		  .sections {
-			  flex-direction: column;
-			  margin: 20px;
-		  }
-	  }
-  }
+	background-color: #eff1fe;
+	/*display: flex;
+
+	height: auto;
+	width: 100%;
+	margin-top: 0 !important;
+	font-family: 'Lato', sans-serif;
+	position: relative;*/
+
+	.sections {
+		display: flex;
+		flex-direction: row;
+		padding: 30px 0; 
+		.section-item {
+			flex: 1; 
+			margin: 0 30px; 
+			ul{padding:0; list-style-type:none;}
+			li {margin-bottom: 10px;}
+			h1 {
+				font-size: 16px;
+				  color: $primaryColor;
+			}
+			a{
+				color: $secondaryColor;
+			}
+			font-size: 14px;
+		}
+	}
+	@include belowSize700 {
+		.sections {
+			flex-direction: column;
+			margin: 20px;
+		}
+	}
+}
   
   .home-wrapper {
 	  .banner {
