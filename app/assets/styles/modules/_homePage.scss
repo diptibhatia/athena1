@@ -2567,6 +2567,17 @@
 
 		}
 	}
+	.courses .owl-item:nth-child(1) .course-item .know-more {
+		background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
+	}
+	
+	.courses .owl-item:nth-child(2) .course-item .know-more {
+		background-image: linear-gradient(89deg, #9400e2 0%, #540081 100%, #65008e 100%);
+	}
+	
+	.courses .owl-item:nth-child(3) .course-item .know-more {
+		background-image: linear-gradient(89deg, #00a1e8 0%, #004fa1 100%);
+	}
 }
 
 .footer-banner {
