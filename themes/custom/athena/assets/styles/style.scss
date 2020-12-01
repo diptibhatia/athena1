@@ -42,6 +42,7 @@
 @import "modules/aboutPopular";
 @import "modules/modalPopup";
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 600;}
 .row { width:100%;}
 
 .partners .partner-logos .logo {
@@ -64,9 +65,7 @@
 img {
     border-style: none;
 }
-.footer .new-footer {
-    padding: 30px 0;
-}
+
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
 }
@@ -152,9 +151,18 @@ img {
     width: 1px;
     height: 1px;
     word-wrap: normal;
-}
-
+} 
+.p-0 {padding:0;}
+.m-0 {margin:0;}
+.h-4 {height:40px}
 .course-login-wrapper .login-details h3 span {
     border:none;
     border-top: solid 4px #ff459a;
+}
+.explore .grid-container .item {margin:5px;}
+.explore .grid-container .item1 {
+    width: 540px;
+}
+.explore {
+     margin-top: 0;
 }
