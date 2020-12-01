@@ -389,6 +389,7 @@
 								position: relative;
 								margin: 20px 0 20px 20px;
 								z-index: 10;
+								overflow:hidden;
 								@include atSize424 {
 									margin: 20px 13px;
 								}
