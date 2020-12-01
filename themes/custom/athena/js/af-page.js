@@ -31,7 +31,7 @@ $('.onepage .navbar .nav li a').on('click', function() {
       nav: true,
       navContainer: '.nav-outside-shop',
       navClass: ['btn btn-square nav-outside-prev', 'btn btn-square nav-outside-next'],
-      navText: ['<img src="/themes/custom/athena/images/affiliatepage/next.svg" />', '<img src="/themes/custom/athena/images/affiliatepage/previous.svg" />'],
+      navText: ['<img src="/themes/custom/athena/images/affiliatepage/previous.svg" />', '<img src="/themes/custom/athena/images/affiliatepage/next.svg" />'],
        dots: true,
       responsive: {
           0: {
