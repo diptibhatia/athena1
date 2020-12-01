@@ -54,12 +54,13 @@ function athena_preprocess_block(array &$variables) {
       $univ_logo = array();
       foreach($paragraph_univ_data as $explore_data) {
         $university_nid = $explore_data->get('field_university')->value;
-
-        if (!empty($university_nid)) {
+        $find_univ_id = find_data_in_array($univ_logo, $university_nid);
+        if (!empty($university_nid) && empty($find_univ_id)) {
           $univ_node = Node::load($university_nid);
           $univ_logo[] = array(
            'label' => $univ_node->label(),
-           'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
+           'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value),
+           'nid' => $university_nid
           );
         }
 
@@ -95,12 +96,15 @@ function athena_preprocess_block(array &$variables) {
       $univ_logo = array();
       foreach($paragraph_univ_data as $explore_data) {
         $university_nid = $explore_data->get('field_university')->value;
-
-        $univ_node = Node::load($university_nid);
-        $univ_logo[] = array(
-          'label' => $univ_node->label(),
-          'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value)
-        );
+        $find_univ_id = find_data_in_array($univ_logo, $university_nid);
+        if (!empty($university_nid) && empty($find_univ_id)) {
+          $univ_node = Node::load($university_nid);
+          $univ_logo[] = array(
+            'label' => $univ_node->label(),
+            'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value),
+            'nid' => $university_nid
+          );
+        }
         $mcUnivArr[] = $university_nid;
       }
       $micro_node_ids[] =
@@ -134,12 +138,14 @@ function athena_preprocess_block(array &$variables) {
 
         $univ_node = Node::load($university_nid);
         $label_univ = '';
-        if (!empty($university_nid) && is_object($univ_node)) {
+        $find_univ_id = find_data_in_array($univ_logo, $university_nid);
+        if (!empty($university_nid) && is_object($univ_node) && empty($find_univ_id)) {
           $label_univ = $univ_node->label();
           $uu_logo =file_create_url($univ_node->get('field_logo')->entity->uri->value);
           $univ_logo[] = array(
             'label' => $label_univ,
-            'logo'=> $uu_logo
+            'logo'=> $uu_logo,
+            'nid' => $university_nid
           );
         }
         $certificateUnivArr[] = $university_nid;
@@ -171,6 +177,13 @@ function athena_preprocess_block(array &$variables) {
 
 }
 
+function find_data_in_array($arr, $val){
+    foreach ($arr as $value) {
+      if ($value['nid'] == $val) {
+          return $value['nid'];
+      }
+    }
+}
 
 /**
  * Implements template_preprocess_image() to remove WIDTH and HEIGHT from img-tag
