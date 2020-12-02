@@ -28,21 +28,7 @@
     {% endset  %}
   {% endif %}
 
-<div class="col-md-1 col-sm-1 share-icon" style="position:fixed">
-  <div class="list-unstyled a2a_kit a2a_kit_size_{{ buttons_size }} addtoany_list" data-a2a-url="{{ link_url }}" data-a2a-title="{{ link_title }}">
-    {% if universal_button_placement == 'before' %}
-      <li> {{ universal_button }} </li>
-    {% endif %}
 
-    {% if addtoany_html %}
-      {{ addtoany_html|raw }}
-    {% endif %}
-
-    {% if universal_button_placement == 'after' %}
-      <li> {{ universal_button }} </li>
-    {% endif %}
-  </div>
-</div>
 {% endspaceless %}
 </div>
 </div>
