@@ -12,8 +12,7 @@
 	.aboutus-modal {
 		.right-img {
 			img {
-				width: 284px;
-				height: 284px;
+				width: 284px; 
 			}
 		}
 	}
@@ -44,11 +43,10 @@
 					padding-bottom : 1rem;
 				}
 
-				width : 316px;
-				height : 400px;	
-				float: right;
-				position: relative;
-				margin-right: -16px;
+				width : 100%;
+				position: absolute;
+				top: 50px;
+				right: 20px;
 			}			
 		}
 

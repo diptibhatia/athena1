@@ -47,8 +47,9 @@
 			    display: none;
 			    position: absolute;
 			    top: 72px;
-			    margin-left: 10px;
-				border: solid 2px #ff459a;
+				margin-left: 10px;
+				border:none;
+				border-top: solid 4px #ff459a; 
 				
 				@include atSize700 {
 					display: inline-block;
