@@ -1,9 +1,11 @@
 
         jQuery(document).ready(function() {
             jQuery("#phone").intlTelInput();
+            jQuery("#reg_mobile_num").intlTelInput();
             jQuery("#speak_mobile_number").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
+            
             var search_url = 'http://website.athena.edu/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
