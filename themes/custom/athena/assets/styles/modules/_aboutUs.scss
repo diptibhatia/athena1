@@ -46,7 +46,19 @@
 
 				width : 316px;
 				height : 400px;	
-			}			
+				float: right;
+				position: relative;
+				margin-right: -16px;
+			}
+			img.linkedIn {
+				max-width: 39px;
+				height: auto;
+				position: relative;
+				margin: -107px 0 0 42px;
+				float: left;
+				clear: both;
+			}		
+
 		}
 
 	}
