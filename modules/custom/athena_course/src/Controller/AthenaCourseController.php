@@ -1589,6 +1589,7 @@ case 'ucam':
 
 $data = array(
 'univ_label' => $univ,
+'enable_card' => TRUE,
 'univ_banner' => 'Ucam-banner',
 'title' => 'Universidad Católica de Murcia, Spain',
 'about' => "Universidad Católica De Murcia (UCAM) is a university par excellence based out of Murcia, Spain. Established in 1996, UCAM has an active student base of 17,0000 learners and an academic staff of more than 1000. The university is accredited by the Ministry of Education, Spain and National Agency for Quality Assessment and Accreditation of Spain (ANECA). UCAM is a member of The European Association for Quality Assurance in Higher Education (ENQA), Universia and European University association (EUA). It has a strategic partnership network with more than 280 universities including UC Berkeley, Stanford, Università di Bologna, National University of Singapore and Nanyang Technological University. UCAM centres in Cuba, Jakarta, Singapore, and Brussels work together to further develop the university’s international strategy.
