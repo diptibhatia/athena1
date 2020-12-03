@@ -2798,6 +2798,8 @@
 	}
 
 	.explore-courses{
+		margin:79px 0 10px 0;
+
 		.course-text-info {
 			width: 80%;
 			margin: 0 auto;
@@ -2805,9 +2807,14 @@
 		.courses-offered{
 			.courses {
 				width: 100%;
+				margin:0 0 20px;
+				padding:0 !important;
+				.course-list {
+					margin: 0;
+				}
 			}
 			.info {
-				padding: 0 20px 60px;
+				padding: 0 20px 20px;
 				h2 {
 					text-align: center;
 					margin:10px 0 !important;
@@ -2824,12 +2831,17 @@
 	.why-athena{
 
 		//Why Athena Section
+		.athena-background-image {
+			width: 170%;
+			margin-top:28px;
+		}
 		.athena-section{
 			.why-athena-item-one {
-				width: 80%;
-				margin: 30px;
+				width: 92%;
+				margin: 30px 15px;
 				.info {
 					width: 100%;
+					margin:50px 0 25px;
 				}
 			}
 			.why-athena-item-two {
@@ -2907,6 +2919,19 @@
 			width:80%;
 		}
 	}
+	.insights-courses{
+		.courses-list{
+			.course-item{
+				.course-image{
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	
 
 
 } 
