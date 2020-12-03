@@ -87,6 +87,11 @@ img {
     margin: 0.5rem;
     width: 90%;
     background: #fff;
+    @include atSize424{
+        max-width: 100%;
+        width:100%;
+    }
+        
 } 
 
 .pagination .page-link { border-radius: 50%; color:#000;}
