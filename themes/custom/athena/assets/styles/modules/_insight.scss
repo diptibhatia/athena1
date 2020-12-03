@@ -50,7 +50,7 @@
 	.corporate-title {
 		font-size: 24px;
 		@include atSize1100 {
-			font-size: 40px;
+			font-size: 26px;
 		}
 	}
 
@@ -470,3 +470,10 @@
 		}
 	}
 }
+
+.single-testimonial .person-img {
+    float: left;
+    width: 36%;
+    margin: 6px 20px 0 0;
+}
+
