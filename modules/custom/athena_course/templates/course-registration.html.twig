@@ -280,8 +280,9 @@
                         <div class="login-item">
                             <p>Choose your Course</p>
                             <select name="course" id="reg_course">
+							    <option value="" default="">Select your course</option>
                                 {% for nodedata in nodes %}
-                                 <option value="{{nodedata.id}}" default="">{{nodedata.label}}</option>
+                                 <option value="{{nodedata.id}}">{{nodedata.label}}</option>
                                     {% endfor %}
                             </select>
                         </div>
