@@ -220,13 +220,13 @@
 <div>
 <h3>Affordable</h3>
 
-<p>With Athena as your learning partner, you follow a ‘Pay as you Go Scheme’ for your program, that means no upfront bulk payment of your fee. Instead your fee will be divided your fee into small pocket friendly installments distributed  across your program.</p>
+<p>With Athena as your learning partner, you follow a ‘Pay as you Go Scheme’ for your program, that means no upfront bulk payment of your fee. Instead your fee will be divided into small pocket friendly installments distributed  across your program.</p>
 </div>
 
 <div>
 <h3>Accredited &amp; Globaly Accepted</h3>
 
-<p>Athena Global Education has partnered with reputed Universities and Awarding bodies, all of which are fully accredited by governmental regulatory bodies in their respective countries.. Universities are NARIC Approved and are part of European Higher education, Bologna process, making the programs recognised worldwide. Our professional certification bodies are also backed by</p>
+<p>Athena Global Education has partnered with reputed Universities and Awarding bodies, all of which are fully accredited by governmental regulatory bodies in their respective countries. Universities are NARIC Approved and are part of European Higher education, Bologna process, making the programs recognised worldwide.</p>
 </div>
 
 <div>
@@ -558,7 +558,7 @@
                             {% if module.entity.field_module_credit.value|trim is not empty %}
                             <p class="credit"><span>Credits:</span> {{ module.entity.field_module_credit.value }}
                              {% if node.field_courses_credit_type.0.value|trim is not empty %}
-                            ({{node.field_courses_credit_type.0.value|raw }})
+                          
                              {% endif %}
                             </p>
                             {% endif %}
@@ -1044,7 +1044,7 @@
                             </div>
                             <h3>{{course_team_data.name}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
-                            <p>{{course_team_data.description|striptags|truncate(100)}}</p>
+                            <p>{{course_team_data.description|striptags|truncate(200)}}</p>
                             <a style="display:none" href="{{ url('<front>') }}node/{{course_team_data.course_nid}}">Readmore</a>
                         </div>
                     </div>

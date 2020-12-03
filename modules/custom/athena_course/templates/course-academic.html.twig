@@ -65,7 +65,9 @@
                             <h3 class="card-title"><a style="color:inherit" href="{{ url('<front>') }}course/{{course_data.id}}">{{course_data.label}}</a></h3>
                             <ul class="list-unstyled d-flex m-0">
                                 <li>{{course_data.field_course_awarding_body.value|raw }}</li>
-                                <li>{{course_data.field_course_ects_credit.value}} ECTS Credits</li>
+                                    {% if course_data.field_course_ects_credit.value is not empty %}
+                                <li>{{course_data.field_course_ects_credit.value}} {{course_data.field_courses_credit_type.0.value|raw}} Credits</li>
+                                     {% endif %}
                                 <li>100% Online</li>
                             </ul>
                         </div>
@@ -83,7 +85,7 @@
                             </div>
                             <div class="col-md-4 col-sm-4 p-0 pt-3">
                                <img src="{{base_path}}/images/coursepage/course-certification.svg" alt="icon" class="">
-                                <p>Dual Certification <br> IMBA &amp; Scottish Diploma</p>
+                                <p>{{course_data.field_course_certification_label.value}} <br> {{course_data.field_course_certification.value}}</p>
                             </div>
                             {% if course_data.field_course_accreditations.0.value is not empty %}
                             <div class="col-md-5 col-sm-5 p-0 pt-3">
