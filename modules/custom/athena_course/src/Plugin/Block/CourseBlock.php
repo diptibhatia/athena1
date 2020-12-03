@@ -53,7 +53,7 @@ $query->condition('field_course_category', 'Academic');
     $micronodes = node_load_multiple($micro);
     $certificationsnodes = node_load_multiple($certifications);
     
-    $academicnodes =  array_slice($academicnodes, 0, 10);
+   // $academicnodes =  array_slice($academicnodes, 0, 10);
     $micronodes =  array_slice($micronodes, 0, 10);
     $certificationsnodes =  array_slice($certificationsnodes, 0, 10);
     
