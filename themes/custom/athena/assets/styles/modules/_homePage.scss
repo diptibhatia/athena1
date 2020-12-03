@@ -1,7 +1,20 @@
 .iti-flag {
 	background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/img/flags.png");
   }
-  
+
+@include belowSize700{
+	.grid-view, .my-container,
+	.explore-courses .tabs{
+		width:100% !important;
+	};
+	.explore-courses .owl-carousel .owl-stage{
+		margin-left:-31%;
+	}
+	.hideinMobileView {
+		text-align: center;
+	}
+} 
+
   .loginBtn {
 	  @media (min-width: 1441px) {
 		  position: relative;
@@ -10,7 +23,7 @@
   }
   
   .grid-view {
-	  width:1170px;
+	  //width:1170px;
 	  height:auto;
 	  padding:10px 15px;
 	  margin:0px auto;
@@ -190,7 +203,7 @@
 	  }
 	  h2 {
 		  font-family: Lato;
-		  font-size: 42px;
+		  //font-size: 42px;
 		  font-weight: bold;
 		  font-stretch: normal;
 		  font-style: normal;
@@ -2591,8 +2604,8 @@
   
   .footer-banner {
   /* margin: 50px 0 0px 0;
-	  height: 283px;
-	  position: relative;*/
+	  height: 283px;*/
+	  position: relative;
   
 	  img {
 		  width: 100%;
@@ -2776,8 +2789,8 @@
 	  display: -webkit-box;
 			  -webkit-line-clamp: 3;
 			  -webkit-box-orient: vertical;
-	  max-width: 90%;
-	  font-size: 13px;
+	  /*max-width: 90%;
+	  font-size: 13px;*/
    }
    .homeBannerContainer
    {
