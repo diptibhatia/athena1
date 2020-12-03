@@ -1,7 +1,20 @@
 .iti-flag {
 	background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/img/flags.png");
   }
-  
+
+@include belowSize700{
+	.grid-view, .my-container,
+	.explore-courses .tabs{
+		width:100% !important;
+	};
+	.explore-courses .owl-carousel .owl-stage{
+		margin-left:-31%;
+	}
+	.hideinMobileView {
+		text-align: center;
+	}
+} 
+
   .loginBtn {
 	  @media (min-width: 1441px) {
 		  position: relative;
