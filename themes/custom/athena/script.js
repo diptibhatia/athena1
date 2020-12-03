@@ -11,6 +11,25 @@ jQuery(document).ready(function() {
     jQuery(".country-list li").click(function(){
         jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
     });
+
+
+    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
+        var countrycode = geoplugin_countryCode();
+        countrycode = countrycode.toLowerCase();
+        var countryphone = '';
+        jQuery(".country-list li.country").each(function( index ) {
+          if (jQuery(this).attr('data-country-code') == countrycode) {
+            jQuery(this).addClass('highlight active');
+            countryphone = jQuery(this).attr('data-dial-code');
+            jQuery(".country-code").text("+" + countryphone);
+            jQuery('.selected-flag .iti-flag').removeClass('us');
+            jQuery('.selected-flag .iti-flag').addClass(countrycode);
+            return false;
+          }
+        });
+    });
+
+
 });
 
 

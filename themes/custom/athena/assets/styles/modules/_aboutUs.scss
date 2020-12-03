@@ -12,8 +12,7 @@
 	.aboutus-modal {
 		.right-img {
 			img {
-				width: 284px;
-				height: 284px;
+				width: 284px; 
 			}
 		}
 	}
@@ -44,17 +43,16 @@
 					padding-bottom : 1rem;
 				}
 
-				width : 316px;
-				height : 400px;	
-				float: right;
-				position: relative;
-				margin-right: -16px;
+				width : 100%;
+				position: absolute;
+				top: 50px;
+				right: 20px;
 			}
 			img.linkedIn {
 				max-width: 39px;
 				height: auto;
 				position: relative;
-				margin: -107px 0 0 42px;
+				margin: -71px 0 0 42px;
 				float: left;
 				clear: both;
 			}		
