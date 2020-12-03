@@ -2808,24 +2808,38 @@
 			}
 		} 
 	}
-	.why-athena .collaborate .collaborate-section{
-		display:block;
-		.collaborate-item{
-			width: 100%;
-			text-align: center;
-			img {
-				width: 67%;
-				top: 0;
-				float: none;
-				margin: 0 auto;
-	
-				&:first-child {
-					padding: 0;
-					width: 100%;
-					text-align: center;
+	.why-athena{
+
+		//Testimonials Section
+		.testimonials{
+			.testimonials-item{
+				.item-two {
+					flex: 1;
+					margin: 0 0 0 0;
 				}
-			}
-		} 
+			} 
+		}
+
+		//Collaborate Section
+		.collaborate .collaborate-section{
+			display:block;
+			.collaborate-item{
+				width: 100%;
+				text-align: center;
+				img {
+					width: 67%;
+					top: 0;
+					float: none;
+					margin: 0 auto;
+		
+					&:first-child {
+						padding: 0;
+						width: 100%;
+						text-align: center;
+					}
+				}
+			} 
+		}
 	} 
 } 
    
