@@ -60,7 +60,6 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
     position: relative;
     width: 20px;
     padding-left: 30px;
-    top: 110px;
 }
 .footer-banner { 
     position: relative;
@@ -116,7 +115,7 @@ img {
 // }
 .partners .partner-logos .logo img {width:180px;}
 
-.image_icon a[href='#'], a[href='#'] .link_img { 
+.image_icon a[href='#'], a[href='#'] .link_img, a[href='#'] { 
     pointer-events: none;
 }
 .start-free-trial .athena-section .why-athena-item-two img {top: 60px;}
@@ -157,15 +156,12 @@ img {
 } 
 .p-0 {padding:0;}
 .m-0 {margin:0;}
-.h-4 {height:40px}
-.course-login-wrapper .login-details h3 span {
-    border:none;
-    border-top: solid 4px #ff459a;
-}
+.ht-4 {height:40px} 
+
 .explore .grid-container .item {margin:5px;}
-.explore .grid-container .item1 {
-    width: 540px;
-}
-.explore {
-     margin-top: 0;
-}
+ 
+.explore .grid-container .item img {
+    width: auto;
+    height: 100%; 
+} 
+ 
