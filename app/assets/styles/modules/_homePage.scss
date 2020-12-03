@@ -2,18 +2,6 @@
 	background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/img/flags.png");
   }
 
-@include belowSize700{
-	.grid-view, .my-container,
-	.explore-courses .tabs{
-		width:100% !important;
-	};
-	.explore-courses .owl-carousel .owl-stage{
-		margin-left:-31%;
-	}
-	.hideinMobileView {
-		text-align: center;
-	}
-} 
 
   .loginBtn {
 	  @media (min-width: 1441px) {
@@ -2796,3 +2784,48 @@
    {
 	   width:100%;
    }
+
+@include belowSize700{
+	.grid-view, .my-container,
+	.explore-courses .tabs{
+		width:100% !important;
+	};
+	.explore-courses .owl-carousel .owl-stage{
+		margin-left:-31%;
+	}
+	.hideinMobileView {
+		text-align: center;
+	}
+
+	.explore-courses .courses-offered{
+		.courses {
+			width: 100%;
+		}
+		.info {
+			padding: 0 20px 60px;
+			h2 {
+				text-align: center;
+			}
+		} 
+	}
+	.why-athena .collaborate .collaborate-section{
+		display:block;
+		.collaborate-item{
+			width: 100%;
+			text-align: center;
+			img {
+				width: 67%;
+				top: 0;
+				float: none;
+				margin: 0 auto;
+	
+				&:first-child {
+					padding: 0;
+					width: 100%;
+					text-align: center;
+				}
+			}
+		} 
+	} 
+} 
+   
