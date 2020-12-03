@@ -1,27 +1,27 @@
                     <div class="col-md-12 col-sm-12 insight-banner d-flex p-0 mb-4">
-                        <div class="col-md-11 col-sm-10 p-0">
+                        <div class="col-md-12 col-sm-10 p-0">
                             <div class="container txt-14 item">                  
                                 <div class="row bg-light-grey">
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes }} class="col-sm-5 p-0">
+    <div{{ attributes }} class="col-sm-6 p-0">
       {% for item in items %}
         <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes }} class="col-sm-5 p-0">{{ item.content }}</div>
+      <div{{ attributes }} class="col-sm-6 p-0">{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
-  <div{{ attributes }} class="col-sm-5 p-0">
-    <div{{ title_attributes.addClass(title_classes) }} class="col-sm-5 p-0">{{ label }}</div>
+  <div{{ attributes }} class="col-sm-6 p-0">
+    <div{{ title_attributes.addClass(title_classes) }} class="col-sm-6 p-0">{{ label }}</div>
     {% if multiple %}
       <div>
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes }} class="col-sm-5 p-0">{{ item.content }}</div>
+      <div{{ item.attributes }} class="col-sm-6 p-0">{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>
