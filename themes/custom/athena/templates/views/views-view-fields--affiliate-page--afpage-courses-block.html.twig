@@ -48,15 +48,15 @@
 </figure>
 <div class="post-content tick ">
   <h4 class="post-title"><a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">{{title}}</a></h4>
-  <h5>Awarded By : <span> {{fields.field_afpage_course_award_body.content}} </span></h5>
+  {% if fields.field_afpage_course_award_body.content %}<h5>Awarded By : <span> {{fields.field_afpage_course_award_body.content}} </span></h5>{% endif %}
 
-  <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee : <span>{{fields.field_afpage_course_fee.content|raw}}</span></h6>
-  <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Total Credits : <span>{{fields.field_afpage_course_totcreds.content|raw}}</span></h6>
-  <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Assements : <span>{{fields.field_afpage_course_asmnt.content|raw}}</span></h6>
-  <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Course Delivery : <span>{{fields.field_afpage_course_crsdlvry.content|raw}}</span>
-  </h6>
-  <h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{fields.field_afpage_course_lrnsuprt.content|raw}}</span>
-  </h6>
+  {% if fields.field_afpage_course_fee.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee : <span>{{fields.field_afpage_course_fee.content|raw}}</span></h6>{% endif %}
+  {% if fields.field_afpage_course_totcreds.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Total Credits : <span>{{fields.field_afpage_course_totcreds.content|raw}}</span></h6>{% endif %}
+  {% if fields.field_afpage_course_asmnt.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Assements : <span>{{fields.field_afpage_course_asmnt.content|raw}}</span></h6>{% endif %}
+  {% if fields.field_afpage_course_crsdlvry.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Course Delivery : <span>{{fields.field_afpage_course_crsdlvry.content|raw}}</span>
+  </h6>{% endif %}
+  {% if fields.field_afpage_course_lrnsuprt.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{fields.field_afpage_course_lrnsuprt.content|raw}}</span>
+  </h6>{% endif %}
   
   <div class=" btn-try"><a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">Try Us free for 7 days</a></div>
 
