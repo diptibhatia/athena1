@@ -2890,8 +2890,19 @@
 			margin: 0;
 		}
 	}
+	.popular-courses{
+		.heading-image{
+			img {
+				width: 79%;
+			}
+		}
+	} 
+	
 
 	.insights-section{
+		.img-heading {
+			width: 79%;
+		}
 		h3{
 			width:80%;
 		}
