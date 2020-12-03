@@ -532,10 +532,10 @@
       border-radius: 2px;
     }
     .item3 {
-       width: 571px;
+       width: 540px;
   height: 214px;
       img {
-         width: 571px;
+         width: 540px;
   height: 214px;
         opacity: 0.1;
       }
@@ -550,7 +550,7 @@
       grid-row-end: span 20;
       border-radius: 5px;
     }
-    @media screen and (min-width: $break-small) and (max-width: 1033px) {
+    @media screen and (min-width: 320px) and (max-width: 1033px) {
       margin-left: 50px;
       margin-right: 20px;
       justify-content: center;

@@ -166,7 +166,12 @@ img {
 .explore .grid-container .item {margin:5px;}
  
 .explore .grid-container .item img {
-    width: auto;
+    width: auto !important;
     height: 100%; 
 } 
- 
+.why-athena .testimonials .testimonials-item .item-one img {
+    width: 398px;
+    position: relative;
+    top: -30px;
+    left: 8px;
+}
