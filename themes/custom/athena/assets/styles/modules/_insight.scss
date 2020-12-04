@@ -105,17 +105,22 @@
 	}
 
 	.insight-cards {
+		
 		@include atSize700 {
 			max-width: 252px;
 			margin:0.5rem auto !important;
 			width:91%;
 			background:#fff;
 		}
+		@include atSize424{
+			text-align:center;
+		}
 		img{
 			@include atSize700 {
 				width: 100%;
 				height:auto;
 			}
+			
 		}
 		.insight-card-footer{
 			.readMin{
