@@ -2787,7 +2787,7 @@
 		width:100% !important;
 	};
 	.explore-courses .owl-carousel .owl-stage{
-		margin-left:-31%;
+		margin-left:0;
 	}
 	.hideinMobileView {
 		text-align: center;
@@ -2828,7 +2828,7 @@
 
 		//Why Athena Section
 		.athena-background-image {
-			width: 170%;
+			width: 100%;
 			margin-top:28px;
 		}
 		.athena-section{
@@ -2860,13 +2860,18 @@
 					clear: both;
 					width: 100%;
 					.student-review, .student-review.two {
-						width: 80%;
+						width: 100%;
 						height: auto;
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						margin: 30px 0 30px 10%;
+						margin: 30px 0 30px 0;
 						display: flex;
+						.info{
+							h3{
+								font-size:14px;
+							}
+						}
 					}
 				}
 			} 
