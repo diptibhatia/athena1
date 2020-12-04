@@ -400,9 +400,9 @@
         
         .intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb;width:100%;}
         .intl-tel-input .country-list{margin-top:49px;}
-        .intl-tel-input.allow-dropdown input{width: 75%;float: right;text-align: left;padding: 7px 10px !important;box-shadow: none;background: none;height: 44px;
+        .intl-tel-input.allow-dropdown input{width: 65%;float: right;text-align: left;padding: 7px 10px !important;box-shadow: none;background: none;height: 44px;
         @include belowSize700{
-            width:64%;
+            float:left;margin-left:116px;
         }
         }
         .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
