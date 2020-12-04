@@ -2787,13 +2787,19 @@
 		width:100% !important;
 	};
 	.explore-courses .owl-carousel .owl-stage{
-		margin-left:-31%;
+		margin-left:0;
 	}
 	.hideinMobileView {
 		text-align: center;
 	}
 
 	.explore-courses{
+		margin:79px 0 10px 0;
+
+		.tabs{
+			margin:30px auto 15px;
+		}
+
 		.course-text-info {
 			width: 80%;
 			margin: 0 auto;
@@ -2801,9 +2807,14 @@
 		.courses-offered{
 			.courses {
 				width: 100%;
+				margin:0 0 20px;
+				padding:0 !important;
+				.course-list {
+					margin: 0;
+				}
 			}
 			.info {
-				padding: 0 20px 60px;
+				padding: 0 20px 20px;
 				h2 {
 					text-align: center;
 					margin:10px 0 !important;
@@ -2820,12 +2831,17 @@
 	.why-athena{
 
 		//Why Athena Section
+		.athena-background-image {
+			width: 100%;
+			margin-top:28px;
+		}
 		.athena-section{
 			.why-athena-item-one {
-				width: 80%;
-				margin: 30px;
+				width: 92%;
+				margin: 30px 15px 0;
 				.info {
 					width: 100%;
+					margin:50px 0 25px;
 				}
 			}
 			.why-athena-item-two {
@@ -2840,46 +2856,87 @@
 
 		//Testimonials Section
 		.testimonials{
+			padding:60px 10px 0 10px !important;
 			.testimonials-item{
+				.item-one{
+					text-align:left;
+					padding-bottom:20px;
+					img{
+						margin-bottom:0;
+					}
+					button{
+						margin:30px 0 0;
+						left:auto;
+					}
+					h3{
+						font-weight:normal;
+						top:auto;
+					}
+				}
 				.item-two {
 					flex: none;
 					margin: 0 0 0 0;
 					display: block;
 					clear: both;
 					width: 100%;
+					padding-left:0 !important;
 					.student-review, .student-review.two {
-						width: 80%;
+						width: 95%;
 						height: auto;
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						margin: 30px 0 30px 10%;
+						margin: 0 0 30px 10px !important;
 						display: flex;
+						.info{
+							h3{
+								font-size:14px;
+							}
+						}
 					}
 				}
 			} 
 		}
 
 		//Collaborate Section
-		.collaborate .collaborate-section{
-			display:block;
-			.collaborate-item{
-				width: 100%;
-				text-align: center;
-				img {
-					width: 67%;
-					top: 0;
-					float: none;
-					margin: 0 auto;
-		
+		.collaborate {
+			h1{
+			text-align: left;
+		    padding-left: 30px;
+			}
+			.collaorate-heading {
+				width: 273px;
+				margin: -46px 0 46px 30px;
+				position: relative;
+			}
+			.collaborate-section{
+				display:block;
+				.collaborate-item{
+					width: 100%;
+					text-align: center;
 					&:first-child {
-						padding: 0;
+						padding: 0 0 20px;
 						width: 100%;
-						text-align: center;
+						margin: 0 auto;
+						float: none;
+						clear: both;
 					}
-				}
-			} 
+					img {
+						width: 67%;
+						top: 0;
+						float: none;
+						margin: 0 auto;
+			
+						&:first-child {
+							padding: 0;
+							width: 100%;
+							text-align: center;
+						}
+					}
+				} 
+			}
 		}
+		
 	}
 	.all-courses{
 		.sections {
@@ -2887,9 +2944,22 @@
 		}
 	}
 	.popular-courses{
-		.heading-image{
-			img {
-				width: 79%;
+		a{
+			text-decoration:none;
+				&:hover, &:focus{
+					text-decoration:none;
+				}
+			.heading-image{
+				img {
+					width: 79%;
+				}
+			}
+		}
+		.courses{
+			.owl-carousel{
+				.owl-item{
+					min-height:auto;
+				}
 			}
 		}
 	} 
@@ -2901,7 +2971,94 @@
 		}
 		h3{
 			width:80%;
+			font-weight:normal;
 		}
+		.section-items{
+			.section-item-two{
+				margin:20px 0;
+				h4{
+					margin:0;
+					padding:0 20px 8px;
+				}
+				.container{
+					padding:0 !important;
+					.row{
+						margin-left:0;
+						margin-right:0;
+					}
+				}
+
+			}
+
+
+		}
+		
+	}
+
+	.insights-courses{
+		.courses-list{
+			.course-item{
+				.course-image{
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+
+	.partners {
+		margin: 200px 0 50px;
+		.info {
+			width: 90%;
+			margin: 0 auto;
+			img{
+				width:100%;
+			}
+			h3{
+				font-weight: normal;
+			}
+		}
+		.owl-carousel{
+			.owl-stage{
+				margin-left:18%;
+				.owl-item{
+					min-width:250px;
+				}
+			}
+		}
+	}
+	.reason-section {
+		margin: 50px 0 50px 0 !important;
+		.testimonials-background-image{
+			img{
+				top: -165px;
+			}
+		}
+		.reason-section-item{
+			.steps{
+				ul{
+					li{
+						img{
+							width:auto !important;
+						}
+					}
+				}
+				.actions {
+					display: block;
+					float: right;
+					width: 100%;
+					text-align: center;
+					button {
+						float: none;
+						display: block;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+		
 	}
 
 
