@@ -5,7 +5,7 @@
             jQuery("#speak_mobile_number").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
-            
+
             var search_url = 'http://website.athena.edu/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -238,7 +238,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
 
                 if(msg == ''){
-                    alert("Thank you for submitting the registration form. Will reach out to you shortly")
+                   alert("Thank you for submitting the registration form. Will reach out to you shortly")
                 }else {
                     jQuery('#speak_first_name').val("");
                     jQuery('#speak_last_name').val("");
