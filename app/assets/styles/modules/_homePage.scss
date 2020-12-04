@@ -2853,19 +2853,26 @@
 		//Testimonials Section
 		.testimonials{
 			.testimonials-item{
+				.item-one{
+					button{
+						margin:30px 0 0;
+						left:auto;
+					}
+				}
 				.item-two {
 					flex: none;
 					margin: 0 0 0 0;
 					display: block;
 					clear: both;
 					width: 100%;
+					padding-left:0 !important;
 					.student-review, .student-review.two {
-						width: 100%;
+						width: 95%;
 						height: auto;
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						margin: 30px 0 30px 0;
+						margin: 30px 0 30px 10px !important;
 						display: flex;
 						.info{
 							h3{
@@ -2946,6 +2953,30 @@
 			width: 90%;
 			margin: 0 auto;
 		}
+	}
+	.reason-section {
+		margin: 50px 0 50px 0;
+		.testimonials-background-image{
+			img{
+				top: -165px;
+			}
+		}
+		.reason-section-item{
+			.steps{
+				.actions {
+					display: block;
+					float: right;
+					width: 100%;
+					text-align: center;
+					button {
+						float: none;
+						display: block;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+		
 	}
 
 
