@@ -41,9 +41,7 @@
 @import "modules/affiliatePage";
 @import "modules/aboutPopular";
 @import "modules/modalPopup";
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 600;}
-
+ 
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 
 .row { width:100%;}
@@ -170,13 +168,7 @@ img {
 .p-0 {padding:0;}
 .m-0 {margin:0;}
 .ht-4 {height:40px} 
-
-.explore .grid-container .item {margin:5px;}
  
-.explore .grid-container .item img {
-    width: auto !important;
-    height: 100%; 
-} 
 .why-athena .testimonials .testimonials-item .item-one img {
     width: 398px;
     position: relative;
@@ -184,3 +176,4 @@ img {
     left: 8px;
 } 
 #block-whitespaces {display:none;}
+.academic-program-wrapper {margin-top:80px;}

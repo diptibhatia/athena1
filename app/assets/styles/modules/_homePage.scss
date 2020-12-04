@@ -956,7 +956,7 @@
 			  }
 		  }
 		  position: relative;
-		  top: 200px;
+		  top: 120px;
 		  @include atSize479{
 			  padding: 100px 10px 0 10px;
 			  width: 100%;
@@ -2083,9 +2083,13 @@
 	  @include atSize479{
 		  padding-top:20px;
 	  }
-	  .heading-image {
-		  width: 100%;
-		  text-align: center;
+	  .heading-image { 
+			width: 640px;
+			text-align: center;
+			margin: auto; 
+			@media (max-width: 600px){
+				width: 320px; 
+			}
 		  img {
 		  position: relative;
 			    top: 58px;
