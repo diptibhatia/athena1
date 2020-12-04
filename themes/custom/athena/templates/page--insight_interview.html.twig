@@ -14,14 +14,14 @@
 {% if athena_exclude %}
   {{ page.content }}
 {% else %}
-    <div class="main-wrapper container-fluid p-0 insight-wrapper">
+    <div class="main-wrapper container-fluid p-0 insight-wrapper my-container">
     {% if page.featured_top %}
             {{ page.featured_top }}
     {% endif %}
       <div id="progress-bar" class="progress-bar">
           <div class="fill"></div>
       </div>
-      <div class="pt-4 container bg-white pb-5 d-flex pl-0">
+      <div class="row pt-4 container bg-white pb-5 d-flex pl-0">
         <div class="col-md-7 col-sm-12  pl-0">
             {{ page.content }}
         </div>
