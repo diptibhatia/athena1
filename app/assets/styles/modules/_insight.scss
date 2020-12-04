@@ -112,14 +112,15 @@
 			width:91%;
 			background:#fff;
 		}
+		@include atSize424{
+			text-align:center;
+		}
 		img{
 			@include atSize700 {
 				width: 100%;
 				height:auto;
 			}
-			@include atSize424{
-				text-align:center;
-			}
+			
 		}
 		.insight-card-footer{
 			.readMin{
