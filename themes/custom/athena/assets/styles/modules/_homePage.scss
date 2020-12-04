@@ -1016,8 +1016,8 @@
 						height: 50px;
 						margin: 30px 0;
 						position: relative;
-						top: -52px;
-					  left: 22px;
+					// 	top: -52px;
+					//   left: 22px;
 					  background:transparent;
 						&:hover {
 						  color: white;
@@ -1060,7 +1060,7 @@
 					   border-radius: 6px;
 					   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
 					   background-color: #ffffff;
-					   margin: 30px 0 30px 100px;
+					   margin: 30px 0 30px 70px;
 					   display: flex;
 					   &.two {
 						   margin: 30px 0;
@@ -1160,8 +1160,8 @@
 						height: 50px;
 						margin: 30px 0;
 						position: relative;
-						top: -52px;
-					  left: 22px;
+					// 	top: -52px;
+					//   left: 22px;
 					  background:transparent;
 					  display:none;
 						&:hover {
@@ -2087,9 +2087,10 @@
 		  width: 100%;
 		  text-align: center;
 		  img {
-			  position: relative;
-			  top: 52px;
-			  z-index: -1;
+		  position: relative;
+			    top: 58px;
+		   z-index: 9;
+			width: 100%; 
 			  @include atSize424 {
 				  width: 100%;
 				  top: 35px;
@@ -2112,7 +2113,10 @@
 		  font-size: 42px;
 			color: $primaryColor;
 			text-align: center;
-			margin: 0;
+			font-size: 42px;  
+    position: relative;
+    top: 0px;
+    z-index: 99;
 			@include atSize424 {
 			  font-size: 28px;
 		  }
@@ -2121,7 +2125,7 @@
 		  font-size: 16px;
 			text-align: center;
 			color: #606060;
-			width: 42%;
+			max-width: 600px;
 			margin: 10px auto;
 			font-family: Lato;
 		  font-size: 16px;
@@ -2881,12 +2885,12 @@
 					width: 100%;
 					padding-left:0 !important;
 					.student-review, .student-review.two {
-						width: 95%;
+						// width: 95%;
 						height: auto;
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						margin: 0 0 30px 10px !important;
+						// margin: 0 0 30px 10px !important;
 						display: flex;
 						.info{
 							h3{
