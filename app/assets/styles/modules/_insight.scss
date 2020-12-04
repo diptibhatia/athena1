@@ -105,6 +105,7 @@
 	}
 
 	.insight-cards {
+		
 		@include atSize700 {
 			max-width: 252px;
 			margin:0.5rem auto !important;
@@ -115,6 +116,9 @@
 			@include atSize700 {
 				width: 100%;
 				height:auto;
+			}
+			@include atSize424{
+				text-align:center;
 			}
 		}
 		.insight-card-footer{
