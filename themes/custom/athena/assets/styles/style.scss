@@ -85,6 +85,7 @@ img {
 .mobilePadding{
     @include atSize424{
         padding-left: 2.0rem !important;
+        overflow: hidden;
     }
 }
 
@@ -188,3 +189,4 @@ img {
     
     margin: 30px 0 30px 100px
 }}
+#block-whitespaces {display:none;}
