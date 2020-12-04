@@ -2796,6 +2796,10 @@
 	.explore-courses{
 		margin:79px 0 10px 0;
 
+		.tabs{
+			margin:30px auto 15px;
+		}
+
 		.course-text-info {
 			width: 80%;
 			margin: 0 auto;
@@ -2852,11 +2856,21 @@
 
 		//Testimonials Section
 		.testimonials{
+			padding:60px 10px 0 10px !important;
 			.testimonials-item{
 				.item-one{
+					text-align:left;
+					padding-bottom:20px;
+					img{
+						margin-bottom:0;
+					}
 					button{
 						margin:30px 0 0;
 						left:auto;
+					}
+					h3{
+						font-weight:normal;
+						top:auto;
 					}
 				}
 				.item-two {
@@ -2872,7 +2886,7 @@
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						margin: 30px 0 30px 10px !important;
+						margin: 0 0 30px 10px !important;
 						display: flex;
 						.info{
 							h3{
@@ -2918,9 +2932,22 @@
 		}
 	}
 	.popular-courses{
-		.heading-image{
-			img {
-				width: 79%;
+		a{
+			text-decoration:none;
+				&:hover, &:focus{
+					text-decoration:none;
+				}
+			.heading-image{
+				img {
+					width: 79%;
+				}
+			}
+		}
+		.courses{
+			.owl-carousel{
+				.owl-item{
+					min-height:auto;
+				}
 			}
 		}
 	} 
@@ -2932,6 +2959,7 @@
 		}
 		h3{
 			width:80%;
+			font-weight:normal;
 		}
 	}
 	.insights-courses{
@@ -2952,10 +2980,21 @@
 		.info {
 			width: 90%;
 			margin: 0 auto;
+			img{
+				width:100%;
+			}
+		}
+		.owl-carousel{
+			.owl-stage{
+				margin-left:18%;
+				.owl-item{
+					min-width:250px;
+				}
+			}
 		}
 	}
 	.reason-section {
-		margin: 50px 0 50px 0;
+		margin: 50px 0 50px 0 !important;
 		.testimonials-background-image{
 			img{
 				top: -165px;
