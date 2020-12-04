@@ -510,7 +510,7 @@ return array(
 
 
 
-    $partenr_client = \Drupal::service('http_client_factory')->fromOptions([
+  /*  $partenr_client = \Drupal::service('http_client_factory')->fromOptions([
       'base_uri' => 'http://3.7.173.255/athenadev/api/',
     ]);
     $partner_response = $partenr_client->get('courses/partners');
@@ -572,7 +572,7 @@ return array(
      //   print_r($univ_ids);exit;
       //  print_r($univ_node_array);exit;
 
-
+*/
 
     $items = [];
     $node_ids = array();
@@ -631,7 +631,7 @@ $field_course_category = "Certifications";
    //       $new_node->set('field_course_banner_description', "Be a business leader of tomorrow and advance your career with MBA Degree from Italy’s top B-School - Guglielmo Marconi University. Start your MBA journey today");
           //$new_node->set('field_course_duration', '9-36 months');
           $new_node->set('field_cid', $cid);
-          $new_node->save();
+         // $new_node->save();
         } else {
 
 
@@ -1055,8 +1055,155 @@ $field_course_category = "Certifications";
 
                if($oldnode->get('field_cid')->value == $cid) {
 
+$fact_data = array();
+$fact_data[1] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_IMBA_Ver0420_01.pdf',
+'broucher' => 'https://athena.edu/Uploads/Courses/IMBA_BROCHURE_AGE.pdf',
+'spec' => ''
+);
+$fact_data[2] = array(
+'fact_sheet' => '',
+'broucher' => 'https://athena.edu/Uploads/Courses/Fact_sheet_EDIBS_Ver0420_01.pdf',
+'spec' => ''
+);
+$fact_data[4] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_DSCLM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[7] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CMI_SHRMP_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[9] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCPCM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[10] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_DIBS_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[13] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_MBA_Ver0420_01.pdf',
+'broucher' => 'https://athena.edu/Uploads/Courses/GmuMBA-brochure.pdf',
+'spec' => 'https://athena.edu/Uploads/Courses/GMUMBA-Course-Sepcification.pdf'
+);
+$fact_data[15] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCIMM_Ver0420_01.pdf',
+'broucher' => 'https://athena.edu/Uploads/Courses/pgcimm-ciq-brochure.pdf',
+'spec' => ''
+);
+$fact_data[16] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCIHRM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[17] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCBS_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[18] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCSM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[19] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_DIBS_Ver0420_01.pdf',
+'broucher' => 'https://athena.edu/Uploads/Courses/UCAM-BROCHURE-AGE-2.pdf',
+'spec' => 'https://athena.edu/Uploads/Courses/EMBA_UCAM_SPECIFICATIONS_PDF.pdf'
+);
+$fact_data[20] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGDPCM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[22] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CMI_CM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[25] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_EMBA_Business_Analytics_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);$fact_data[26] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CMI_PMP_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);$fact_data[27] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCSSCLM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[29] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_EDBA_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+
+$fact_data[32] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_UCAM_DBA_Ver0820_01.pdf',
+'broucher' => 'https://athena.edu/Uploads/Courses/DBA_Brochure.pdf',
+'spec' => ''
+);
+
+$fact_data[33] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCBA_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[34] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCHRL_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[35] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCSCDI_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[36] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGFNGM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+$fact_data[39] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGSCMP_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+
+$fact_data[40] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCSELF_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+
+$fact_data[41] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_CIQ_PGCMCF_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
+
+$fact_data[42] = array(
+'fact_sheet' => 'https://athena.edu/Uploads/Courses/Fact_sheet_FT_MBAGM_Ver0420_01.pdf',
+'broucher' => '',
+'spec' => ''
+);
 
 
+
+
+ $oldnode->set('field_fact_sheet',$fact_data[$cid]['fact_sheet']);
+ $oldnode->set('field_brochure',$fact_data[$cid]['broucher']);
+ $oldnode->set('field_specifications',$fact_data[$cid]['spec']);
+                $oldnode->save();
+
+               /*
                    //print $oldnode->id();exit;
                   if (!empty($what_you_get[$cid]['what_you_get'])) {
                   // print_r($what_you_get[$cid]);exit;
@@ -1077,7 +1224,6 @@ $field_course_category = "Certifications";
                   }
 
 
-               /*
               if(!empty($partners_univ[$oldnode->get('field_cid')->value])) {
                // $oldnode->field_link_universities->entity = Node::load(209);;
 
