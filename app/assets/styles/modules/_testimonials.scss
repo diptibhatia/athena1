@@ -745,6 +745,9 @@ div#block-discussions .title span {
       right: 0;
       bottom: 0;
       left: 0;
+      @include atSize424{
+        text-align: center;
+      }
       a{
         position:absolute;
         bottom: 18px;
@@ -784,6 +787,10 @@ div#block-discussions .title span {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        @include atSize424{
+          height: auto !important;
+          width: auto !important;
+        }
       }
     }
 
