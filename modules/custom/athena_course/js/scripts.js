@@ -1,6 +1,6 @@
 
         jQuery(document).ready(function() {
-            jQuery("#phone").intlTelInput();
+            //jQuery("#phone").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
 

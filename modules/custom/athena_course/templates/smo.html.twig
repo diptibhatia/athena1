@@ -420,14 +420,14 @@
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(jQuery("#speak_mobile").val() == '') {
+        if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(!jQuery('#speak_mobile').val().match(/^[0-9]+$/)) {
+        if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
           msg += '\n\u2022  Phone number is invalid';
         }
-        var ph_num = jQuery("#speak_mobile").val();
+        var ph_num = jQuery("#phone").val();
         var num_len = ph_num.length;
         
         if(num_len.length <6 || num_len.length >15) {
