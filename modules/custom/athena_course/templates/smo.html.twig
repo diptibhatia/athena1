@@ -426,9 +426,6 @@
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-          msg += '\n\u2022  Phone number is invalid';
-        }
         var ph_num = jQuery("#phone").val();
         var num_len = ph_num.length;
         
