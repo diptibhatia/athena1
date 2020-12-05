@@ -1,8 +1,6 @@
 
         jQuery(document).ready(function() {
             jQuery("#phone").intlTelInput();
-            jQuery("#reg_mobile_num").intlTelInput();
-            jQuery("#speak_mobile_number").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
 
@@ -59,7 +57,9 @@
                      msg += '\n\u2022 please accept consent terms';
                 }
 
-
+                if(jQuery("#phone").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
 
                 if(jQuery("#get_in_touch_mobile").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
@@ -108,7 +108,7 @@ FirstName:String(jQuery("#reg_first_name").val()),
 LastName:String(jQuery("#reg_last_name").val()),
 Email:String(jQuery("#reg_email").val()),
 CountryId:String(jQuery("#reg_email").val()),
-ContactNo:String(jQuery("#reg_mobile_num").val()),
+ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#reg_course").val()),
 Highestqualification:String(jQuery("#reg_qual").val()),
 Yearsofexperience:parseInt(jQuery("#reg_exp").val()),
@@ -167,7 +167,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
   if(!regex.test(jQuery("#reg_email").val())) {
     msg += '\n\u2022  Invalid Email id';
   }
-                if(jQuery("#reg_mobile_num").val() == '') {
+                if(jQuery("#phone").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
                  if(jQuery("#reg_qual").val() == '') {
@@ -226,13 +226,10 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(jQuery("#speak_email").val() == '') {
                     msg += '\n\u2022  Email cannot be empty';
                 }
-                if(jQuery("#speak_first_name").val() == '') {
+                if(jQuery("#phone").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
 
-                 if(jQuery("#speak_mobile_number").val() == '') {
-                    msg += '\n\u2022  Phone number cannot be empty';
-                }
                 if(!jQuery("#speak_consent").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
@@ -244,7 +241,6 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                     jQuery('#speak_last_name').val("");
                     jQuery('#speak_email').val("");
                     jQuery('#speak_country').val("");
-                    jQuery('#speak_mobile_number').val("");
                     jQuery('#speak_consent').prop('checked', false);
                     alert(msg)
                 }

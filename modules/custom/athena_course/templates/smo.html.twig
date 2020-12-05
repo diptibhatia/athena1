@@ -420,7 +420,7 @@
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(jQuery("#speak_mobile_number").val() == '') {
+        if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }
         if(!jQuery("#speak_consent").prop('checked') == true){
@@ -475,7 +475,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
           jQuery('#speak_country').val("");
-          jQuery('#speak_mobile_number').val("");
+          jQuery('#phone').val("");
           jQuery('#speak_consent').prop('checked', false);
           alert(msg)
         }
