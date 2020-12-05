@@ -1,7 +1,6 @@
 
         jQuery(document).ready(function() {
             jQuery("#phone").intlTelInput();
-            jQuery("#speak_mobile_number").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
 
@@ -58,7 +57,9 @@
                      msg += '\n\u2022 please accept consent terms';
                 }
 
-
+                if(jQuery("#phone").val() == '') {
+                    msg += '\n\u2022  Phone number cannot be empty';
+                }
 
                 if(jQuery("#get_in_touch_mobile").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
@@ -225,13 +226,10 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(jQuery("#speak_email").val() == '') {
                     msg += '\n\u2022  Email cannot be empty';
                 }
-                if(jQuery("#speak_first_name").val() == '') {
+                if(jQuery("#phone").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
 
-                 if(jQuery("#speak_mobile_number").val() == '') {
-                    msg += '\n\u2022  Phone number cannot be empty';
-                }
                 if(!jQuery("#speak_consent").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
@@ -243,7 +241,6 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                     jQuery('#speak_last_name').val("");
                     jQuery('#speak_email').val("");
                     jQuery('#speak_country').val("");
-                    jQuery('#speak_mobile_number').val("");
                     jQuery('#speak_consent').prop('checked', false);
                     alert(msg)
                 }
