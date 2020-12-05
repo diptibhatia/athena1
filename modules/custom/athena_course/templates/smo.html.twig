@@ -105,6 +105,9 @@
                                 <span id="valid-msg" class="hide">✓ Valid</span>
                                 <span id="error-msg" class="hide"></span>
                             </div>
+                            <input type="hidden" id="speak_courseid" value="{{node.field_cid.value}}" >
+                            <input type="hidden" id="utm_source" value="{{source}}" >
+                            <input type="hidden" id="utm_campaign" value="{{campaign}}" >
                             <div class="button">
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
@@ -425,8 +428,46 @@
         }
 
         if(msg == ''){
+         var sendInfo = {
+FirstName:String(jQuery("#speak_first_name").val()),
+LastName:String(jQuery("#speak_last_name").val()),
+Email:String(jQuery("#speak_email").val()),
+CountryId:String(jQuery(".country-code").val()),
+ContactNo:String(jQuery("#phone").val()),
+CourseId:parseInt(jQuery("#speak_courseid").val()),
+Source:String(jQuery("#utm_source").val()),
+Campaign:String(jQuery("#utm_campaign").val()),
 
-          document.getElementById('thankyoulink').click();
+       };
+          jQuery.ajax('https://agestagingapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
+                        type: 'POST',  // http method
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(sendInfo) ,  // data to submit
+                         dataType: 'json',
+                        success: function (data, status, xhr) {
+                            var txt;
+                            var r = confirm("Registration Successful, you will be redirected to login page now.");
+                            if (r == true) {
+                             // txt = "You pressed OK!";
+                            } else {
+                              //txt = "You pressed Cancel!";
+                            }
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                                if(jqXhr.status == 200) {
+                                    var r = confirm("Registration Successful, you will be redirected to login page now.");
+                            if (r == true) {
+                                      document.getElementById('thankyoulink').click();
+                            } else {
+                              alert("Something went wrong, please try again after some time")
+                            }
+
+                                }
+                        }
+                    });  
+
+ 
           return false;
 
         }else {

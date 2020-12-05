@@ -39,6 +39,8 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'awarding_body' => NULL,
       'description' => NULL,
       'category' => NULL,
+      'source' => NULL,
+      'campaign' => NULL,
       'banner' => NULL,
       'node' => NULL,
       'base_path' => NULL,

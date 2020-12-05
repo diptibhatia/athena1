@@ -1,6 +1,7 @@
 
         jQuery(document).ready(function() {
             jQuery("#phone").intlTelInput();
+            jQuery("#reg_mobile_num").intlTelInput();
             jQuery("#speak_mobile_number").intlTelInput();
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
@@ -107,7 +108,7 @@ FirstName:String(jQuery("#reg_first_name").val()),
 LastName:String(jQuery("#reg_last_name").val()),
 Email:String(jQuery("#reg_email").val()),
 CountryId:String(jQuery("#reg_email").val()),
-ContactNo:String(jQuery("#phone").val()),
+ContactNo:String(jQuery("#reg_mobile_num").val()),
 CourseId:parseInt(jQuery("#reg_course").val()),
 Highestqualification:String(jQuery("#reg_qual").val()),
 Yearsofexperience:parseInt(jQuery("#reg_exp").val()),
@@ -166,7 +167,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
   if(!regex.test(jQuery("#reg_email").val())) {
     msg += '\n\u2022  Invalid Email id';
   }
-                if(jQuery("#phone").val() == '') {
+                if(jQuery("#reg_mobile_num").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
                  if(jQuery("#reg_qual").val() == '') {
