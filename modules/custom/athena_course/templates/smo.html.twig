@@ -101,7 +101,7 @@
                             </div>
                             <div class="login-item phone-number">
                                 <p>Mobile Number</p>
-                                <input type="tel" id="phone" placeholder="Enter Mobile number">
+                                <input type="tel" id="speak_mobile" placeholder="Enter Mobile number">
                                 <span id="valid-msg" class="hide">✓ Valid</span>
                                 <span id="error-msg" class="hide"></span>
                             </div>
@@ -420,12 +420,18 @@
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(jQuery("#phone").val() == '') {
+        if(jQuery("#speak_mobile").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+        if(!jQuery('#speak_mobile').val().match(/^[0-9]+$/)) {
           msg += '\n\u2022  Phone number is invalid';
+        }
+        var ph_num = jQuery("#speak_mobile").val();
+        var num_len = ph_num.length;
+        
+        if(num_len.length <6 || num_len.length >15) {
+          msg += '\n\u2022  Invalid Phone number';
         }
 
         if(!jQuery("#speak_consent").prop('checked') == true){
