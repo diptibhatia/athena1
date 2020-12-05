@@ -108,7 +108,7 @@
                             <div class="button">
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
-                                <button  type="submit" id="speak_submit">Submit</button>
+                                <button  type="submit" id="smo_form_submit">Submit</button>
                             </div>
                             </form>
                         </div>
@@ -398,18 +398,46 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.com/libraries/owl-carousel"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
-      $("#phone").intlTelInput();
-      $(".selected-flag").after("<div class='country-code' />");
-      var CountryCode = $(".country.active .dial-code").text();
-      $(".country-code").text(CountryCode);
 
-      $(".country-list").click(function(){
-          var CountryCode = $(".country.active .dial-code").text();
-          $(".country-code").text(CountryCode);
+      jQuery("#smo_form_submit").click(function() {
+        var msg = '';
+        if(jQuery("#speak_first_name").val() == '') {
+          msg += '\n\u2022  First name cannot be empty';
+        }
+        if(jQuery("#speak_last_name").val() == '') {
+          msg += '\n\u2022  Last name cannot be empty';
+        }
+        if(jQuery("#speak_email").val() == '') {
+          msg += '\n\u2022  Email cannot be empty';
+        }
+        if(jQuery("#speak_first_name").val() == '') {
+          msg += '\n\u2022  Phone number cannot be empty';
+        }
+
+        if(jQuery("#speak_mobile_number").val() == '') {
+          msg += '\n\u2022  Phone number cannot be empty';
+        }
+        if(!jQuery("#speak_consent").prop('checked') == true){
+           msg += '\n\u2022 please accept consent terms';
+        }
+
+        if(msg == ''){
+
+          document.getElementById('thankyoulink').click();
+          return false;
+
+        }else {
+          jQuery('#speak_first_name').val("");
+          jQuery('#speak_last_name').val("");
+          jQuery('#speak_email').val("");
+          jQuery('#speak_country').val("");
+          jQuery('#speak_mobile_number').val("");
+          jQuery('#speak_consent').prop('checked', false);
+          alert(msg)
+        }
       });
 
        $('.owl-carousel').owlCarousel({
@@ -448,3 +476,44 @@
         })
   });
 </script>
+
+
+<a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#thankyoumodal" id='thankyoulink' style="display:none;"></a>
+
+<div id="thankyoumodal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:475px !important;">
+
+            <div class="modal-body">
+
+                    <div class="col-md-12">
+                      <div class="col-md-12" style="
+                        text-align: center;
+                    "><div>
+                        <img src="{{base_path}}/images/request-img.svg" style="
+                        position: relative;
+                        left: -2px;
+                    ">
+
+                    </div>
+
+                        <h2>Thank you for the request</h2>
+                        <p class="txt-14">Our Admission advisor will get in touch with you shortly</p>
+                        <button onclick="javascript:location.reload();" style="
+                        width: 109px;
+                        height: 38px;
+                        padding: 10px 37px 11px;
+                        border-radius: 8px;
+                        background-image: linear-gradient(to left, #eeeeee 111%, #ececec 96%, #d8d8d8);
+                        border: 0px;
+                        font-weight: bold;
+                    ">Okay</button>
+                      </div>
+                      </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
