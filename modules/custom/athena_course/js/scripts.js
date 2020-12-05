@@ -124,7 +124,7 @@ Employmentlevel:String(jQuery("#reg_level").val())
        var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
 
-jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
+jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -143,7 +143,7 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                                 if(jqXhr.status == 200) {
                                     var r = confirm("Registration Successful, you will be redirected to login page now.");
                             if (r == true) {
-                             window.location.replace('http://portal.athena.edu/login?mail='+email_id+'&CId='+cid);
+                             window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
                             } else {
                               //txt = "You pressed Cancel!";
                             }
