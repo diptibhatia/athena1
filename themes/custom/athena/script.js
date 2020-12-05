@@ -13,18 +13,19 @@ jQuery(document).ready(function() {
         jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
     });
 
+    if (jQuery(".country-code").length == 0) {
+        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
+            var countrycode = geoplugin_countryCode();
+            countrycode = countrycode.toLowerCase();
 
-    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
-        var countrycode = geoplugin_countryCode();
-        countrycode = countrycode.toLowerCase();
+            var element = document.getElementsByClassName("selected-flag")[0];
+            element.dispatchEvent(new Event("click"));
+            jQuery("li.country[data-country-code='" + countrycode +
+            "']").trigger('click');
 
-        var element = document.getElementsByClassName("selected-flag")[0];
-        element.dispatchEvent(new Event("click"));
-        jQuery("li.country[data-country-code='" + countrycode +
-        "']").trigger('click');
-
-        window.scrollTo({top: 0});
-    });
+            window.scrollTo(0, 0);
+        });
+    }
 
 
 });
