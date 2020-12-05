@@ -2906,7 +2906,20 @@
 						background-color: #ffffff;
 						// margin: 0 0 30px 10px !important;
 						display: flex;
+						margin-right:0 !important;
 						.info{
+							.student-info{
+								a{
+									img{
+										float: right;
+										margin: 20px 0 0;
+									}
+								}
+								img{
+									clear: both;
+									float: none;
+								}
+							}
 							h3{
 								font-size:14px;
 							}
