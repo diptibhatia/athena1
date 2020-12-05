@@ -211,7 +211,7 @@
 		box-shadow: none;
 		height: 41px;
 		@include belowSize700{
-			float: left;
+			float: left !important;
 			margin-left: 116px !important;
 			padding-left: 10px !important;
 		}
