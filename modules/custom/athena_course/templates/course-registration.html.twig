@@ -287,7 +287,7 @@
                                   {% if cid == nodedata.field_cid.value %}
                                     {% set selected = 'selected' %}
                                   {% endif %}
-                                 <option value="{{nodedata.id}}" {{selected}}>{{nodedata.label}}</option>
+                                 <option value="{{nodedata.field_cid.value}}" {{selected}}>{{nodedata.label}}</option>
                                     {% endfor %}
                             </select>
                         </div>
