@@ -468,17 +468,17 @@ Campaign:String(jQuery("#utm_campaign").val()),
                                 }
                         }
                     });  
-
- 
-          return false;
-
-        }else {
-          jQuery('#speak_first_name').val("");
+           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
           jQuery('#speak_country').val("");
           jQuery('#phone').val("");
           jQuery('#speak_consent').prop('checked', false);
+       
+ 
+          return false;
+
+        }else {
           alert(msg)
         }
       });
