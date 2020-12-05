@@ -447,7 +447,8 @@ Campaign:String(jQuery("#utm_campaign").val()),
                          dataType: 'json',
                         success: function (data, status, xhr) {
                             var txt;
-                            var r = confirm("Registration Successful, you will be redirected to login page now.");
+                          //  var r = confirm("Registration Successful, you will be redirected to login page now.");
+                           document.getElementById('thankyoulink').click();
                             if (r == true) {
                              // txt = "You pressed OK!";
                             } else {
@@ -456,12 +457,10 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         },
                         error: function (jqXhr, textStatus, errorMessage) {
                                 if(jqXhr.status == 200) {
-                                    var r = confirm("Registration Successful, you will be redirected to login page now.");
-                            if (r == true) {
+                                 
+                         
                                       document.getElementById('thankyoulink').click();
-                            } else {
-                              alert("Something went wrong, please try again after some time")
-                            }
+                         
 
                                 }
                         }
