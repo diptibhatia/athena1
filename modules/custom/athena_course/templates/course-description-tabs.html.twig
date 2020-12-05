@@ -552,7 +552,14 @@
                         </div>
                         <div>
                             <h4>{{ module.entity.field_course_module_name.value }}</h4>
-                            <p class="duration"><span>Duration:</span> 4  to 12 weeks</p>
+                            <p class="duration"><span>Duration:</span>
+ {% if module.entity.field_module_duration.value|trim is not empty %}
+ {{ module.entity.field_module_duration.value|trim }}
+  {% else %}
+  4 to 12 weeks
+  {% endif %}
+
+                            </p>
                             <p class="text">{{ module.entity.field_coursemodule_description.value|striptags }}</p>
                             {% if module.entity.field_module_level.value|trim is not empty %}
                             <p class="level"><span>Level:</span> {{ module.entity.field_module_level.value }}</p>
