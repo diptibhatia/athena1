@@ -2092,7 +2092,7 @@
 		  padding-top:20px;
 	  }
 	  .heading-image { 
-			width: 640px;
+			max-width: 640px;
 			text-align: center;
 			margin: auto; 
 			@media (max-width: 600px){
@@ -2603,8 +2603,8 @@
   }
   
   .footer-banner {
-  /* margin: 50px 0 0px 0;
-	  height: 283px;*/
+   margin: 50px 0 0px 0;
+	  min-height: 283px; 
 	  position: relative;
   
 	  img {
