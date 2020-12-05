@@ -416,8 +416,8 @@
         if(jQuery("#speak_email").val() == '') {
           msg += '\n\u2022  Email cannot be empty';
         }
-        if(jQuery("#speak_first_name").val() == '') {
-          msg += '\n\u2022  Phone number cannot be empty';
+        if(jQuery("#phone").val().length >= 7 && jQuery("#phone").val().length <= 15) {
+          msg += '\n\u2022  Invalid Phone number';
         }
 
         if(jQuery("#phone").val() == '') {
