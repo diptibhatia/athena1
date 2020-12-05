@@ -238,7 +238,7 @@ function athena_preprocess_page(&$variables) {
   $blockmenu = \Drupal::entityManager()->getStorage('block')->load('footercoursesmenu');
 $block_content = \Drupal::entityManager()
 ->getViewBuilder('block')
-->view($block);
+->view($blockmenu);
  $variables['footercoursemenu'] = $block_content;
 
      if (strpos($current_path, '/registration') !== false) {
