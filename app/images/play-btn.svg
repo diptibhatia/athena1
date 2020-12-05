@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="31px" viewBox="0 0 32 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 6</title>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="website-home" transform="translate(-1129.000000, -4483.000000)" fill-rule="nonzero">
+            <g id="play" transform="translate(1002.000000, 4483.000000)">
+                <g id="Group-6" transform="translate(127.720000, 0.000000)">
+                    <circle id="Oval" stroke="#FE1F9C" stroke-width="1.03" cx="15.45" cy="15.45" r="14.935"></circle>
+                    <path d="M12.36,11.5580577 L12.36,19.3420622 C12.36,19.9109155 12.8211467,20.3720622 13.39,20.3720622 C13.5883033,20.3720622 13.782391,20.3148178 13.9489545,20.2072037 L19.9729378,16.3152015 C20.4507423,16.0064994 20.5878269,15.3689099 20.2791248,14.8911054 C20.1999114,14.7685001 20.0955431,14.6641318 19.9729378,14.5849184 L13.9489545,10.6929161 C13.4711501,10.3842141 12.8335606,10.5212987 12.5248585,10.9991031 C12.4172444,11.1656667 12.36,11.3597543 12.36,11.5580577 Z" id="Path-5" fill="#FE1F9C"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -558,7 +558,7 @@
                             {% if module.entity.field_module_credit.value|trim is not empty %}
                             <p class="credit"><span>Credits:</span> {{ module.entity.field_module_credit.value }}
                              {% if node.field_courses_credit_type.0.value|trim is not empty %}
-                          
+
                              {% endif %}
                             </p>
                             {% endif %}
@@ -993,6 +993,8 @@
                             <div class="login-item phone-number">
                                 <p>Mobile Number</p>
                                 <input type="tel" id="phone" placeholder="Enter Mobile number">
+                                <span id="valid-msg" class="hide">✓ Valid</span>
+                                <span id="error-msg" class="hide"></span>
                             </div>
 
                             <div class="button">
@@ -1127,5 +1129,3 @@
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>

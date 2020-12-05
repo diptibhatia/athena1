@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <title>About Us</title>
+</head>
+
+<body>
+    <div w3-include-html="header.html"></div>
+    <div class="main-wrapper container-fluid p-0 about-us-wrapper">
+
+        <div w3-include-html="about-banner.html"></div>
+
+        <div class="pt-4 container bg-white pl-0 pr-0">
+             <div class="row">
+                <div class="col-md-4 col-sm-12 pb-5">
+                    <div w3-include-html="about-sidebar.html"></div>
+                </div>
+                <div class="col-md-8 col-sm-12 p-0">
+                    <div class="container txt-14 item founder-content">
+                        <h3 class="page-title">Chief Executive Officer</h3>
+                        <div class="row bg-skyblue-light">                            
+                            <div class="col-sm-7 col-md-7 p-3">
+                              <p><span class="quotes">&#8220;</span>We are excited to welcome learners from around the world to Athena, an ed-tech venture of Westford Education Group, established with an objective to provide affordable quality education accessible by a large global population. We have been delivering higher education around the world for more than a decade through our different colleges: Westford University College, Eaton Business School and Exeed College. We have used the experience and knowledge gained from our past operations to develop an effective learning platform which provides a lot of flexibility to our learners. We are confident that this platform going to help millions around the world to pursue their dream and we will be there with you in all your steps forward.<span class="quotes quotes-left">&#8221;</span></p>
+                              <h6 class="text-left strong">Firoz Thairinil</h6>
+                              <p class="text-left">Founder and CEO - Westford Education</p>
+                            </div>
+                            <div class="col-sm-5 col-md-5 img-founder">
+                              <img src="images/ceo.png" class=" brd-0 pt-3" >
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="container txt-14 mt-4">
+                        <h3>Bio</h3>
+                        <p>Firoz leads the group wide businesses ensuring that a strong commitment to high standards and a performance culture are embedded across the entire group business. Coming from a BFSI background with strong management credentials, he has led Westford from very humble beginnings in 2008 from a small training academy to an international network of business schools having students from 40 nationalities across the globe. During his last position in the capacity of Country Head - Retail Banking Sales for a large bank in UAE, Firoz was driven by his vision to engage in the education industry. His keen intent to contribute in the rapid transformation of the education industry, which had started to leverage technology to disrupt the existing models of education making it more accessible and affordable. Firoz holds dual MBA's, first from the University of Wales, UK (Marketing) and second from TIU, Missouri, US (Banking &amp; Finance)</p>
+                    </div>              
+                </div>              
+            </div>
+        </div>       
+
+         <div class="container-fluid mt-5 mb-5 about-popular-content">
+           <div w3-include-html="about-popular.html"></div>
+        </div>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script type="text/javascript">
+        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+        <!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "2610140028997323", // Facebook page ID
+            whatsapp: "+44 7447 134314", // WhatsApp number
+            instagram: "age_athena", // Instagram username
+            company_logo_url: "//static.getbutton.io/img/flag.png", // URL of company logo (png, jpg, gif)
+            greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
+            call_to_action: "Message us", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,instagram,whatsapp", // Order of buttons
+            ga: true, // Google Analytics enabled
+            branding: true, // Show branding string
+            mobile: true, // Mobile version enabled
+            desktop: true, // Desktop version enabled
+            greeting: false, // Greeting message enabled
+            shift_vertical: 0, // Vertical position, px
+            shift_horizontal: 0, // Horizontal position, px
+            domain: "website.athena.edu", // site domain
+            key: "w65CtynYQ2eEPebewXlB1w", // pro-widget key
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+
+    <script src="bundled.js"></script>
+</body>
+
+</html>

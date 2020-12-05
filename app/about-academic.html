@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <title>About Us</title>
+</head>
+
+<body>
+   <div w3-include-html="header.html"></div>
+    <div class="main-wrapper container-fluid p-0 about-us-wrapper">
+
+        <div w3-include-html="about-banner.html"></div>
+
+        <div class="pt-4 container bg-white pl-0 pr-0">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 pb-5">
+                    <div w3-include-html="about-sidebar.html"></div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                   <div class="container txt-14">
+                        <h3 class="page-title">Acadamic Council</h3>
+                        <p>The Board of Directors represents the membership of the organization. The board sets in place policies, procedures, values and long-term planning to meet the mission of the organization. The board does this through a governance structure or model. The structure a board decides to implement will dictate not only the policies of the organization but also such things as the relationship between staff and the board, and the role and use of committees.</p>
+                       <div class="row mb-3">
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="images/board1.png" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">Col (Rtd). Anil Ahluwalia </p>
+                                <p> Chair of the Board </p>
+                            </div>
+                            <p class="short-desc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button">Read More..</a></p>
+                          </div>
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="images/board2.png" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">Dr . William Painter </p>
+                                <p> Board Member </p>
+                            </div>
+                             <p class="short-desc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button">Read More..</a></p>
+                          </div>
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="images/board3.png" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">Dr Andrew Hambler </p>
+                                <p> Board Member </p>
+                            </div>
+                            <p class="short-desc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button">Read More..</a></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="images/board4.png" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">Col (Rtd). Anil Ahluwalia </p>
+                                <p> Chair of the Board </p>
+                            </div>
+                             <p class="short-desc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button">Read More..</a></p>
+                          </div>
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="images/board5.png" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">Dr . William Painter </p>
+                                <p> Board Member </p>
+                            </div>
+                            <p class="short-desc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button">Read More..</a></p>
+                          </div>
+                          <div class="col-lg-4">
+                            <img class="rounded-circle" src="images/board3.png" width="140" height="140">
+                            <div class="purple-txt strong">
+                                <p class="m-0">Dr Andrew Hambler </p>
+                                <p> Board Member </p>
+                            </div>
+                            <p class="short-desc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button">Read More..</a></p>
+                          </div>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+        </div>        
+
+        <div class="container-fluid mt-5 mb-5 about-popular-content">
+           <div w3-include-html="about-popular.html"></div>
+        </div>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script type="text/javascript">
+        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+        <!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "2610140028997323", // Facebook page ID
+            whatsapp: "+44 7447 134314", // WhatsApp number
+            instagram: "age_athena", // Instagram username
+            company_logo_url: "//static.getbutton.io/img/flag.png", // URL of company logo (png, jpg, gif)
+            greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
+            call_to_action: "Message us", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,instagram,whatsapp", // Order of buttons
+            ga: true, // Google Analytics enabled
+            branding: true, // Show branding string
+            mobile: true, // Mobile version enabled
+            desktop: true, // Desktop version enabled
+            greeting: false, // Greeting message enabled
+            shift_vertical: 0, // Vertical position, px
+            shift_horizontal: 0, // Horizontal position, px
+            domain: "website.athena.edu", // site domain
+            key: "w65CtynYQ2eEPebewXlB1w", // pro-widget key
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+
+    <script src="bundled.js"></script>
+</body>
+
+</html>

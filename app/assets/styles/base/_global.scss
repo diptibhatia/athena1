@@ -1,0 +1,235 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    color: $primaryColor;
+}
+
+a {
+	color: $purpleColor;
+}
+
+.orange-txt {
+	color: $orangeColor;
+}
+
+.yellow-txt {
+	color: $blogColor;
+}
+
+.purple-txt {
+	color: $purpleColor;
+	a {
+		color: $purpleColor;
+	}
+}
+
+.rounded-md {
+	border-radius: 1rem !important;
+}
+
+.bg-purple {
+	background-color: $purpleColor !important;
+}
+
+.bg-highlight-blue {
+	background-color: $highlight-blue;
+}
+
+.highlight-blue-txt {
+	color: $highlight-blue;
+}
+
+.bg-light-grey {
+	background-color: $light-grey;
+}
+
+.bg-blue {
+	background-color: $blue !important;
+}
+
+.pink { 
+	&-txt {
+		color: $buttonPink
+	}
+	&-bg {
+		background-color: $buttonPink !important;
+		color: $primaryWhite;
+	}	
+}
+
+.bg-skyblue-light {
+	background-color : $skyblue-light;
+}
+
+.voilet {
+	color: $voilet;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.txt-12 {
+	font-size: $font-size-sm;
+}
+
+.txt-14 {
+	font-size: $font-size-md;
+	line-height: 1.5em;
+}
+
+.txt-18 {
+	font-size: 18px;
+	line-height: 1.8em;
+}
+
+.txt-16, p {
+	font-size: $font-size-lg;
+	line-height: 1.8em;
+
+	&.short-desc {
+		max-height: 140px;
+		min-height: 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&-text {
+			max-height: 110px;
+			min-height: 10px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+.border-left {
+	border-left: 1px solid #979797;
+}
+
+.shadow-sm {
+	box-shadow: 0 0.50rem 1rem rgba(0, 0, 0, 0.075) !important;
+}
+.shadow {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.shadow-lg {
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+.shadow-none {
+	box-shadow: none !important;
+}
+
+.athena-btn {
+	 border-radius: 30px;
+      border: solid 2px white;
+      color: white;
+      padding: 5px 30px;
+      cursor: pointer;
+      outline: none;
+      background: none;
+
+     &.violet-btn{
+		border-color: $voilet;
+		border-radius: 20px;
+		color: $voilet;
+	}
+
+	&.purple-btn{
+		border-color: $purpleColor;
+		border-radius: 20px;
+		color: $purpleColor;
+
+		&:hover {
+			background-color: $purpleColor;
+			color: white;
+		}
+	}
+
+	&.white-btn {
+		border-color: $primaryWhite;
+		border-radius: 20px;
+		color: $primaryWhite;
+		background-color: transparent;
+	}
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 2px solid #eee;
+
+    &.purple-brd {
+    	border-left: 2px solid $purpleColor;
+    }
+}
+
+.footer {
+	a {
+		color: $secondaryColor;
+	}
+}
+
+.tag-outline {
+	padding: 4px 10px;
+    border: 1px solid #979797;
+    border-radius: 15px;
+    color: #0099fe;
+    font-size: 10px;
+    margin: 0 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.more-link:after {
+	content: ' \2192'
+}
+
+
+.container {
+	@include atSize1250 {
+		max-width: 1170px;
+	}
+}
+
+.short-title {
+	min-height: 52px;
+	max-height: 52px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+}
+
+h5.card-title a {
+    color: #303030;
+
+    &:hover {
+    	text-decoration: none;
+	}
+}
+
+.course-info h1 a {
+    color: #303030;
+
+    &:hover {
+    	text-decoration: none;	
+    }
+}
+
+.image_icon {
+	position: relative;
+	width: 140px;
+
+	.link_img {
+		position: absolute;
+		bottom: 0;
+		right: -10px;
+	}
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="42px" viewBox="0 0 43 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <circle id="path-1" cx="19.11" cy="18.9" r="18.9"></circle>
+        <filter x="-7.9%" y="-7.9%" width="115.9%" height="115.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.105882353   0 0 0 0 0.180392157   0 0 0 0 0.317647059  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="login-" transform="translate(-288.000000, -1887.000000)" fill-rule="nonzero">
+            <g id="Group-17" transform="translate(134.000000, 1889.000000)">
+                <g id="Group" transform="translate(156.000000, 0.000000)">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="twitter" transform="translate(9.660000, 11.550000)" fill="#1B2E51">
+                        <path d="M18.9,1.78997538 C18.1971562,2.09353846 17.4482438,2.29475077 16.6674375,2.39244923 C17.4706875,1.92024 18.0837563,1.17819692 18.3719813,0.283790769 C17.6230687,0.723433846 16.7961938,1.03397538 15.9149813,1.20727385 C15.2038688,0.461741538 14.1903563,0 13.0847063,0 C10.9395563,0 9.21256875,1.71437538 9.21256875,3.81605538 C9.21256875,4.11845538 9.23855625,4.40922462 9.30234375,4.68603692 C6.081075,4.53134769 3.23071875,3.01120615 1.3159125,0.69552 C0.98161875,1.26659077 0.78553125,1.92024 0.78553125,2.62390154 C0.78553125,3.94515692 1.4765625,5.11637538 2.5066125,5.79444923 C1.88409375,5.78281846 1.2733875,5.60486769 0.756,5.32456615 C0.756,5.33619692 0.756,5.35131692 0.756,5.36643692 C0.756,7.22038154 2.09908125,8.76029538 3.860325,9.11503385 C3.54493125,9.19993846 3.2011875,9.24064615 2.84445,9.24064615 C2.5963875,9.24064615 2.3459625,9.22668923 2.11089375,9.17551385 C2.612925,10.6863508 4.0375125,11.7970892 5.731425,11.8331446 C4.41315,12.8485108 2.73931875,13.4602892 0.92728125,13.4602892 C0.609525,13.4602892 0.3047625,13.4463323 0,13.4079508 C1.71635625,14.4977538 3.75046875,15.12 5.94405,15.12 C13.074075,15.12 16.9722,9.30461538 16.9722,4.26384 C16.9722,4.09519385 16.9662938,3.93236308 16.958025,3.77069538 C17.7270187,3.23335385 18.3731625,2.56225846 18.9,1.78997538 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,110 @@
+.course-team{
+    .wrapper {
+        h2{
+            margin-bottom:25px;
+        }
+        padding: 0 0;
+        .owl-carousel{
+                      margin-left:-20px;
+                    .owl-item{
+                        .item{
+                            padding:20px 0;
+                        }
+                        &:first-child{
+                            .item{
+                                padding-left: 20px;
+                            }
+                        }
+                    }
+        }
+        .owl-dots{
+            display:none;
+        }
+    }
+}
+
+
+.course-team-card {
+    background-color: #fff;
+    width: 269px;
+    height: 391px;
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px #d5dbfb;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 27px 21px;
+    color: $primaryColor;
+    position: relative;
+    overflow: auto;
+    border: .5px solid #d5dbfb;
+
+    > .team-img {
+        position: relative;
+
+        img {
+            width: 104px;
+            height: 104px;
+            border-radius:100px;
+        }
+
+        &::after {
+            content: '';
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+            background: url('images/coursepage/courseteam-linkedin.svg') no-repeat;
+            position: absolute;
+            bottom: 4px;
+            right: -6px;
+        }
+    }
+    
+    
+    
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 14px 0 3px;
+    }
+
+    h4 {
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+        color:$black;
+
+        span {
+            display: block;
+            font-size: .75rem;
+            font-style: italic;
+            font-weight: bold;
+            white-space: nowrap;
+            letter-spacing: .1px;
+            margin: 4px 0 -5px;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        color: $secondaryColor;
+        text-align: center;
+        line-height: 1.63;
+        margin: 20px 0 0;
+        max-height:110px;
+    }
+
+    a {
+        font-size: 1rem;
+        font-weight: bold;
+        color: $titlePink;
+        text-decoration: none;
+        letter-spacing: .2px;
+        position: absolute;
+        bottom: 27px;
+    }
+}

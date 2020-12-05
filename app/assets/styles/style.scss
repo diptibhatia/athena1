@@ -1,0 +1,182 @@
+@import "~bootstrap/scss/bootstrap";
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/global";
+@import "base/assets";
+@import "base/owlCarouselMin";
+@import "base/owlThemeDefaultMin";
+@import "modules/wrapper";
+@import "modules/menubar";
+@import "modules/footer";
+@import "modules/topSearchSection";
+@import "modules/coursePageBannerSection";
+@import "modules/fyiTabs";
+@import "modules/overviewPointsCard";
+@import "modules/partnersTabs";
+@import "modules/admProcess";
+@import "modules/admisstionStepsCard";
+@import "modules/whyCourse";
+@import "modules/courseResourcesCard.scss";
+@import "modules/whatLearn";
+@import "modules/howLearnSection";
+@import "modules/whatYouGetSection";
+@import "modules/ourStudentsSaySection";
+@import "modules/coursesIntroCard";
+@import "modules/courseTeamSection";
+@import "modules/courseTeamCard";
+@import "modules/courseFaq";
+@import "modules/courseBottomBanner";
+@import "modules/aboutUs";
+@import "modules/homePage";
+@import "modules/testimonials";
+@import "modules/events";
+@import "modules/academicProgram";
+@import "modules/searchList";
+@import "modules/insight";
+@import "modules/university";
+@import "modules/login";
+@import "modules/courseLoginPage";
+@import "modules/smoPage";
+@import "modules/affiliatePage";
+@import "modules/aboutPopular";
+@import "modules/modalPopup";
+ 
+a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
+
+.row { width:100%;}
+
+.partners .partner-logos .logo {
+    align-items: center;
+}
+
+.why-section .main-section .desc p {
+      font-weight: normal;
+}
+
+.insight-wrapper .share-icon {
+    position: relative;
+    width: 20px;
+    padding-left: 30px;
+}
+.footer-banner { 
+    position: relative;
+}
+img {
+    border-style: none;
+}
+
+.insights-section .section-items .section-item-two h4 {
+    margin: inherit;
+}
+.get-started button {
+    background: transparent;
+}
+
+.reason-section {
+    margin: 100px 0 50px 0;
+}
+.corporate-txt img  {height:auto; max-width:100%;}
+.top-banner .logos {width:auto;}
+
+
+.mobilePadding{
+    @include atSize424{
+        padding-left: 2.0rem !important;
+        overflow: hidden;
+    }
+}
+
+ 
+.insight-wrapper .insight-cards {
+    max-width: 240px;
+    margin: 0.5rem;
+    width: 90%;
+    background: #fff;
+    @include atSize424{
+        max-width: 100%;
+        width:100%;
+    }
+        
+} 
+
+.pagination .page-link { border-radius: 50%; color:#000;}
+ 
+
+.pagination .is-active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #ff026f;
+    border-color: #ff026f;    
+}
+.page-item:first-child .page-link {
+    border-radius:50%; 
+    
+}
+
+.page-item:last-child .page-link {
+    border-radius:50%;
+   
+}
+// .page-item.previous .page-link, .next .page-link { 
+//     color: #ff026f;
+// }
+// .previous .page-link:hover, .next .page-link:hover { 
+//     color: #ff026f;
+// }
+.partners .partner-logos .logo img {width:180px;}
+
+.image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
+    pointer-events: none;
+}
+.start-free-trial .athena-section .why-athena-item-two img {top: 60px;}
+.start-free-trial .athena-section .why-athena-item-one {
+    padding: 140px 0 0 0;
+}
+.know-more button:hover a { 
+    text-decoration: none;
+}
+
+.why-athena .get-started {
+    padding: 60px 0 30px;
+} 
+
+.athena-btn.violet-btn, .btn-primary {
+    border-radius: 30px;
+    border: solid 2px #ff008e;
+    color: #ff008e;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+    width: 213px;
+    height: 50px;
+}
+
+.athena-btn.violet-btn:hover, .btn-primary:hover {
+    color: white !important;
+    background: #ff008e;
+}
+.visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+} 
+.p-0 {padding:0;}
+.m-0 {margin:0;}
+.ht-4 {height:40px} 
+ 
+.why-athena .testimonials .testimonials-item .item-one img {
+    width: 398px;
+    position: relative;
+    top: -30px;
+    left: 8px;
+} 
+#block-whitespaces {display:none;} 
+.academic-program-wrapper {
+    margin-top: 80px;
+}
+.all-courses h1 {font-weight:bold;}

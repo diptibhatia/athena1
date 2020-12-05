@@ -1,0 +1,484 @@
+.select-option {
+	display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 4px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.insight-wrapper {
+
+	h1, h2, h3 {
+		font-weight: 600;
+	}
+
+	.dateTxt {
+		font-size: 12px;
+		@include belowSize700 {
+			padding-left: 5px;
+		}
+	}
+
+	.author-desc {
+		border-right: 1px solid #979797;
+    	padding-right: 20px;
+	}
+
+	.progress-bar {		
+		width: 100%;
+		background-color: transparent;
+		position: fixed;
+		top: 0;
+		z-index: 999;
+
+		.fill {
+			background-color: $purpleColor;
+			padding: 2px;
+			width: 30%;
+			display: block;
+		}	
+		
+	}
+
+	.corporate-title {
+		font-size: 24px;
+		@include atSize1100 {
+			font-size: 26px;
+		}
+	}
+
+	.insight-content {
+		border-right: 1px solid #dee2e6;
+		@include belowSize700 {
+			border: none;
+		}
+	}
+
+	.insight-sidebar-title {
+		font-size: 24px;
+	}
+
+	.insight-sidebar-wrapper {
+		@include atSize700 {
+			//max-width: 360px;
+			padding:0 1rem !important;
+		}
+	}
+
+	.share-icon {
+		position: relative;		
+		width: 20px;
+		padding-left: 30px;
+		
+		li {
+			margin-top: 10px;
+
+			img {
+				width: 30px;
+				height: 30px;
+
+				@include atSize700 {
+					width: 40px;
+					height: 40px;	
+				}					
+			}
+		}
+	}
+
+	.corporate-txt {
+		padding-right: 30px;
+
+		ul {
+			li {
+				font-size: 16px;
+				line-height: 1.5;
+				padding-bottom: 8px;
+			}
+		}
+	}
+
+	.insight-cards {
+		
+		@include atSize700 {
+			max-width: 252px;
+			margin:0.5rem auto !important;
+			width:91%;
+			background:#fff;
+		}
+		@include atSize424{
+			text-align:center;
+		}
+		img{
+			@include atSize700 {
+				width: 100%;
+				height:auto;
+			}
+			
+		}
+		.insight-card-footer{
+			.readMin{
+				padding: 1rem 0;
+				line-height: 38px;
+				margin:1rem 0;
+			}
+		}
+	}
+
+	.banner {
+
+		&-image {			
+			position: relative;
+
+			@include atSize700 { 
+				bottom: 20px;
+			}
+			@include atSize1350 { 
+				bottom: 20px;
+			}
+
+			.carousel-caption {
+				bottom: 20%;
+				width: 90%;
+				left: 0%;
+				right:0%;				
+
+				@include atSize700 { 
+					bottom: 25%;
+					width: 100%;
+					padding-left: 3rem;
+				}
+				@include atSize1350 { 
+					bottom: 25%;
+					width: 100%;
+					padding-left: 3rem;
+				}
+
+			}
+		}
+
+		&_title {
+			font-size: 2.19rem;
+        	font-weight: bold;
+	        line-height: 1.29;
+	        letter-spacing: .8px;
+        	margin: 0;
+
+	        @include atSize700 {
+	            font-size: 4rem;        
+	            line-height: 1.8;	  
+	            letter-spacing: normal;
+	                 
+	        }
+
+	        @include atSize1350 {	            
+	            font-size: 4rem;
+	            line-height: 1.8;
+
+	        }
+		}
+
+		&_text {
+			font-size: .875rem;
+        	line-height: 1.8;
+
+			@include atSize700 {
+	           font-size: 1rem;        
+	        	line-height: 1.8;
+	        	width: 50%;
+	        }
+
+	        @include atSize1350 {
+	            font-size: 1rem;	        
+	        	line-height: 1.8;
+	        	width: 50%;
+	        }
+		}
+	}
+
+	.mainInfo {
+		.text {
+			h1 {
+				span {
+					color: $primaryColor;
+				}
+			}			
+		}
+	}
+
+	h3 {
+
+		&.page-title {
+			font-size : 1.5rem;
+			line-height: 1.8;
+		}
+	}
+
+	.card-text {
+		font-size: 14px;
+		line-height: 1.5;
+		padding-top: 10px;
+		text-overflow: ellipsis;
+	    max-height: 92px;
+	    overflow: hidden;
+
+	}
+
+	.card-title {
+		font-size: 18px;
+		line-height: 1.5;
+		margin: 0;
+		font-weight: 800;
+		text-overflow: ellipsis;
+	    max-height: 52px;
+	    overflow: hidden;
+	}
+
+	.insight-card-footer {
+		border-top: 1px solid $purpleColor;
+		padding: 10px 0;
+
+		.readMin {
+			font-weight: 800;
+		}
+	}
+
+	.insight-card-body {
+		padding: 10px 0;
+	}
+
+	.sidebar {
+		.list-group-item {
+			padding: 20px 10px;
+
+			a {
+				color: $primaryColor;
+				text-decoration: none;
+				padding: 18px 0;
+
+				&.is-active {
+					color: $purpleColor;
+					background-color: transparent;
+
+					&::after {
+						content: "";
+					    display: block;
+					    border-bottom: 2px solid $purpleColor;
+					    width: 25%;
+					    position: relative;
+					    bottom: -7px;
+					}
+				}				
+
+				&:hover {
+					color: $purpleColor;
+				}
+			}
+		}		
+	}
+
+	.navigation {
+		//float: right;
+		padding-top: 20px;
+		display: flex;
+		padding-left: 0px;
+		list-style: none;
+		border-radius: 0.25rem;
+		justify-content: center;
+		a {
+			border: none;
+		}
+	}
+
+	.events {
+	  background-color: $background-pale;
+	  border-top-left-radius: 0;
+
+	  .title {
+	    text-align: center;
+	    display: flex;
+	    justify-content: center;
+	    margin: 0;
+
+	    h1 {    
+	      color: $primaryColor;
+	      font-size: 32px;
+	      text-shadow: 5px 5px 10px $lt-gray;
+	      padding-top: 0;
+	    }
+	  }
+
+	  .view {
+	    text-align: center;
+	    display: block;	   
+	    background-color: $background-pale;	    
+
+	    a {
+	      font-size: 18px;
+	      align-items: center;
+	      border: none;
+	      padding: 0;
+	      margin: 0;
+	    }
+	  }
+
+	  :root {
+	    --card-img-height: 170px;
+	  }
+	  .card-container {
+	    width: 100%;
+	    height: auto;
+	    display: flex;
+	    flex-flow: row wrap;
+	    justify-content: center;
+	    align-items: center;
+	    border-bottom: 2px;
+	  }
+
+	  .card {
+	    align-self: flex-start;
+	    position: relative;
+	    width: 500px;
+	    min-width: 200px;
+	    margin: 0 1.05rem 0rem;
+	    background: $background-pale;
+	    border: none;
+
+	    .card-img {
+	      width: 100%;
+	      height: 170px;
+	      img {
+	        object-fit: cover;
+	      }
+	      --card-img-overlay: $gradient;
+	      .text-block {
+	        position: absolute;
+	        top: 46%;
+	        padding: 12px;
+	        padding-left: 16px;
+	        color: $wt;
+	        filter: none;
+	        p {
+	          position: relative;
+	          font-size: 8px;
+	          &:first-of-type {
+	            margin-top: 1px;
+	            &:before {
+	              content: "";
+	              position: absolute;
+	              height: 18px;
+	              background: $boldtext;
+	              opacity: 0.6;
+	              width: 15px;
+	              top: -1.2rem;
+	              border-radius: 3px;
+	            }
+	          }
+	        }
+	      }
+	      .img-txt {
+	        position: absolute;
+	        top: 49%;
+	        right: 14px;
+	        background-color: $wt;
+	        border: 1px solid transparent;
+	        border-radius: 30px;
+	        color: $bl;
+	        padding: 3px;
+	        font-size: 11px;
+	      }
+	    }
+
+	    .card-info {
+	      position: relative;
+	      padding: 0.75rem 1.25rem;
+	      border: 1px solid $lt-gray;
+	      background-color: $wt;
+	      box-shadow: $boxshadow;
+	      .card-title {
+	        z-index: 10;
+	        font-size: 1.25rem;
+	        padding-bottom: 0.75rem;
+	        padding-top: 0.75rem;
+	      }
+
+	      .card-creator {
+	        padding-bottom: 40px;
+	        align-items: left;
+	      }
+	      span {
+	        text-transform: uppercase;
+	      }
+	      p {
+	        font-size: 14px;
+	        
+	        i {
+	          margin-top: 20px;
+	          margin-right: 4px;
+	          color: $boldtext;
+	        }
+	      }
+	    }
+	    @media screen and (max-width: $break-small) {
+	      .card-img {
+	        img {
+	          width: 100%;
+	        }
+	      }
+	    }
+	  }
+	}
+
+	.insight {
+
+		&-modal {
+			p {
+				font-size: 14px;
+				line-height: 1.5;
+			}
+
+			.close {
+				float: none;
+				position: absolute;
+				right: 0;
+				top: 0
+			}
+		}		
+	}
+
+	.viewAll {
+		padding-left: 18px;
+		text-transform: uppercase;
+		cursor: pointer;
+		margin: 0;
+
+		&:after {
+			content: ' \2193';
+			color: $purpleColor;		    
+		    font-size: $line-height-md;		   
+
+			@include atSize700 { 
+				content: ' \2192';
+			}	    	
+		}
+	}
+	.unpad-extra{
+		@include atSize424
+		{
+		  margin:0px 0px 0px 0px;
+		}
+	}
+}
+
+.single-testimonial .person-img {
+    float: left;
+    width: 36%;
+    margin: 6px 20px 0 0;
+}
+
