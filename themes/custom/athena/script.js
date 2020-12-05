@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
         jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
     });
 
-    if (jQuery(".country-code").length == 0) {
+    if (jQuery(".country-code").length > 0) {
         jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
             var countrycode = geoplugin_countryCode();
             countrycode = countrycode.toLowerCase();
