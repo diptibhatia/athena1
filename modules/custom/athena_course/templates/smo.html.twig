@@ -106,6 +106,7 @@
                                 <span id="error-msg" class="hide"></span>
                             </div>
                             <input type="hidden" id="speak_courseid" value="{{node.field_cid.value}}" >
+                            <input type="hidden" id="nid" value="{{node.id}}" >
                             <input type="hidden" id="utm_source" value="{{source}}" >
                             <input type="hidden" id="utm_campaign" value="{{campaign}}" >
                             <div class="button">
@@ -420,6 +421,7 @@
         }
 
         var ph_num = jQuery("#phone").val();
+        var nid = jQuery("#nid").val();
         var num_len = ph_num.length;
         
         if(num_len <6 || num_len >15) {
@@ -451,7 +453,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         success: function (data, status, xhr) {
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
-                           document.getElementById('thankyoulink').click();
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
                             if (r == true) {
                              // txt = "You pressed OK!";
                             } else {

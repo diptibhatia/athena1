@@ -235,6 +235,10 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
   }
+   if (strpos($current_path, '/smo-tq') !== false) {
+    $variables['athena_exclude'] = TRUE;
+    $variables['exclude_footer'] = TRUE;
+  }
   
   $bid = 17;
     $block_content = BlockContent::load($bid);
