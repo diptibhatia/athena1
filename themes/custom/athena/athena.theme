@@ -235,11 +235,14 @@ function athena_preprocess_page(&$variables) {
     $variables['exclude_footer'] = TRUE;
   }
   
-  $blockmenu = \Drupal::entityManager()->getStorage('block')->load('footercoursesmenu');
-$block_content = \Drupal::entityManager()
-->getViewBuilder('block')
-->view($blockmenu);
- $variables['footercoursemenu'] = $block_content;
+  $bid = 17;
+    $block_content = BlockContent::load($bid);
+
+    $rendered_block = \Drupal::entityTypeManager()
+      ->getViewBuilder('block_content')
+      ->view($block_content);
+
+ $variables['footercoursemenu'] = $rendered_block;
 
      if (strpos($current_path, '/registration') !== false) {
     $variables['athena_exclude'] = TRUE;
