@@ -11,7 +11,7 @@
             <h1>{{course_title}}</h1>
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
                 <br>{{awarding_body}}</p>
-            <a href="{{ url('<front>') }}registration" class="trialBtn">Start 7 Day Trial</a>
+            <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" class="trialBtn">Start 7 Day Trial</a>
           </div>
           <div class="bg">
             <img src="{{base_path}}/images/smo/bg.jpg" alt="background-image">
@@ -108,7 +108,7 @@
                             <div class="button">
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
-                                <button  type="submit" id="smo_form_submit">Submit</button>
+                                <button  type="submit" id="speak_submit">Submit</button>
                             </div>
                             </form>
                         </div>
@@ -164,7 +164,7 @@
                         <div class="partners-tabs__mba no-bottom-video">
                             <div class="partners-tabs__mba-text">
                                 <div>
-                                    <h2>{{course_title}}</h2>
+                                    <h2>{{ universities.university.label }}</h2>
                                     <p>{{universities.university.field_description.value|raw}} </p>
                                     {% if universities.univ_logo is empty %}
                                     <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
@@ -395,126 +395,56 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.com/libraries/owl-carousel"></script>
 
-<script src="https://cdnjs.com/libraries/owl-carousel"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
 
 <script type="text/javascript">
-  jQuery(document).ready(function() {
+  $(document).ready(function() {
+      $("#phone").intlTelInput();
+      $(".selected-flag").after("<div class='country-code' />");
+      var CountryCode = $(".country.active .dial-code").text();
+      $(".country-code").text(CountryCode);
 
-    jQuery("#smo_form_submit").click(function() {
-      var msg = '';
-      if(jQuery("#speak_first_name").val() == '') {
-        msg += '\n\u2022  First name cannot be empty';
-      }
-      if(jQuery("#speak_last_name").val() == '') {
-        msg += '\n\u2022  Last name cannot be empty';
-      }
-      if(jQuery("#speak_email").val() == '') {
-        msg += '\n\u2022  Email cannot be empty';
-      }
-      if(jQuery("#speak_first_name").val() == '') {
-        msg += '\n\u2022  Phone number cannot be empty';
-      }
+      $(".country-list").click(function(){
+          var CountryCode = $(".country.active .dial-code").text();
+          $(".country-code").text(CountryCode);
+      });
 
-      if(jQuery("#speak_mobile_number").val() == '') {
-        msg += '\n\u2022  Phone number cannot be empty';
-      }
-      if(!jQuery("#speak_consent").prop('checked') == true){
-         msg += '\n\u2022 please accept consent terms';
-      }
-
-      if(msg == ''){
-
-        document.getElementById('thankyoulink').click();
-        return false;
-
-      }else {
-        jQuery('#speak_first_name').val("");
-        jQuery('#speak_last_name').val("");
-        jQuery('#speak_email').val("");
-        jQuery('#speak_country').val("");
-        jQuery('#speak_mobile_number').val("");
-        jQuery('#speak_consent').prop('checked', false);
-        alert(msg)
-      }
-    });
-
-    jQuery('.owl-carousel').owlCarousel({
-        navigation: true,
-        loop: true,
-        margin: 10,
-        autoWidth: true,
-        responsiveClass: true,
-        responsive: {
-        0: {
-            items: 1,
-            nav: true
-        },
-        600: {
-            items: 3,
-            nav: false
-        },
-        1000: {
-            items: 4,
-            nav: true,
-            loop: false,
-            margin: 20
-        }
-        }
-    });
-
-    jQuery(window).scroll(function() {
-        if(jQuery(window).width() > 1249) {
-            if((jQuery(window).scrollTop() > jQuery(".course-login-wrapper").offset().top) &&
-            (jQuery(window).scrollTop() < (jQuery(".course-login-wrapper").offset().top + jQuery(".course-login-wrapper").height() -
-            jQuery(".testimonials").height() + 10))) {
-                jQuery(".testimonials").css("position", "fixed");
-                console.log("Yo");
-            } else {
-                jQuery(".testimonials").css("position", "static");
+       $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            autoWidth: true,
+            responsiveClass: true,
+            responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 3,
+                nav: false
+            },
+            1000: {
+                items: 4,
+                nav: true,
+                loop: false,
+                margin: 20
             }
-        }
-    });
+            }
+        })
+        $(window).scroll(function() {
+            if($(window).width() > 1249) {
+                if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) &&
+                ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() -
+                $(".testimonials").height() + 10))) {
+                    $(".testimonials").css("position", "fixed");
+                    console.log("Yo");
+                } else {
+                    $(".testimonials").css("position", "static");
+                }
+            }
+        })
   });
 </script>
-
-<a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#thankyoumodal" id='thankyoulink' style="display:none;"></a>
-
-<div id="thankyoumodal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content" style="width:475px !important;">
-
-            <div class="modal-body">
-
-                    <div class="col-md-12">
-                      <div class="col-md-12" style="
-                        text-align: center;
-                    "><div>
-                        <img src="{{base_path}}/images/request-img.svg" style="
-                        position: relative;
-                        left: -2px;
-                    ">
-
-                    </div>
-
-                        <h2>Thank you for the request</h2>
-                        <p class="txt-14">Our Admission advisor will get in touch with you shortly</p>
-                        <button onclick="javascript:location.reload();" style="
-                        width: 109px;
-                        height: 38px;
-                        padding: 10px 37px 11px;
-                        border-radius: 8px;
-                        background-image: linear-gradient(to left, #eeeeee 111%, #ececec 96%, #d8d8d8);
-                        border: 0px;
-                        font-weight: bold;
-                    ">Okay</button>
-                      </div>
-                      </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>

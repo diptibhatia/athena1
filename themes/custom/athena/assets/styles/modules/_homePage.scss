@@ -175,7 +175,7 @@
   
   .explore-courses {
 	  text-align: center;
-			button {
+			button.explore {
 				border-radius: 30px;
 				border: solid 2px #ff008e;
 				color: #ff008e;
@@ -972,7 +972,7 @@
 			  }
 		  }
 		  position: relative;
-		  top: 120px;
+		  //top: 120px;
 		  @include atSize479{
 			  padding: 100px 10px 0 10px;
 			  width: 100%;

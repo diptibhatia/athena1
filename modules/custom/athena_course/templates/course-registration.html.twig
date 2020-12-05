@@ -9,7 +9,7 @@
                 <div class="col-md-6 col-sm-12">
                     <h1>Register <span>Now</span></h1>
                     <h3>Start Learning in 60 Seconds - No need for any payment details!</h3>
-                    <h4>If you are a  Existing user please <span><a href="http://portal.athena.edu/login">Sign In</a></span></h4>
+                    <h4>If you are a  Existing user please <span><a href="https://ulearn.athena.edu/login">Sign In</a></span></h4>
                     <div class="login-details">
                         <div class="login-item names">
                             <div class="name-item">
@@ -284,7 +284,11 @@
                             <select name="course" id="reg_course">
 							    <option value="" default="">Select your course</option>
                                 {% for nodedata in nodes %}
-                                 <option value="{{nodedata.id}}">{{nodedata.label}}</option>
+                                  {% if cid == nodedata.field_cid.value %}
+                                     <option value="{{nodedata.field_cid.value}}" selected="selected">{{nodedata.label}}</option>
+                                     {% else %}
+                                        <option value="{{nodedata.field_cid.value}}" >{{nodedata.label}}</option>
+                                  {% endif %}
                                     {% endfor %}
                             </select>
                         </div>

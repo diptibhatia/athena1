@@ -478,13 +478,17 @@ global $base_url;
 $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();
 
-
+$cid = '';
+if(isset($_REQUEST['cid'])) {
+    $cid = $_REQUEST['cid'];
+}
 
 
 //print_r($node);exit;
 $registration =  [
   '#theme' => 'course_registration',
   '#base_path' => $base_path,
+  '#cid' => $cid,
   '#nodes' => $nodes,
 ];
 

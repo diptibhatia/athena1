@@ -79,6 +79,8 @@ athena_course.registration:
     _title: 'Course Registration'
   requirements: 
     _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
     
 athena_course.university:
   path: '/university'
