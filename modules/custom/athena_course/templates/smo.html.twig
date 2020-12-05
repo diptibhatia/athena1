@@ -169,11 +169,7 @@
                                 <div>
                                     <h2>{{ universities.university.label }}</h2>
                                     <p>{{universities.university.field_description.value|raw}} </p>
-                                    {% if universities.univ_logo is empty %}
-                                    <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
-                                    {% else %}
-                                    
-                                        {% endif %}
+                                   
                                 </div>
 
 <div class="certificate">
@@ -235,7 +231,7 @@
                                 </div>
 
                                 <p class="note">
-                                <img src="{{universities.univ_logo}}" alt="uni-logo"><br>
+                                <img src="{{universities.univ_logo}}" alt="uni-logo" height="100"><br>
                                 *All certificate and transcript images are for illustrative purposes only and may be
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
