@@ -28,6 +28,18 @@
 @import "modules/courseFaq";
 @import "modules/courseBottomBanner";
 @import "modules/aboutUs";
+@import "modules/homePage";
+@import "modules/testimonials";
+@import "modules/events";
+@import "modules/academicProgram";
+@import "modules/searchList";
+@import "modules/insight";
+@import "modules/university";
+@import "modules/login";
+@import "modules/courseLoginPage";
+@import "modules/smoPage";
+@import "modules/affiliatePage";
+@import "modules/aboutPopular";
 @import "modules/modalPopup";
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
@@ -163,5 +175,9 @@ img {
     top: -30px;
     left: 8px;
 } 
-#block-whitespaces {display:none;}
-.academic-program-wrapper {margin-top:80px;}
+#block-whitespaces {display:none;} 
+.academic-program-wrapper {
+    margin-top: 80px;
+}
+.all-courses h1 {font-weight:bold;}
+.why-athena .testimonials {top:0 !important;}
