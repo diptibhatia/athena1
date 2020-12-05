@@ -61,6 +61,10 @@
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
 
+                if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+                  msg += '\n\u2022  Phone number is invalid';
+                }
+
                 if(jQuery("#get_in_touch_mobile").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
@@ -170,6 +174,11 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 if(jQuery("#phone").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
                 }
+
+                if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+                  msg += '\n\u2022  Phone number is invalid';
+                }
+
                  if(jQuery("#reg_qual").val() == '') {
                     msg += '\n\u2022  please select Qualification';
                 }
@@ -228,6 +237,10 @@ jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/SaveLead', {
                 }
                 if(jQuery("#phone").val() == '') {
                     msg += '\n\u2022  Phone number cannot be empty';
+                }
+
+                if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+                  msg += '\n\u2022  Phone number is invalid';
                 }
 
                 if(!jQuery("#speak_consent").prop('checked') == true){
