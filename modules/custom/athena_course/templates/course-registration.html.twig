@@ -282,7 +282,12 @@
                             <select name="course" id="reg_course">
 							    <option value="" default="">Select your course</option>
                                 {% for nodedata in nodes %}
-                                 <option value="{{nodedata.id}}">{{nodedata.label}}</option>
+                                
+                                 {% set selected = '' %}
+                                  {% if cid == nodedata.field_cid.value %}
+                                    {% set selected = 'selected' %}
+                                  {% endif %}
+                                 <option value="{{nodedata.id}}" {{selected}}>{{nodedata.label}}</option>
                                     {% endfor %}
                             </select>
                         </div>
