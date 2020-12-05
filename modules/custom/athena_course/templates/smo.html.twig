@@ -416,7 +416,7 @@
         if(jQuery("#speak_email").val() == '') {
           msg += '\n\u2022  Email cannot be empty';
         }
-        if(jQuery("#phone").val().length >= 7 && jQuery("#phone").val().length <= 15) {
+        if(!(jQuery("#phone").val().length >= 7 && jQuery("#phone").val().length <= 15)) {
           msg += '\n\u2022  Invalid Phone number';
         }
 
