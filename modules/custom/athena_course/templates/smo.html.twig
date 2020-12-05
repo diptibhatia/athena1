@@ -414,10 +414,7 @@
         if(jQuery("#speak_email").val() == '') {
           msg += '\n\u2022  Email cannot be empty';
         }
-        if(jQuery("#speak_first_name").val() == '') {
-          msg += '\n\u2022  Phone number cannot be empty';
-        }
-
+       
         if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }
@@ -425,7 +422,7 @@
         var ph_num = jQuery("#phone").val();
         var num_len = ph_num.length;
         
-        if(num_len.length <6 || num_len.length >15) {
+        if(num_len <6 || num_len >15) {
           msg += '\n\u2022  Invalid Phone number';
         }
 
