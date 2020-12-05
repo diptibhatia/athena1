@@ -172,7 +172,7 @@
                                     {% if universities.univ_logo is empty %}
                                     <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
                                     {% else %}
-                                    <img src="{{universities.univ_logo}}" alt="uni-logo">
+                                    
                                         {% endif %}
                                 </div>
 
@@ -234,7 +234,9 @@
                                     <p>Click to Enlarge</p>
                                 </div>
 
-                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be
+                                <p class="note">
+                                <img src="{{universities.univ_logo}}" alt="uni-logo"><br>
+                                *All certificate and transcript images are for illustrative purposes only and may be
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
                             <div class="partners-tabs__mba-img"></div>
