@@ -13,8 +13,8 @@ public function news_subscription(){
 }
 
 public function smo_tq(){
-    if(isset($_request['nid'])){
-    $node = Node::load($_request['nid']);
+    if(isset($_REQUEST['nid'])){
+    $node = Node::load($_REQUEST['nid']);
     }
        global $base_url;
     $theme = \Drupal::theme()->getActiveTheme();
@@ -26,7 +26,7 @@ $academic =  [
 ];
 
 
-return array($academic );
+return array($academic);
     
     
 }
