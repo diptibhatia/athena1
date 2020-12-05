@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="107px" height="107px" viewBox="0 0 107 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 13</title>
+    <defs>
+        <circle id="path-1" cx="42.5" cy="42.5" r="42.5"></circle>
+        <filter x="-20.6%" y="-18.2%" width="141.2%" height="141.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.836454605   0 0 0 0 0.859929101   0 0 0 0 0.986186594  0 0 0 0.716100306 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-3" cx="42.5" cy="42.5" r="32.3"></circle>
+        <filter x="-27.1%" y="-24.0%" width="154.2%" height="154.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.836454605   0 0 0 0 0.859929101   0 0 0 0 0.986186594  0 0 0 0.716100306 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-5" cx="42.925" cy="42.925" r="24.65"></circle>
+        <filter x="-35.5%" y="-31.4%" width="171.0%" height="171.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.836454605   0 0 0 0 0.859929101   0 0 0 0 0.986186594  0 0 0 0.716100306 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="course--modules" transform="translate(-738.000000, -457.000000)">
+            <g id="Group-4" transform="translate(749.000000, 466.000000)">
+                <g id="Group-13">
+                    <g id="Oval" opacity="0.400000006">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Oval" opacity="0.400000006">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="Oval" opacity="0.879999995">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    </g>
+                    <g id="noun_play_839208" transform="translate(36.975000, 33.575000)" fill="#FF4796" fill-rule="nonzero">
+                        <path d="M15.946544,8.759216 L1.325456,0.317424 C1.031152,0.147424 0.719712,0.147424 0.424864,0.317424 C0.130016,0.487696 0,0.801856 0,1.142128 L0,18.02544 C0,18.36544 0.130016,18.679872 0.424592,18.849872 C0.572016,18.935008 0.710464,18.97744 0.875024,18.97744 C1.039312,18.97744 1.190816,18.935008 1.33824,18.849872 L15.953072,10.408352 C16.247648,10.238352 16.425808,9.92392 16.425808,9.58392 C16.425808,9.243648 16.24112,8.929488 15.946544,8.759216 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,71 @@
+.why-course {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ff459a;
+    color: #fff;
+
+    @include atSize1100 {
+        padding-top: 31px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 32px;
+        margin: 0 0 24px;
+
+        @include atSize1100 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    }
+
+    .cover {
+
+        @include atSize1100 {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        margin-bottom: 40px;
+
+        @include atSize1100 {
+            width: 60%;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0;
+
+            @include atSize1100 {
+                font-size: 1.125rem;
+            }
+
+            &::first-letter {
+                font-size: 3.44rem;
+                opacity: .5;
+                margin-right: 8px;
+                vertical-align: sub;
+
+                @include atSize1100 {
+                    font-size: 4rem;
+                }
+            }
+        }
+
+        p {
+            font-size: .875rem;
+            line-height: 28px;
+            margin-left: 43px;
+
+            @include atSize1100 {
+                font-size: 1rem;
+                margin-left: 49px;
+            }
+        }
+    }
+
+}

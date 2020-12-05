@@ -1,0 +1,429 @@
+.fyi-tabs {
+    font-size: .875rem;
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+    padding-bottom: 38px;
+
+    @include atSize700 {
+        z-index: 11;
+    }
+
+    .nav {
+        display: block;
+        background-color: #fff;
+        white-space: nowrap;
+        overflow-x: scroll;
+        box-shadow: 0 2px 11px 4px rgba(0, 0, 0, 0.08);
+        margin: 0 -12px 21px;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+        &::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+
+        @include atSize1100 {
+            margin: 0 -7rem 40px;
+            padding: 0 5.6rem;
+        }
+
+        @include atSize1250 {
+            margin: 0 -15rem 40px;
+            padding: 0 13.6rem;
+        }
+
+        &-item {
+            display: inline-block;
+
+            @include atSize850 {
+                margin-right: 15px;
+            }
+        }
+
+        a {
+            color: $primaryColor;
+            padding: 1.35rem 1.7rem;
+            letter-spacing: .2px;
+            position: relative;
+
+            @include atSize850 {
+                top: -3px;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                transform: scale(0);
+                height: 4px;
+                background-color: $titlePink;
+                display: inline-block;
+                position: absolute;
+                bottom: 8px;
+                left: 0;
+                transition: transform .2s ease-out;
+
+                @include atSize480 {
+                    bottom: -3px;
+                }
+            }
+
+            &.active {
+                font-weight: bold;
+            
+                &::after {
+                    transform: scale(1);;
+                }
+            }
+        }
+    }
+
+    &__overview {
+
+        @include atSize1250 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-list {
+            max-width: 670px;
+            margin-bottom: 30px;
+
+            @include atSize1250 {
+                margin-right: 20px;
+                margin-bottom: 0;
+                max-width: 790px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 15;
+            }
+    
+            li {
+                line-height: 1.6;
+                text-indent: 12px;
+                position: relative;
+                margin-bottom: 10px;
+
+                @include atSize1250 {
+                    text-indent: 0;
+                    padding-left: 25px;
+                    font-size: 1rem;
+                    line-height: 1.8;
+                }
+    
+                &::before {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: $titlePink;
+                    display: inline-block;
+                    left: 0;
+                    top: 13px;
+                    position: absolute;
+                }
+    
+                span {
+                    display: block;
+                    text-indent: 0;
+
+                    @include atSize1250 {
+                        text-indent: 50px;
+                    }
+    
+                    i {
+                        color: $titlePink;
+                        font-style: normal;
+                    }
+                }
+            }
+    
+            p {
+                line-height: 1.6;
+                margin-bottom: 15px;
+                font-size: .875rem;
+
+                @include atSize1250 {
+                    font-size: 1rem;
+                    line-height: 1.8;
+                }
+            }
+        }
+    }
+
+    &__course-modules {
+
+        @include atSize1250 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__details {
+            max-width: 680px;
+            width: 100%;
+            margin-bottom: 30px;
+
+            @include atSize1250 {
+                max-width: 780px;
+                margin-right: 39px;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                font-weight: bold;
+                letter-spacing: .3px;
+                margin-bottom: 27px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 31%;
+                    height: 3.5px;
+                    border-radius: 1.5px;
+                    background-color: $titlePink;
+                    position: absolute;
+                    left: 3px;
+                    margin-top: 2px;
+                }
+
+                @include atSize1250 {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                font-size: .875rem;
+
+                span {
+                    color: $titlePink;
+                }
+
+                @include atSize1250 {
+                    font-size: 1rem;
+                }
+            }
+
+            .desc-container {
+
+                .desc {
+                    border-radius: 4px;
+                    box-shadow: 0 2px 11px 2px rgba(213, 219, 251, 0.72);
+                    background-color: #fff;
+                    margin-bottom: 10px;
+                    padding: 15px 10px;
+
+                    @include atSize1100 {
+                        display: flex;
+                        height: 55px;
+                        padding: 0 5px 0 15px;
+                    }
+
+                    p {
+                        margin: 0;
+                        line-height: 1.6;
+
+                        @include atSize1100 {
+                            line-height: 52px;
+                        }
+
+                        &:nth-of-type(1) {
+                            margin-bottom: 5px;
+
+                            @include atSize1100 {
+                                margin-bottom: 0;
+                                flex: 3.5;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            color: $secondaryColor;
+                            font-style: italic;
+                            
+                            @include atSize1100 {
+                                font-size: .9rem;
+                                white-space: nowrap;
+                                flex: 4.5;
+                                overflow-x: auto;
+                                scrollbar-width: none; /* Hide scrollbar Firefox */
+                                -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+                                &::-webkit-scrollbar {
+                                    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+                                }
+                            }
+
+                            span {
+                                font-style: normal;
+                            }
+                        }
+                    }
+                }
+            }
+
+            > a {
+                color: $titlePink;
+                text-decoration: none;
+                width: 215px;
+                height: 48px;
+                border: 2px solid $titlePink;
+                line-height: 43px;
+                font-size: 1rem;
+                letter-spacing: .2px;
+                border-radius: 24px;
+                display: block;
+                margin: 25px auto 20px;
+                text-align: center;
+                transition: all .2s ease-out;
+
+                &:hover {
+                    background-color: $titlePink;
+                    color: #fff;
+                }
+
+                @include atSize1100 {
+                    font-size: 1rem;
+                    margin-top: 31px;
+                }
+            }
+
+            .italic {
+                font-style: italic;
+                line-height: 1.63;
+                font-size: .875rem;
+                margin-bottom: 0;
+
+                @include atSize1250 {
+                    font-size: 1rem;
+                }
+
+                span {
+                    color: $titlePink;
+                }
+
+                a {
+                    color: $titlePink;
+                    text-decoration: none;
+                    background-color: #d8d8d8;
+                    border-radius: 15px;
+                    padding: 2px 10px;
+                    font-weight: bold;
+                    font-style: normal;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    &__eligibility, &__why-athena {
+        
+        @include atSize1250 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &_details {
+            color: $secondaryColor;
+            max-width: 750px;
+
+            @include atSize480 {
+                width: 60%;
+                margin-right: 50px;
+            }
+
+            @include atSize1250 {
+                width: 85%;
+                margin-right: 20px;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                display: inline-block;
+                color: $primaryColor;
+                font-weight: bold;
+                letter-spacing: .3px;
+                margin-bottom: 22px;
+                position: relative;
+
+                @include atSize850 {
+                    font-size: 2rem;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 37%;
+                    height: 3px;
+                    border-radius: 1.5px;
+                    background-color: $itemColor;
+                    position: absolute;
+                    left: -3px;
+                }
+            }
+
+            h3 {
+                color: #ff026f;
+                font-size: 1.25rem;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            p {
+                font-size: .875rem;
+                margin-bottom: 30px;
+                line-height: 24px;
+
+                @include atSize850 {
+                    font-size: 1rem;
+                    line-height: 30px;
+                }
+            }
+
+            .knowmore {
+
+                a {
+                    display: block;
+                    color: $titlePink;
+                    font-style: italic;
+                    overflow-x: auto;
+                    scrollbar-width: none; /* Hide scrollbar Firefox */
+                    -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+                    &::-webkit-scrollbar {
+                        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+                    }
+                }
+            }
+        }
+    }
+
+    &__why-athena {
+
+        &_details {
+
+            h2 {
+                margin-bottom: 40px;
+
+                &::after {
+                    bottom: -7px;
+                }
+            }
+
+            h3 {
+                font-style: normal;
+                color: $titlePink;
+                font-size: 1.125rem;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: .875rem;
+                line-height: 24px;
+                color: $primaryColor;
+            }
+        }
+    }
+}

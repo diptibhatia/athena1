@@ -1,0 +1,72 @@
+.how-learn.course-team {
+    padding-top: 25px;
+    padding-bottom: 43px;
+
+    h2 {
+        position: relative;
+        margin-bottom: 11px;
+
+        @include atSize850 {
+            &::after {
+                content: '';
+                display: block;
+                width: 6%;
+                height: 3.5px;
+                border-radius: 1.5px;
+                background-color: $titlePink;
+                position: absolute;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    .msg {
+        max-width: 830px;
+        line-height: 1.44;
+        color: $secondaryColor;
+        margin-bottom: 28px;
+        font-size: 1rem;
+        padding: 0 12px;
+
+        @include atSize850 {
+            font-size: 1.125rem;
+            padding: 0;
+        }
+    }
+
+    .learn-card {
+        height: 330px;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+
+        &::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+
+        .team-img {
+            margin: 23px 0 14px;
+
+            &::after {
+                content: none;
+            }
+
+            img {
+                width: 65px;
+                height: 65px;
+            }
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #222a41;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #6d7783;
+            margin: 13px 0 0;
+        }
+    }
+}

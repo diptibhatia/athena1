@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <defs>
+        <path d="M18.81,0 C8.42311205,0 0,8.42311205 0,18.81 C0,29.196888 8.42311205,37.62 18.81,37.62 C29.196888,37.62 37.62,29.196888 37.62,18.81 C37.62,8.42311205 29.196888,0 18.81,0 Z M13.3440326,28.4354297 L8.76294115,28.4354297 L8.76294115,14.6531209 L13.3440326,14.6531209 L13.3440326,28.4354297 Z M11.0536304,12.771145 L11.0237805,12.771145 C9.48651306,12.771145 8.49228333,11.7129103 8.49228333,10.3903322 C8.49228333,9.03790419 9.51693699,8.00894531 11.0840542,8.00894531 C12.6511716,8.00894531 13.6155515,9.03790419 13.6454013,10.3903322 C13.6454013,11.7129103 12.6511716,12.771145 11.0536304,12.771145 Z M29.8624823,28.4354297 L25.2819649,28.4354297 L25.2819649,21.0622289 C25.2819649,19.2092418 24.6186667,17.9455023 22.9611388,17.9455023 C21.6956772,17.9455023 20.9419684,18.7979453 20.6107498,19.6208253 C20.4896283,19.9153057 20.4600654,20.3268892 20.4600654,20.7387598 L20.4600654,28.4354297 L15.879261,28.4354297 C15.879261,28.4354297 15.9392478,15.9461362 15.879261,14.6531209 L20.4600654,14.6531209 L20.4600654,16.6045551 C21.0688303,15.6654327 22.1580629,14.3296518 24.5885298,14.3296518 C27.6025039,14.3296518 29.8624823,16.2994551 29.8624823,20.5326809 L29.8624823,28.4354297 Z" id="path-1"></path>
+        <filter x="-8.0%" y="-8.0%" width="115.9%" height="115.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.105882353   0 0 0 0 0.180392157   0 0 0 0 0.317647059  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Final-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="login-" transform="translate(-235.000000, -1888.000000)">
+            <g id="Group-17" transform="translate(134.000000, 1889.000000)">
+                <g id="Group-3" transform="translate(103.000000, 1.000000)">
+                    <rect id="Rectangle" fill="#1B2E51" x="7" y="7.8" width="23.4" height="21"></rect>
+                    <g id="linkedin-(2)" fill-rule="nonzero">
+                        <g id="Shape">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

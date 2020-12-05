@@ -11,17 +11,20 @@ global-css:
 global-js:
   version: VERSION
   js:
-    http://www.geoplugin.net/javascript.gp : { type: external, minified: false }
-    script.js: {}
     js/main.js: {}
     js/menuHandling.js: {}
     js/bootstrap.min.js: {}
     js/fontawesome.min.js: {}
-    js/intlTelInput.min.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js: { type: external, minified: true }
+    js/isValidNumber.js: {}
+    script.js: {}
+    http://www.geoplugin.net/javascript.gp : { type: external, minified: false }
     js/MobileMenu.js: {}
     js/regular.min.js: {}
     js/bundled.js: {}
     prodbundled.js: {}
+
   dependencies:
     - core/jquery
 
