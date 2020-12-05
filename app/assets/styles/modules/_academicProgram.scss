@@ -251,10 +251,10 @@
 
 				.student-image {
 					img {
-						@include atSize424 {
-							width: 140px !important;
-    						height: 88px !important;
-						}
+						// @include atSize424 {
+						// 	width: 140px !important;
+    					// 	height: 88px !important;
+						// }
 						
 
 						&.link_img {
