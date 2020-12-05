@@ -234,6 +234,12 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
   }
+  
+  $blockmenu = \Drupal::entityManager()->getStorage('block')->load('footercoursesmenu');
+$block_content = \Drupal::entityManager()
+->getViewBuilder('block')
+->view($block);
+ $variables['footercoursemenu'] = $block_content;
 
      if (strpos($current_path, '/registration') !== false) {
     $variables['athena_exclude'] = TRUE;
