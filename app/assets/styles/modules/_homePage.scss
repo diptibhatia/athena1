@@ -942,6 +942,8 @@
 		  }
 	  }
 	  .testimonials {
+		  position:relative;
+		  top:180px;
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
@@ -2991,10 +2993,10 @@
 		}
 		.section-items{
 			.section-item-two{
-				margin:20px 0;
+				margin:20px;
 				h4{
-					margin:0;
-					padding:0 20px 8px;
+					margin: 0 auto 12px !important;
+					padding: 0 0 8px;
 				}
 				.container{
 					padding:0 !important;
