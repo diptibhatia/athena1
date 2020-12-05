@@ -213,6 +213,10 @@
                 @include atSize850 {
                     bottom: 0;
                 }
+                @include atSize424{
+                    position: relative;
+                    text-align: center;
+                }
             }
         }
     }
