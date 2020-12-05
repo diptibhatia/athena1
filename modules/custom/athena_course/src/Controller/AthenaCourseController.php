@@ -12,6 +12,24 @@ public function news_subscription(){
 
 }
 
+public function smo_tq(){
+    if(isset($_request['nid'])){
+    $node = Node::load($_request['nid']);
+    }
+       global $base_url;
+    $theme = \Drupal::theme()->getActiveTheme();
+    $base_path = $base_url.'/'. $theme->getPath();
+$academic =  [
+  '#theme' => 'smotq',
+  '#node' => $node,
+  '#base_path' => $base_path,
+];
+
+
+return array($academic );
+    
+    
+}
 public function smo($nid) {
     $parameters = \Drupal::routeMatch()->getParameters();
     $node = Node::load($nid);
