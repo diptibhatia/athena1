@@ -2,7 +2,6 @@ jQuery(".selected-flag").after("<div class='country-code' />");
 jQuery('.iti__flag-container').remove();
 jQuery(document).ready(function() {
     jQuery("#phone").intlTelInput();
-    jQuery("#reg_mobile_num").intlTelInput();
 
     if (jQuery(".country-code").length == 0) {
         jQuery(".selected-flag").after("<div class='country-code' />");
