@@ -498,7 +498,8 @@
       "one three ";
     // grid-gap: 10px;
     padding: 10px;
-    .item {margin:5px; width:100% !important; height: 100% !important; img {width:100% !important; height: 100% !important; }}
+    .item {margin:5px; width:100% !important; height: 100% !important; 
+      img {width:100% !important; height: 100% !important; }}
     .item1 {
       //width: 540px;
       width:100% !important; height: 100% !important;
@@ -506,6 +507,11 @@
         opacity: 0.1;
       }
       background-image:linear-gradient(to left, #ff006e, #ff4e9a, #ff4a97);
+      background-image:
+    linear-gradient(to left, #ff006e, #ff4e9a, #ff4a97)),
+    url('images/background.jpg');
+    background-size: cover;
+
       position: relative;
       // display: flex;
       // flex-direction: column;
