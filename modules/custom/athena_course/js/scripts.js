@@ -221,17 +221,19 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
    async: false, // <<== THAT makes us wait until the server is done.
    success: function(data){
        if (data == 'Email Exist') {
+            var email_id = jQuery("#reg_email").val();
+       var cid = jQuery("#reg_course").val();
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
                                  window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
                                 } else {
-                                  return FALSE;
+                                  return false;
                                 }
                                
                             } else {
                               jQuery("#registration_form22").click();;
                             }
-                       return FALSE;
+                       return false;
    },
    error: function() {
        alert("Error Processing your request, please try again after some time")
