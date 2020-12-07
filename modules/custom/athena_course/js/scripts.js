@@ -104,14 +104,19 @@
                     return false;
 
                 }
-
+ var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+ var iso2 = countryData.iso2;
+ jQuery.get( "https://learn.athena.edu/athenaprod/api/country/IN"+iso2, function( data ) {
+  $( "#country_code" ).val( data );
+  
+});
                  var sendInfo = {
            UserName: String(jQuery("#reg_email").val()),
 Password:String(jQuery("#reg_pass").val()),
 FirstName:String(jQuery("#reg_first_name").val()),
 LastName:String(jQuery("#reg_last_name").val()),
 Email:String(jQuery("#reg_email").val()),
-CountryId:String(jQuery("#reg_email").val()),
+CountryId:String(jQuery("#country_code").val()), 
 ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#reg_course").val()),
 Highestqualification:String(jQuery("#reg_qual").val()),
