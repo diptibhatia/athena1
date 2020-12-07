@@ -82,15 +82,15 @@
                       </div>
 
                       <!--Button will be vissible on mobile onle : START-->
-                      <div class="row">
-                         <div class="col-12">
-                            <form action="{{ url('<front>') }}academic-program" method="POST">
-                               <input type="hidden" name="course_category" value="Academic">
-                               <input type="hidden" name="submit_form" value="submit_form">	
-                               <button class="d-block d-md-none d-lg-none">View All Courses</button>
-                            </form>
-                         </div>
-                      </div>
+                        <div class="row">
+                           <div class="col-12">
+                              <form action="{{ url('<front>') }}academic-program" method="POST">
+                                 <input type="hidden" name="course_category" value="Academic">
+                                 <input type="hidden" name="submit_form" value="submit_form">	
+                                 <button class="d-block d-md-none d-lg-none">View All Courses</button>
+                              </form>
+                           </div>
+                        </div>
                       <!--Button will be vissible on mobile onle : END-->
 
                    </div>
@@ -153,6 +153,17 @@
                             </div>
                          </div>
                       </div>
+
+                        <div class="row">
+                           <div class="col-12">
+                                 <form class="top-search-section__search" action="{{ url('<front>') }}micro-credits" method="POST">
+                                       <input type="hidden" name="course_category" value="Micro Credits">
+                                       <input type="hidden" name="submit_form" value="submit_form">
+                                 <button class="d-block d-md-none d-lg-none" >View All Courses</button>
+                              </form>
+                           </div>
+                        </div>
+
                    </div>
                     {% endif %}
                    {% if certifications is not empty %}
@@ -210,6 +221,18 @@
                             </div>
                          </div>
                       </div>
+
+                        <div class="row">
+                           <div class="col-12">
+                              <form class="top-search-section__search" action="{{ url('<front>') }}certifications" method="POST">
+                                 <input type="hidden" name="course_category" value="Certifications">
+                                 <input type="hidden" name="submit_form" value="submit_form">
+                                 <button class="d-block d-md-none d-lg-none">View All Courses</button>
+                              </form>
+                           </div>
+                        </div>
+
+
                    </div>
 
                    {% endif %}
