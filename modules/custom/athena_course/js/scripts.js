@@ -114,7 +114,7 @@ Password:String(jQuery("#reg_pass").val()),
 FirstName:String(jQuery("#reg_first_name").val()),
 LastName:String(jQuery("#reg_last_name").val()),
 Email:String(jQuery("#reg_email").val()),
-CountryId:parseInt(jQuery("#country_code").val()), 
+Code:parseInt(jQuery("#country_code").val()), 
 ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#reg_course").val()),
 Highestqualification:String(jQuery("#reg_qual").val()),
@@ -161,6 +161,7 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
 
              jQuery("#registration_form").click(function() {
                 var msg = '';
+                var c_email = jQuery("#reg_email").val();
                 if(jQuery("#reg_first_name").val() == '') {
                     msg += '\n\u2022  First name cannot be empty';
                 }
@@ -201,8 +202,27 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                 if(!jQuery("#reg_terms").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
+ 
+                    
 
                 if(msg == ''){
+                    
+                   jQuery.get( "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, function( data ) {
+                            if (data == 'Email Exist') {
+                                var redirect = confirm("Email ID already registered, redirect to login page ?");
+                                if (redirect == true) {
+                                 window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
+                                } else {
+                                  return FALSE;
+                                }
+                               
+                            } else {
+                              //txt = "You pressed Cancel!";
+                            }
+                       return FALSE;
+                    });
+                    
+                    
                     var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
  var iso2 = countryData.iso2;
  iso2 = iso2.toUpperCase();
