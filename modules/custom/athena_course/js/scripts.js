@@ -202,7 +202,13 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                 if(!jQuery("#reg_terms").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
- 
+   var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+ var iso2 = countryData.iso2;
+ iso2 = iso2.toUpperCase();
+ jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
+  jQuery( "#country_code" ).val(data);
+  
+});
                     
 
                 if(msg == ''){
@@ -223,7 +229,7 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                                 }
                                
                             } else {
-                              //txt = "You pressed Cancel!";
+                              jQuery("#registration_form22").click();;
                             }
                        return FALSE;
    },
@@ -232,16 +238,7 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
        return FALSE;
    }
 });
-                    
-                    
-                    var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
- var iso2 = countryData.iso2;
- iso2 = iso2.toUpperCase();
- jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
-  jQuery( "#country_code" ).val(data);
-  
-});
-                      jQuery("#registration_form22").click();;
+                      
                return false;
 
 
