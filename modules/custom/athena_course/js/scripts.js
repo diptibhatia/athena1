@@ -207,8 +207,14 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
 
                 if(msg == ''){
                     
-                   jQuery.get( "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, function( data ) {
-                            if (data == 'Email Exist') {
+                   
+                    
+                    jQuery.ajax({
+   type: 'GET',
+   url: "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, //Returns ID in body
+   async: false, // <<== THAT makes us wait until the server is done.
+   success: function(data){
+       if (data == 'Email Exist') {
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
                                  window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
@@ -220,7 +226,12 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                               //txt = "You pressed Cancel!";
                             }
                        return FALSE;
-                    });
+   },
+   error: function() {
+       alert("Error Processing your request, please try again after some time")
+       return FALSE;
+   }
+});
                     
                     
                     var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
