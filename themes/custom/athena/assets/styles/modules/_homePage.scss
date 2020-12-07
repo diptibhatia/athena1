@@ -2814,6 +2814,18 @@
 	.explore-courses{
 		margin:79px 0 10px 0;
 
+		button{
+			border-radius: 30px;
+			border: solid 2px #ff008e;
+			color: #ff008e;
+			padding: 5px 10px;
+			cursor: pointer;
+			outline: none;
+			background: white;
+			width: 186px;
+			height: 50px;
+		}
+
 		.tabs{
 			margin:30px auto 15px;
 		}
