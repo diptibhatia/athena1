@@ -2880,11 +2880,16 @@
 					text-align:left;
 					padding-bottom:20px;
 					img{
-						margin-bottom:0;
+						left: 16px;
+						margin-bottom: 20px;						
 					}
 					button{
 						margin:30px 0 0;
 						left:auto;
+					}
+					h2{
+						left: 8px;
+					    width: 96%
 					}
 					h3{
 						font-weight:normal;
@@ -2893,18 +2898,15 @@
 				}
 				.item-two {
 					flex: none;
-					//margin: 0 0 0 0;
 					display: block;
 					clear: both;
-					width: 100%;
-					//padding-left:0 !important;
+					width: 96%;
+					padding-left:26px;
 					.student-review, .student-review.two {
-						// width: 95%;
 						height: auto;
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						// margin: 0 0 30px 10px !important;
 						display: flex;
 						margin-right:0 !important;
 						.info{
