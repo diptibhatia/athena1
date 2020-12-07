@@ -107,10 +107,7 @@
  var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
  var iso2 = countryData.iso2;
  iso2 = iso2.toUpperCase();
- jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
-  jQuery( "#country_code" ).val(data);
-  
-});
+ 
                  var sendInfo = {
            UserName: String(jQuery("#reg_email").val()),
 Password:String(jQuery("#reg_pass").val()),
@@ -206,6 +203,13 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                 }
 
                 if(msg == ''){
+                    var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+ var iso2 = countryData.iso2;
+ iso2 = iso2.toUpperCase();
+ jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
+  jQuery( "#country_code" ).val(data);
+  
+});
                       jQuery("#registration_form22").click();;
                return false;
 
