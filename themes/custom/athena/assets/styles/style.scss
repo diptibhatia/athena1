@@ -215,6 +215,6 @@ background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color
     color: #ff0068;
     font-weight: bold;
     @include atSize424{
-        padding-left: 0px;
+        text-align: center;
     }
 }
