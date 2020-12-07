@@ -82,7 +82,7 @@
                       </div>
 
                       <!--Button will be vissible on mobile onle : START-->
-                        <div class="row">
+                        <div class="container">
                            <div class="col-12">
                               <form action="{{ url('<front>') }}academic-program" method="POST">
                                  <input type="hidden" name="course_category" value="Academic">
@@ -154,7 +154,9 @@
                          </div>
                       </div>
 
-                        <div class="row">
+
+                        <!--Button will be vissible on mobile onle : START-->
+                        <div class="container">
                            <div class="col-12">
                                  <form class="top-search-section__search" action="{{ url('<front>') }}micro-credits" method="POST">
                                        <input type="hidden" name="course_category" value="Micro Credits">
@@ -163,6 +165,8 @@
                               </form>
                            </div>
                         </div>
+                        <!--Button will be vissible on mobile onle : END-->
+
 
                    </div>
                     {% endif %}
@@ -222,7 +226,9 @@
                          </div>
                       </div>
 
-                        <div class="row">
+
+                        <!--Button will be vissible on mobile onle : START-->
+                        <div class="container">
                            <div class="col-12">
                               <form class="top-search-section__search" action="{{ url('<front>') }}certifications" method="POST">
                                  <input type="hidden" name="course_category" value="Certifications">
@@ -231,6 +237,7 @@
                               </form>
                            </div>
                         </div>
+                      <!--Button will be vissible on mobile onle : END-->
 
 
                    </div>
