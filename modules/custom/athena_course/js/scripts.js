@@ -106,7 +106,7 @@
                 }
  var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
  var iso2 = countryData.iso2;
- jQuery.get( "https://learn.athena.edu/athenaprod/api/country/IN"+iso2, function( data ) {
+ jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
   $( "#country_code" ).val( data );
   
 });
