@@ -19,7 +19,7 @@ public function smo_tq(){
        global $base_url;
     $theme = \Drupal::theme()->getActiveTheme();
     $base_path = $base_url.'/'. $theme->getPath();
-    
+
     $source = $_REQUEST['utm_source'];
 $campaign = $_REQUEST['utm_campaign'];
 $academic =  [
@@ -32,8 +32,8 @@ $academic =  [
 
 
 return array($academic);
-    
-    
+
+
 }
 public function smo($nid) {
     $parameters = \Drupal::routeMatch()->getParameters();
@@ -1530,7 +1530,7 @@ $merged_nodes = array_merge($nodes, $tnodes);
     }
 
 
-    if (isset($_REQUEST['univ']) && !empty($_REQUEST['univ'])) {
+    if (isset($_REQUEST['univ']) && !empty($_REQUEST['univ']) && $_REQUEST['univ'] != 'partner') {
       $universityContentType = 'universities';
       $universityQuery = \Drupal::entityQuery('node');
       $universityQuery->condition('status', 1);
