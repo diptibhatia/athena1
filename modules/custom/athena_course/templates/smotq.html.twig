@@ -22,6 +22,8 @@ Meanwhile, Your can Register for the Course and Start with Your 7-Day Free Trial
 <div class="col registeredDescription">
  {% if source is not empty %}
 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+  {% else %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" > 
  {% endif %}
 
 <button class="registeredButton">Start 7 Day Trial</button></a></div>
