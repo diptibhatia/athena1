@@ -4,7 +4,7 @@
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
 
-            var search_url = 'http://localhost:9090/edu/athenawebsite/search-results/abc?univ=';
+            var search_url = 'http://website.athena.edu/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
               var search_key =  jQuery("#search_key").val();
@@ -113,15 +113,15 @@
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
                      msg += '\n\u2022 password and confirm password do not match';
                 }
-                
+
 
    var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
                 console.log("UTM"+utm_source);
                 console.log("utm_campaign"+utm_campaign);
-       
+
        if(utm_source == '') {
-         utm_source = 'Direct';  
+         utm_source = 'Direct';
         }
 
                 if(msg != '') {
@@ -132,14 +132,14 @@
  var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
  var iso2 = countryData.iso2;
  iso2 = iso2.toUpperCase();
- 
+
                  var sendInfo = {
            UserName: String(jQuery("#reg_email").val()),
 Password:String(jQuery("#reg_pass").val()),
 FirstName:String(jQuery("#reg_first_name").val()),
 LastName:String(jQuery("#reg_last_name").val()),
 Email:String(jQuery("#reg_email").val()),
-Code:parseInt(jQuery("#country_code").val()), 
+Code:parseInt(jQuery("#country_code").val()),
 ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#reg_course").val()),
 Highestqualification:String(jQuery("#reg_qual").val()),
@@ -150,7 +150,7 @@ Monthofexperience:parseInt(jQuery("#reg_months").val()),
 IsAccepted:true,
 Employmentlevel:String(jQuery("#reg_level").val())
        };
-       
+
        var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
 
@@ -234,14 +234,14 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
  iso2 = iso2.toUpperCase();
  jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
   jQuery( "#country_code" ).val(data);
-  
+
 });
-                    
+
 
                 if(msg == ''){
-                    
-                   
-                    
+
+
+
                     jQuery.ajax({
    type: 'GET',
    url: "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, //Returns ID in body
@@ -256,7 +256,7 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                                 } else {
                                   return false;
                                 }
-                               
+
                             } else {
                               jQuery("#registration_form22").click();;
                             }
@@ -267,7 +267,7 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
        return FALSE;
    }
 });
-                      
+
                return false;
 
 
