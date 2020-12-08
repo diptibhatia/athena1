@@ -103,7 +103,7 @@
    var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
                 console.log("UTM"+utm_source);
-                console.log("utm_campaign"u+tm_campaign);
+                console.log("utm_campaign"+utm_campaign);
        
        if(utm_source == '') {
          utm_source = 'Direct';  
