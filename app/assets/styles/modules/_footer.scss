@@ -71,6 +71,7 @@
 	display: none;
 	padding-bottom: 20px;
 	text-align: center;
+	z-index: 99;
 	@include atSize424 {
 		display: block;
 	} 
