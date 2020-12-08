@@ -1492,20 +1492,22 @@ function search($word = false){
 
 
     $term_name = $_POST['search_key'];
-    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-      ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
-    if (count($term) > 0) {
-      $term = reset($term);
-      $term_id = $term->id();
-      $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
-      ->latestRevision()
-      ->condition('field_tagtaxanomy', $term_id, '=')
-      ->condition('type', $bundle)
-      ->execute();
+    if (!empty($term_name)) {
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+        ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
+      if (count($term) > 0) {
+        $term = reset($term);
+        $term_id = $term->id();
+        $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+        ->latestRevision()
+        ->condition('field_tagtaxanomy', $term_id, '=')
+        ->condition('type', $bundle)
+        ->execute();
 
-      $tnodes = node_load_multiple($term_node);
-      $merged_nodes = array_merge($nodes, $tnodes);
+        $tnodes = node_load_multiple($term_node);
+        $merged_nodes = array_merge($nodes, $tnodes);
 
+      }
     }
 
 
@@ -1635,7 +1637,7 @@ $query->condition('field_course_category', 'Academic');
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('type', $bundle);
-    $query->sort('created' , 'DESC'); 
+    $query->sort('created' , 'DESC');
     $latest = $query->execute();
 
 
