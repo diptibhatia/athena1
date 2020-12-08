@@ -5,7 +5,9 @@
 <div class="registeredTitle">Your Enquiry is Successfully Registered</div><br/>
 </div>
 </div>
-
+<input type="hidden" id="utm_source" value="{{source}}" >
+<input type="hidden" id="utm_campaign" value="{{campaign}}" >
+                           
 <div class="row" style="margin-bottom:31px;">
 <div class="col">
 <div class="registeredDescription">
@@ -17,7 +19,12 @@ Meanwhile, Your can Register for the Course and Start with Your 7-Day Free Trial
 </div>
 
 <div class="row">
-<div class="col registeredDescription"><a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" ><button class="registeredButton">Start 7 Day Trial</button></a></div>
+<div class="col registeredDescription">
+ {% if source is not empty %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+ {% endif %}
+
+<button class="registeredButton">Start 7 Day Trial</button></a></div>
 </div>
 </div>
 </div>

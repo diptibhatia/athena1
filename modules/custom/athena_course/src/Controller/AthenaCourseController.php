@@ -198,8 +198,6 @@ $testimo =  array_slice($testinodes, 0, 7);
 $source = $_REQUEST['utm_source'];
 $campaign = $_REQUEST['utm_campaign'];
 
-
-
     $banner_block =  [
       '#theme' => 'smo',
       '#course_title' => $node->get('title')->value,
@@ -505,12 +503,15 @@ $cid = '';
 if(isset($_REQUEST['cid'])) {
     $cid = $_REQUEST['cid'];
 }
-
+$source = $_REQUEST['utm_source'];
+$campaign = $_REQUEST['utm_campaign'];
 
 //print_r($node);exit;
 $registration =  [
   '#theme' => 'course_registration',
   '#base_path' => $base_path,
+  '#source' => $source,
+  '#campaign' => $campaign,
   '#cid' => $cid,
   '#nodes' => $nodes,
 ];
