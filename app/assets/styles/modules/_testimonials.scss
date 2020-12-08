@@ -1520,3 +1520,14 @@ div#block-discussions .title span {
   margin: 0 0 0 -68px;
   bottom: 9px;
 }
+
+
+.testimonials #block-athena-content img {
+  float: left;
+  margin: 10px 15px 0 0;
+  width: 270px;
+  @media screen and (max-width:700px){
+      margin: 0;
+      width: 100%;
+  }
+}
