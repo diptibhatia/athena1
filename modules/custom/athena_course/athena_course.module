@@ -35,6 +35,8 @@ function athena_course_theme($existing, $type, $theme, $path) {
      'smotq' => [
       'variables' => [
       'node' => NULL,
+       'source' => NULL,
+      'campaign' => NULL,
       'base_path' => NULL,
       ],
     ],
