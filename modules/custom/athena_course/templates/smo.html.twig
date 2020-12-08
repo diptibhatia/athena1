@@ -471,7 +471,12 @@ Campaign:String(jQuery("#utm_campaign").val()),
                                 if(jqXhr.status == 200) {
                                  
                                 
-                                      window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                                   if(utm_source !=''){
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+                           }else{
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                           }
+                         
                          
 
                                 }
