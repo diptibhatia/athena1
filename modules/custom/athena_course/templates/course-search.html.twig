@@ -4,16 +4,16 @@
           <form class="search-form" method = "post" id="course-search--form">
             <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
             <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-            <input type="hidden" name="submit_form"> 
+            <input type="hidden" name="submit_form">
             <div class="search-courses">
                <a href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="{{base_path}}/images/search.svg" alt="search"></a>
             </div>
-          
+
         </div>
          {%if search_key is empty %}
         {% else %}
         <p style="display:hidden">Showing {{count}} results for "{{search_key}}"</p>
-                                   
+
                                         {% endif %}
         <h4>Filter By</h4>
 
@@ -26,7 +26,7 @@
 
             <select id="language_search" name="language" class="non-partner">
               <option value="language">Language</option>
-              <option value="EQF evel 7">English</option>
+              <option value="English">English</option>
             </select>
 
             <select id="level_search" name="level" class="non-partner" style="display:none">
@@ -43,21 +43,21 @@
               <option value="9-36 months">9-36 months</option>
               <option value="3 years">3 years</option>
             </select>
-            
+
             </form>
           </div>
         </div>
       </div>
     </section>
-    
-   
+
+
     <section class="courses my-container">
        {% for nodedata in node %}
       <div class="card">
         <div class="course-sidebar">
          {% if nodedata.field_search_list_image.entity.uri.value is not empty %}
-         
-       
+
+
         <a href="{{ url('<front>') }}course/{{nodedata.id}}"> <img class="course-img" src=" {{ file_url(nodedata.field_search_list_image.entity.uri.value)}}" style="witdth:250px;height:200px" alt="Course"></a>
          {% else %}
           <img class="course-img" src="{{base_path}}/images/1.jpg" alt="Course">
@@ -86,10 +86,10 @@
    <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
 </div>
 </div>
-          
-          
-          
-          
+
+
+
+
         </div>
 
 
@@ -97,8 +97,8 @@
       </div>
     {% endfor %}
     </section>
-    
-    
+
+
    <section class="explore">
 <h1>Explore Topics and Skills</h1>
 
@@ -129,9 +129,9 @@
 </div>
 </section>
 
-    
-    
-    
+
+
+
     <div class="course-faq" style="display:none">
         <div class="wrapper">
             <h2>Frequently Asked Questions</h2>
@@ -144,7 +144,7 @@
                         </button>
                         </h5>
                     </div>
-            
+
                     <div id="sectionOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <div class="accordion-inner" id="inner-accordion1">
@@ -156,7 +156,7 @@
                                             </button>
                                         </h5>
                                     </div>
-                              
+
                                     <div id="firstCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion1" style="">
                                         <div class="card-body">
                                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -219,7 +219,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>     
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                                             </button>
                                         </h5>
                                     </div>
-                              
+
                                     <div id="secondCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion2">
                                         <div class="card-body">
                                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -277,7 +277,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -300,7 +300,7 @@
                                             </button>
                                         </h5>
                                     </div>
-                              
+
                                     <div id="thirdCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion3">
                                         <div class="card-body">
                                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -335,16 +335,16 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
+
+
+
     <section class="opinions">
          <div><div class="footer-banner">
   <img src="{{base_path}}/images/footer-bg.png">

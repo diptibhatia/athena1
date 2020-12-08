@@ -3,17 +3,17 @@ athena_course.course:
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::course'
     _title: 'Custom athena course module'
-  requirements: 
+  requirements:
     _permission: 'access content'
   options:
      no_cache: 'TRUE'
-    
+
 athena_smolist.smolist:
   path: '/smo-list'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::smo_list'
     _title: 'Custom athena course module'
-  requirements: 
+  requirements:
     _permission: 'access content'
 
 athena_newsletter.news-subscription:
@@ -21,15 +21,15 @@ athena_newsletter.news-subscription:
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::news_subscription'
     _title: 'News letter subscription page'
-  requirements: 
-    _permission: 'access content'      
+  requirements:
+    _permission: 'access content'
 
 athena_smo.smo:
   path: '/smo/{nid}'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::smo'
     _title: 'Custom athena Smo module'
-  requirements: 
+  requirements:
     _permission: 'access content'
 
 athena_course.import:
@@ -37,57 +37,59 @@ athena_course.import:
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::import'
     _title: 'import courses'
-  requirements: 
+  requirements:
     _permission: 'access content'
-    
+
 athena_course.search-results:
   path: '/search-results/{word}'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::search'
     _title: 'Custom athena course module'
-  requirements: 
+  requirements:
     _permission: 'access content'
-    
+  options:
+    no_cache: 'TRUE'
+
 athena_course.academic-program:
   path: '/academic-program'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::academic'
     _title: 'Custom athena course module'
-  requirements: 
+  requirements:
     _permission: 'access content'
-    
+
 athena_course.micro-credits:
   path: '/micro-credits'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::micro_credits'
     _title: 'Custom athena course module'
-  requirements: 
+  requirements:
     _permission: 'access content'
-    
+
 athena_course.certifications:
   path: '/certifications'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::certifications'
     _title: 'Custom athena course module'
-  requirements: 
+  requirements:
     _permission: 'access content'
-    
+
 athena_course.registration:
   path: '/registration'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::registration'
     _title: 'Course Registration'
-  requirements: 
+  requirements:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
-    
+
 athena_course.university:
   path: '/university'
   defaults:
     _controller: '\Drupal\athena_course\Controller\AthenaCourseController::university'
     _title: 'Course Registration'
-  requirements: 
+  requirements:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'

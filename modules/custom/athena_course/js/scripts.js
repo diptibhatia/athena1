@@ -4,14 +4,14 @@
             jQuery("#get_in_touch_mobile").intlTelInput();
             jQuery("#contact_form_phone").intlTelInput();
 
-            var search_url = 'http://website.athena.edu/search-results/abc?univ=';
+            var search_url = 'http://localhost:9090/edu/athenawebsite/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
               var search_key =  jQuery("#search_key").val();
               var lang =  jQuery("#language_search").val();
               var level =  jQuery("#level_search").val();
               var duration =  jQuery("#duration_search").val();
-              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+              window.location= search_url + partner + '&lang=' +lang+ '&level=' +level+ '&duration='+duration;
             });
             jQuery("#language_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -19,7 +19,7 @@
               var lang =  jQuery("#language_search").val();
               var level =  jQuery("#level_search").val();
               var duration =  jQuery("#duration_search").val();
-              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+              window.location= search_url + partner + '&lang=' +lang+ '&level=' +level+ '&duration='+duration;
             });
             jQuery("#level_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -27,7 +27,7 @@
               var lang =  jQuery("#language_search").val();
               var level =  jQuery("#level_search").val();
               var duration =  jQuery("#duration_search").val();
-              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+              window.location= search_url + partner + '&lang=' +lang+ '&level=' +level+ '&duration='+duration;
             });
             jQuery("#duration_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -35,8 +35,23 @@
               var lang =  jQuery("#language_search").val();
               var level =  jQuery("#level_search").val();
               var duration =  jQuery("#duration_search").val();
-              window.location= search_url + partner + '&lang=' +lang+ +'&level=' +level+ '&duration='+duration;
+              window.location= search_url + partner + '&lang=' +lang+ '&level=' +level+ '&duration='+duration;
             });
+
+            if (jQuery("#partner_search").length > 0 && jQuery("#language_search" ).length > 0 && jQuery("#duration_search" ).length > 0) {
+              var univ = getUrlParameter('univ');
+              var lang = getUrlParameter('lang');
+              var duration = getUrlParameter('duration');
+              if (univ != undefined) {
+                jQuery("#partner_search").val(univ);
+              }
+              if (lang != undefined) {
+                jQuery("#language_search").val(lang);
+              }
+              if (duration != undefined) {
+                jQuery("#duration_search").val(duration);
+              }
+            }
 
             jQuery("#get_in_touch").click(function() {
                  var msg = '';
@@ -354,4 +369,19 @@ function copy_to_clipboard() {
   /* Alert the copied text */
   alert("Copied url to clipboard: ");
   document.body.removeChild(dummy);
+}
+
+function getUrlParameter(sParam) {
+  var sPageURL = window.location.search.substring(1),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+      }
+  }
 }
