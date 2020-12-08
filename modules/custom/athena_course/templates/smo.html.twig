@@ -444,6 +444,9 @@ Source:String(jQuery("#utm_source").val()),
 Campaign:String(jQuery("#utm_campaign").val()),
 
        };
+       
+             var utm_source = jQuery("#utm_source").val();
+       var utm_campaign = jQuery("#utm_campaign").val();
           jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
@@ -453,7 +456,11 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         success: function (data, status, xhr) {
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
+                          if(utm_source !=''){
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+                           }else{
                            window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                           }
                             if (r == true) {
                              // txt = "You pressed OK!";
                             } else {
@@ -463,7 +470,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         error: function (jqXhr, textStatus, errorMessage) {
                                 if(jqXhr.status == 200) {
                                  
-                         
+                                
                                       window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
                          
 
