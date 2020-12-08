@@ -3,6 +3,7 @@ use \Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
+use Drupal\block_content\Entity\BlockContent;
 
 /**
  * @file
@@ -234,6 +235,19 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
   }
+   if (strpos($current_path, '/smo-tq') !== false) {
+    $variables['athena_exclude'] = TRUE;
+    $variables['exclude_footer'] = TRUE;
+  }
+  
+  $bid = 17;
+    $block_content = BlockContent::load($bid);
+
+    $rendered_block = \Drupal::entityTypeManager()
+      ->getViewBuilder('block_content')
+      ->view($block_content);
+
+ $variables['footercoursemenu'] = $rendered_block;
 
      if (strpos($current_path, '/registration') !== false) {
     $variables['athena_exclude'] = TRUE;

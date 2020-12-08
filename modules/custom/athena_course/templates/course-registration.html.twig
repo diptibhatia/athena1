@@ -9,7 +9,7 @@
                 <div class="col-md-6 col-sm-12">
                     <h1>Register <span>Now</span></h1>
                     <h3>Start Learning in 60 Seconds - No need for any payment details!</h3>
-                    <h4>If you are a  Existing user please <span><a href="https://ulearn.athena.edu/login">Sign In</a></span></h4>
+                    <h4>If you are a  Existing user please <span><a href="https://ulearn.athena.edu/login?Cid={{cid}}">Sign In</a></span></h4>
                     <div class="login-details">
                         <div class="login-item names">
                             <div class="name-item">
@@ -279,6 +279,7 @@
                                 <span id="valid-msg" class="hide">✓ Valid</span>
                                 <span id="error-msg" class="hide"></span>
                             </div>
+                            <input type="hidden" id="country_code" value="" />
                         <div class="login-item">
                             <p>Choose your Course</p>
                             <select name="course" id="reg_course">
@@ -328,10 +329,17 @@
 	</select>
                         </div>
 
+<input type="hidden" id="utm_source" value="{{source}}" >
+                            <input type="hidden" id="utm_campaign" value="{{campaign}}" >
+                            
                         <div id="reg_passwd_popup" class="modal fade" role="dialog">
                           <div class="modal-dialog">
                             <!-- Modal content-->
-                            <div class="modal-content" style="width:475px !important;">
+                            <div class="modal-content">
+
+							<div style="text-align: right;">
+                                <button type="button" class="close close-modal" data-dismiss="modal">×</button>
+                            </div>
                             <div class="modal-body">
                             <div class="login-item">
                                 <h2 style="

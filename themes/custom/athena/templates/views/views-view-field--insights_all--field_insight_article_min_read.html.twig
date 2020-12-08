@@ -30,7 +30,7 @@
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content" style="width:475px !important;">
+    <div class="modal-content">
           <div style="
           text-align: right;
       ">
@@ -44,7 +44,7 @@
 
     <h6>Show your friends and family what they can learn from athena</h6>
   </div>
-  <div class="col-md-12 row" style="margin-bottom: 20px;">
+ <!-- <div class="col-md-12 row" style="margin-bottom: 20px;text-align:center;">
     <div class="col-md-1"></div>
     <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}insights/all" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" width="45"></div>
     <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}insights/all" target="_blank"><img src="/themes/custom/athena/images/tw-co.png" width="45"></div>
@@ -62,7 +62,22 @@
     <div class="col-md-1"></div>
 
 
-  </div>
+  </div>-->
+
+   <div class="row m-0">
+    <div class="col-md-12 p-0 text-center pb-4">
+        <a class="d-inline-block p-2" href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}insights/all" target="_blank">
+            <img src="/themes/custom/athena/images/fb-ico.png" width="45"></a>
+        <a class="d-inline-block p-2" href="http://twitter.com/share?url={{ url('<front>') }}insights/all" target="_blank">
+            <img src="/themes/custom/athena/images/tw-co.png" width="45"></a>
+        <a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}insights/all" target="_blank">
+            <img src="/themes/custom/athena/images/li-ico.png" width="45"></a>
+        <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text={{ url('<front>') }}insights/all" data-action="share/whatsapp/share">
+            <img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
+        <a class="d-inline-block p-2" href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}insights/all" title="Share by Email" p-1="">
+            <img src="/themes/custom/athena/images/at-ico.png" width="45"></a>
+    </div>
+</div>
 
 <div class="col-md-12">
     <div class="bg-white sidebar shadow-lg rounded p-3">
@@ -80,7 +95,7 @@
    " id="shareurl--copy">
         		{{ url('<front>') }}insights/all
     		</div>
-   		<div class="col-md-4" style="position: relative;padding-left: 80px;color: #ff0068;font-weight: bold;">
+	<div class="col-md-4 copyToClipboard">
 			<a onclick="copy_to_clipboard()">COPY</a>
 		<div>
 	</div>

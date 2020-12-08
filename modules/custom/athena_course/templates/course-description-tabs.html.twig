@@ -89,7 +89,7 @@
 
                                 </div>
                                 <a href="#whatYouLearn">Go to Module Details</a>
-                                <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
+                                <p class="italic" style="display:none"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
                                     the exact mapping information, however the final MBA awarded by the University will
                                     carry 60 ECTS credits. <a href="#">What Is ECTS?</a></p>
                             </div>
@@ -331,11 +331,7 @@
                                 <div>
                                     <h2>{{ universities.university.label }}</h2>
                                     <p>{{universities.university.field_description.value|raw}} </p>
-                                    {% if universities.univ_logo is empty %}
-                                    <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
-                                    {% else %}
-                                    <img src="{{universities.univ_logo}}" alt="uni-logo">
-                                        {% endif %}
+                                   
                                 </div>
                                 {% if universities.certificates is empty %}
 
@@ -398,7 +394,13 @@
                                     <p>Click to Enlarge</p>
                                 </div>
                                 {% endif %}
-                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be
+                                <p class="note">
+                                 {% if universities.univ_logo is empty %}
+                                    <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo" height="100"><br>
+                                    {% else %}
+                                    <img src="{{universities.univ_logo}}" alt="uni-logo" height="100"><br>
+                                        {% endif %}
+                                *All certificate and transcript images are for illustrative purposes only and may be
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
                             <div class="partners-tabs__mba-img"></div>
@@ -550,7 +552,14 @@
                         </div>
                         <div>
                             <h4>{{ module.entity.field_course_module_name.value }}</h4>
-                            <p class="duration"><span>Duration:</span> 4  to 12 weeks</p>
+                            <p class="duration"><span>Duration:</span>
+ {% if module.entity.field_module_duration.value|trim is not empty %}
+ {{ module.entity.field_module_duration.value|trim }}
+  {% else %}
+  4 to 12 weeks
+  {% endif %}
+
+                            </p>
                             <p class="text">{{ module.entity.field_coursemodule_description.value|striptags }}</p>
                             {% if module.entity.field_module_level.value|trim is not empty %}
                             <p class="level"><span>Level:</span> {{ module.entity.field_module_level.value }}</p>

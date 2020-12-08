@@ -209,7 +209,13 @@
 		width: 82%;
 		background: none;
 		box-shadow: none;
-		height: 41px
+		height: 41px;
+
+		@media (max-width: 699px) {
+			float: left !important;
+			margin-left: 116px !important;
+			padding-left: 10px !important;
+		}
 	}
 }
 

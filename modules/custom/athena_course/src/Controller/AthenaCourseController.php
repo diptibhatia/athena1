@@ -12,6 +12,29 @@ public function news_subscription(){
 
 }
 
+public function smo_tq(){
+    if(isset($_REQUEST['nid'])){
+    $node = Node::load($_REQUEST['nid']);
+    }
+       global $base_url;
+    $theme = \Drupal::theme()->getActiveTheme();
+    $base_path = $base_url.'/'. $theme->getPath();
+    
+    $source = $_REQUEST['utm_source'];
+$campaign = $_REQUEST['utm_campaign'];
+$academic =  [
+  '#theme' => 'smotq',
+  '#source' => $source,
+  '#campaign' => $campaign,
+  '#node' => $node,
+  '#base_path' => $base_path,
+];
+
+
+return array($academic);
+    
+    
+}
 public function smo($nid) {
     $parameters = \Drupal::routeMatch()->getParameters();
     $node = Node::load($nid);
@@ -179,8 +202,6 @@ $testimo =  array_slice($testinodes, 0, 7);
 
 $source = $_REQUEST['utm_source'];
 $campaign = $_REQUEST['utm_campaign'];
-
-
 
     $banner_block =  [
       '#theme' => 'smo',
@@ -487,12 +508,15 @@ $cid = '';
 if(isset($_REQUEST['cid'])) {
     $cid = $_REQUEST['cid'];
 }
-
+$source = $_REQUEST['utm_source'];
+$campaign = $_REQUEST['utm_campaign'];
 
 //print_r($node);exit;
 $registration =  [
   '#theme' => 'course_registration',
   '#base_path' => $base_path,
+  '#source' => $source,
+  '#campaign' => $campaign,
   '#cid' => $cid,
   '#nodes' => $nodes,
 ];

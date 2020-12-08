@@ -15,6 +15,16 @@ athena_smolist.smolist:
     _title: 'Custom athena course module'
   requirements:
     _permission: 'access content'
+    
+athena_smotq.smotq:
+  path: '/smo-tq'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\AthenaCourseController::smo_tq'
+    _title: 'Custom athena course module'
+  requirements: 
+    _permission: 'access content'
+  options:
+     no_cache: 'TRUE'
 
 athena_newsletter.news-subscription:
   path: '/news-subscription'

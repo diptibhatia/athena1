@@ -69,7 +69,7 @@
                     <div style="text-align:left">
                     {{overview | raw}}
 </div>
-                    <p>Build your skills in all areas of managing and leading organizations</p>
+                    <p><b>Build your skills in all areas of managing and leading organizations</b></p>
                 </div>
                 <div class="forms">
                     <div class="container-fluid p-0 about-us-wrapper form">
@@ -78,9 +78,9 @@
 
 <div class="login-details">
                         <form style="text-align:left">
-                            <h2>Still Not Sure ?</h2>
+                            <h2>Need more detail?</h2>
                             <h3>Speak to an Advisor<span>&nbsp;</span></h3>
-                            <p>Not sure if this course  is right for you? Fill in your details below and one of our Course Advisors will be in contact to provide you with the information you need to make a decision.</p>
+                            <p>Intrested in more information? Submit a request for call back from our Admission Counsellor.</p>
                             <div class="login-item names">
                                 <div class="name-item">
                                     <p>First Name</p>
@@ -106,6 +106,7 @@
                                 <span id="error-msg" class="hide"></span>
                             </div>
                             <input type="hidden" id="speak_courseid" value="{{node.field_cid.value}}" >
+                            <input type="hidden" id="nid" value="{{node.id}}" >
                             <input type="hidden" id="utm_source" value="{{source}}" >
                             <input type="hidden" id="utm_campaign" value="{{campaign}}" >
                             <div class="button">
@@ -169,11 +170,7 @@
                                 <div>
                                     <h2>{{ universities.university.label }}</h2>
                                     <p>{{universities.university.field_description.value|raw}} </p>
-                                    {% if universities.univ_logo is empty %}
-                                    <img src="{{base_path}}/images/coursepage/gmu-logo.svg" alt="uni-logo">
-                                    {% else %}
-                                    <img src="{{universities.univ_logo}}" alt="uni-logo">
-                                        {% endif %}
+                                   
                                 </div>
 
 <div class="certificate">
@@ -234,7 +231,9 @@
                                     <p>Click to Enlarge</p>
                                 </div>
 
-                                <p class="note">*All certificate and transcript images are for illustrative purposes only and may be
+                                <p class="note">
+                                <img src="{{universities.univ_logo}}" alt="uni-logo" height="100"><br>
+                                *All certificate and transcript images are for illustrative purposes only and may be
                                     subject to change at the discretion of respective Universities or Awarding Bodies.</p>
                             </div>
                             <div class="partners-tabs__mba-img"></div>
@@ -416,16 +415,17 @@
         if(jQuery("#speak_email").val() == '') {
           msg += '\n\u2022  Email cannot be empty';
         }
-        if(jQuery("#speak_first_name").val() == '') {
-          msg += '\n\u2022  Phone number cannot be empty';
-        }
-
+       
         if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }
 
-        if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-          msg += '\n\u2022  Phone number is invalid';
+        var ph_num = jQuery("#phone").val();
+        var nid = jQuery("#nid").val();
+        var num_len = ph_num.length;
+        
+        if(num_len <6 || num_len >15) {
+          msg += '\n\u2022  Invalid Phone number';
         }
 
         if(!jQuery("#speak_consent").prop('checked') == true){
@@ -444,7 +444,10 @@ Source:String(jQuery("#utm_source").val()),
 Campaign:String(jQuery("#utm_campaign").val()),
 
        };
-          jQuery.ajax('https://agestagingapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
+       
+             var utm_source = jQuery("#utm_source").val();
+       var utm_campaign = jQuery("#utm_campaign").val();
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -453,7 +456,11 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         success: function (data, status, xhr) {
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
-                           document.getElementById('thankyoulink').click();
+                          if(utm_source !=''){
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+                           }else{
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                           }
                             if (r == true) {
                              // txt = "You pressed OK!";
                             } else {
@@ -463,25 +470,31 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         error: function (jqXhr, textStatus, errorMessage) {
                                 if(jqXhr.status == 200) {
                                  
+                                
+                                   if(utm_source !=''){
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+                           }else{
+                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                           }
                          
-                                      document.getElementById('thankyoulink').click();
                          
 
                                 }
                         }
                     });  
-
- 
-          return false;
-
-        }else {
-          jQuery('#speak_first_name').val("");
+           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
           jQuery('#speak_country').val("");
           jQuery('#phone').val("");
           jQuery('#speak_consent').prop('checked', false);
-          alert(msg)
+       
+ 
+          return false;
+
+        }else {
+          alert(msg);
+          return false;
         }
       });
 
