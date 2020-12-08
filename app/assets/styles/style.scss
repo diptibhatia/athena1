@@ -175,3 +175,43 @@ img {
 #block-whitespaces {display:none;} 
  
 .all-courses h1 {font-weight:bold;} 
+
+input.error {
+    border: none !important;
+}
+
+
+.registeredTitle{
+    text-align: center;
+    margin: 0 0 2px;
+    font-family: Lato;
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ff008e;
+}
+.registeredDescription{
+    text-align: center;
+}
+.registeredButton{
+width: 185px;
+text-align: center;
+height: 52px;
+padding: 15px 25px 15px 24px;
+border-radius: 12px;
+background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color: white;
+}
+
+
+.copyToClipboard{
+    position: relative;
+    padding-left: 80px;
+    color: #ff0068;
+    font-weight: bold;
+    @include atSize424{
+        text-align: center;
+    }
+}

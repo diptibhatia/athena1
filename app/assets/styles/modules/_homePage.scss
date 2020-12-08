@@ -942,6 +942,8 @@
 		  }
 	  }
 	  .testimonials {
+		  position:relative;
+		  top:180px;
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
@@ -1780,7 +1782,7 @@
 				  font-size: 24px;
 					color: $primaryColor;
 					margin: 0 0 12px 0;
-					width: 90%;
+					width: 100%;
 					border-bottom: solid 3px $buttonPink;
 					padding: 0 0 8px 0;
 					span {
@@ -2812,6 +2814,18 @@
 	.explore-courses{
 		margin:79px 0 10px 0;
 
+		button.explore{
+			border-radius: 30px;
+			border: solid 2px #ff008e;
+			color: #ff008e;
+			padding: 5px 10px;
+			cursor: pointer;
+			outline: none;
+			background: white;
+			width: 186px;
+			height: 50px;
+		}
+
 		.tabs{
 			margin:30px auto 15px;
 		}
@@ -2878,11 +2892,16 @@
 					text-align:left;
 					padding-bottom:20px;
 					img{
-						margin-bottom:0;
+						left: 16px;
+						margin-bottom: 20px;						
 					}
 					button{
 						margin:30px 0 0;
 						left:auto;
+					}
+					h2{
+						left: 8px;
+					    width: 96%
 					}
 					h3{
 						font-weight:normal;
@@ -2891,20 +2910,30 @@
 				}
 				.item-two {
 					flex: none;
-					//margin: 0 0 0 0;
 					display: block;
 					clear: both;
-					width: 100%;
-					//padding-left:0 !important;
+					width: 96%;
+					padding-left:26px;
 					.student-review, .student-review.two {
-						// width: 95%;
 						height: auto;
 						border-radius: 6px;
 						box-shadow: 0 2px 12px 6px rgba(0,0,0,0.08);
 						background-color: #ffffff;
-						// margin: 0 0 30px 10px !important;
 						display: flex;
+						margin-right:0 !important;
 						.info{
+							.student-info{
+								a{
+									img{
+										float: right;
+										margin: 20px 0 0;
+									}
+								}
+								img{
+									clear: both;
+									float: none;
+								}
+							}
 							h3{
 								font-size:14px;
 							}
@@ -2991,10 +3020,10 @@
 		}
 		.section-items{
 			.section-item-two{
-				margin:20px 0;
+				margin:20px;
 				h4{
-					margin:0;
-					padding:0 20px 8px;
+					margin: 0 auto 12px !important;
+					padding: 0 0 8px;
 				}
 				.container{
 					padding:0 !important;
