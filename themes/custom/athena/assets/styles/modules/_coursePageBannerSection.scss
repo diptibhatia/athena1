@@ -6,6 +6,9 @@
 //     box-sizing: border-box;
 //     overflow: hidden;
 // z-index:99;
+@include atSize424{
+    padding: 44px 0;
+   }
 
     @include atSize700 {
         z-index: 10;
