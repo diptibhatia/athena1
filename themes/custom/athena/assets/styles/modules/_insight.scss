@@ -117,7 +117,7 @@
 		}
 		img{
 			@include atSize700 {
-			//	width: 100%;
+				max-width: 240px;
 				height:auto;
 			}
 			
