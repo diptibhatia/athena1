@@ -31,6 +31,7 @@ class LatestInsightsSidebarBlock extends BlockBase {
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('type', $bundle);
+    $query->sort('changed' , 'DESC'); 
     $latest = $query->execute();
         
     

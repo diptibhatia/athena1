@@ -1635,6 +1635,7 @@ $query->condition('field_course_category', 'Academic');
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('type', $bundle);
+    $query->sort('created' , 'DESC'); 
     $latest = $query->execute();
 
 

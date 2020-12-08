@@ -11,7 +11,7 @@
                 <div class="tabs">
                    <ul class="nav tabs-cyan tab-list" id="myClassicTab" role="tablist">
                       <li class="nav-item tab-item">
-                         <a class="nav-link waves-light show active" id="overview-tab-classic" data-toggle="tab" href="#acadamic" role="tab" aria-controls="overview-classic" aria-selected="true">Acadamic</a>
+                         <a class="nav-link waves-light show active" id="overview-tab-classic" data-toggle="tab" href="#acadamic" role="tab" aria-controls="overview-classic" aria-selected="true">Academic</a>
                       </li>
                       {% if micro is not empty %}
                       <li class="nav-item tab-item">
@@ -30,7 +30,7 @@
                       <div class="fyi-tabs__overview">
                          <div class="courses-offered">
                             <div class="info">
-                               <h2>Our Acadamic Courses</h2>
+                               <h2>Our Academic Courses</h2>
                                <p>{{acaddesc | raw}}
                                </p>
                                <form action="{{ url('<front>') }}academic-program" method="POST">

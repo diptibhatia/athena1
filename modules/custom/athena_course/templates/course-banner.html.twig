@@ -11,10 +11,10 @@
 
  {% endfor %}
 
-                                        <a href="#" class="showinMobileView" style="position: relative;float:right;color:white;">
-                                           <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon" style="width:30px;">
-                                        Share
-                                        </a>
+                                           <a data-toggle="modal" class="showinMobileView btn btn-default"  style="position: relative;float:right;color:white;" data-dismiss="modal" data-target="#myModalsocialshare">
+                    <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon" style="width:30px;">
+                    Share
+                </a>
             </div>
             <h1 class="course-banner__title">{{course_title}}</h1>
             <p class="course-banner__uni">{{awarding_body}}</p>
