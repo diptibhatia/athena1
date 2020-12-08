@@ -98,9 +98,12 @@
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
                      msg += '\n\u2022 password and confirm password do not match';
                 }
+                
 
    var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
+                console.log("UTM"+utm_source);
+                console.log("utm_campaign"u+tm_campaign);
        
        if(utm_source == '') {
          utm_source = 'Direct';  
