@@ -98,6 +98,16 @@
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
                      msg += '\n\u2022 password and confirm password do not match';
                 }
+                
+
+   var utm_source = jQuery("#utm_source").val();
+       var utm_campaign = jQuery("#utm_campaign").val();
+                console.log("UTM"+utm_source);
+                console.log("utm_campaign"+utm_campaign);
+       
+       if(utm_source == '') {
+         utm_source = 'Direct';  
+        }
 
                 if(msg != '') {
                     alert(msg);
@@ -118,6 +128,8 @@ Code:parseInt(jQuery("#country_code").val()),
 ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#reg_course").val()),
 Highestqualification:String(jQuery("#reg_qual").val()),
+source:String(utm_source),
+CampainName:String(utm_campaign),
 Yearsofexperience:parseInt(jQuery("#reg_exp").val()),
 Monthofexperience:parseInt(jQuery("#reg_months").val()),
 IsAccepted:true,
