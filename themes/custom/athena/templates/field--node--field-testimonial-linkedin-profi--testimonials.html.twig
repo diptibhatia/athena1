@@ -1,0 +1,5 @@
+{% if items|length > 0 %}
+    {% for item in items %}
+        <a target="_blank" href="{{ item.content }}">{{ item.content }}</a>
+    {% endfor %}
+{% endif %}
