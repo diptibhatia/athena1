@@ -120,24 +120,12 @@ img {
 // }
 // .previous .page-link:hover, .next .page-link:hover { 
 //     color: #ff026f;
-// }
-.partners .partner-logos .logo img {width:180px;}
+// } 
 
 .image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
     pointer-events: none;
-}
-.start-free-trial .athena-section .why-athena-item-two img {top: 60px;}
-.start-free-trial .athena-section .why-athena-item-one {
-    padding: 140px 0 0 0;
-}
-.know-more button:hover a { 
-    text-decoration: none;
-}
-
-.why-athena .get-started {
-    padding: 60px 0 30px;
-} 
-
+}   
+ 
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
     border: solid 2px #ff008e;
@@ -165,18 +153,10 @@ img {
 .p-0 {padding:0;}
 .m-0 {margin:0;}
 .ht-5 {height:50px} 
- 
-.why-athena .testimonials .testimonials-item .item-one img {
-    width: 398px;
-    position: relative;
-    top: -30px;
-    left: 8px;
-} 
+  
 #block-whitespaces {display:none;} 
- 
-.all-courses h1 {font-weight:bold;} 
 
-input.error {
+.input.error {
     border: none !important;
 }
 #block-coursepagetestimonialsblock .why-athena .testimonials {
@@ -184,7 +164,7 @@ input.error {
     top: 0;
 }
 
-.registeredTitle{
+.registeredTitle {
     text-align: center;
     margin: 0 0 2px;
     font-family: Lato;
