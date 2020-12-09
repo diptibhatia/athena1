@@ -547,7 +547,11 @@
                     {% set modnum = modnum + 1 %}
                     <div class="courses-intro-card">
                         <div class="img">
+                             {% if module.field_course_module_image[0].entity.uri.value|trim is not empty %}
+                            <img src="{{ file_url(module.field_course_module_image[0].entity.uri.value)}}" alt="course image">
+                              {% else %}
                             <img src="{{base_path}}/images/coursepage/module1.png" alt="course image">
+                            {% endif %}
                             <!-- <a href="#"><img src="{{base_path}}/images/coursepage/video-play-icon.png" alt="icon"></a> -->
                         </div>
                         <div>
