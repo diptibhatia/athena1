@@ -263,6 +263,10 @@
             width: 100%;
         }
 
+        @include atSize424{
+            min-height: 475px;
+        }
+
         @include atSize700 {
             display: none;
         }
