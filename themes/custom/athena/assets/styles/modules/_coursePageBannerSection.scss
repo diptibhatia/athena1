@@ -306,16 +306,18 @@
 
     .shareIcon
     {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 45%;
+        // position: absolute;
+        // bottom: 1.5rem;
+        // left: 45%;
        
         @include atSize700
         {
            // top: 3rem;
             //bottom:auto;
            // right: 3%;
-            left: auto;
+        //    position: relative;
+        //    margin-top: 40px;
+        //     left: auto;
         }
         a{            
             color:#fff;

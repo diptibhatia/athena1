@@ -1,8 +1,5 @@
 
         jQuery(document).ready(function() {
-            jQuery("#phone").intlTelInput();
-            jQuery("#get_in_touch_mobile").intlTelInput();
-            jQuery("#contact_form_phone").intlTelInput();
 
             var search_url = 'http://website.athena.edu/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
@@ -64,11 +61,11 @@
                 if(jQuery("#get_in_touch_email").val() == '') {
                     msg += '\n\u2022  Email cannot be empty';
                 }
-                                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  if(!regex.test(jQuery("#get_in_touch_email").val())) {
-    msg += '\n\u2022  Invalid Email id';
-  }
-  if(!jQuery("#get_in_touch_consent").prop('checked') == true){
+                var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if(!regex.test(jQuery("#get_in_touch_email").val())) {
+                  msg += '\n\u2022  Invalid Email id';
+                }
+                if(!jQuery("#get_in_touch_consent").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
 
@@ -80,16 +77,11 @@
                   msg += '\n\u2022  Phone number is invalid';
                 }
 
-                if(jQuery("#get_in_touch_mobile").val() == '') {
-                    msg += '\n\u2022  Phone number cannot be empty';
-                }
-
                 if(msg =='') {
                     jQuery('#get_in_touch_course').val("");
                     jQuery('#get_in_touch_fname').val("");
                     jQuery('#get_in_touch_lname').val("");
                     jQuery('#get_in_touch_email').val("");
-                    jQuery('#get_in_touch_mobile').val("");
                     //jQuery('#get_in_touch_consent').val("");
                     jQuery('#get_in_touch_consent').prop('checked', false);
                     alert("Thank you!! we'll get in touch with you shortly");
