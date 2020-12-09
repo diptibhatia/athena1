@@ -413,7 +413,7 @@
                              {% if universities.recortimage|trim is empty %}
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
                                {% else %}
-                             <img src="universities.recortimage" alt="msg author">
+                             <img src="{{universities.recortimage}}" alt="msg author">
                                          {% endif %}
                                 <h3>{{universities.msg_title}}</h3>
                                 <p>{{universities.prof_name}}</p>
