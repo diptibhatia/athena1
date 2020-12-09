@@ -93,6 +93,7 @@
                             </div>
                             <div class="login-item">
                                 <p>Email</p>
+                                <input type="hidden" id="country_code" value="" />
                                 <input type="email" id="speak_email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Enter Email Address">
                             </div>
                             <div class="login-item" style="display:none">
@@ -431,13 +432,20 @@
         if(!jQuery("#speak_consent").prop('checked') == true){
            msg += '\n\u2022 please accept consent terms';
         }
+           var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+ var iso2 = countryData.iso2;
+ iso2 = iso2.toUpperCase();
+ jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
+  jQuery( "#country_code" ).val(data);
+
+});
 
         if(msg == ''){
          var sendInfo = {
 FirstName:String(jQuery("#speak_first_name").val()),
 LastName:String(jQuery("#speak_last_name").val()),
 Email:String(jQuery("#speak_email").val()),
-CountryId:String(jQuery(".country-code").text()),
+CountryISO:String(jQuery("#country_code").val()),
 ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#speak_courseid").val()),
 Source:String(jQuery("#utm_source").val()),
