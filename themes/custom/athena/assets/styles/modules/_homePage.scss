@@ -1724,10 +1724,11 @@
 		  }
 	  }
 	  .section-items {
-		  display: flex;
-		  margin: 35px 0;
+		display: flex;
+		margin: 35px 0;
+		flex-direction: row;
 		  .section-item-one {
-			  flex: 1;
+			flex: 50%;
 			  .section-image {
 				  h4 {
 					  font-size: 18px;
@@ -1750,6 +1751,7 @@
 						margin: 0 22px;
 					  text-align: left;
 				  }
+				  img {max-width:100%;}
 			  }
 			  @include atSize424 {
 				  display: none;
@@ -1768,7 +1770,7 @@
 			  }
 		  }
 		  .section-item-two {
-			  flex: 1;
+			  flex: 50%;
 			  text-align: left;
 			  @include atSize424 {
 				  margin: 20px;
@@ -2603,7 +2605,7 @@
   }
   
   .footer-banner {
-   margin: 50px 0 0px 0;
+   //margin: 50px 0 0px 0;
 	  //height: 283px; 
 	  position: relative;
   
