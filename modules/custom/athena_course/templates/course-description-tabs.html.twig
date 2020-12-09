@@ -410,10 +410,10 @@
                         <div class="partners-tabs__msg">
                             <div class="partners-tabs__msg-person">
 
-                             {% if universities.recortimage|trim is not empty %}
+                             {% if universities.recortimage|trim is empty %}
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
                                {% else %}
-                             <img src="universities.recortimage" alt="msg author">
+                             <img src="{{universities.recortimage}}" alt="msg author">
                                          {% endif %}
                                 <h3>{{universities.msg_title}}</h3>
                                 <p>{{universities.prof_name}}</p>
@@ -547,7 +547,11 @@
                     {% set modnum = modnum + 1 %}
                     <div class="courses-intro-card">
                         <div class="img">
+                             {% if module.entity.field_course_module_image.entity.uri.value|trim is not empty %}
+                             <img src="{{file_url(module.entity.field_course_module_image.entity.uri.value) }}" alt="course image">
+                              {% else %}
                             <img src="{{base_path}}/images/coursepage/module1.png" alt="course image">
+                            {% endif %}
                             <!-- <a href="#"><img src="{{base_path}}/images/coursepage/video-play-icon.png" alt="icon"></a> -->
                         </div>
                         <div>
