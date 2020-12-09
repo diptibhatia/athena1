@@ -1728,7 +1728,7 @@
 		margin: 35px 0;
 		flex-direction: row;
 		  .section-item-one {
-			flex: 60%;
+			flex: 50%;
 			  .section-image {
 				  h4 {
 					  font-size: 18px;
@@ -1770,7 +1770,7 @@
 			  }
 		  }
 		  .section-item-two {
-			  flex: 40%;
+			  flex: 50%;
 			  text-align: left;
 			  @include atSize424 {
 				  margin: 20px;
