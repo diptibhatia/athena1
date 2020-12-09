@@ -107,6 +107,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
+        'recortimage' =>file_create_url($univ_node->get('field_rector_image')->entity->uri->value),
         'white_log' =>$white_log,
         'univ_logo' =>$univ_logo,
         'message' =>$message,
