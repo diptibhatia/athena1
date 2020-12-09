@@ -410,7 +410,7 @@
                         <div class="partners-tabs__msg">
                             <div class="partners-tabs__msg-person">
 
-                             {% if universities.recortimage|trim is not empty %}
+                             {% if universities.recortimage|trim is empty %}
                                 <img src="{{base_path}}/images/coursepage/rector.svg" alt="msg author">
                                {% else %}
                              <img src="universities.recortimage" alt="msg author">
