@@ -61,8 +61,8 @@ foreach($paragraph_univ_data as $explore_data) {
         $dean_univ = $explore_data->get('field_dean_un')->value;
         $dean_video = $explore_data->get('field_dean_video')->value;
         $dean_message = $explore_data->get('field_dean_message_la')->value;
-   //     $certificates = $explore_data->get('field_certificate')[1]->entity->getFileUri();
-     //  print  $url = file_create_url($certificates);exit;
+        $rector = $explore_data->get('field_rector_image')->entity->getFileUri();
+       $rectorurl = file_create_url($rector);
        $certificates = array();
        foreach($explore_data->get('field_certificate') as $key=>$images) {
 
@@ -107,7 +107,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
-        'recortimage' =>file_create_url($univ_node->get('field_rector_image')->entity->uri->value),
+        'recortimage' =>$rectorurl,
         'white_log' =>$white_log,
         'univ_logo' =>$univ_logo,
         'message' =>$message,
