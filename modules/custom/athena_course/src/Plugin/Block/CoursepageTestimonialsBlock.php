@@ -22,7 +22,7 @@ class CoursepageTestimonialsBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-      
+
     global $base_url;
 
     $bundle='testimonials';
@@ -30,13 +30,14 @@ class CoursepageTestimonialsBlock extends BlockBase {
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('type', $bundle);
+    $query->sort('created' , 'DESC');
     $latest = $query->execute();
-        
-    
+
+
     $testinodes = node_load_multiple($latest);
-        
+
     $testimo =  array_slice($testinodes, 0, 7);
-    //echo "<pre>";     
+    //echo "<pre>";
     //print_r($testimo);exit;
 
   // Base theme path.
@@ -48,7 +49,7 @@ class CoursepageTestimonialsBlock extends BlockBase {
     '#testi' => $testimo,
     '#base_path' => $base_path,
 
-  ]; 
+  ];
 
     return array($coursepage_testimonials);
   }
