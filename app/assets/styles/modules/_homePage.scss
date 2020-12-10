@@ -2097,8 +2097,9 @@
   
   .popular-courses {
 	  position:relative;
+	  top:20px;
 	  @include atSize479{
-		  padding-top:20px;
+		  padding-top:80px;
 	  }
 	  .heading-image { 
 			max-width: 640px;
