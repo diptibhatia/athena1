@@ -331,7 +331,7 @@
                                 <div>
                                     <h2>{{ universities.university.label }}</h2>
                                     <p>{{universities.university.field_description.value|raw}} </p>
-                                   
+
                                 </div>
                                 {% if universities.certificates is empty %}
 
@@ -741,7 +741,7 @@
                         <form>
                             <h2>Still Not Sure ?</h2>
                             <h3>Speak to an Advisor<span>&nbsp;</span></h3>
-                            <p>Intrested in more information ? Submit a request for call back from our Admission Counsellor </p>
+                            <p>Interested in more information ? Submit a request for call back from our Admission Counsellor </p>
                             <div class="login-item names">
                                 <div class="name-item">
                                     <p>First Name</p>
@@ -1016,7 +1016,7 @@
                             <input type="hidden" id="country_code" value="" >
                             <input type="hidden" id="utm_source" value="{{source}}" >
                             <input type="hidden" id="utm_campaign" value="{{campaign}}" >
-                           
+
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
                                 <button  type="submit" id="smo_form_submit">Submit</button>
@@ -1165,7 +1165,7 @@
         if(jQuery("#speak_email").val() == '') {
           msg += '\n\u2022  Email cannot be empty';
         }
-       
+
         if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }
@@ -1173,7 +1173,7 @@
         var ph_num = jQuery("#phone").val();
         var nid = jQuery("#nid").val();
         var num_len = ph_num.length;
-        
+
         if(num_len <6 || num_len >15) {
           msg += '\n\u2022  Invalid Phone number';
         }
@@ -1208,7 +1208,7 @@ Source:String(jQuery("#utm_source").val()),
 Campaign:String(jQuery("#utm_campaign").val()),
 
        };
-       
+
              var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
           jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
@@ -1224,21 +1224,21 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         },
                         error: function (jqXhr, textStatus, errorMessage) {
                                 if(jqXhr.status == 200) {
-                                 
+
                                   alert("Thank you for submitting the registration form. Will reach out to you shortly")
-                         
+
 
                                 }
                         }
-                    });  
+                    });
            jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
           jQuery('#speak_country').val("");
           jQuery('#phone').val("");
           jQuery('#speak_consent').prop('checked', false);
-       
- 
+
+
           return false;
 
         }else {
