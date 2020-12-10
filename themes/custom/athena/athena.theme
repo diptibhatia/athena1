@@ -21,6 +21,7 @@ function athena_preprocess_block(array &$variables) {
     foreach($universityData as $univNid) {
        $univNodeData = Node::load($univNid);
        $univDataArr[$univNid] = array(
+         'nid' => $univNid,
          'label' => $univNodeData->label(),
          'logo'=> file_create_url($univNodeData->get('field_logo')->entity->uri->value)
        );
@@ -239,7 +240,7 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
   }
-  
+
   $bid = 17;
     $block_content = BlockContent::load($bid);
 

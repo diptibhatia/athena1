@@ -71,7 +71,7 @@ align-items: center;box-sizing: border-box;">
                                         <h6>Universities</h6>
                                         <ul class="list-unstyled">
                                         {% for univ in academic.universities%}
-                                            <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                            <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                            {% endfor %}
                                         </ul>
                                     </div>
@@ -85,7 +85,7 @@ align-items: center;box-sizing: border-box;">
                       <h6>Universities</h6>
                       <ul class="list-unstyled">
                       {% for univ in academic_universities%}
-                          <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                          <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                          {% endfor %}
                       </ul>
 	                </div><!-- end col-3 -->
@@ -109,7 +109,7 @@ align-items: center;box-sizing: border-box;">
                                         <h6>Universities</h6>
                                         <ul class="list-unstyled">
                                         {% for univ in cert.universities%}
-                                            <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                            <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                            {% endfor %}
                                         </ul>
                                     </div>
@@ -122,7 +122,7 @@ align-items: center;box-sizing: border-box;">
                 <h6>Universities</h6>
                 <ul class="list-unstyled">
                 {% for univ in certifications_universities%}
-                    <li><a href="#"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                    <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                    {% endfor %}
                 </ul>
 	          </div><!-- end col-3 -->
