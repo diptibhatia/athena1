@@ -61,8 +61,10 @@ foreach($paragraph_univ_data as $explore_data) {
         $dean_univ = $explore_data->get('field_dean_un')->value;
         $dean_video = $explore_data->get('field_dean_video')->value;
         $dean_message = $explore_data->get('field_dean_message_la')->value;
+         if(is_object(  $explore_data->get('field_rector_image')->entity)){
         $rector = $explore_data->get('field_rector_image')->entity->getFileUri();
        $rectorurl = file_create_url($rector);
+         }
        $certificates = array();
        foreach($explore_data->get('field_certificate') as $key=>$images) {
 

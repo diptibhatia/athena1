@@ -58,7 +58,7 @@
          {% if nodedata.field_search_list_image.entity.uri.value is not empty %}
 
 
-        <a href="{{ url('<front>') }}course/{{nodedata.id}}"> <img class="course-img" src=" {{ file_url(nodedata.field_search_list_image.entity.uri.value)}}" style="witdth:250px;height:200px" alt="Course"></a>
+        <a href="{{ url('<front>') }}course/{{nodedata.id}}"> <img class="course-img" src=" {{ file_url(nodedata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
           <img class="course-img" src="{{base_path}}/images/1.jpg" alt="Course">
            {% endif %}
@@ -102,12 +102,9 @@
    <section class="explore">
 <h1>Explore Topics and Skills</h1>
 
-<div class="grid-container" style="grid-gap: 0px;">
+<div class="grid-container">
 <div class="item item1">
-<img alt="item2" src="/themes/custom/athena/images/acadamics-bg.png" style="
-    height: 335px;
-    width: 540px;
-"/>
+<img alt="item2" src="/themes/custom/athena/images/acadamics-bg.png"/>
 <div class="text">
 <h3>Academic Programs</h3>
 
@@ -118,7 +115,7 @@
 
 <div class="item item2">
 <img alt="item2" src="/themes/custom/athena/images/mastercredits-img.png" />
-<div class="text" style="top:10%">
+<div class="text">
 <h3>Professional Certifications</h3>
 
 <p>Professional Certification programs are designed to allow learners to develop skills and knowledge in a specific domain or a subject in a relatively shorter span of time. Our certification programs are being offered by Royal Charter backed Chartered Management Institute, UK and other reputed professional bodies like Cambridge International Qualifications, UK.<br />

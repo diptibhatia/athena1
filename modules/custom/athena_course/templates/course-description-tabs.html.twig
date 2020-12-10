@@ -1011,9 +1011,15 @@
                             </div>
 
                             <div class="button">
+                             <input type="hidden" id="speak_courseid" value="{{node.field_cid.value}}" >
+                            <input type="hidden" id="nid" value="{{node.id}}" >
+                            <input type="hidden" id="country_code" value="" >
+                            <input type="hidden" id="utm_source" value="{{source}}" >
+                            <input type="hidden" id="utm_campaign" value="{{campaign}}" >
+                           
                                 <input type="checkbox" class="form-check-input" id="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
-                                <button  type="submit" id="speak_submit">Submit</button>
+                                <button  type="submit" id="smo_form_submit">Submit</button>
                             </div>
                             </form>
                         </div>
@@ -1141,4 +1147,139 @@
         </div>
     </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.com/libraries/owl-carousel"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+      jQuery("#smo_form_submit").click(function() {
+        var msg = '';
+        if(jQuery("#speak_first_name").val() == '') {
+          msg += '\n\u2022  First name cannot be empty';
+        }
+        if(jQuery("#speak_last_name").val() == '') {
+          msg += '\n\u2022  Last name cannot be empty';
+        }
+        if(jQuery("#speak_email").val() == '') {
+          msg += '\n\u2022  Email cannot be empty';
+        }
+       
+        if(jQuery("#phone").val() == '') {
+          msg += '\n\u2022  Phone number cannot be empty';
+        }
+
+        var ph_num = jQuery("#phone").val();
+        var nid = jQuery("#nid").val();
+        var num_len = ph_num.length;
+        
+        if(num_len <6 || num_len >15) {
+          msg += '\n\u2022  Invalid Phone number';
+        }
+
+        if(!jQuery("#speak_consent").prop('checked') == true){
+           msg += '\n\u2022 please accept consent terms';
+        }
+            var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+ var iso2 = countryData.iso2;
+ jQuery.ajax({
+   type: 'GET',
+   url: "https://learn.athena.edu/athenaprod/api/country/"+iso2, //Returns ID in body
+   async: false, // <<== THAT makes us wait until the server is done.
+   success: function(data){
+       jQuery( "#country_code" ).val(data);
+   },
+   error: function() {
+       alert("Error Processing your request, please try again after some time")
+       return FALSE;
+   }
+});
+
+        if(msg == ''){
+         var sendInfo = {
+FirstName:String(jQuery("#speak_first_name").val()),
+LastName:String(jQuery("#speak_last_name").val()),
+Email:String(jQuery("#speak_email").val()),
+CountryISO:String(jQuery("#country_code").val()),
+ContactNo:String(jQuery("#phone").val()),
+CourseId:parseInt(jQuery("#speak_courseid").val()),
+Source:String(jQuery("#utm_source").val()),
+Campaign:String(jQuery("#utm_campaign").val()),
+
+       };
+       
+             var utm_source = jQuery("#utm_source").val();
+       var utm_campaign = jQuery("#utm_campaign").val();
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
+                        type: 'POST',  // http method
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(sendInfo) ,  // data to submit
+                         dataType: 'json',
+                        success: function (data, status, xhr) {
+                            var txt;
+                          //  var r = confirm("Registration Successful, you will be redirected to login page now.");
+                            alert("Thank you for submitting the registration form. Will reach out to you shortly")
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                                if(jqXhr.status == 200) {
+                                 
+                                  alert("Thank you for submitting the registration form. Will reach out to you shortly")
+                         
+
+                                }
+                        }
+                    });  
+           jQuery('#speak_first_name').val("");
+          jQuery('#speak_last_name').val("");
+          jQuery('#speak_email').val("");
+          jQuery('#speak_country').val("");
+          jQuery('#phone').val("");
+          jQuery('#speak_consent').prop('checked', false);
+       
+ 
+          return false;
+
+        }else {
+          alert(msg);
+          return false;
+        }
+      });
+
+       $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            autoWidth: true,
+            responsiveClass: true,
+            responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 3,
+                nav: false
+            },
+            1000: {
+                items: 4,
+                nav: true,
+                loop: false,
+                margin: 20
+            }
+            }
+        })
+        $(window).scroll(function() {
+            if($(window).width() > 1249) {
+                if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) &&
+                ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() -
+                $(".testimonials").height() + 10))) {
+                    $(".testimonials").css("position", "fixed");
+                    console.log("Yo");
+                } else {
+                    $(".testimonials").css("position", "static");
+                }
+            }
+        })
+  });
+</script>

@@ -69,7 +69,8 @@ img {
 .get-started button {
     background: transparent;
 }
-#block-latestinsightssidebarblock .row {width:100%;}
+#block-latestinsightssidebarblock .row {width: auto;}
+#block-athena-content img {max-width:100%;}
 .reason-section {
     margin: 100px 0 50px 0;
 }

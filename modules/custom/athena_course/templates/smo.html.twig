@@ -15,7 +15,7 @@
           </div>
           <div class="bg">
             <img src="{{base_path}}/images/smo/bg.jpg" alt="background-image">
-            <div class="advisor">
+            <div class="advisor" style="display:none;">
                 <div class="text">
                     <p>Have Questions ?</p>
                     <p class="content">Speak to an Advisor</p>
@@ -434,10 +434,17 @@
         }
            var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
  var iso2 = countryData.iso2;
- iso2 = iso2.toUpperCase();
- jQuery.get( "https://learn.athena.edu/athenaprod/api/country/"+iso2, function( data ) {
-  jQuery( "#country_code" ).val(data);
-
+ jQuery.ajax({
+   type: 'GET',
+   url: "https://learn.athena.edu/athenaprod/api/country/"+iso2, //Returns ID in body
+   async: false, // <<== THAT makes us wait until the server is done.
+   success: function(data){
+       jQuery( "#country_code" ).val(data);
+   },
+   error: function() {
+       alert("Error Processing your request, please try again after some time")
+       return FALSE;
+   }
 });
 
         if(msg == ''){
