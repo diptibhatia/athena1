@@ -41,6 +41,10 @@
 
                         <span>|</span>
 
+                        {% if coursedata.field_course_ects_credit.value is not empty %}
+                          {{coursedata.field_course_ects_credit.value}}
+                        {% endif %}
+
                         {% if coursedata.field_courses_credit_type.value is not empty %}
                           {{coursedata.field_courses_credit_type.value}}
                         {% endif %}

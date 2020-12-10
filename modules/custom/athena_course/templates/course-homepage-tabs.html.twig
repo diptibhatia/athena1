@@ -47,8 +47,8 @@
                                       <div class="course-item">
                                          <div class="image">
                                           {% if academicdata.field_search_list_image.entity.uri.value is not empty %}
-         
-       
+
+
         <a href="{{ url('<front>') }}course/{{academicdata.id}}"> <img class="course-img" src=" {{ file_url(academicdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
           <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
@@ -62,7 +62,26 @@
                                             <h2>{{academicdata.field_course_awarding_body.value|raw }}</h2>
                                             <div class="course-tags">
 
-                                               <p><span class="circle"></span>Masters ( EQF Level 7) <span>|</span>{{academicdata.field_course_ects_credit.value}} Credits (ECTS)</p>
+                                               <p><span class="circle"></span>
+
+                                                {% if academicdata.field_course_level.value is not empty %}
+                                                  {{academicdata.field_course_level.value}}
+                                                {% else %}
+                                                  Masters(EQF 8)
+                                                {% endif %}
+
+                                                <span>|</span>
+
+                                                {% if academicdata.field_course_ects_credit.value is not empty %}
+                                                  {{academicdata.field_course_ects_credit.value}}
+                                                {% endif %}
+
+                                                {% if academicdata.field_courses_credit_type.value is not empty %}
+                                                  {{academicdata.field_courses_credit_type.value}}
+                                                {% endif %}
+
+
+                                               </p>
                                             </div>
                                             <h3><b>Duration : </b> {{academicdata.field_course_duration.value}}</h3>
                                          </div>
@@ -86,7 +105,7 @@
                            <div class="col-12">
                               <form action="{{ url('<front>') }}academic-program" method="POST">
                                  <input type="hidden" name="course_category" value="Academic">
-                                 <input type="hidden" name="submit_form" value="submit_form">	
+                                 <input type="hidden" name="submit_form" value="submit_form">
                                  <button class="explore d-inline d-md-none d-lg-none">View All Courses</button>
                               </form>
                            </div>
@@ -118,8 +137,8 @@
                                           <div class="course-item">
                                              <div class="image">
                                                {% if microdata.field_search_list_image.entity.uri.value is not empty %}
-         
-       
+
+
         <a href="{{ url('<front>') }}course/{{microdata.id}}"> <img class="course-img" src=" {{ file_url(microdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
           <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
@@ -192,8 +211,8 @@
                                         <div class="course-item">
                                            <div class="image">
                                                {% if certificationsdata.field_search_list_image.entity.uri.value is not empty %}
-         
-       
+
+
         <a href="{{ url('<front>') }}course/{{certificationsdata.id}}"> <img class="course-img" src=" {{ file_url(certificationsdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
           <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
