@@ -1918,7 +1918,7 @@
 	  height: 496px;
 	  font-family: Lato;
 	  position: relative;
-	  top: 35px;
+	  top: 35x;
 	  @media (max-width: 550px){
 		  height: auto;
 		  padding-bottom:10px;
@@ -2097,8 +2097,9 @@
   
   .popular-courses {
 	  position:relative;
+	  top:20px;
 	  @include atSize479{
-		  padding-top:20px;
+		  padding-top:80px;
 	  }
 	  .heading-image { 
 			max-width: 640px;
