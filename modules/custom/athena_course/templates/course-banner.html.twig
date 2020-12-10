@@ -21,8 +21,7 @@
             <p class="course-banner__details">{{description}}
             </p>
             <div class="course-banner__apply-btn">
-                <button><a href="{{ url('<front>') }}registration" style=" text-decoration: inherit;
-    color: inherit;font-weight:inherit;padding-left:0px;text-transform:inherit;" >Apply now</a></button>
+                <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration">Apply now</a>
     {% if node.field_courses_credit_type.0.value %}
 
                 <p>*{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
