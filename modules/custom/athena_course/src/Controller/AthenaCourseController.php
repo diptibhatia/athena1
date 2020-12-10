@@ -1433,8 +1433,12 @@ return array(
 
 function search($word = false){
 
-   /* $nodes =  \Drupal::entityTypeManager()->getStorage('node')
-  ->loadByProperties(['type' => 'course', 'status' => 1]);*/
+    $word = strip_tags($word);
+    $word = trim($word);
+
+    if ($word != 'abc') {
+      $_POST['search_key'] = $word;
+    }
 
     if(isset($_POST['search_key']) && strpos(strtolower($_POST['search_key']), 'certification') !== false){
        $_POST['search_key'] = 'certificate';
