@@ -1576,9 +1576,17 @@ function search($word = false){
           }
         }
       }
-      // print "<pre>"; print_r($universities); exit;
+
     }
 
+
+  foreach ($merged_nodes as $key => $node) {
+    $mergedNodeNids[] = $node->id();
+  }
+  $filterNodes = array_filter($mergedNodeNids);
+  foreach ($variable as $key => $nodeNid) {
+    $merged_nodes[] = Node::load($nodeNid);
+  }
 
   $base_path = $base_url.'/'. $theme->getPath();
     $banner_block =  [
