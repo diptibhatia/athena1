@@ -1,7 +1,7 @@
 
         jQuery(document).ready(function() {
-
-            var search_url = 'http://website.athena.edu/search-results/abc?univ=';
+            var baseUrl = 'http://website.athena.edu';
+            var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
               var search_key =  jQuery("#search_key").val();
@@ -78,13 +78,39 @@
                 }
 
                 if(msg =='') {
-                    jQuery('#get_in_touch_course').val("");
-                    jQuery('#get_in_touch_fname').val("");
-                    jQuery('#get_in_touch_lname').val("");
-                    jQuery('#get_in_touch_email').val("");
-                    //jQuery('#get_in_touch_consent').val("");
-                    jQuery('#get_in_touch_consent').prop('checked', false);
-                    alert("Thank you!! we'll get in touch with you shortly");
+
+                    var dataObj = {
+                      'form_id': "Get in touch",
+                      'course': jQuery('#get_in_touch_course').val(),
+                      'fname': jQuery('#get_in_touch_fname').val(),
+                      'lname': jQuery('#get_in_touch_lname').val(),
+                      'email': jQuery('#get_in_touch_email').val(),
+                      'phone': jQuery('#phone').val()
+                    };
+
+                    jQuery.ajax({
+                        url: baseUrl + "/save/contact",
+                        type: "post",
+                        data: JSON.stringify(dataObj),
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (response) {
+
+                          jQuery('#get_in_touch_course').val("");
+                          jQuery('#get_in_touch_fname').val("");
+                          jQuery('#get_in_touch_lname').val("");
+                          jQuery('#get_in_touch_email').val("");
+                          jQuery('#get_in_touch_consent').val("");
+                          jQuery('#get_in_touch_consent').prop('checked', false);
+
+                           alert(response.message);
+                           return false;
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                           console.log(textStatus, errorThrown);
+                        }
+                    });
+
 
                 }else {
 
