@@ -101,4 +101,104 @@
     <!-- .sub-footer -->
   </footer>
 
+  <div id="registrationModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="{{base_path}}themes/custom/athena/images/affiliatepage/pop-design.png" alt=""
+            class="modal-top-bg" style="width: 501px; margin: -24px 0 0 -16px;" />
+          <button
+            style="color:#000!important;font-weight:normal!important;    font-size: 14px;opacity: 1;    margin-top: 1px; padding-left: 5px;"
+            type="button" class="close" data-dismiss="modal">Cancel</button>
+          <button style="color:#000!important;font-weight:normal!important;font-size: 21px;opacity: 1;margin-top: -2px;"
+            type="button" class="close" data-dismiss="modal">&times; </button>
+
+          <h4 class="modal-title" style=" font-size: 27px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.3;
+            letter-spacing: normal;
+            color: #303030;margin-top: 29px;">It’s Time to Start </h4>
+                  <h5 style="  font-size: 32px;
+            color: #ff016f;">Investing <span style="color:#303030"> in </span>Yourself </h5>
+          <h3>Sign Up</h3>
+        </div>
+        <div class="modal-body">
+          <form id="registration-afpage" class="needs-validation" novalidate method="post">
+            <div class="reg-form">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="firstName">First Name</label>
+                  <input type="text" name="firstName" class="form-control reg-form-control" id="firstName"
+                    placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" name="lastName" class="form-control reg-form-control" id="lastName"
+                    placeholder="Last Name" required>
+                </div>
+              </div>
+              <div class="form-row regUserEmail">
+                <div class="form-group col-md-12">
+                  <label for="regEmail">Email</label>
+                  <input type="email" name="inputEmail" class="form-control reg-form-control" id="regEmail"
+                    placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-row phone-number">
+                <div class="form-group col-md-12">
+                  <label for="reg_mobile_num">Phone Number</label>
+                  <input type="tel" id="reg_mobile_num" class="reg-form-control" placeholder="Enter Mobile number"
+                    required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="highestQualification">Highest Qualification</label>
+                  <select id="highestQualification" name="highestQualification" class="form-control reg-form-control"
+                    required>
+                    <option value="">Select your highest qualification</option>
+                    <option value="Masters Degree">Masters Degree</option>
+                    <option value="Bachelors Degree">Bachelors Degree</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="A Level">A Level</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-check consent-check">
+                <input type="checkbox" class="form-check-input" id="terms" name="terms[]">
+                <label class="form-check-label" for="terms">I agree with <a href="/registration-terms"
+                    target="_blank">Terms &amp; Conditions</a></label>
+              </div>
+              <button type="button" class="btn btn-pink sign-up-button" style="width:100%;margin-top:0px">Sign Up</button>
+            </div>
+            <div class="ref-form-2" style="display: none;">
+              <div class="form-group col-md-12">
+                <label for="pswd">Password</label>
+                <input type="password" name="pswd" class="form-control reg-form-control" id="pswd" placeholder="Password"
+                  required autocomplete="off">
+                <div class="invalid-feedback">
+                  Please enter a password
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="confirmpswd">Confirm Password</label>
+                <input type="password" name="confirmpswd" class="form-control reg-form-control" id="confirmpswd"
+                  placeholder="Re-enter Password" required autocomplete="off">
+                <div class="invalid-feedback confirm-password">
+                  Please enter password again
+                </div>
+              </div>
+              <button type="submit" class="btn btn-pink" style="width:100%;margin-top:0px">Register</button>
+            </div>
+            <input id="cId" name="cId" type="hidden" value="">
+            <input id="modId" name="modId" type="hidden" value="">
+            <input id="countryId" name="countryId" type="hidden" value="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
