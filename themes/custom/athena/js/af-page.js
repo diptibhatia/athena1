@@ -150,7 +150,7 @@
     cData.modId = jQuery("#modId").val();
     // var userId = 0;
     if (v.form()) {
-      jQuery.ajax('https://agestagingapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
+      jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
         type: 'GET', // http method
         success: function(response) {
           console.log(response);
@@ -177,29 +177,6 @@
       
     }
   });
-
-    //   $("#reg_mobile_num").on("change", function(){
-    //     var mobNum = $(this).val();
-    //     var filter = /^\d*(?:\.\d{1,2})?$/;
-
-    //       if (filter.test(mobNum)) {
-    //         if(mobNum.length==10){
-    //               // alert("valid");
-    //           $(".help-inline-error").hide();
-    //          } else {
-    //             // alert('Please put 10  digit mobile number');
-    //             $(".help-inline-error").html("Phone number not valid");
-    //             $(".help-inline-error").show();
-    //             return false;
-    //           }
-    //         }
-    //         else {
-    //           // alert('Not a valid number');
-    //           $(".help-inline-error").show();
-    //           return false;
-    //        }
-
-    // });
 
   $('#registration-afpage').submit(function(e) {
     if (v.form()) {
@@ -228,7 +205,7 @@
       };
       console.log(JSON.stringify(sendInfo));
       jQuery.ajax({
-        url: "https://agestagingapi.azurewebsites.net/Register/SaveLead",
+        url: "https://athenawpapi.azurewebsites.net/Register/SaveLead",
         type: 'POST', // http method
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(sendInfo), // data to submit
@@ -260,9 +237,9 @@
 })(jQuery, Drupal);
 
   function redirCandidate(cData) {
-    console.log(cData);
+    // console.log(cData);
     if(cData.hasOwnProperty('modId') && cData.modId != "") {
-      jQuery.when( jQuery.get("https://agestagingapi.azurewebsites.net/Register/GetUserId/"+cData.email))
+      jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
         //   alert(data);  
         // alert( jqXHR.status ); // Alerts 200
