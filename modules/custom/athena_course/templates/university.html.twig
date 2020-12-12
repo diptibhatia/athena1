@@ -4,7 +4,7 @@
             <img src="{{base_path}}/images/univ_banner/{{univ_data.univ_banner}}.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
             <img src="{{base_path}}/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
             <div class="container carousel-caption text-left pl-0">
-                <h1 class="strong banner_title"><span class="purple-txt">{{data.field_university_key.value|upper }}</span> {{data.label }}</h1>
+                <h1 class="strong banner_title" style="font-size: 3.5rem;"><span class="purple-txt">{{data.field_university_key.value|upper }}</span> {{data.label }}</h1>
                 <div class="row">
                     <div class="col-md-6">
                     {{univ_data.banner_desc|raw }}
@@ -53,7 +53,7 @@
                             <iframe width="350" height="250" src="{{univ_data.video_link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                         </div>
                          {% endif %}
-                          {% if data.enable_card %}
+                          {% if univ_data.enable_card %}
                            <div class="card">
                                <div class="card-icons">
                                  <img src="{{base_path}}/images/logo11.jpg" width="30%">
