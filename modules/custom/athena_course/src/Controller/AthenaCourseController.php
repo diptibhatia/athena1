@@ -1822,6 +1822,7 @@ $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();
 
 $data = array();
+$univ = $_REQUEST['univ'];
  $bundle='universities';
      $query = \Drupal::entityQuery('node');
     //$query->condition('status', 1);
@@ -1833,15 +1834,13 @@ $query->condition('field_university_key', strtolower($univ), '=');
 $universities = node_load_multiple($universities);
 $node = current($universities);
 
-//print $node->get('field_university_banner_descript')->value;exit;
-
 
 $data_array = array(
 'banner_desc' =>$node->get('field_university_banner_descript')->value,
 'rank' =>$node->get('field_rankings')->value,
 'video_link' =>$node->get('field_video_link')->value,
 'accred' =>$node->get('field_accrediation_and_membershi')->value,
-'univ_banner' =>$node->get('field_accrediation_and_membershi')->value.'-banner',
+'univ_banner' =>$node->get('field_university_key')->value.'-banner',
 'about' =>$node->get('field_about_us')->value,
 );
 $academic =  [
