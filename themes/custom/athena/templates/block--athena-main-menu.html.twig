@@ -82,7 +82,7 @@ align-items: center;box-sizing: border-box;">
 	                        </ul>
 	                </div><!-- end col-3 -->
 	                <div class="col-5 three-level" id="secondary-data_three-level">
-                      <h6>Universities</h6>
+                      <h6>Awarding Body</h6>
                       <ul class="list-unstyled">
                       {% for univ in academic_universities%}
                           <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
