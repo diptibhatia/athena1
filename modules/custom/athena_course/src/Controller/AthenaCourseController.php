@@ -1821,10 +1821,39 @@ global $base_url;
 $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();
 
-$univ = $_REQUEST['univ'];
+echo $univ = $_REQUEST['univ'];
 
 $data = array();
+ $bundle='universities';
+     $query = \Drupal::entityQuery('node');
+    //$query->condition('status', 1);
+  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+$query->condition('field_university_key', strtolower($univ), '=');
+    $query->condition('type', $bundle);
+    $universities = $query->execute();
+    
+$universities = node_load_multiple($universities);
+$node = current($universities);
 
+//print $node->get('field_university_banner_descript')->value;exit;
+$data_array = array(
+'banner_desc' =>$node->get('field_university_banner_descript')->value,
+'rank' =>$node->get('field_rankings')->value,
+'video_link' =>$node->get('field_video_link')->value,
+'accred' =>$node->get('field_accrediation_and_membershi')->value,
+'about' =>$node->get('field_about_us')->value,
+);
+$academic =  [
+  '#theme' => 'university',
+  '#title1' => $title1,
+  '#data' => $node,
+  '#univ_data' => $data_array,
+  '#base_path' => $base_path,
+];
+//print_r($node);exit;
+
+
+/*
 switch($univ) {
 case 'ucam':
 
@@ -1933,15 +1962,7 @@ break;
 
 
 }
-
-$academic =  [
-  '#theme' => 'university',
-  '#title1' => $title1,
-  '#data' => $data,
-  '#base_path' => $base_path,
-];
-
-
+*/
 return array($academic);
 
 }

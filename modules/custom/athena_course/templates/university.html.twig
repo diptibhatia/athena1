@@ -4,10 +4,10 @@
             <img src="{{base_path}}/images/univ_banner/{{data.univ_banner}}.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
             <img src="{{base_path}}/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
             <div class="container carousel-caption text-left pl-0">
-                <h1 class="strong banner_title"><span class="purple-txt">{{data.univ_label|upper }}</span> {{data.title}}</h1>
+                <h1 class="strong banner_title"><span class="purple-txt">{{data.field_university_key.value|upper }}</span> {{data.label }}</h1>
                 <div class="row">
                     <div class="col-md-6">
-                    {{data.desc}}
+                    {{univ_data.banner_desc|raw }}
                     </div>
                     <div class="col-md-6">
                       <a href="#">
@@ -26,30 +26,31 @@
                           <div class="info-1">
                             <h2 class="heading ">About {{data.label}}</h2>
                             <p>
-                            {{data.about}}
+                            {{univ_data.about|raw }}
                             </p>
                           </div>
-                      {% if data.acc is not empty %}
+                      {% if univ_data.accred is not empty %}
                           <div class="info-2">
                             <h2 class="heading ">Accrediation And Membership</h2>
                               <p>
-                              {{data.acc}}
+                              {{univ_data.accred|raw}}
                               </p>
                           </div>
                           {% endif %}
-                           {% if data.rank is not empty %}
+                           {% if univ_data.rank is not empty %}
                           <div class="info-3">
                             <h2 class="heading ">Rankings</h2>
-                              <p>{{data.rank}}</p>
+                              <p>{{univ_data.rank|raw}}</p>
                           </div> 
  {% endif %}                          
                    </div>
 
                    <div class="col-md-4 col-sm-12">
                      <div class="card-container">
-                     {% if data.univ_label == 'ucam' %}
+                     {% if univ_data.video_link is not empty %}
                         <div class="card">
-                            <iframe width="350" height="250" src="https://www.youtube.com/embed/5vejHYeGs3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                        <!--  https://www.youtube.com/embed/5vejHYeGs3c -->
+                            <iframe width="350" height="250" src="{{univ_data.video_link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                         </div>
                          {% endif %}
                           {% if data.enable_card %}
