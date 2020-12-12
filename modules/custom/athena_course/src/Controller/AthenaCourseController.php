@@ -1877,6 +1877,7 @@ $data_array = array(
 'rank' =>$node->get('field_rankings')->value,
 'video_link' =>$node->get('field_video_link')->value,
 'enable_card' =>$enable_card,
+'para_heading' =>$node->get('field_para_1_heading')->value,
 'accred' =>$node->get('field_accrediation_and_membershi')->value,
 'univ_banner' =>$banner,
 'about' =>$node->get('field_about_us')->value,
