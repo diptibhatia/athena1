@@ -68,10 +68,10 @@ align-items: center;box-sizing: border-box;">
                                 <li>
                                     <a href="{{url('<front>')}}course/{{academic.nid}}" onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
                                     <div style="display:none;" id="secondary-data_{{modnum}}">
-                                        <h6>Universities</h6>
+                                        <h6>Awarding Body</h6>
                                         <ul class="list-unstyled">
                                         {% for univ in academic.universities%}
-                                            <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                            <li><a href="{{url('<front>')}}university/{{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                            {% endfor %}
                                         </ul>
                                     </div>
@@ -85,7 +85,7 @@ align-items: center;box-sizing: border-box;">
                       <h6>Universities</h6>
                       <ul class="list-unstyled">
                       {% for univ in academic_universities%}
-                          <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                          <li><a href="{{url('<front>')}}university/{{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                          {% endfor %}
                       </ul>
 	                </div><!-- end col-3 -->
@@ -109,7 +109,7 @@ align-items: center;box-sizing: border-box;">
                                         <h6>Universities</h6>
                                         <ul class="list-unstyled">
                                         {% for univ in cert.universities%}
-                                            <li><a href="/node/{{univ.nid}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                            <li><a href="{{url('<front>')}}university/{{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                            {% endfor %}
                                         </ul>
                                     </div>

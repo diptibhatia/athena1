@@ -56,13 +56,16 @@ function athena_preprocess_block(array &$variables) {
       $univ_logo = array();
       foreach($paragraph_univ_data as $explore_data) {
         $university_nid = $explore_data->get('field_university')->value;
+         $univkey = $explore_data->get('field_university_key')->value;
         $find_univ_id = find_data_in_array($univ_logo, $university_nid);
         if (!empty($university_nid) && empty($find_univ_id)) {
           $univ_node = Node::load($university_nid);
           $univ_logo[] = array(
            'label' => $univ_node->label(),
            'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value),
-           'nid' => $university_nid
+           'nid' => $university_nid,
+           'univkey' => $univkey
+           
           );
         }
 
@@ -97,6 +100,7 @@ function athena_preprocess_block(array &$variables) {
 
       $univ_logo = array();
       foreach($paragraph_univ_data as $explore_data) {
+        $univkey = $explore_data->get('field_university_key')->value;
         $university_nid = $explore_data->get('field_university')->value;
         $find_univ_id = find_data_in_array($univ_logo, $university_nid);
         if (!empty($university_nid) && empty($find_univ_id)) {
@@ -104,7 +108,8 @@ function athena_preprocess_block(array &$variables) {
           $univ_logo[] = array(
             'label' => $univ_node->label(),
             'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value),
-            'nid' => $university_nid
+            'nid' => $university_nid,
+            'univkey' => $univkey
           );
         }
         $mcUnivArr[] = $university_nid;
@@ -133,9 +138,9 @@ function athena_preprocess_block(array &$variables) {
     $certifications_node_ids = array();
     foreach($certifications as $node_key => $node) {
       $paragraph_univ_data = $node->field_link_universities->referencedEntities();
-
       $univ_logo = array();
       foreach($paragraph_univ_data as $explore_data) {
+      $univkey = $explore_data->get('field_university_key')->value;
         $university_nid = $explore_data->get('field_university')->value;
 
         $univ_node = Node::load($university_nid);
@@ -147,7 +152,8 @@ function athena_preprocess_block(array &$variables) {
           $univ_logo[] = array(
             'label' => $label_univ,
             'logo'=> $uu_logo,
-            'nid' => $university_nid
+            'nid' => $university_nid,
+            'univkey' => $univkey
           );
         }
         $certificateUnivArr[] = $university_nid;
@@ -244,9 +250,11 @@ function athena_preprocess_page(&$variables) {
   $bid = 17;
     $block_content = BlockContent::load($bid);
 
+if(!empty($block_content)){
     $rendered_block = \Drupal::entityTypeManager()
       ->getViewBuilder('block_content')
       ->view($block_content);
+}
 
  $variables['footercoursemenu'] = $rendered_block;
 
