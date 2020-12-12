@@ -1821,8 +1821,6 @@ global $base_url;
 $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();
 
-echo $univ = $_REQUEST['univ'];
-
 $data = array();
  $bundle='universities';
      $query = \Drupal::entityQuery('node');
