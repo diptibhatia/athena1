@@ -77,10 +77,12 @@
     //get data-id attribute of the clicked element
     var cId = $(e.relatedTarget).data('cid');
     var modId = $(e.relatedTarget).data('mid');
+    var pay = $(e.relatedTarget).data('pay');
     console.log(modId);
     //populate the hidden field
     $(e.currentTarget).find('input[name="cId"]').val(cId);
     $(e.currentTarget).find('input[name="modId"]').val(modId);
+    $(e.currentTarget).find('input[name="pay"]').val(pay);
   });
   //Reset form fields on close
   $('#registrationModal').on('hidden.bs.modal', function (e) {
@@ -149,6 +151,7 @@
     cData.email = String(jQuery("#regEmail").val());
     cData.cId = parseInt(jQuery("#cId").val());
     cData.modId = jQuery("#modId").val();
+    cData.pay = jQuery("#pay").val();
     // var userId = 0;
     if (v.form()) {
       jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
@@ -189,6 +192,7 @@
       cData.email = String(jQuery("#regEmail").val());
       cData.cId = parseInt(jQuery("#cId").val());
       cData.modId = jQuery("#modId").val();
+      cData.pay = jQuery("#pay").val();
       // var userId = 0;
       var sendInfo = {
         UserName: String(jQuery("#regEmail").val()),
@@ -239,7 +243,7 @@
 
   function redirCandidate(cData) {
     // console.log(cData);
-    if(cData.hasOwnProperty('modId') && cData.modId != "") {
+    if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
         //   alert(data);  
