@@ -37,7 +37,7 @@
 {{fields.field_course_total_fee.content}} #}
 {% set cid = fields.field_afpage_course_id.content|render|striptags|trim %}
 {% set mid = fields.field_afpage_module_id.content|render|striptags|trim %}
-{% set pay = fields.field_afpage_course_pay.content|trim|replace(" ", "") %}
+{% set pay = fields.field_afpage_course_pay.content|render|striptags|trim %}
 
 <figure>
   <div class="badge green">Total Fee <span>{{fields.field_afpage_course_totfee.content|raw}}</span>
