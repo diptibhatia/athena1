@@ -66,7 +66,11 @@
                             </div>
                                 {% endif %}
                             <div class="overview-points-card__container">
-                                <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >Take a Free Trial Now</a>
+                                 {% if source is not empty %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+  {% else %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" > 
+ {% endif %}Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
@@ -134,7 +138,12 @@
                                 {% endif %}
                             </div>
                             <div class="overview-points-card__container">
-                                <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >Take a Free Trial Now</a>
+                             {% if source is not empty %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+  {% else %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" > 
+ {% endif %}
+                                Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
@@ -201,7 +210,12 @@
                                 {% endif %}
                             </div>
                             <div class="overview-points-card__container">
-                                <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >Take a Free Trial Now</a>
+                                 {% if source is not empty %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+  {% else %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" > 
+ {% endif %}
+ Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +292,11 @@
 
                             </div>
                             <div class="overview-points-card__container">
-                                <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >Take a Free Trial Now</a>
+                                 {% if source is not empty %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+  {% else %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" > 
+ {% endif %}Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,12 @@
             <h1>{{course_title}}</h1>
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
                 <br>{{awarding_body}}</p>
-            <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" class="trialBtn">Start 7 Day Trial</a>
+            {% if source is not empty %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
+  {% else %}
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" > 
+ {% endif %}
+ Start 7 Day Trial</a>
           </div>
           <div class="bg">
             <img src="{{base_path}}/images/smo/bg.jpg" alt="background-image">
