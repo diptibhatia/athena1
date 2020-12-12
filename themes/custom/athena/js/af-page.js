@@ -67,6 +67,7 @@
           }
       }
   });
+  $("#reg_mobile_num").intlTelInput();
   var cData = {};
   $(".btn-try a").on('click', function(e) {
     e.preventDefault();
