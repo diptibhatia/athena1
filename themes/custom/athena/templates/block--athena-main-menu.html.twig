@@ -109,7 +109,7 @@ align-items: center;box-sizing: border-box;">
                                         <h6>Universities</h6>
                                         <ul class="list-unstyled">
                                         {% for univ in cert.universities%}
-                                            <li><a href="{{url('<front>')}}university?{{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
                                            {% endfor %}
                                         </ul>
                                     </div>
