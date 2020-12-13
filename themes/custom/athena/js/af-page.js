@@ -157,7 +157,7 @@
       jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
         type: 'GET', // http method
         success: function(response) {
-          console.log(response);
+          // console.log(response);
           if(response == "Email Exist") {
             confirm("User already registered, please wait while we redirect you");
             redirCandidate(cData);
@@ -176,6 +176,7 @@
         error: function(xhr) {
           console.log(xhr);
           //Do Something to handle error
+          alert("Something went wrong please try again");
         }
       });
       
@@ -208,17 +209,17 @@
         CampainName:String(campaign),
         IsAccepted:true,
       };
-      console.log(JSON.stringify(sendInfo));
+      // console.log(JSON.stringify(sendInfo));
       jQuery.ajax({
         url: "https://athenawpapi.azurewebsites.net/Register/SaveLead",
         type: 'POST', // http method
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(sendInfo), // data to submit
         success: function (data, status, xhr) {
-          console.log(data);
+          // console.log(data);
           if (data == "Sucess" || data == "Success") {
-            console.log(modId);
-            if(cData.modId != "") {
+            // console.log(modId);
+            if(cData.pay == 1) {
               confirm("Registration Successful, please wait while we redirect you to payment page");
             }
             else {
@@ -230,7 +231,7 @@
         error: function (jqXhr, textStatus, errorMessage) {
           console.log(jqXhr);
           if (jqXhr.status != 200) {
-            alert("Something went wrong please try again")
+            alert("Something went wrong please try again");
           }
         }
       });
@@ -247,7 +248,7 @@
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
         //   alert(data);  
-        // alert( jqXHR.status ); // Alerts 200
+        // alert( jqXHR.status ); 
         var userId = parseInt(jQuery.trim(data));
         if( userId > 0) {
           window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
