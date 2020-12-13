@@ -59,5 +59,5 @@
   </h6>{% endif %}
   {% if fields.field_afpage_course_lrnsuprt.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{fields.field_afpage_course_lrnsuprt.content|raw}}</span>
   </h6>{% endif %}
-  <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
+  <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}" data-pay="{{pay}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
 </div>

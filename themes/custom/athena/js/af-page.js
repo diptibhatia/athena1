@@ -78,7 +78,7 @@
     var cId = $(e.relatedTarget).data('cid');
     var modId = $(e.relatedTarget).data('mid');
     var pay = $(e.relatedTarget).data('pay');
-    console.log(modId);
+    // console.log(modId);
     //populate the hidden field
     $(e.currentTarget).find('input[name="cId"]').val(cId);
     $(e.currentTarget).find('input[name="modId"]').val(modId);
