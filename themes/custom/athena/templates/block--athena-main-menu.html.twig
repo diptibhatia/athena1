@@ -56,13 +56,13 @@ align-items: center;box-sizing: border-box;">
 		font-family: 'Lato';
 		font-size: 1rem;">
 		  <li class="has-submenu">
-		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="http://website.athena.edu/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
+		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
 		  	 <div class="megasubmenu dropdown-menu box-shadow">
 			   <div class="row">
 	                <div class="col-7">
 	                        <ul class="list-unstyled bindWidth">
 								<h5 style="padding-left: 20px;">Academic</h5>
-								<a href="http://website.athena.edu/academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
+								<a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
 								{% set modnum = 1 %}
                                 {% for academic in academicnodes %}
                                 <li>
@@ -93,13 +93,13 @@ align-items: center;box-sizing: border-box;">
 			 </div>
 		  </li>
 		  <li class="has-submenu">
-		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="http://website.athena.edu/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
+		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
 		  	 <div class="megasubmenu dropdown-menu box-shadow">
 				<div class="row">
 					 <div class="col-7">
 							 <ul class="list-unstyled bindWidth">
                	<h5 style="padding-left: 20px;">Certifications</h5>
-								<a href="http://website.athena.edu/certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
+								<a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
 
 								{% set modnum = 1 %}
                                 {% for cert in certificationsnodes %}
