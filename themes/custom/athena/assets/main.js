@@ -1,4 +1,4 @@
-import 'bootstrap';
+//import 'bootstrap';
 import './styles/style.scss';
 import MobileMenu from './scripts/MobileMenu';
 import CoursePage from './scripts/CoursePage';

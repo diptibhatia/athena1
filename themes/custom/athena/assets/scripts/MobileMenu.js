@@ -7,6 +7,7 @@ class MobileMenu {
         this.AboutMenuArrow = document.querySelector(".primary-nav .about a i");
         this.AboutSubMenu = document.querySelector(".about .secondary-nav");
         this.events();
+        document.getElementsByClassName("site-header__menu-content")[0].style.display = "none";
     }
  
     events() {
@@ -24,6 +25,17 @@ class MobileMenu {
     toggleTheMenu() {
         this.MenuContent.classList.toggle("site-header__menu-content--is-visible");
         this.MenuIcon.classList.toggle("site-header__menu-icon--close-x");
+
+        if(!document.querySelector(".site-header__menu-content--is-visible") && !document.querySelector(".site-header__menu-icon--close-x"))
+        {
+            document.getElementsByClassName("site-header__menu-content")[0].style.display = "none";
+        }
+        else
+        {
+            document.getElementsByClassName("site-header__menu-content")[0].style.display = "block";
+            document.getElementsByClassName("site-header__menu-content")[0].style.position = "absolute";
+        }
+        
     }
 
     toggleTheAboutMenu() {
