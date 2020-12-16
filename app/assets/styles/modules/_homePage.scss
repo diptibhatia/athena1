@@ -1142,9 +1142,13 @@
 						   .student-info {
 							   color: $primaryColor;
 							   font-size: 14px;
+							   p{
+								line-height: 20px;
+								margin-bottom: 8px;
+							   }
 							   img{
 								  position: relative;
-								  margin: -30px 0 0 0;
+								  margin: 4px 0 10px 0;
 							   }
 						  }
 						  @include atSize479{
