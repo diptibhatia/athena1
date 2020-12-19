@@ -165,7 +165,7 @@
         font-family: 'Lato', sans-serif;
       }
       
-      .btn-try,.btn-enroll {
+      .btn-try {
         padding: 13px 28px 15px;
         border-radius: 8.3px;
         border: solid 2px #fe0490;
@@ -175,7 +175,7 @@
         margin: 40px auto;
       }
       
-      .btn-try a, .btn-enroll a {
+      .btn-try a {
         font-size: 14.7px;
         font-weight: bold;
         font-stretch: normal;
@@ -217,26 +217,28 @@
       }
       
       .modal-header {
-        display: block;
-        padding: 0px 15px 0 15px!important;
+        padding: 15px 15px 0 15px !important;
       }
       
       .modal-header p {
         margin: 0 !important;
+      
         border-bottom: 5px solid #ff016f;
         width: 115px;
+      
+      
       }
-      .modal-header .close {
-          padding: initial;
-          margin: initial;
+      
+      
+      
+      .modal-dialog {
+        width: 410px !important;
+        margin: 120px auto !important;
+        padding: 20px !important;
       }
-    //   .modal-dialog {
-    //     width: 410px !important;
-    //     margin: 120px auto !important;
-    //     padding: 20px !important;
-    //   }
-      span.help-inline-error{color:red;font-size: 12px;}
+      
       label {
+      
         font-weight: normal !important;
         margin-top: 10px;
       }
@@ -253,28 +255,10 @@
         box-shadow: 0 2px 18px -1px #d5dbfb !important;
         border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
         background-color: #ffffff !important;
-        padding: 10px !important;
+        padding: 21px !important;
       }
-      .intl-tel-input.allow-dropdown input#reg_mobile_num {
-        padding: 10px !important;
-      }
-      .pink {
-        color: #fe0490;
-      }
-      @media (max-width: 767px) { 
-        .intl-tel-input.allow-dropdown input#reg_mobile_num {
-            padding-left: 35px !important;
-          }
-        .modal-header {
-            overflow: hidden;
-        }
-        .european-accredited {
-            margin: 0 15px;
-        }
-      }
-      .phone-number span.help-inline-error {margin-top: 50px; position: absolute;}
-      .consent-check label {margin-top: 0;}
-      .consent-check span.help-inline-error {position: absolute; top: 20px;}
+      
+      
       .quote p {
         line-height: 24px;
         font-family: Lato;
@@ -306,11 +290,7 @@
       .owl-carousel .owl-item img {
         border-radius: 10px;
       }
-      .nav-outside-shop.owl-nav {
-        display: block;
-        top: 0;
-        position: relative;
-      }
+      
       .bg-design {
         background-image: url("../images/banner-img.png");
         background-repeat: no-repeat;
@@ -1355,6 +1335,9 @@
       }
       .badge.pink {
           background: #f2295f
+      }
+      .badge.green {
+          
       }
       .badge.yellow {
           background: #f2be3e

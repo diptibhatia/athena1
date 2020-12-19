@@ -1,13 +1,13 @@
 .main {
   width: 100%;
-  min-height: 240px;
-  padding: 0px;
+  min-height: 240px; 
   display: block;
   text-align: left;
   flex-wrap: wrap;
   position: relative;
+  z-index:9;
   background-color: $background-pale;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px;
   border: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -24,12 +24,7 @@
           background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
           position: relative;
           left: 44%;
-          top: -50px;
-          @include atSize424{
-            position: absolute;
-            left: 44%;
-            top: 7%;
-          }
+          top: -50px; 
           img {
             width: 28px;
             height: 17px;
@@ -37,11 +32,11 @@
             min-width: 28px;
             position: relative;
             top: 8px;
-            left: 11px;
+            left: 12px;
           }
           @include atSize424 {
-            left: 79%;
-            top: 5%;
+            position: absolute;
+            left: 79%; 
             img {
                   top: 15px;
     left: 12px;
@@ -53,9 +48,10 @@
 
       input[type="text"] {
         border: 0px;
-        width: 570px;
+        width:100%;
+        max-width: 570px;
         height: 56px;
-        padding: 10px 10px;
+        padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
         background-color: #ffffff;
@@ -79,16 +75,9 @@
     }
     h4 {
       width: auto;
-      padding: 10px;
-      margin: 7px 0px 1px 10px;
+      padding: 10px; 
       font-size: 16px;
-    }
-    h4 {
-      margin-left: -10px;
-      @include atSize424 {
-        display: none !important;
-      }
-    }
+    } 
     .filter {
       display: inline;
       justify-content: left;
@@ -131,7 +120,7 @@
   }
 
   @media screen and (max-width: $break-small) {
-    padding: 10px;
+     
     .container {
       font-size: inherit;
       flex: 100%;
@@ -226,7 +215,7 @@
         width:70%;
         @media (max-width: 470px) { 
           margin: 0 10px;
-          width: 280px;
+          width: 260px;
         }
       }
       .course-partner {
