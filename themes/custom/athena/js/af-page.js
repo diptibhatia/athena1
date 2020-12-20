@@ -60,7 +60,7 @@
           },
           768: {
               items: 2
-  
+
           },
           1024: {
               items: 3
@@ -179,7 +179,7 @@
           alert("Something went wrong please try again");
         }
       });
-      
+
     }
   });
 
@@ -187,7 +187,7 @@
     if (v.form()) {
       var utmSource = getParameterByName("utm_source"), campaign = getParameterByName("utm_campaign");
       var phnNumber = $("#reg_mobile_num").val(); // get full number eg +17024181234
-      var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj 
+      var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj
       var phoneNum = "+" + countryCode + phnNumber;
 
       cData.email = String(jQuery("#regEmail").val());
@@ -237,7 +237,7 @@
       });
       return false;
     }
-    
+
   });
 });
 })(jQuery, Drupal);
@@ -247,17 +247,20 @@
     if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
-        //   alert(data);  
-        // alert( jqXHR.status ); 
+        //   alert(data);
+        // alert( jqXHR.status );
         var userId = parseInt(jQuery.trim(data));
         if( userId > 0) {
-          window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+          //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+          window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+
         } else {
           alert("Something went wrong please try again");
         }
       });
     } else {
-      window.location.replace('http://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
+      //window.location.replace('http://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
+      window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+cData.email+'&CId='+cData.cId);
     }
   }
   function getParameterByName(name, url = window.location.href) {

@@ -18,7 +18,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-    
+
     'courselist' => [
       'variables' => [
       'nodeid' => NULL,
@@ -31,7 +31,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-    
+
      'smotq' => [
       'variables' => [
       'source' => NULL,
@@ -40,9 +40,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-    
-    
-    
+
+
+
 'smo' => [
       'variables' => [
       'course_title' => NULL,
@@ -78,11 +78,11 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'language_prof_label' => NULL,
       'language_prof_desc' => NULL,
       'why_athena' => NULL,
-     
+
       ],
     ],
-    
-    
+
+
      'discussions' => [
       'variables' => [
       'course_title' => NULL,
@@ -128,7 +128,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-    
+
     'course_description_tabs' => [
       'variables' => [
       'overview' => NULL,
@@ -157,7 +157,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-    
+
     'course_search' => [
       'variables' => [
       'overview' => NULL,
@@ -275,7 +275,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'nodes' => NULL,
       ],
     ],
-    
+
      'university' => [
       'variables' => [
       'base_path' => NULL,
@@ -291,9 +291,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       ],
     ],
-    
-    
-    
+
+
+
   ];
 }
 
@@ -301,8 +301,46 @@ function athena_course_theme($existing, $type, $theme, $path) {
 function athena_course_page_attachments(array &$attachments) {
     $account = \Drupal::currentUser();
     if ($account->id() != 1) {
-   
-  $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
-  }
+      $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
+    }
+
+
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name == 'athena_course.StudentEnroltoCourse') {
+      $uid = $_REQUEST['UId'] ?? '';
+      $cid = $_REQUEST['CId'] ?? '';
+      $modId = $_REQUEST['ModId'] ?? '';
+      $mail = $_REQUEST['mail'] ?? '';
+      if (!empty($cid)) {
+        $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#tag' => 'noscript',
+            '#value' => \Drupal\Core\Render\Markup::create($shareASalePixel),
+            '#weight' => 10,
+          ],
+          'shareasale'
+        ];
+
+        if (!empty($uid) && !empty($cid)) {
+         $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId";
+        }
+
+        if (!empty($mail) && !empty($cid)) {
+          $url = "http://ulearn.athena.edu/login?mail=$mail&CId=$cid";
+        }
+
+        $redirect = "<meta http-equiv='refresh' content='3;url=$url' />";
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#tag' => '',
+            '#value' => \Drupal\Core\Render\Markup::create($redirect),
+            '#weight' => -10,
+          ],
+          'ulearn_redirect'
+        ];
+
+      }
+    }
 }
 
