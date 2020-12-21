@@ -217,7 +217,10 @@
       }
       
       .modal-header {
-        padding: 15px 15px 0 15px !important;
+        padding: 0 15px 0 15px !important;
+        position:relative;
+        display:block;
+        overflow:hidden;
       }
       
       .modal-header p {
@@ -1365,4 +1368,14 @@
           font-size: 80px;
       }
       
+}
+
+.affiliate-page .intl-tel-input.allow-dropdown input#reg_mobile_num {
+    border: none;
+    background: none;
+    width: 100%;
+    box-shadow: none;
+    height: 40px;
+    padding-left: 120px !important;
+    float: left;
 }
