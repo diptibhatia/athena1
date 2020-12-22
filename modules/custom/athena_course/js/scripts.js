@@ -191,7 +191,8 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
                                 if(jqXhr.status == 200) {
                                     var r = confirm("Registration Successful, you will be redirected to login page now.");
                             if (r == true) {
-                             window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
+                             // window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
+                             window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
                             } else {
                               //txt = "You pressed Cancel!";
                             }
@@ -270,7 +271,8 @@ jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
        var cid = jQuery("#reg_course").val();
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
-                                 window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
+                                 // window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
+                                 window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
                                 } else {
                                   return false;
                                 }
