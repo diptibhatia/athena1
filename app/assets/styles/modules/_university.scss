@@ -78,6 +78,7 @@
           @include belowSize700{
             font-size: 2.7rem;
             margin-bottom: 1.6rem;
+            padding:15px;
           }
           @include atSize700 {
               font-size: 4rem;        
