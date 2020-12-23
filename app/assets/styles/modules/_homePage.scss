@@ -2620,7 +2620,7 @@
 	  img {
 		  width: 100%;
 		  max-height: 325px;
-		  min-height: 200px;
+		  min-height: 225px !important;
 	  }
 	  .footer-info {
 		  position: absolute;
@@ -2645,15 +2645,27 @@
 				span {
 					color: #ffb800;
 				}
-			// 	@include belowSize700 {
-			// 	  font-size: 34px;
+			 @include belowSize700 {
+			  font-size: 34px;
 			// 	  margin: 15px 0;
-			//   }
+			  }
 				@include belowSize1250 {
 				  font-size: 34px;
 				  //margin: 15px 0;
 			  }
 		  }
+
+		  @include belowSize700 {
+			//height: 180px;
+			img {
+				//height: 177px;
+			}
+			/*.footer-info {			
+				h1 {
+					font-size: 34px;
+				}
+			}*/
+		}	
 		  button {
 			  border-radius: 30px;
 			  border: solid 2px white;
@@ -2667,17 +2679,7 @@
 		  }
 	  }
   
-	  @include belowSize700 {
-		  //height: 180px;
-		  img {
-			  //height: 177px;
-		  }
-		  /*.footer-info {			
-			  h1 {
-				  font-size: 34px;
-			  }
-		  }*/
-	  }	
+	  
   }
   
   .all-courses {
