@@ -6,8 +6,9 @@
 //     box-sizing: border-box;
 //     overflow: hidden;
 // z-index:99;
+min-height: 415px !important;
 @include atSize424{
-    padding: 44px 0;
+    //padding: 44px 0;
    }
 
     @include atSize700 {
@@ -154,7 +155,7 @@
     }
 
     &__apply-btn {
-        margin-top: 27px;
+        margin-top: 20px;
         display: flex;
         align-items: center;
 
@@ -263,7 +264,7 @@
         img {
             width: 100%;
             @include atSize424{
-                min-height: 475px;
+                min-height: 475px !important;
             }
         }
 
