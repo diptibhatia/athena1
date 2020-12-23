@@ -47,8 +47,18 @@
           bottom: auto !important;
           position:relative !important;
           color: #606060 !important;
+          width: auto !important;
+          padding: 0 !important;          
         }
 
+        .banner_bg_color {
+          @include belowSize700{
+            background: #EAEDF9;
+            position: relative;
+            margin-bottom: 1.5rem;
+  
+          }
+        }
 
 
         i {
@@ -66,7 +76,8 @@
           margin: 0;
 
           @include belowSize700{
-            font-size:3rem;
+            font-size: 2.7rem;
+            margin-bottom: 1.6rem;
           }
           @include atSize700 {
               font-size: 4rem;        
