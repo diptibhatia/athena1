@@ -120,88 +120,100 @@
 
 
              jQuery("#registration_form_passchck").click(function() {
-                 var msg = '';
-                  if(jQuery("#reg_pass").val() == '') {
-                    msg += '\n\u2022  Please Enter password';
+                var msg = '';
+                if(jQuery("#reg_pass").val() == '') {
+                  msg += '\n\u2022  Please Enter password';
                 }
-                 if(jQuery("#reg_confirm_pass").val() == '') {
-                    msg += '\n\u2022 please confirm pass';
+                if(jQuery("#reg_confirm_pass").val() == '') {
+                  msg += '\n\u2022 please confirm pass';
                 }
 
                 if(jQuery("#reg_pass").val() !== jQuery("#reg_confirm_pass").val()){
-                     msg += '\n\u2022 password and confirm password do not match';
+                   msg += '\n\u2022 password and confirm password do not match';
                 }
 
 
-   var utm_source = jQuery("#utm_source").val();
-       var utm_campaign = jQuery("#utm_campaign").val();
+                var utm_source = jQuery("#utm_source").val();
+                var utm_campaign = jQuery("#utm_campaign").val();
                 console.log("UTM"+utm_source);
                 console.log("utm_campaign"+utm_campaign);
 
-       if(utm_source == '') {
-         utm_source = 'Direct';
-        }
+                if(utm_source == '') {
+                 utm_source = 'Direct';
+                }
 
                 if(msg != '') {
-                    alert(msg);
-                    return false;
-
+                  alert(msg);
+                  return false;
                 }
- var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
- var iso2 = countryData.iso2;
- iso2 = iso2.toUpperCase();
 
-                 var sendInfo = {
-           UserName: String(jQuery("#reg_email").val()),
-Password:String(jQuery("#reg_pass").val()),
-FirstName:String(jQuery("#reg_first_name").val()),
-LastName:String(jQuery("#reg_last_name").val()),
-Email:String(jQuery("#reg_email").val()),
-Code:parseInt(jQuery("#country_code").val()),
-ContactNo:String(jQuery("#phone").val()),
-CourseId:parseInt(jQuery("#reg_course").val()),
-Highestqualification:String(jQuery("#reg_qual").val()),
-source:String(utm_source),
-CampainName:String(utm_campaign),
-Yearsofexperience:parseInt(jQuery("#reg_exp").val()),
-Monthofexperience:parseInt(jQuery("#reg_months").val()),
-IsAccepted:true,
-Employmentlevel:String(jQuery("#reg_level").val())
-       };
+                var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+                var iso2 = countryData.iso2;
+                iso2 = iso2.toUpperCase();
 
-       var email_id = jQuery("#reg_email").val();
-       var cid = jQuery("#reg_course").val();
+                var sendInfo = {
+                  UserName: String(jQuery("#reg_email").val()),
+                  Password:String(jQuery("#reg_pass").val()),
+                  FirstName:String(jQuery("#reg_first_name").val()),
+                  LastName:String(jQuery("#reg_last_name").val()),
+                  Email:String(jQuery("#reg_email").val()),
+                  Code:parseInt(jQuery("#country_code").val()),
+                  ContactNo:String(jQuery("#phone").val()),
+                  CourseId:parseInt(jQuery("#reg_course").val()),
+                  Highestqualification:String(jQuery("#reg_qual").val()),
+                  source:String(utm_source),
+                  CampainName:String(utm_campaign),
+                  Yearsofexperience:parseInt(jQuery("#reg_exp").val()),
+                  Monthofexperience:parseInt(jQuery("#reg_months").val()),
+                  IsAccepted:true,
+                  Employmentlevel:String(jQuery("#reg_level").val())
+                };
 
-jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
-                        type: 'POST',  // http method
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        data: JSON.stringify(sendInfo) ,  // data to submit
-                         dataType: 'json',
-                        success: function (data, status, xhr) {
-                            var txt;
-                            var r = confirm("Registration Successful, you will be redirected to login page now.");
-                            if (r == true) {
-                             // txt = "You pressed OK!";
-                            } else {
-                              //txt = "You pressed Cancel!";
-                            }
-                        },
-                        error: function (jqXhr, textStatus, errorMessage) {
-                                if(jqXhr.status == 200) {
-                                    var r = confirm("Registration Successful, you will be redirected to login page now.");
-                            if (r == true) {
-                             // window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
-                             window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
-                            } else {
-                              //txt = "You pressed Cancel!";
-                            }
+                var email_id = jQuery("#reg_email").val();
+                var cid = jQuery("#reg_course").val();
 
-                                }
-                        }
-                    });
+                jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
+                  type: 'POST',  // http method
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(sendInfo) ,  // data to submit
+                   dataType: 'json',
+                  success: function (data, status, xhr) {
+                      var txt;
+                      var r = confirm("Registration Successful, you will be redirected to login page now.");
+                      if (r == true) {
+                       // txt = "You pressed OK!";
+                      } else {
+                        //txt = "You pressed Cancel!";
+                      }
+                  },
+                  error: function (jqXhr, textStatus, errorMessage) {
+                    if(jqXhr.status == 200) {
+
+                      var r = confirm("Registration Successful, you will be redirected to login page now.");
+                      if (r == true) {
+
+                        jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id))
+                          .then(function( data, textStatus, jqXHR ) {
+                          var userId = parseInt(jQuery.trim(data));
+                          if( userId > 0) {
+                            //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+                            window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cid);
+
+                          }
+                        });
 
 
+                        // window.location.replace('http://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
+                        window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+
+                      } else {
+                        //txt = "You pressed Cancel!";
+                      }
+
+                    }
+                  }
+                });
 
              });
 

@@ -322,11 +322,11 @@ function athena_course_page_attachments(array &$attachments) {
           'shareasale'
         ];
 
-        if (!empty($uid) && !empty($cid)) {
+        if (!empty($uid)) {
          $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId";
         }
 
-        if (!empty($mail) && !empty($cid)) {
+        if (!empty($mail)) {
           $url = "http://ulearn.athena.edu/login?mail=$mail&CId=$cid";
         }
 
