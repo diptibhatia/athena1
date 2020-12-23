@@ -1,8 +1,8 @@
 <div class="main-wrapper container-fluid p-0 university-wrapper">
 
         <div class="banner container-fluid banner-image p-0 bg-white">
-            <img src="{{base_path}}/images/univ_banner/{{univ_data.univ_banner}}.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
-            <img src="{{base_path}}/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
+            <img src="/themes/custom/athena/images/univ_banner/{{univ_data.univ_banner}}.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
+            <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
             <div class="container carousel-caption text-left pl-0">
                 <h1 class="strong banner_title"> {{data.label }}</h1>
                 <div class="row">
@@ -11,11 +11,11 @@
                     </div>
                     <div class="col-md-6">
                       <a href="#">
-                          <!-- <img src="{{base_path}}/images/coursepage/playintro.svg" alt="play button"><br />
+                          <!-- <img src="/themes/custom/athena/images/coursepage/playintro.svg" alt="play button"><br />
                           <i>Watch Intro</i> -->
                       </a>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
 
@@ -41,8 +41,8 @@
                           <div class="info-3">
                             <h2 class="heading ">Rankings</h2>
                               <p>{{univ_data.rank|raw}}</p>
-                          </div> 
- {% endif %}                          
+                          </div>
+ {% endif %}
                    </div>
 
                    <div class="col-md-4 col-sm-12">
@@ -56,20 +56,20 @@
                           {% if univ_data.enable_card %}
                            <div class="card">
                                <div class="card-icons">
-                                 <img src="{{base_path}}/images/logo11.jpg" width="30%">
-                                 <img src="{{base_path}}/images/logo12.png" width="35%"> 
+                                 <img src="/themes/custom/athena/images/logo11.jpg" width="30%">
+                                 <img src="/themes/custom/athena/images/logo12.png" width="35%">
                              </div>
                            </div>
                        <div class="card">
                             <div class="card-icons">
-                              <img src="{{base_path}}/images/logo21.jpg" width="50%">
-                              <img src="{{base_path}}/images/logo22.png" width="45%"> 
+                              <img src="/themes/custom/athena/images/logo21.jpg" width="50%">
+                              <img src="/themes/custom/athena/images/logo22.png" width="45%">
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-icons">
-                              <img src="{{base_path}}/images/logo31.jpg" width="45%">
-                              <img src="{{base_path}}/images/logo32.jpg" width="45%"> 
+                              <img src="/themes/custom/athena/images/logo31.jpg" width="45%">
+                              <img src="/themes/custom/athena/images/logo32.jpg" width="45%">
                           </div>
                         </div>
                         {% endif %}
@@ -80,34 +80,34 @@
             <section class="people">
                 <div class="card">
                     <div class="profile-sidebar">
-                        <img class="profile-img" src="{{base_path}}/images/ppl4.jpg" alt="Women">
+                        <img class="profile-img" src="/themes/custom/athena/images/ppl4.jpg" alt="Women">
                         <h2 class="profile-title">Message from Rector</h2>
                         <p class="profile-partner">Prof.Alessandra Briganti<br> Rector Gulglelmo Marconi University</p>
                     </div>
-                    <div class="profile-main">                  
+                    <div class="profile-main">
                         <p>
                           Guglielmo Marconi University, modeled around education and research, promotes innovative ICT-based educational methodologies, stimulating students to develop high cognitive and practical competences. The strong point of this educational system is the focus on the current educational demands required by the ever-changing working environment. By considering these developments, GMU offers students high-quality market-oriented courses. We have been continuously growing our presence around the world through many strategic partnerships during past years and the Westford Education Group was the one of the major partnerships which has been very successful since 2015.
 Athena Global Education is a new venture of Westford Education Group. A future ready education solution, Athena Global Education utilizes the latest technology aimed at improving the students’ experience. We are happy to have partnered for this new project and are eager to expand our partnership into different domains. The association with Westford Group has produced hundreds of graduates in past years and we look forward to enhancing the portfolio and providing accessibility to education around the world.
 We welcome the students of Athena Global Education to our qualifications and wish them the very best on their future endeavours.
 
-                        </p>  
-                       
+                        </p>
+
                     </div>
                 </div>
 
                 <div class="card card-2">
                     <video poster="{{base_path}}/images/university.jpg" controls="" class="bg-white shadow-sm rounded">
-                        <source src="{{base_path}}/images/video/sample.mp4" type="video/mp4">
+                        <source src="/themes/custom/athena/images/video/sample.mp4" type="video/mp4">
                     </video>
 
                     <div class="profile-sidebar">
-                      <img class="profile-img" src="{{base_path}}/images/ppl4.jpg" alt="Women">
+                      <img class="profile-img" src="/themes/custom/athena/images/ppl4.jpg" alt="Women">
                       <h2 class="profile-title">Message from Rector</h2>
                       <p class="profile-partner">Prof.Alessandra Briganti<br> Rector Gulglelmo Marconi University</p>
                     </div>
                 </div>
             </section>
-            
+
             {% endif %}
         </div>
     </div>

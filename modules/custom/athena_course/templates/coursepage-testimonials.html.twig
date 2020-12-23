@@ -2,14 +2,14 @@
    <div class="why-athena mb-3 p-0">
       <div class="testimonials container-fluid p-0">
          <div class="testimonials-background-image">
-            <img src="{{base_path}}/images/testimonial-bg.png" />
+            <img src="/themes/custom/athena/images/testimonial-bg.png" />
          </div>
          <div class="my-container">
             <div class="testimonials-item">
-               <!-- <img src="{{base_path}}/images/testimonial-bg.png" alt=""/> -->
+               <!-- <img src="/themes/custom/athena/images/testimonial-bg.png" alt=""/> -->
                <div class="item-one shawdow-effect">
                   <!-- <h1>Testimonials</h1> -->
-                  <img src="{{base_path}}/images/Testimonials-1.png" />
+                  <img src="/themes/custom/athena/images/Testimonials-1.png" />
                   <h2>Our Students Say <br>About Us</h2>
                   <h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.
                   </h3>
@@ -25,13 +25,13 @@
 
                      {% if loop.index ==1 %}
                         <div class="image-dot-testimonials-one">
-                           <img src="{{base_path}}/images/dots-course.svg" />
+                           <img src="/themes/custom/athena/images/dots-course.svg" />
                         </div>
                         <div class="student-review">
                            <div class="student-image">
                               <img style="border-radius: 50%;border: 3px solid orange;" src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" />
                               <div class="social-icon-linkedin d-none d-md-block d-lg-block">
-                                 <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" alt="" /></a>
+                                 <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" alt="" /></a>
                               </div>
                            </div>
                            <div class="info">
@@ -45,7 +45,7 @@
                               &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
 
                                  <div class="student-info">
-                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
                                     {{testidata.field_testimonial_name_and_desig.value|raw}}
                                     {% if testidata.field_testimonials_country_selec.value %}
                                        <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
@@ -61,13 +61,13 @@
 
                      {% if loop.index ==2 %}
                         <div class="image-dot-testimonials-two">
-                           <img src="{{base_path}}/images/dots-course.svg" />
+                           <img src="/themes/custom/athena/images/dots-course.svg" />
                         </div>
                         <div class="student-review two">
                            <div class="student-image">
                               <img style="border-radius: 50%;border: 3px solid orange;" src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" />
                               <div class="social-icon-linkedin d-none d-md-block d-lg-block">
-                                 <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" alt="" /></a>
+                                 <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" alt="" /></a>
                               </div>
                            </div>
                            <div class="info">
@@ -81,7 +81,7 @@
                               &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
 
                                  <div class="student-info">
-                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
                                     {{testidata.field_testimonial_name_and_desig.value|raw}}
                                     {% if testidata.field_testimonials_country_selec.value %}
                                        <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
@@ -99,7 +99,7 @@
                            <div class="student-image">
                               <img style="border-radius: 50%;border: 3px solid orange;" src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" />
                               <div class="social-icon-linkedin d-none d-md-block d-lg-block">
-                                 <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" alt="" /></a>
+                                 <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" alt="" /></a>
                               </div>
                            </div>
                            <div class="info">
@@ -114,7 +114,7 @@
                                  &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
 
                                  <div class="student-info">
-                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="{{base_path}}/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+                                    <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
                                     {{testidata.field_testimonial_name_and_desig.value|raw}}
                                     {% if testidata.field_testimonials_country_selec.value %}
                                        <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">

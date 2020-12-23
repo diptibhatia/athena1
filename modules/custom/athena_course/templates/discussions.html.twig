@@ -1,10 +1,10 @@
 <div class="col-md-8 col-sm-12">
                <div class="title">
                   <!-- <h2>Our Discussions</h2> -->
-                  <img src="{{base_path}}/images/discussion-heading.png" alt="" style="width:100%;">
+                  <img src="/themes/custom/athena/images/discussion-heading.png" alt="" style="width:100%;">
                </div>
                <div class="discussions">
-               
+
                 {% for discussion in discussions %}
                   <div class="posts">
                      <div class="single-post">
@@ -20,24 +20,24 @@
                               Author: {{discussion.author_firstname}} {{discussion.author_lastname}}
                               | {{discussion.time_ago}} |
                               {{discussion.comments_count}}
-                              <img src="{{base_path}}/images/comment.svg">
+                              <img src="/themes/custom/athena/images/comment.svg">
                               | {{discussion.views_count}}
-                              <img src="{{base_path}}/images/eye.svg">
+                              <img src="/themes/custom/athena/images/eye.svg">
                            </div>
                         </div>
                      </div>
                      <div class="arrow">
                         <a href="?discussion_id={{discussion.discussion_id}}">
-                               <img src="{{base_path}}/images/arrow-discussion.svg"></a>
+                               <img src="/themes/custom/athena/images/arrow-discussion.svg"></a>
                      </div>
                   </div>
-                  
+
                  {% endfor %}
-                 
-                  
-                 
-                 
-                  
-                 
+
+
+
+
+
+
                </div>
             </div>
