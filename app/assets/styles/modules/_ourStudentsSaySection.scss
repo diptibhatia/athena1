@@ -2,7 +2,8 @@
     padding-top: 35px;
     padding-bottom: 50px;
     background-color: #eff1fe;
-
+    position: relative;
+    overflow: hidden;
     @include atSize1250 {
         margin-bottom: 270px;
         margin-top: 257px;
