@@ -8,9 +8,9 @@
             <img src="{{ header_image }}" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
             {% endif %}
             {% if header_image|trim is empty %}
-             <img src="{{base_path}}/images/academic-program.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
+             <img src="/themes/custom/athena/images/academic-program.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
              {% endif %}
-            <img src="{{base_path}}/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
+            <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
             <div class="container carousel-caption text-left pl-0">
                 <h1 class="strong text-secondaryColor banner_title"><span class="purple-txt">{{title1}}</span> {{title2}}</h1>
                 <div class="text-secondaryColor banner_text">
@@ -30,23 +30,23 @@
                     </div>
                     <div class="row mb-3 academic-card pt-5 pb-5 justify-content-center">
                         <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" src="{{base_path}}/images/find-program.svg">
+                            <img class="rounded-circle" src="/themes/custom/athena/images/find-program.svg">
                             <h3 class="card-title">Find a Program</h3>
                             <p>Select a program from Athena’s wide array of courses which include academic and professional certification programs. All are internationally accredited  and help to advance your career.</p>
                         </div>
                         <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" src="{{base_path}}/images/enroll.svg">
+                            <img class="rounded-circle" src="/themes/custom/athena/images/enroll.svg">
                             <h3 class="card-title">Enroll For a Module</h3>
                             <p>Register for a course and get complete access to the first module of any program for 7 days totally free. You can access the learning materials and the e-library.</p>
                         </div>
                         <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" src="{{base_path}}/images/assesment.svg">
+                            <img class="rounded-circle" src="/themes/custom/athena/images/assesment.svg">
                             <h3 class="card-title">Online Assesments</h3>
                             <p>There are no written exams for any program. All the modules are assessed online based on the module-specific project. The number of days within which you have to submit your assignment depends on the particular program you have enrolled for.
 </p>
                         </div>
                         <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" src="{{base_path}}/images/getdegree.svg">
+                            <img class="rounded-circle" src="/themes/custom/athena/images/getdegree.svg">
                             <h3 class="card-title">Get a Degree</h3>
                             <p>After completion of the course modules, you get a degree which is recognized worldwide and helps you to take a giant leap forward in your career.</p>
                         </div>
@@ -80,16 +80,16 @@
                             <p>{{course_data.field_course_banner_description.value}}  <a  href="{{ url('<front>') }}course/{{course_data.id}}" class="purple-txt">Read More</a></p>
 
                             <div class="col-md-3 col-sm-3 p-0 pt-3">
-                               <img src="{{base_path}}/images/coursepage/course-flexible.svg" alt="icon" class="">
+                               <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon" class="">
                                 <p>Flexible <br> {{course_data.field_course_duration.value}}</p>
                             </div>
                             <div class="col-md-4 col-sm-4 p-0 pt-3" style="display:none">
-                               <img src="{{base_path}}/images/coursepage/course-certification.svg" alt="icon" class="">
+                               <img src="/themes/custom/athena/images/coursepage/course-certification.svg" alt="icon" class="">
                                 <p>{{course_data.field_course_certification_label.value}} <br> {{course_data.field_course_certification.value}}</p>
                             </div>
                             {% if course_data.field_course_accreditations.0.value is not empty %}
                             <div class="col-md-5 col-sm-5 p-0 pt-3">
-                               <img src="{{base_path}}/images/coursepage/course-accreditation.svg" alt="icon" class="">
+                               <img src="/themes/custom/athena/images/coursepage/course-accreditation.svg" alt="icon" class="">
                                 <p>Accreditations <br> {{ course_data.field_course_accreditations.0.value|raw }} <br> {{ course_data.field_course_accreditations.1.value|raw }}</p>
                             </div>
                             {% endif %}
@@ -161,7 +161,7 @@
             <div class="container p-0">
                  <div class="insights-section shawdow-effect">
             <!-- <h1>News & Updates</h1> -->
-            <img class="img-heading" src="{{base_path}}/images/news-updates.svg" alt="">
+            <img class="img-heading" src="/themes/custom/athena/images/news-updates.svg" alt="">
             <h2>From Our Insights</h2>
             <h3>We keep you informed and engaged. Blogs on diverse subjects. Candid interviews of students and employees. Reviews of books that can change your life. Testimonials from our satisfied students.</h3>
             <div class="section-items">

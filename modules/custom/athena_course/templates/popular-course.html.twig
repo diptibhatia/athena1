@@ -2,7 +2,7 @@
          <div class="popular-courses shawdow-effect">
             <!-- <h1>Popular Courses</h1> -->
             <div class="heading-image">
-               <img src="{{base_path}}/images/popular-courses.svg" alt="">
+               <img src="/themes/custom/athena/images/popular-courses.svg" alt="">
             </div>
             <h2>Our Popular Course</h2>
             <h3>Some of our courses are in high demand. As acknowledged by our students, they have contributed to their professional achievements and enabled them to tackle challenging situations at the workplace.
@@ -18,7 +18,7 @@
 
         <a href="{{ url('<front>') }}course/{{coursedata.id}}"> <img class="course-img" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}"  alt="Course"></a>
          {% else %}
-          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+          <img class="course-img" src="/themes/custom/athena/images/course-image2.png" alt="Course">
            {% endif %}
 
 

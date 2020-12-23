@@ -30,7 +30,7 @@
     <div style="padding:10px;">
 {% for univ in coursedata.univ  %}
         <img width="73" height="50" src="{{univ}}" style="margin-right:20px;" class="rounded-circle">
-        <!-- <img width="50" height="50" src="{{base_path}}/images/ucam.png" class="rounded-circle"> -->
+        <!-- <img width="50" height="50" src="/themes/custom/athena/images/ucam.png" class="rounded-circle"> -->
 {% endfor %}
         </div>
         <a href="{{ url('<front>') }}course/{{coursedata.node.id}}" class="text-right purple-txt">Learn More</a>
