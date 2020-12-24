@@ -327,7 +327,7 @@ function athena_course_page_attachments(array &$attachments) {
         }
 
         if (!empty($mail)) {
-          $url = "http://ulearn.athena.edu/login?mail=$mail&CId=$cid";
+          $url = "https://ulearn.athena.edu/login?mail=$mail&CId=$cid";
         }
 
         $redirect = "<meta http-equiv='refresh' content='3;url=$url' />";

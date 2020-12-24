@@ -259,7 +259,7 @@
         }
       });
     } else {
-      //window.location.replace('http://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
+      //window.location.replace('https://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
       window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+cData.email+'&CId='+cData.cId);
     }
   }
