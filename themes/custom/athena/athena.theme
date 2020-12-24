@@ -63,10 +63,10 @@ function athena_preprocess_block(array &$variables) {
            $univkey = $univ_node->get('field_university_key')->value;
           $univ_logo[] = array(
            'label' => $univ_node->label(),
-           'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value),
+           'logo'=> "https://websitestg.athena.edu/sites/default/files/2020-10/gmu.png",
            'nid' => $university_nid,
            'univkey' => $univkey
-           
+
           );
         }
 
@@ -108,7 +108,7 @@ function athena_preprocess_block(array &$variables) {
           $univkey = $univ_node->get('field_university_key')->value;
           $univ_logo[] = array(
             'label' => $univ_node->label(),
-            'logo'=> file_create_url($univ_node->get('field_logo')->entity->uri->value),
+            'logo'=> "https://websitestg.athena.edu/sites/default/files/2020-10/gmu.png",
             'nid' => $university_nid,
             'univkey' => $univkey
           );
@@ -149,7 +149,7 @@ function athena_preprocess_block(array &$variables) {
         if (!empty($university_nid) && is_object($univ_node) && empty($find_univ_id)) {
           $label_univ = $univ_node->label();
          $univkey = $univ_node->get('field_university_key')->value;
-          $uu_logo =file_create_url($univ_node->get('field_logo')->entity->uri->value);
+          $uu_logo ="https://websitestg.athena.edu/sites/default/files/2020-10/gmu.png";
           $univ_logo[] = array(
             'label' => $label_univ,
             'logo'=> $uu_logo,
