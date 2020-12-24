@@ -19,7 +19,7 @@ global-js:
     https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js: { type: external, minified: true }
     js/isValidNumber.js: {}
     script.js: {}
-#    http://www.geoplugin.net/javascript.gp : { type: external, minified: false }
+    http://www.geoplugin.net/javascript.gp : { type: external, minified: false }
     js/MobileMenu.js: {}
     js/regular.min.js: {}
     js/bundled.js: {}

@@ -3,36 +3,36 @@ jQuery('.iti__flag-container').remove();
 jQuery(document).ready(function() {
     jQuery("#phone").intlTelInput();
 
-    // if (jQuery(".country-code").length == 0) {
-    //     jQuery(".selected-flag").after("<div class='country-code' />");
-    //     jQuery(".country-code").text("+1");
-    // }
+    if (jQuery(".country-code").length == 0) {
+        jQuery(".selected-flag").after("<div class='country-code' />");
+        jQuery(".country-code").text("+1");
+    }
 
-    // jQuery(".country-list li").on('click', function(){
-    //     jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
-    // });
+    jQuery(".country-list li").on('click', function(){
+        jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
+    });
 
-    // if (jQuery(".country-code").length > 0) {
-    //     jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
-    //         var countrycode = geoplugin_countryCode();
-    //         countrycode = countrycode.toLowerCase();
+    if (jQuery(".country-code").length > 0) {
+        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
+            var countrycode = geoplugin_countryCode();
+            countrycode = countrycode.toLowerCase();
 
-    //         var element = document.getElementsByClassName("selected-flag")[0];
-    //         element.dispatchEvent(new Event("click"));
-    //         jQuery("li.country[data-country-code='" + countrycode +
-    //         "']").trigger('click');
+            var element = document.getElementsByClassName("selected-flag")[0];
+            element.dispatchEvent(new Event("click"));
+            jQuery("li.country[data-country-code='" + countrycode +
+            "']").trigger('click');
 
-    //         window.scrollTo(0, 0);
-    //     });
-    // }
+            window.scrollTo(0, 0);
+        });
+    }
 
 
 });
 
-// jQuery(document).on("click", ".country-list li", function(event) {
-//     event.preventDefault();
-//     jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
-// });
+jQuery(document).on("click", ".country-list li", function(event) {
+    event.preventDefault();
+    jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
+});
 
 function scrollEvent(){
         jQuery(function(){

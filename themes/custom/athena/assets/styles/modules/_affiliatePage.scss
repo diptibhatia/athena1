@@ -235,9 +235,9 @@
       
       
       .modal-dialog {
-        width: 410px !important;
-        margin: 120px auto !important;
-        padding: 20px !important;
+        // width: 410px !important;
+        // margin: 120px auto !important;
+        // padding: 20px !important;
       }
       
       label {
@@ -251,6 +251,7 @@
         box-shadow: 0 2px 25px 2px #d5dbfb;
         background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
         padding: 18px;
+        color:#fff;
       }
       
       .form-control {
@@ -258,7 +259,7 @@
         box-shadow: 0 2px 18px -1px #d5dbfb !important;
         border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
         background-color: #ffffff !important;
-        padding: 21px !important;
+        padding: .75rem;
       }
       
       
