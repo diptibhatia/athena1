@@ -228,22 +228,17 @@
       
         border-bottom: 5px solid #ff016f;
         width: 115px;
-      
-      
-      }
-      
-      
-      
+    }
       .modal-dialog {
         // width: 410px !important;
         // margin: 120px auto !important;
-        // padding: 20px !important;
+        padding: 20px !important;
       }
       
       label {
       
         font-weight: normal !important;
-        margin-top: 10px;
+        //margin-top: 10px;
       }
       
       .btn.btn-pink {
@@ -259,7 +254,8 @@
         box-shadow: 0 2px 18px -1px #d5dbfb !important;
         border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
         background-color: #ffffff !important;
-        padding: .75rem;
+        padding: .35rem .75rem; 
+    height: 44px;
       }
       
       
@@ -513,7 +509,7 @@
       textarea {
           font-family: inherit;
           font-weight: normal;
-          color: inherit !important;
+          //color: inherit !important;
       }
       p {
           margin: 0 0 20px
