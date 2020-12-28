@@ -78,9 +78,9 @@
   <li class="column-1" style="list-style: none">
     <span><span> <span>
     {% if nodedata.field_courses_credit_type.0.value %}
-    *{{nodedata.field_course_ects_credit.0.value}} Credits ({{nodedata.field_courses_credit_type.0.value|raw }})
-    {% endif %}
-    </span> | <span>Duration: {{nodedata.field_course_duration.value}}</span>
+    {{nodedata.field_course_ects_credit.0.value}} Credits ({{nodedata.field_courses_credit_type.0.value|raw }})
+    
+    </span> | <span>{% endif %}Duration: {{nodedata.field_course_duration.value}}</span>
   </span></span></li>
 
    <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
