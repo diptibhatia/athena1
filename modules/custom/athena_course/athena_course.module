@@ -311,6 +311,7 @@ function athena_course_page_attachments(array &$attachments) {
       $cid = $_REQUEST['CId'] ?? '';
       $modId = $_REQUEST['ModId'] ?? '';
       $mail = $_REQUEST['mail'] ?? '';
+      $source = $_REQUEST['source'] ?? '';
       if (!empty($cid)) {
         $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
         $attachments['#attached']['html_head'][] = [
@@ -323,7 +324,7 @@ function athena_course_page_attachments(array &$attachments) {
         ];
 
         if (!empty($uid)) {
-         $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId";
+         $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId&source=$source";
         }
 
         if (!empty($mail)) {

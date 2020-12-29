@@ -160,7 +160,7 @@
           // console.log(response);
           if(response == "Email Exist") {
             confirm("User already registered, please wait while we redirect you");
-            redirCandidate(cData);
+            redirCandidate(cData, '');
           }
           else {
             $(".reg-form").hide("fast");
@@ -225,7 +225,7 @@
             else {
               confirm("Registration Successful, you will be redirected to login page now.");
             }
-            redirCandidate(cData);
+            redirCandidate(cData, utmSource);
           }
         },
         error: function (jqXhr, textStatus, errorMessage) {
@@ -242,7 +242,7 @@
 });
 })(jQuery, Drupal);
 
-  function redirCandidate(cData) {
+  function redirCandidate(cData, utmSource) {
     // console.log(cData);
     if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
@@ -252,7 +252,7 @@
         var userId = parseInt(jQuery.trim(data));
         if( userId > 0) {
           //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
-          window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+          window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
 
         } else {
           alert("Something went wrong please try again");
