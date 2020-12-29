@@ -24,7 +24,7 @@
                 <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}">Apply now</a>
     {% if node.field_courses_credit_type.0.value %}
 
-                <p>*{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
+                <p>{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
                 {% endif %}
             </div>
             <!-- <div class="course-banner__watch-intro">
