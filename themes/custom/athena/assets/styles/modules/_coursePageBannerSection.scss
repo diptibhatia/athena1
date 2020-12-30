@@ -17,14 +17,13 @@ min-height: 415px !important;
         padding: 1.2rem 0;
         overflow: visible;
         max-height: initial;
-        min-height: 415px;
     } 
     @include atSize1250 {
         background-color: #fff;
     }
 
     @include atSize1350 {
-        padding: 1.625rem 0;
+        //padding: 1.625rem 0;
     }
 
     @include atSizeXXLarge {
@@ -33,14 +32,14 @@ min-height: 415px !important;
     }
 
     &__breadcrumbs {
-        margin-bottom: 1.125rem;
+        margin-bottom: 1rem;
 
         @include atSize700 {
-            margin-bottom: 1.3rem;
+            //margin-bottom: 1.3rem;
         }
 
         @include atSize1350 {
-            margin-bottom: 1.625rem;
+            //margin-bottom: 1.625rem;
         }
 
         a {
@@ -113,9 +112,9 @@ min-height: 415px !important;
         }
 
         @include atSize1350 {
-            margin: 1rem 0;
-            font-size: 2.81rem;
-            line-height: 1.17;
+            //margin: 1rem 0;
+            font-size: 2.6rem;
+           // line-height: 1.17;
         }
     }
 
