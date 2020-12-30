@@ -2,7 +2,14 @@
       <div class="container my-container">
         <div class="search">
           <form class="search-form" method = "post" id="course-search--form">
-            <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
+            
+            {#Retain the search key value when search button is clicked#}
+          {%if search_key is empty %}
+          <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
+                  {% else %}
+          <input type="text" id="search_key" value="{{search_key}}" name="search_key">
+            {% endif %}
+
             <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
             <input type="hidden" name="submit_form">
             <div class="search-courses">
