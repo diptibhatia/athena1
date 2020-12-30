@@ -316,7 +316,7 @@ function athena_course_page_attachments(array &$attachments) {
         $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
         $attachments['#attached']['html_head'][] = [
           [
-            '#tag' => 'noscript',
+            '#tag' => '',
             '#value' => \Drupal\Core\Render\Markup::create($shareASalePixel),
             '#weight' => 10,
           ],
