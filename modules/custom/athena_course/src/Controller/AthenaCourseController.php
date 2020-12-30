@@ -1583,10 +1583,15 @@ function search($word = false){
   foreach ($merged_nodes as $key => $node) {
     $mergedNodeNids[] = $node->id();
   }
-  $filterNodes = array_filter($mergedNodeNids);
-  foreach ($variable as $key => $nodeNid) {
+
+  // changed code to display unique records
+  $filterNodes = array_unique($mergedNodeNids);
+
+  $merged_nodes = [];
+  foreach ($filterNodes as $key => $nodeNid) {
     $merged_nodes[] = Node::load($nodeNid);
   }
+
 
   $base_path = $base_url.'/'. $theme->getPath();
     $banner_block =  [
