@@ -81,7 +81,7 @@
             margin-bottom: 1.6rem;
             padding:15px;
           }
-          @include belowSize480{
+          @include atSize424{
             font-size: 1.4rem;
             margin-bottom: 1rem;
             padding:12px;
