@@ -583,10 +583,10 @@
             z-index: 9999;
             transform: scaleY(1);
         }
-@media screen and (max-width:600px) {
-    &__menu-content {
+@media screen and (max-width:700px) {
+     
         display: none;
-    }
+     
 }
         @include atSize700 {
             opacity: 1;
