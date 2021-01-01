@@ -1,0 +1,270 @@
+.explore-courses-page{
+    .academic-bg-wrap {
+        @media (max-width: 700px){
+            top: 80px;
+        }
+    }
+} 
+
+.how-it-works{
+    @media screen and (max-width:699px){
+        margin:0;
+    }
+}
+.findCourseInput{
+    padding:1rem 0;
+    @media screen and (max-width:699px){
+        padding:1rem 0 1rem 1rem;
+    }
+    .input-area{
+        padding:1rem;
+        border-radius: 100px !important;
+        margin-right:0;
+
+    }
+    input{
+        border:none;
+    }
+    button{
+        border:none;
+        float:right;
+        font-size:1rem !important;
+        font-weight:bold;
+        background:transparent;
+    }
+}
+.shortterm-courses-area{
+    padding-bottom:6rem;
+}
+.shortterm-courses{
+    text-align:center;
+    .item{
+        max-width: 283px !important;
+        box-shadow: 0 6px 15px 2px #d5dbfb;
+        background: #fff;
+        margin: 0 0px 20px 14px;
+        padding: 0 0 10px;
+        min-height: 376px;
+        float: left;
+        overflow: hidden;
+        position:relative;
+        text-align:left;
+        @media screen and (min-width:768px){
+            max-width:287px;
+        }
+        @media screen and (max-width:699px){
+            max-width:100% !important;
+            margin: 0 0px 20px;
+        }
+
+        .course-item-hover{
+            display:none;
+            position:absolute;
+            transition:500s;
+            background:#fff;
+            width:100%;
+            padding:2rem 1rem;
+            z-index:1;
+            .social-icons{
+                text-align:center;
+                padding-bottom:1rem;
+                img{
+                    width:36px;
+                    height:36px;
+                    display:inline-block;
+                }
+            }
+            .course-details{
+                clear:both;
+                h3{
+                    font-size:22.1px;
+                    color:#303030;
+                    min-height:3.2rem;
+                }
+                .course-info{
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.58;
+                    letter-spacing: normal;
+                    color: #606060;
+                    padding-bottom:0.3rem;
+                    min-height:191px;
+
+                }
+                p.small{
+                    font-size:13px;
+                    margin-bottom:7px;
+
+                }
+
+                h4{
+                    color:#1977f2;
+                    font-size:18px;
+                    a{
+                        color:#1977f2;
+                        text-decoration:none;
+                    }
+                }
+                .button-area{
+                    text-align:center;
+                    button{
+                        width: 196px;
+                        height: 46px;
+                        padding: 13px 10px 15px 10px;
+                        border-radius: 8.3px;
+                        border: solid 2px #fe0490;
+                        background:#fff;
+                        color: #fe0490;
+                        font-size: 14.7px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        &:hover{
+                            border: solid 2px #fe0490;
+                            background:#fe0490;
+                            color: #ffffff;
+    
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
+    .course-item{
+        .heading{
+            clear:both;
+            background-image:linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
+            color:#fff;
+            padding:0.3rem 0;
+            h5{
+                font-size:12.9px;
+                line-height:22.1px;
+                margin:0;
+                font-weight:600;
+            }
+            .free-text{
+                font-size:16.6px;
+                font-style: italic;
+                float:right;
+            }
+        }
+        .image{
+            clear:both;
+            img{
+                border-radius:0;
+                @media screen and (max-width:699px){
+                    width:100% !important;
+                }
+            }
+        }
+        .course-details{
+            clear:both;
+            padding:1.5rem;
+            h3{
+                font-size:22.1px;
+                color:#303030;
+                min-height:3.2rem;
+            }
+            .course-info{
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.58;
+                letter-spacing: normal;
+                color: #606060;
+                padding-bottom:0.3rem;
+            }
+            .rating{font-size:12.9px;line-height:22.1px;color:#303030;padding:0.3rem 0 1.2rem;}
+            .button-area{
+                text-align:center;
+                button{
+                    width: 196px;
+                    height: 46px;
+                    padding: 13px 10px 15px 10px;
+                    border-radius: 8.3px;
+                    border: solid 2px #fe0490;
+                    font-size: 14.7px;
+                    font-weight: bold;
+                    color: #fe0490;
+                    background:#fff;
+                    font-stretch: normal;
+                }
+            }
+        }
+    
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .mobileSlideOnly .owl-item.cloned, .mobileSlideOnly .owl-nav{
+        display: none !important;
+    }
+    .mobileSlideOnly .owl-stage{
+        transform:none !important;
+        transition: none !important;
+        width: auto !important;
+    }
+    .mobileSlideOnly .owl-item{
+        width: auto !important;
+    }
+    .shortterm-courses.custom-carousel{
+        padding:0 !important;
+    }
+}
+
+
+.shortterm-courses .item:hover .course-item-hover {
+    display: block;
+}
+
+
+/*Star Rating SVG*/
+.rating{
+    min-height:31px;
+}
+.jq-stars {
+    display: inline-block;
+  }
+  
+  .jq-rating-label {
+    font-size: 22px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    font-family: helvetica, arial, verdana;
+  }
+  
+  .jq-star {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .jq-star-svg {
+    padding-left: 3px;
+    width: 100%;
+    height: 100% ;
+    margin-top:-4px;
+  }
+  
+  .jq-star:hover .fs-star-svg path {
+  }
+  
+  .jq-star-svg path {
+    /* stroke: #000; */
+    stroke-linejoin: round;
+  }
+  
+  /* un-used */
+  .jq-shadow {
+    -webkit-filter: drop-shadow( -2px -2px 2px #888 );
+    filter: drop-shadow( -2px -2px 2px #888 );
+  }
+  
+

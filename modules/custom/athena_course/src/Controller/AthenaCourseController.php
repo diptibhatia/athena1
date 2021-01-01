@@ -74,7 +74,9 @@ foreach($paragraph_univ_data as $explore_data) {
         //print "abcs"
     //   print_r($certificates);
 
-        if (!empty($university_nid)) {
+        //if (!empty($university_nid)) {
+       if ( !empty($university_nid) && $university_nid != "")       
+       { 
        $univ_node = Node::load($university_nid);
        $white_log  = '';
        switch($univ_node->get('title')->value){
@@ -97,14 +99,9 @@ foreach($paragraph_univ_data as $explore_data) {
                          break;
             default:
                     break;
-
-
-
        }
 
 
-
-}
        $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
@@ -122,7 +119,7 @@ foreach($paragraph_univ_data as $explore_data) {
 
         );
         }
-
+}
 
 //exitl
 $paragraph_why_course = $node->field_what_you_get->referencedEntities();
@@ -1583,10 +1580,15 @@ function search($word = false){
   foreach ($merged_nodes as $key => $node) {
     $mergedNodeNids[] = $node->id();
   }
-  $filterNodes = array_filter($mergedNodeNids);
-  foreach ($variable as $key => $nodeNid) {
+
+  // changed code to display unique records
+  $filterNodes = array_unique($mergedNodeNids);
+
+  $merged_nodes = [];
+  foreach ($filterNodes as $key => $nodeNid) {
     $merged_nodes[] = Node::load($nodeNid);
   }
+
 
   $base_path = $base_url.'/'. $theme->getPath();
     $banner_block =  [

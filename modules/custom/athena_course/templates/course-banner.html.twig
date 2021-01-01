@@ -7,12 +7,12 @@
             </div>
             <div class="course-banner__logos">
  {% for universities in univ_data	 %}
-   <img src="{{base_path}}/images/icons/{{ universities.white_log}}.svg" alt="ucam logo" width="95">
+   <img src="/themes/custom/athena/images/icons/{{ universities.white_log}}.svg" alt="ucam logo" width="95">
 
  {% endfor %}
 
                                            <a data-toggle="modal" class="showinMobileView btn btn-default"  style="position: relative;float:right;color:white;" data-dismiss="modal" data-target="#myModalsocialshare">
-                    <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon" style="width:30px;">
+                    <img src="/themes/custom/athena/images/coursepage/share.svg" alt="share icon" style="width:30px;">
                     Share
                 </a>
             </div>
@@ -24,18 +24,18 @@
                 <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}">Apply now</a>
     {% if node.field_courses_credit_type.0.value %}
 
-                <p>*{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
+                <p>{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
                 {% endif %}
             </div>
             <!-- <div class="course-banner__watch-intro">
                 <a href="#">
-                    <img src="{{base_path}}/images/coursepage/playintro.svg" alt="play button">
+                    <img src="/themes/custom/athena/images/coursepage/playintro.svg" alt="play button">
                     <i>Watch</i><i>Intro</i>
                 </a>
             </div> -->
             <div class="hideinMobileView shareIcon">
                 <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare">
-                    <img src="{{base_path}}/images/coursepage/share.svg" alt="share icon">
+                    <img src="/themes/custom/athena/images/coursepage/share.svg" alt="share icon">
                     Share
                 </a>
               </div>
@@ -49,11 +49,11 @@
  {% if node.field_course_banner.entity.uri.value is not empty %}
     <img src="{{file_url(node.field_course_banner.entity.uri.value) }}" alt="banner">
  {% else %}
- <img src="{{base_path}}/images/coursepage/course_banner.png" alt="banner">
+ <img src="/themes/custom/athena/images/coursepage/course_banner.png" alt="banner">
 {% endif %}
             </div>
             <div class="course-banner__mobilebg">
-                <img src="{{base_path}}/images/coursepage/mobile_banner.png" alt="banner">
+                <img src="/themes/custom/athena/images/coursepage/mobile_banner.png" alt="banner">
             </div>
         </div>
     </div>

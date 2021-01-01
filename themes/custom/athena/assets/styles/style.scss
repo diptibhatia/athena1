@@ -41,6 +41,8 @@
 @import "modules/affiliatePage";
 @import "modules/aboutPopular";
 @import "modules/modalPopup";
+@import "modules/shorttermcourses";
+
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 
@@ -69,22 +71,23 @@ img {
 .get-started button {
     background: transparent;
 }
+.help-inline-error {color:#ff016f; font-size: 14px;}
+#registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
-#block-athena-content img {max-width:100%; height:auto;}
+#block-athena-content img {max-width:100%; min-height:auto;}
 .reason-section {
     margin: 100px 0 50px 0;
 }
 .corporate-txt img  {height:auto; max-width:100%;}
 .top-banner .logos {width:auto;}
-
-
+ 
 .mobilePadding{
     @include atSize424{
         padding-left: 2.0rem !important;
         overflow: hidden;
     }
 }
-
+.flx-duration {color:$titlePink;}
  
 .insight-wrapper .insight-cards {
     max-width: 240px;

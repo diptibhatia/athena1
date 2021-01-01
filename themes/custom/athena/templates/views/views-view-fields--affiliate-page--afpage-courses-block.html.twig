@@ -37,19 +37,18 @@
 {{fields.field_course_total_fee.content}} #}
 {% set cid = fields.field_afpage_course_id.content|render|striptags|trim %}
 {% set mid = fields.field_afpage_module_id.content|render|striptags|trim %}
-{% set pay = fields.field_afpage_course_pay.content|trim|replace(" ", "") %}
+{% set pay = fields.field_afpage_course_pay.content|render|striptags|trim %}
 
 <figure>
   <div class="badge green">Total Fee <span>{{fields.field_afpage_course_totfee.content|raw}}</span>
     <em>Pay in Installments</em>
   </div>
-  <a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">
     {% set url = fields.field_afpage_course_bgimage.content|render|striptags|trim %}
     {% set title = fields.title.content|render|striptags|trim %}
-    <img src="{{url|replace({' ':''})}}" alt="{{title}}" title="{{title}}" /></a>
+    <img src="{{url|replace({' ':''})}}" alt="{{title}}" title="{{title}}" />
 </figure>
 <div class="post-content tick ">
-  <h4 class="post-title"><a href="{{ cid ? 'https://athena.edu/portal/QuickEnquiry?CId=' ~ cid : 'https://athena.edu/portal/QuickEnquiry' }}" target="_blank">{{title}}</a></h4>
+  <h4 class="post-title">{{title}}</h4>
   {% if fields.field_afpage_course_award_body.content %}<h5>Awarded By : <span> {{fields.field_afpage_course_award_body.content}} </span></h5>{% endif %}
 
   {% if fields.field_afpage_course_fee.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee : <span>{{fields.field_afpage_course_fee.content|raw}}</span></h6>{% endif %}
@@ -59,5 +58,5 @@
   </h6>{% endif %}
   {% if fields.field_afpage_course_lrnsuprt.content %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{fields.field_afpage_course_lrnsuprt.content|raw}}</span>
   </h6>{% endif %}
-  <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
+  <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}" data-pay="{{pay}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
 </div>

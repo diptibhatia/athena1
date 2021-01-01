@@ -2,11 +2,18 @@
       <div class="container my-container">
         <div class="search">
           <form class="search-form" method = "post" id="course-search--form">
-            <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
+            
+            {#Retain the search key value when search button is clicked#}
+          {%if search_key is empty %}
+          <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
+                  {% else %}
+          <input type="text" id="search_key" value="{{search_key}}" name="search_key">
+            {% endif %}
+
             <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
             <input type="hidden" name="submit_form">
             <div class="search-courses">
-               <a href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="{{base_path}}/images/search.svg" alt="search"></a>
+               <a href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="/themes/custom/athena/images/search.svg" alt="search"></a>
             </div>
 
         </div>
@@ -60,7 +67,7 @@
 
         <a href="{{ url('<front>') }}course/{{nodedata.id}}"> <img class="course-img" src=" {{ file_url(nodedata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
-          <img class="course-img" src="{{base_path}}/images/1.jpg" alt="Course">
+          <img class="course-img" src="/themes/custom/athena/images/1.jpg" alt="Course">
            {% endif %}
         </div>
         <div class="course-main">
@@ -78,9 +85,9 @@
   <li class="column-1" style="list-style: none">
     <span><span> <span>
     {% if nodedata.field_courses_credit_type.0.value %}
-    *{{nodedata.field_course_ects_credit.0.value}} Credits ({{nodedata.field_courses_credit_type.0.value|raw }})
-    {% endif %}
-    </span> | <span>Duration: {{nodedata.field_course_duration.value}}</span>
+    {{nodedata.field_course_ects_credit.0.value}} Credits ({{nodedata.field_courses_credit_type.0.value|raw }})
+    
+    </span> | <span>{% endif %}Duration: {{nodedata.field_course_duration.value}}</span>
   </span></span></li>
 
    <a class="column-2" href="{{ url('<front>') }}course/{{nodedata.id}}">More details</a>
@@ -344,7 +351,7 @@
 
     <section class="opinions">
          <div><div class="footer-banner">
-  <img src="{{base_path}}/images/footer-bg.png">
+  <img src="/themes/custom/athena/images/footer-bg.png">
   <div class="footer-info">
     <h1>It's Time to Start <br><span>Investing</span> In <span>Yourself</span> </h1>
     <button>Join Now</button>

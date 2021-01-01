@@ -5,17 +5,17 @@
       <div class="container">
         <div class="col-xs-6">
           <div class="navbar-header">
-            <div class="navbar-brand"><a href="https://athena.edu/"><img src="https://athena.edu/portal/Images/athenanew-logo.svg"
+            <div class="navbar-brand"><a href="https://athena.edu/"><img src="/themes/custom/athena/logo.svg"
                   alt="Athena Logo" /></a></div>
           </div>
         </div>
         <div class="col-xs-6 text-right top-social">
           <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img
-              src="{{base_path}}themes/custom/athena/images/affiliatepage/facebook.svg"></a>
+              src="/themes/custom/athena/images/affiliatepage/facebook.svg"></a>
           <a href="https://twitter.com/AthenaGlobalEdu" target="_blank"><img
-              src="{{base_path}}themes/custom/athena/images/affiliatepage/twitter.svg"></a>
+              src="/themes/custom/athena/images/affiliatepage/twitter.svg"></a>
           <a href="https://www.instagram.com/age_athena/" target="_blank"><img
-              src="{{base_path}}themes/custom/athena/images/affiliatepage/instagram.svg"></a>
+              src="/themes/custom/athena/images/affiliatepage/instagram.svg"></a>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
           {{node.field_banner_blurb.value|raw}}
           {# {{file_url(node.field_banner_image.entity.fileuri)}} #}
           <div class="col-md-5 col-xs-9 btn-course"><a href="#courses-block"> See all Courses <img
-                src="{{base_path}}themes/custom/athena/images/affiliatepage/right-arrow.svg"
+                src="/themes/custom/athena/images/affiliatepage/right-arrow.svg"
                 style="margin-left:20px;  "></a></div>
           </div>
 
@@ -74,7 +74,7 @@
   {% if view > 0 %}
   <div class="dark-wrapper">
     <div class="container inner"
-      style="background-image:url({{base_path}}themes/custom/athena/images/affiliatepage/testimonial.svg);background-repeat:no-repeat;background-position:top left;padding-top: 146px;">
+      style="background-image:url(/themes/custom/athena/images/affiliatepage/testimonial.svg);background-repeat:no-repeat;background-position:top left;padding-top: 146px;">
       <div class="col-md-12">
         <div class="section-title text-center">
           <h3>{{node.field_testimonial_block_title.value|raw}}</h3>
@@ -105,7 +105,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <img src="{{base_path}}themes/custom/athena/images/affiliatepage/pop-design.png" alt=""
+          <img src="/themes/custom/athena/images/affiliatepage/pop-design.png" alt=""
             class="modal-top-bg" style="width: 501px; margin: -24px 0 0 -16px;" />
           <button
             style="color:#000!important;font-weight:normal!important;    font-size: 14px;opacity: 1;    margin-top: 1px; padding-left: 5px;"
@@ -196,6 +196,7 @@
             <input id="cId" name="cId" type="hidden" value="">
             <input id="modId" name="modId" type="hidden" value="">
             <input id="countryId" name="countryId" type="hidden" value="">
+            <input id="pay" name="pay" type="hidden" value="">
           </form>
         </div>
       </div>

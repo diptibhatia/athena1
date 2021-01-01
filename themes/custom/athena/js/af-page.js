@@ -60,13 +60,14 @@
           },
           768: {
               items: 2
-  
+
           },
           1024: {
               items: 3
           }
       }
   });
+  $("#reg_mobile_num").intlTelInput();
   var cData = {};
   $(".btn-try a").on('click', function(e) {
     e.preventDefault();
@@ -76,10 +77,12 @@
     //get data-id attribute of the clicked element
     var cId = $(e.relatedTarget).data('cid');
     var modId = $(e.relatedTarget).data('mid');
-    console.log(modId);
+    var pay = $(e.relatedTarget).data('pay');
+    // console.log(modId);
     //populate the hidden field
     $(e.currentTarget).find('input[name="cId"]').val(cId);
     $(e.currentTarget).find('input[name="modId"]').val(modId);
+    $(e.currentTarget).find('input[name="pay"]').val(pay);
   });
   //Reset form fields on close
   $('#registrationModal').on('hidden.bs.modal', function (e) {
@@ -148,15 +151,16 @@
     cData.email = String(jQuery("#regEmail").val());
     cData.cId = parseInt(jQuery("#cId").val());
     cData.modId = jQuery("#modId").val();
+    cData.pay = jQuery("#pay").val();
     // var userId = 0;
     if (v.form()) {
       jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
         type: 'GET', // http method
         success: function(response) {
-          console.log(response);
+          // console.log(response);
           if(response == "Email Exist") {
             confirm("User already registered, please wait while we redirect you");
-            redirCandidate(cData);
+            redirCandidate(cData, '');
           }
           else {
             $(".reg-form").hide("fast");
@@ -172,9 +176,10 @@
         error: function(xhr) {
           console.log(xhr);
           //Do Something to handle error
+          alert("Something went wrong please try again");
         }
       });
-      
+
     }
   });
 
@@ -182,12 +187,13 @@
     if (v.form()) {
       var utmSource = getParameterByName("utm_source"), campaign = getParameterByName("utm_campaign");
       var phnNumber = $("#reg_mobile_num").val(); // get full number eg +17024181234
-      var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj 
+      var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj
       var phoneNum = "+" + countryCode + phnNumber;
 
       cData.email = String(jQuery("#regEmail").val());
       cData.cId = parseInt(jQuery("#cId").val());
       cData.modId = jQuery("#modId").val();
+      cData.pay = jQuery("#pay").val();
       // var userId = 0;
       var sendInfo = {
         UserName: String(jQuery("#regEmail").val()),
@@ -203,55 +209,58 @@
         CampainName:String(campaign),
         IsAccepted:true,
       };
-      console.log(JSON.stringify(sendInfo));
+      // console.log(JSON.stringify(sendInfo));
       jQuery.ajax({
         url: "https://athenawpapi.azurewebsites.net/Register/SaveLead",
         type: 'POST', // http method
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(sendInfo), // data to submit
         success: function (data, status, xhr) {
-          console.log(data);
+          // console.log(data);
           if (data == "Sucess" || data == "Success") {
-            console.log(modId);
-            if(cData.modId != "") {
+            // console.log(modId);
+            if(cData.pay == 1) {
               confirm("Registration Successful, please wait while we redirect you to payment page");
             }
             else {
               confirm("Registration Successful, you will be redirected to login page now.");
             }
-            redirCandidate(cData);
+            redirCandidate(cData, utmSource);
           }
         },
         error: function (jqXhr, textStatus, errorMessage) {
           console.log(jqXhr);
           if (jqXhr.status != 200) {
-            alert("Something went wrong please try again")
+            alert("Something went wrong please try again");
           }
         }
       });
       return false;
     }
-    
+
   });
 });
 })(jQuery, Drupal);
 
-  function redirCandidate(cData) {
+  function redirCandidate(cData, utmSource) {
     // console.log(cData);
-    if(cData.hasOwnProperty('modId') && cData.modId != "") {
+    if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
-        //   alert(data);  
-        // alert( jqXHR.status ); // Alerts 200
+        //   alert(data);
+        // alert( jqXHR.status );
         var userId = parseInt(jQuery.trim(data));
         if( userId > 0) {
-          window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+          //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
+          window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
+
         } else {
           alert("Something went wrong please try again");
         }
       });
     } else {
-      window.location.replace('http://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
+      //window.location.replace('https://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
+      window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+cData.email+'&CId='+cData.cId);
     }
   }
   function getParameterByName(name, url = window.location.href) {

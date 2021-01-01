@@ -4,7 +4,7 @@
 		<div class="card-group">
       {% for popudata in popu %}
        <!--  popup -->
-         
+
          <div id="myModalsocialshare{{loop.index}}" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -44,7 +44,7 @@
   <img src="/themes/custom/athena/images/at-ico.png" width="45">
 </a>
 </div>
-    
+
     <div class="col-md-1"></div>
 
 
@@ -102,13 +102,13 @@
   </div>
 </div>
 
-      
-      
-      
+
+
+
          {% if loop.index ==3 %}
-			<div class="card">     
+			<div class="card">
 				<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" /></a>
-                <div class="insight-logo"><a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="{{base_path}}/images/insights.svg" alt="Card image cap"></a></div>
+                <div class="insight-logo"><a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="Card image cap"></a></div>
           <div class="readTime"><a href="/node/{{popudata.nid.value}}">{{popudata.field_insight_article_min_read.value}}</a></div>
 				<div class="card-body">
 					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
@@ -120,10 +120,10 @@
 				<div class="card-footer d-flex justify-content-between purple-txt">
 					<span class="cursor shareText">
                     <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
-                    <img src="{{base_path}}/images/share.svg">
+                    <img src="/themes/custom/athena/images/share.svg">
                     Share
                 </a>
-            
+
                     </span>
 					<span  style="margin-top:6px;">
 						<a href="/node/{{popudata.nid.value}}">Read More</a>
@@ -133,7 +133,7 @@
          {% else %}
          <div class="card mr-2">
          	<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
-            <div class="insight-logo"><img class="card-img-top" src="{{base_path}}/images/insights.svg" alt="Card image cap"></div>
+            <div class="insight-logo"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="Card image cap"></div>
             <div class="readTime">{{popudata.field_insight_article_min_read.value}}</div></a>
 				<div class="card-body">
 					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
@@ -144,7 +144,7 @@
 				</div>
 				<div class="card-footer d-flex justify-content-between purple-txt">
 					<span class="cursor shareText"><a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
-                    <img src="{{base_path}}/images/share.svg">
+                    <img src="/themes/custom/athena/images/share.svg">
                     Share
                 </a></span>
 					<span style="margin-top:6px;">
@@ -161,4 +161,3 @@
 	</div>
 </div>
 
- 

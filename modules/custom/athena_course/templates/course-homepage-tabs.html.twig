@@ -51,7 +51,7 @@
 
         <a href="{{ url('<front>') }}course/{{academicdata.id}}"> <img class="course-img" src=" {{ file_url(academicdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
-          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+          <img class="course-img" src="/themes/custom/athena/images/course-image2.png" alt="Course">
            {% endif %}
                                          </div>
                                          <div class="price-tag">
@@ -139,7 +139,7 @@
 
         <a href="{{ url('<front>') }}course/{{microdata.id}}"> <img class="course-img" src=" {{ file_url(microdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
-          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+          <img class="course-img" src="/themes/custom/athena/images/course-image2.png" alt="Course">
            {% endif %}
                                              </div>
                                              <div class="price-tag">
@@ -192,7 +192,7 @@
                       <div class="fyi-certifications">
                          <div class="courses-offered">
                             <div class="info">
-                               <h2>Our Certifications Courses</h2>
+                               <h2>Our Certification Courses</h2>
                                <p>{{cerdesc | raw}}
                                </p>
                                 <form class="top-search-section__search" action="{{ url('<front>') }}certifications" method="POST">
@@ -213,7 +213,7 @@
 
         <a href="{{ url('<front>') }}course/{{certificationsdata.id}}"> <img class="course-img" src=" {{ file_url(certificationsdata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
          {% else %}
-          <img class="course-img" src="{{base_path}}/images/course-image2.png" alt="Course">
+          <img class="course-img" src="/themes/custom/athena/images/course-image2.png" alt="Course">
            {% endif %}
                                            </div>
                                            <div class="price-tag">
