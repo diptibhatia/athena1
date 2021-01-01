@@ -536,7 +536,7 @@
                         <a href="{{node.field_specifications.value}}" target="_blank">Course Specifications</a>
                      {% endif %}
                      {% if node.field_fact_sheet.value is not empty %}
-                        <a href="{{node.field_fact_sheet.value}}" target="_blank">Course Fact Sheet</a>
+                        <a href="{{ file_url(node.field_fact_sheet_document.entity.uri.value) }}" target="_blank">Course Fact Sheet</a>
                      {% endif %}
                     </div>
                 </div>
