@@ -80,7 +80,7 @@ img {
 }
 .corporate-txt img  {height:auto; max-width:100%;}
 .top-banner .logos {width:auto;}
-
+.site-header__menu-content {@include belowSize700{display:none;}}
 
 .mobilePadding{
     @include atSize424{
