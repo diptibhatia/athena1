@@ -1,5 +1,7 @@
 <?php
 
+use \Drupal\Core\Url;
+use \Drupal\Core\Link;
 /**
  * Implements hook_theme().
  */
@@ -343,5 +345,28 @@ function athena_course_page_attachments(array &$attachments) {
 
       }
     }
+}
+
+/**
+ * Get University link.
+ */
+
+function get_university_link($awarding_body) {
+    $univName = $awarding_body;
+    $database = \Drupal::database();
+    $query = $database->select('node_field_data', 'nfd');
+    $query->leftJoin('node__field_university_key', 'nfu', 'nfu.entity_id = nfd.nid');
+    $query->condition('nfd.title', $univName);
+    $query->fields('nfu', ['field_university_key_value']);
+    $result = $query->execute();
+    $data = $result->fetchAll();
+    $link = "<a href='#'>" . $awarding_body . "</a>";
+    if (count($data) > 0) {
+      $dataArr = reset($data);
+      $universitykey = $dataArr->field_university_key_value;
+      $url = Url::fromRoute('athena_course.university', ['univ' => $universitykey]);
+      $link = Link::fromTextAndUrl($awarding_body, $url);
+    }
+    return $link;
 }
 
