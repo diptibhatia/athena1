@@ -338,6 +338,18 @@ function athena_course_page_attachments(array &$attachments) {
           'kwanko'
         ];
 
+
+        // Big Trunk Pixel.
+        $bigTrunkPixel = '<img src="https://bigtrunk.o18.click/p?mid=3476&t=i&oid=7967214" width="0px" height="0px">';
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#tag' => '',
+            '#value' => \Drupal\Core\Render\Markup::create($bigTrunkPixel),
+            '#weight' => 10,
+          ],
+          'bigTrunk'
+        ];
+
         if (!empty($uid)) {
          $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId&source=$source";
         }
