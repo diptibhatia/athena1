@@ -360,7 +360,7 @@ function get_university_link($awarding_body) {
     $query->fields('nfu', ['field_university_key_value']);
     $result = $query->execute();
     $data = $result->fetchAll();
-    $link = "<a href='#'>" . $awarding_body . "</a>";
+    $link = $awarding_body;
     if (count($data) > 0) {
       $dataArr = reset($data);
       $universitykey = $dataArr->field_university_key_value;
