@@ -64,7 +64,7 @@
                         <div class="col-md-9 col-sm-9">
                             <h3 class="card-title"><a style="color:inherit" href="{{ url('<front>') }}course/{{course_data.id}}">{{course_data.label}}</a></h3>
                             <ul class="list-unstyled d-flex m-0">
-                                <li>{{course_data.field_course_awarding_body.value|raw }}</li>
+                                <li>{{ get_university_link(course_data.field_course_awarding_body.value) }}</li>
                                     {% if course_data.field_course_ects_credit.value is not empty %}
                                 <li>{{course_data.field_course_ects_credit.value}} {{course_data.field_courses_credit_type.0.value|raw}} Credits</li>
                                      {% endif %}

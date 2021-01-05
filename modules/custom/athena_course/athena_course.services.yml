@@ -1,0 +1,5 @@
+services:
+  athena_course.function:
+    class: Drupal\athena_course\UniversityLinkFunc
+    tags:
+      - { name: twig.extension }
