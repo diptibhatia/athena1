@@ -2102,7 +2102,7 @@
 	  position:relative;
 	  top:20px;
 	  @include atSize479{
-		  padding-top:80px;
+		  //padding-top:80px;
 	  }
 	  .heading-image { 
 			max-width: 640px;
@@ -2113,7 +2113,7 @@
 			}
 		  img {
 		  position: relative;
-			    top: 58px;
+		  top: 58px;
 		   z-index: 9;
 			width: 100%; 
 			  @include atSize424 {
@@ -2124,9 +2124,8 @@
 		  }
 	  }
 	  .title{
-			  margin: 20px 0 50px 0;
-			  text-align: left;
-			 
+			//   margin: 20px 0 50px 0;
+			//   text-align: left;			 
 		  }
 	  h1 {
 		  text-align: left;
@@ -2136,9 +2135,9 @@
 			color: $primaryColor;
 			text-align: center;
 			font-size: 36px; 
-    position: relative;
-    top: 0px;
-    z-index: 99;
+			position: relative;
+			top: 0px;
+			z-index: 99;
 			@include atSize424 {
 			  font-size: 28px;
 		  }
@@ -2159,10 +2158,9 @@
 		  text-align: center;
 		  @include atSize424 {
 			  padding:0 20px;
-		  }
-  
-  
+		  }  
 	  }
+	  
 	  .courses {
 		  display: flex;
 		  margin: 50px auto 0;
