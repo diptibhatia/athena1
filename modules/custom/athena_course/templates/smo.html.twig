@@ -14,9 +14,13 @@
             {% if source is not empty %}
 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
   {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
- {% endif %}
- Start 7 Day Trial</a>
+
+<div class="course-banner__apply-btn">
+  <a class="apply-btn" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
+   {% endif %}
+   Start 7 Day Trial</a>
+</div>
+
           </div>
           <div class="bg">
             <img src="/themes/custom/athena/images/smo/bg.jpg" alt="background-image">

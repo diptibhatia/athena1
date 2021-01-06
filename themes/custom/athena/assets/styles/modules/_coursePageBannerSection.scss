@@ -7,6 +7,9 @@
   overflow: hidden;
 // z-index:99;
 min-height: 415px !important;
+
+a {color:#fff;}
+
 @include atSize424{
     //padding: 44px 0;
    }
