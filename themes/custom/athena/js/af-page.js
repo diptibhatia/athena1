@@ -253,7 +253,7 @@
         var userId = parseInt(jQuery.trim(data));
         if( userId > 0) {
           //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
-          window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
+          window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
 
         } else {
           alert("Something went wrong please try again");
@@ -261,7 +261,7 @@
       });
     } else {
       //window.location.replace('https://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
-      window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
+      window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
     }
   }
   function getParameterByName(name, url = window.location.href) {
