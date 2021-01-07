@@ -80,15 +80,14 @@ img {
 }
 .corporate-txt img  {height:auto; max-width:100%;}
 .top-banner .logos {width:auto;}
-
-
+ 
 .mobilePadding{
     @include atSize424{
         padding-left: 2.0rem !important;
         overflow: hidden;
     }
 }
-
+.flx-duration {color:$titlePink;}
  
 .insight-wrapper .insight-cards {
     max-width: 240px;

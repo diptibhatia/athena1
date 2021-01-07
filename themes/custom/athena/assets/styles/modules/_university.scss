@@ -29,20 +29,21 @@
 
       .carousel-caption {
         bottom: 20%;
-        width: 90%;
+        width: 100%;
         left: 0%;
         right:0%;       
 
-        @include atSize700 { 
-          bottom: 20%;
-          width: 100%;
-          padding-left: 3rem;
-        }
-        @include atSize1350 { 
-          bottom: 20%;
-          width: 100%;
-          padding-left: 3rem;
-        }
+        // @include atSize700 { 
+        //   bottom: 20%;
+        //   width: 100%;
+        //   padding-left: 3rem;
+        // }
+        // @include atSize1350 { 
+        //   bottom: 20%;
+        //   width: 100%;
+        //   padding-left: 3rem;
+        // }
+
         @include belowSize700{
           bottom: auto !important;
           position:relative !important;
@@ -76,9 +77,14 @@
           margin: 0;
 
           @include belowSize700{
-            font-size: 2.7rem;
+            font-size: 2.4rem;
             margin-bottom: 1.6rem;
             padding:15px;
+          }
+          @include atSize424{
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding:12px;
           }
           @include atSize700 {
               font-size: 4rem;        
@@ -193,11 +199,11 @@
 
 .informations {
    .heading {
-      font-size: 42px;
+      //font-size: 42px;
       font-weight: 600;
       color: $blogColor;
-    }
-
+    
+    @media screen and (max-width: $break-small){font-size:1.4rem;}}
   .col-1 {
     padding: 30px 150px;
     padding-right: 10px;

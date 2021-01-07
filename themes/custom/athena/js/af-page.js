@@ -152,6 +152,7 @@
     cData.cId = parseInt(jQuery("#cId").val());
     cData.modId = jQuery("#modId").val();
     cData.pay = jQuery("#pay").val();
+    var utmSource = getParameterByName("utm_source");
     // var userId = 0;
     if (v.form()) {
       jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
@@ -160,7 +161,7 @@
           // console.log(response);
           if(response == "Email Exist") {
             confirm("User already registered, please wait while we redirect you");
-            redirCandidate(cData, '');
+            redirCandidate(cData, utmSource);
           }
           else {
             $(".reg-form").hide("fast");
@@ -260,7 +261,7 @@
       });
     } else {
       //window.location.replace('https://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
-      window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+cData.email+'&CId='+cData.cId);
+      window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
     }
   }
   function getParameterByName(name, url = window.location.href) {
