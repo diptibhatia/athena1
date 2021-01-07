@@ -317,40 +317,44 @@ function athena_course_page_attachments(array &$attachments) {
       $source = $_REQUEST['source'] ?? '';
       if (!empty($cid)) {
 
-        // ShareASale Pixel.
-        $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
-        $attachments['#attached']['html_head'][] = [
-          [
-            '#tag' => '',
-            '#value' => \Drupal\Core\Render\Markup::create($shareASalePixel),
-            '#weight' => 10,
-          ],
-          'shareasale'
-        ];
+        if ($source == 'ShareASale') {
+          // ShareASale Pixel.
+          $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => '',
+              '#value' => \Drupal\Core\Render\Markup::create($shareASalePixel),
+              '#weight' => 10,
+            ],
+            'shareasale'
+          ];
+        }
 
-        // Kwanko Pixel.
-        $kwankoPixel = '<img src="https://action.metaffiliation.com/trk.php?mclic=G51165D1011&argann=' . $uid . '&altid=' . $mail . '" width="1" height="1" border="0" />';
-        $attachments['#attached']['html_head'][] = [
-          [
-            '#tag' => '',
-            '#value' => \Drupal\Core\Render\Markup::create($kwankoPixel),
-            '#weight' => 10,
-          ],
-          'kwanko'
-        ];
+        if ($source == 'KWANKO') {
+          // Kwanko Pixel.
+          $kwankoPixel = '<img src="https://action.metaffiliation.com/trk.php?mclic=G51165D1011&argann=' . $uid . '&altid=' . $mail . '" width="1" height="1" border="0" />';
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => '',
+              '#value' => \Drupal\Core\Render\Markup::create($kwankoPixel),
+              '#weight' => 10,
+            ],
+            'kwanko'
+          ];
+        }
 
-
-        // Big Trunk Pixel.
-        $bigTrunkPixel = '<img src="https://bigtrunk.o18.click/p?mid=3476&t=i&oid=7967214" width="0px" height="0px">';
-        $attachments['#attached']['html_head'][] = [
-          [
-            '#tag' => '',
-            '#value' => \Drupal\Core\Render\Markup::create($bigTrunkPixel),
-            '#weight' => 10,
-          ],
-          'bigTrunk'
-        ];
-
+        if ($source == 'BIGTRUNK') {
+          // Big Trunk Pixel.
+          $bigTrunkPixel = '<img src="https://bigtrunk.o18.click/p?mid=3476&t=i&oid=7967214" width="0px" height="0px">';
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => '',
+              '#value' => \Drupal\Core\Render\Markup::create($bigTrunkPixel),
+              '#weight' => 10,
+            ],
+            'bigTrunk'
+          ];
+        }
 
         if (!empty($from) && $from == 'affiliate') {
           if (!empty($uid)) {
