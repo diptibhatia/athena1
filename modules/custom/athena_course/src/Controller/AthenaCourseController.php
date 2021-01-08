@@ -407,17 +407,22 @@ $faq = array();
 
 
 foreach($paragraph_faq as $faq_data){
-    //print $faq_data->get('field_category')->value;
+  
 
     if(!empty($faq_data->get('field_category')->value)) {
-    $faq[$faq_data->get('field_category')->value][] = array(
+
+      $allowed_values = $faq_data->getFieldDefinition('field_category')->getFieldStorageDefinition()->getSetting('allowed_values');
+      $faq_value = $faq_data->get('field_category')->value;
+      $label = $allowed_values[$faq_value];
+  
+
+    $faq[$label][] = array(
        'question' => $faq_data->get('field_question')->value,
        'answer' => $faq_data->get('field_answer')->value
     );
     }
-
-
 }
+
 $banner = '';
 $banner_pic_url = '';
  if(is_object( $node->get('field_course_banner_image')->entity)){
