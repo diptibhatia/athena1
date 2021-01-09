@@ -22,7 +22,13 @@
             }
         }
     }
-
+    .note {
+        font-size: .75rem;
+        font-style: italic; 
+        max-width: 514px;
+        line-height: 1.95;
+ margin-top:20px;
+    }
     .msg {
         max-width: 830px;
         line-height: 1.44;
