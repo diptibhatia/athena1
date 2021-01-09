@@ -2,26 +2,29 @@
     padding: 23px 0 43px;
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        display: inline-block;
+        color: $primaryColor;
         font-weight: bold;
-        margin-bottom: 14px;
-
+        letter-spacing: .3px;
+        margin-bottom: 30px;
+        position: relative;
+    
         @include atSize850 {
-            font-size: 2rem;
-            position: relative;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 6%;
-                height: 3.5px;
-                border-radius: 1.5px;
-                background-color: $titlePink;
-                position: absolute;
-                margin-top: 2px;
-            }
+            font-size: 2rem; 
         }
-    }
+        &::after {
+            content: '';
+            display: block;
+            width: 6%;
+            height: 3.5px;
+            border-radius: 1.5px;
+            background-color: $titlePink;
+            position: absolute;
+            left: -3px;
+        }
+     }
+    
     .note {
         font-size: .75rem;
         font-style: italic; 

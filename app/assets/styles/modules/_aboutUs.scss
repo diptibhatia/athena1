@@ -81,6 +81,8 @@
 
 		&-image {			
 			position: relative;
+			max-width: 100%;
+			max-height: auto;
 
 			@include atSize700 { 
 				bottom: 20px;

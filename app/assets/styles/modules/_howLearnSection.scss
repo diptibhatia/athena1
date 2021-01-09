@@ -3,22 +3,28 @@
     padding-bottom: 43px;
 
     h2 {
+        font-size: 1.75rem;
+        display: inline-block;
+        color: $primaryColor;
+        font-weight: bold;
+        letter-spacing: .3px;
+        margin-bottom: 30px;
         position: relative;
-        margin-bottom: 11px;
-
+    
         @include atSize850 {
-            &::after {
-                content: '';
-                display: block;
-                width: 6%;
-                height: 3.5px;
-                border-radius: 1.5px;
-                background-color: $titlePink;
-                position: absolute;
-                margin-top: 2px;
-            }
+            font-size: 2rem; 
         }
-    }
+        &::after {
+            content: '';
+            display: block;
+            width: 6%;
+            height: 3.5px;
+            border-radius: 1.5px;
+            background-color: $titlePink;
+            position: absolute;
+            left: -3px;
+        }
+     }
 
     .msg {
         max-width: 830px;
@@ -35,7 +41,7 @@
     }
 
     .learn-card {
-        height: 330px;
+        height: 340px;
         scrollbar-width: none; /* Hide scrollbar Firefox */
         -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
 
@@ -44,7 +50,7 @@
         }
 
         .team-img {
-            margin: 23px 0 14px;
+            margin: 14px 0;
 
             &::after {
                 content: none;

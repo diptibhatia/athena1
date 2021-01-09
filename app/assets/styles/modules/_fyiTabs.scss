@@ -173,27 +173,27 @@
 
             h2 {
                 font-size: 1.75rem;
+                display: inline-block;
+                color: $primaryColor;
                 font-weight: bold;
                 letter-spacing: .3px;
-                margin-bottom: 27px;
+                margin-bottom: 30px;
                 position: relative;
-
+            
+                @include atSize850 {
+                    font-size: 2rem; 
+                }
                 &::after {
                     content: '';
                     display: block;
-                    width: 31%;
+                    width: 32%;
                     height: 3.5px;
                     border-radius: 1.5px;
                     background-color: $titlePink;
                     position: absolute;
-                    left: 3px;
-                    margin-top: 2px;
+                    left: -3px;
                 }
-
-                @include atSize1250 {
-                    font-size: 2rem;
-                }
-            }
+             }
 
             p {
                 font-size: .875rem;
