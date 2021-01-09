@@ -27,11 +27,11 @@
     <p class="m-0"><strong><a href="{{ url('<front>') }}course/{{coursedata.node.id}}" style="color:inherit">{{coursedata.node.label}}</a></strong></p>
     <p class="mb-1">{{coursedata.node.field_course_awarding_body.value|raw }}</p>
 
-    <div class="insights-logos">
-      {% for univ in coursedata.univ  %}
-        <img class="m-2" width="73" height="50" src="{{univ}}" class="rounded-circle">
-      {% endfor %}
-    </div>
+    {% for univ in coursedata.univ  %}
+      <div class="insights-logos">
+          <img class="m-2" src="{{univ}}" class="rounded-circle">
+      </div>
+    {% endfor %}
 
     <a href="{{ url('<front>') }}course/{{coursedata.node.id}}" class="text-right purple-txt">Learn More</a>
 
