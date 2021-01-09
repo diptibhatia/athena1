@@ -71,7 +71,7 @@ img {
 .get-started button {
     background: transparent;
 }
-.help-inline-error {color:#ff016f; font-size: 14px;}
+.help-inline-error {color:$titlePink; font-size: 14px;}
 #registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
 #block-athena-content img {max-width:100%; min-height:auto;}
@@ -87,6 +87,19 @@ img {
         overflow: hidden;
     }
 }
+
+.insights-logos {
+    
+    border-style: none;
+    width: 84px;
+    height: 84px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 20px 10px;
+
+ img {width: 50px;}
+}
+
 .flx-duration {color:$titlePink;}
  
 .insight-wrapper .insight-cards {
@@ -107,8 +120,8 @@ img {
 .pagination .is-active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #ff026f;
-    border-color: #ff026f;    
+    background-color:$titlePink;
+    border-color: $titlePink;
 }
 .page-item:first-child .page-link {
     border-radius:50%; 
@@ -132,8 +145,8 @@ img {
  
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
-    border: solid 2px #ff008e;
-    color: #ff008e;
+    border: solid 2px $titlePink;
+    color:$titlePink;
     padding: 5px 20px;
     cursor: pointer;
     outline: none;
@@ -144,7 +157,7 @@ img {
 
 .athena-btn.violet-btn:hover, .btn-primary:hover {
     color: white !important;
-    background: #ff008e;
+    background: $titlePink;
 }
 .visually-hidden {
     position: absolute !important;
@@ -178,7 +191,7 @@ img {
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #ff008e;
+    color: $titlePink;
 }
 .registeredDescription{
     text-align: center;
