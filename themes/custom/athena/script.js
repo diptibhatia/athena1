@@ -13,8 +13,8 @@ jQuery(document).ready(function() {
     });
 
     if (jQuery(".country-code").length > 0) {
-        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
-            var countrycode = geoplugin_countryCode();
+        jQuery.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8', function(data) {
+            var countrycode = data.country_code2;
             countrycode = countrycode.toLowerCase();
 
             var element = document.getElementsByClassName("selected-flag")[0];
