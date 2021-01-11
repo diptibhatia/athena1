@@ -192,6 +192,7 @@
                     background-color: $titlePink;
                     position: absolute;
                     left: -3px;
+                    bottom: -7px;
                 }
              }
 
@@ -345,11 +346,12 @@
                 color: $primaryColor;
                 font-weight: bold;
                 letter-spacing: .3px;
-                margin-bottom: 22px;
+                margin-bottom: 30px;
                 position: relative;
 
                 @include atSize850 {
                     font-size: 2rem;
+                    text-align: left; 
                 }
 
                 &::after {
@@ -361,6 +363,7 @@
                     background-color: $titlePink;
                     position: absolute;
                     left: -3px;
+                    bottom: -7px;
                 }
             }
 
@@ -404,13 +407,7 @@
 
         &_details {
 
-            h2 {
-                margin-bottom: 40px;
-
-                &::after {
-                    bottom: -7px;
-                }
-            }
+            
 
             h3 {
                 font-style: normal;

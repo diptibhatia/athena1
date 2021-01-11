@@ -11,9 +11,11 @@
         letter-spacing: .3px;
         margin-bottom: 30px;
         position: relative;
+        text-align:center;
     
         @include atSize850 {
             font-size: 2rem; 
+            text-align:left;
         }
         &::after {
             content: '';
