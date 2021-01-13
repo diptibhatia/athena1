@@ -97,24 +97,31 @@
     $(".reg-form").show("slow");
   });
 
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Please enter only letters"); 
+
   var v = jQuery("#registration-afpage").validate({
     rules: {
       firstName: {
         required: true,
         minlength: 2,
-        maxlength: 16
+        maxlength: 16,
+        lettersonly: true
       },
       lastName: {
         required: true,
         minlength: 2,
-        maxlength: 16
+        maxlength: 16,
+        lettersonly: true
       },
       regEmail: {
         required: true,
         email: true
       },
       reg_mobile_num: {
-        required: true
+        required: true,
+        phoneUS: true
       },
       'terms[]': {
         required: true,

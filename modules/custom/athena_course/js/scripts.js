@@ -217,15 +217,116 @@
 
              });
 
+//------------------form validator course registration-------------------------
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Letters only please"); 
+
+jQuery("#course_registration").validate({
+        rules: {
+            "reg_first_name": {
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+                lettersonly: true
+            },
+            "reg_last_name": {
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+                lettersonly: true
+            },
+            "reg_email": {
+                required: true,
+                email: true
+            },
+            "phone": { 
+                required: true, 
+                minlength: 10,
+                phoneUS: true 
+            },
+            "course": {
+              required: true                
+            },
+
+            "reg_qual" : {
+              required: true                
+            },
+          'terms[]': {
+              required: true,
+            },
+            "reg_pass": {
+              required: true,
+              minlength: 6,
+              maxlength: 15,
+            },
+            "reg_confirm_pass": {
+              required: true,
+              minlength: 6,
+              equalTo: "#reg_pass",
+            }
+
+        },
+        messages: {
+            "reg_first_name": {
+                required: "Enter first name",
+                minlength: "Min 5 characters",
+            },
+            "reg_last_name": {
+                required: "Enter last name"
+            },
+
+            "reg_email": {
+                required: "Please enter an email",
+                email: "Email is invalid"
+            },
+            "course": {
+                required: "Please select course"                
+            },
+            "reg_qual": {
+                required: "Please select highest qualification"                
+            },
+            'terms[]': {
+          required: "Please agree to our terms & conditions",
+        },
+            
+        },                
+    });
+
+//------------------------------------
+
              jQuery("#registration_form").click(function() {
                 var msg = '';
+                var fname = jQuery("#reg_first_name").val();
+                var lname = jQuery("#reg_last_name").val();                
+                var regex = /^([a-zA-Z0-9_\.\-\+])+$/;
+
+                //alert("here");
                 var c_email = jQuery("#reg_email").val();
-                if(jQuery("#reg_first_name").val() == '') {
+                if(fname == '') {
                     msg += '\n\u2022  First name cannot be empty';
                 }
-                if(jQuery("#reg_last_name").val() == '') {
+                if(fname.length < 2 || fname.length > 16 ) {
+                    msg += '\n\u2022  First name should be 2 to 16 characters';
+                }
+                
+                if(!regex.test(fname)) {
+                   msg += '\n\u2022  First name should contain alphabets only';
+                }
+
+                if(!regex.test(lname)) {
+                   msg += '\n\u2022  Last name should contain alphabets only';
+                }
+
+                if(lname == '') {
                     msg += '\n\u2022  Last name cannot be empty';
                 }
+                if(lname.length < 2 || lname.length > 16 ) {
+                    msg += '\n\u2022  Last name should be 2 to 16 characters';
+                }
+
+
                 if(jQuery("#reg_email").val() == '') {
                     msg += '\n\u2022  Email cannot be empty';
                 }
@@ -257,7 +358,7 @@
                     msg += '\n\u2022  Please select Level of employment';
                 }
 
-                if(!jQuery("#reg_terms").prop('checked') == true){
+                if(!jQuery("#terms").prop('checked') == true){
                      msg += '\n\u2022 please accept consent terms';
                 }
    var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
@@ -270,9 +371,7 @@
 
 
                 if(msg == ''){
-
-
-
+                  
                     jQuery.ajax({
    type: 'GET',
    url: "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, //Returns ID in body

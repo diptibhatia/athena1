@@ -23,7 +23,8 @@ global-js:
     js/regular.min.js: {}
     js/bundled.js: {}
     prodbundled.js: {}
-
+    https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js: { type: external, minified: true }
+    https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js: { type: external, minified: true }
   dependencies:
     - core/jquery
 
@@ -34,5 +35,8 @@ affiliate-page:
   js:
     'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js': { type: external, minified: true }
     'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js': { type: external, minified: true }
+    'https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js': { type: external, minified: true }
     js/owl.carousel.js: {weight: -10}
     js/af-page.js: {weight: -9}
+
+

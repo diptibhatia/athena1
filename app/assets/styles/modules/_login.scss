@@ -91,6 +91,8 @@
 
 			}
 		}
+		
+
 		.names {
 			display: flex;
 			.name-item {
@@ -98,6 +100,9 @@
 				input {
 					width: 219px;
 					margin: 0 10px 0 0;
+				}
+				label{
+					display: block;
 				}
 			}
 		}
