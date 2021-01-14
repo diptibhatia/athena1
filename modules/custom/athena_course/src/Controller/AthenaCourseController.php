@@ -423,6 +423,22 @@ foreach($paragraph_faq as $faq_data){
     }
 }
 
+//-----------------------------------
+if(is_object( $node->field_tagtaxanomy)){
+$tax_term = $node->field_tagtaxanomy->referencedEntities();
+}
+
+$tax_value = array();
+foreach($tax_term as $tax_term_list){
+  //print ($tax_term_list->get('field_tagtaxanomy')->value);
+  //$value = $tax_term_list->name;
+  $tax_value[] = $tax_term_list->getName();
+  //print($value);
+  
+}
+//------------------
+
+
 $banner = '';
 $banner_pic_url = '';
  if(is_object( $node->get('field_course_banner_image')->entity)){
@@ -480,6 +496,7 @@ $course_description_tabs =  [
   '#language_prof_label' => $node->get('field_course_language_prof_label')->value,
   '#language_prof_desc' => $node->get('field_course_language_prof_desc')->value,
   '#why_athena' => $node->get('field_course_why_athena')->value,
+  '#tax_value' => $tax_value,
     '#base_path' => $base_path,
 ];
 

@@ -93,9 +93,17 @@
 
                                 </div>
                                 <a href="#whatYouLearn">Go to Module Details</a>
-                                <p class="italic" style="display:none"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
+
+                                {% for tax_value_detail in tax_value %}
+
+                                {% if tax_value_detail == "Degree" %}
+                                <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
                                     the exact mapping information, however the final MBA awarded by the University will
-                                    carry 60 ECTS credits. <a href="#">What Is ECTS?</a></p>
+                                    carry 60 ECTS credits. <a href="{{ url('<front>') }}/ects">What Is ECTS?</a></p>
+
+                                {% endif %}
+                                {% endfor %}                                
+
                             </div>
                         <div class="overview-points-card">
                             <div class="overview-points-card__container">
