@@ -156,6 +156,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'language_prof_label' => NULL,
       'language_prof_desc' => NULL,
       'why_athena' => NULL,
+      'tax_value' => NULL,
       'base_path' => NULL,
       ],
     ],
