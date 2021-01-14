@@ -168,7 +168,7 @@
                <div class="section-item-one">
                   <div class="section-image">
                     <a href="{{ url('<front>') }}node/{{insig.0.id}}"> <img style="padding:8px" src="{{ file_url(insig.0.field_insight_article_image_thum.entity.uri.value)}}"></a>
-                     <h4>ARTICLE</h4>
+                     <h4>{{insig.0.field_article_insight_type.entity.label}}</h4>
                       <h5>{{ insig.0.title.value }}</h5>
                      <p>{{insig.0.body.value|striptags|truncate(100)}}…<a href="{{ url('<front>') }}node/{{insig.0.id}}">Read more</a>
 
@@ -186,7 +186,7 @@
         <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> <img class="img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
       </div>
       <div class="col-md-8">
-         <p class="strong yellow-txt m-0">Article</p>
+         <p class="strong yellow-txt m-0">{{ insightsdata.field_article_insight_type.entity.label }}</p>
          <p><a href="{{ url('<front>') }}node/{{insightsdata.id}}">{{ insightsdata.title.value}}</a></p>
       </div>
    </div>
