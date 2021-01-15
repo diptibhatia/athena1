@@ -89,7 +89,6 @@ img {
 }
 
 .insights-logos {
-
     border-style: none;
     width: 84px;
     height: 84px;
@@ -97,9 +96,9 @@ img {
     border-radius: 50%;
     padding: 20px 10px;
     display: inline-block;
-
- img {width: 50px;}
+    img {width: 50px;}
 }
+ 
 .about-popular-content {display: relative; z-index:99;}
 .flx-duration {color:$titlePink;}
  
