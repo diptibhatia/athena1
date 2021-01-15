@@ -97,24 +97,38 @@
     $(".reg-form").show("slow");
   });
 
+  //----------------form validation
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Please enter only letters"); 
+
+jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+    phone_number = phone_number.replace(/\s+/g, "");
+    return this.optional(element) || phone_number.length > 9 &&
+        phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+}, "Please specify a valid phone number");
+
   var v = jQuery("#registration-afpage").validate({
     rules: {
       firstName: {
         required: true,
         minlength: 2,
-        maxlength: 16
+        maxlength: 16,
+        lettersonly: true
       },
       lastName: {
         required: true,
         minlength: 2,
-        maxlength: 16
+        maxlength: 16,
+        lettersonly: true
       },
       regEmail: {
         required: true,
         email: true
       },
       reg_mobile_num: {
-        required: true
+        required: true,
+        phoneUS: true
       },
       'terms[]': {
         required: true,
