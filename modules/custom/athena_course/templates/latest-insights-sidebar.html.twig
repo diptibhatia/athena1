@@ -6,7 +6,8 @@
    {% for insightsdata in insig %}
    <div class="row mb-1">
       <div class="col-md-4 d-flex align-items-center p-0">
-        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> <img class="img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
+        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> 
+        <img class="thumbnail img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
       </div>
       <div class="col-md-8">
          <p class="strong yellow-txt m-0">{{ insightsdata.field_article_insight_type.entity.label }}</p>
@@ -19,8 +20,8 @@
 </div>
 
 <div class="container">
-                        <div><h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
-                    {% set indexno = 0 %}
+     <div><h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
+ {% set indexno = 0 %}
 {% for coursedata in popular %}
 <div class="row mb-2 shadow-sm rounded">
   <div class="col-md-12 col-sm-12 p-3">

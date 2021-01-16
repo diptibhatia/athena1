@@ -6,16 +6,19 @@
   flex-wrap: wrap;
   position: relative;
   z-index:9;
-  background-color: $background-pale;
-  padding: 10px 0px;
+  background: $background-pale;
   border: none;
   border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;  
+  
   .container {
-    margin: 10px 80px 20px 34px;
-    padding: 10px;
+    .course_search_banner {position: absolute;
+      top: 0;
+      right: 90px;
+      height: 240px; opacity: 1; }
     .search {
       overflow: auto;
+      margin-top:20px;
       .search-form {
         .search-courses {
           width: 51px;
@@ -27,7 +30,7 @@
           top: -50px; 
           img {
             width: 28px;
-            height: 17px;
+            height: 28px;
             opacity: 0.84;
             min-width: 28px;
             position: relative;
@@ -85,6 +88,7 @@
       text-align: left;
       position:relative;
       z-index:10;
+      margin-bottom: 20px;
       /*@include atSize424 {
         display: none !important;
       }*/

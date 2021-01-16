@@ -64,7 +64,11 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 img {
     border-style: none;
 }
-
+.contextual-region .thumbnail, .section-item-two .thumbnail {max-width: 100%;
+    height: auto;
+    max-height: 100px;
+    width: 100%;}
+    
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
 }
@@ -89,7 +93,6 @@ img {
 }
 
 .insights-logos {
-
     border-style: none;
     width: 84px;
     height: 84px;
@@ -97,9 +100,9 @@ img {
     border-radius: 50%;
     padding: 20px 10px;
     display: inline-block;
-
- img {width: 50px;}
+    img {width: 50px;}
 }
+ 
 .about-popular-content {display: relative; z-index:99;}
 .flx-duration {color:$titlePink;}
  
