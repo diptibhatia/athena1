@@ -15,10 +15,10 @@
     .course_search_banner {position: absolute;
       top: 0;
       right: 90px;
-      height: 240px; opacity: 1; }
+      height: 240px; opacity: 1; min-width:auto;}
     .search {
       overflow: auto;
-      margin-top:20px;
+      padding-top:20px;
       .search-form {
         .search-courses {
           width: 51px;
@@ -88,7 +88,7 @@
       text-align: left;
       position:relative;
       z-index:10;
-      margin-bottom: 20px;
+      padding-bottom: 20px;
       /*@include atSize424 {
         display: none !important;
       }*/
