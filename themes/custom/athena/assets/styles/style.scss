@@ -68,7 +68,7 @@ img {
     height: auto;
     max-height: 100px;
     width: 100%;}
-    
+
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
 }
@@ -104,7 +104,8 @@ img {
 }
  
 .about-popular-content {display: relative; z-index:99;}
-.flx-duration {color:$titlePink;}
+.flx-duration, .error {color:$titlePink;}
+.login-details label {display: block; color:$titlePink;}
  
 .insight-wrapper .insight-cards {
     max-width: 240px;
