@@ -235,9 +235,10 @@
 		line-height: 1.5;
 		margin: 0;
 		font-weight: 800;
-		text-overflow: ellipsis;
-	    max-height: 52px;
-	    overflow: hidden;
+		text-overflow: ellipsis; 
+		max-height: 52px;
+		overflow: hidden;
+		white-space: nowrap;
 	}
 
 	.insight-card-footer {
@@ -252,7 +253,10 @@
 	.insight-card-body {
 		padding: 10px 0;
 	}
-
+	.insight-banner .col-md-11 span {font-weight: 600;
+		font-size: 13px;
+		text-transform: uppercase; }
+.insight-banner .col-md-11 span:nth-child(2) {float: right;}
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
