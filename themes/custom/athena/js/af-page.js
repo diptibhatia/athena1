@@ -110,7 +110,7 @@ jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
 
 jQuery.validator.addMethod("emailExt", function(value, element, param) {
     return value.match(/^[a-zA-Z0-9_\.%\+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,}$/);
-},'Your E-mail is wrong');
+},'Please enter a valid Email id');
 
   var v = jQuery("#registration-afpage").validate({
     rules: {
