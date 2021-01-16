@@ -108,6 +108,10 @@ jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
         phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
 }, "Please specify a valid phone number");
 
+jQuery.validator.addMethod("emailExt", function(value, element, param) {
+    return value.match(/^[a-zA-Z0-9_\.%\+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,}$/);
+},'Your E-mail is wrong');
+
   var v = jQuery("#registration-afpage").validate({
     rules: {
       firstName: {
@@ -123,8 +127,8 @@ jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
         lettersonly: true
       },
       regEmail: {
-        required: true,
-        email: true
+        required: true,        
+        emailExt: true
       },
       reg_mobile_num: {
         required: true,
