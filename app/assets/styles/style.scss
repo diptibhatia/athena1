@@ -105,7 +105,7 @@ img {
  
 .about-popular-content {display: relative; z-index:99;}
 .flx-duration, .error {color:$titlePink;}
-.login-details label {display: block; color:$titlePink;}
+.login-details label {display: block; color:$titlePink; clear:both;}
  
 .insight-wrapper .insight-cards {
     max-width: 240px;
