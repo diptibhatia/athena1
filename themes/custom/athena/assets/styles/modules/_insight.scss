@@ -257,6 +257,13 @@
 		text-transform: uppercase; padding: 15px 0;
 		float: left; }
 .insight-banner .col-md-11 span:nth-child(2) {float: right;}
+
+@media screen and (max-width: 540px){
+	.insight-banner .col-md-11 span { 
+	float: none; }
+.insight-banner .col-md-11 span:nth-child(2) {
+	float: none;}
+}
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
