@@ -12,12 +12,9 @@
   border-bottom-right-radius: 0;  
   
   .container {
-    .course_search_banner {position: absolute;
-      top: 0;
-      right: 90px;
+    .course_search_banner {float:right;
       height: 240px; opacity: 1; min-width:auto;}
-    .search {
-      overflow: auto;
+    .search { 
       padding-top:20px;
       .search-form {
         .search-courses {
@@ -25,17 +22,14 @@
           height: 45px;
           border-radius: 4px;
           background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
-          position: relative;
-          left: 44%;
-          top: -50px; 
+          display:block;
+    text-align: center;
+    padding-top: 7px;
+
           img {
             width: 28px;
             height: 28px;
-            opacity: 0.84;
-            min-width: 28px;
-            position: relative;
-            top: 8px;
-            left: 12px;
+            opacity: 0.84; 
           }
           @include atSize424 {
             position: absolute;
@@ -43,8 +37,8 @@
             top:5px;
             img {
                   top: 15px;
-    left: 12px;
-    display: block;
+                  left: 12px;
+                  display: block;
             }
           }
         }
