@@ -940,9 +940,7 @@
 			  }
 		  }
 	  }
-	  .testimonials {
-		  position:relative;
-		  top:180px;
+	  .testimonials {		  
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
@@ -966,8 +964,8 @@
 				  z-index:-1;
 			  }
 		  }
-		  position: relative;
-		 // top: 120px;
+		  position:relative;
+		  top:280px;
 		  @include atSize479{
 			  //padding: 100px 10px 0 10px;
 			  width: 100%;
