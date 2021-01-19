@@ -1,4 +1,4 @@
-  {{ title_prefix }}
+{{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
@@ -16,7 +16,6 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes }} class="insight-banner row mb-3">
-  <div class="col-lg-12">
+  <div{{ content_attributes }} class="col-md-12 col-sm-12 insight-banner row p-0 mb-3">
     {{ content }}
-  </div></div>
+  </div>

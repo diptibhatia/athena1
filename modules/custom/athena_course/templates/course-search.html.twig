@@ -1,6 +1,7 @@
 <section class="main">
       <div class="container my-container">
-       
+        <img class="course_search_banner" src="/themes/custom/athena/images/course_search_banner.png" alt="Course">
+
         <div class="search">
           <form class="search-form" method = "post" id="course-search--form">
             
@@ -13,10 +14,9 @@
 
             <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
             <input type="hidden" name="submit_form">
-            <div class="search-courses">
-               <a href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="/themes/custom/athena/images/search.svg" alt="search"></a>
-            </div>
-
+            
+               <a class="search-courses" href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="/themes/custom/athena/images/search.svg" alt="search"></a>
+            
         </div>
          {%if search_key is empty %}
         {% else %}
@@ -55,7 +55,6 @@
             </form>
           </div>
         </div>
- <img class="course_search_banner" src="/themes/custom/athena/images/course_search_banner.png" alt="Course">
 
       </div>
     </section>
