@@ -99,12 +99,6 @@
 					width: 219px;
 					margin: 0 10px 0 0;
 				}
-				label{
-
-					display: block;
-
-
-				}
 			}
 		}
 		.forgot-password {
@@ -174,10 +168,28 @@ width:100%;
 
 .login-wrapper .intl-tel-input.allow-dropdown{
 width:83.5%;
+@include belowSize700{
+	width:100% !important;
 }
 
-.login-wrapper .intl-tel-input.allow-dropdown input#reg_mobile_num{
-	width:75%;
+}
+
+.login-wrapper .intl-tel-input.allow-dropdown input#phone{
+	width:75% !important;
+	box-shadow: none !important;
+    border: none !important;
+    height: 40px !important;
+	padding-left: 10px !important;
+	@include belowSize700{
+		float: left;
+		margin-left: 116px !important;
+		padding-left: 10px !important;
+		width: 60% !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 40px !important;
+	}
+	
 	}
 	
 

@@ -5,7 +5,7 @@
     position: relative;
     margin-bottom: 22px;
     max-width: 320px;
-
+img {max-width: initial !important;}
     @include atSize850 {
         max-width: none;
         display: flex;

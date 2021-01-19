@@ -1,35 +1,39 @@
 .course-faq {
-    padding: 28px 0 0;
+    padding: 30px 0 0;
     background-color: #fff;
 
     @include atSize850 {
-        padding-top: 60px;
+      //  padding-top: 60px;
     }
 
     h2 {
+        font-size: 1.75rem;
+        display: block;
+        color: $primaryColor;
         font-weight: bold;
-        font-size: 1.5rem;
-        line-height: 1.33;
-        letter-spacing: .4px;
+        letter-spacing: .3px;
+        margin: auto;
+        margin-bottom: 30px;
+        position: relative;
+        
+        max-width: 1170px;
         text-align: center;
-        margin-bottom: 28px;
-        padding: 0 12px;
-
+    
         @include atSize850 {
-            font-size: 2rem;
+            font-size: 2rem; 
             text-align: left;
-            margin: 0 auto 50px;
-            max-width: 1170px;
         }
-
-        @include atSize1100 {
-            padding: 0 4rem;
-        }
-
-        @include atSize1250 {
-            padding: 0;
-        }
-    }
+        // &::after {
+        //     content: '';
+        //     display: block;
+        //     width: 37%;
+        //     height: 3.5px;
+        //     border-radius: 1.5px;
+        //     background-color: $titlePink;
+        //     position: absolute;
+        //     right: -3px;            
+        // }
+     }
 
     .wrapper {
         padding: 0;
@@ -101,7 +105,7 @@
                     }
 
                     @include atSize1100 {
-                        padding: 0 4rem;
+                        //padding: 0 4rem;
 
                         &::after {
                             right: 30px;
@@ -109,7 +113,7 @@
                     }
 
                     @include atSize1250 {
-                        padding: 0 28px 0 0;
+                        //padding: 0 28px 0 0;
                     }
                 }
             }
@@ -138,8 +142,8 @@
                         min-height: 50px;
                         height: auto;
                         max-height: 80px;
-                        padding: 0 12px;
-                        padding-right: 40px;
+                        padding: 0 15px;
+                        padding-right: 48px;
                         position: relative;
 
                         &::after {

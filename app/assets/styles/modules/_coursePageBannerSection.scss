@@ -1,42 +1,48 @@
 .course-banner {
     position: relative;
-    color: #fff;
-    padding: 14px 0;
+    color: #fff; 
+    padding: 1.2rem 0;
 //     max-height: 430px;
-//     box-sizing: border-box;
-//     overflow: hidden;
+    box-sizing: border-box;
+  overflow: hidden;
 // z-index:99;
+min-height: 415px !important;
+
+a {color:#fff;}
+
+@include atSize424{
+    //padding: 44px 0;
+   }
 
     @include atSize700 {
         z-index: 10;
         background-color: #611683;
-        padding: 1.2rem 0;
-        overflow: visible;
+       // padding: 1.3rem 0;
+        //overflow: visible;
         max-height: initial;
-        min-height: 415px;
     } 
     @include atSize1250 {
-        background-color: #fff;
+        //background-color: #fff;
     }
 
     @include atSize1350 {
-        padding: 1.625rem 0;
+        //padding: 1.625rem 0;
     }
 
     @include atSizeXXLarge {
-        overflow: hidden;
-        background-color: #631683;
+        //overflow: hidden;
+        //background-color: #631683;
     }
 
     &__breadcrumbs {
-        margin-bottom: 1.125rem;
+        margin-bottom: 1rem;
 
         @include atSize700 {
-            margin-bottom: 1.3rem;
+            //margin-bottom: 1.3rem;
         }
 
         @include atSize1350 {
-            margin-bottom: 1.625rem;
+            //margin-bottom: 1.625rem;
         }
 
         a {
@@ -109,9 +115,9 @@
         }
 
         @include atSize1350 {
-            margin: 1rem 0;
-            font-size: 2.81rem;
-            line-height: 1.17;
+            //margin: 1rem 0;
+            font-size: 2.6rem;
+           // line-height: 1.17;
         }
     }
 
@@ -151,11 +157,11 @@
     }
 
     &__apply-btn {
-        margin-top: 27px;
+        margin-top: 20px;
         display: flex;
         align-items: center;
 
-        button {
+        a.apply-btn, button {
             font-size: .69rem;
             margin-right: 14px;
             letter-spacing: .2px;
@@ -171,8 +177,9 @@
 
             @include atSize700 {
                 font-size: 1rem;
-                padding: 15px 59px;
+               // padding: 15px 59px;
             }
+            &:hover {text-decoration-color: none;}
         }
 
         p {
@@ -258,7 +265,12 @@
 
         img {
             width: 100%;
+            @include atSize424{
+                min-height: 475px !important;
+            }
         }
+
+
 
         @include atSize700 {
             display: none;
@@ -279,7 +291,7 @@
 
             img {
                 width: 100%;
-                margin-top: -75px;
+                margin-top: -87px;
             }
         }
 
@@ -288,26 +300,28 @@
         }
 
         @include atSize1500 {
-            top: -30px;
+           // top: -30px;
         }
 
         @include atSize2000 {
-            top: -60px;
+           // top: -60px;
         }
     }
 
     .shareIcon
     {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 45%;
+        // position: absolute;
+        // bottom: 1.5rem;
+        // left: 45%;
        
         @include atSize700
         {
-            top: 3rem;
-            bottom:auto;
-            right: 3%;
-            left: auto;
+           // top: 3rem;
+            //bottom:auto;
+           // right: 3%;
+        //    position: relative;
+        //    margin-top: 40px;
+        //     left: auto;
         }
         a{            
             color:#fff;

@@ -7,16 +7,28 @@
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        display: inline-block;
+        color: $primaryColor;
         font-weight: bold;
-        margin: 0;
-        text-align: center;
-
-        @include atSize1250 {
-            font-size: 2rem;
-            text-align: left;
+        letter-spacing: .3px;
+        margin-bottom: 30px;
+        position: relative;
+    
+        @include atSize850 {
+            font-size: 2rem; 
         }
-    }
+        &::after {
+            content: '';
+            display: block;
+            width: 47%;
+            height: 3.5px;
+            border-radius: 1.5px;
+            background-color: $titlePink;
+            position: absolute;
+            left: -3px;
+        }
+     }
 
     p {
         font-size: 1rem;
