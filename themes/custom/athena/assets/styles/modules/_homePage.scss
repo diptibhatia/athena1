@@ -750,7 +750,7 @@
 			  z-index: 10;
 			  img {
 				  position: relative;
-				  top: 60px;
+				  top: 40px;
 				  right: 0px;
 				  width: 694px;
 				  @include atSize424 {
@@ -940,7 +940,9 @@
 			  }
 		  }
 	  }
-	  .testimonials {		  
+	  .testimonials {	
+		position:relative;
+		top:120px;	  
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
@@ -964,8 +966,7 @@
 				  z-index:-1;
 			  }
 		  }
-		  position:relative;
-		  top:280px;
+		  
 		  @include atSize479{
 			  //padding: 100px 10px 0 10px;
 			  width: 100%;
@@ -1338,7 +1339,7 @@
 		  .why-athena-item-two{
 			  img{
 				  position: relative;
-				  top: 60px;
+				  top: 40px;
 				  right: auto;
 				  width: 694px;
 				  left: 0;
@@ -1348,7 +1349,7 @@
 			  }
 		  }
 		  .why-athena-item-one{
-			  padding:140px 0 0 0;
+			  padding:120px 0 0 0;
 			  .info{
 				  margin: 0 0 0;
 				  width: 293px;
@@ -1360,16 +1361,12 @@
 	  }
   }
   .partners {
-	  margin: 240px 0 50px 0;
+	  margin: 180px 0 50px 0;
 	  @include atSize424 {
-		  margin: 200px 20px 50px 20px;
+		  //margin: 200px 20px 50px 20px;
 	  }
-	  @media (min-width: 480px) and (max-width: 770px){
-		  margin: 200px 0 50px 0;
-		  text-align: center;
-	  }
-	  @media (min-width: 771px) and (max-width: 1024px){
-		  margin: 200px 0 50px 0;
+	  @media screen and (max-width: 1024px){
+		  //margin: 200px 0 50px 0;
 		  text-align: center;	
 	  }
 	  .info {
@@ -1377,10 +1374,7 @@
 		  @include atSize424 {
 			  width: 100%;
 		  }
-		  @media (min-width: 480px) and (max-width: 770px){
-			  width: 100%
-		  }
-		  @media (min-width: 771px) and (max-width: 1024px){
+		  @media screen and (max-width: 1024px){
 			  width: 100%;
 		  }
 		  img {
