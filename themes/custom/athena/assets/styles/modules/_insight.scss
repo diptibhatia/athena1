@@ -257,7 +257,7 @@
 		padding: 10px 0;
 	} 
 	.insight-banner {
-		.item {.row {width:auto;}.bg-light-grey {@media screen and (max-width: 540px){text-align:center}	img {width:100%; @media screen and (max-width: 480px){	width:180px;}}}}
+		.item {.row {width:auto;}.profile {@media screen and (max-width: 540px){text-align:center;  padding-top:10px;}	img {width:100%; @media screen and (max-width: 480px){	width:180px;}}}}
 		.col-md-12{
 			 span {
 				 font-weight: 600;
