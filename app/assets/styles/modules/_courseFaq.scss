@@ -1,7 +1,7 @@
 .course-faq {
     position: relative;
     background-color: #fff;
-    top: 110px;
+    padding-top: 20px;
     @include atSize850 {
       //  padding-top: 60px;
     }
