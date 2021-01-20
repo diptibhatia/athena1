@@ -220,45 +220,60 @@
              jQuery("#registration_form").click(function() {
                 var msg = '';
                 var c_email = jQuery("#reg_email").val();
-                if(jQuery("#reg_first_name").val() == '') {
-                    msg += '\n\u2022  First name cannot be empty';
-                }
-                if(jQuery("#reg_last_name").val() == '') {
-                    msg += '\n\u2022  Last name cannot be empty';
-                }
-                if(jQuery("#reg_email").val() == '') {
-                    msg += '\n\u2022  Email cannot be empty';
-                }
-                if(jQuery("#reg_country").val() == '') {
-                    msg += '\n\u2022  please select country';
-                }
-                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  if(!regex.test(jQuery("#reg_email").val())) {
-    msg += '\n\u2022  Invalid Email id';
-  }
-                if(jQuery("#phone").val() == '') {
-                    msg += '\n\u2022  Phone number cannot be empty';
+                var regex = /^([a-zA-Z0-9_\.\-\+])+$/;
+
+                fname  = jQuery("#reg_first_name").val();
+                lname  = jQuery("#reg_last_name").val();
+
+                if(fname == '' ) {
+                    msg += '\n\u2022  Please enter first name';
+                }else if ( fname.length < 2 || fname.length > 16  ){
+                    msg += '\n\u2022  Please enter 2 to 16 characters for first name';
+                }else if(!regex.test(jQuery("#reg_first_name").val())) {
+                  msg += '\n\u2022  Please enter only letters for first name';
                 }
 
-                if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-                  msg += '\n\u2022  Phone number is invalid';
+                if(lname == '' ) {
+                    msg += '\n\u2022  Please enter last name';
+                }else if ( lname.length < 2 || lname.length > 16  ){
+                    msg += '\n\u2022  Please enter 2 to 16 characters for last name';
+                }else if(!regex.test(jQuery("#reg_lirst_name").val())) {
+                  msg += '\n\u2022  Please enter only letters for last name';
+                }
+
+                if(jQuery("#reg_country").val() == '') {
+                    msg += '\n\u2022  Please select country';
+                }
+
+                var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if(jQuery("#reg_email").val() == '') {
+                    msg += '\n\u2022  Please enter email id';
+                }else if(!regex.test(jQuery("#reg_email").val())) {
+                  msg += '\n\u2022  Please enter valid Email id';
+                }
+                
+                var ph_num = jQuery("#phone").val();
+                var num_len = ph_num.length;
+
+                if( ph_num =='' || num_len <6 || num_len >15) {
+                  msg += '\n\u2022  Please enter a valid phone number';
+                }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+                  msg += '\n\u2022  Please enter a valid phone number';
                 }
 
                  if(jQuery("#reg_qual").val() == '') {
-                    msg += '\n\u2022  please select Qualification';
+                    msg += '\n\u2022  Please select Qualification';
                 }
-                 if(jQuery("#reg_exp").val() == '') {
-                    msg += '\n\u2022  Enter experience field';
-                }
-                if(jQuery("#reg_months").val() == '') {
-                    msg += '\n\u2022  Enter Months field';
+                 if(jQuery("#reg_exp").val() == '' || jQuery("#reg_months").val() == '' ) {
+                    msg += '\n\u2022  Please enter years & months of experience';
                 }
                  if(jQuery("#reg_level").val() == '') {
-                    msg += '\n\u2022  Please select Level of employment';
+                    msg += '\n\u2022  Please select level of employment';
                 }
 
+
                 if(!jQuery("#reg_terms").prop('checked') == true){
-                     msg += '\n\u2022 please accept consent terms';
+                     msg += '\n\u2022  Please accept consent terms';
                 }
    var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
  var iso2 = countryData.iso2;

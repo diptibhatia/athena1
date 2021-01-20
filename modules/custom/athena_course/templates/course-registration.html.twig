@@ -275,7 +275,7 @@
 
                         <div class="login-item phone-number">
                                 <p>Mobile Number</p>
-                                <input type="tel" id="phone" placeholder="Enter Mobile number">
+                                <input type="tel" id="phone" placeholder="Enter Mobile number" required>
                                 <span id="valid-msg" class="hide">✓ Valid</span>
                                 <span id="error-msg" class="hide"></span>
                             </div>
@@ -308,11 +308,11 @@
                         <div class="login-item names">
                             <div class="name-item">
                                 <p>Year of Experience</p>
-                                <input id="reg_exp" type="number" placeholder="YY">
+                                <input id="reg_exp" type="number" placeholder="YY" min=0 oninput="validity.valid||(value='');">
                             </div>
                             <div class="name-item">
                                 <p>&nbsp;</p>
-                                <input type="number" id="reg_months" placeholder="MM">
+                                <input type="number" id="reg_months" placeholder="MM" min=0 oninput="validity.valid||(value='');">
                             </div>
                         </div>
                         <div class="login-item">

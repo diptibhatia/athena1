@@ -139,12 +139,12 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       },
       pswd: {
         required: true,
-        minlength: 6,
+        minlength: 4,
         maxlength: 15,
       },
       confirmpswd: {
         required: true,
-        minlength: 6,
+        minlength: 4,
         equalTo: "#pswd",
       }
     },
