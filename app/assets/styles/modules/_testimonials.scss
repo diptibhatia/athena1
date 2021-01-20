@@ -534,6 +534,9 @@ div#block-discussions .title span {
     height: auto;
     opacity: 0.4;
     object-fit: cover;
+    @include atSize700 {
+      display: none;
+    }
     @include atSize424 {
       display: none;
     }
