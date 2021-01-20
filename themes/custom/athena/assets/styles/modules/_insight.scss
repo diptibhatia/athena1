@@ -73,7 +73,7 @@
 
 	.share-icon {
 		position: relative;		
-		width: 20px;
+		//width: 20px;
 		padding-left: 30px;
 		
 		li {
@@ -239,7 +239,11 @@
 		overflow: hidden;
 		white-space: nowrap;
 	}
-
+	.single-discussion{ .share-icon {
+		position: relative; 
+		padding-left: 0;
+		top: 40px;
+	}}
 	.insight-card-footer {
 		border-top: 1px solid $purpleColor;
 		padding: 10px 0;
@@ -252,22 +256,21 @@
 	.insight-card-body {
 		padding: 10px 0;
 	}
-	.insight-banner .col-md-11 span {font-weight: 600;
+	.insight-banner .col-md-12 span {font-weight: 600;
 		font-size: 13px;
 		text-transform: uppercase; padding: 15px 0;
 		float: left; }
-.insight-banner .col-md-11 span:nth-child(3) {float: right;}
+.insight-banner .col-md-12 span:nth-child(3) {float: right;}
 
 @media screen and (max-width: 540px){
-	.insight-banner .col-md-11 span { 
+	.insight-banner .col-md-12 span { 
 	float: none; }
-.insight-banner .col-md-11 span:nth-child(3) {
+.insight-banner .col-md-12 span:nth-child(3) {
 	float: none;}
 }
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
-
 			a {
 				color: $primaryColor;
 				text-decoration: none;

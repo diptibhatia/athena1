@@ -1,10 +1,11 @@
 
 .main-wrapper {
-	/*background-color: rgba(239, 241, 254, 0.5);*/
+ background-color: rgba(239, 241, 254, 0.5); 
 }
 
 .footer {
-
+	position: relative;
+    background: #fff;
 	a {
 		color: $secondaryColor;
 	}
