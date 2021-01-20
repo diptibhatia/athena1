@@ -4,24 +4,24 @@
                                 <div class="row bg-light-grey">
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes }} class="col-sm-6 p-0 profile">
+    <div{{ attributes }} class="col-sm-5 p-0 profile">
       {% for item in items %}
         <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes }} class="col-sm-6 p-0 profile">{{ item.content }}</div>
+      <div{{ attributes }} class="col-sm-5 p-0 profile">{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
-  <div{{ attributes }} class="col-sm-6 p-0 profile">
-    <div{{ title_attributes.addClass(title_classes) }} class="col-sm-6 p-0 profile">{{ label }}</div>
+  <div{{ attributes }} class="col-sm-5 p-0 profile">
+    <div{{ title_attributes.addClass(title_classes) }} class="col-sm-5 p-0 profile">{{ label }}</div>
     {% if multiple %}
       <div>
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes }} class="col-sm-6 p-0 profile">{{ item.content }}</div>
+      <div{{ item.attributes }} class="col-sm-5 p-0 profile">{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>
