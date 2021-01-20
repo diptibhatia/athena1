@@ -220,7 +220,7 @@
              jQuery("#registration_form").click(function() {
                 var msg = '';
                 var c_email = jQuery("#reg_email").val();
-                var regex = /^([a-zA-Z0-9_\.\-\+])+$/;
+                var regex = /^([a-zA-Z])+$/;
 
                 fname  = jQuery("#reg_first_name").val();
                 lname  = jQuery("#reg_last_name").val();
