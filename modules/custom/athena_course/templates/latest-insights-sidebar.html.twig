@@ -5,11 +5,11 @@
 <div class="container pb-5">
    {% for insightsdata in insig %}
    <div class="row mb-1">
-      <div class="insight-thumbnail col-md-3 d-flex align-items-center p-0">
+      <div class="insight-thumbnail col-md-4 d-flex align-items-center">
         <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> 
         <img class="thumbnail img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-8">
          <p class="strong yellow-txt m-0">{{ insightsdata.field_article_insight_type.entity.label }}</p>
          <p><a style="color:inherit" href="{{ url('<front>') }}node/{{insightsdata.id}}">{{ insightsdata.title.value}}</a></p>
       </div>
