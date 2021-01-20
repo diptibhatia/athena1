@@ -255,19 +255,27 @@
 
 	.insight-card-body {
 		padding: 10px 0;
-	}
-	.insight-banner .col-md-12 span {font-weight: 600;
+	} 
+	.insight-banner {
+		.item {.row {width:auto;}.bg-light-grey {@media screen and (max-width: 540px){text-align:center}	img {width:100%; @media screen and (max-width: 480px){	width:180px;}}}}
+		.col-md-12{
+			 span {
+				 font-weight: 600;
 		font-size: 13px;
-		text-transform: uppercase; padding: 15px 0;
-		float: left; }
-.insight-banner .col-md-12 span:nth-child(3) {float: right;}
-
-@media screen and (max-width: 540px){
-	.insight-banner .col-md-12 span { 
-	float: none; }
-.insight-banner .col-md-12 span:nth-child(3) {
-	float: none;}
+		text-transform: uppercase;
+		 padding: 15px 0;
+		float: left; 
+		@media screen and (max-width: 540px){			 
+		   float: none; 
+	}}
+  span:nth-child(3) {float: right;
+	@media screen and (max-width: 540px){	
+		float: none;
+	}
+	}
 }
+	}
+ 
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
@@ -363,7 +371,10 @@
 	    margin: 0 1.05rem 0rem;
 	    background: $background-pale;
 	    border: none;
-
+		 @media screen and (max-width:540px) {
+			flex: 1 0 0%;
+			 margin-bottom: 0; 
+		}
 	    .card-img {
 	      width: 100%;
 	      height: 170px;
