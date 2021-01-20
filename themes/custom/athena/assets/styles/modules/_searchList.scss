@@ -13,7 +13,11 @@
   
   .container {
     .course_search_banner {float:right;
-      height: 240px; opacity: 1; min-width:auto;}
+      height: 240px; opacity: 1; min-width:auto;
+      @media screen and (max-width:980px){
+        display: none;
+      }
+    }
     .search { 
       padding-top:20px;
       position: relative;
