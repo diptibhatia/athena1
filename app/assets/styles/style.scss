@@ -55,12 +55,7 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 .why-section .main-section .desc p {
       font-weight: normal;
 }
-
-.insight-wrapper .share-icon {
-    position: relative;
-    width: 20px;
-    padding-left: 30px;
-} 
+ 
 img {
     border-style: none;
 }
@@ -102,8 +97,7 @@ img {
     display: inline-block;
     img {width: 50px;}
 }
- 
-.about-popular-content {display: relative; z-index:99;}
+  
 .flx-duration, .error {color:$titlePink;}
 .login-details label {display: block; color:$titlePink; clear:both;}
  
@@ -181,10 +175,10 @@ img {
 .input.error {
     border: none !important;
 }
-#block-coursepagetestimonialsblock .why-athena .testimonials {
-    position: relative;
-    top: 0;
-}
+// #block-coursepagetestimonialsblock .why-athena .testimonials {
+//     position: relative;
+//     top: 0;
+// }
 
 .registeredTitle {
     text-align: center;

@@ -172,6 +172,8 @@ blockquote {
 }
 
 .footer {
+	position: relative;
+    background: #fff;
 	a {
 		color: $secondaryColor;
 	}
