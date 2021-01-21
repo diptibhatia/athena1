@@ -2677,7 +2677,9 @@
   }
   
   .all-courses {
-	background-color: #eff1fe;
+	background-color: #eff1fe; 
+	position:relative;
+	z-index:9;
 	/*display: flex;
 
 	height: auto;
