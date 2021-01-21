@@ -171,8 +171,8 @@
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="course">Course</label>              
-                  <select name="course" id="course" class="form-control reg-form-control">
-                  <option value="" default="">Select your course</option>
+                  <select name="course" id="course" class="form-control reg-form-control" required>
+                  <option value="">Select your course</option>
                                 {% for nodedata in courses_data %}
                                   {% if cid == nodedata.field_cid.value %}
                                      <option value="{{nodedata.field_cid.value}}" selected="selected">{{nodedata.label}}</option>

@@ -168,7 +168,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
   $(".sign-up-button").click(function(e) {
     e.preventDefault();
     cData.email = String(jQuery("#regEmail").val());
-    cData.cId = parseInt(jQuery("#cId").val());
+    cData.cId = parseInt(jQuery("#course").val());    
     cData.modId = jQuery("#modId").val();
     cData.pay = jQuery("#pay").val();
     var utmSource = getParameterByName("utm_source");
@@ -211,7 +211,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       var phoneNum = "+" + countryCode + phnNumber;
 
       cData.email = String(jQuery("#regEmail").val());
-      cData.cId = parseInt(jQuery("#cId").val());
+      cData.cId = parseInt(jQuery("#course").val());
       cData.modId = jQuery("#modId").val();
       cData.pay = jQuery("#pay").val();
       // var userId = 0;
@@ -223,13 +223,13 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
         Email:String(jQuery("#regEmail").val()),
         Code:parseInt(jQuery("#countryId").val()),
         ContactNo:String(phoneNum),
-        CourseId:parseInt(jQuery("#cId").val()),
+        CourseId:parseInt(jQuery("#course").val()),
         Highestqualification:String(jQuery("#highestQualification").val()),
         source:String(utmSource),
         CampainName:String(campaign),
         IsAccepted:true,
       };
-      // console.log(JSON.stringify(sendInfo));
+      //console.log(JSON.stringify(sendInfo));
       jQuery.ajax({
         url: "https://athenawpapi.azurewebsites.net/Register/SaveLead",
         type: 'POST', // http method
