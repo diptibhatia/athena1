@@ -2604,7 +2604,7 @@
   }
   .footer-bottom {background: #343a40;
     color: #fff;
-	font-size: 13px; text-align: center; position: relative; z-index: 9}
+	font-size: 13px; text-align: center; position: relative; z-index: 9; padding: 10px 0;}
 
   .footer-banner {
    //margin: 50px 0 0px 0;
@@ -2677,7 +2677,9 @@
   }
   
   .all-courses {
-	background-color: #eff1fe;
+	background-color: #eff1fe; 
+	position:relative;
+	z-index:9;
 	/*display: flex;
 
 	height: auto;
