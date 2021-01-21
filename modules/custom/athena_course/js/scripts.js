@@ -1,6 +1,6 @@
 
         jQuery(document).ready(function() {
-            var baseUrl = 'http://athena.edu';
+            var baseUrl = 'https://athena.edu';
             var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -50,31 +50,138 @@
               }
             }
 
+
+
+  //---------------------------------------------
+
+
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Please enter only letters"); 
+
+jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+    phone_number = phone_number.replace(/\s+/g, "");
+    return this.optional(element) || phone_number.length > 9 &&
+        phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+}, "Please specify a valid phone number");
+
+jQuery.validator.addMethod("emailExt", function(value, element, param) {
+    return value.match(/^[a-zA-Z0-9_\.%\+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,}$/);
+},'Please enter a valid Email id');
+
+
+jQuery("#get_in_touch_form").validate({
+
+        rules: {
+            "get_in_touch_fname": {
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+                lettersonly: true
+            },
+
+            "get_in_touch_lname": {
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+                lettersonly: true
+            },
+
+            "get_in_touch_email": {
+                required: true,
+                email: true,
+                emailExt: true
+            },
+
+            "phone": { 
+                required: true,                
+                phoneUS: true 
+            },
+
+            'get_in_touch_consent[]' :{
+                required: true,
+            }
+        },
+
+        messages: {
+
+            "get_in_touch_fname": {
+                required: "Enter first name",
+                minlength: jQuery.validator.format("Enter at least {0} characters"),
+            },
+
+            "get_in_touch_lname": {
+                required: "Enter last name",
+                minlength: jQuery.validator.format("Enter at least {0} characters"),
+            },
+
+            "get_in_touch_email": {
+                required: "Please enter an email",
+                email: "Please enter a valid email"
+            },
+
+            "phone": {
+                required: "Please enter phone number"                
+            },
+
+            "get_in_touch_consent[]": {
+                required: "Please agree to our terms & conditions"                
+            },            
+        },                
+
+    });
+
+//------------------------------------
+
+
+
+
+
+
+
             jQuery("#get_in_touch").click(function() {
                  var msg = '';
-                if(jQuery("#get_in_touch_fname").val() == '') {
-                    msg += '\n\u2022  First name cannot be empty';
+                var regex = /^([a-zA-Z])+$/;
+
+                fname  = jQuery("#get_in_touch_fname").val();
+                lname  = jQuery("#get_in_touch_lname").val();
+
+                if(fname == '' ) {
+                    msg += '\n\u2022  Please enter first name';
+                }else if ( fname.length < 2 || fname.length > 16  ){
+                    msg += '\n\u2022  Please enter 2 to 16 characters for first name';
+                }else if(!regex.test(jQuery("#get_in_touch_fname").val())) {
+                  msg += '\n\u2022  Please enter only letters for first name';
                 }
-                if(jQuery("#get_in_touch_lname").val() == '') {
-                    msg += '\n\u2022  Last name cannot be empty';
+
+                if(lname == '' ) {
+                    msg += '\n\u2022  Please enter last name';
+                }else if ( lname.length < 2 || lname.length > 16  ){
+                    msg += '\n\u2022  Please enter 2 to 16 characters for last name';
+                }else if(!regex.test(jQuery("#get_in_touch_lname").val())) {
+                  msg += '\n\u2022  Please enter only letters for last name';
                 }
-                if(jQuery("#get_in_touch_email").val() == '') {
-                    msg += '\n\u2022  Email cannot be empty';
-                }
+
                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                if(!regex.test(jQuery("#get_in_touch_email").val())) {
-                  msg += '\n\u2022  Invalid Email id';
+                if(jQuery("#get_in_touch_email").val() == '') {
+                    msg += '\n\u2022  Please enter email id';
+                }else if(!regex.test(jQuery("#get_in_touch_email").val())) {
+                  msg += '\n\u2022  Please enter valid Email id';
                 }
+
+
                 if(!jQuery("#get_in_touch_consent").prop('checked') == true){
-                     msg += '\n\u2022 please accept consent terms';
+                     msg += '\n\u2022  Please accept consent terms';
                 }
 
-                if(jQuery("#phone").val() == '') {
-                    msg += '\n\u2022  Phone number cannot be empty';
-                }
+                var ph_num = jQuery("#phone").val();
+                var num_len = ph_num.length;
 
-                if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-                  msg += '\n\u2022  Phone number is invalid';
+                if( ph_num =='' || num_len <6 || num_len >15) {
+                  msg += '\n\u2022  Please enter a valid phone number';
+                }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+                  msg += '\n\u2022  Please enter a valid phone number';
                 }
 
                 if(msg =='') {
