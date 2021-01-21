@@ -154,10 +154,7 @@ div#block-discussions .title span {
   display: block;
 }
 
-
-
-
-
+ 
 .single-discussion {
     margin: 50px 0;
     .new-discussion {
@@ -617,7 +614,8 @@ div#block-discussions .title span {
 
 
 .testimonials {
-  margin-top: 120px;
+  position:relative;
+  margin-top: 200px;
     .sidebar {
     .list-group-item {
       padding: 20px 1.25rem;

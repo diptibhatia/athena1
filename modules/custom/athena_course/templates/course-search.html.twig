@@ -1,5 +1,7 @@
 <section class="main">
       <div class="container my-container">
+        <img class="course_search_banner" src="/themes/custom/athena/images/course_search_banner.png" alt="Course">
+
         <div class="search">
           <form class="search-form" method = "post" id="course-search--form">
 
@@ -12,10 +14,9 @@
 
             <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
             <input type="hidden" name="submit_form">
-            <div class="search-courses">
-               <a href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="/themes/custom/athena/images/search.svg" alt="search"></a>
-            </div>
-
+            
+               <a class="search-courses" href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="/themes/custom/athena/images/search.svg" alt="search"></a>
+            
         </div>
          {%if search_key is empty %}
         {% else %}
@@ -35,12 +36,7 @@
               <option value="language">Language</option>
               <option value="English">English</option>
             </select>
-
-            <select id="level_search" name="level" class="non-partner" style="display:none">
-              <option value="level">Level</option>
-              <option value="9-36 months">EQF evel 7</option>
-            </select>
-
+ 
             <select id="duration_search" name="duration" class="non-partner">
               <option value="duration">Duration</option>
               <option value="21-90 days">21-90 days</option>
@@ -51,9 +47,15 @@
               <option value="3 years">3 years</option>
             </select>
 
+            <select id="level_search" name="levels" class="non-partner">
+              <option value="level">Levels</option>
+              <option value="9-36 months">EQF evel 7</option>
+            </select>
+
             </form>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -144,7 +146,7 @@
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                         <button class="btn btn-link" data-toggle="collapse" data-target="#sectionOne" aria-expanded="true" aria-controls="collapseOne">
-                            About the Course
+                            About the Course & Accreditations
                         </button>
                         </h5>
                     </div>
@@ -354,7 +356,7 @@
   <img alt="footer" src="/themes/custom/athena/images/footer-bg.png">
   <div class="footer-info">
     <h1>It's Time to Start <br><span>Investing</span> In <span>Yourself</span> </h1>
-    <button>Join Now</button>
+    <button onclick="window.location='/registration';">Join Now</button>
   </div>
 </div>
 

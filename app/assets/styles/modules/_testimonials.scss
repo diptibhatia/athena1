@@ -617,7 +617,8 @@ div#block-discussions .title span {
 
 
 .testimonials {
-  margin-top: 120px;
+  position:relative;
+  margin-top: 200px;
     .sidebar {
     .list-group-item {
       padding: 20px 1.25rem;
@@ -1519,4 +1520,15 @@ div#block-discussions .title span {
   width: 41px;
   margin: 0 0 0 -68px;
   bottom: 9px;
+}
+
+
+.testimonials #block-athena-content img {
+  float: left;
+  margin: 10px 15px 0 0;
+  width: 270px;
+  @media screen and (max-width:700px){
+      margin: 0;
+      width: 100%;
+  }
 }

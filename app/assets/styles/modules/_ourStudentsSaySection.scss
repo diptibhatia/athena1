@@ -2,14 +2,17 @@
     padding-top: 35px;
     padding-bottom: 50px;
     background-color: #eff1fe;
-
+    
     @include atSize1250 {
         margin-bottom: 270px;
         margin-top: 257px;
         padding-bottom: 102px;
         height: 613px;
     }
-
+@media screen and (max-width:600px) {
+    position: relative;
+    overflow: hidden;
+}
     .wrapper {
         position: relative;
     }

@@ -41,6 +41,8 @@
 @import "modules/affiliatePage";
 @import "modules/aboutPopular";
 @import "modules/modalPopup";
+@import "modules/shorttermcourses";
+
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 
@@ -53,18 +55,14 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 .why-section .main-section .desc p {
       font-weight: normal;
 }
-
-.insight-wrapper .share-icon {
-    position: relative;
-    width: 20px;
-    padding-left: 30px;
-}
-.footer-banner { 
-    position: relative;
-}
+ 
 img {
     border-style: none;
 }
+// .contextual-region .thumbnail, .section-item-two .thumbnail {max-width: 100%;
+//     height: auto;
+//     max-height: 100px;
+//     width: 100%;}
 
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
@@ -72,21 +70,36 @@ img {
 .get-started button {
     background: transparent;
 }
-
+.help-inline-error {color:$titlePink; font-size: 14px;}
+#registrationModal  {padding-right:0 !important;}
+#block-latestinsightssidebarblock .row {width: auto;}
+#block-athena-content img {max-width:100%; min-height:auto;}
 .reason-section {
     margin: 100px 0 50px 0;
 }
 .corporate-txt img  {height:auto; max-width:100%;}
 .top-banner .logos {width:auto;}
-
-
+ 
 .mobilePadding{
     @include atSize424{
-        padding-left: 2.0rem !important;
+        //padding-left: 2.0rem !important;
         overflow: hidden;
     }
 }
 
+.insights-logos {
+    border-style: none;
+    width: 84px;
+    height: 84px;
+    border: 1px solid $titleYellow;
+    border-radius: 50%;
+    padding: 20px 10px;
+    display: inline-block;
+    img {width: 50px;}
+}
+  
+.flx-duration, .error {color:$titlePink;}
+.login-details label {display: block; color:$titlePink; clear:both;}
  
 .insight-wrapper .insight-cards {
     max-width: 240px;
@@ -106,8 +119,8 @@ img {
 .pagination .is-active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #ff026f;
-    border-color: #ff026f;    
+    background-color:$titlePink;
+    border-color: $titlePink;
 }
 .page-item:first-child .page-link {
     border-radius:50%; 
@@ -123,28 +136,16 @@ img {
 // }
 // .previous .page-link:hover, .next .page-link:hover { 
 //     color: #ff026f;
-// }
-.partners .partner-logos .logo img {width:180px;}
+// } 
 
 .image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
     pointer-events: none;
-}
-.start-free-trial .athena-section .why-athena-item-two img {top: 60px;}
-.start-free-trial .athena-section .why-athena-item-one {
-    padding: 140px 0 0 0;
-}
-.know-more button:hover a { 
-    text-decoration: none;
-}
-
-.why-athena .get-started {
-    padding: 60px 0 30px;
-} 
-
+}   
+ 
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
-    border: solid 2px #ff008e;
-    color: #ff008e;
+    border: solid 2px $titlePink;
+    color:$titlePink;
     padding: 5px 20px;
     cursor: pointer;
     outline: none;
@@ -155,7 +156,7 @@ img {
 
 .athena-btn.violet-btn:hover, .btn-primary:hover {
     color: white !important;
-    background: #ff008e;
+    background: $titlePink;
 }
 .visually-hidden {
     position: absolute !important;
@@ -167,17 +168,49 @@ img {
 } 
 .p-0 {padding:0;}
 .m-0 {margin:0;}
-.ht-4 {height:40px} 
- 
-.why-athena .testimonials .testimonials-item .item-one img {
-    width: 398px;
-    position: relative;
-    top: -30px;
-    left: 8px;
-} 
+.ht-5 {height:50px} 
+  
 #block-whitespaces {display:none;} 
-#block-athena-content img {max-width:100%;}
-.academic-program-wrapper {
-    margin-top: 80px;
+
+.input.error {
+    border: none !important;
 }
-.all-courses h1 {font-weight:bold;}
+// #block-coursepagetestimonialsblock .why-athena .testimonials {
+//     position: relative;
+//     top: 0;
+// }
+
+.registeredTitle {
+    text-align: center;
+    margin: 0 0 2px;
+    font-family: Lato;
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $titlePink;
+}
+.registeredDescription{
+    text-align: center;
+}
+.registeredButton{
+width: 185px;
+text-align: center;
+height: 52px;
+padding: 15px 25px 15px 24px;
+border-radius: 12px;
+background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color: white;
+}
+
+
+.copyToClipboard{
+    position: relative;
+    padding-left: 80px;
+    color: #ff0068;
+    font-weight: bold;
+    @include atSize424{
+        text-align: center;
+    }
+}

@@ -237,6 +237,26 @@ function athena_preprocess_image(&$variables) {
 
 function athena_preprocess_page(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
+  
+  if (strpos($current_path, '/node') !== false) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $node_type = $node->getType();
+      if ($node_type == 'affiliate_page') {
+        $bundle='course';
+        $query = \Drupal::entityQuery('node');
+        $query->condition('status', 1);
+        $query->condition('type', $bundle);
+        $entity_ids = $query->execute();
+        
+        if(!empty($entity_ids)) {
+          $nodes = node_load_multiple($entity_ids);
+          $variables['courses_data'] = $nodes;
+        }
+      }
+    }
+  }
+
   if (strpos($current_path, '/course') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
@@ -301,6 +321,8 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__' . $node->bundle();
   }
+
+
 }
 
 
@@ -308,6 +330,11 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
 
 function athena_preprocess_node(&$variables) {
       $current_path = \Drupal::service('path.current')->getPath();
+
+
+
+
+
 $current_uri = \Drupal::request()->getRequestUri();
 
      if ($variables['node']->getType() === 'about_us_pages') {

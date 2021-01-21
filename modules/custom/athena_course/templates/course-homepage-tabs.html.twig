@@ -60,27 +60,35 @@
                                          <div class="course-details">
                                             <h1 class="headerWrap">{{academicdata.label}}</h1>
                                             <h2>{{academicdata.field_course_awarding_body.value|raw }}</h2>
+
+                                            {% if ( academicdata.field_course_level.value is empty ) and ( academicdata.field_course_ects_credit.value is empty ) and ( academicdata.field_courses_credit_type.value is empty ) %}
+
+                                            <div class="course-tags-empty"></div>
+
+                                            {% else %}
+
                                             <div class="course-tags">
 
-                                               <p><span class="circle"></span>
+                                               <p>
 
-                                                {% if academicdata.field_course_level.value is not empty %}
+                                                {% if academicdata.field_course_level.value is not empty %}<span class="circle"></span>
                                                   {{academicdata.field_course_level.value}}
                                                 {% endif %}
-
-                                                <span>|</span>
+                                                
 
                                                 {% if academicdata.field_course_ects_credit.value is not empty %}
+                                                  <span>|</span>
                                                   {{academicdata.field_course_ects_credit.value}}
-                                                {% endif %}
-
-                                                {% if academicdata.field_courses_credit_type.value is not empty %}
+                                                  {% if academicdata.field_courses_credit_type.value is not empty %}
                                                   {{academicdata.field_courses_credit_type.value}}
                                                 {% endif %}
 
+                                                {% endif %}                                           
 
                                                </p>
                                             </div>
+                                            {% endif %}
+
                                             <h3><b>Duration : </b> {{academicdata.field_course_duration.value}}</h3>
                                          </div>
                                          <div class="course-info">
@@ -222,26 +230,36 @@
                                            <div class="course-details">
                                               <h1>{{certificationsdata.label}}</h1>
                                               <h2>{{certificationsdata.field_course_awarding_body.value|raw }}</h2>
+
+                                              {% if ( certificationsdata.field_course_level.value is empty ) and ( certificationsdata.field_course_ects_credit.value is empty ) and ( certificationsdata.field_courses_credit_type.value is empty ) %}
+
+                                            <div class="course-tags-empty"></div>
+
+                                            {% else %}
+
                                               <div class="course-tags">
 
-                                                 <p><span class="circle"></span>
+                                                 <p>
 
-                                                  {% if certificationsdata.field_course_level.value is not empty %}
+                                                  {% if certificationsdata.field_course_level.value is not empty %}<span class="circle"></span>
                                                     {{certificationsdata.field_course_level.value}}
                                                   {% endif %}
 
-                                                  <span>|</span>
+                                                  
 
-                                                  {% if certificationsdata.field_course_ects_credit.value is not empty %}
+                                                  {% if certificationsdata.field_course_ects_credit.value is not empty %}<span>|</span>
                                                     {{certificationsdata.field_course_ects_credit.value}}
-                                                  {% endif %}
-
-                                                  {% if certificationsdata.field_courses_credit_type.value is not empty %}
+                                                    {% if certificationsdata.field_courses_credit_type.value is not empty %}
                                                     {{certificationsdata.field_courses_credit_type.value}}
                                                   {% endif %}
 
+                                                  {% endif %}
+
+                                                  
                                                  </p>
                                               </div>
+                                              {% endif %}
+
                                               <h3><b>Duration : </b> {{certificationsdata.field_course_duration.value}}</h3>
                                            </div>
                                            <div class="course-info">

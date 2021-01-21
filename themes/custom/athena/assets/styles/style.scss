@@ -55,15 +55,14 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 .why-section .main-section .desc p {
       font-weight: normal;
 }
-
-.insight-wrapper .share-icon {
-    position: relative;
-    width: 20px;
-    padding-left: 30px;
-} 
+ 
 img {
     border-style: none;
 }
+// .contextual-region .thumbnail, .section-item-two .thumbnail {max-width: 100%;
+//     height: auto;
+//     max-height: 100px;
+//     width: 100%;}
 
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
@@ -83,13 +82,12 @@ img {
  
 .mobilePadding{
     @include atSize424{
-        padding-left: 2.0rem !important;
+        //padding-left: 2.0rem !important;
         overflow: hidden;
     }
 }
 
 .insights-logos {
-
     border-style: none;
     width: 84px;
     height: 84px;
@@ -97,11 +95,11 @@ img {
     border-radius: 50%;
     padding: 20px 10px;
     display: inline-block;
-
- img {width: 50px;}
+    img {width: 50px;}
 }
-.about-popular-content {display: relative; z-index:99;}
-.flx-duration {color:$titlePink;}
+  
+.flx-duration, .error {color:$titlePink;}
+.login-details label {display: block; color:$titlePink; clear:both;}
  
 .insight-wrapper .insight-cards {
     max-width: 240px;
@@ -177,10 +175,10 @@ img {
 .input.error {
     border: none !important;
 }
-#block-coursepagetestimonialsblock .why-athena .testimonials {
-    position: relative;
-    top: 0;
-}
+// #block-coursepagetestimonialsblock .why-athena .testimonials {
+//     position: relative;
+//     top: 0;
+// }
 
 .registeredTitle {
     text-align: center;

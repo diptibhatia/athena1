@@ -75,12 +75,13 @@
   });
   $(document).on('show.bs.modal', '#registrationModal', function(e) {
     //get data-id attribute of the clicked element
-    var cId = $(e.relatedTarget).data('cid');
+    var cId = $(e.relatedTarget).data('cid');    
     var modId = $(e.relatedTarget).data('mid');
     var pay = $(e.relatedTarget).data('pay');
     // console.log(modId);
     //populate the hidden field
     $(e.currentTarget).find('input[name="cId"]').val(cId);
+    $(e.currentTarget).find('select[name="course"]').val(cId);
     $(e.currentTarget).find('input[name="modId"]').val(modId);
     $(e.currentTarget).find('input[name="pay"]').val(pay);
   });
@@ -97,36 +98,54 @@
     $(".reg-form").show("slow");
   });
 
+  //----------------form validation
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Please enter only letters"); 
+
+jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+    phone_number = phone_number.replace(/\s+/g, "");
+    return this.optional(element) || phone_number.length > 9 &&
+        phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+}, "Please specify a valid phone number");
+
+jQuery.validator.addMethod("emailExt", function(value, element, param) {
+    return value.match(/^[a-zA-Z0-9_\.%\+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,}$/);
+},'Please enter a valid Email id');
+
   var v = jQuery("#registration-afpage").validate({
     rules: {
       firstName: {
         required: true,
         minlength: 2,
-        maxlength: 16
+        maxlength: 16,
+        lettersonly: true
       },
       lastName: {
         required: true,
         minlength: 2,
-        maxlength: 16
+        maxlength: 16,
+        lettersonly: true
       },
       regEmail: {
-        required: true,
-        email: true
+        required: true,        
+        emailExt: true
       },
       reg_mobile_num: {
-        required: true
+        required: true,
+        phoneUS: true
       },
       'terms[]': {
         required: true,
       },
       pswd: {
         required: true,
-        minlength: 6,
+        minlength: 4,
         maxlength: 15,
       },
       confirmpswd: {
         required: true,
-        minlength: 6,
+        minlength: 4,
         equalTo: "#pswd",
       }
     },
@@ -149,7 +168,7 @@
   $(".sign-up-button").click(function(e) {
     e.preventDefault();
     cData.email = String(jQuery("#regEmail").val());
-    cData.cId = parseInt(jQuery("#cId").val());
+    cData.cId = parseInt(jQuery("#course").val());    
     cData.modId = jQuery("#modId").val();
     cData.pay = jQuery("#pay").val();
     var utmSource = getParameterByName("utm_source");
@@ -192,7 +211,7 @@
       var phoneNum = "+" + countryCode + phnNumber;
 
       cData.email = String(jQuery("#regEmail").val());
-      cData.cId = parseInt(jQuery("#cId").val());
+      cData.cId = parseInt(jQuery("#course").val());
       cData.modId = jQuery("#modId").val();
       cData.pay = jQuery("#pay").val();
       // var userId = 0;
@@ -204,13 +223,13 @@
         Email:String(jQuery("#regEmail").val()),
         Code:parseInt(jQuery("#countryId").val()),
         ContactNo:String(phoneNum),
-        CourseId:parseInt(jQuery("#cId").val()),
+        CourseId:parseInt(jQuery("#course").val()),
         Highestqualification:String(jQuery("#highestQualification").val()),
         source:String(utmSource),
         CampainName:String(campaign),
         IsAccepted:true,
       };
-      // console.log(JSON.stringify(sendInfo));
+      //console.log(JSON.stringify(sendInfo));
       jQuery.ajax({
         url: "https://athenawpapi.azurewebsites.net/Register/SaveLead",
         type: 'POST', // http method

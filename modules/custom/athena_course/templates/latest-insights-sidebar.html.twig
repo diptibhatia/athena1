@@ -2,11 +2,12 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
 </head>
 <h5 class="insight-sidebar-title">Latest Insights From Athena</h5>
-<div class="container pb-5">
+<div>
    {% for insightsdata in insig %}
    <div class="row mb-1">
-      <div class="col-md-4 d-flex align-items-center p-0">
-        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> <img class="img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
+      <div class="insight-thumbnail col-md-4 d-flex align-items-center">
+        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> 
+        <img class="thumbnail img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
       </div>
       <div class="col-md-8">
          <p class="strong yellow-txt m-0">{{ insightsdata.field_article_insight_type.entity.label }}</p>
@@ -19,8 +20,8 @@
 </div>
 
 <div class="container">
-                        <div><h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
-                    {% set indexno = 0 %}
+     <div><h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
+ {% set indexno = 0 %}
 {% for coursedata in popular %}
 <div class="row mb-2 shadow-sm rounded">
   <div class="col-md-12 col-sm-12 p-3">
@@ -47,7 +48,7 @@
 <div class="container bg-skyblue p-0 mt-5">
                         <div><p class="text-center pt-2 m-0 strong">Get in Touch</p>
 <p class="text-center p-2">Fill your details in the form below and we will be in touch to discuss your learning needs</p>
-
+<form  id="get_in_touch_form" method="post">
     <div class="container">
       <div class="form-group">
        <select class="select-option" name="course" id="get_in_touch_course">
@@ -60,21 +61,21 @@
         </select>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control txt-12" id="get_in_touch_fname" placeholder="First Name">
+        <input type="text" class="form-control txt-12" id="get_in_touch_fname" name="get_in_touch_fname" placeholder="First Name">
       </div>
        <div class="form-group">
-        <input type="text" class="form-control txt-12" id="get_in_touch_lname" placeholder="Last Name">
+        <input type="text" class="form-control txt-12" id="get_in_touch_lname" name="get_in_touch_lname" placeholder="Last Name">
       </div>
        <div class="form-group">
-        <input type="email" class="form-control txt-12" id="get_in_touch_email" placeholder="Email Address">
+        <input type="email" class="form-control txt-12" id="get_in_touch_email" name="get_in_touch_email" placeholder="Email Address">
       </div>
       <div class="form-group>
         <select class="custom-select txt-12" id="contact_form_phone">
-            <input type="tel" class="form-control txt-12" id="phone" placeholder="Enter Mobile number">
+            <input type="tel" class="form-control txt-12" id="phone" name="phone" placeholder="Enter Mobile number">
         </select>
       </div>
       <div class="form-check mb-2">
-        <input type="checkbox" class="form-check-input" id="get_in_touch_consent">
+        <input type="checkbox" class="form-check-input" id="get_in_touch_consent" name="get_in_touch_consent[]">
         <label class="form-check-label txt-12"  for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement.</label>
       </div>
         <p class="txt-12">Do you want to hear about the latest insights, Newsletters and professional networking events that are relevant to you?</p>
@@ -93,4 +94,7 @@
         <button id="get_in_touch" class="btn pink-bg btn-lg btn-block">Submit</button>
     </div>
 </div>
+</form>
                     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
