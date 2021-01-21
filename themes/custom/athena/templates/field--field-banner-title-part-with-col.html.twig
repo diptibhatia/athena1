@@ -45,11 +45,11 @@
 {% if label_hidden %}
   {% if multiple %}
       {% for item in items %}
-      <h1 class="top-search-section__title"><span>{{ item.content }}</span>
+      <h1 class="top-search-section__title">{{ item.content }}
       {% endfor %}
   {% else %}
     {% for item in items %}
-      <h1 class="top-search-section__title"><span>{{ item.content }}</span>
+      <h1 class="top-search-section__title">{{ item.content }}
     {% endfor %}
   {% endif %}
 {% else %}

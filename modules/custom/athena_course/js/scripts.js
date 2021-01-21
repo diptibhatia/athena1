@@ -1,6 +1,6 @@
 
         jQuery(document).ready(function() {
-            var baseUrl = 'http://athena.edu';
+            var baseUrl = 'https://athena.edu';
             var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();

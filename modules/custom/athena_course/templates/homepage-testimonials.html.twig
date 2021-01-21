@@ -9,7 +9,7 @@
          <div class="testimonials-item">
             <!-- <img src="/themes/custom/athena/images/testimonial-bg.png" alt=""/> -->
             <div class="item-one shawdow-effect">
-               <!-- <h1>Testimonials</h1> --><img src="/themes/custom/athena/images/Testimonials-1.png" />
+               <!-- <h1>Testimonials</h1> --><img alt="testimonials" src="/themes/custom/athena/images/Testimonials-1.png" />
                <h2>Our Students Say<br />
                   About Us
                </h2>
@@ -19,7 +19,7 @@
             <div class="item-two">
                {% for testidata in testi %}
                   {% if loop.index ==1 %}
-                     <div class="image-dot-testimonials-one"><img src="/themes/custom/athena/images/dots-course.svg" /></div>
+                     <div class="image-dot-testimonials-one"><img alt="dots" src="/themes/custom/athena/images/dots-course.svg" /></div>
                      <div class="student-review">
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
@@ -49,7 +49,7 @@
                         </div>
                      </div>
                   {% elseif loop.index ==2 %}
-                     <div class="image-dot-testimonials-two"><img src="/themes/custom/athena/images/dots-course.svg" /></div>
+                     <div class="image-dot-testimonials-two"><img alt="dots" src="/themes/custom/athena/images/dots-course.svg" /></div>
                      <div class="student-review two">
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
