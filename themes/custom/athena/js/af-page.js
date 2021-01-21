@@ -75,12 +75,13 @@
   });
   $(document).on('show.bs.modal', '#registrationModal', function(e) {
     //get data-id attribute of the clicked element
-    var cId = $(e.relatedTarget).data('cid');
+    var cId = $(e.relatedTarget).data('cid');    
     var modId = $(e.relatedTarget).data('mid');
     var pay = $(e.relatedTarget).data('pay');
     // console.log(modId);
     //populate the hidden field
     $(e.currentTarget).find('input[name="cId"]').val(cId);
+    $(e.currentTarget).find('select[name="course"]').val(cId);
     $(e.currentTarget).find('input[name="modId"]').val(modId);
     $(e.currentTarget).find('input[name="pay"]').val(pay);
   });
