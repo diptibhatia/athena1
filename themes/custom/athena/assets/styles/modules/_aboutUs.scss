@@ -239,6 +239,22 @@
 		}
 	}
 }
+.about-popular-content {
+	background: #eff1fe;
+	padding: 0;
+	margin-top: 60px;
+	position: relative;
+	z-index: 99;
+	@include atSize700 { 
+		background: url("images/popular-bg.png") -200px 0 ;
+		padding: 60px;
+	}
+
+	@include atSizeXXLarge {
+		background: url('images/popular-bg.png') 0 0 ;
+		padding: 120px;
+	}
+}
 
 .z-999 {
 	z-index: 999
