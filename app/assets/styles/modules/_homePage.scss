@@ -940,10 +940,10 @@
 			  }
 		  }
 	  }
-	  
+
 	  .testimonials {	
-		position:relative;
-		margin-top:100px;	  
+		position:relative; 
+		top:120px;  
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
@@ -2603,7 +2603,10 @@
 		  background-image: linear-gradient(89deg, #00a1e8 0%, #004fa1 100%);
 	  }
   }
-  
+  .footer-bottom {background: #343a40;
+    color: #fff;
+	font-size: 13px; text-align: center; position: relative; z-index: 9;}
+	
   .footer-banner {
    //margin: 50px 0 0px 0;
 	  //height: 283px; 
@@ -2676,6 +2679,8 @@
   
   .all-courses {
 	background-color: #eff1fe;
+	position:relative;
+	z-index:9;
 	/*display: flex;
 
 	height: auto;
