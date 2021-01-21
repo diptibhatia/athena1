@@ -17,6 +17,7 @@ global-js:
     js/fontawesome.min.js: {}
     https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js: { type: external, minified: true }
     https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js: { type: external, minified: true }
     js/isValidNumber.js: {}
     script.js: {}
     js/MobileMenu.js: {}
