@@ -98,10 +98,10 @@ jQuery("#get_in_touch_form").validate({
                 required: true,                
                 phoneUS: true 
             },
-
             'get_in_touch_consent[]' :{
                 required: true,
             }
+
         },
 
         messages: {
@@ -116,18 +116,13 @@ jQuery("#get_in_touch_form").validate({
                 minlength: jQuery.validator.format("Enter at least {0} characters"),
             },
 
-            "get_in_touch_email": {
-                required: "Please enter an email",
-                email: "Please enter a valid email"
-            },
-
             "phone": {
                 required: "Please enter phone number"                
             },
-
             "get_in_touch_consent[]": {
                 required: "Please agree to our terms & conditions"                
-            },            
+           },  
+
         },                
 
     });
@@ -140,7 +135,7 @@ jQuery("#get_in_touch_form").validate({
 
 
 
-            jQuery("#get_in_touch").click(function() {
+            jQuery("#get_in_touch").click(function(e) {
                  var msg = '';
                 var regex = /^([a-zA-Z])+$/;
 
@@ -202,12 +197,13 @@ jQuery("#get_in_touch_form").validate({
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (response) {
-
+                            
                           jQuery('#get_in_touch_course').val("");
                           jQuery('#get_in_touch_fname').val("");
                           jQuery('#get_in_touch_lname').val("");
                           jQuery('#get_in_touch_email').val("");
                           jQuery('#get_in_touch_consent').val("");
+                          jQuery('#phone').val("");
                           jQuery('#get_in_touch_consent').prop('checked', false);
 
                            alert(response.message);
@@ -215,6 +211,7 @@ jQuery("#get_in_touch_form").validate({
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                            console.log(textStatus, errorThrown);
+                          
                         }
                     });
 
