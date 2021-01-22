@@ -10,17 +10,17 @@
         padding-bottom: 68px;
     }
 
-    .wrapper {
-        padding: 0;
+    // .wrapper {
+    //     padding: 0;
 
-        @include atSize480 {
-            padding: 0 12px;
-        }
+    //     @include atSize480 {
+    //         padding: 0 12px;
+    //     }
 
-        @include atSize1100 {
-            padding: 0 4rem;
-        }
-    }
+    //     @include atSize1100 {
+    //         padding: 0 4rem;
+    //     }
+    // }
 
     h2 {
         font-size: 1.75rem;
