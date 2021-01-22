@@ -26,18 +26,31 @@ class LatestInsightsSidebarBlock extends BlockBase {
       
     global $base_url;
 
+ 
+    // get current nodeid 
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+    // You can get nid and anything else you need from the node object.
+    $nid = $node->id();
+    }
+
     $bundle='insight_article';
 
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
-    $query->condition('type', $bundle);
+    $query->condition('type', $bundle);    
     $query->sort('changed' , 'DESC'); 
     $latest = $query->execute();
         
     
     $insightsnodes = node_load_multiple($latest);
-        
+    
+    // remove the current node id from array
+    unset($insightsnodes[$nid]);
+    //print_r($insightsnodes); exit;          
+
     $latest_insights =  array_slice($insightsnodes, 0, 5);
+    //print_r($latest_insights); exit;
          
   // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();

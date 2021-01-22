@@ -11,11 +11,11 @@
         </div>
         <div class="col-xs-6 text-right top-social">
           <a href="https://www.facebook.com/AthenaGlobalEducation/" target="_blank"><img
-              src="/themes/custom/athena/images/affiliatepage/facebook.svg"></a>
+               alt="facebook icon" src="/themes/custom/athena/images/affiliatepage/facebook.svg"></a>
           <a href="https://twitter.com/AthenaGlobalEdu" target="_blank"><img
-              src="/themes/custom/athena/images/affiliatepage/twitter.svg"></a>
+               alt="twitter icon" src="/themes/custom/athena/images/affiliatepage/twitter.svg"></a>
           <a href="https://www.instagram.com/age_athena/" target="_blank"><img
-              src="/themes/custom/athena/images/affiliatepage/instagram.svg"></a>
+               alt="instagram icon" src="/themes/custom/athena/images/affiliatepage/instagram.svg"></a>
         </div>
       </div>
     </div>
@@ -167,6 +167,23 @@
                   </select>
                 </div>
               </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="course">Course</label>              
+                  <select name="course" id="course" class="form-control reg-form-control" required>
+                  <option value="">Select your course</option>
+                                {% for nodedata in courses_data %}
+                                  {% if cid == nodedata.field_cid.value %}
+                                     <option value="{{nodedata.field_cid.value}}" selected="selected">{{nodedata.label}}</option>
+                                     {% else %}
+                                        <option value="{{nodedata.field_cid.value}}" >{{nodedata.label}}</option>
+                                  {% endif %}
+                                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+
               <div class="form-group form-check consent-check">
                 <input type="checkbox" class="form-check-input" id="terms" name="terms[]">
                 <label class="form-check-label" for="terms">I agree with <a href="/registration-terms"
