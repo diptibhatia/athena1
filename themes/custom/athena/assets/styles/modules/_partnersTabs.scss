@@ -123,11 +123,11 @@
     
             img {
                 display: inline-block;
-                margin: 3px 0 38px;
-                width: 106px;
+                margin: 5px 0;
+                width: 120px;
     
                 @include atSize850 {
-                    width: 133px;
+                    //width: 133px;
                 }
             }
     

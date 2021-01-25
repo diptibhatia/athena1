@@ -123,11 +123,11 @@
     
             img {
                 display: inline-block;
-                margin: 3px 0 38px;
-                width: 106px;
+                margin: 5px 0;
+                width: 120px;
     
                 @include atSize850 {
-                    width: 133px;
+                    //width: 133px;
                 }
             }
     
@@ -221,12 +221,12 @@
                 font-size: .75rem;
                 font-style: italic;
                 position: absolute;
-                bottom: -105px;
+                bottom: -25px;
                 max-width: 514px;
                 line-height: 1.95;
     
                 @include atSize850 {
-                    bottom: 0;
+                   // bottom: 0;
                 }
                 @include atSize424{
                     position: relative;
