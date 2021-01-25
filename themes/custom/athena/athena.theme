@@ -243,7 +243,7 @@ function athena_preprocess_page(&$variables) {
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
       if ($node_type == 'affiliate_page') {
-        $bundle='course';
+        $bundle='affiliate_page_courses';
         $query = \Drupal::entityQuery('node');
         $query->condition('status', 1);
         $query->condition('type', $bundle);
@@ -252,6 +252,7 @@ function athena_preprocess_page(&$variables) {
         if(!empty($entity_ids)) {
           $nodes = node_load_multiple($entity_ids);
           $variables['courses_data'] = $nodes;
+      
         }
       }
     }

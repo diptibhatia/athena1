@@ -1,6 +1,7 @@
 
         jQuery(document).ready(function() {
             var baseUrl = 'https://athena.edu';
+            
             var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -98,10 +99,10 @@ jQuery("#get_in_touch_form").validate({
                 required: true,                
                 phoneUS: true 
             },
-
             'get_in_touch_consent[]' :{
                 required: true,
             }
+
         },
 
         messages: {
@@ -116,18 +117,13 @@ jQuery("#get_in_touch_form").validate({
                 minlength: jQuery.validator.format("Enter at least {0} characters"),
             },
 
-            "get_in_touch_email": {
-                required: "Please enter an email",
-                email: "Please enter a valid email"
-            },
-
             "phone": {
                 required: "Please enter phone number"                
             },
-
             "get_in_touch_consent[]": {
                 required: "Please agree to our terms & conditions"                
-            },            
+           },  
+
         },                
 
     });
@@ -140,7 +136,7 @@ jQuery("#get_in_touch_form").validate({
 
 
 
-            jQuery("#get_in_touch").click(function() {
+            jQuery("#get_in_touch").click(function(e) {
                  var msg = '';
                 var regex = /^([a-zA-Z])+$/;
 
@@ -195,29 +191,66 @@ jQuery("#get_in_touch_form").validate({
                       'phone': jQuery('#phone').val()
                     };
 
-                    jQuery.ajax({
-                        url: baseUrl + "/save/contact",
+/*
+                    jQuery.ajax({'https://athenawpapi.azurewebsites.net/save/contact',{}
+                        //url: baseUrl + "/save/contact",
+
                         type: "post",
                         data: JSON.stringify(dataObj),
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (response) {
-
+                          alert(url);  
                           jQuery('#get_in_touch_course').val("");
                           jQuery('#get_in_touch_fname').val("");
                           jQuery('#get_in_touch_lname').val("");
                           jQuery('#get_in_touch_email').val("");
                           jQuery('#get_in_touch_consent').val("");
+                          jQuery('#phone').val("");
                           jQuery('#get_in_touch_consent').prop('checked', false);
 
                            alert(response.message);
                            return false;
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
+                          alert(url);
+                          alert(jqXHR.status);
+                           if(jqXhr.status == 200) {
+                                  alert("Thank you for submitting the registration form. Will reach out to you shortly");
+                                }
                            console.log(textStatus, errorThrown);
+                           console.log("here");
+                        }
+                    });
+*/
+jQuery.ajax('https://athena.edu/save/contact', {
+                        type: 'POST',  // http method
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(dataObj) ,  // data to submit
+                         dataType: 'json',
+                        success: function (data, status, xhr) {
+                            var txt;
+                            alert("Thank you for showing your interest. We will reach out to you shortly")
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                                if(jqXhr.status == 200) {
+                                  alert("Thank you for showing your interest. We will reach out to you shortly")
+
+                                }
                         }
                     });
 
+                          jQuery('#get_in_touch_course').val("");
+                          jQuery('#get_in_touch_fname').val("");
+                          jQuery('#get_in_touch_lname').val("");
+                          jQuery('#get_in_touch_email').val("");
+                          jQuery('#get_in_touch_consent').val("");
+                          jQuery('#phone').val("");
+                          jQuery('#get_in_touch_consent').prop('checked', false);
+
+
+                return false;
 
                 }else {
 
