@@ -22,6 +22,10 @@ class LatestInsightsSidebarBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
+         public function getCacheMaxAge() {
+    return 0;
+  }
+
   public function build() {
       
     global $base_url;
@@ -34,6 +38,7 @@ class LatestInsightsSidebarBlock extends BlockBase {
     $nid = $node->id();
     }
 
+    //print $nid; 
     $bundle='insight_article';
 
     $query = \Drupal::entityQuery('node');
@@ -47,11 +52,16 @@ class LatestInsightsSidebarBlock extends BlockBase {
     
     // remove the current node id from array
     unset($insightsnodes[$nid]);
-    //print_r($insightsnodes); exit;          
-
+    
     $latest_insights =  array_slice($insightsnodes, 0, 5);
-    //print_r($latest_insights); exit;
-         
+    
+    /*
+    foreach ($latest_insights as $key => $value) {
+               print ($value->id());
+               print ",";
+             }         
+*/
+
   // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();
   

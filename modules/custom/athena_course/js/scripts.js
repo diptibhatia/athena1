@@ -377,7 +377,7 @@ jQuery.ajax('https://athena.edu/save/contact', {
                     msg += '\n\u2022  Please enter last name';
                 }else if ( lname.length < 2 || lname.length > 16  ){
                     msg += '\n\u2022  Please enter 2 to 16 characters for last name';
-                }else if(!regex.test(jQuery("#reg_lirst_name").val())) {
+                }else if(!regex.test(jQuery("#reg_last_name").val())) {
                   msg += '\n\u2022  Please enter only letters for last name';
                 }
 
