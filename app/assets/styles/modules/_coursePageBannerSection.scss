@@ -23,10 +23,12 @@ a {color:#fff;}
     } 
     @include atSize1250 {
         //background-color: #fff;
+        height: 530px;
     }
 
     @include atSize1350 {
         //padding: 1.625rem 0;
+        height: 530px;
     }
 
     @include atSizeXXLarge {
