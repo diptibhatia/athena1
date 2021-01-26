@@ -165,7 +165,7 @@ text-align:center;
           }
         }
       }
-      @media screen and (max-width: 780px) {
+      @media screen and (max-width: $break-small) { 
         .search {
           width: 93%;
           margin: 0 auto;

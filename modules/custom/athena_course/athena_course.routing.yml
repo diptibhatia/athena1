@@ -113,3 +113,11 @@ athena_course.StudentEnroltoCourse:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+
+athena_course.shortterm-courses:
+  path: '/shortterm-courses'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::shortTermCourse'
+    _title: 'Short term course'
+  requirements:
+    _permission: 'access content'

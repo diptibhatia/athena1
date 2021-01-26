@@ -9,6 +9,11 @@ use Drupal\node\Entity\Node;
  */
 function athena_course_theme($existing, $type, $theme, $path) {
   return [
+    'short_term_course' => [
+      'variables' => [
+        'short_term_course' => NULL
+      ],
+    ],
     'course_banner' => [
       'variables' => [
       'course_title' => NULL,
