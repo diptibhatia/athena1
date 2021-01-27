@@ -6,7 +6,7 @@
         font-size: 2.19rem;
         font-weight: bold;
         color: $primaryColor;
-        width: 17.75rem;
+        width: 19rem;
         line-height: 1.29;
         margin: 0;
         padding-top: 1.75rem;
@@ -48,7 +48,7 @@
 
         @include atSize700 {
             font-size: 4rem;
-            width: 33rem;
+            width: 50rem;
         }
 
         @include atSize850 {

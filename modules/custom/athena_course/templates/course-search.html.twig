@@ -4,7 +4,7 @@
 
         <div class="search">
           <form class="search-form" method = "post" id="course-search--form">
-            
+
             {#Retain the search key value when search button is clicked#}
           {%if search_key is empty %}
           <input type="text" id="search_key" placeholder="Enter text to search" name="search_key">
@@ -88,7 +88,7 @@
     <span><span> <span>
     {% if nodedata.field_courses_credit_type.0.value %}
     {{nodedata.field_course_ects_credit.0.value}} Credits ({{nodedata.field_courses_credit_type.0.value|raw }})
-    
+
     </span> | <span>{% endif %}Duration: {{nodedata.field_course_duration.value}}</span>
   </span></span></li>
 
@@ -353,7 +353,7 @@
 
     <section class="opinions">
          <div><div class="footer-banner">
-  <img src="/themes/custom/athena/images/footer-bg.png">
+  <img alt="footer" src="/themes/custom/athena/images/footer-bg.png">
   <div class="footer-info">
     <h1>It's Time to Start <br><span>Investing</span> In <span>Yourself</span> </h1>
     <button onclick="window.location='/registration';">Join Now</button>

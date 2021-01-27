@@ -49,7 +49,20 @@
       {% endfor %}
   {% else %}
     {% for item in items %}
-        {{ item.content }}</h1>
+
+        {% set textval = item.content['#context']['value'] %}
+        {% set lexes = textval|split(' ') %}
+        {% for txt in lexes %}
+            {% if txt == "Flexible" %}
+              <span class="typewrite" data-period="2000" data-type='[ "Flexible", "Affordable", "Accessible" ]'>
+                <span class="typewrite-wrap"></span>
+              </span>
+            {% else %}
+              {{ txt }}
+            {% endif %}
+        {% endfor %}
+
+        </h1>
     {% endfor %}
   {% endif %}
 {% else %}

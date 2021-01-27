@@ -14,7 +14,7 @@
   .container {
     .course_search_banner {float:right;
       height: 240px; opacity: 1; min-width:auto;
-      @media screen and (max-width:980px){
+      @media screen and (max-width: $break-small) { 
         display: none;
       }
     }

@@ -2,6 +2,8 @@
 
 use \Drupal\Core\Url;
 use \Drupal\Core\Link;
+use Drupal\node\Entity\Node;
+
 /**
  * Implements hook_theme().
  */
@@ -309,6 +311,76 @@ function athena_course_page_attachments(array &$attachments) {
 
 
     $route_name = \Drupal::routeMatch()->getRouteName();
+
+    // Custom meta tags on smo and course pages.
+    if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
+      $possible_parameters = \Drupal::routeMatch()->getParameters();
+      $possible_parameters_obj = $possible_parameters->all();
+      $nid = $possible_parameters_obj['nid'];
+      $node = Node::load($nid);
+      $course_category = $node->get('field_course_category')->value;
+      if ($course_category == 'Academic') {
+        $field1 = 'field_course_page_meta_tag';
+        $field2 = 'field_course_page_meta_descripti';
+        $field3 = 'field_course_page_meta_keywords';
+      }
+      if ($course_category == 'Certifications') {
+        $field1 = 'field_smo_page_meta_tag_title';
+        $field2 = 'field_smo_page_meta_tag_descript';
+        $field3 = 'field_smo_page_meta_tag_keywords';
+      }
+      $meta_tag_value = $node->get($field1)->value;
+      $meta_tag_desc = $node->get($field2)->value;
+      $meta_tag_keywords = array();
+      foreach ($node->{$field3}->getValue() as $value) {
+        if (!empty($value['value'])) {
+          $meta_tag_keywords[] = $value['value'];
+        }
+      }
+      if (count($meta_tag_keywords) > 0) {
+        $meta_tag_keywords_list = implode(',', $meta_tag_keywords);
+      }
+      if (!empty($meta_tag_value)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'title',
+            '#value' => $meta_tag_value,
+            '#weight' => -11,
+          ],
+          'title'
+        ];
+      }
+      if (!empty($meta_tag_desc)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'name' => 'description',
+              'content' => $meta_tag_desc
+            ],
+            '#weight' => -10,
+          ],
+          'desc'
+        ];
+      }
+      if (!empty($meta_tag_keywords_list)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'name' => 'keywords',
+              'content' => $meta_tag_keywords_list
+            ],
+            '#weight' => -9,
+          ],
+          'keywords'
+        ];
+      }
+    }
+
     if ($route_name == 'athena_course.StudentEnroltoCourse') {
       $from = $_REQUEST['from'] ?? '';
       $uid = $_REQUEST['UId'] ?? '';
