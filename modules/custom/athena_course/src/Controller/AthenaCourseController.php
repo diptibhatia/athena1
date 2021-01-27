@@ -1684,11 +1684,15 @@ $query->condition('field_course_category', 'Academic');
 
     $insightsnodes = node_load_multiple($latest);
 
-    $latest_insights =  array_slice($insightsnodes, 0, 5);
+        $last_insight = array_slice($insightsnodes, 0, 1);
+
+    $latest_insights =  array_slice($insightsnodes, 1, 5);
+
 $academic =  [
   '#theme' => 'course_academic',
   '#title1' => $title1,
   '#title2' => $title2,
+  '#last_insight' => $last_insight,
   '#insig' => $latest_insights,
   '#desc' => $desc,
   '#header_image' => $url,
@@ -1815,17 +1819,21 @@ $query->condition('field_course_category', 'Certifications');
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
     $query->condition('type', $bundle);
+    $query->sort('created' , 'DESC');
     $latest = $query->execute();
 
 
     $insightsnodes = node_load_multiple($latest);
 
-    $latest_insights =  array_slice($insightsnodes, 0, 5);
+        $last_insight = array_slice($insightsnodes, 0, 1);
+
+    $latest_insights =  array_slice($insightsnodes, 1, 5);
 
 $academic =  [
   '#theme' => 'course_academic',
   '#title1' => $title1,
   '#title2' => $title2,
+  '#last_insight' => $last_insight,
   '#insig' => $latest_insights,
   '#desc' => $desc,
   '#header_image' => $url,
