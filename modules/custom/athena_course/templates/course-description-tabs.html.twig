@@ -538,8 +538,8 @@
                     <h3>Course Resources</h3>
                     <p>For more detailed information about the course, please click on the links below.</p>
                     <div>
-                     {% if node.field_upload_brochure_  .value is not empty %}
-                        <a href="{{file_url(node.field_upload_brochure_  .entity.uri.value)}}" target="_blank">Download Brochure</a>
+                     {% if node.field_upload_brochure_.value is not empty %}
+                        <a href="{{file_url(node.field_upload_brochure_.entity.uri.value)}}" target="_blank">Download Brochure</a>
                      {% endif %}
                      {% if node.field_upload_specifications.value is not empty %}
                         <a href="{{file_url(node.field_upload_specifications.entity.uri.value)}}" target="_blank">Course Specifications</a>
