@@ -29,26 +29,34 @@
                   <div class="course-details">
                      <h1 class="headerWrap">{{coursedata.label}}</h1>
                      <h2>{{coursedata.field_course_awarding_body.value|raw }}</h2>
+                     
+                    {% if ( coursedata.field_course_level.value is empty ) and ( coursedata.field_course_ects_credit.value is empty ) and ( coursedata.field_courses_credit_type.value is empty ) %}
+
+                    <div class="course-tags-empty"></div>
+
+                    {% else %}
+
                      <div class="course-tags">
 
-                        <p><span class="circle"></span>
-
+                        <p>
                         {% if coursedata.field_course_level.value is not empty %}
-                          {{coursedata.field_course_level.value}}
+                          <span class="circle"></span>{{coursedata.field_course_level.value}}
                         {% endif %}
-
-                        <span>|</span>
+                        
 
                         {% if coursedata.field_course_ects_credit.value is not empty %}
-                          {{coursedata.field_course_ects_credit.value}}
-                        {% endif %}
-
+                          <span>|</span>{{coursedata.field_course_ects_credit.value}}
                         {% if coursedata.field_courses_credit_type.value is not empty %}
                           {{coursedata.field_courses_credit_type.value}}
                         {% endif %}
 
+                        {% endif %}
+                        
                         </p>
                      </div>
+                     
+                     {% endif %}
+
                      <h3><b>Duration : </b> {{coursedata.field_course_duration.value}}</h3>
                   </div>
                   <div class="course-info">
