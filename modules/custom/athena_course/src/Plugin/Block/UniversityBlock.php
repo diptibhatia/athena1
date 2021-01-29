@@ -58,6 +58,13 @@ $query->condition('field_is_popular_course', '1', '=');
     $latest_insights =  array_slice($insightsnodes, 1, 5);
     
   //  print_r($academicnodes);exit;
+
+// Get the block id through config, SQL or some other means
+$bid = 19; // staging block id
+//$bid = 21; //localhost block id
+$block = \Drupal\block_content\Entity\BlockContent::load($bid);
+$render = \Drupal::entityTypeManager()->
+  getViewBuilder('block_content')->view($block);
     
     // Base theme path.
 $theme = \Drupal::theme()->getActiveTheme();
@@ -66,6 +73,7 @@ $base_path = $base_url.'/'. $theme->getPath();
    $homepage_course_tabs =  [
   '#theme' => 'universities',
   '#course' => $popular_courses,
+  '#render' => $render,
   '#last_insight' => $last_insight, 
   '#insig' => $latest_insights,
   '#base_path' => $base_path,
