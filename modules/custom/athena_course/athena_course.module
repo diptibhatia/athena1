@@ -400,6 +400,56 @@ function athena_course_page_attachments(array &$attachments) {
             $enablePixel = FALSE;
         }
 
+        $enableSalePixel = FALSE;
+        if ((strpos($referer, 'MBAPrograms') !== false) || (strpos($referer, 'diploma') !== false) || (strpos($referer, 'pgcertificate') !== false) ) {
+            $enableSalePixel = TRUE;
+        }
+        if ($source == 'TradeTracker' && $enableSalePixel) {
+          // Sale Pixel.
+          $salePixel1 = "var ttConversionOptions = ttConversionOptions || [];
+           ttConversionOptions.push({
+            type: 'lead',
+            campaignID: '33930',
+            productID: '53036',
+            transactionID: '$uid',
+            descrMerchant: '',
+            descrAffiliate: ''
+           });";
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => 'script',
+              '#value' => \Drupal\Core\Render\Markup::create($salePixel1),
+              '#weight' => 111,
+            ],
+            'sale1'
+          ];
+
+          $salePixel2 = "<img src='//tl.tradetracker.net/?cid=33930&amp;pid=53036&amp;tid=$uid&amp;data=&amp;descrMerchant=&amp;descrAffiliate=&amp;event=lead' alt='' />";
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => 'noscript',
+              '#value' => \Drupal\Core\Render\Markup::create($salePixel2),
+              '#weight' => 112,
+            ],
+            'sale2'
+          ];
+
+          $salePixel3 = "// No editing needed below this line.
+           (function(ttConversionOptions) {
+            var campaignID = 'campaignID' in ttConversionOptions ? ttConversionOptions.campaignID : ('length' in ttConversionOptions && ttConversionOptions.length ? ttConversionOptions[0].campaignID : null);
+            var tt = document.createElement('script'); tt.type = 'text/javascript'; tt.async = true; tt.src = '//tm.tradetracker.net/conversion?s=' + encodeURIComponent(campaignID) + '&t=m';
+            var s = document.getElementsByTagName('script'); s = s[s.length - 1]; s.parentNode.insertBefore(tt, s);
+           })(ttConversionOptions);";
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => 'script',
+              '#value' => \Drupal\Core\Render\Markup::create($salePixel3),
+              '#weight' => 113,
+            ],
+            'sale3'
+          ];
+        }
+
         if ($source == 'ShareASale' && $enablePixel) {
           // ShareASale Pixel.
           $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
