@@ -1,7 +1,8 @@
 
         jQuery(document).ready(function() {
             var baseUrl = 'https://athena.edu';
-            
+
+            //var baseUrl = 'http://localhost/athenawebsite';
             var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -36,10 +37,12 @@
               window.location= search_url + partner + '&lang=' +lang+ '&level=' +level+ '&duration='+duration;
             });
 
-            if (jQuery("#partner_search").length > 0 && jQuery("#language_search" ).length > 0 && jQuery("#duration_search" ).length > 0) {
+            if (jQuery("#partner_search").length > 0 && jQuery("#language_search" ).length > 0 
+              && jQuery("#duration_search" ).length > 0 && jQuery("#level_search" ).length > 0 ) {
               var univ = getUrlParameter('univ');
               var lang = getUrlParameter('lang');
               var duration = getUrlParameter('duration');
+              var level = getUrlParameter('level');
               if (univ != undefined) {
                 jQuery("#partner_search").val(univ);
               }
@@ -49,6 +52,10 @@
               if (duration != undefined) {
                 jQuery("#duration_search").val(duration);
               }
+              if (level != undefined) {
+                jQuery("#level_search").val(level);
+              }
+               
             }
 
 
