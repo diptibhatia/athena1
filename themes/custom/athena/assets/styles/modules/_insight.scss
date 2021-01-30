@@ -238,6 +238,10 @@
 		max-height: 52px;
 		overflow: hidden;
 		white-space: nowrap;
+		/* The number of lines to be displayed */ 
+		-webkit-line-clamp: 2;  
+		-webkit-box-orient: vertical; 
+		display: -webkit-box; 
 	}
 	.single-discussion{ .share-icon {
 		position: relative; 

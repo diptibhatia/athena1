@@ -91,7 +91,7 @@
 
                 @include atSize700 {
                     width: 609px;
-                    height: 240px;
+                    height: 270px;
                     padding: 50px 28px 30px 47px;
                 }
     
@@ -106,11 +106,11 @@
                 .msg {
                     font-size: .875rem;
                     line-height: 1.71;
-                    margin-bottom: 27px;
+                    margin-bottom: 15px;
 
                     @include atSize700 {
                         height: 75px;
-                        overflow-y: scroll;
+                        overflow-y: auto;
                         scrollbar-width: none; /* Hide scrollbar Firefox */
                         -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
 
@@ -210,7 +210,7 @@
 
                 @include atSize700 {
                     width: 609px;
-                    height: 240px;
+                    height: 270px;
                     padding: 50px 28px 30px 47px;
                 }
     
@@ -225,11 +225,11 @@
                 .msg {
                     font-size: .875rem;
                     line-height: 1.71;
-                    margin-bottom: 27px;
+                    margin-bottom: 15px;
 
                     @include atSize700 {
                         height: 75px;
-                        overflow-y: scroll;
+                        overflow-y: auto;
                         scrollbar-width: none; /* Hide scrollbar Firefox */
                         -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
 
