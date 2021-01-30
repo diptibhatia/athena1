@@ -226,7 +226,6 @@
 		text-overflow: ellipsis;
 	    max-height: 92px;
 	    overflow: hidden;
-
 	}
 
 	.card-title {
@@ -238,6 +237,10 @@
 		max-height: 52px;
 		overflow: hidden;
 		white-space: nowrap;
+		/* The number of lines to be displayed */ 
+		-webkit-line-clamp: 2;  
+		-webkit-box-orient: vertical;
+		display: -webkit-box; 
 	}
 	.single-discussion{ .share-icon {
 		position: relative; 
@@ -257,6 +260,7 @@
 		padding: 10px 0;
 	} 
 	.insight-banner {
+		
 		.col-md-4.mobilePadding {border-left:1px solid #eee;}
 		.item {.row {width:auto;}.profile {@media screen and (max-width: 540px){text-align:center; padding-top:10px;}	img {width:100%; @media screen and (max-width: 480px){	width:180px;}}}}
 		.col-md-12{
@@ -277,6 +281,13 @@
 }
 	}
  
+	.bs_grid {background: #eee;
+		padding: 15px;
+	img {border:3px solid deepskyblue; border-radius: 50%;
+		max-height: 180px;
+		min-width: 180px;
+		margin-top: 30px; }
+	}
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
