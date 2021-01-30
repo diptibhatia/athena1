@@ -1,0 +1,7 @@
+athena_library.centralized_config:
+  path: '/admin/config/centralized_config'
+  defaults:
+    _form: '\Drupal\athena_library\Form\CentralizedConfiguration'
+    _title: 'Athena Education Centralized Configuration'
+  requirements:
+    _permission: 'administer site configuration'

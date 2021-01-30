@@ -1,0 +1,14 @@
+<?php
+
+use \Drupal\athena_library\Utils\CommonHelper;
+
+/**
+ * Get Static data.
+ */
+function get_static_data($key, $textarea = FALSE) {
+    $data = CommonHelper::getConfigSettings('athena_library.common_settings', $key);
+    if ($textarea) {
+        return $data['value'];
+    }
+    return $data;
+}
