@@ -1,0 +1,7 @@
+services:
+  athena_library.helper_functions:
+    class: Drupal\athena_library\Utils\CommonHelper
+  athena_library.function:
+    class: Drupal\athena_library\StaticData
+    tags:
+      - { name: twig.extension }

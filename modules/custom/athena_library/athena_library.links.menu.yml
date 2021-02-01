@@ -1,0 +1,4 @@
+athena_library.centralized_config:
+  title: 'Athena Education Centralized Configuration'
+  route_name: athena_library.centralized_config
+  parent: system.admin_config

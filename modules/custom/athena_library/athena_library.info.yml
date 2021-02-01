@@ -1,0 +1,6 @@
+name: Athena Library
+type: module
+description: 'Contains common config and reusable functionalities.'
+package: Athena Education
+version: '8.x-1.0'
+core: '8.x'

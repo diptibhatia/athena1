@@ -18,34 +18,7 @@
     <div class="container-fluid p-0 academic-bg-wrap pb-3">
         <div class="pt-4 container">
             <div class="how-it-works row">
-                <div class="container bg-white shadow-lg rounded-md m-0 mb-4 pl-0">
-                    <div class="col-md-12 col-sm-12 text-center">
-                        <p class="txt-18 mt-4">How it works?</p>
-                        <h3 class="academic-header">Earning a Degree is Simplified With Athena</h3>
-                    </div>
-                    <div class="row mb-3 academic-card pt-5 pb-5 justify-content-center">
-                        <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" alt="find program" src="/themes/custom/athena/images/find-program.svg">
-                            <h3 class="card-title">Find a Program</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>
-                        </div>
-                        <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" alt="enroll" src="/themes/custom/athena/images/enroll.svg">
-                            <h3 class="card-title">Enroll For a Module</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>
-                        </div>
-                        <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" alt="assesment" src="/themes/custom/athena/images/assesment.svg">
-                            <h3 class="card-title">Online Assesments</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>
-                        </div>
-                        <div class="col-md-3 col-sm-12 text-center box">
-                            <img class="rounded-circle" alt="Get degree" src="/themes/custom/athena/images/getdegree.svg">
-                            <h3 class="card-title">Get a Degree</h3>
-                            <p>Launch party pitch technology user experience innovator buzz stealth MVP business model.</p>
-                        </div>
-                    </div>
-                </div>
+                {{ get_static_data('earning_a_degree', TRUE)|raw }}
                 <div class="col-md-12 academic-content p-0 pt-4">
                     <!--Find your course heading and Search course Input: START-->
                     <div class="row pb-4 findCourseInput">

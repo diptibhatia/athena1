@@ -205,6 +205,9 @@ blockquote {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-bottom: 10px;
+	/* The number of lines to be displayed */ 
+	-webkit-line-clamp: 2;  
+	-webkit-box-orient: vertical; 
 }
 
 h5.card-title a {
