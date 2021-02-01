@@ -1483,6 +1483,11 @@ function search($word = false){
     }
 
 
+    if(isset ($_REQUEST['level']) && !empty($_REQUEST['level']) && $_REQUEST['level'] != 'levels') {
+        $query->condition('field_course_level.value', $_REQUEST['level'], 'CONTAINS');
+    }
+
+
     if(isset ($_POST['course_category'])) {
       $query->condition('field_course_category', $_POST['course_category']);
     }
