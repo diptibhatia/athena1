@@ -94,6 +94,31 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('earning_a_degree.format'),
     ];
 
+    $form['static_blocks']['seven_day_free_trial'] = [
+      '#type' => 'text_format',
+      '#title' => 'Take a 7-day free Trial',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('seven_day_free_trial.value'),
+      '#format' => $config->get('seven_day_free_trial.format'),
+    ];
+
+    $form['static_blocks']['admission_process'] = [
+      '#type' => 'text_format',
+      '#title' => 'Admission Process',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('admission_process.value'),
+      '#format' => $config->get('admission_process.format'),
+    ];
+
+    $form['static_blocks']['how_you_learn'] = [
+      '#type' => 'text_format',
+      '#title' => 'How you learn',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('how_you_learn.value'),
+      '#format' => $config->get('how_you_learn.format'),
+    ];
+
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -107,6 +132,15 @@ class CentralizedConfiguration extends ConfigFormBase {
       // ->set('example1', $form_state->getValue('example1'))
       ->set('earning_a_degree.value', $form_state->getValue('earning_a_degree')['value'])
       ->set('earning_a_degree.format', $form_state->getValue('earning_a_degree')['format'])
+
+      ->set('seven_day_free_trial.value', $form_state->getValue('seven_day_free_trial')['value'])
+      ->set('seven_day_free_trial.format', $form_state->getValue('seven_day_free_trial')['format'])
+
+      ->set('admission_process.value', $form_state->getValue('admission_process')['value'])
+      ->set('admission_process.format', $form_state->getValue('admission_process')['format'])
+
+      ->set('how_you_learn.value', $form_state->getValue('how_you_learn')['value'])
+      ->set('how_you_learn.format', $form_state->getValue('how_you_learn')['format'])
 
       ->save();
     parent::submitForm($form, $form_state);
