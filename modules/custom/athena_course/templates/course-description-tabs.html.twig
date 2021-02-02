@@ -515,6 +515,86 @@
     </div>
 
 
+{# DBA batch profile #}
+
+
+    {% if course_batch|length > 0%}
+    <!--   Course Batch -->
+        <div class="course-team">
+            <div class="wrapper">
+                <h2 style="text-align:center">Students Enrolled For the 1st Batch</h2>
+                <p style="text-align:center">The program offers a well-structured coursework, designed to build<br> research
+                competencies. This is followed by a research project that<br> aims to demonstrate
+                the skills.</p>
+                <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
+
+                <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-299px, 0px, 0px); transition: all 0.25s ease 0s; width: 2093px;">
+                 {% set courseteamnum = 1 %}
+                 {% for course_team_data in course_batch %}
+                 {% if courseteamnum == 1 %}
+                      {% set cactiveclass = '' %}
+                      {% else %}
+                            {% set cactiveclass = 'active' %}
+                        {% endif %}
+
+                <div class="owl-item {{courseteamnum}}" style="width: auto;"><div class="item">
+                        <div class="course-team-card">
+
+                            <div class="team-img" style="cursor:pointer" onclick="window.location.href = '{{ course_team_data.linked_in}}';">
+
+                                <a style="all:unset" href="{{ course_team_data.linked_in}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
+
+                            </div>
+                            <h3>{{course_team_data.name}}</h3>
+                            <h4>{{course_team_data.designation}}</h4>
+                            <p>{{course_team_data.description|striptags|truncate(75)}}</p>
+                            <a style="display:none" href="{{ url('<front>') }}node/{{course_team_data.course_nid}}">Readmore</a>
+                            
+                            {% if  course_team_data.country_flag %}
+                            <p><b>{{course_team_data.country}}</b><br>
+                            <img src="{{course_team_data.country_flag}}" alt="country flag" style="opacity: 1;"></p>
+
+                            {% else %}
+                            <p><b>{{course_team_data.country}}</b></p>
+
+                            {% endif %}                            
+
+
+                        
+                        </div>
+                    </div>
+                  </div>
+                  {% set courseteamnum = courseteamnum+1 %}
+                    {% endfor %}
+                  </div></div>
+                  <div class="owl-nav">
+
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot active">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+
+                    </div></div>
+                <a class="button" href="#">View All</a>
+            </div>
+        </div>
+    {% endif %}
+
+
+{# DBA batch profile #}
+
     <div class="why-course" style="
     padding-bottom: 20px;
     background-color: #ff459a;
@@ -613,6 +693,8 @@
             </div>
         </div>
     </div>
+    
+
     <div class="how-learn course-team">
         <div class="wrapper">
             <h2>How You Learn</h2>

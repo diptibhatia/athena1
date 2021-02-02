@@ -400,6 +400,40 @@ foreach($paragraph_course_team as $attached_node){
   );
 
 }
+
+
+// course student batch
+if(is_object( $node->field_course_batch)){
+$paragraph_course_batch = $node->field_course_batch->referencedEntities();
+}
+$course_batch = array();
+foreach($paragraph_course_batch as $attached_node){
+  $name =  $attached_node->get('title')->value;
+  $course_nid =  $attached_node->id();
+  $designation =  $attached_node->get('field_designation')->value;
+  $linked_in =  $attached_node->get('field_linked_in_link')->value;
+  $country =  $attached_node->get('field_country')->value;
+  $country_flag = getCountryflag($country);
+  $user_pic= '';
+  if(is_object( $attached_node->get('field_user_photo')->entity)){
+  $user_pic = $attached_node->get('field_user_photo')->entity->getFileUri();
+    }
+  $user_pic_url = file_create_url($user_pic);
+  $description =  $attached_node->get('field_user_description')->value;
+  $course_batch[] = array(
+  'name' => $name,
+  'designation' => $designation,
+  'user_pic' => $user_pic_url,
+  'linked_in' => $linked_in,
+  'description' => $description,
+  'country' => $country,
+  'country_flag' => $country_flag,  
+  'course_nid' => $course_nid,
+  );
+
+}
+
+
 if(is_object( $node->field_faq)){
 $paragraph_faq = $node->field_faq->referencedEntities();
 }
@@ -480,6 +514,7 @@ $course_description_tabs =  [
   '#logo' => $univ_data,
   '#course_title' => $node->get('title')->value,
   '#course_team' => $course_team,
+  '#course_batch' => $course_batch,
   '#faq' => $faq,
   '#why_course' => $why_course,
   '#duration' => $node->get('field_course_duration')->value,
@@ -507,6 +542,7 @@ return array(
 
   }
 
+  
   public function registration() {
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();
