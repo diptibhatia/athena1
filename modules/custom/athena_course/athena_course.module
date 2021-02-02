@@ -551,8 +551,7 @@ $countries = array( "BD" => "Bangladesh", "BE" => "Belgium", "BF" => "Burkina Fa
   foreach ($countries as $key => $value) {
     if ( $country == $value ){
       return 'https://ipdata.co/flags/'.strtolower($key).'.png';
-    }
-    else return $country;
+    }    
   }
 
   }

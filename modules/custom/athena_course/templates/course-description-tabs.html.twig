@@ -550,8 +550,18 @@
                             <h4>{{course_team_data.designation}}</h4>
                             <p>{{course_team_data.description|striptags|truncate(75)}}</p>
                             <a style="display:none" href="{{ url('<front>') }}node/{{course_team_data.course_nid}}">Readmore</a>
+                            
+                            {% if  course_team_data.country_flag %}
                             <p><b>{{course_team_data.country}}</b><br>
-                            <img src="{{course_team_data.country_flag}}" alt="country flag" style="opacity: 1;" </p>
+                            <img src="{{course_team_data.country_flag}}" alt="country flag" style="opacity: 1;"></p>
+
+                            {% else %}
+                            <p><b>{{course_team_data.country}}</b></p>
+
+                            {% endif %}                            
+
+
+                        
                         </div>
                     </div>
                   </div>
