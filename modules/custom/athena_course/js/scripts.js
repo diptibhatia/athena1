@@ -1,7 +1,6 @@
 
         jQuery(document).ready(function() {
-            //var baseUrl = 'https://athena.edu';
-            var baseUrl = window.location.base;
+            var baseUrl = 'https://athena.edu';
             //var baseUrl = 'http://localhost/athenawebsite';
             var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {

@@ -483,37 +483,94 @@
 
     <div class="adm-process">
         <div class="wrapper">
-            <h1>Admission Process</h1>
-            <p>Please find below the detailed steps to be followed as a part of the admission process.</p>
-            <div class="admission-steps-card-container">
-                <div class="admission-steps-card">
-                    <div>
-                        <img src="/themes/custom/athena/images/coursepage/admission1.svg" alt="icon">
-                        <h3>Step 1 :<span style="font-weight:bold">Register for a free trial</span></h3>
-                    </div>
-                    <p>Register for a free trial and get complete access to the first module of this program
-                        for 7 days without any obligations.</p>
-                </div>
-                <div class="admission-steps-card">
-                    <div>
-                        <img src="/themes/custom/athena/images/coursepage/admission2.svg" alt="icon">
-                        <h3>Step 2 :<span style="font-weight:bold">Submit online enrollment form</span></h3>
-                    </div>
-                    <p>If you are satisfied with the learning, start your enrollment process by using ‘Enroll Now’
-                        option in the learning dashboard.</p>
-                </div>
-                <div class="admission-steps-card">
-                    <div>
-                        <img src="/themes/custom/athena/images/coursepage/admission3.svg" alt="icon">
-                        <h3>Step 3 :<span style="font-weight:bold">Pay &amp; Start</span></h3>
-                    </div>
-                    <p>Once your applications is approved, the fee payment option will be activated in your LMS
-                        and you will be able to make the payment.</p>
-                </div>
-            </div>
+
+                {{ get_static_data('admission_process', TRUE)|raw }}
+
+
+            
         </div>
     </div>
 
+
+{# DBA batch profile #}
+
+
+    {% if course_batch|length > 0%}
+    <!--   Course Batch -->
+        <div class="course-team">
+            <div class="wrapper">
+                <h2 style="text-align:center">Students Enrolled For the 1st Batch</h2>
+                <p style="text-align:center">The program offers a well-structured coursework, designed to build<br> research
+                competencies. This is followed by a research project that<br> aims to demonstrate
+                the skills.</p>
+                <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
+
+                <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-299px, 0px, 0px); transition: all 0.25s ease 0s; width: 2093px;">
+                 {% set courseteamnum = 1 %}
+                 {% for course_team_data in course_batch %}
+                 {% if courseteamnum == 1 %}
+                      {% set cactiveclass = '' %}
+                      {% else %}
+                            {% set cactiveclass = 'active' %}
+                        {% endif %}
+
+                <div class="owl-item {{courseteamnum}}" style="width: auto;"><div class="item">
+                        <div class="course-team-card">
+
+                            <div class="team-img" style="cursor:pointer" onclick="window.location.href = '{{ course_team_data.linked_in}}';">
+
+                                <a style="all:unset" href="{{ course_team_data.linked_in}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
+
+                            </div>
+                            <h3>{{course_team_data.name}}</h3>
+                            <h4>{{course_team_data.designation}}</h4>
+                            <p>{{course_team_data.description|striptags|truncate(75)}}</p>
+                            <a style="display:none" href="{{ url('<front>') }}node/{{course_team_data.course_nid}}">Readmore</a>
+                            
+                            {% if  course_team_data.country_flag %}
+                            <p><b>{{course_team_data.country}}</b><br>
+                            <img src="{{course_team_data.country_flag}}" alt="country flag" style="opacity: 1;"></p>
+
+                            {% else %}
+                            <p><b>{{course_team_data.country}}</b></p>
+
+                            {% endif %}                            
+
+
+                        
+                        </div>
+                    </div>
+                  </div>
+                  {% set courseteamnum = courseteamnum+1 %}
+                    {% endfor %}
+                  </div></div>
+                  <div class="owl-nav">
+
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot active">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+                    <button role="button" class="owl-dot">
+                      <span></span>
+                    </button>
+
+                    </div></div>
+                <a class="button" href="#">View All</a>
+            </div>
+        </div>
+    {% endif %}
+
+
+{# DBA batch profile #}
 
     <div class="why-course" style="
     padding-bottom: 20px;
@@ -613,63 +670,13 @@
             </div>
         </div>
     </div>
+    
+
     <div class="how-learn course-team">
         <div class="wrapper">
-            <h2>How You Learn</h2>
-            <p class="msg">Scientifically developed learning pedagogy, which ensures quality and effective learning experience for the learners. We ensure a seamless learning experience for students with varying levels of expertise on the subject matter.</p>
-            <div class="owl-carousel owl-theme owl-loaded owl-drag">
+            
+            {{ get_static_data('how_you_learn', TRUE)|raw }}
 
-
-
-
-
-            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1495px;"><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
-                    <div class="learn-card course-team-card">
-                        <div class="team-img">
-                            <img src="/themes/custom/athena/images/coursepage/video-class.svg" alt="image" style="opacity: 1;">
-                        </div>
-                        <h3>Video Classes</h3>
-                        <p>The well developed customized online video lessons designed by our faculty will lay the foundation for your learning.
-</p>
-                    </div>
-                </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
-                    <div class="learn-card course-team-card">
-                        <div class="team-img">
-                            <img src="/themes/custom/athena/images/coursepage/text-learning.svg" alt="image" style="opacity: 1;">
-                        </div>
-                        <h3>Text Learning Contents</h3>
-                        <p>Multi-level learning resources including relevant journal articles, case studies, quizzes developed by our faculty will enhance your learning experience.</p>
-                    </div>
-                </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
-                    <div class="learn-card course-team-card">
-                        <div class="team-img">
-                            <img src="/themes/custom/athena/images/coursepage/personal-tutor.svg" alt="image" style="opacity: 1;">
-                        </div>
-                        <h3>Personal Tutor</h3>
-                        <p>One to one personal tutor meetings will clarify your doubts and also provide guidance on your assignments.
-</p>
-                    </div>
-                </div></div><div class="owl-item active" style="width: auto; margin-right: 20px;"><div class="item">
-                    <div class="learn-card course-team-card">
-                        <div class="team-img">
-                            <img src="/themes/custom/athena/images/coursepage/online-library.svg" alt="image" style="opacity: 1;">
-                        </div>
-                        <h3>Online Library</h3>
-                        <p>You get unlimited access to the online library which consists of a large collection of books, journals, articles, white papers, videos, case studies, and other publications.
-</p>
-                    </div>
-                </div></div><div class="owl-item" style="width: auto; margin-right: 20px;"><div class="item">
-                    <div class="learn-card course-team-card">
-                        <div class="team-img">
-                            <img src="/themes/custom/athena/images/coursepage/collaborative-learning.svg" alt="image" style="opacity: 1;">
-                        </div>
-                        <h3>Collaborative Learning</h3>
-                        <p>Discussion Forum, webinars, business scenario presentations, debates will extend your learning beyond the curriculum and open a new world before you.
-                        </p>
-                    </div>
-                </div></div></div></div>
-                </div>
-            <a class="button" href="#">View All</a>
         </div>
     </div>
 
