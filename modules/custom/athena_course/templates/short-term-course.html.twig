@@ -36,8 +36,9 @@
                     <div class="row shortterm-courses-area">
                         <div class="col-12 p-0">
                             <div class="shortterm-courses">
+
                                 {% for node in nodes %}
-                                <div class="item content">
+                                <div class="item content" style="display:block;">
                                     <div class="course-item-hover">
                                         <div class="row">
                                             <div class="col-12 social-icons">
@@ -49,14 +50,14 @@
                                         <div class="course-details col-12 text-center p-0">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
-                                                <p class="small">{{node.field_certified_level.value}}</p>
-                                                {{ node.field_description.value|striptags|truncate(100)}}…
+                                                <p class="small">{{node.field_certified_level}}</p>
+                                                {{ node.body|striptags|truncate(100)}}…
                                             </div>
                                             <div class="col-12">
                                                 <h4><a href="#">More Information ></a></h4>
                                             </div>
                                             <div class="col-12">
-                                                <p class="small">{{node.field_students_enrolled.value}} <em>Students Enrolled</em></p>
+                                                <p class="small">{{node.field_students_enrolled}} <em>Students Enrolled</em></p>
                                             </div>
                                             <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
@@ -64,31 +65,27 @@
                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
-                                                <h5>{{node.field_certified_level.value}}</h5>
+                                                <h5>{{node.field_certified_level}}</h5>
                                             </div>
                                             <div class="col-4">
-                                                <span class="free-text">{{node.field_course_amount.value}}</span>
+                                                <span class="free-text">{{node.field_course_amount}}</span>
                                             </div>
                                         </div>
                                         <div class="image">
 
-                                            {% if node.field_image.entity.uri.value %}
-                                                <img width="350" height="160" src="{{ file_url(node.field_image.entity.uri.value)}}" alt="course-image">
-                                            {% else %}
-                                                <img src="/themes/custom/athena/images/course-image2.png" alt="course-image">
-                                            {% endif %}
+                                            <img src="/themes/custom/athena/images/course-image2.png" alt="course-image">
 
                                         </div>
                                         <div class="course-details">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
-                                                {{ node.body.value|striptags|truncate(100)}}…
+                                                {{ node.body|striptags|truncate(100)}}…
                                             </div>
                                             <div class="row rating m-0">
                                                 <div class="col-6 p-0">
                                                     <div class="my-rating"></div>
                                                 </div>
-                                                <div class="col-2 p-0">{{node.field_rating.value}}</div>
+                                                <div class="col-2 p-0">{{node.field_rating}}</div>
                                             </div>
                                             <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
@@ -96,10 +93,10 @@
                                 </div>
                                 {% endfor %}
                             </div>
+                            <input type="hidden" id="pager" name="pager" value="1" />
                         </div>
                         <div class="col-12 text-center">
-                            <button id="loadMore" class="btn athena-btn purple-btn"><a href="#" style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
-                            <button id="showLess" class="btn athena-btn purple-btn" style="display: none;text-decoration:none;">Show Less</button>
+                            <a id="loadMore" href="#">Show More</a>
                         </div>
                     </div>
                     <!--courses List: END-->
@@ -113,7 +110,16 @@
 <script src="jquery.star-rating-svg.min.js"></script>
 
 <script type="text/javascript">
-  $(".my-rating").starRating({
+    jQuery("#loadMore").on('click', function() {
+        var pagerVal = jQuery('#pager').val();
+        var pager = parseInt(pagerVal);
+        pager = pager + 1;
+        var endpoint = Drupal.url('shortterm-courses/load-more/' + pager);
+        Drupal.ajax({ url: endpoint }).execute();
+        jQuery('#pager').val(pager);
+    });
+
+    jQuery(".my-rating").starRating({
         emptyColor: 'lightgray',
         hoverColor: '#ffc300',
         activeColor: '#ffc300',
@@ -121,10 +127,11 @@
         //strokeColor: '#ffc300',
         //strokeWidth: 6,
         starSize: 20
-  });
+    });
 </script>
 
 <script type="text/javascript">
+/*
     $(document).ready(function(){
 
         $.expr[':'].icontains = function(a, i, m) {
@@ -138,13 +145,14 @@
             matches.slideDown();
         });
 
-        $(".content").slice(0, 4).show();
+        $(".content").slice(0, 16).show();
         $("#loadMore").on("click", function(e){
             e.preventDefault();
-            $(".content:hidden").slice(0, 4).slideDown();
+            $(".content:hidden").slice(0, 16).slideDown();
             if($(".content:hidden").length == 0) {
                 $("#loadMore").text("No Content").addClass("noContent");
             }
         });
     });
+*/
 </script>

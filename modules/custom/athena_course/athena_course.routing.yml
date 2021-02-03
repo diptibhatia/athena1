@@ -121,3 +121,11 @@ athena_course.shortterm-courses:
     _title: 'Short term course'
   requirements:
     _permission: 'access content'
+
+athena_course.shortterm-courses-load-more:
+  path: '/shortterm-courses/load-more/{pager}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::loadMore'
+    _title: 'Short term course load more'
+  requirements:
+    _permission: 'access content'

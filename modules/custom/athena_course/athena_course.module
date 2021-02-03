@@ -407,7 +407,7 @@ function athena_course_page_attachments(array &$attachments) {
         if ((strpos($referer, 'MBAPrograms') !== false) || (strpos($referer, 'diploma') !== false) || (strpos($referer, 'pgcertificate') !== false) ) {
             $enableSalePixel = TRUE;
         }
-        if ($source == 'TradeTracker' && $enableSalePixel) {
+        if ($source == 'TradeTracker') {
           // Sale Pixel.
           $salePixel1 = "var ttConversionOptions = ttConversionOptions || [];
            ttConversionOptions.push({
