@@ -390,12 +390,14 @@ foreach($paragraph_course_team as $attached_node){
     }
 	$user_pic_url = file_create_url($user_pic);
   $description =  $attached_node->get('field_user_description')->value;
+  $description_long =  $attached_node->get('field_description')->value;
   $course_team[] = array(
   'name' => $name,
   'designation' => $designation,
   'user_pic' => $user_pic_url,
   'linked_in' => $linked_in,
   'description' => $description,
+  'description_long' => $description_long,
   'course_nid' => $course_nid,
   );
 
@@ -420,12 +422,14 @@ foreach($paragraph_course_batch as $attached_node){
     }
   $user_pic_url = file_create_url($user_pic);
   $description =  $attached_node->get('field_user_description')->value;
+  $description_long =  $attached_node->get('field_description')->value;
   $course_batch[] = array(
   'name' => $name,
   'designation' => $designation,
   'user_pic' => $user_pic_url,
   'linked_in' => $linked_in,
   'description' => $description,
+  'description_long' => $description_long,
   'country' => $country,
   'country_flag' => $country_flag,  
   'course_nid' => $course_nid,
