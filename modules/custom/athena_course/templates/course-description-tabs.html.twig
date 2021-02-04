@@ -491,6 +491,33 @@
         </div>
     </div>
 
+{# Data toggle #}
+
+{% for course_team_data in course_batch %}
+<div class="aboutus-modal modal fade" id="{{'m'}}{{course_team_data.course_nid|raw}}" tabindex="-1" role="dialog" aria-labelledby="aboutUsModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <div class="row">
+            <div class="col-md-4 right-img pl-0">
+              <img src="{{course_team_data.user_pic}}" class="img-fluid mx-auto brd-0" >
+            </div>
+            <div class="col-md-8">
+              <h3 class="purple-txt mb-0">{{course_team_data.name}}</h3>
+              <p class="purple-txt"> {{course_team_data.designation}}</p>
+              <p>{{course_team_data.description_long | raw}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
 
 {# DBA batch profile #}
 
@@ -509,6 +536,7 @@
                 <div class="owl-stage" style="transform: translate3d(-299px, 0px, 0px); transition: all 0.25s ease 0s; width: 2093px;">
                  {% set courseteamnum = 1 %}
                  {% for course_team_data in course_batch %}
+
                  {% if courseteamnum == 1 %}
                       {% set cactiveclass = '' %}
                       {% else %}
@@ -523,11 +551,14 @@
                                 <a style="all:unset" href="{{ course_team_data.linked_in}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
 
                             </div>
+                            
+
                             <h3>{{course_team_data.name}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
-                            <p>{{course_team_data.description|striptags|truncate(75)}}</p>
-                            <a style="display:none" href="{{ url('<front>') }}node/{{course_team_data.course_nid}}">Readmore</a>
+                            <p>{{course_team_data.description|striptags|truncate(175)}}</p>
                             
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Know More</a></p>
+
                             {% if  course_team_data.country_flag %}
                             <p><b>{{course_team_data.country}}</b><br>
                             <img src="{{course_team_data.country_flag}}" alt="country flag" style="opacity: 1;"></p>
@@ -1065,6 +1096,33 @@
 
 
 
+{# Data toggle #}
+
+{% for course_team_data in course_team %}
+<div class="aboutus-modal modal fade" id="{{'m'}}{{course_team_data.course_nid|raw}}" tabindex="-1" role="dialog" aria-labelledby="aboutUsModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <div class="row">
+            <div class="col-md-4 right-img pl-0">
+              <img src="{{course_team_data.user_pic}}" class="img-fluid mx-auto brd-0" >
+            </div>
+            <div class="col-md-8">
+              <h3 class="purple-txt mb-0">{{course_team_data.name}}</h3>
+              <p class="purple-txt"> {{course_team_data.designation}}</p>
+              <p>{{course_team_data.description_long | raw}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
 
     {% if course_team|length > 0%}
     <!--   Course Team -->
@@ -1072,11 +1130,6 @@
             <div class="wrapper">
                 <h2>Course Team</h2>
                 <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
-
-
-
-
-
 
 
                 <div class="owl-stage-outer">
@@ -1100,7 +1153,9 @@
                             <h3>{{course_team_data.name}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
                             <p>{{course_team_data.description|striptags|truncate(175)}}</p>
-                            <a style="display:none" href="{{ url('<front>') }}node/{{course_team_data.course_nid}}">Readmore</a>
+                            
+                            <p class="purple-txt"><a class="btn-link" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Know More</a></p>
+
                         </div>
                     </div>
                   </div>
