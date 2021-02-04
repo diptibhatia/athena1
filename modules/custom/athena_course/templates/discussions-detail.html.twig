@@ -9,7 +9,7 @@
 
                <div class="share-icon">
        {% set site_url = url("<current>") %}
-   <div class="list-unstyled a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="{{site_url}}" data-a2a-title="{{node.label}}" style="line-height: 32px; display: block; position: fixed;">
+   <div class="list-unstyled a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="{{site_url}}" data-a2a-title="{{node.label}}" style="line-height: 32px; display: block; position:fixed;">
       <li><a class="a2a_dd addtoany_share" href="https://www.addtoany.com/share"><img src="/themes/custom/athena/images/icons/share.svg" alt="Share"></a></li>
       <li><a class="a2a_button_facebook" target="_blank" rel="nofollow noopener"><img src="/themes/custom/athena/images/icons/facebook.svg"></a></li>
       <li><a class="a2a_button_twitter" target="_blank" rel="nofollow noopener"><img src="/themes/custom/athena/images/icons/twitter.svg"></a></li>
@@ -107,3 +107,32 @@
                   </div>
                </div>
             </div>
+
+<script>
+
+$(document).scroll(function() {
+            var y = $(document).scrollTop(),
+                header = $(".share-icon ul");
+            if(y <= 1600)  {
+                header.css({position: "fixed"});
+            } else {
+                header.css("position", "relative");
+            }
+        });
+
+        $(document).scroll(function() {
+            var y = $(document).scrollTop(),
+                header = $(".share-icon.mobile-share-icon ul");
+            if(y <= 3200)  {
+                header.css({position: "fixed"});
+            } else {
+                header.css("position", "relative");
+            }
+        });
+
+        const mq = window.matchMedia( "(max-width: 700px)" );
+
+        if (mq.matches) {
+          $('.insight-wrapper .share-icon').addClass('mobile-share-icon');
+        }
+      </script>
