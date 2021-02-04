@@ -48,7 +48,7 @@
                      <h3><b>Duration : </b> {{coursedata.field_course_duration.value}}</h3>
                   </div>
                   <div class="course-info">
-                     {{coursedata.field_course_banner_description.value | truncate(60, true)}}
+                     {{coursedata.field_course_banner_description.value | truncate(60, true)}} {{'...'}}
                      <span><a style="color: inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}" >Read More</a></span>
                   </div>
                   <div class="know-more">
