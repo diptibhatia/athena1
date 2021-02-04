@@ -96,7 +96,7 @@
                             <input type="hidden" id="pager" name="pager" value="1" />
                         </div>
                         <div class="col-12 text-center">
-                            <a id="loadMore" href="#">Show More</a>
+                            <a id="showMore" href="javascript:void(0)">Show More</a>
                         </div>
                     </div>
                     <!--courses List: END-->
@@ -110,13 +110,14 @@
 <script src="jquery.star-rating-svg.min.js"></script>
 
 <script type="text/javascript">
-    jQuery("#loadMore").on('click', function() {
+    jQuery("#showMore").on('click', function() {
         var pagerVal = jQuery('#pager').val();
         var pager = parseInt(pagerVal);
         pager = pager + 1;
         var endpoint = Drupal.url('shortterm-courses/load-more/' + pager);
         Drupal.ajax({ url: endpoint }).execute();
         jQuery('#pager').val(pager);
+        jQuery("#showMore").focus();
     });
 
     jQuery(".my-rating").starRating({

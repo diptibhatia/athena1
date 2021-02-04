@@ -6,13 +6,15 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\AppendCommand;
+use Drupal\Core\Ajax\RemoveCommand;
 
 use \Drupal\Core\Url;
 
 class ShortTermCourseController {
 
-    public function shortTermCourse(){
-        $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=4";
+    public function shortTermCourse() {
+        $limit = 16;
+        $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit";
         try {
             $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
             $data = (string)$response->getBody();
@@ -57,12 +59,18 @@ class ShortTermCourseController {
     }
 
     public function loadMore($pager) {
-        $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=$pager&limit=4";
+        $limit = 16;
+        $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=$pager&limit=$limit";
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
 
         $nodes = json_decode($data);
+
+        $total = $nodes->total;
+        $total_pages = $total/$limit;
+
+        $response = new AjaxResponse();
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data as $key => $value) {
@@ -85,7 +93,7 @@ class ShortTermCourseController {
                             </div>
                         </div>
                         <div class="course-details col-12 text-center p-0">
-                            <h3>{{node.label}}</h3>
+                            <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
                                 ' . substr($courses_data['body'], 0, 100) . '...
@@ -114,7 +122,7 @@ class ShortTermCourseController {
 
                         </div>
                         <div class="course-details">
-                            <h3>{{node.label}}</h3>
+                            <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 ' . substr($courses_data['body'], 0, 100) . '...
                             </div>
@@ -129,10 +137,14 @@ class ShortTermCourseController {
                     </div>
                 </div>';
             }
+            $response->addCommand(new AppendCommand('.shortterm-courses', $html));
+        }
+        if ($pager > $total_pages) {
+            $response->addCommand(new RemoveCommand('#showMore'));
         }
 
-        $response = new AjaxResponse();
-        $response->addCommand(new AppendCommand('.shortterm-courses', $html));
+
+
         return $response;
     }
 
