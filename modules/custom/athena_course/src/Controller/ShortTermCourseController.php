@@ -87,9 +87,9 @@ class ShortTermCourseController {
                     <div class="course-item-hover">
                         <div class="row">
                             <div class="col-12 social-icons">
-                                <a href="#"><img src="//themes/custom/athena/images/facebook.svg" /></a>
-                                <a href="#"><img src="//themes/custom/athena/images/twitter.svg" class="ml-2 mr-2" /></a>
-                                <a href="#"><img src="//themes/custom/athena/images/linkedin.svg" /></a>
+                                <a href="#"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                <a href="#"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                <a href="#"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                             </div>
                         </div>
                         <div class="course-details col-12 text-center p-0">
