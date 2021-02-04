@@ -1152,9 +1152,8 @@
                             </div>
                             <h3>{{course_team_data.name}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
-                            <p>{{course_team_data.description|striptags|truncate(175)}}</p>
-                            
-                            <p class="purple-txt"><a class="btn-link" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Know More</a></p>
+                            <p class="content-text">{{course_team_data.description|striptags|truncate(175)}}</p>
+                            <a class="btn-link text-center purple-txt" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Read More</a>
 
                         </div>
                     </div>
