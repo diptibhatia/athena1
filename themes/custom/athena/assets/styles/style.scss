@@ -59,10 +59,19 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 img {
     border-style: none;
 }
- .insight-thumbnail {
-    width: 100%;
-    max-height: 100px;
+ .insight-thumbnail {    
     overflow: hidden;
+    position: relative;
+ 
+    img.thumbnail {position: absolute; /* Take your picture out of the flow */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; /* Make the picture taking the size of it's parent */
+        width: 100%; /* This if for the object-fit */
+        height: 100%; /* This if for the object-fit */
+        object-fit: contain; /* Equivalent of the background-size: cover; of a background-image */
+        object-position: center;}
  }
 
 .insights-section .section-items .section-item-two h4 {
@@ -75,9 +84,7 @@ img {
 #registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
 #block-athena-content img {max-width:100%; min-height:auto;}
-.reason-section {
-    margin: 100px 0 50px 0;
-}
+ 
 .corporate-txt img  {height:auto; max-width:100%;}
 .top-banner .logos {width:auto;}
  
