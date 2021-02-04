@@ -28,9 +28,10 @@
     loop: false,
     margin: 30,
     nav: true,
-    navContainer: '.nav-outside-shop',
-    navClass: ['btn btn-square nav-outside-prev', 'btn btn-square nav-outside-next'],
-    navText: ['<img src="/themes/custom/athena/images/affiliatepage/previous.svg" />', '<img src="/themes/custom/athena/images/affiliatepage/next.svg" />'],
+    //navContainer: '.nav-outside-shop',
+    navClass: ['owl-prev', 'owl-next'],
+    //navText: ['<img src="/themes/custom/athena/images/affiliatepage/previous.svg" />', 
+    //'<img src="/themes/custom/athena/images/affiliatepage/next.svg" />'],
       dots: true,
     responsive: {
         0: {
