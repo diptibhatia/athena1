@@ -103,7 +103,7 @@
                                     carry 60 ECTS credits. <a href="{{ url('<front>') }}/ects">What Is ECTS?</a></p>
 
                                 {% endif %}
-                                {% endfor %}                                
+                                {% endfor %}
 
                             </div>
                         <div class="overview-points-card">
@@ -487,7 +487,7 @@
                 {{ get_static_data('admission_process', TRUE)|raw }}
 
 
-            
+
         </div>
     </div>
 
@@ -551,12 +551,12 @@
                                 <a style="all:unset" href="{{ course_team_data.linked_in}}"> <img src="{{course_team_data.user_pic}}" alt="Team Member" style="opacity: 1;"></a>
 
                             </div>
-                            
+
 
                             <h3>{{course_team_data.name}}</h3>
                             <h4>{{course_team_data.designation}}</h4>
                             <p>{{course_team_data.description|striptags|truncate(175)}}</p>
-                            
+
                             <p class="purple-txt"><a class="btn-link" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Know More</a></p>
 
                             {% if  course_team_data.country_flag %}
@@ -566,10 +566,10 @@
                             {% else %}
                             <p><b>{{course_team_data.country}}</b></p>
 
-                            {% endif %}                            
+                            {% endif %}
 
 
-                        
+
                         </div>
                     </div>
                   </div>
@@ -701,11 +701,11 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="how-learn course-team">
         <div class="wrapper">
-            
+
             {{ get_static_data('how_you_learn', TRUE)|raw }}
 
         </div>
@@ -803,7 +803,7 @@
                 <div class="container-fluid p-0 about-us-wrapper form">
                     <div class="course-login-wrapper">
                         <div class="login-details">
-                        <form  id="speak_to_advisor" method="post">
+                        <form  id="course_speak_to_advisor" method="post">
                             <h2>Still Not Sure ?</h2>
                             <h3>Speak to an Advisor<span>&nbsp;</span></h3>
                             <p>Interested in more information ? Submit a request for call back from our Admission Counsellor </p>
@@ -1242,13 +1242,13 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-  
+
       jQuery("#smo_form_submit").click(function() {
         var msg = '';
         var regex = /^([a-zA-Z])+$/;
-        
+
         fname  = jQuery("#speak_first_name").val();
-        
+
         if(jQuery("#speak_first_name").val() == '') {
           msg += '\n\u2022  Please enter first name';
         }else if(!regex.test(jQuery("#speak_first_name").val())) {
@@ -1291,7 +1291,7 @@
         }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
             msg += '\n\u2022  Invalid Phone number';
         }
-    
+
         if(!jQuery("#speak_consent").prop('checked') == true){
            msg += '\n\u2022  Please accept consent terms';
         }
@@ -1405,7 +1405,7 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
 
   return this.optional(element) || /^[a-z]+$/i.test(value);
 
-}, "Please enter only letters"); 
+}, "Please enter only letters");
 
 jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, "");
@@ -1415,7 +1415,7 @@ jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
 
 
 
-jQuery("#speak_to_advisor").validate({
+jQuery("#course_speak_to_advisor").validate({
 
         rules: {
 
@@ -1451,13 +1451,13 @@ jQuery("#speak_to_advisor").validate({
 
             },
 
-            "phone": { 
+            "phone": {
 
-                required: true, 
+                required: true,
 
                 minlength: 10,
 
-                phoneUS: true 
+                phoneUS: true
 
             },
 
@@ -1487,10 +1487,10 @@ jQuery("#speak_to_advisor").validate({
 
                 email: "PLease enter a valid email"
 
-            },            
+            },
 
 
-        },                
+        },
 
     });
 
