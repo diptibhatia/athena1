@@ -23,7 +23,7 @@
 .course-team-card {
     background-color: #fff;
     width: 269px;
-    height: 450px;
+    height: 480px;
     border-radius: 6px;
     box-shadow: 0 2px 25px 2px #d5dbfb;
     box-sizing: border-box;
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 27px 21px;
+    padding: 12px;
     color: $primaryColor;
     position: relative;
     overflow: auto;
@@ -90,10 +90,11 @@
         color: $secondaryColor;
         text-align: center; 
         margin-top:20px;
-        max-height: 160px;
+        min-height: 130px;
+        max-height: 130px;
         text-overflow: ellipsis;
         overflow: hidden;
-        -webkit-line-clamp: 6;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         display: -webkit-box;
     }
@@ -104,7 +105,7 @@
         color: $titlePink;
         text-decoration: none;
         letter-spacing: .2px;
-        position: absolute;
-        bottom: 27px;
+        //position: absolute;
+        //bottom: 27px;
     }
 }
