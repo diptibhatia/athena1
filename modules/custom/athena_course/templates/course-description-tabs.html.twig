@@ -502,8 +502,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
           <div class="row">
-            <div class="col-md-4 right-img pl-0">
-              <img src="{{course_team_data.user_pic}}" class="img-fluid mx-auto brd-0" >
+            <div class="col-md-4" style="border-radius:6px;">
+              <img src="{{course_team_data.user_pic}}" class="img-fluid mx-auto brd-0 p-1">
             </div>
             <div class="col-md-8">
               <h3 class="purple-txt mb-0">{{course_team_data.name}}</h3>
@@ -561,7 +561,7 @@
 
                             {% if  course_team_data.country_flag %}
                             <div class="text-center"><b>{{course_team_data.country}}</b><br>
-                            <img src="{{course_team_data.country_flag}}" alt="country flag" style="width:auto; opacity: 1;"></div>
+                            <img src="{{course_team_data.country_flag}}" alt="country flag" style="width:auto; display:inline; opacity: 1;"></div>
                             {% else %}
                             <div class="text-center"><b>{{course_team_data.country}}</b></div>
                             {% endif %}
@@ -1105,7 +1105,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
           <div class="row">
-            <div class="col-md-4 right-img pl-0">
+            <div class="col-md-4 right-img">
               <img src="{{course_team_data.user_pic}}" class="img-fluid mx-auto brd-0" >
             </div>
             <div class="col-md-8">
