@@ -92,7 +92,7 @@
                                             <h3><b>Duration : </b> {{academicdata.field_course_duration.value}}</h3>
                                          </div>
                                          <div class="course-info">
-                                           {{academicdata.field_course_banner_description.value | truncate(60, true)}} <br><span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
+                                           {{academicdata.field_course_banner_description.value | truncate(60, true)}} {{'...'}} <span><a style="color: inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Read More</a></span>
                                          </div>
                                          <div class="know-more">
                                             <p><a style="color:inherit;" href="{{ url('<front>') }}course/{{academicdata.id}}" >Know More</a></p>
