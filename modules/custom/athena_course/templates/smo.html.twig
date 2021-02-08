@@ -17,7 +17,7 @@
  {% endfor %}
                 </div>
             <h1>{{course_title}}</h1>
-            
+
 
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
                 <br>{{awarding_body}}</p>
@@ -433,7 +433,7 @@
         var msg = '';
         var regex = /^([a-zA-Z])+$/;
         fname  = jQuery("#speak_first_name").val();
-        
+
         if(jQuery("#speak_first_name").val() == '') {
           msg += '\n\u2022  Please enter first name';
         }else if(!regex.test(jQuery("#speak_first_name").val())) {
@@ -545,6 +545,10 @@ Campaign:String(jQuery("#utm_campaign").val()),
                                 }
                         }
                     });
+
+
+            initiateSendingMail('speak_to_advisor', jQuery('#speak_email').val());
+
            jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
@@ -604,7 +608,7 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
 
   return this.optional(element) || /^[a-z]+$/i.test(value);
 
-}, "Please enter only letters"); 
+}, "Please enter only letters");
 
 jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, "");
@@ -650,13 +654,13 @@ jQuery("#speak_to_advisor").validate({
 
             },
 
-            "phone": { 
+            "phone": {
 
-                required: true, 
+                required: true,
 
                 minlength: 10,
 
-                phoneUS: true 
+                phoneUS: true
 
             },
 
@@ -686,10 +690,10 @@ jQuery("#speak_to_advisor").validate({
 
                 email: "PLease enter a valid email"
 
-            },            
+            },
 
 
-        },                
+        },
 
     });
 
