@@ -16,8 +16,9 @@
                <h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.</h3>
                <button onclick="window.location='/insights/testimonials';">View All</button>
             </div>
+
             <div class="item-two">
-               {% for testidata in testi %}
+               {% for testidata in testi %}            
                   {% if loop.index ==1 %}
                      <div class="image-dot-testimonials-one"><img alt="dots" src="/themes/custom/athena/images/dots-course.svg" /></div>
                      <div class="student-review">
@@ -29,11 +30,11 @@
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
-                              {{ text|length > 45 ? text|slice(0, 45) : text }}
+                              {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
 
                            <div class="student-info">
@@ -58,11 +59,11 @@
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
-                              {{ text|length > 45 ? text|slice(0, 45) : text }}
+                              {{ text|length > 90 ? text|slice(0, 90) ~ '...': text }}
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">
 
@@ -86,11 +87,11 @@
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
-                              {{ text|length > 45 ? text|slice(0, 45) : text }}
+                              {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}/node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">
 
