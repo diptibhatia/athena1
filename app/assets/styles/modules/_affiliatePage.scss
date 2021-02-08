@@ -519,21 +519,22 @@
           margin: 0 0 20px
       }
       a {
-          color: #25b7d3;
-          transition: all 150ms ease-in;
-      }
-      a.line {
-          transition: border 0.2s;
-          padding-bottom: 1px;
-          border-bottom: 1px solid transparent;
-      }
-      a.line:hover {
-          border-bottom: 1px solid #25b7d3;
-          transition: border 0.2s;
-      }
-      a:hover,
-      a:focus {
-          color: #ffcfe3;
+         //color: #25b7d3;
+         color: $titlePink;
+         transition: all 150ms ease-in;
+     }
+     a.line {
+         transition: border 0.2s;
+         padding-bottom: 1px;
+         border-bottom: 1px solid transparent;
+     }
+     a.line:hover {
+         border-bottom: 1px solid #25b7d3;
+         transition: border 0.2s;
+     }
+     a:hover,
+     a:focus {
+         color: #ffcfe3;
           text-decoration: none;
       }
       .nocolor {

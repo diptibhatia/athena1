@@ -534,7 +534,7 @@ div#block-discussions .title span {
     height: auto;
     opacity: 0.4;
     object-fit: cover;
-    @include atSize424 {
+    @media screen and (max-width:600px) {
       display: none;
     }
   }
