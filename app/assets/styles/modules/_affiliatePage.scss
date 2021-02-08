@@ -246,11 +246,15 @@
       }
       
       .btn.btn-pink {
-        border-radius: 6px;
-        box-shadow: 0 2px 25px 2px #d5dbfb;
-        background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
-        padding: 18px;
-        color:#fff;
+        width: 347px;
+    height: 50px;
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px #d5dbfb;
+    background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
+    font-family: Lato;
+    font-size: 16px; 
+    color: #ffffff;
+    border: none;
       }
       
       .form-control {
@@ -519,7 +523,8 @@
           margin: 0 0 20px
       }
       a {
-          color: #25b7d3;
+          //color: #25b7d3;
+          color: $titlePink;
           transition: all 150ms ease-in;
       }
       a.line {
