@@ -47,9 +47,11 @@
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 
+#courses-block .owl-nav {
+    top: -35px;
+}
+.views-element-container .testimonials {margin-top: auto;}
 .row { width:100%;}
-
-.clearfix {clear: both;}
 
 .partners .partner-logos .logo {
     align-items: center;
@@ -73,7 +75,7 @@ img {
 .get-started button {
     background: transparent;
 }
-.help-inline-error {color:$titlePink; font-size: 14px;}
+.help-inline-error {color:red; font-size: 14px;}
 #registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
 #block-athena-content img {max-width:100%; min-height:auto;}
@@ -133,12 +135,11 @@ img {
     border-radius:50%;
    
 }
-// .page-item.previous .page-link, .next .page-link { 
-//     color: #ff026f;
-// }
-// .previous .page-link:hover, .next .page-link:hover { 
-//     color: #ff026f;
-// } 
+
+@media screen and (max-width:800px)
+{
+    .video iframe {height: auto; margin:10px;}    
+}
 
 .image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
     pointer-events: none;
