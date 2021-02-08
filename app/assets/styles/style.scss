@@ -47,6 +47,10 @@
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 
+#courses-block .owl-nav {
+    top: -35px;
+}
+.views-element-container .testimonials {margin-top: auto;}
 .row { width:100%;}
 
 .partners .partner-logos .logo {
@@ -71,7 +75,7 @@ img {
 .get-started button {
     background: transparent;
 }
-.help-inline-error {color:$titlePink; font-size: 14px;}
+.help-inline-error {color:red; font-size: 14px;}
 #registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
 #block-athena-content img {max-width:100%; min-height:auto;}
@@ -99,7 +103,7 @@ img {
     img {width: 50px;}
 }
   
-.flx-duration, .error {color:$titlePink;} 
+.flx-duration, .error {color:red;} 
  
 .insight-wrapper .insight-cards {
     max-width: 240px;
@@ -131,17 +135,16 @@ img {
     border-radius:50%;
    
 }
-// .page-item.previous .page-link, .next .page-link { 
-//     color: #ff026f;
-// }
-// .previous .page-link:hover, .next .page-link:hover { 
-//     color: #ff026f;
-// } 
+
+@media screen and (max-width:800px)
+{
+    .video iframe {height: auto; margin:10px;}    
+}
 
 .image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
     pointer-events: none;
 }   
- 
+ .terms-label {color:red;}
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
     border: solid 2px $titlePink;
@@ -201,14 +204,14 @@ text-align: center;
 height: 52px;
 padding: 15px 25px 15px 24px;
 border-radius: 12px;
-background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color: white;
+background-color: $titlePink;text-align: center;font-weight: bold;border: 0px;color: white;
 }
 
 
 .copyToClipboard{
     position: relative;
     padding-left: 80px;
-    color: #ff0068;
+    color: $titlePink;
     font-weight: bold;
     @include atSize424{
         text-align: center;

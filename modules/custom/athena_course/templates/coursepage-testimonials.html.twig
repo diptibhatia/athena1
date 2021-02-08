@@ -36,13 +36,13 @@
                            </div>
                            <div class="info">
                               <h3><span>“</span>
-                                 {{ h3Text|length > 45 ? h3Text|slice(0, 45) : h3Text }}
+                                 {{ h3Text|length > 90 ? h3Text|slice(0, 90) ~ '...' : h3Text }}
                               </h3>
 
                               <p>
 
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
 
                                  <div class="student-info">
                                     <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
@@ -72,13 +72,13 @@
                            </div>
                            <div class="info">
                               <h3><span>“</span>
-                                 {{ h3Text|length > 45 ? h3Text|slice(0, 45) : h3Text }}
+                                 {{ h3Text|length > 90 ? h3Text|slice(0, 90) ~ '...' : h3Text }}
                               </h3>
 
                               <p>
 
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
 
                                  <div class="student-info">
                                     <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
@@ -104,14 +104,14 @@
                            </div>
                            <div class="info">
                               <h3><span>“</span>
-                                 {{ h3Text|length > 45 ? h3Text|slice(0, 45) : h3Text }}
+                                 {{ h3Text|length > 90 ? h3Text|slice(0, 90) ~ '...' : h3Text }}
                               </h3>
 
 
                               <p>
 
                                  {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                                 &nbsp;<span><a href="{{ url('<front>') }}/insights/testimonials" hreflang="en">ReadMore</a></span>
+                                 &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
 
                                  <div class="student-info">
                                     <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>

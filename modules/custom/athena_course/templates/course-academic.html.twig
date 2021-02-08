@@ -30,18 +30,9 @@
                     
 
                  {{ get_static_data('earning_a_degree', TRUE)|raw }} 
-
-
-                    </div>
-                </div>
-
-
-
+             
                 <div id="academic-content" class="col-md-8 col-sm-12 academic-content pt-4">
                     <h2 class="title">Find Your Course</h2>
-
-
-
  {% for course_data in course_list %}
                     <div onclick="window.location='course/{{course_data.id}}';" class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content--course" style="display:none;">
                     <div class="col-md-12 col-sm-12 row">
@@ -60,9 +51,10 @@
                         </div>
                     </div>
 
-                        <div class="row m-0 academic-card p-3 w-100">
+                        <div class="academic-card p-3 w-100">
                             <p>{{course_data.field_course_banner_description.value}}  <a  href="{{ url('<front>') }}course/{{course_data.id}}" class="purple-txt">Read More</a></p>
-
+                            </div>
+                                <div class="row m-0 academic-card p-3 w-100">
                             <div class="col-md-3 col-sm-3 p-0 pt-3">
                                <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon" class="">
                                 <p>Flexible <br> {{course_data.field_course_duration.value}}</p>
@@ -141,8 +133,8 @@
                 </div>
             </div>
         </div>
-        </div>
-
+         
+  </div>
 
         <div class="container-fluid">
             <div class="container p-0">

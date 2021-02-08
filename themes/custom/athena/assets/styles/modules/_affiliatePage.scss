@@ -519,7 +519,8 @@
           margin: 0 0 20px
       }
       a {
-          color: #25b7d3;
+          //color: #25b7d3;
+          color: $titlePink;
           transition: all 150ms ease-in;
       }
       a.line {
