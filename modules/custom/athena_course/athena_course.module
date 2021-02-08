@@ -505,6 +505,19 @@ function athena_course_page_attachments(array &$attachments) {
           ];
         }
 
+        if ((strpos($referer, 'MBAPrograms') !== false) && $source == 'WELIONADS') {
+          // WELIONADS Pixel.
+          $welionadsPixel = '<img src="https://welionads.g2afse.com/success.jpg?offer_id=10&afid=' . $uid . '&afprice=&afgoal=2&afstatus=2&afsecure=6dfdd6e685a97b186be752702066b5f0" height="1" width="1" alt=""/>';
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => '',
+              '#value' => \Drupal\Core\Render\Markup::create($welionadsPixel),
+              '#weight' => 10,
+            ],
+            'welionads'
+          ];
+        }
+
         if (!empty($from) && $from == 'affiliate') {
           if (!empty($uid)) {
            $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId&source=$source";
