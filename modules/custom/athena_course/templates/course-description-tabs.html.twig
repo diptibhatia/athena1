@@ -557,7 +557,7 @@
                             <h4>{{course_team_data.designation}}</h4>
                             <p class="context-text">{{course_team_data.description|striptags|truncate(175)}}</p>
 
-                            <a class="mb-3 btn-link text-center purple-txt" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Know More</a> 
+                            <a class="mb-3 btn-link text-center purple-txt" href="#" role="button" data-toggle="modal" data-target="#{{'m'}}{{course_team_data.course_nid|raw}}">Know More</a>
 
                             {% if  course_team_data.country_flag %}
                             <div class="text-center"><b>{{course_team_data.country}}</b><br>
@@ -1344,7 +1344,11 @@ Campaign:String(jQuery("#utm_campaign").val()),
                                 }
                         }
                     });
-           jQuery('#speak_first_name').val("");
+
+
+          initiateSendingMail('course_speak_to_advisor', jQuery('#speak_email').val());
+
+          jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
           jQuery('#speak_country').val("");

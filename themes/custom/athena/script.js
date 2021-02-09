@@ -1,5 +1,26 @@
 jQuery(".selected-flag").after("<div class='country-code' />");
 jQuery('.iti__flag-container').remove();
+
+function initiateSendingMail(form_id, mail) {
+  var dataObj = {
+    'form_id': form_id,
+    'to': mail
+  };
+  jQuery.ajax(baseUrl + '/send/mail', {
+      type: 'POST',
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      data: JSON.stringify(dataObj) ,
+      dataType: 'json',
+      success: function (data, status, xhr) {
+        console.log(data);
+      },
+      error: function (jqXhr, textStatus, errorMessage) {
+        console.log(jqXhr);
+      }
+  });
+}
+
 jQuery(document).ready(function() {
 
     // Typing effect in home page - starts here.
@@ -84,8 +105,6 @@ jQuery(document).ready(function() {
             window.scrollTo(0, 0);
         });
     }
-
-
 });
 
 jQuery(document).on("click", ".country-list li", function(event) {
@@ -94,22 +113,23 @@ jQuery(document).on("click", ".country-list li", function(event) {
 });
 
 function scrollEvent(){
-        jQuery(function(){
-            var stopFloating = jQuery('.stopScroll');
-            if (stopFloating.length > 0) {
-                var stop = stopFloating.offset().top;
-                jQuery(document).scroll(function() {
-                    var y = jQuery(window).scrollTop(),
-                    header = jQuery(".share-icon div");
-                    if(y <= stop-500)  {
-                        header.css({display: "block"});
-                    header.css({position: "fixed"});
-                    } else {
-                        header.css({display: "none"});
-                    }
-                });
-            }
+    jQuery(function(){
+        var stopFloating = jQuery('.stopScroll');
+        if (stopFloating.length > 0) {
+            var stop = stopFloating.offset().top;
+            jQuery(document).scroll(function() {
+                var y = jQuery(window).scrollTop(),
+                header = jQuery(".share-icon div");
+                if(y <= stop-500)  {
+                    header.css({display: "block"});
+                header.css({position: "fixed"});
+                } else {
+                    header.css({display: "none"});
+                }
+            });
+        }
     });
 }
+
 window.onload = scrollEvent();
 

@@ -1,7 +1,6 @@
+var baseUrl = 'https://athena.edu';
 
         jQuery(document).ready(function() {
-            var baseUrl = 'https://athena.edu';
-            //var baseUrl = 'http://localhost/athenawebsite';
             var search_url = baseUrl + '/search-results/abc?univ=';
             jQuery("#partner_search" ).change(function() {
               var partner =  jQuery("#partner_search").val();
@@ -36,7 +35,7 @@
               window.location= search_url + partner + '&lang=' +lang+ '&level=' +level+ '&duration='+duration;
             });
 
-            if (jQuery("#partner_search").length > 0 && jQuery("#language_search" ).length > 0 
+            if (jQuery("#partner_search").length > 0 && jQuery("#language_search" ).length > 0
               && jQuery("#duration_search" ).length > 0 && jQuery("#level_search" ).length > 0 ) {
               var univ = getUrlParameter('univ');
               var lang = getUrlParameter('lang');
@@ -54,7 +53,7 @@
               if (level != undefined) {
                 jQuery("#level_search").val(level);
               }
-               
+
             }
 
 
@@ -65,7 +64,7 @@
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-z]+$/i.test(value);
-}, "Please enter only letters"); 
+}, "Please enter only letters");
 
 jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, "");
@@ -101,9 +100,9 @@ jQuery("#get_in_touch_form").validate({
                 emailExt: true
             },
 
-            "phone": { 
-                required: true,                
-                phoneUS: true 
+            "phone": {
+                required: true,
+                phoneUS: true
             },
             'get_in_touch_consent[]' :{
                 required: true,
@@ -124,13 +123,13 @@ jQuery("#get_in_touch_form").validate({
             },
 
             "phone": {
-                required: "Please enter phone number"                
+                required: "Please enter phone number"
             },
             "get_in_touch_consent[]": {
-                required: "Please agree to our terms & conditions"                
-           },  
+                required: "Please agree to our terms & conditions"
+           },
 
-        },                
+        },
 
     });
 
@@ -206,7 +205,7 @@ jQuery("#get_in_touch_form").validate({
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (response) {
-                          alert(url);  
+                          alert(url);
                           jQuery('#get_in_touch_course').val("");
                           jQuery('#get_in_touch_fname').val("");
                           jQuery('#get_in_touch_lname').val("");
@@ -229,7 +228,7 @@ jQuery("#get_in_touch_form").validate({
                         }
                     });
 */
-jQuery.ajax('https://athena.edu/save/contact', {
+jQuery.ajax(baseUrl + '/save/contact', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -246,6 +245,9 @@ jQuery.ajax('https://athena.edu/save/contact', {
                                 }
                         }
                     });
+
+
+                          initiateSendingMail('get_in_touch', jQuery('#get_in_touch_email').val());
 
                           jQuery('#get_in_touch_course').val("");
                           jQuery('#get_in_touch_fname').val("");
@@ -397,7 +399,7 @@ jQuery.ajax('https://athena.edu/save/contact', {
                 }else if(!regex.test(jQuery("#reg_email").val())) {
                   msg += '\n\u2022  Please enter valid Email id';
                 }
-                
+
                 var ph_num = jQuery("#phone").val();
                 var num_len = ph_num.length;
 
@@ -472,21 +474,28 @@ jQuery.ajax('https://athena.edu/save/contact', {
 
              });
 
-             jQuery("#news-letter-subscribe").click(function() {
 
 
-                 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  if(!regex.test(jQuery('#newsletter-email-input').val())) {
-    jQuery("#newsletter-info-box-error").html("Invalid Email id");
-    jQuery("#newsletter-info-box-error").removeClass('hide');
-    jQuery('#newsletter-info-box-error').css('display','inherit');
-  }else{
-       jQuery('#newsletter-info-box-error').css('display','none');
-      jQuery("#newsletter-info-box").html("Subscribed Successfullly");
-       jQuery('#newsletter-info-box').css('display','inherit');
-                 jQuery("#newsletter-info-box").removeClass('hide');
-  }
-                 });
+           jQuery("#news-letter-subscribe").click(function() {
+              var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+              if(!regex.test(jQuery('#newsletter-email-input').val())) {
+                jQuery("#newsletter-info-box-error").html("Invalid Email id");
+                jQuery("#newsletter-info-box-error").removeClass('hide');
+                jQuery('#newsletter-info-box-error').css('display','inherit');
+              }else{
+
+                initiateSendingMail('news-letter-subscribe', jQuery('#newsletter-email-input').val());
+
+                jQuery('#newsletter-info-box-error').css('display','none');
+                jQuery("#newsletter-info-box").html("Subscribed Successfullly");
+                jQuery('#newsletter-info-box').css('display','inherit');
+                jQuery("#newsletter-info-box").removeClass('hide');
+              }
+           });
+
+
+
+
             jQuery("#speak_submit").click(function() {
                 var msg = '';
                 if(jQuery("#speak_first_name").val() == '') {

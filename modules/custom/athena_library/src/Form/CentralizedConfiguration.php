@@ -118,6 +118,26 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('how_you_learn.format'),
     ];
 
+    $form['email_templates'] = array(
+      '#type' => 'details',
+      '#title' => t('Email Templates'),
+      '#collapsible' => TRUE,
+      '#group' => 'central_config',
+    );
+
+    $form['email_templates']['news_subscription_subject'] = [
+      '#type' => 'textfield',
+      '#title' => 'Subject',
+      '#default_value' => $config->get('news_subscription_subject'),
+    ];
+
+    $form['email_templates']['news_subscription'] = [
+      '#type' => 'text_format',
+      '#title' => 'News Subscription',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('news_subscription.value'),
+      '#format' => $config->get('news_subscription.format'),
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -141,6 +161,11 @@ class CentralizedConfiguration extends ConfigFormBase {
 
       ->set('how_you_learn.value', $form_state->getValue('how_you_learn')['value'])
       ->set('how_you_learn.format', $form_state->getValue('how_you_learn')['format'])
+
+      ->set('news_subscription_subject', $form_state->getValue('news_subscription_subject'))
+
+      ->set('news_subscription.value', $form_state->getValue('news_subscription')['value'])
+      ->set('news_subscription.format', $form_state->getValue('news_subscription')['format'])
 
       ->save();
     parent::submitForm($form, $form_state);
