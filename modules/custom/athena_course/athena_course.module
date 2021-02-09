@@ -505,7 +505,13 @@ function athena_course_page_attachments(array &$attachments) {
           ];
         }
 
-        if ((strpos($referer, 'MBAPrograms') !== false) && $source == 'WELIONADS') {
+        $welionadsPixelPages = [
+          'MBAPrograms',
+          'pgcertificateEnrol',
+          'diplomaEnrol',
+          'CMIProgramsEnrol'
+        ];
+        if (in_array($referer, $welionadsPixelPages) && $source == 'WELIONADS') {
           // WELIONADS Pixel.
           $welionadsPixel = '<img src="https://welionads.g2afse.com/success.jpg?offer_id=10&afid=' . $uid . '&afprice=&afgoal=2&afstatus=2&afsecure=6dfdd6e685a97b186be752702066b5f0" height="1" width="1" alt=""/>';
           $attachments['#attached']['html_head'][] = [
