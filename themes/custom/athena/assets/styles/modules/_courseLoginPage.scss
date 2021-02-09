@@ -150,7 +150,9 @@
 			width: 100%;
 			text-align: left;
 			padding: 10px 30px;
-			label {display: inline-block;}
+			label {display: inline-block; color:#303030;
+			a {color:#303030}
+			}
 			button {
 				width: 100%;
 			  	height: 50px;
