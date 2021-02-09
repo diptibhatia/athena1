@@ -1,72 +1,84 @@
 <head>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet'
+        type='text/css'>
 </head>
 <div class="main-wrapper container-fluid p-0 academic-program-wrapper">
 
-        <div class="banner container-fluid banner-image p-0 bg-white">
+    <div class="banner container-fluid banner-image p-0 bg-white">
         {% if header_image|trim is not empty %}
-            <img src="{{ header_image }}" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
-            {% endif %}
-            {% if header_image|trim is empty %}
-             <img src="/themes/custom/athena/images/academic-program.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
-             {% endif %}
-            <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
-            <div class="container carousel-caption text-left pl-0">
-                <h1 class="strong text-secondaryColor banner_title"><span class="purple-txt">{{title1}}</span> {{title2}}</h1>
-                <div class="text-secondaryColor banner_text">
-                     {{desc | raw}}
-                </div>
-                <a href="#academic-content" style="font-weight:initial;color:inherit"><button class="btn academic-btn mt-3 btn-outline-violet">See all Courses</button></a>
+        <img src="{{ header_image }}" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
+        {% endif %}
+        {% if header_image|trim is empty %}
+        <img src="/themes/custom/athena/images/academic-program.png"
+            class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
+        {% endif %}
+        <img src="/themes/custom/athena/images/about-us-mobile-banner.png"
+            class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
+        <div class="container carousel-caption text-left pl-0">
+            <h1 class="strong text-secondaryColor banner_title"><span class="purple-txt">{{title1}}</span> {{title2}}
+            </h1>
+            <div class="text-secondaryColor banner_text">
+                {{desc | raw}}
             </div>
+            <a href="#academic-content" style="font-weight:initial;color:inherit"><button
+                    class="btn academic-btn mt-3 btn-outline-violet">See all Courses</button></a>
         </div>
+    </div>
 
-        
-
-
-        <div class="container-fluid p-0 academic-bg-wrap pb-3">
-            <div class="pt-4 container">
+     <div class="container-fluid p-0 academic-bg-wrap pb-3">
+        <div class="pt-4 container">
             <div class="row">
                 <div class="container bg-white shadow-lg rounded-md m-0 mb-4 pl-0">
-                    
+                     {{ get_static_data('earning_a_degree', TRUE)|raw }} 
+                
 
-                 {{ get_static_data('earning_a_degree', TRUE)|raw }} 
-             
                 <div id="academic-content" class="col-md-8 col-sm-12 academic-content pt-4">
                     <h2 class="title">Find Your Course</h2>
- {% for course_data in course_list %}
-                    <div onclick="window.location='course/{{course_data.id}}';" class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content--course" style="display:none;">
-                    <div class="col-md-12 col-sm-12 row">
-                        <div class="col-md-9 col-sm-9">
-                            <h3 class="card-title"><a style="color:inherit" href="{{ url('<front>') }}course/{{course_data.id}}">{{course_data.label}}</a></h3>
-                            <ul class="list-unstyled d-flex m-0">
-                                <li>{{ get_university_link(course_data.field_course_awarding_body.value) }}</li>
+                    {% for course_data in course_list %}
+                    <div onclick="window.location='course/{{course_data.id}}';"
+                        class="row bg-white shadow-sm rounded mr-1 mb-4 pt-2 content--course" style="display:none;">
+                        <div class="col-md-12 col-sm-12 row">
+                            <div class="col-md-9 col-sm-9">
+                                <h3 class="card-title"><a style="color:inherit"
+                                        href="{{ url('<front>') }}course/{{course_data.id}}">{{course_data.label}}</a>
+                                </h3>
+                                <ul class="list-unstyled d-flex m-0">
+                                    <li>{{ get_university_link(course_data.field_course_awarding_body.value) }}</li>
                                     {% if course_data.field_course_ects_credit.value is not empty %}
-                                <li>{{course_data.field_course_ects_credit.value}} {{course_data.field_courses_credit_type.0.value|raw}} Credits</li>
-                                     {% endif %}
-                                <li>100% Online</li>
-                            </ul>
+                                    <li>{{course_data.field_course_ects_credit.value}}
+                                        {{course_data.field_courses_credit_type.0.value|raw}} Credits</li>
+                                    {% endif %}
+                                    <li>100% Online</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-3 academic-price p-0 pt-2">
+                                <span class="">${{course_data.field_course_total_fee.value}}</span>
+                            </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 academic-price p-0 pt-2">
- <span class="">${{course_data.field_course_total_fee.value}}</span>
-                        </div>
-                    </div>
 
                         <div class="academic-card p-3 w-100">
-                            <p>{{course_data.field_course_banner_description.value}}  <a  href="{{ url('<front>') }}course/{{course_data.id}}" class="purple-txt">Read More</a></p>
-                            </div>
-                                <div class="row m-0 academic-card p-3 w-100">
+                            <p>{{course_data.field_course_banner_description.value}} <a
+                                    href="{{ url('<front>') }}course/{{course_data.id}}" class="purple-txt">Read
+                                    More</a></p>
+                        </div>
+                        <div class="row m-0 academic-card p-3 w-100">
                             <div class="col-md-3 col-sm-3 p-0 pt-3">
-                               <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon" class="">
+                                <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon"
+                                    class="">
                                 <p>Flexible <br> {{course_data.field_course_duration.value}}</p>
                             </div>
                             <div class="col-md-4 col-sm-4 p-0 pt-3" style="display:none">
-                               <img src="/themes/custom/athena/images/coursepage/course-certification.svg" alt="icon" class="">
-                                <p>{{course_data.field_course_certification_label.value}} <br> {{course_data.field_course_certification.value}}</p>
+                                <img src="/themes/custom/athena/images/coursepage/course-certification.svg" alt="icon"
+                                    class="">
+                                <p>{{course_data.field_course_certification_label.value}} <br>
+                                    {{course_data.field_course_certification.value}}</p>
                             </div>
                             {% if course_data.field_course_accreditations.0.value is not empty %}
                             <div class="col-md-5 col-sm-5 p-0 pt-3">
-                               <img src="/themes/custom/athena/images/coursepage/course-accreditation.svg" alt="icon" class="">
-                                <p>Accreditations <br> {{ course_data.field_course_accreditations.0.value|raw }} <br> {{ course_data.field_course_accreditations.1.value|raw }}</p>
+                                <img src="/themes/custom/athena/images/coursepage/course-accreditation.svg" alt="icon"
+                                    class="">
+                                <p>Accreditations <br> {{ course_data.field_course_accreditations.0.value|raw }} <br> {{
+                                    course_data.field_course_accreditations.1.value|raw }}</p>
                             </div>
                             {% endif %}
                         </div>
@@ -75,111 +87,133 @@
 
                     {% endfor %}
                     <div class="row d-flex justify-content-center">
-                        <button  id="loadMore" class="btn athena-btn purple-btn"><a href="{{ url('<front>') }}course-home" style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
-                    <button id="showLess" class="btn athena-btn purple-btn" style="display: none;text-decoration:none;">Show Less</button>
+                        <button id="loadMore" class="btn athena-btn purple-btn"><a
+                                href="{{ url('<front>') }}course-home"
+                                style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
+                        <button id="showLess" class="btn athena-btn purple-btn"
+                            style="display: none;text-decoration:none;">Show Less</button>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 pt-4">
-                    <div class="bg-skyblue"><p class="text-center pt-2 m-0 strong">Get in Touch</p>
-<p class="text-center p-2">Fill your details in the form below and we will be in touch to discuss your learning needs</p>
+                    <div class="bg-skyblue">
+                        <p class="text-center pt-2 m-0 strong">Get in Touch</p>
+                        <p class="text-center p-2">Fill your details in the form below and we will be in touch to
+                            discuss your learning needs</p>
 
-    <form  id="get_in_touch_form" method="post">
-    <div class="container">
-      <div class="form-group">
-       <select class="select-option" name="course" id="get_in_touch_course">
-            <option value="" default>What are you looking for ?</option>
-            <option value="Doctorate in Business Administration">Doctorate in Business Administration</option>
-            <option value="Master in Business Administration">Master in Business Administration</option>
-            <option value="Diplomas">Diplomas</option>
-            <option value="Microcredits">Microcredits</option>
-            <option value="Certification">Certification</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control txt-12" id="get_in_touch_fname" name="get_in_touch_fname" placeholder="First Name">
-      </div>
-       <div class="form-group">
-        <input type="text" class="form-control txt-12" id="get_in_touch_lname" name="get_in_touch_lname" placeholder="Last Name">
-      </div>
-       <div class="form-group">
-        <input type="email" class="form-control txt-12" id="get_in_touch_email" name="get_in_touch_email" placeholder="Email Address">
-      </div>
-      <div class="form-group login-item phone-number">
-          <input type="tel" id="phone" name="phone" placeholder="Enter Mobile number">
-          <span id="valid-msg" class="hide">✓ Valid</span>
-          <span id="error-msg" class="hide"></span>
-      </div>
-      <div class="form-check mb-2">
-        <input type="checkbox" class="form-check-input" id="get_in_touch_consent" name="get_in_touch_consent[]">
-        <label class="form-check-label txt-12"  for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement.</label>
-      </div>
-        <p class="txt-12">Do you want to hear about the latest insights, Newsletters and professional networking events that are relevant to you?</p>
-        <div class="form-group txt-12">
-            <div class="custom-control-inline">
-              <input type="radio" name="register-latest">
-             <label for="customRadioInline1">&nbsp;&nbsp;Yes</label>
-             </div>
-            <div class="custom-control-inline">
-              <input type="radio" name="register-latest">
-              <label for="customRadioInline2">&nbsp;&nbsp;No</label>
-             </div>
+                        <form id="get_in_touch_form" method="post">
+                            <div class="container">
+                                <div class="form-group">
+                                    <select class="select-option" name="course" id="get_in_touch_course">
+                                        <option value="" default>What are you looking for ?</option>
+                                        <option value="Doctorate in Business Administration">Doctorate in Business
+                                            Administration</option>
+                                        <option value="Master in Business Administration">Master in Business
+                                            Administration</option>
+                                        <option value="Diplomas">Diplomas</option>
+                                        <option value="Microcredits">Microcredits</option>
+                                        <option value="Certification">Certification</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control txt-12" id="get_in_touch_fname"
+                                        name="get_in_touch_fname" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control txt-12" id="get_in_touch_lname"
+                                        name="get_in_touch_lname" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control txt-12" id="get_in_touch_email"
+                                        name="get_in_touch_email" placeholder="Email Address">
+                                </div>
+                                <div class="form-group login-item phone-number">
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter Mobile number">
+                                    <span id="valid-msg" class="hide">✓ Valid</span>
+                                    <span id="error-msg" class="hide"></span>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input type="checkbox" class="form-check-input" id="get_in_touch_consent"
+                                        name="get_in_touch_consent[]">
+                                    <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena
+                                        Global Education processing my personal information in accordance with the
+                                        Athena Global Education Privacy Statement.</label>
+                                </div>
+                                <p class="txt-12">Do you want to hear about the latest insights, Newsletters and
+                                    professional networking events that are relevant to you?</p>
+                                <div class="form-group txt-12">
+                                    <div class="custom-control-inline">
+                                        <input type="radio" name="register-latest">
+                                        <label for="customRadioInline1">&nbsp;&nbsp;Yes</label>
+                                    </div>
+                                    <div class="custom-control-inline">
+                                        <input type="radio" name="register-latest">
+                                        <label for="customRadioInline2">&nbsp;&nbsp;No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" id="get_in_touch"
+                                    class="btn pink-bg btn-lg btn-block">Submit</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <button type="button" id="get_in_touch" class="btn pink-bg btn-lg btn-block">Submit</button>
-    </div>
-</div>
-</form>
+
+    <div class="container-fluid">
+        <div class="container p-0">
+            <div class="insights-section shawdow-effect">
+                <!-- <h1>News & Updates</h1> -->
+                <img class="img-heading" src="/themes/custom/athena/images/news-updates.svg" alt="">
+                <h2>From Our Insights</h2>
+                <h3>We keep you informed and engaged. Blogs on diverse subjects. Candid interviews of students and
+                    employees. Reviews of books that can change your life. Testimonials from our satisfied students.
+                </h3>
+                <div class="section-items">
+                    <div class="section-item-one">
+                        <div class="section-image">
+                            <a href="{{ url('<front>') }}node/{{last_insight[0].id}}"> <img style="padding:8px"
+                                    src="{{ file_url(last_insight[0].field_insight_article_image_thum.entity.uri.value)}}"></a>
+                            <h4>{{last_insight[0].field_article_insight_type.entity.label}}</h4>
+                            <h5>{{ last_insight[0].title.value }}</h5>
+                            <p>{{last_insight[0].body.value|striptags|truncate(100)}}…<a
+                                    href="{{ url('<front>') }}node/{{last_insight[0].id}}">Read more</a>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="section-item-two">
+                        <h4>Latest Articles <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
+
+
+                        <div class="container pb-4">
+                            {% for insightsdata in insig %}
+                            <div class="row mb-1">
+                                <div class="insight-thumbnail col-md-4 d-flex align-items-center">
+                                    <a href="{{ url('<front>') }}node/{{insightsdata.id}}">
+                                        <img class="thumbnail img-fluid mx-auto brd-0"
+                                            src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="strong yellow-txt m-0">{{
+                                        insightsdata.field_article_insight_type.entity.label }}</p>
+                                    <p><a href="{{ url('<front>') }}node/{{insightsdata.id}}">{{
+                                            insightsdata.title.value}}</a></p>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            <p class="purple-txt"><a href="/insights/all" class="more-link">VIEW ALL INSIGHTS</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-         
-  </div>
-
-        <div class="container-fluid">
-            <div class="container p-0">
-                 <div class="insights-section shawdow-effect">
-            <!-- <h1>News & Updates</h1> -->
-            <img class="img-heading" src="/themes/custom/athena/images/news-updates.svg" alt="">
-            <h2>From Our Insights</h2>
-            <h3>We keep you informed and engaged. Blogs on diverse subjects. Candid interviews of students and employees. Reviews of books that can change your life. Testimonials from our satisfied students.</h3>
-            <div class="section-items">
-               <div class="section-item-one">
-                  <div class="section-image">
-                    <a href="{{ url('<front>') }}node/{{last_insight[0].id}}"> <img style="padding:8px" src="{{ file_url(last_insight[0].field_insight_article_image_thum.entity.uri.value)}}"></a>
-                     <h4>{{last_insight[0].field_article_insight_type.entity.label}}</h4>
-                      <h5>{{ last_insight[0].title.value }}</h5>
-                     <p>{{last_insight[0].body.value|striptags|truncate(100)}}…<a href="{{ url('<front>') }}node/{{last_insight[0].id}}">Read more</a>
-
-                     </p>
-                  </div>
-               </div>
-               <div class="section-item-two">
-                  <h4>Latest Articles <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
-
-
-<div class="container pb-4">
-   {% for insightsdata in insig %}
-   <div class="row mb-1">
-      <div class="insight-thumbnail col-md-4 d-flex align-items-center">
-        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> 
-        <img class="thumbnail img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
-      </div>
-      <div class="col-md-8">
-         <p class="strong yellow-txt m-0">{{ insightsdata.field_article_insight_type.entity.label }}</p>
-         <p><a href="{{ url('<front>') }}node/{{insightsdata.id}}">{{ insightsdata.title.value}}</a></p>
-      </div>
-   </div>
-   {% endfor %}
-
-<p class="purple-txt"><a href="/insights/all" class="more-link">VIEW ALL INSIGHTS</a></p>
-</div>
-               </div>
-            </div>
-         </div>
-            </div>
-        </div>
     </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
