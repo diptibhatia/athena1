@@ -10,10 +10,14 @@ use Drupal\node\Entity\Node;
 function athena_course_mail($key, &$message, $params) {
    switch ($key) {
      case 'send_mail':
-       $message['from'] = \Drupal::config('system.site')->get('mail');
-       $message['subject'] = get_static_data('news_subscription_subject');
-       $message['body'][] = $params['message'];
-       break;
+        $message['headers'] = array(
+          'MIME-Version' => "1.0",
+          'Content-Type' => "text/html"
+        );
+        $message['from'] = \Drupal::config('system.site')->get('mail');
+        $message['subject'] = get_static_data('news_subscription_subject');
+        $message['body'][] = $params['message'];
+        break;
    }
 }
 
