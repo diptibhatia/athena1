@@ -532,14 +532,14 @@ function athena_course_page_attachments(array &$attachments) {
 
         if (!empty($from) && $from == 'affiliate') {
           if (!empty($uid)) {
-           $url = "https://ulearn.athena.edu/StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId&source=$source";
+           $url = get_static_data('ulearn_portal_url') . "StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId&source=$source";
           }
           if (!empty($mail)) {
-            $url = "https://ulearn.athena.edu/login?mail=$mail&CId=$cid&source=$source";
+            $url = get_static_data('ulearn_portal_url') . "login?mail=$mail&CId=$cid&source=$source";
           }
         }
         else {
-          $url = "https://ulearn.athena.edu/login?mail=$mail&CId=$cid&source=$source";
+          $url = get_static_data('ulearn_portal_url') . "login?mail=$mail&CId=$cid&source=$source";
         }
 
 
