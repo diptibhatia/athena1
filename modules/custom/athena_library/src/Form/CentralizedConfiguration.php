@@ -79,6 +79,19 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#type' => 'vertical_tabs',
     );
 
+    $form['common_settings'] = array(
+      '#type' => 'details',
+      '#title' => t('Common Settings'),
+      '#collapsible' => TRUE,
+      '#group' => 'central_config',
+    );
+
+    $form['common_settings']['ulearn_portal_url'] = [
+      '#type' => 'textfield',
+      '#title' => 'Ulearn portal Url',
+      '#default_value' => $config->get('ulearn_portal_url'),
+    ];
+
     $form['static_blocks'] = array(
       '#type' => 'details',
       '#title' => t('Static Blocks'),
@@ -177,8 +190,8 @@ class CentralizedConfiguration extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     $this->configFactory->getEditable(static::SETTINGS)
-      // ->set('example1', $form_state->getValue('example1'))
-      // ->set('example1', $form_state->getValue('example1'))
+      ->set('ulearn_portal_url', $form_state->getValue('ulearn_portal_url'))
+
       ->set('earning_a_degree.value', $form_state->getValue('earning_a_degree')['value'])
       ->set('earning_a_degree.format', $form_state->getValue('earning_a_degree')['format'])
 
