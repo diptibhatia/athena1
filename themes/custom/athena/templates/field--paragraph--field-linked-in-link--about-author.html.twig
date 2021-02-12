@@ -1,0 +1,5 @@
+{% if items|length > 0 %}
+    {% for item in items %}
+		<a href="#" onClick="window.open('{{item.content}}', '_blank')">
+    {% endfor %}
+{% endif %}

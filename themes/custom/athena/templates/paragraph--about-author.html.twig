@@ -49,36 +49,25 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+		
+	<div class="bs_grid">
+	<div class="row" data-row-lg="none" data-row-md="none" data-row-none="4_8" data-row-sm="none" data-row-xl="none">
 
-		{#{{content.field_linked_in_link}}#}
-
-		<div class="about-author row">		
-
-			<div class="about-author-img col-sm-6"><a href="#" target="_blank">{{content.field_author_image}}</a></div>
-
-			<div class="about-author-details col-sm-6">
-				{% if content.field_author_name.content %}
-				<h3>{{content.field_author_name}}</h3>
-				{% endif %}
-
-				{% if content.field_author_designation%}
-				<h4>{{content.field_author_designation}}</h4>
-				{% endif %}
-
-				{% if content.field_author_organization%}
-		        <h4>{{content.field_author_organization}}</h4>
-				{% endif %}
-
-				{% if content.field_author_description%}			        
-		        <p class="context-text">{{content.field_author_description}}</p>
-		        {% endif %}
-
-		    </div>    
-		                            
-		                        
+		<div class="col-4">{{content.field_linked_in_link}}
+		<p height="701" width="526">{{content.field_author_image}}</a></p>
 		</div>
+
+		<div class="col-8">
+		<h4>{{content.field_author_name}}</h4><br>
+		{{content.field_author_designation}}<br>
+		{{content.field_author_organization}}		
+		<p>{{content.field_author_description}}</p>
+		</div>
+
+	</div>
+	</div>
+
 	{% endblock %}
-   </div>
+  </div>
 
 {% endblock paragraph %}
-
