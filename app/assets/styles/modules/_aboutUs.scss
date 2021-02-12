@@ -30,12 +30,12 @@
 
 	.founder-content {
 		padding : 1rem;
-		.row {width:auto;
-		@media screen and (max-width:800px){
-			.row { flex-direction: column-reverse;}
-		}
-		}
-
+		.row {
+			width:auto;
+				@media screen and (max-width:800px){
+					flex-direction: column-reverse;
+				}
+			}
 		@include atSize700 { 
 			padding : 0;
 		}
