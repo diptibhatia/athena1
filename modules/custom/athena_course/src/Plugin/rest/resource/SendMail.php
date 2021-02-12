@@ -82,20 +82,28 @@ class SendMail extends ResourceBase
      */
     public function post($data) {
         global $base_url;
-        $template = get_static_data('news_subscription', true);
         $form_id = $data['form_id'];
         $tokens = array();
-        $tokens['name'] = '';
+        $tokens['name'] = 'user';
         switch ($form_id) {
             case 'news-letter-subscribe':
+                $template = get_static_data('news_subscription', true);
+                $params['subject'] = get_static_data('news_subscription_subject');
                 $tokens['link'] = $base_url  . '/insights/all';
+                $key = 'news_subscription';
                 break;
             case 'get_in_touch':
+                $template = get_static_data('get_in_touch', true);
+                $params['subject'] = get_static_data('get_in_touch_subject');
                 $tokens['link'] = $base_url  . '/course-home';
+                $key = 'get_in_touch';
                 break;
             case 'speak_to_advisor':
             case 'course_speak_to_advisor':
+                $template = get_static_data('speak_to_advisor', true);
+                $params['subject'] = get_static_data('speak_to_advisor_subject');
                 $tokens['link'] = $base_url  . '/registration';
+                $key = 'speak_to_advisor';
                 break;
         }
 
@@ -105,7 +113,7 @@ class SendMail extends ResourceBase
 
         $mailManager = \Drupal::service('plugin.manager.mail');
         $module = 'athena_course';
-        $key = 'send_mail';
+
         $to = $data['to'];
         $params['message'] = $template;
         $langcode = \Drupal::currentUser()->getPreferredLangcode();

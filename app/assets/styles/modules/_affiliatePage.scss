@@ -232,7 +232,8 @@
       
         border-bottom: 5px solid #ff016f;
         width: 115px;
-    }
+      }
+
       .modal-dialog {
         // width: 410px !important;
         // margin: 120px auto !important;
@@ -246,10 +247,12 @@
       }
       
       .btn.btn-pink {
+        width: 100%;
+        height: 50px; 
         border-radius: 6px;
         box-shadow: 0 2px 25px 2px #d5dbfb;
         background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
-        padding: 18px;
+        
         color:#fff;
       }
       
@@ -259,7 +262,7 @@
         border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
         background-color: #ffffff !important;
         padding: .35rem .75rem; 
-    height: 44px;
+        height: 44px;
       }
       
       
