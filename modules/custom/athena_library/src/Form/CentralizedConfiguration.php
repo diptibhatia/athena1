@@ -139,6 +139,35 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('news_subscription.format'),
     ];
 
+
+    $form['email_templates']['speak_to_advisor_subject'] = [
+      '#type' => 'textfield',
+      '#title' => 'Speak to advisor form email Subject',
+      '#default_value' => $config->get('speak_to_advisor_subject'),
+    ];
+
+    $form['email_templates']['speak_to_advisor'] = [
+      '#type' => 'text_format',
+      '#title' => 'Speak to advisor form email template',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('speak_to_advisor.value'),
+      '#format' => $config->get('speak_to_advisor.format'),
+    ];
+
+    $form['email_templates']['get_in_touch_subject'] = [
+      '#type' => 'textfield',
+      '#title' => 'Get in touch form submission email subject',
+      '#default_value' => $config->get('get_in_touch_subject'),
+    ];
+
+    $form['email_templates']['get_in_touch'] = [
+      '#type' => 'text_format',
+      '#title' => 'Get in touch form submission email template',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('get_in_touch.value'),
+      '#format' => $config->get('get_in_touch.format'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -163,9 +192,16 @@ class CentralizedConfiguration extends ConfigFormBase {
       ->set('how_you_learn.format', $form_state->getValue('how_you_learn')['format'])
 
       ->set('news_subscription_subject', $form_state->getValue('news_subscription_subject'))
-
       ->set('news_subscription.value', $form_state->getValue('news_subscription')['value'])
       ->set('news_subscription.format', $form_state->getValue('news_subscription')['format'])
+
+      ->set('get_in_touch_subject', $form_state->getValue('get_in_touch_subject'))
+      ->set('get_in_touch.value', $form_state->getValue('get_in_touch')['value'])
+      ->set('get_in_touch.format', $form_state->getValue('get_in_touch')['format'])
+
+      ->set('speak_to_advisor_subject', $form_state->getValue('speak_to_advisor_subject'))
+      ->set('speak_to_advisor.value', $form_state->getValue('speak_to_advisor')['value'])
+      ->set('speak_to_advisor.format', $form_state->getValue('speak_to_advisor')['format'])
 
       ->save();
     parent::submitForm($form, $form_state);
