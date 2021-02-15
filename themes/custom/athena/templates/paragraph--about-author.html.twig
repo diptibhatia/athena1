@@ -53,7 +53,12 @@
 	<div class="bs_grid">
 	<div class="row" data-row-lg="none" data-row-md="none" data-row-none="4_8" data-row-sm="none" data-row-xl="none">
 
-		<div class="col-4">{{content.field_linked_in_link}}<img class="linkedin" alt="linkedin icon" src="/themes/custom/athena/images/icons/linkedin.svg">
+		<div class="col-4">
+
+		{% if content.field_linked_in_link is not null and content.field_linked_in_link is not empty %}
+		{{content.field_linked_in_link}}
+		{% endif %}
+
 		<p height="701" width="526">{{content.field_author_image}}</a></p>
 		</div>
 
