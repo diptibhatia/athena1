@@ -138,10 +138,7 @@
 
 				input {
 					width: 219px;
-
-					@include atSize700 {
-						margin: 0 10px 0 0;
-					}
+ 
 				}
 			}
 		}

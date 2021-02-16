@@ -15,7 +15,7 @@
 	}
 }
 .login-wrapper {
-	.row {width:auto;}
+	.row {width:auto}
 	h1 {
 		font-family: Lato;
 	  	font-size: 42px;
@@ -100,7 +100,7 @@
 				margin-right: 10px;
 				input {
 					width: 219px;
-					margin: 0 10px 0 0;
+					 
 				}
 			}
 		}
@@ -129,7 +129,12 @@
 			  	box-shadow: 0 2px 25px 2px #d5dbfb;
 			  	background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
 			  	font-family: Lato;
-			  	font-size: 16px; 
+			  	font-size: 16px;
+			  	font-weight: normal;
+			  	font-stretch: normal;
+			  	font-style: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;
 			  	color: #ffffff;
 			  	border: none;
 			  	//margin: 30px 0;
@@ -168,7 +173,7 @@ width:100%;
 }
 
 .login-wrapper .intl-tel-input.allow-dropdown{
-width:83.5%;
+width: 81%;
 @include belowSize700{
 	width:100% !important;
 }
@@ -179,7 +184,7 @@ width:83.5%;
 	width:75% !important;
 	box-shadow: none !important;
     border: none !important;
-    height: 43px !important;
+    height: 44px !important;
 	padding-left: 10px !important;
 	@include belowSize700{
 		float: left;
@@ -199,6 +204,6 @@ width:83.5%;
     background: none;
     width: 78%;
     box-shadow: none;
-	height: 43px;
+	height: 40px;
 	padding-left:6px !important;
 }
