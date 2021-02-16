@@ -1,5 +1,7 @@
 {% if items|length > 0 %}
     {% for item in items %}
-		<a href="#" onClick="window.open('{{item.content}}', '_blank')">
+		{%if item is not null and item is not empty %}
+			<a href="#" onClick="window.open('{{item.content}}', '_blank')"><img class="linkedin" alt="linkedin icon" src="/themes/custom/athena/images/icons/linkedin.svg">
+		{% endif %}
     {% endfor %}
 {% endif %}

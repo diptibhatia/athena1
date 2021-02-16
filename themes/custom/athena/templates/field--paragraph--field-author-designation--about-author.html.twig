@@ -1,0 +1,5 @@
+{% if items|length > 0 %}
+    {%- for item in items %}
+		{{- item.content|render|trim -}}
+    {% endfor -%}
+{% endif %}
