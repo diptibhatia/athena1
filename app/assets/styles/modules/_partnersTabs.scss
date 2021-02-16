@@ -339,25 +339,20 @@
             .video {
                 border-radius: 3.3px;
                 box-shadow: 0 1px 14px 1px #d5dbfb;
-                width: 340px;
-                height: auto;
+                width: 668px;
+                height: 389px;
                 box-sizing: border-box;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 0 auto;
-                @media screen and (max-width:800px){iframe {height: auto; margin:10px;}
-    
-            }
-                @include atSize700 {
-                    width: 668px;
-                    height: 389px;
-                }
-
-                @include atSize1100 {
-                    width: 668px;
-                    height: 389px;
-                    margin-right: 20px;
+                margin-right: 20px;
+                @media screen and (max-width:800px)
+                {
+                    iframe {
+                        width: 340px;
+                        height: 194px;
+                        margin:10px;
+                    }
                 }
 
                 h2 {
