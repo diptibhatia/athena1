@@ -247,7 +247,14 @@ jQuery.ajax(baseUrl + '/save/contact', {
                     });
 
 
-                          initiateSendingMail('get_in_touch', jQuery('#get_in_touch_email').val());
+                          var mailinfo = {
+                            'mail': jQuery('#get_in_touch_email').val(),
+                            'fname': jQuery('#get_in_touch_fname').val(),
+                            'lname': jQuery('#get_in_touch_lname').val(),
+                            'phone': jQuery('#phone').val(),
+                            'category': jQuery('#get_in_touch_course').val()
+                          };
+                          initiateSendingMail('get_in_touch', mailinfo);
 
                           jQuery('#get_in_touch_course').val("");
                           jQuery('#get_in_touch_fname').val("");
@@ -484,7 +491,10 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 jQuery('#newsletter-info-box-error').css('display','inherit');
               }else{
 
-                initiateSendingMail('news-letter-subscribe', jQuery('#newsletter-email-input').val());
+                var mailinfo = {
+                  'mail': jQuery('#newsletter-email-input').val()
+                };
+                initiateSendingMail('news-letter-subscribe', mailinfo);
 
                 jQuery('#newsletter-info-box-error').css('display','none');
                 jQuery("#newsletter-info-box").html("Subscribed Successfullly");

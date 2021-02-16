@@ -84,7 +84,26 @@ class SendMail extends ResourceBase
         global $base_url;
         $form_id = $data['form_id'];
         $tokens = array();
-        $tokens['name'] = 'user';
+        $info = $data['info'] ?? '';
+        if (!empty($info)) {
+            $fname = $info['fname'] ?? '';
+            $lname = $info['lname'] ?? '';
+
+            $tokens['name'] = $fname . ' ' . $lname;
+            $tokens['fname'] = $fname;
+            $tokens['lname'] = $lname;
+            $tokens['phone'] = $info['phone'] ?? '';
+            $tokens['mail'] = $info['mail'] ?? '';
+            $tokens['category'] = $info['category'] ?? '';
+
+            $cid = $info['cid'] ?? '';
+            if (!empty($cid)) {
+                $node = Node::load($cid);
+                $title = $node->get('title')->value;
+                $tokens['coursename'] = $title;
+            }
+        }
+
         switch ($form_id) {
             case 'news-letter-subscribe':
                 $template = get_static_data('news_subscription', true);
@@ -107,18 +126,31 @@ class SendMail extends ResourceBase
                 break;
         }
 
-        foreach ($tokens as $key => $value) {
-            $template = str_replace('@' . $key, $value, $template);
-        }
+        $template = $this->tokensReplace($tokens, $template);
 
         $mailManager = \Drupal::service('plugin.manager.mail');
         $module = 'athena_course';
 
-        $to = $data['to'];
+        $to = $info['mail'];
         $params['message'] = $template;
         $langcode = \Drupal::currentUser()->getPreferredLangcode();
         $send = true;
         $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+
+
+        // Mail notifications to admissions@athena.edu
+        if ($form_id == 'get_in_touch') {
+            $to = 'admissions@athena.edu';
+            $template = get_static_data('enquiry_submission', true);
+            $params['subject'] = get_static_data('enquiry_submission_subject');
+            $template = $this->tokensReplace($tokens, $template);
+            $params['message'] = $template;
+            $key = 'enquiry_submission';
+            $langcode = \Drupal::currentUser()->getPreferredLangcode();
+            $send = true;
+            $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+        }
+
         if ($result['result'] !== true) {
             $response_status = ['message' => 'Mail not sent'];
         }
@@ -131,4 +163,12 @@ class SendMail extends ResourceBase
         $response = new ResourceResponse($response_status);
         return $response;
     }
+
+    public function tokensReplace($tokens, $template) {
+        foreach ($tokens as $key => $value) {
+            $template = str_replace('@' . $key, $value, $template);
+        }
+        return $template;
+    }
+
 }

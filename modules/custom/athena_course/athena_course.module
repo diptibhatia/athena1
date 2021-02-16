@@ -12,6 +12,7 @@ function athena_course_mail($key, &$message, $params) {
      case 'news_subscription':
      case 'get_in_touch':
      case 'speak_to_advisor':
+     case 'enquiry_submission':
         $message['headers'] = array(
           'MIME-Version' => "1.0",
           'Content-Type' => "text/html"
