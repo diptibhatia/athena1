@@ -34,8 +34,8 @@
 					      {% for profile in about_profile %}
                           <div class="col-lg-4">
                             <img class="rounded-circle" src="{{profile.prof_image}}" width="140" height="140">
-                            <div class="purple-txt strong">
-                                <p class="m-0">{{profile.name}} </p>
+                            <div class="strong">
+                                <h5 class="m-0 purple-txt">{{profile.name}} </h5>
                                 <p> {{profile.designation}} </p>
                             </div>
                             <p>{{profile.desc|truncate(205) }}</p>

@@ -100,7 +100,7 @@
 				margin-right: 10px;
 				input {
 					width: 219px;
-					margin: 0 10px 0 0;
+					 
 				}
 			}
 		}
@@ -173,7 +173,7 @@ width:100%;
 }
 
 .login-wrapper .intl-tel-input.allow-dropdown{
-width:83.5%;
+width: 81%;
 @include belowSize700{
 	width:100% !important;
 }
@@ -184,7 +184,7 @@ width:83.5%;
 	width:75% !important;
 	box-shadow: none !important;
     border: none !important;
-    height: 43px !important;
+    height: 44px !important;
 	padding-left: 10px !important;
 	@include belowSize700{
 		float: left;

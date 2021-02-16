@@ -53,15 +53,20 @@
 	<div class="bs_grid">
 	<div class="row" data-row-lg="none" data-row-md="none" data-row-none="4_8" data-row-sm="none" data-row-xl="none">
 
-		<div class="col-4"><img class="linkedin" alt="linkedin icon" src="/themes/custom/athena/images/icons/linkedin.svg">{{content.field_linked_in_link}}
+		<div class="col-md-4">
+
+		{% if content.field_linked_in_link is not null and content.field_linked_in_link is not empty %}
+		{{content.field_linked_in_link}}
+		{% endif %}
+
 		<p height="701" width="526">{{content.field_author_image}}</a></p>
 		</div>
 
-		<div class="col-8">
-		<h4>{{content.field_author_name}}</h4>
-		<p>{{content.field_author_designation}}<br>
-		{{content.field_author_organization}}</p>		
-		<p>{{content.field_author_description}}</p>
+		<div class="col-md-8">
+		<h5>{{content.field_author_name}}</h5>
+		{{content.field_author_designation}}<br>
+		{{content.field_author_organization}}		
+		{{content.field_author_description}}
 		</div>
 
 	</div>
