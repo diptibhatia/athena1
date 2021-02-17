@@ -349,9 +349,7 @@
                 @media screen and (max-width:800px)
                 {
                     iframe {
-                        width: 340px;
-                        height: 194px;
-                        margin:10px;
+                        height: auto; margin:10px;
                     }
                 }
 
