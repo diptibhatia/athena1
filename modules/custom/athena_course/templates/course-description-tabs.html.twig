@@ -1345,8 +1345,14 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         }
                     });
 
-
-          initiateSendingMail('course_speak_to_advisor', jQuery('#speak_email').val());
+          var mailinfo = {
+            'mail': jQuery('#speak_email').val(),
+            'fname': jQuery('#speak_first_name').val(),
+            'lname': jQuery('#speak_last_name').val(),
+            'phone': jQuery('#phone').val(),
+            'cid': jQuery('#speak_courseid').val()
+          };
+          initiateSendingMail('course_speak_to_advisor', mailinfo);
 
           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");

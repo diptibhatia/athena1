@@ -181,6 +181,19 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('get_in_touch.format'),
     ];
 
+    $form['email_templates']['enquiry_submission_subject'] = [
+      '#type' => 'textfield',
+      '#title' => 'Enquiry submission',
+      '#default_value' => $config->get('enquiry_submission_subject'),
+    ];
+
+    $form['email_templates']['enquiry_submission'] = [
+      '#type' => 'text_format',
+      '#title' => 'Enquiry submission',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('enquiry_submission.value'),
+      '#format' => $config->get('enquiry_submission.format'),
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -215,6 +228,10 @@ class CentralizedConfiguration extends ConfigFormBase {
       ->set('speak_to_advisor_subject', $form_state->getValue('speak_to_advisor_subject'))
       ->set('speak_to_advisor.value', $form_state->getValue('speak_to_advisor')['value'])
       ->set('speak_to_advisor.format', $form_state->getValue('speak_to_advisor')['format'])
+
+      ->set('enquiry_submission_subject', $form_state->getValue('enquiry_submission_subject'))
+      ->set('enquiry_submission.value', $form_state->getValue('enquiry_submission')['value'])
+      ->set('enquiry_submission.format', $form_state->getValue('enquiry_submission')['format'])
 
       ->save();
     parent::submitForm($form, $form_state);

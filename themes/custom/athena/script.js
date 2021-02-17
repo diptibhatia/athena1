@@ -1,10 +1,10 @@
 jQuery(".selected-flag").after("<div class='country-code' />");
 jQuery('.iti__flag-container').remove();
 
-function initiateSendingMail(form_id, mail) {
+function initiateSendingMail(form_id, mailinfo) {
   var dataObj = {
     'form_id': form_id,
-    'to': mail
+    'info': mailinfo
   };
   jQuery.ajax(baseUrl + '/send/mail', {
       type: 'POST',
