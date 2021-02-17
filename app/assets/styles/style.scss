@@ -78,7 +78,11 @@ img {
         object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
         object-position: center;}
  }
-
+.insights-section .section-items .section-item-two img.thumbnail {    width: 100%; /* This if for the object-fit */
+    height: 90%; /* This if for the object-fit */
+    object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+    object-position: center;}
+}
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
 }
