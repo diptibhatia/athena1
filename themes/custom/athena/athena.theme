@@ -237,54 +237,40 @@ function athena_preprocess_image(&$variables) {
 
 function athena_preprocess_page(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
-  $result = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
-  $path = explode("/","$result");
-  $path = $path[1];
-
 
   if (strpos($current_path, '/node') !== false) {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
+
       if ($node_type == 'affiliate_page') {
+        $current_page_node_id = $node->id();
+
         $bundle='course';
         $query = \Drupal::entityQuery('node');
         $query->condition('status', 1);
         $query->condition('type', $bundle);
         $entity_ids = $query->execute();
 
-        $load_courses = array();
         if(!empty($entity_ids)) {
+
           //$nodes = node_load_multiple($entity_ids);
           //$variables['courses_data'] = $nodes;
+
           foreach ($entity_ids as $value) {
               $node = Node::load($value);
-
-              if(is_object( $node->field_affiliate_page_reference)){
-              
-              $affiliate_pages = $node->field_affiliate_page_reference->referencedEntities(
-                            
-              );
-
-              foreach($affiliate_pages as $attached_node){
-
-                  $loaded_path = "";
-                  $nid = $node->id();
-                  $node_url = $attached_node->toUrl()->toString();
-                  //print $node_url."<br>";
-
-                  $loaded_path = explode("/",$node_url);
-                  $loaded_path = $loaded_path[2];
-                  if ( $path == $loaded_path )
-                  {                    
-                    array_push($load_courses, $nid);
-                    $nodes = node_load_multiple($load_courses);
-                    $variables['courses_data'] = $nodes;
-                  }
+              if(is_object( $node->field_affiliate_page_reference)) {
+                $affiliate_pages = $node->field_affiliate_page_reference->getValues();
+                $tagged_node_ids = [];
+                foreach($affiliate_pages as $attached_node) {
+                  $tagged_node_ids[] = $attached_node;
                 }
-
+                if (in_array($current_page_node_id, $tagged_node_ids)) {
+                  $nodes[] = $node;
+                }
               }
-          }   
+          }
+          $variables['courses_data'] = $nodes;
 
         }
       }
