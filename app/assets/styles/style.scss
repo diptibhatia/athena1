@@ -78,7 +78,12 @@ img {
         object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
         object-position: center;}
  }
-
+.insights-section .section-items .section-item-two img.thumbnail {  
+      width: 100%; /* This if for the object-fit */
+    height: 90%; /* This if for the object-fit */
+    object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+    object-position: center;
+} 
 .insights-section .section-items .section-item-two h4 {
     margin: inherit;
 }
@@ -144,10 +149,6 @@ img {
 .page-item:last-child .page-link {
     border-radius:50%;
    
-}
-@media screen and (max-width:800px)
-{
-    .video iframe {height: auto; margin:10px;}    
 }
 
 .image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
