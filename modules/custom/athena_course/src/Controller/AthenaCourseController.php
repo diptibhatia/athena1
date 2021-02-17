@@ -192,6 +192,10 @@ foreach($paragraph_faq as $faq_data){
 
 }
 
+$fee_pay_per = $node->get('field_course_fee_pay_per')->value;
+if(empty($fee_pay_per)) $fee_pay_per = 'Pay Per Module';
+
+
 $testibundle='testimonials';
 $testiquery = \Drupal::entityQuery('node');
 $testiquery->condition('status', 1);
@@ -212,6 +216,7 @@ $campaign = $_REQUEST['utm_campaign'];
       '#campaign' => $campaign,
       '#description' => $node->get('field_course_banner_description')->value,
       '#category' => $node->get('field_course_category')->value,
+      '#fees_pay_per' => $fee_pay_per,
      // '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
       '#base_path' => $base_path,
       '#node' => $node,
@@ -500,6 +505,10 @@ $banner_block =  [
   '#node' => $node
 ];
 
+$fee_pay_per = $node->get('field_course_fee_pay_per')->value;
+if(empty($fee_pay_per)) $fee_pay_per = 'Pay Per Module';
+
+
 $testibundle='testimonials';
 $testiquery = \Drupal::entityQuery('node');
 $testiquery->condition('status', 1);
@@ -514,6 +523,7 @@ $course_description_tabs =  [
   '#testi' => $testimo,
   '#node' => $node,
   '#total_fee' => $node->get('field_course_total_fee')->value,
+  '#fees_pay_per' => $fee_pay_per,   
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
   '#course_title' => $node->get('title')->value,
