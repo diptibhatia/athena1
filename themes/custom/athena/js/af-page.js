@@ -95,6 +95,7 @@
       .find("input[type=checkbox], input[type=radio]")
         .prop("checked", "")
         .end();
+        jQuery("#registration-afpage").validate().resetForm();
     $(".ref-form-2").hide("fast");
     $(".reg-form").show("slow");
   });
