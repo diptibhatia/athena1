@@ -152,10 +152,6 @@ img {
     border-radius:50%;
    
 }
-@media screen and (max-width:800px)
-{
-    .video iframe {height: auto; margin:10px;}    
-}
 
 .image_icon a[href='#'], a[href='#'] .link_img, .all-courses a[href='#'] { 
     pointer-events: none;
