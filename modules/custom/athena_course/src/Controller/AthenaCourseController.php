@@ -58,6 +58,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $msg_title = $explore_data->get('field_message_title')->value;
         $prof_name = $explore_data->get('field_professor_name')->value;
         $prof_univ = $explore_data->get('field_prof_university')->value;
+        $dean_name = $explore_data->get('field_dean_name')->value;
         $dean_univ = $explore_data->get('field_dean_un')->value;
         $dean_video = $explore_data->get('field_dean_video')->value;
         $dean_message = $explore_data->get('field_dean_message_la')->value;
@@ -113,6 +114,7 @@ foreach($paragraph_univ_data as $explore_data) {
         'msg_title' =>$msg_title,
         'prof_name' =>$prof_name,
         'prof_univ' =>$prof_univ,
+        'dean_name' =>$dean_name,
         'dean_univ' =>$dean_univ,
         'dean_video' =>$dean_video,
         'dean_message' =>$dean_message,
@@ -278,6 +280,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $prof_name = $explore_data->get('field_professor_name')->value;
         $rector_image = $explore_data->get('field_professor_name')->value;
         $prof_univ = $explore_data->get('field_prof_university')->value;
+        $dean_name = $explore_data->get('field_dean_name')->value;
         $dean_univ = $explore_data->get('field_dean_un')->value;
         $dean_video = $explore_data->get('field_dean_video')->value;
         $dean_message = $explore_data->get('field_dean_message_la')->value;
@@ -336,6 +339,7 @@ foreach($paragraph_univ_data as $explore_data) {
         'msg_title' =>$msg_title,
         'prof_name' =>$prof_name,
         'prof_univ' =>$prof_univ,
+        'dean_name' =>$dean_name,
         'dean_univ' =>$dean_univ,
         'dean_video' =>$dean_video,
         'dean_message' =>$dean_message,
