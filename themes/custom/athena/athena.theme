@@ -260,18 +260,33 @@ function athena_preprocess_page(&$variables) {
           foreach ($entity_ids as $value) {
               $node = Node::load($value);
               if(is_object( $node->field_affiliate_page_reference)) {
-                $affiliate_pages = $node->field_affiliate_page_reference->getValues();
+                $affiliate_pages = $node->field_affiliate_page_reference;
                 $tagged_node_ids = [];
                 foreach($affiliate_pages as $attached_node) {
-                  $tagged_node_ids[] = $attached_node;
+                  $tagged_node_ids[] = $attached_node->target_id;
                 }
                 if (in_array($current_page_node_id, $tagged_node_ids)) {
                   $nodes[] = $node;
+
+                  $aff_fields = array();
+                  if(is_object( $node->affiliate_page_fields)){
+                    $affiliate_fields = $node->affiliate_page_fields->referencedEntities();
+                    foreach($affiliate_fields as $fields){                        
+                      $assessment =  $fields->get('field_course_assessment')->value;
+                      $aff_fields[] = array(
+                      'assessment' => $assessment,
+                      );
+                    }
+
+                  }
                 }
               }
           }
           $variables['courses_data'] = $nodes;
+          $variables['courses_data']['aff_fields'] = $aff_fields;
 
+
+          //print_r($variables['courses_data']); exit;
         }
       }
     }
