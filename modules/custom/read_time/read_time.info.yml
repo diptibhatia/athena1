@@ -1,0 +1,6 @@
+name: Read time
+description: Displays the time it will take to read content on your site.
+package: Custom
+type: module
+version: '8.x-1.0'
+core: '8.x'
