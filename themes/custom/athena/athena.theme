@@ -242,17 +242,70 @@ function athena_preprocess_page(&$variables) {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
+
       if ($node_type == 'affiliate_page') {
-        $bundle='affiliate_page_courses';
+        $current_page_node_id = $node->id();
+
+        $bundle='course';
         $query = \Drupal::entityQuery('node');
         $query->condition('status', 1);
         $query->condition('type', $bundle);
         $entity_ids = $query->execute();
 
         if(!empty($entity_ids)) {
-          $nodes = node_load_multiple($entity_ids);
-          $variables['courses_data'] = $nodes;
+          foreach ($entity_ids as $value) {
+              $node = Node::load($value);
+              if(is_object( $node->field_affiliate_page_reference)) {
+                $affiliate_pages = $node->field_affiliate_page_reference;
+                $tagged_node_ids = [];
+                foreach($affiliate_pages as $attached_node) {
+                  $tagged_node_ids[] = $attached_node->target_id;
+                }
+                if (in_array($current_page_node_id, $tagged_node_ids)) {
+                  
+                  $aff_fields = array();
+                  if(is_object( $node->field_affiliate_page_fields)){
+                    $affiliate_fields = $node->field_affiliate_page_fields->referencedEntities();
+                    $moduleid = "";
+                    $assessment = "";
+                    $instalmenttype = "";
+                    $instalmentvalue = "";
+                    $coursedelivery = "";
+                    $courselrnsuprt = "";
 
+                    foreach($affiliate_fields as $fields){                        
+                      $moduleid =  $fields->get('field_module_id')->value;
+                      $assessment =  $fields->get('field_course_assessment')->value;
+                      $instalmenttype =  $fields->get('field_instalment_type')->value;
+                      $instalmentvalue =  $fields->get('field_instalment_value')->value;
+                      $coursedelivery =  $fields->get('field_course_delivery')->value;
+                      $courselrnsuprt =  $fields->get('field_course_lrnsuprt')->value;
+
+                    }                   
+
+                  }
+
+
+                  $node->assessment = "";
+                  $node->moduleid = "";
+                  $node->instalmenttype = "";
+                  $node->instalmentvalue = "";
+                  $node->coursedelivery = "";
+                  $node->courselrnsuprt = "";
+
+                  $node->assessment = $assessment;
+                  $node->moduleid = $moduleid;
+                  $node->instalmenttype = $instalmenttype;
+                  $node->instalmentvalue = $instalmentvalue;
+                  $node->coursedelivery = $coursedelivery;
+                  $node->courselrnsuprt = $courselrnsuprt;
+
+                  $nodes[] = $node;
+
+                }
+              }
+          }
+          $variables['courses_data'] = $nodes;
         }
       }
     }

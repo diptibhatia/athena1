@@ -53,8 +53,12 @@
       </div>
     </div>
   {% endif %}
+
+  {#
   {% set view = drupal_view_result('affiliate_page', 'afpage_courses_block')|length %}
   {% if view > 0 %}
+  #}
+
   <div id="courses-block" class="light-wrapper">
     <div class="container inner">
       <div class="col-md-12">
@@ -62,13 +66,73 @@
           <h3>{{node.field_course_block_title.value|raw}}</h3>
           <h2>{{node.field_course_block_blurb.value|raw}}</h2>
         </div>
-        {{ drupal_view('affiliate_page', 'afpage_courses_block') }}
+        
+        {#{{ drupal_view('affiliate_page', 'afpage_courses_block') }}#}
+      
+
+        <div class="carousel-wrapper wow fadeIn">
+    <div class="divide30"></div>
+    <div class="nav-outside-shop owl-nav text-right"></div>
+        <div class="carousel shop owl-carousel owl-theme owl-loaded">
+
+        {% if courses_data %}
+
+        {% for nodedata in courses_data %}
+        <div class="views-row item">
+            {% set cid = nodedata.field_cid.value|render|striptags|trim %}
+            {% set mid = nodedata.moduleid|render|striptags|trim %}            
+            {% set pay = node.field_afpage_course_pay.value|raw %}
+
+        <figure>
+          {% if nodedata.field_course_total_fee.value %}
+          <div class="badge green">Total Fee <span>{{nodedata.field_course_total_fee.value|raw}}</span>
+            <em>Pay in Installments</em>
+          </div>
+          {% endif %}
+            {% set url = nodedata.field_search_list_image.value|render|striptags|trim %}
+            {% set title = nodedata.title.value|render|striptags|trim %}
+            <img src="{{url|replace({' ':''})}}" alt="{{title}}" title="{{title}}" />
+        </figure>
+
+        <div class="post-content tick ">
+          <h4 class="post-title">{{title}}</h4>
+          {% if nodedata.field_course_awarding_body.value %}<h5>Awarded By : <span> {{nodedata.field_course_awarding_body.value}} </span></h5>{% endif %}
+
+        {% if nodedata.instalmenttype %}
+          {% set instalment_type = nodedata.instalmenttype %}
+        {% else %}
+          {% set instalment_type = "Month" %}
+        {% endif %}
+
+        {% if nodedata.instalmentvalue %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee : <span>{{nodedata.instalmentvalue}}{{'/'}}{{instalment_type}}</span></h6>{% endif %}
+            
+          {% if nodedata.field_course_total_credits.value %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Total Credits : <span>{{nodedata.field_course_total_credits.value|raw}} {{' '}}{{nodedata.field_courses_credit_type.value|raw}}</span></h6>{% endif %}
+            
+          {% if nodedata.assessment %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Assements : <span>{{nodedata.assessment}}</span></h6>{% endif %}
+
+          {% if nodedata.coursedelivery %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Course Delivery : <span>{{nodedata.coursedelivery|raw}}</span>
+          </h6>{% endif %}
+
+          {% if nodedata.courselrnsuprt %}<h6><img src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Learning Support : <span>{{nodedata.courselrnsuprt}}</span>
+          </h6>{% endif %}
+
+          <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}" data-pay="{{pay}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
+
+        </div>
+      </div>
+        {% endfor %}
+       {% endif %} 
+
+      </div>
+    </div>
+
+
       </div>
     </div>
     <!--/.container -->
   </div>
   <!--/.light-wrapper -->
-  {% endif %}
+  {#{% endif %}#}
 
   {% set view = drupal_view_result('affiliate_page', 'afpage_testimonial_block')|length %}
   {% if view > 0 %}
@@ -176,10 +240,10 @@
                   <select name="course" id="course" class="form-control reg-form-control" required>
                   <option value="">Select your course</option>
                                 {% for nodedata in courses_data %}
-                                  {% if cid == nodedata.field_afpage_course_id.value %}
-                                     <option value="{{nodedata.field_afpage_course_id.value}}" selected="selected">{{nodedata.label}}</option>
+                                  {% if cid == nodedata.field_cid.value %}
+                                     <option value="{{nodedata.field_cid.value}}" selected="selected">{{nodedata.label}}</option>
                                      {% else %}
-                                        <option value="{{nodedata.field_afpage_course_id.value}}" >{{nodedata.label}}</option>
+                                        <option value="{{nodedata.field_cid.value}}" >{{nodedata.label}}</option>
                                   {% endif %}
                                     {% endfor %}
                   </select>
