@@ -1244,7 +1244,7 @@
 
       jQuery("#smo_form_submit").click(function() {
         var msg = '';
-        var regex = /^([a-zA-Z])+$/;
+        var regex = /^([a-zA-Z_\.\-\+])+$/;
 
         fname  = jQuery("#speak_first_name").val();
 
@@ -1412,7 +1412,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
 
-  return this.optional(element) || /^[a-z]+$/i.test(value);
+  return this.optional(element) || /^[a-z_\.\-\+]+$/i.test(value);
 
 }, "Please enter only letters");
 
