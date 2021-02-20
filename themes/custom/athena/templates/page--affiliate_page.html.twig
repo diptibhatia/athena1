@@ -89,7 +89,8 @@
             <em>Pay in Installments</em>
           </div>
           {% endif %}
-            {% set url = nodedata.field_search_list_image.value|render|striptags|trim %}
+
+            {% set url = file_url(nodedata.field_search_list_image.entity.uri.value) %}
             {% set title = nodedata.title.value|render|striptags|trim %}
             <img src="{{url|replace({' ':''})}}" alt="{{title}}" title="{{title}}" />
         </figure>
