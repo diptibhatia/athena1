@@ -25,11 +25,13 @@
 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
   {% else %}
 
+{#
 <div class="course-banner__apply-btn">
   <a class="apply-btn" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
    Start 7 Day Trial <img src="/themes/custom/athena/images/smo/path.svg" alt="arrow">
  </a>
 </div>
+#}
 
 {% endif %}
 
@@ -431,7 +433,7 @@
       jQuery("#smo_form_submit").click(function() {
 
         var msg = '';
-        var regex = /^([a-zA-Z])+$/;
+        var regex = /^([a-zA-Z_\.\-\+])+$/;
         fname  = jQuery("#speak_first_name").val();
 
         if(jQuery("#speak_first_name").val() == '') {
@@ -613,7 +615,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
 
-  return this.optional(element) || /^[a-z]+$/i.test(value);
+  return this.optional(element) || /^[a-z_\.\-\+]+$/i.test(value);
 
 }, "Please enter only letters");
 
