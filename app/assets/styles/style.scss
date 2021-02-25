@@ -67,7 +67,7 @@ img {
  .insight-thumbnail {    
     overflow: hidden;
     position: relative;
- 
+    max-height:100px;
     img.thumbnail {position: absolute; /* Take your picture out of the flow */
         top: 0;
         bottom: 0;
@@ -78,15 +78,12 @@ img {
         object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
         object-position: center;}
  }
-.insights-section .section-items .section-item-two img.thumbnail {  
-      width: 100%; /* This if for the object-fit */
-    height: 90%; /* This if for the object-fit */
-    object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
-    object-position: center;
-} 
-.insights-section .section-items .section-item-two h4 {
-    margin: inherit;
-}
+ .insights-section .section-items .section-item-two img.thumbnail {  
+    position: relative;
+ } 
+// .insights-section .section-items .section-item-two h4 {
+//     margin: inherit;
+// }
 .get-started button {
     background: transparent;
 }
@@ -237,6 +234,8 @@ background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color
         border-radius: 50%;
         max-height: 180px;
         min-width: 180px; 
+        overflow: hidden;
+        object-fit: cover;
     }
     img.linkedin {
         border: none;

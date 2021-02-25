@@ -348,9 +348,16 @@
                 margin-right: 20px;
                 @media screen and (max-width:800px)
                 {
+                    width: 100%;
+                    height: auto;
                     iframe {
                         height: auto; margin:10px;
                     }
+                }
+                @media screen and (max-width:570px)
+                {
+                    max-width: 289px;
+                    margin: auto;
                 }
 
                 h2 {
