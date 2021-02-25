@@ -334,8 +334,7 @@
             flex-direction: row;
         }
 
-        &-video {
-            
+        &-video {            
             .video {
                 border-radius: 3.3px;
                 box-shadow: 0 1px 14px 1px #d5dbfb;
@@ -348,13 +347,17 @@
                 margin-right: 20px;
                 @media screen and (max-width:800px)
                 {
-                    width: 340px;
+                    width: 100%;
                     height: auto;
                     iframe {
                         height: auto; margin:10px;
                     }
                 }
-
+                @media screen and (max-width:570px)
+                {
+                    max-width: 289px;
+                    margin: auto;
+                }
                 h2 {
                     font-size: 1.75rem;
                 }
