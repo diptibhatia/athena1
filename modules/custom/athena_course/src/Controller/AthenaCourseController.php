@@ -58,6 +58,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $msg_title = $explore_data->get('field_message_title')->value;
         $prof_name = $explore_data->get('field_professor_name')->value;
         $prof_univ = $explore_data->get('field_prof_university')->value;
+        $dean_name = $explore_data->get('field_dean_name')->value;
         $dean_univ = $explore_data->get('field_dean_un')->value;
         $dean_video = $explore_data->get('field_dean_video')->value;
         $dean_message = $explore_data->get('field_dean_message_la')->value;
@@ -113,6 +114,7 @@ foreach($paragraph_univ_data as $explore_data) {
         'msg_title' =>$msg_title,
         'prof_name' =>$prof_name,
         'prof_univ' =>$prof_univ,
+        'dean_name' =>$dean_name,
         'dean_univ' =>$dean_univ,
         'dean_video' =>$dean_video,
         'dean_message' =>$dean_message,
@@ -278,6 +280,7 @@ foreach($paragraph_univ_data as $explore_data) {
         $prof_name = $explore_data->get('field_professor_name')->value;
         $rector_image = $explore_data->get('field_professor_name')->value;
         $prof_univ = $explore_data->get('field_prof_university')->value;
+        $dean_name = $explore_data->get('field_dean_name')->value;
         $dean_univ = $explore_data->get('field_dean_un')->value;
         $dean_video = $explore_data->get('field_dean_video')->value;
         $dean_message = $explore_data->get('field_dean_message_la')->value;
@@ -336,6 +339,7 @@ foreach($paragraph_univ_data as $explore_data) {
         'msg_title' =>$msg_title,
         'prof_name' =>$prof_name,
         'prof_univ' =>$prof_univ,
+        'dean_name' =>$dean_name,
         'dean_univ' =>$dean_univ,
         'dean_video' =>$dean_video,
         'dean_message' =>$dean_message,
@@ -1508,20 +1512,40 @@ function search($word = false){
     $word = trim($word);
 
     if ($word != 'abc') {
-      $_POST['search_key'] = $word;
+      $_REQUEST['search_key'] = $word;
     }
 
+    /*
     if(isset($_POST['search_key']) && strpos(strtolower($_POST['search_key']), 'certification') !== false){
        $_POST['search_key'] = 'certificate';
     }
+    */
 
     $bundle='course';
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
 
-    $grp = $query->orConditionGroup()
-      ->condition('title' ,$_POST['search_key'] ,'CONTAINS')
-      ->condition('field_course_banner_description.value' ,$_POST['search_key'] , 'CONTAINS');
+    if ( $_REQUEST['search_key'] == "viewllcertificate" )
+    {
+        $grp = $query->orConditionGroup()
+      ->condition('field_course_category', 'Certifications', '=');
+        $_REQUEST['search_key'] = ""; 
+
+    }elseif ( $_REQUEST['search_key'] == "showallacademic") {
+        $grp = $query->orConditionGroup()
+      ->condition('field_course_category', 'Academic', '=');
+        $_REQUEST['search_key'] = "";         
+    }elseif ( $_REQUEST['search_key'] == "showallpopular") {
+        $grp = $query->orConditionGroup()
+      ->condition('field_is_popular_course', '1', '=');
+        $_REQUEST['search_key'] = "";         
+    }
+    else
+    {
+      $grp = $query->orConditionGroup()
+      ->condition('title' ,$_REQUEST['search_key'] ,'CONTAINS')
+      ->condition('field_course_banner_description.value' ,$_REQUEST['search_key'] , 'CONTAINS');  
+    }
 
     // Filter conditions
     if(isset ($_REQUEST['lang']) && !empty($_REQUEST['lang']) && $_REQUEST['lang'] != 'language') {
@@ -1574,7 +1598,7 @@ function search($word = false){
     $merged_nodes =  $nodes ;
 
 
-    $term_name = $_POST['search_key'];
+    $term_name = $_REQUEST['search_key'];
     if (!empty($term_name)) {
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
         ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
@@ -1673,7 +1697,7 @@ function search($word = false){
    '#base_path' => $base_path,
    '#node' => $merged_nodes,
    '#partner_list' => $partner_list,
-   '#search_key' => $_POST['search_key'],
+   '#search_key' => $_REQUEST['search_key'],
    '#count' => count($merged_nodes)
 
   ];

@@ -96,6 +96,8 @@
         .prop("checked", "")
         .end();
         jQuery("#registration-afpage").validate().resetForm();
+        $('#registration-afpage .reg-form-control').removeClass('help-inline-error');
+        
     $(".ref-form-2").hide("fast");
     $(".reg-form").show("slow");
   });

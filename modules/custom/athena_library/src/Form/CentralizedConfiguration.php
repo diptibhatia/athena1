@@ -131,6 +131,22 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('how_you_learn.format'),
     ];
 
+    $form['static_blocks']['footer_links'] = [
+      '#type' => 'text_format',
+      '#title' => 'Footer Links',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('footer_links.value'),
+      '#format' => $config->get('footer_links.format'),
+    ];
+
+    $form['static_blocks']['why_athena'] = [
+      '#type' => 'text_format',
+      '#title' => 'Why Athena',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('why_athena.value'),
+      '#format' => $config->get('why_athena.format'),
+    ];
+
     $form['email_templates'] = array(
       '#type' => 'details',
       '#title' => t('Email Templates'),
@@ -216,6 +232,12 @@ class CentralizedConfiguration extends ConfigFormBase {
 
       ->set('how_you_learn.value', $form_state->getValue('how_you_learn')['value'])
       ->set('how_you_learn.format', $form_state->getValue('how_you_learn')['format'])
+
+      ->set('footer_links.value', $form_state->getValue('footer_links')['value'])
+      ->set('footer_links.format', $form_state->getValue('footer_links')['format'])
+
+      ->set('why_athena.value', $form_state->getValue('why_athena')['value'])
+      ->set('why_athena.format', $form_state->getValue('why_athena')['format'])
 
       ->set('news_subscription_subject', $form_state->getValue('news_subscription_subject'))
       ->set('news_subscription.value', $form_state->getValue('news_subscription')['value'])
