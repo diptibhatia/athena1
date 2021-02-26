@@ -104,7 +104,7 @@
 
   //----------------form validation
   jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
+  return this.optional(element) || /^[a-zA-Z_ \.]*$/i.test(value);
 }, "Please enter only letters"); 
 
 jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
@@ -169,7 +169,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
     errorElement: "span",
     errorClass: "help-inline-error",
   });
-  $(".sign-up-button").click(function(e) {
+  $(".sign-up-button").click(function(e) {    
     e.preventDefault();
     cData.email = String(jQuery("#regEmail").val());
     cData.cId = parseInt(jQuery("#course").val());    
@@ -244,12 +244,19 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
           if (data == "Sucess" || data == "Success") {
             // console.log(modId);
             if(cData.pay == 1) {
-              confirm("Registration Successful, please wait while we redirect you to payment page");
+              var r = confirm("Registration Successful, please wait while we redirect you to payment page");
             }
             else {
-              confirm("Registration Successful, you will be redirected to login page now.");
+              var r = confirm("Registration Successful, you will be redirected to login page now.");
             }
-            redirCandidate(cData, utmSource);
+
+            if (r == true) {
+              redirCandidate(cData, utmSource);
+            } else {
+                 window.close();
+                 parent.location.reload();       
+            }
+            
           }
         },
         error: function (jqXhr, textStatus, errorMessage) {
