@@ -147,6 +147,15 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('why_athena.format'),
     ];
 
+    $form['static_blocks']['ects_desc'] = [
+          '#type' => 'text_format',
+          '#title' => 'Ects Description',
+          '#format' => 'full_html',
+          '#default_value' => $config->get('ects_desc.value'),
+          '#format' => $config->get('ects_desc.format'),
+        ];
+
+
     $form['email_templates'] = array(
       '#type' => 'details',
       '#title' => t('Email Templates'),
@@ -238,6 +247,10 @@ class CentralizedConfiguration extends ConfigFormBase {
 
       ->set('why_athena.value', $form_state->getValue('why_athena')['value'])
       ->set('why_athena.format', $form_state->getValue('why_athena')['format'])
+
+      ->set('ects_desc.value', $form_state->getValue('ects_desc')['value'])
+      ->set('ects_desc.format', $form_state->getValue('ects_desc')['format'])
+
 
       ->set('news_subscription_subject', $form_state->getValue('news_subscription_subject'))
       ->set('news_subscription.value', $form_state->getValue('news_subscription')['value'])

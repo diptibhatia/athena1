@@ -92,11 +92,15 @@
                                 <a href="#whatYouLearn">Go to Module Details</a>
 
                                 {% for tax_value_detail in tax_value %}
-
                                 {% if tax_value_detail == "Degree" %}
+
+                                {{ get_static_data('ects_desc', TRUE)|raw }}
+
+                                {#
                                 <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
                                     the exact mapping information, however the final MBA awarded by the University will
                                     carry 60 ECTS credits. <a href="{{ url('<front>') }}/ects">What Is ECTS?</a></p>
+                                #}
 
                                 {% endif %}
                                 {% endfor %}
@@ -1201,7 +1205,7 @@
 
       jQuery("#smo_form_submit").click(function() {
         var msg = '';
-        var regex = /^([a-zA-Z_\.\-\+])+$/;
+        var regex = /^[a-zA-Z_ \.]*$/;
 
         fname  = jQuery("#speak_first_name").val();
 
@@ -1369,7 +1373,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
 
-  return this.optional(element) || /^[a-z_\.\-\+]+$/i.test(value);
+  return this.optional(element) || /^[a-zA-Z_ \.]*$/i.test(value);
 
 }, "Please enter only letters");
 

@@ -598,3 +598,47 @@ $countries = array( "BD" => "Bangladesh", "BE" => "Belgium", "BF" => "Burkina Fa
   }
 
   }
+
+/**
+ * Get Universtiy svg logo from entity id
+ */
+  function getUniversityWhiteLogo($entity_id) {
+    if(empty($entity_id) || $entity_id == 0) {
+      return '';
+    }
+    $university_node = Node::load($entity_id);
+    switch($university_node->get('title')->value){
+      case 'Scottish Qualifications Authority, UK':
+        return "sqalogo";
+        break;
+      case 'Guglielmo Marconi University, Italy':
+        return "gmu-white";
+        break;
+      case 'Cambridge International Qualifications, UK':
+        return "ciq-white";
+        break;
+       case 'Universidad Catolica De Murcia (UCAM), Spain':
+        return "ucam-logo";
+        break;
+      case 'Chartered Management Institute, UK':
+        return "cmi-white";
+        break;
+      default:
+        return '';
+        break;
+    }
+  }
+
+  /**
+ * Get Universtiy logo from entity id
+ */
+function getUniversityLogo($entity_id) {
+  if(empty($entity_id) || $entity_id == 0) {
+    return '';
+  }
+  $university_node = Node::load($entity_id);
+  if(is_object($university_node->field_logo)) {
+    return file_create_url($university_node->field_logo->entity->getFileUri());
+  }
+  return '';
+}
