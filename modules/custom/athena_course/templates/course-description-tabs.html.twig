@@ -96,12 +96,16 @@
                                 <a href="#whatYouLearn">Go to Module Details</a>
 
                                 {% for tax_value_detail in tax_value %}
-
                                 {% if tax_value_detail == "Degree" %}
+                                
+                                {{ get_static_data('ects_desc', TRUE)|raw }}
+
+                                {#
                                 <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
                                     the exact mapping information, however the final MBA awarded by the University will
                                     carry 60 ECTS credits. <a href="{{ url('<front>') }}/ects">What Is ECTS?</a></p>
-
+                                #}
+                                        
                                 {% endif %}
                                 {% endfor %}
 
@@ -233,7 +237,7 @@
                     <div class="fyi-tabs__why-athena">
                         
 
-                        
+
                         {{ get_static_data('why_athena', TRUE)|raw }}
 
                         <div class="overview-points-card">
