@@ -95,6 +95,7 @@ class SendMail extends ResourceBase
             $tokens['phone'] = $info['phone'] ?? '';
             $tokens['mail'] = $info['mail'] ?? '';
             $tokens['category'] = $info['category'] ?? '';
+            $tokens['country_code'] = $info['country_code'] ?? '';
 
             $cid = $info['cid'] ?? '';
             if (!empty($cid)) {

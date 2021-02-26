@@ -45,6 +45,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'banner' => NULL,
       'node' => NULL,
       'base_path' => NULL,
+      'campaign_params' => NULL
       ],
     ],
 
@@ -188,6 +189,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'why_athena' => NULL,
       'tax_value' => NULL,
       'base_path' => NULL,
+      'campaign_params' => NULL
       ],
     ],
 

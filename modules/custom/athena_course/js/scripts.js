@@ -193,7 +193,8 @@ jQuery("#get_in_touch_form").validate({
                       'fname': jQuery('#get_in_touch_fname').val(),
                       'lname': jQuery('#get_in_touch_lname').val(),
                       'email': jQuery('#get_in_touch_email').val(),
-                      'phone': jQuery('#phone').val()
+                      'phone': jQuery('#phone').val(),
+                      'country_code': jQuery("#country_code").val()
                     };
 
 /*

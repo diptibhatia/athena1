@@ -262,7 +262,7 @@ function athena_preprocess_page(&$variables) {
                   $tagged_node_ids[] = $attached_node->target_id;
                 }
                 if (in_array($current_page_node_id, $tagged_node_ids)) {
-                  
+
                   $aff_fields = array();
                   if(is_object( $node->field_affiliate_page_fields)){
                     $affiliate_fields = $node->field_affiliate_page_fields->referencedEntities();
@@ -273,7 +273,7 @@ function athena_preprocess_page(&$variables) {
                     $coursedelivery = "";
                     $courselrnsuprt = "";
 
-                    foreach($affiliate_fields as $fields){                        
+                    foreach($affiliate_fields as $fields){
                       $moduleid =  $fields->get('field_module_id')->value;
                       $assessment =  $fields->get('field_course_assessment')->value;
                       $instalmenttype =  $fields->get('field_instalment_type')->value;
@@ -281,7 +281,7 @@ function athena_preprocess_page(&$variables) {
                       $coursedelivery =  $fields->get('field_course_delivery')->value;
                       $courselrnsuprt =  $fields->get('field_course_lrnsuprt')->value;
 
-                    }                   
+                    }
 
                   }
 
