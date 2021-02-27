@@ -13,28 +13,27 @@ public function news_subscription(){
 }
 
 public function smo_tq(){
-    if(isset($_REQUEST['nid'])){
+  if(isset($_REQUEST['nid'])){
     $node = Node::load($_REQUEST['nid']);
-    }
-       global $base_url;
-    $theme = \Drupal::theme()->getActiveTheme();
-    $base_path = $base_url.'/'. $theme->getPath();
+  }
 
-    $source = $_REQUEST['utm_source'];
-$campaign = $_REQUEST['utm_campaign'];
-$academic =  [
-  '#theme' => 'smotq',
-  '#source' => $source,
-  '#campaign' => $campaign,
-  '#node' => $node,
-  '#base_path' => $base_path,
-];
+  global $base_url;
+  $theme = \Drupal::theme()->getActiveTheme();
+  $base_path = $base_url.'/'. $theme->getPath();
 
+  $source = $_REQUEST['utm_source'];
+  $campaign = $_REQUEST['utm_campaign'];
+  $academic =  [
+    '#theme' => 'smotq',
+    '#source' => $source,
+    '#campaign' => $campaign,
+    '#node' => $node,
+    '#base_path' => $base_path,
+  ];
 
-return array($academic);
-
-
+  return array($academic);
 }
+
 public function smo($nid) {
     $parameters = \Drupal::routeMatch()->getParameters();
     $node = Node::load($nid);
@@ -76,8 +75,8 @@ foreach($paragraph_univ_data as $explore_data) {
     //   print_r($certificates);
 
         //if (!empty($university_nid)) {
-       if ( !empty($university_nid) && $university_nid != "")       
-       { 
+       if ( !empty($university_nid) && $university_nid != "")
+       {
        $univ_node = Node::load($university_nid);
        $white_log  = '';
        switch($univ_node->get('title')->value){
@@ -255,6 +254,15 @@ $campaign = $_REQUEST['utm_campaign'];
 
 
   public function course($nid) {
+    $ref = $_GET['ref'] ?? '';
+    $utm_source = $_GET['utm_source'] ?? '';
+    $utm_medium = $_GET['utm_medium'] ?? '';
+    $utm_campaign = $_GET['utm_campaign'] ?? '';
+    $url_params = '';
+    if (!empty($ref) && !empty($utm_source) && !empty($utm_medium) && !empty($utm_campaign)) {
+      $url_params = '&ref=' . $ref . '&utm_source=' . $source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
+    }
+
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();
 
@@ -440,7 +448,7 @@ foreach($paragraph_course_batch as $attached_node){
   'description' => $description,
   'description_long' => $description_long,
   'country' => $country,
-  'country_flag' => $country_flag,  
+  'country_flag' => $country_flag,
   'course_nid' => $course_nid,
   );
 
@@ -454,14 +462,14 @@ $faq = array();
 
 
 foreach($paragraph_faq as $faq_data){
-  
+
 
     if(!empty($faq_data->get('field_category')->value)) {
 
       $allowed_values = $faq_data->getFieldDefinition('field_category')->getFieldStorageDefinition()->getSetting('allowed_values');
       $faq_value = $faq_data->get('field_category')->value;
       $label = $allowed_values[$faq_value];
-  
+
 
     $faq[$label][] = array(
        'question' => $faq_data->get('field_question')->value,
@@ -481,7 +489,7 @@ foreach($tax_term as $tax_term_list){
   //$value = $tax_term_list->name;
   $tax_value[] = $tax_term_list->getName();
   //print($value);
-  
+
 }
 //------------------
 
@@ -506,7 +514,8 @@ $banner_block =  [
   '#category' => $node->get('field_course_category')->value,
   '#banner' => $banner_pic_url,
   '#base_path' => $base_path,
-  '#node' => $node
+  '#node' => $node,
+  '#campaign_params' => $url_params
 ];
 
 $fee_pay_per = $node->get('field_course_fee_pay_per')->value;
@@ -527,7 +536,7 @@ $course_description_tabs =  [
   '#testi' => $testimo,
   '#node' => $node,
   '#total_fee' => $node->get('field_course_total_fee')->value,
-  '#fees_pay_per' => $fee_pay_per,   
+  '#fees_pay_per' => $fee_pay_per,
   '#univ_data' => $univ_data,
   '#logo' => $univ_data,
   '#course_title' => $node->get('title')->value,
@@ -550,7 +559,8 @@ $course_description_tabs =  [
   '#language_prof_desc' => $node->get('field_course_language_prof_desc')->value,
   '#why_athena' => $node->get('field_course_why_athena')->value,
   '#tax_value' => $tax_value,
-    '#base_path' => $base_path,
+  '#base_path' => $base_path,
+  '#campaign_params' => $url_params
 ];
 
 return array(
@@ -560,7 +570,7 @@ return array(
 
   }
 
-  
+
   public function registration() {
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();
@@ -1529,22 +1539,22 @@ function search($word = false){
     {
         $grp = $query->orConditionGroup()
       ->condition('field_course_category', 'Certifications', '=');
-        $_REQUEST['search_key'] = ""; 
+        $_REQUEST['search_key'] = "";
 
     }elseif ( $_REQUEST['search_key'] == "showallacademic") {
         $grp = $query->orConditionGroup()
       ->condition('field_course_category', 'Academic', '=');
-        $_REQUEST['search_key'] = "";         
+        $_REQUEST['search_key'] = "";
     }elseif ( $_REQUEST['search_key'] == "showallpopular") {
         $grp = $query->orConditionGroup()
       ->condition('field_is_popular_course', '1', '=');
-        $_REQUEST['search_key'] = "";         
+        $_REQUEST['search_key'] = "";
     }
     else
     {
       $grp = $query->orConditionGroup()
       ->condition('title' ,$_REQUEST['search_key'] ,'CONTAINS')
-      ->condition('field_course_banner_description.value' ,$_REQUEST['search_key'] , 'CONTAINS');  
+      ->condition('field_course_banner_description.value' ,$_REQUEST['search_key'] , 'CONTAINS');
     }
 
     // Filter conditions
@@ -1941,7 +1951,7 @@ $univ = $_REQUEST['univ'];
 $query->condition('field_university_key', strtolower($univ), '=');
     $query->condition('type', $bundle);
     $universities = $query->execute();
-    
+
 $universities = node_load_multiple($universities);
 $node = current($universities);
 $banner = $node->get('field_university_key')->value.'-banner';

@@ -67,11 +67,7 @@
                             </div>
                                 {% endif %}
                             <div class="overview-points-card__container">
-                                 {% if source is not empty %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
-  {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
- {% endif %}Take a Free Trial Now</a>
+                                 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
@@ -96,11 +92,15 @@
                                 <a href="#whatYouLearn">Go to Module Details</a>
 
                                 {% for tax_value_detail in tax_value %}
-
                                 {% if tax_value_detail == "Degree" %}
+
+                                {{ get_static_data('ects_desc', TRUE)|raw }}
+
+                                {#
                                 <p class="italic"><span>*ECTS</span> equivalency chart is for comparison purpose only and doesn't reflect
                                     the exact mapping information, however the final MBA awarded by the University will
                                     carry 60 ECTS credits. <a href="{{ url('<front>') }}/ects">What Is ECTS?</a></p>
+                                #}
 
                                 {% endif %}
                                 {% endfor %}
@@ -147,12 +147,7 @@
                                 {% endif %}
                             </div>
                             <div class="overview-points-card__container">
-                             {% if source is not empty %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
-  {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
- {% endif %}
-                                Take a Free Trial Now</a>
+                             <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
@@ -219,19 +214,14 @@
                                 {% endif %}
                             </div>
                             <div class="overview-points-card__container">
-                                 {% if source is not empty %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
-  {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
- {% endif %}
- Take a Free Trial Now</a>
+                                 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="why-athena" role="tabpanel" aria-labelledby="why-athena-tab-classic">
                     <div class="fyi-tabs__why-athena">
-                        
+
                         {{ get_static_data('why_athena', TRUE)|raw }}
 
                         <div class="overview-points-card">
@@ -276,11 +266,7 @@
 
                             </div>
                             <div class="overview-points-card__container">
-                                 {% if source is not empty %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
-  {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}" >
- {% endif %}Take a Free Trial Now</a>
+                                 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
                             </div>
                         </div>
                     </div>
@@ -772,7 +758,7 @@
                 <div class="register">
                     <h3>Ready to Start ?</h3>
                     <p>It is really easy to start with us. You can register for this course with minimum details and get access to one of the modules of this course for 7 days. During this period, you may enroll in this course by submitting the required documents and making a module fee.</p>
-                    <a href="{{ url('<front>') }}/registration">Register Now for 7 day trial</a>
+                    <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now for 7 day trial</a>
                 </div>
                 <div class="container-fluid p-0 about-us-wrapper form">
                     <div class="course-login-wrapper">
@@ -1219,7 +1205,7 @@
 
       jQuery("#smo_form_submit").click(function() {
         var msg = '';
-        var regex = /^([a-zA-Z_\.\-\+])+$/;
+        var regex = /^[a-zA-Z_ \.]*$/;
 
         fname  = jQuery("#speak_first_name").val();
 
@@ -1387,7 +1373,7 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
 
-  return this.optional(element) || /^[a-z_\.\-\+]+$/i.test(value);
+  return this.optional(element) || /^[a-zA-Z_ \.]*$/i.test(value);
 
 }, "Please enter only letters");
 

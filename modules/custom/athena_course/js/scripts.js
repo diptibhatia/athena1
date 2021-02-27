@@ -143,7 +143,7 @@ jQuery("#get_in_touch_form").validate({
 
             jQuery("#get_in_touch").click(function(e) {
                  var msg = '';
-                var regex = /^([a-zA-Z_\.\-\+])+$/;
+                var regex = /^[a-zA-Z_ \.]*$/;
 
                 fname  = jQuery("#get_in_touch_fname").val();
                 lname  = jQuery("#get_in_touch_lname").val();
@@ -193,7 +193,8 @@ jQuery("#get_in_touch_form").validate({
                       'fname': jQuery('#get_in_touch_fname').val(),
                       'lname': jQuery('#get_in_touch_lname').val(),
                       'email': jQuery('#get_in_touch_email').val(),
-                      'phone': jQuery('#phone').val()
+                      'phone': jQuery('#phone').val(),
+                      'country_code': jQuery("#country_code").val()
                     };
 
 /*
@@ -375,7 +376,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
              jQuery("#registration_form").click(function() {
                 var msg = '';
                 var c_email = jQuery("#reg_email").val();
-                var regex = /^([a-zA-Z_\.\-\+])+$/;
+                var regex = /^[a-zA-Z_ \.]*$/;
 
                 fname  = jQuery("#reg_first_name").val();
                 lname  = jQuery("#reg_last_name").val();
