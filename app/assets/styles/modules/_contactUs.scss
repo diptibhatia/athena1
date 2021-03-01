@@ -9,8 +9,8 @@
 	  
 	.login-details {
 		padding: 20px 23px;
-		label {display: block; color:red; clear:both;}
-		h2 {
+		label {display: block; clear:both;}
+		h1 {
 			font-size: 1rem;
 			margin: 0;
 			font-weight: bold;
@@ -146,7 +146,7 @@
 			label {display: inline-block; color:#303030;
 				a {color:#303030}
 				}
-			button {
+			input[type="submit"] {
 				width: 100%;
 			  	height: 50px;
 			  	border-radius: 6px;
