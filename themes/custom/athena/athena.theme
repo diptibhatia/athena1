@@ -341,6 +341,11 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
 
+  if (strpos($current_path, '/Contact-Us') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
+
+
   if (strpos($current_path, '/smo') !== false) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
