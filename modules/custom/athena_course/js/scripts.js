@@ -368,7 +368,9 @@ jQuery.ajax(baseUrl + '/save/contact', {
                         //window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
 
                       } else {
-                        //txt = "You pressed Cancel!";
+
+                          window.close();
+                          
                       }
 
                     }
