@@ -19,10 +19,12 @@
  */
 #}
 
+
 <div class="insight-card-footer d-flex justify-content-between p-3">
      <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare"><img src="/themes/custom/athena/images/share.svg" alt="share icon"></a>
     <span><small class="readMin">{{ output -}}</small></span>
 </div>
+
 
  
 
@@ -66,16 +68,23 @@
 
    <div class="row m-0">
     <div class="col-md-12 p-0 text-center pb-4">
-        <a class="d-inline-block p-2" href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}insights/all" target="_blank">
+
+        
+        <a class="d-inline-block p-2" href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{row.nid}}" target="_blank">
             <img src="/themes/custom/athena/images/fb-ico.png" width="45"></a>
-        <a class="d-inline-block p-2" href="http://twitter.com/share?url={{ url('<front>') }}insights/all" target="_blank">
+
+        <a class="d-inline-block p-2" href="http://twitter.com/share?url=Check out this - {{my_title}}. {{ url('<front>') }}node/{{row.nid}}" target="_blank">
             <img src="/themes/custom/athena/images/tw-co.png" width="45"></a>
-        <a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}insights/all" target="_blank">
+        
+        <a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{row.nid}}" target="_blank">
             <img src="/themes/custom/athena/images/li-ico.png" width="45"></a>
-        <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text={{ url('<front>') }}insights/all" data-action="share/whatsapp/share">
+        
+        <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text=Check out this  - {{my_title}}.{{ url('<front>') }}node{{row.nid}}" data-action="share/whatsapp/share">
             <img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
-        <a class="d-inline-block p-2" href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}insights/all" title="Share by Email" p-1="">
+        
+        <a class="d-inline-block p-2" href="mailto:?subject=Check out this - {{my_title}}&amp;body=Check out this - {{my_title}} {{ url('<front>') }}node/{{row.nid}}" title="Share by Email" p-1="">
             <img src="/themes/custom/athena/images/at-ico.png" width="45"></a>
+
     </div>
 </div>
 
