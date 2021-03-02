@@ -478,3 +478,43 @@ $variables['enable_popup'] = FALSE;
  }
 }
 
+function athena_preprocess_views_view_field(&$variables) {
+   $view = $variables['view'];
+    if($view->id() == 'insights_all') {
+     if($variables['field']->field == 'read_time') {
+        $entity = $variables['row']->_entity;
+        $my_altered_value = $entity->getTitle();
+        $variables['my_title'] = $my_altered_value;
+     }     
+  }   
+    
+  if($view->id() == 'insight_interview_view') {
+     if($variables['field']->field == 'field_interview_min_read') {
+        $entity = $variables['row']->_entity;
+        $my_altered_value = $entity->getTitle();
+        $variables['my_title'] = $my_altered_value;
+     }     
+  }   
+    
+  if($view->id() == 'insights_book_review' || $view->id() == 'insights_press_release' || 
+    $view->id() == 'insight_news' || $view->id() == 'insight_blogs' ) {
+     if($variables['field']->field == 'field_insight_article_min_read') {
+        $entity = $variables['row']->_entity;
+        $my_altered_value = $entity->getTitle();
+        $variables['my_title'] = $my_altered_value;
+     }     
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
