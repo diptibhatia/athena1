@@ -28,13 +28,15 @@ h1.title {
   position: relative;
   z-index: 10; 
   background-color: #ffffff; 
+  margin: 20px;
   .iti {
 	position: relative;
     display: block;
   }
+  .form-tel {padding-left:60px;}
   .login-details {
 	  padding: 20px 23px;
-	  margin: 20px;
+	  
 	  label {display: block; clear:both;}
 	  h1 {
 		  font-size: 1rem;
