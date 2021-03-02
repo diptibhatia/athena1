@@ -341,9 +341,19 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
 
-  if (strpos($current_path, '/Contact-Us') !== false) {
+  
+  if (strpos($current_path, '/webform/contact_us') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
+
+  if (strpos($current_path, '/webform/contact_us/confirmation') !== false) {
+      $variables['athena_exclude'] = TRUE;
+    }
+
+  $err_alias = \Drupal::service('path.alias_manager')->getPathByAlias('/Error');
+    if (strpos($current_path, $err_alias) !== false) {
+      $variables['athena_exclude'] = TRUE;
+    }
 
 
   if (strpos($current_path, '/smo') !== false) {
