@@ -109,7 +109,7 @@
 			<div class="card">
 				<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" /></a>
                 <div class="insight-logo"><a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></a></div>
-          <div class="readTime"><a href="/node/{{popudata.nid.value}}">{{popudata.field_insight_article_min_read.value}}</a></div>
+          <div class="readTime"><a href="/node/{{popudata.nid.value}}">{#{popudata.field_insight_article_min_read.value}#} {{popudata.read_time}}</a></div>
 				<div class="card-body">
 					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
 					<p class="card-text">
@@ -134,7 +134,7 @@
          <div class="card mr-2">
          	<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
             <div class="insight-logo"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></div>
-            <div class="readTime">{{popudata.field_insight_article_min_read.value}}</div></a>
+            <div class="readTime">{#{popudata.field_insight_article_min_read.value}#} {{popudata.read_time}}</div></a>
 				<div class="card-body">
 					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
 					<p class="card-text">
