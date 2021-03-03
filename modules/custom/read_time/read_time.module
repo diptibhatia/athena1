@@ -131,7 +131,7 @@ function read_time_node_view(array &$build, EntityInterface $entity, EntityViewD
       ->execute()
       ->fetchField();
 
-    if (empty($time)) {
+    if (empty($time) || $time == 0) {
       $time = read_time_calculate($entity);
       
       \Drupal::database()->merge('read_time')
@@ -253,4 +253,58 @@ function read_time_views_data_alter(array &$data) {
       'id' => 'read_time',
     ),
   );
+}
+
+function get_read_time($entity) {
+  $defaults = read_time_defaults();
+
+    $node_type = $entity->type->entity;
+    $format = $node_type->getThirdPartySetting('read_time', 'read_time_format', $defaults['format']);
+    $display = $node_type->getThirdPartySetting('read_time', 'read_time_display', $defaults['display']);
+
+    $time = \Drupal::database()
+      ->select('read_time', 'r')
+      ->fields('r', ['read_time'])
+      ->condition('r.nid', $entity->id())
+      ->execute()
+      ->fetchField();
+
+    if (empty($time) || $time == 0) {
+      $time = read_time_calculate($entity);
+      
+      \Drupal::database()->merge('read_time')
+        ->key(['nid' => $entity->id()])
+        ->fields([
+          'read_time' => $time,
+        ])
+        ->execute();
+    }
+
+    // Format read time.
+    if (in_array($format, array('hour_short', 'hour_long'))) {
+      $hours = floor($time / 60);
+      $minutes = ceil(fmod($time, 60));
+    } else {
+      $minutes = ceil($time);
+    }
+    if (in_array($format, array('hour_long', 'min_long'))) {
+      $hour_suffix = 'hour';
+      $min_suffix = 'minute';
+    } else {
+      $hour_suffix = 'hr';
+      $min_suffix = 'min';
+    }
+    $minute_format = \Drupal::translation()->formatPlural($minutes, '1 ' . $min_suffix, '@count ' . $min_suffix . 's');
+    if (!empty($hours)) {
+      $hour_format = \Drupal::translation()->formatPlural($hours, '1 ' . $hour_suffix, '@count ' . $hour_suffix . 's');
+      $read_time = format_string('@h, @m', array('@h' => $hour_format, '@m' => $minute_format));
+    } else {
+      $read_time = $minute_format;
+    }
+    $data = t((string) $display, [':read_time' => strtoupper($read_time)]);
+    $build['read_time'] = [
+      '#type' => 'markup',
+      '#markup' => $data,
+    ];
+    return render($build);
 }

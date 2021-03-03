@@ -70,7 +70,7 @@ class ReadTime extends FieldPluginBase {
       ->execute()
       ->fetchField();
 
-    if (empty($time)) {
+    if (empty($time) || $time == 0) {
       $time = read_time_calculate($entity);
       
       \Drupal::database()->merge('read_time')

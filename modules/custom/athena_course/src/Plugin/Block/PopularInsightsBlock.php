@@ -36,16 +36,20 @@ class PopularInsightsBlock extends BlockBase {
     $testinodes = node_load_multiple($latest);
         
     $testimo =  array_slice($testinodes, 0, 3);
-    //echo "<pre>";     
-    //print_r($testimo);exit;
-
+    $temp = [];
+    foreach($testimo as $test) {
+      $node = $test;
+      $node->read_time = function_exists('get_read_time') ? get_read_time($node) : "";
+      $temp[] = $node;
+    }
+    
   // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();
 
   $base_path = $base_url.'/'. $theme->getPath();
     $popular_insights =  [
     '#theme' => 'popular_insights',
-    '#popu' => $testimo,
+    '#popu' => $temp,
     '#base_path' => $base_path,
 
   ]; 
