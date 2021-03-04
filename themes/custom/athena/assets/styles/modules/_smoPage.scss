@@ -4,7 +4,7 @@
     padding-top: 18px;
     padding-bottom: 40px;
     overflow: hidden;
-
+    background-color: #ff008e;
     @include atSize700 {
         padding-bottom: 56px;
     }
@@ -86,7 +86,7 @@
             align-items: center;
             position: fixed;
             right: 6px;
-            top: 150px;
+            top: 130px;
             transform: none;
             flex-direction: column-reverse;
             row-gap: 15px;
