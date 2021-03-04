@@ -490,7 +490,9 @@ function athena_preprocess_views_view_field(&$variables) {
      if($variables['field']->field == 'read_time') {
         $entity = $variables['row']->_entity;
         $my_altered_value = $entity->getTitle();
-        $variables['my_title'] = $my_altered_value;        
+        $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
+        //$variables['my_title'] = $my_altered_value;        
      }     
   }   
     
@@ -498,13 +500,17 @@ function athena_preprocess_views_view_field(&$variables) {
      if($variables['field']->field == 'field_interview_min_read') {
         $entity = $variables['row']->_entity;
         $my_altered_value = $entity->getTitle();
-        $variables['my_title'] = $my_altered_value;
+        //$variables['my_title'] = $my_altered_value;
+        $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
      }  
      
      if($variables['field']->field == 'read_time') {
       $entity = $variables['row']->_entity;
       $my_altered_value = $entity->getTitle();
-      $variables['my_title'] = $my_altered_value;
+      //$variables['my_title'] = $my_altered_value;
+      $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
    }     
   }   
     
@@ -513,13 +519,17 @@ function athena_preprocess_views_view_field(&$variables) {
      if($variables['field']->field == 'field_insight_article_min_read') {
         $entity = $variables['row']->_entity;
         $my_altered_value = $entity->getTitle();
-        $variables['my_title'] = $my_altered_value;
+        //$variables['my_title'] = $my_altered_value;
+        $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
      }  
      
      if($variables['field']->field == 'read_time') {
       $entity = $variables['row']->_entity;
       $my_altered_value = $entity->getTitle();
-      $variables['my_title'] = $my_altered_value;
+      //$variables['my_title'] = $my_altered_value;
+      $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
    } 
   }
   
