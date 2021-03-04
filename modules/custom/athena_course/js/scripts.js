@@ -336,7 +336,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                   data: JSON.stringify(sendInfo) ,  // data to submit
                    dataType: 'json',
                   success: function (data, status, xhr) {
-                      var txt;                      
+                      var txt;
                       var r = confirm("Registration Successful, you will be redirected to login page now.");
                       if (r == true) {
                        // txt = "You pressed OK!";
@@ -346,14 +346,14 @@ jQuery.ajax(baseUrl + '/save/contact', {
                   },
                   error: function (jqXhr, textStatus, errorMessage) {
                     if(jqXhr.status == 200) {
-                      
+
                       var r = confirm("Registration Successful, you will be redirected to login page now.");
                       if (r == true) {
 
                         jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id))
                           .then(function( data, textStatus, jqXHR ) {
-                          var userId = parseInt(jQuery.trim(data));                          
-                          if( userId > 0) {                            
+                          var userId = parseInt(jQuery.trim(data));
+                          if( userId > 0) {
                             //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
                             window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cid+'&mail='+email_id);
 
@@ -370,7 +370,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                       } else {
 
                           window.close();
-                          
+
                       }
 
                     }
@@ -459,7 +459,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
             var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
-                                if (redirect == true) {                                 
+                                if (redirect == true) {
                                  // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
                                  window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
                                 } else {
@@ -500,7 +500,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
 
                 var mailinfo = {
                   'mail': jQuery('#newsletter-email-input').val(),
-                  'type' => 'newsletter'
+                  'type': 'newsletter'
                 };
 
                 jQuery.ajax(baseUrl + '/save/contact', {
