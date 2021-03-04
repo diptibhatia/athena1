@@ -92,14 +92,24 @@ class ContactResources extends ResourceBase
         }
 
         $title = implode('-', $data);
-        $enquiry = Node::create(['type' => 'enquiry_submissions']);
-        $enquiry->set('title', $title);
-        $enquiry->set('field_form_id', $data['form_id']);
-        $enquiry->set('field_course_title', $data['course']);
-        $enquiry->set('field_first_name', $data['fname']);
-        $enquiry->set('field_last_name', $data['lname']);
-        $enquiry->set('field_contact_number', $data['phone']);
-        $enquiry->enforceIsNew();
+
+        $type = $data['type'] ?? '';
+        if (!empty($type)) {
+            $enquiry = Node::create(['type' => 'news_letter']);
+            $enquiry->set('title', $data['mail']);
+            $enquiry->enforceIsNew();
+        }
+        else {
+            $enquiry = Node::create(['type' => 'enquiry_submissions']);
+            $enquiry->set('title', $title);
+            $enquiry->set('field_form_id', $data['form_id']);
+            $enquiry->set('field_course_title', $data['course']);
+            $enquiry->set('field_first_name', $data['fname']);
+            $enquiry->set('field_last_name', $data['lname']);
+            $enquiry->set('field_contact_number', $data['phone']);
+            $enquiry->enforceIsNew();
+        }
+
         $enquiry->save();
 
         $response_status = [];

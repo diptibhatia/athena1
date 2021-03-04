@@ -1535,6 +1535,8 @@ function search($word = false){
     $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
 
+    //print "search key=".$_REQUEST['search_key'];
+
     if ( $_REQUEST['search_key'] == "viewllcertificate" )
     {
         $grp = $query->orConditionGroup()
@@ -1607,22 +1609,32 @@ function search($word = false){
 
     $merged_nodes =  $nodes ;
 
+    //print_r($merged_nodes);
 
     $term_name = $_REQUEST['search_key'];
     if (!empty($term_name)) {
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
         ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
+        
       if (count($term) > 0) {
         $term = reset($term);
         $term_id = $term->id();
+        //print_r($term_id);
         $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
         ->latestRevision()
         ->condition('field_tagtaxanomy', $term_id, '=')
         ->condition('type', $bundle)
         ->execute();
 
-        $tnodes = node_load_multiple($term_node);
-        $merged_nodes = array_merge($nodes, $tnodes);
+        
+        $tnodes = node_load_multiple($term_node);        
+        
+        if(empty($nodes))
+          $merged_nodes = $tnodes;
+        else 
+          $merged_nodes = array_merge($nodes, $tnodes); 
+
+        
 
       }
     }

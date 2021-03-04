@@ -44,15 +44,16 @@
     </aside>
     </div>
 {% endif %}
+
 {% if exclude_footer == false %}
 {{footercoursemenu|raw}}
-
-
 {{ get_static_data('footer_links', TRUE)|raw }}
-
-
-
 {% endif %}
+
+{% if include_static_links == true %}
+{{ get_static_data('footer_links', TRUE)|raw }}
+{% endif %}
+
 
 <script type="text/javascript">
     (function () {
