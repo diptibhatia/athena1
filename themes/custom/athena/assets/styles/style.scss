@@ -45,7 +45,8 @@
 @import "modules/modalPopup";
 @import "modules/shorttermcourses";
 @import "modules/customShortTermCourses";
- 
+@import "modules/pluginsCustomShortTermCourses";
+
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 
 #courses-block .owl-nav {
