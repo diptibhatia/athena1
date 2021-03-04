@@ -493,8 +493,26 @@ jQuery.ajax(baseUrl + '/save/contact', {
               }else{
 
                 var mailinfo = {
-                  'mail': jQuery('#newsletter-email-input').val()
+                  'mail': jQuery('#newsletter-email-input').val(),
+                  'type' => 'newsletter'
                 };
+
+                jQuery.ajax(baseUrl + '/save/contact', {
+                  type: 'POST',  // http method
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(mailinfo) ,  // data to submit
+                   dataType: 'json',
+                  success: function (data, status, xhr) {
+                    console.log('success');
+                  },
+                  error: function (jqXhr, textStatus, errorMessage) {
+                    if(jqXhr.status == 200) {
+                      console.log('error');
+                    }
+                  }
+                });
+
                 initiateSendingMail('news-letter-subscribe', mailinfo);
 
                 jQuery('#newsletter-info-box-error').css('display','none');
