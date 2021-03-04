@@ -128,13 +128,13 @@
 				flex-direction: row;
 				margin-right: 10px;
 
-				&:nth-last-of-type(1) {
-					margin-right: 0;
-				}
+				// &:nth-last-of-type(1) {
+				// 	margin-right: 0;
+				// }
 
-				@include atSize700 {
-					margin-right: 0;
-				}
+				// @include atSize700 {
+				// 	margin-right: 0;
+				// }
 
 				input {
 					width: 219px;
