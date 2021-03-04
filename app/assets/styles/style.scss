@@ -69,7 +69,7 @@ img {
     overflow: hidden;
     position: relative;
     max-height:100px;
-    img.thumbnail {position: absolute; /* Take your picture out of the flow */
+    img.thumbnail {position: relative; /* Take your picture out of the flow */
         top: 0;
         bottom: 0;
         left: 0;
@@ -77,11 +77,15 @@ img {
         width: 100%; /* This if for the object-fit */
         height: 90%; /* This if for the object-fit */
         object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
-        object-position: center;}
+        object-position: center;
+        min-height: 100px;
+        max-height: 100px;
+        margin-bottom:5px;
+    }
  }
- .insights-section .section-items .section-item-two img.thumbnail {  
-    position: relative;
- } 
+//  .insights-section .section-items .section-item-two img.thumbnail {  
+//     position: relative;
+//  } 
 // .insights-section .section-items .section-item-two h4 {
 //     margin: inherit;
 // }
