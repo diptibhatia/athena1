@@ -1622,6 +1622,7 @@ function search($word = false){
         //print_r($term_id);
         $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
         ->latestRevision()
+        ->condition('status', 1)
         ->condition('field_tagtaxanomy', $term_id, '=')
         ->condition('type', $bundle)
         ->execute();
