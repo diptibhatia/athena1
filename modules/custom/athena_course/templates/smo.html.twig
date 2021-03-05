@@ -21,6 +21,7 @@
 
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
                 <br>{{awarding_body}}</p>
+                {{source}}
             {% if source is not empty %}
 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
   {% else %}
@@ -522,9 +523,12 @@ Campaign:String(jQuery("#utm_campaign").val()),
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
                           if(utm_source !=''){
-                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+
+                           
+
                            }else{
-                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid);
                            }
                             if (r == true) {
                              // txt = "You pressed OK!";
@@ -537,9 +541,9 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 
                                    if(utm_source !=''){
-                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
                            }else{
-                           window.location.replace('http://courses.athena.edu/smo-tq?nid='+nid);
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid);
                            }
 
 

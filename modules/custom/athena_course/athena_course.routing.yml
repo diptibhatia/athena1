@@ -41,6 +41,8 @@ athena_smo.smo:
     _title: 'Custom athena Smo module'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: 'TRUE'  
 
 athena_course.import:
   path: '/import-courses'
