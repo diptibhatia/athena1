@@ -20,8 +20,7 @@
 
 
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
-                <br>{{awarding_body}}</p>
-                {{source}}
+                <br>{{awarding_body}}</p>                
             {% if source is not empty %}
 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
   {% else %}
