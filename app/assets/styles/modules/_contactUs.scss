@@ -1,4 +1,5 @@
-.js-form-item .row {width:auto;}
+.webform-submission-form {.row {width:auto} .col-md-5 {margin: auto;}} 
+
 .card { 
     margin: 1.25rem 0.75rem 0rem !important;
 }
@@ -28,10 +29,10 @@ h1.title {
 
 .contact-login-wrapper {
 	border-radius: 6px;
-  box-shadow: 0 2px 25px 2px #d5dbfb;
-  position: relative;
-  z-index: 10; 
-  background-color: #ffffff;  
+	box-shadow: 0 2px 25px 2px #d5dbfb;
+	position: relative;
+	z-index: 10; 
+	background-color: #ffffff;  
   .iti {
 	position: relative;
     display: block;
@@ -39,7 +40,7 @@ h1.title {
   .form-tel {padding-left:60px;}
   .login-details {
 	  padding: 20px 23px;
-	 
+	  
 	  label {display: block; clear:both;}
 	  h1 {
 		  font-size: 1rem;
@@ -96,7 +97,7 @@ h1.title {
 			  margin-bottom: 16px;
 		  }
 	  }
-
+	  
 	  .login-item {
 		  padding: 10px 0;
 
@@ -154,7 +155,7 @@ h1.title {
 		  .name-item {
 			  flex-direction: row;
 			  margin-right: 10px;
-			  padding: 10px 0;
+			  padding-bottom: 10px;
 			  &:nth-last-of-type(1) {
 				  margin-right: 0;
 			  }
@@ -239,5 +240,3 @@ h1.title {
 	  }
   }
 }
-
-.webform-submission-form {.col-md-5 {margin: auto;}}
