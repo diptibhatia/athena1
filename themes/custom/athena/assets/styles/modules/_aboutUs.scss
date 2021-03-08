@@ -259,6 +259,9 @@
 		background: url('images/popular-bg.png') 0 0 ;
 		padding: 120px;
 	}
+	.card-group {
+		.card-title {color:$titlePink}
+			}
 }
 .z-999 {
 	z-index: 999
