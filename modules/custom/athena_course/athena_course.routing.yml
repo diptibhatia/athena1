@@ -6,7 +6,7 @@ athena_course.course:
   requirements:
     _permission: 'access content'
   options:
-     no_cache: 'TRUE'
+     no_cache: TRUE
 
 athena_smolist.smolist:
   path: '/smo-list'
@@ -24,7 +24,7 @@ athena_smotq.smotq:
   requirements:
     _permission: 'access content'
   options:
-     no_cache: 'TRUE'
+     no_cache: TRUE
 
 athena_newsletter.news-subscription:
   path: '/news-subscription'
@@ -42,7 +42,7 @@ athena_smo.smo:
   requirements:
     _permission: 'access content'
   options:
-    no_cache: 'TRUE'  
+    no_cache: TRUE
 
 athena_course.import:
   path: '/import-courses'
@@ -60,7 +60,7 @@ athena_course.search-results:
   requirements:
     _permission: 'access content'
   options:
-    no_cache: 'TRUE'
+    no_cache: TRUE
 
 athena_course.academic-program:
   path: '/academic-program'
@@ -94,7 +94,7 @@ athena_course.registration:
   requirements:
     _permission: 'access content'
   options:
-    no_cache: 'TRUE'
+    no_cache: TRUE
 
 athena_course.university:
   path: '/university'
@@ -104,7 +104,7 @@ athena_course.university:
   requirements:
     _permission: 'access content'
   options:
-    no_cache: 'TRUE'
+    no_cache: TRUE
 
 athena_course.StudentEnroltoCourse:
   path: '/StudentEnroltoCourse'
@@ -114,7 +114,7 @@ athena_course.StudentEnroltoCourse:
   requirements:
     _permission: 'access content'
   options:
-    no_cache: 'TRUE'
+    no_cache: TRUE
 
 athena_course.shortterm-courses:
   path: '/shortterm-courses'
