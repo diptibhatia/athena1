@@ -650,6 +650,9 @@ $countries = array( "BD" => "Bangladesh", "BE" => "Belgium", "BF" => "Burkina Fa
       case 'Chartered Management Institute, UK':
         return "cmi-white";
         break;
+      case 'Bellevue University':
+        return "bellevue-white";
+        break;
       default:
         return '';
         break;
