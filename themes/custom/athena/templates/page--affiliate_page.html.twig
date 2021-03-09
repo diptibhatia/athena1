@@ -53,19 +53,11 @@
   </div>
   {% endif %}
 
-  {#
-  {% set view = drupal_view_result('affiliate_page', 'afpage_courses_block')|length %}
-  {% if view > 0 %}
-  #}
-
+  {% set new_design = node.field_new_design.value %}
+  {% if new_design %}
+  <!-- new design -->
   <div id="courses-block" class="light-wrapper">
     <div class="container inner">
-
-
-      {#{{ drupal_view('affiliate_page', 'afpage_courses_block') }}#}
-
-      {% set new_design = node.field_new_design.value %}
-      {% if new_design %}
       <div class="col-md-12 flip_design">
         <div class="section-title text-center">
           <h3>{{node.field_course_block_title.value|raw}}</h3>
@@ -122,7 +114,8 @@
                     </div>
                     <div class="col-12 button-area text-center">
                       <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}"
-                          data-pay="{{pay}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
+                          data-pay="{{pay}}">{{
+                          pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
                     </div>
                   </div>
                 </div>
@@ -143,7 +136,8 @@
                     </div>
                     <div class="col-12 button-area text-center">
                       <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}"
-                          data-pay="{{pay}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
+                          data-pay="{{pay}}">{{
+                          pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
                     </div>
                   </div>
                 </div>
@@ -152,17 +146,25 @@
           </div>
         </div>
         {% endfor %}
-        {% endif %}
       </div>
-      {% if courses_data %}
-      {% set num_course = courses_data|length %}
-      {% if num_course > 8 and show_all != 1 %}
-      <div class="divide30"></div>
-      <div class="col-md-12 text-center m-40a"> <a
-          href="{{ path('entity.node.canonical', {'node': node.id}) }}?show_all=1"> {{ 'Show More'|t }} </a></div>
-      {% endif %}
-      {% endif %}
-      {% else %}
+    </div>
+    {% if courses_data %}
+    {% set num_course = courses_data|length %}
+    {% if num_course > 8 and show_all != 1 %}
+    <div class="divide30"></div>
+    <div class="col-md-12 text-center m-40a"> <a
+        href="{{ path('entity.node.canonical', {'node': node.id}) }}?show_all=1">
+        {{ 'Show More'|t }} </a></div>
+    {% endif %}
+    {% endif %}
+  </div>
+  <!-- new design end -->
+  {% endif %}
+
+  {% else %}
+  <!-- old design -->
+  <div id="courses-block" class="light-wrapper">
+    <div class="container inner">
       <div class="col-md-12">
         <div class="section-title text-center">
           <h3>{{node.field_course_block_title.value|raw}}</h3>
@@ -205,7 +207,8 @@
                 {% endif %}
 
                 {% if nodedata.instalmentvalue %}<h6><img
-                    src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee :
+                    src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Fee
+                  :
                   <span>{{'$'}}{{nodedata.instalmentvalue}}{{'/'}}{{instalment_type}}</span>
                 </h6>{% endif %}
 
@@ -216,7 +219,8 @@
                 </h6>{% endif %}
 
                 {% if nodedata.assessment %}<h6><img
-                    src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Assements :
+                    src="/themes/custom/athena/images/affiliatepage/green-tick.svg" />Assements
+                  :
                   <span>{{nodedata.assessment}}</span>
                 </h6>{% endif %}
 
@@ -231,22 +235,20 @@
                 </h6>{% endif %}
 
                 <div class="btn-try"><a href="#" target="_blank" data-cid="{{cid}}" data-mid="{{mid}}"
-                    data-pay="{{pay}}">{{ pay == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
+                    data-pay="{{pay}}">{{ pay
+                    == 0 ? 'Try Us free for 7 days' : 'Enroll Now' }}</a></div>
 
               </div>
             </div>
             {% endfor %}
-            {% endif %}
           </div>
         </div>
         {% endif %}
       </div>
     </div>
-    <!--/.container -->
   </div>
-  <!--/.light-wrapper -->
-  {#{% endif %}#}
-
+  <!-- old design end-->
+  {% endif %}
 
   {% set view = drupal_view_result('affiliate_page', 'afpage_testimonial_block')|length %}
   {% if view > 0 %}
@@ -404,5 +406,3 @@
 </div>
 <link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/modules/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/style.css">
-
-
