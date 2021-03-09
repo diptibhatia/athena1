@@ -321,6 +321,7 @@ function athena_preprocess_page(&$variables) {
           }
           $variables['courses_data'] = $nodes;
           $variables['show_all'] = $_REQUEST['show_all'];
+          $variables['athena_exclude'] = TRUE;
         }
       }
     }
