@@ -282,21 +282,23 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
 
   function redirCandidate(cData, utmSource) {
     // console.log(cData);
+    
     if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
         //   alert(data);
         // alert( jqXHR.status );
         var userId = parseInt(jQuery.trim(data));
-        if( userId > 0) {
-          //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
-          window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
+        if( userId > 0) {          
+          window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?from=affiliate&UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
+          
+          //window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
 
         } else {
           alert("Something went wrong please try again");
         }
       });
-    } else {
+    } else {      
       //window.location.replace('https://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
       window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
     }
