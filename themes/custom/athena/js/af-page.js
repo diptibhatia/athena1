@@ -281,7 +281,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
 })(jQuery, Drupal);
 
   function redirCandidate(cData, utmSource) {
-    // console.log(cData);;
+    // console.log(cData);
     
     if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
