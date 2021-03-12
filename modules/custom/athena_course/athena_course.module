@@ -535,6 +535,33 @@ function athena_course_page_attachments(array &$attachments) {
           ];
         }
 
+
+        if (strpos($referer, 'MBAPrograms') !== false) {
+          // ENCYL DIGITAL Pixel.
+          $encylPixel = '<img src="http://encyl.offerstrack.net/pixelBack.php?offer_id=3609&adv_id=2132" width="1" height="1" />';
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => '',
+              '#value' => \Drupal\Core\Render\Markup::create($encylPixel),
+              '#weight' => 10,
+            ],
+            'encyl'
+          ];
+
+          // Monetize pixel.
+          $monetizePixel = '<iframe src="https://monetisetrk.co.uk/p.ashx?o=6101&e=1068&t=' . $uid . '" height="1" width="1" frameborder="0"></iframe>';
+          $attachments['#attached']['html_head'][] = [
+            [
+              '#tag' => '',
+              '#value' => \Drupal\Core\Render\Markup::create($monetizePixel),
+              '#weight' => 10,
+            ],
+            'monetize'
+          ];
+
+        }
+
+
         if (!empty($from) && $from == 'affiliate') {
           if (!empty($uid)) {
            $url = get_static_data('ulearn_portal_url') . "StudentEnroltoCourse?UId=$uid&CId=$cid&ModId=$modId&source=$source";
@@ -622,6 +649,9 @@ $countries = array( "BD" => "Bangladesh", "BE" => "Belgium", "BF" => "Burkina Fa
         break;
       case 'Chartered Management Institute, UK':
         return "cmi-white";
+        break;
+      case 'Bellevue University':
+        return "bellevue-white";
         break;
       default:
         return '';

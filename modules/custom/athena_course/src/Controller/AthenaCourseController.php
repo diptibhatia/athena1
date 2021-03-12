@@ -30,7 +30,7 @@ public function smo_tq(){
     '#node' => $node,
     '#base_path' => $base_path,
   ];
-
+  \Drupal::service('page_cache_kill_switch')->trigger();
   return array($academic);
 }
 
@@ -1615,7 +1615,7 @@ function search($word = false){
     if (!empty($term_name)) {
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
         ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
-        
+
       if (count($term) > 0) {
         $term = reset($term);
         $term_id = $term->id();
@@ -1627,15 +1627,15 @@ function search($word = false){
         ->condition('type', $bundle)
         ->execute();
 
-        
-        $tnodes = node_load_multiple($term_node);        
-        
+
+        $tnodes = node_load_multiple($term_node);
+
         if(empty($nodes))
           $merged_nodes = $tnodes;
-        else 
-          $merged_nodes = array_merge($nodes, $tnodes); 
+        else
+          $merged_nodes = array_merge($nodes, $tnodes);
 
-        
+
 
       }
     }
