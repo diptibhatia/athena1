@@ -150,6 +150,7 @@
         font-weight: bold;
         font-family: 'Lato', sans-serif;
         text-overflow: ellipsis;
+        min-height: 52px;
         max-height: 52px;
         overflow: hidden;
         -webkit-line-clamp: 2;
@@ -173,6 +174,7 @@
 
       h4.post-title {   
         text-overflow: ellipsis;
+        min-height: 52px;
         max-height: 52px;
         overflow: hidden;
         -webkit-line-clamp: 2;
