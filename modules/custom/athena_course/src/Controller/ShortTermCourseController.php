@@ -28,12 +28,13 @@ class ShortTermCourseController {
 
         $nodes = json_decode($data);
         if (count($nodes) > 0) {
-            foreach ($nodes->data as $key => $value) {
+            foreach ($nodes->data->data as $key => $value) {
                 $courses_data[] = [
                     'cid' => $value->cid,
+                    'course_url' => 'https://newlms.athena.edu/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => $value->university_desc,
-                    'field_rating' => '4.5',
+                    'body' => substr($value->course_introduction, 0, 100),
+                    'field_rating' => rand(4, 5),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
 
@@ -73,12 +74,13 @@ class ShortTermCourseController {
         $response = new AjaxResponse();
         $html = '';
         if (count($nodes) > 0) {
-            foreach ($nodes->data as $key => $value) {
+            foreach ($nodes->data->data as $key => $value) {
                 $courses_data = [
                     'cid' => $value->cid,
+                    'course_url' => 'https://newlms.athena.edu/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => $value->university_desc,
-                    'field_rating' => '4.5',
+                    'body' => substr($value->course_introduction, 0, 100),
+                    'field_rating' => rand(4, 5),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
                 ];
