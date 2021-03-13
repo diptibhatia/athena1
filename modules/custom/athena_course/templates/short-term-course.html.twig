@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="row bg-white shadow-sm rounded input-area mr-0">
-                                <input class="col-8" id="search" type="text" placeholder="Keywords / course name" /><button class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
+                                <input class="col-8" id="search" type="text" placeholder="Keywords / course name" onkeyup="return searchCourses(event)" /><button onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -95,9 +95,13 @@
                             </div>
                             <input type="hidden" id="pager" name="pager" value="1" />
                         </div>
-                        <div class="col-12 text-center">
-                            <a id="showMore" href="javascript:void(0)">Show More</a>
-                        </div>
+
+                        {% if display_load_more %}
+                            <div class="show_more_wrapper col-12 text-center">
+                                <a id="showMore" href="javascript:void(0)">Show More</a>
+                            </div>
+                        {% endif %}
+
                     </div>
                     <!--courses List: END-->
                 </div>
@@ -115,7 +119,11 @@
         var pager = parseInt(pagerVal);
         pager = pager + 1;
         var endpoint = Drupal.url('shortterm-courses/load-more/' + pager);
-        Drupal.ajax({ url: endpoint }).execute();
+        var search_val = jQuery('#search').val();
+        Drupal.ajax({
+            'url': endpoint,
+            'submit': {'search': search_val}
+        }).execute();
         jQuery('#pager').val(pager);
         jQuery("#showMore").focus();
     });
@@ -129,6 +137,21 @@
         //strokeWidth: 6,
         starSize: 20
     });
+
+    function searchCourses(event) {
+        if(event.which == 13) {
+            searchCourseAction();
+        }
+    }
+
+    function searchCourseAction() {
+        var search_val = jQuery('#search').val();
+        var endpoint = Drupal.url('shortterm-courses/search-data/' + search_val);
+        Drupal.ajax({ 'url': endpoint }).execute();
+        jQuery('#pager').val('1');
+        return false;
+    }
+
 </script>
 
 <script type="text/javascript">
