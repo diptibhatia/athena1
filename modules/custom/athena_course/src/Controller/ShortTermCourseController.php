@@ -137,12 +137,12 @@ class ShortTermCourseController {
                                 ' . substr($courses_data['body'], 0, 100) . '...
                             </div>
                             <div class="col-12">
-                                <h4><a href="' . $courses_data['course_url'] . '">More Information ></a></h4>
+                                <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
                             </div>
                             <div class="col-12">
                                 <p class="small">' . $courses_data['field_students_enrolled'] . ' <em>Students Enrolled</em></p>
                             </div>
-                            <div class="col-12 button-area"><button>Start Now</button></div>
+                            <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
                     </div>
                     <div class="course-item">
@@ -170,7 +170,7 @@ class ShortTermCourseController {
                                 </div>
                                 <div class="col-2 p-0">' . $courses_data['field_rating'] . '</div>
                             </div>
-                            <div class="col-12 button-area"><button>Start Now</button></div>
+                            <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button></a>Start Now</button></div>
                         </div>
                     </div>
                 </div>';
@@ -234,7 +234,7 @@ class ShortTermCourseController {
                                 ' . substr($courses_data['body'], 0, 100) . '...
                             </div>
                             <div class="col-12">
-                                <h4><a href="' . $courses_data['course_url'] . '">More Information ></a></h4>
+                                <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
                             </div>
                             <div class="col-12">
                                 <p class="small">' . $courses_data['field_students_enrolled'] . ' <em>Students Enrolled</em></p>
