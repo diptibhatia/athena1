@@ -31,7 +31,8 @@ function athena_course_theme($existing, $type, $theme, $path) {
     return [
     'short_term_course' => [
       'variables' => [
-        'nodes' => NULL
+        'nodes' => NULL,
+        'display_load_more' => NULL
       ],
     ],
     'course_banner' => [

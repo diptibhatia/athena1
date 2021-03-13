@@ -131,3 +131,11 @@ athena_course.shortterm-courses-load-more:
     _title: 'Short term course load more'
   requirements:
     _permission: 'access content'
+
+athena_course.shortterm-courses-search:
+  path: '/shortterm-courses/search-data/{query}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::searchCourse'
+    _title: 'Short term course search'
+  requirements:
+    _permission: 'access content'
