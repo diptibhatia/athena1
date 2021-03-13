@@ -1,3 +1,4 @@
+
 .european-accredited{
 margin-top:60px;
   
@@ -193,21 +194,21 @@ border-bottom: 5px solid #ff016f;
 label {
  
     font-weight:normal!important;
-	margin-top:10px;
+	/* margin-top:10px; */
 }
 
 .btn.btn-pink{  border-radius: 6px;
   box-shadow: 0 2px 25px 2px #d5dbfb;
   background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
-  padding:18px;
+  /* padding:18px; */
   }
 
 .form-control{    border-radius: 6px!important;
     box-shadow: 0 2px 18px -1px #d5dbfb!important;
     border: solid 1.2px rgba(255, 61, 144, 0.18)!important;
     background-color: #ffffff!important;
-    padding: 21px!important;}
-
+    /* padding: 21px!important; */
+  }
 
 .quote p{line-height:24px; font-family: Lato;
   font-size: 18px;
