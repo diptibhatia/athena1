@@ -235,7 +235,8 @@
 		margin: 0;
 		font-weight: 800;
 		text-overflow: ellipsis; 
-		max-height: 52px;
+		min-height: 52px;
+        max-height: 52px;
 		overflow: hidden;
 		//white-space: nowrap;
 		/* The number of lines to be displayed */ 

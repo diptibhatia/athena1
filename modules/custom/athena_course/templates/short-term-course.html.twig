@@ -47,19 +47,19 @@
                                                 <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}course/{{node.cid}}" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                                             </div>
                                         </div>
-                                        <div class="course-details col-12 text-center p-0">
+                                        <div class="course-details col-12 text-center">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
                                                 <p class="small">{{node.field_certified_level}}</p>
                                                 {{ node.body|striptags|truncate(100)}}…
                                             </div>
                                             <div class="col-12">
-                                                <h4><a href="{{node.course_url}}">More Information ></a></h4>
+                                                <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
                                             </div>
                                             <div class="col-12">
                                                 <p class="small">{{node.field_students_enrolled}} <em>Students Enrolled</em></p>
                                             </div>
-                                            <div class="col-12 button-area"><button>Start Now</button></div>
+                                            <div class="col-12 button-area"><a target="_blank" href="{{node.course_url}}"><button>Start Now</button></a></div>
                                         </div>
                                     </div>
                                     <div class="course-item">
@@ -87,7 +87,7 @@
                                                 </div>
                                                 <div class="col-2 p-0">{{node.field_rating}}</div>
                                             </div>
-                                            <div class="col-12 button-area"><button>Start Now</button></div>
+                                            <div class="col-12 button-area"><a target="_blank" href="{{node.course_url}}"><button>Start Now</button></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
 
                         {% if display_load_more %}
                             <div class="show_more_wrapper col-12 text-center">
-                                <a id="showMore" href="javascript:void(0)">Show More</a>
+                                <button id="showMore" class="btn athena-btn purple-btn"><a href="javascript:void(0)" style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
                             </div>
                         {% endif %}
 
