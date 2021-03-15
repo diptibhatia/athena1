@@ -91,7 +91,7 @@
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="course-item">
-                  <div class="col-md-12 heading ">
+                  <div class="row heading">
                     <div class="col-md-5 text-left">
                       {% if nodedata.university_white_logo %}
                       <img src="/themes/custom/athena/images/icons/{{ nodedata.university_white_logo}}.svg">
@@ -125,13 +125,13 @@
               <div class="flip-card-back text-center">
                 <div class="course-item-hover text-center">
                   <div class="row">
-                    <div class="col-12 social-icons text-center m-40">
+                    <div class="col-12 social-icons text-center">
                       {% if nodedata.university_logo %}
                       <img src="{{nodedata.university_logo}}" />
                       {% endif %}
                     </div>
                   </div>
-                  <div class="course-details col-12 text-center p-0" style="text-align:center!important">
+                  <div class="course-details col-12 text-center" style="text-align:center!important">
                     <h3 style="text-align:center!important">{{title}}</h3>
                     <div class="course-info text-center">
                       <p class="small">{{flip_back}}</p>
