@@ -118,7 +118,7 @@ img {
     display: inline-block;
     img {width: 50px;}
 }
-  
+.img-responsive {max-width:100%; min-height:auto;}
 .flx-duration, .error {color:red;}
 //.login-details label {display: block; color:red; clear:both;}
  
