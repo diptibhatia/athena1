@@ -53,6 +53,12 @@
             {{ content }}
             {% endblock %}
         </div>
+        {% set view = drupal_view_result('event_popup_', 'block_1')|length %}
+        <!-- {{dump(view)}} -->
+        {% if view > 0 %}
+        <div class="event_popup">{{ drupal_view('event_popup_', 'block_1') }}<div>
+        {% endif %}
     </div>
+  
 
 {% endblock paragraph %}
