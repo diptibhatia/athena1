@@ -58,11 +58,13 @@
   <!-- new design -->
   <div id="courses-block" class="light-wrapper">
     <div class="container inner">
-      <div class="col-md-12 flip_design">
+    
+      <div class="flip_design">
         <div class="section-title text-center">
           <h3>{{node.field_course_block_title.value|raw}}</h3>
           <h2>{{node.field_course_block_blurb.value|raw}}</h2>
         </div>
+        <div class="row">
         {% if courses_data %}
         {% set break = false %}
         {% for key, nodedata in courses_data if not break %}
@@ -146,6 +148,7 @@
           </div>
         </div>
         {% endfor %}
+        </div>
       </div>
     </div>
     {% if courses_data %}
@@ -404,5 +407,16 @@
     </div>
   </div>
 </div>
+<!-- <link rel="stylesheet" media="all" href="/athenalocal/themes/custom/athena/assets/styles/affliate-page/bootstrap.min.css" /> -->
+<!-- <link rel="stylesheet" media="all" href="/athenalocal/themes/custom/athena/assets/styles/affliate-page/custom.css" /> -->
+<!-- <link rel="stylesheet" media="all" href="/athenalocal/themes/custom/athena/assets/styles/affliate-page/style.css" /> -->
+<!-- <link rel="stylesheet" media="all" href="/athenalocal/themes/custom/athena/assets/styles/affliate-page/plugin.css" /> -->
+
 <!-- <link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/modules/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/style.css"> -->
+<link <link rel="stylesheet" media="all" href="/themes/custom/athena/style.css?qpwwdi" />="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/style.css"> -->
+
+
+<!--<link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/modules/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/customShortTermCourses.css">
+<link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/pluginsCustomShortTermCourses.css">
+<link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/style.css">
