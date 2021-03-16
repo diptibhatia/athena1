@@ -524,6 +524,14 @@ Campaign:String(jQuery("#utm_campaign").val()),
   var country_code = btoa(jQuery("#country_code").val());
   var enc_phone = btoa(jQuery("#phone").val());
 
+      var pathparts = location.pathname.split('/');
+      if (location.host == 'localhost') {
+          var url = location.origin+'/'+pathparts[1].trim('/')+'/'; 
+      }else{
+          var url = location.origin; 
+      }
+  
+
              var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
           jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
@@ -540,10 +548,10 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
                           if(utm_source !=''){
                           
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
 
                            }else{
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                            }
                             if (r == true) {
                              // txt = "You pressed OK!";
@@ -557,9 +565,9 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
                                    if(utm_source !=''){
 
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                            }else{
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                            }
 
 
