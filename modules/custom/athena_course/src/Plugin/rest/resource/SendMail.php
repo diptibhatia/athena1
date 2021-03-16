@@ -86,6 +86,20 @@ class SendMail extends ResourceBase
         $tokens = array();
         $info = $data['info'] ?? '';
         if (!empty($info)) {
+
+            $is_action = $info['is_action'] ?? '';
+            if ($is_action == '1') {
+                $action = $info['action'] ?? '';
+                if ($action == 'save_newsletter' && !empty($info['mail']) ) {
+                    $enquiry = Node::create(['type' => 'news_letter']);
+                    $enquiry->set('title', $info['mail']);
+                    $enquiry->enforceIsNew();
+                    $enquiry->save();
+                }
+            }
+            unset($info['is_action']);
+            unset($info['action']);
+
             $fname = $info['fname'] ?? '';
             $lname = $info['lname'] ?? '';
 

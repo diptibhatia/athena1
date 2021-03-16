@@ -125,9 +125,9 @@ class ShortTermCourseController {
                     <div class="course-item-hover">
                         <div class="row">
                             <div class="col-12 social-icons">
-                                <a href="https://www.facebook.com/sharer.php?u=https://athena.edu/course/'. $courses_data['cid'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                <a href="https://www.twitter.com/share?url=https://athena.edu/course/'. $courses_data['cid'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://athena.edu/course/'. $courses_data['cid'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                             </div>
                         </div>
                         <div class="course-details col-12 text-center p-0">
@@ -222,9 +222,9 @@ class ShortTermCourseController {
                     <div class="course-item-hover">
                         <div class="row">
                             <div class="col-12 social-icons">
-                                <a href="https://www.facebook.com/sharer.php?u=https://athena.edu/course/'. $courses_data['cid'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                <a href="https://www.twitter.com/share?url=https://athena.edu/course/'. $courses_data['cid'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://athena.edu/course/'. $courses_data['cid'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                             </div>
                         </div>
                         <div class="course-details col-12 text-center p-0">

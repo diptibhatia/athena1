@@ -6,7 +6,7 @@
    {% for insightsdata in insig %}
    <div class="row mb-1">
       <div class="insight-thumbnail col-md-4 d-flex align-items-center">
-        <a href="{{ url('<front>') }}node/{{insightsdata.id}}"> 
+        <a href="{{ url('<front>') }}node/{{insightsdata.id}}">
         <img class="thumbnail img-fluid mx-auto brd-0" src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
       </div>
       <div class="col-md-8">
@@ -82,11 +82,11 @@
         <p class="txt-12">Do you want to hear about the latest insights, Newsletters and professional networking events that are relevant to you?</p>
         <div class="form-group txt-12">
             <div class="custom-control-inline">
-              <input type="radio" name="register-latest">
+              <input type="radio" value="1" name="register-latest">
              <label for="customRadioInline1">&nbsp;&nbsp;Yes</label>
              </div>
             <div class="custom-control-inline">
-              <input type="radio" name="register-latest">
+              <input type="radio" value="0" name="register-latest">
               <label for="customRadioInline2">&nbsp;&nbsp;No</label>
              </div>
         </div>
