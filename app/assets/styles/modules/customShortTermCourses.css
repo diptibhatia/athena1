@@ -232,8 +232,8 @@
       background-size: 33%; font-family: 'Lato', sans-serif;}
   .top-social a {padding-right:20px}
   .top-social a img{padding-top:20px;}
-  .social-icons {margin-top:20px;}
-  .social-icons img {max-width:180px; width:100%;}
+  .social-icons {margin:20px 0;}
+  .social-icons img {max-width:120px; width:100%;}
   .badge {
    padding: 7px 7px 9px 13px;
   
