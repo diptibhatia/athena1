@@ -462,9 +462,11 @@
 
         var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-        if(jQuery("#speak_email").val() == '') {
+        var email = jQuery("#speak_email").val();
+
+        if(email == '') {
           msg += '\n\u2022  Please enter email';
-        }else if(!regex.test(jQuery("#speak_email").val())) {
+        }else if(!regex.test(email)) {
             msg += '\n\u2022  Please enter valid Email id';
         }
 
@@ -479,6 +481,8 @@
         }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
             msg += '\n\u2022  Please enter valid phone number';
         }
+
+
 
         if(!jQuery("#speak_consent").prop('checked') == true){
            msg += '\n\u2022  Please accept consent terms';
@@ -498,6 +502,7 @@
    }
 });
 
+
         if(msg == ''){
          var sendInfo = {
 FirstName:String(jQuery("#speak_first_name").val()),
@@ -511,6 +516,14 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
        };
 
+
+
+  var enc_fname = btoa(fname);
+  var enc_lname = btoa(lname);
+  var enc_email = btoa(email);
+  var country_code = btoa(jQuery("#country_code").val());
+  var enc_phone = btoa(jQuery("#phone").val());
+
              var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
           jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
@@ -522,13 +535,15 @@ Campaign:String(jQuery("#utm_campaign").val()),
                         success: function (data, status, xhr) {
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
-                          if(utm_source !=''){
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
 
-                           
+                          
+
+                          if(utm_source !=''){
+                          
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
 
                            }else{
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid);
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                            }
                             if (r == true) {
                              // txt = "You pressed OK!";
@@ -541,9 +556,10 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 
                                    if(utm_source !=''){
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign);
+
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                            }else{
-                           window.location.replace('http://athena.edu/smo-tq?nid='+nid);
+                           window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                            }
 
 

@@ -14,16 +14,16 @@
                         <div class="login-item names">
                             <div class="name-item">
                                 <p>First Name</p>
-                                <input type="text" id="reg_first_name" placeholder="Enter First Name">
+                                <input type="text" id="reg_first_name" value="{{fname}}"   placeholder="Enter First Name">
                             </div>
                             <div class="name-item">
                                 <p>Last Name</p>
-                                <input type="text" id="reg_last_name" placeholder="Enter Last Name">
+                                <input type="text" id="reg_last_name" value="{{lname}}" placeholder="Enter Last Name">
                             </div>
                         </div>
                         <div class="login-item">
                             <p>Email</p>
-                            <input type="email" id="reg_email" placeholder="Enter Email Address">
+                            <input type="email" id="reg_email" value="{{email}}" placeholder="Enter Email Address">
                         </div>
                         <div class="login-item" style="display:none">
                             <p>Country</p>
@@ -275,11 +275,11 @@
 
                         <div class="login-item phone-number">
                                 <p>Mobile Number</p>
-                                <input type="tel" id="phone" placeholder="Enter Mobile number" required>
+                                <input type="tel" id="phone" value="{{phone}}" placeholder="Enter Mobile number" required>
                                 <span id="valid-msg" class="hide">✓ Valid</span>
                                 <span id="error-msg" class="hide"></span>
                             </div>
-                            <input type="hidden" id="country_code" value="" />
+                            <input type="hidden" id="country_code" value="{{ccode}}" />
                         <div class="login-item">
                             <p>Choose your Course</p>
                             <select name="course" id="reg_course">
