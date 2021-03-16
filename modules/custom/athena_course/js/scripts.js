@@ -193,8 +193,7 @@ jQuery("#get_in_touch_form").validate({
                       'fname': jQuery('#get_in_touch_fname').val(),
                       'lname': jQuery('#get_in_touch_lname').val(),
                       'email': jQuery('#get_in_touch_email').val(),
-                      'phone': jQuery('#phone').val(),
-                      'country_code': jQuery("#country_code").val()
+                      'phone': jQuery('#phone').val()
                     };
 
 /*
@@ -253,7 +252,10 @@ jQuery.ajax(baseUrl + '/save/contact', {
                             'fname': jQuery('#get_in_touch_fname').val(),
                             'lname': jQuery('#get_in_touch_lname').val(),
                             'phone': jQuery('#phone').val(),
-                            'category': jQuery('#get_in_touch_course').val()
+                            'category': jQuery('#get_in_touch_course').val(),
+                            'country_code': jQuery(".country-code").html(),
+                            'action': 'save_newsletter',
+                            'is_action': jQuery('input[name="register-latest"]:checked').val()
                           };
                           initiateSendingMail('get_in_touch', mailinfo);
 
