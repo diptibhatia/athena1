@@ -23,10 +23,21 @@ public function smo_tq(){
 
   $source = $_REQUEST['utm_source'];
   $campaign = $_REQUEST['utm_campaign'];
+  $fname = $_REQUEST['fname'];
+  $lname = $_REQUEST['lname'];
+  $email = $_REQUEST['email'];
+  $ccode = $_REQUEST['ccode'];
+  $phone = $_REQUEST['phone'];
+
   $academic =  [
     '#theme' => 'smotq',
     '#source' => $source,
     '#campaign' => $campaign,
+    '#fname' => $fname,
+    '#lname' => $lname,
+    '#email' => $email,
+    '#ccode' => $ccode,
+    '#phone' => $phone,
     '#node' => $node,
     '#base_path' => $base_path,
   ];
@@ -599,12 +610,32 @@ if(isset($_REQUEST['cid'])) {
 $source = $_REQUEST['utm_source'];
 $campaign = $_REQUEST['utm_campaign'];
 
+if( isset($_REQUEST['fname']))
+  $fname = base64_decode($_REQUEST['fname']);
+
+if( isset($_REQUEST['lname']))
+  $lname = base64_decode($_REQUEST['lname']);
+
+if( isset($_REQUEST['email']))
+  $email = base64_decode($_REQUEST['email']);
+
+if( isset($_REQUEST['ccode']))
+  $ccode = base64_decode($_REQUEST['ccode']);
+
+if( isset($_REQUEST['phone']))
+  $phone = base64_decode($_REQUEST['phone']);
+
 //print_r($node);exit;
 $registration =  [
   '#theme' => 'course_registration',
   '#base_path' => $base_path,
   '#source' => $source,
   '#campaign' => $campaign,
+  '#fname'  => $fname,
+  '#lname' => $lname,
+  '#email' => $email,
+  '#ccode' => $ccode,
+  '#phone' => $phone,
   '#cid' => $cid,
   '#nodes' => $nodes,
 ];
