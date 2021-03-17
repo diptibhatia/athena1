@@ -352,7 +352,7 @@
     color: black;
   }
   .flip-card-front .course-item .row  { margin:0;}
-  .flip-card-front .course-item .row .col-md-5 img {max-width:70px;}
+  .flip-card-front .course-item .row.heading img {max-width:70px;}
   .flip-card-back {
     background-color: #fff;
     
@@ -427,7 +427,7 @@
       padding: 0.3rem 0 1.2rem;
   }
 
-  .button-area {  margin:15px auto}
+  .button-area {  margin:5px auto}
   
    .course-item .course-details .button-area button {
       width: 196px;     
