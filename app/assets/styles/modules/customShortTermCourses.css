@@ -232,7 +232,7 @@
       background-size: 33%; font-family: 'Lato', sans-serif;}
   .top-social a {padding-right:20px}
   .top-social a img{padding-top:20px;}
-  .social-icons {margin:20px 0;}
+  .social-icons {margin:30px 0 20px;}
   .social-icons img {max-width:120px; width:100%;}
   .badge {
    padding: 7px 7px 9px 13px;
@@ -351,8 +351,8 @@
     
     color: black;
   }
-  .flip-card-front .course-item .row  { margin:0;}
-  .flip-card-front .course-item .row.heading img {max-width:70px;}
+  .flip-card-front .course-item .row.heading  { height:50px; margin:0;}
+  .flip-card-front .course-item .row.heading img {max-width:75px;}
   .flip-card-back {
     background-color: #fff;
     
