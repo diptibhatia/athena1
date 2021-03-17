@@ -1289,6 +1289,13 @@ Campaign:String(jQuery("#utm_campaign").val()),
   var country_code = btoa(jQuery("#country_code").val());
   var enc_phone = btoa(jQuery("#phone").val());
 
+var pathparts = location.pathname.split('/');
+      if (location.host == 'localhost') {
+          var url = location.origin+'/'+pathparts[1].trim('/')+'/'; 
+      }else{
+          var url = location.origin; 
+      }
+  
 
              var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();
@@ -1302,12 +1309,12 @@ Campaign:String(jQuery("#utm_campaign").val()),
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
 
-                          window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                          window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
                         },
                         error: function (jqXhr, textStatus, errorMessage) {
                                 if(jqXhr.status == 200) {
 
-                                  window.location.replace('http://athena.edu/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                                  window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
 
 
                                 }
