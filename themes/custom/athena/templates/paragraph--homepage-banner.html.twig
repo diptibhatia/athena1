@@ -53,12 +53,14 @@
             {{ content }}
             {% endblock %}
         </div>
-        {% set view = drupal_view_result('event_popup_', 'block_1')|length %}
-        <!-- {{dump(view)}} -->
+        {% set view = drupal_view_result('event_popup', 'event_popup_block')|length %}
         {% if view > 0 %}
-        <div class="event_popup">{{ drupal_view('event_popup_', 'block_1') }}<div>
+        <div class="event_popup"><a class="event_popup_close" href="javascript:event_popup_close();">X</a>{{ drupal_view('event_popup', 'event_popup_block') }}<div>
+        <script type="text/javascript">
+        function event_popup_close() {
+          document.getElementsByClassName("event_popup")[0].style.display = "none";
+        }
+        </script>
         {% endif %}
     </div>
-  
-
-{% endblock paragraph %}
+  {% endblock paragraph %}
