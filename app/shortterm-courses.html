@@ -72,19 +72,89 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="row bg-white shadow-sm rounded input-area mr-0">
-                                <input class="col-8" type="text" placeholder="Keywords / course name" /><button class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
+                                <input class="col-8" type="text" placeholder="What do you want to learn" /><button onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
                     <!--Find your course heading and Search course Input: END-->
 
+                    <!--Multiple Course Selection buttons: START -->
+                    <div class="container multiple-selection-courses p-0">
+                       <div class="row">
+                          <div class="col-12">
+                              <button type="button" class="btn">All</button>
+                              <button type="button" class="btn selected">Finance</button>
+                              <button type="button" class="btn">Marketing</button>
+                              <button type="button" class="btn selected">Information Technology</button>
+                              <button type="button" class="btn selected">Law</button>
+                              <button type="button" class="btn ">Maketing</button>
+                              <button type="button" class="btn">Information Technology</button>
+                          </div>
+                          <div class="col-12 selected-courses">
+                             <p>Currently Selected: <span class="bold">Financed, Information Technology, Law</span></p>
+                          </div>
+                       </div>
+                    </div>
+                    <!--Multiple Course Selection buttons: END -->
+
+                    <!--Multiple Course Selection buttons: START -->
+                    <div class="container category-area">
+                     <div class="row">
+                        <div class="col-12 p-0">
+                           <nav class="nav">
+                              <a class="nav-link active" aria-current="page" href="#"><span>Basic Level</span></a>
+                              <a class="nav-link" href="#"><span>Essentials</span></a>
+                              <a class="nav-link" href="#"><span>Mastering</span></a>
+                              <a class="nav-link" href="#"><span>Diploma</span></a>
+                              <a class="nav-link" href="#"><span>Executive Diploma</span></a>
+                            </nav>
+                        </div>
+                     </div>
+                  </div>
+                  <!--Multiple Course Selection buttons: END -->
+
                     <!--courses List: START-->
-                    <div class="row shortterm-courses-area">
+                    <div class="row">
                         <div class="col-12 p-0">
                              <div class="shortterm-courses">
                                    <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                      <div class="item-inner">
+                                       <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                       <div class="course-item">
+                                          <div class="row heading m-0">
+                                              <div class="col-8">
+                                                 <h5>CPD Certified</h5>
+                                              </div>
+                                              <div class="col-4">
+                                                 <span class="free-text">Free</span>
+                                              </div>
+                                          </div> 
+                                          <div class="image">
+                                             <img src="images/course-image2.png" alt="course-image">
+                                          </div>
+                                          <div class="course-details">
+                                             <h3>Master of Business Administration</h3>
+                                             <div class="course-info">
+                                                 Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                                                 the
+                                              </div>
+                                              <div class="row rating m-0">
+                                                 <div class="col-6 p-0">
+                                                      <div class="my-rating"></div>
+                                                 </div>
+                                                 <div class="col-2 p-0">4.5</div>
+                                              </div>
+                                              <div class="col-12 button-area"><button>Start Now</button></div>
+                                          </div>
+                                       </div>
+                                      </div>
+
+                                   </div>
+                                    
+                                   <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -111,10 +181,13 @@
                                             <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -133,18 +206,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                          </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -163,18 +239,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                          </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -193,18 +272,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                          </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -223,18 +305,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                          </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -253,18 +338,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                          </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -283,18 +371,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                          </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -313,18 +404,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -343,18 +437,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -373,18 +470,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -403,18 +503,21 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
+                                    </div>
+
+                                 </div>
+                                 <div class="item content">
+                                    <div class="item-inner">
+                                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                                     <div class="course-item">
                                         <div class="row heading m-0">
                                             <div class="col-8">
                                                <h5>CPD Certified</h5>
@@ -433,105 +536,17 @@
                                                the
                                             </div>
                                             <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
+                                               <div class="col-6 p-0">
+                                                    <div class="my-rating"></div>
+                                               </div>
+                                               <div class="col-2 p-0">4.5</div>
+                                            </div>
+                                            <div class="col-12 button-area"><button>Start Now</button></div>
                                         </div>
                                      </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
-                                        <div class="row heading m-0">
-                                            <div class="col-8">
-                                               <h5>CPD Certified</h5>
-                                            </div>
-                                            <div class="col-4">
-                                               <span class="free-text">Free</span>
-                                            </div>
-                                        </div> 
-                                        <div class="image">
-                                           <img src="images/course-image2.png" alt="course-image">
-                                        </div>
-                                        <div class="course-details">
-                                           <h3>Master of Business Administration</h3>
-                                           <div class="course-info">
-                                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
-                                               the
-                                            </div>
-                                            <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
-                                        </div>
-                                     </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
-                                        <div class="row heading m-0">
-                                            <div class="col-8">
-                                               <h5>CPD Certified</h5>
-                                            </div>
-                                            <div class="col-4">
-                                               <span class="free-text">Free</span>
-                                            </div>
-                                        </div> 
-                                        <div class="image">
-                                           <img src="images/course-image2.png" alt="course-image">
-                                        </div>
-                                        <div class="course-details">
-                                           <h3>Master of Business Administration</h3>
-                                           <div class="course-info">
-                                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
-                                               the
-                                            </div>
-                                            <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
-                                        </div>
-                                     </div>
-                                   </div>
-                                   <div class="item content">
-                                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
-                                    <div class="course-item">
-                                        <div class="row heading m-0">
-                                            <div class="col-8">
-                                               <h5>CPD Certified</h5>
-                                            </div>
-                                            <div class="col-4">
-                                               <span class="free-text">Free</span>
-                                            </div>
-                                        </div> 
-                                        <div class="image">
-                                           <img src="images/course-image2.png" alt="course-image">
-                                        </div>
-                                        <div class="course-details">
-                                           <h3>Master of Business Administration</h3>
-                                           <div class="course-info">
-                                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
-                                               the
-                                            </div>
-                                            <div class="row rating m-0">
-                                             <div class="col-6 p-0">
-                                                  <div class="my-rating"></div>
-                                             </div>
-                                             <div class="col-2 p-0">4.5</div>
-                                           </div>
-                                           <div class="col-12 button-area"><button>Start Now</button></div>
-                                        </div>
-                                     </div>
-                                   </div>
+                                    </div>
+
+                                 </div>
 
                                 
 
