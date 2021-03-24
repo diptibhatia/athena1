@@ -1,4 +1,4 @@
-var baseUrl = 'https://athena.edu';
+var baseUrl = window.location.origin;
 
         jQuery(document).ready(function() {
             var search_url = baseUrl + '/search-results/abc?univ=';
@@ -357,17 +357,17 @@ jQuery.ajax(baseUrl + '/save/contact', {
                           var userId = parseInt(jQuery.trim(data));
                           if( userId > 0) {
                             //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
-                            window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cid+'&mail='+email_id);
+                            window.location.replace(baseUrl + '/StudentEnroltoCourse?UId='+userId+'&CId='+cid+'&mail='+email_id);
 
                           }
                           else{
-                            window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+                            window.location.replace(baseUrl + '/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
 
                           }
 
                         });
                         // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
-                        //window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+                        //window.location.replace(baseUrl + '/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
 
                       } else {
 
@@ -463,7 +463,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
                                  // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
-                                 window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+                                 window.location.replace(baseUrl + '/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
                                 } else {
                                   return false;
                                 }
