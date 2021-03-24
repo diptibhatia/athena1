@@ -20,6 +20,7 @@
             <p class="course-banner__uni">{{awarding_body}}</p>
             <p class="course-banner__details">{{description}}
             </p>
+            
             <div class="course-banner__apply-btn">
                 <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Apply now</a>
     {% if node.field_courses_credit_type.0.value %}
@@ -55,6 +56,17 @@
             <div class="course-banner__mobilebg">
                 <img src="/themes/custom/athena/images/coursepage/mobile_banner.png" alt="banner">
             </div>
+            <!-- call button -->
+            <div class="advisor">
+                <div class="text">
+                    <p>Have Questions ?</p>
+                    <p class="content">Speak to an Advisor</p>
+                </div>
+                <div class="img">
+                    <a href="#enquiry_form"><img src="/themes/custom/athena/images/smo/speak-advisor.svg" alt="icon"></a>
+                </div>
+            </div>
+            <!-- call button end-->
         </div>
     </div>
 
