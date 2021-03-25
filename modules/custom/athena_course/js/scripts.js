@@ -330,8 +330,15 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var email_id = jQuery("#reg_email").val();
                 var cid = jQuery("#reg_course").val();
 
+                var URL_path = baseUrl.split(".");
 
-                jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
+                if(URL_path.indexOf("websitestg") !== -1){
+                    var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
+                } else{
+                    var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
+                }
+
+                jQuery.ajax(URL, {
                   type: 'POST',  // http method
                   contentType: "application/json; charset=utf-8",
                   dataType: "json",
@@ -352,7 +359,15 @@ jQuery.ajax(baseUrl + '/save/contact', {
                       var r = confirm("Registration Successful, you will be redirected to login page now.");
                       if (r == true) {
 
-                        jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id))
+                        var URL_path = baseUrl.split(".");
+
+                        if(URL_path.indexOf("websitestg") !== -1){
+                            var URL = "https://agestagingapi.azurewebsites.net/Register/GetUserId/"+email_id;
+                        } else{
+                            var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
+                        }
+
+                        jQuery.when( jQuery.get(URL))
                           .then(function( data, textStatus, jqXHR ) {
                           var userId = parseInt(jQuery.trim(data));
                           if( userId > 0) {
@@ -450,11 +465,18 @@ jQuery.ajax(baseUrl + '/save/contact', {
 
                 if(msg == ''){
 
+                        var URL_path = baseUrl.split(".");
+
+                        if(URL_path.indexOf("websitestg") !== -1){
+                            var URL = "https://agestagingapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
+                        } else{
+                            var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
+                        }
 
 
                     jQuery.ajax({
    type: 'GET',
-   url: "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, //Returns ID in body
+   url: URL, //Returns ID in body
    async: false, // <<== THAT makes us wait until the server is done.
    success: function(data){
        if (data == 'Email Exist') {
