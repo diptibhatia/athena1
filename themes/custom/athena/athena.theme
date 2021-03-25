@@ -5,6 +5,7 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
 use Drupal\block_content\Entity\BlockContent;
 
+
 /**
  * @file
  * Functions to support theming in the Athena theme.
@@ -428,9 +429,6 @@ function athena_preprocess_node(&$variables) {
       $current_path = \Drupal::service('path.current')->getPath();
 
 
-
-
-
 $current_uri = \Drupal::request()->getRequestUri();
 
      if ($variables['node']->getType() === 'about_us_pages') {
@@ -485,13 +483,29 @@ $variables['enable_popup'] = FALSE;
  }
 }
 
-function athena_preprocess_views_view_field(&$variables) {
-   $view = $variables['view'];
-    if($view->id() == 'insights_all') {
+function athena_preprocess_views_view_field(&$variables) { 
+
+  $view = $variables['view'];
+
+  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' ) {    
+    if($variables['field']->field == 'nid') {      
+      $my_field_value = $variables['field']->getValue($variables['row']);
+      $entity_a = Node::load($my_field_value);      
+      $variables['read_time']  = get_read_time($entity_a);
+
+        $my_altered_value = $entity_a->getTitle();
+        $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
+    }    
+         
+  }
+   
+    if($view->id() == 'insights_all') {   
      if($variables['field']->field == 'read_time') {
         $entity = $variables['row']->_entity;
         $my_altered_value = $entity->getTitle();
         $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
+
 
         //$variables['my_title'] = $my_altered_value;        
      }     
@@ -520,6 +534,7 @@ function athena_preprocess_views_view_field(&$variables) {
      if($variables['field']->field == 'field_insight_article_min_read') {
         $entity = $variables['row']->_entity;
         $my_altered_value = $entity->getTitle();
+
         //$variables['my_title'] = $my_altered_value;
         $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
@@ -536,6 +551,13 @@ function athena_preprocess_views_view_field(&$variables) {
   
 }
 
+function athena_form_alter(&$form, $form_state, $form_id) {
+
+  if($form_id == 'comment_in_comm_form') {    
+    
+    $form['actions']['submit']['#value'] =t('Post Comments');
+  }
+}
 
 
 
