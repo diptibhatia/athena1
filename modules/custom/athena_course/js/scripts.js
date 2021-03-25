@@ -338,6 +338,8 @@ jQuery.ajax(baseUrl + '/save/contact', {
                     var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
                 }
 
+                alert(URL);
+
                 jQuery.ajax(URL, {
                   type: 'POST',  // http method
                   contentType: "application/json; charset=utf-8",
@@ -367,6 +369,8 @@ jQuery.ajax(baseUrl + '/save/contact', {
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
                         }
 
+                        alert(URL);
+                        
                         jQuery.when( jQuery.get(URL))
                           .then(function( data, textStatus, jqXHR ) {
                           var userId = parseInt(jQuery.trim(data));
@@ -473,6 +477,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
                         }
 
+                        alert(URL);
 
                     jQuery.ajax({
    type: 'GET',
