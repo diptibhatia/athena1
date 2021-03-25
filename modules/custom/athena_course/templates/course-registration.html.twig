@@ -10,7 +10,9 @@
                     <h1>Register <span>Now</span></h1>
                     <h3>Start Learning in 60 Seconds - No need for any payment details!</h3>
 
-						{% if url('<front>') == 'https://websitestg.athena.edu/' %}
+                    	{% set link = url('<front>')|render %}
+
+						{% if link == "https://websitestg.athena.edu/" %}
 
 	                    <h4>If you are an Existing user please <span><a href="http://portal.athena.edu/login?Cid={{cid}}">Sign In</a></span></h4>
 
