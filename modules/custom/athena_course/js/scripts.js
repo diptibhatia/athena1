@@ -448,6 +448,9 @@ jQuery.ajax(baseUrl + '/save/contact', {
                     msg += '\n\u2022  Please select level of employment';
                 }
 
+                if(jQuery("#reg_course").val() == '') {
+                    msg += '\n\u2022  Please select course';
+                }
 
                 if(!jQuery("#reg_terms").prop('checked') == true){
                      msg += '\n\u2022  Please accept consent terms';
