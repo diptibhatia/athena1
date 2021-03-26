@@ -1,6 +1,7 @@
 var baseUrl = window.location.origin;
 //var baseUrl = "https://websitestg.athena.edu";
 
+alert(baseUrl);
 
         jQuery(document).ready(function() {
             var search_url = baseUrl + '/search-results/abc?univ=';
@@ -338,6 +339,10 @@ jQuery.ajax(baseUrl + '/save/contact', {
                     var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
                 }
 
+                alert("here1");
+                alert(cid);
+                alert(URL);
+
                 jQuery.ajax(URL, {
                   type: 'POST',  // http method
                   contentType: "application/json; charset=utf-8",
@@ -364,6 +369,10 @@ jQuery.ajax(baseUrl + '/save/contact', {
                         } else{
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
                         }
+
+                        alert("here2");
+                        alert(cid);
+                        alert(URL);
 
                         jQuery.when( jQuery.get(URL))
                           .then(function( data, textStatus, jqXHR ) {
@@ -473,6 +482,9 @@ jQuery.ajax(baseUrl + '/save/contact', {
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
                         }
 
+                        alert(c_email);
+                        alert(URL);
+
                     jQuery.ajax({
    type: 'GET',
    url: URL, //Returns ID in body
@@ -481,6 +493,9 @@ jQuery.ajax(baseUrl + '/save/contact', {
        if (data == 'Email Exist') {
             var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
+       alert(email_id);
+                        alert(cid);
+
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
                                  // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
