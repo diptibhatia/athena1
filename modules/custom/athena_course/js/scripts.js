@@ -1,7 +1,7 @@
 var baseUrl = window.location.origin;
 //var baseUrl = "https://websitestg.athena.edu";
 
-alert(baseUrl);
+//alert(baseUrl);
 
         jQuery(document).ready(function() {
             var search_url = baseUrl + '/search-results/abc?univ=';
@@ -333,16 +333,13 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var email_id = jQuery("#reg_email").val();
                 var cid = jQuery("#reg_course").val();
 
-                if(baseUrl == "https://websitestg.athena.edu" ){
+                if(baseUrl == "http://websitestg.athena.edu" ){
                     var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
                 } else{
                     var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
                 }
 
-                alert("here1");
-                alert(cid);
-                alert(URL);
-
+                
                 jQuery.ajax(URL, {
                   type: 'POST',  // http method
                   contentType: "application/json; charset=utf-8",
@@ -364,16 +361,13 @@ jQuery.ajax(baseUrl + '/save/contact', {
                       var r = confirm("Registration Successful, you will be redirected to login page now.");
                       if (r == true) {
 
-                        if(baseUrl == "https://websitestg.athena.edu" ){
+                        if(baseUrl == "http://websitestg.athena.edu" ){
                             var URL = "https://agestagingapi.azurewebsites.net/Register/GetUserId/"+email_id;
                         } else{
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
                         }
 
-                        alert("here2");
-                        alert(cid);
-                        alert(URL);
-
+                        
                         jQuery.when( jQuery.get(URL))
                           .then(function( data, textStatus, jqXHR ) {
                           var userId = parseInt(jQuery.trim(data));
@@ -476,15 +470,13 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 if(msg == ''){
 
 
-                        if(baseUrl == "https://websitestg.athena.edu" ){
+                        if(baseUrl == "http://websitestg.athena.edu" ){
                             var URL = "https://agestagingapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
                         } else{
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
                         }
 
-                        alert(c_email);
-                        alert(URL);
-
+                        
                     jQuery.ajax({
    type: 'GET',
    url: URL, //Returns ID in body
@@ -493,8 +485,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
        if (data == 'Email Exist') {
             var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
-       alert(email_id);
-                        alert(cid);
+       
 
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
