@@ -333,7 +333,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var email_id = jQuery("#reg_email").val();
                 var cid = jQuery("#reg_course").val();
 
-                if(baseUrl == "http://websitestg.athena.edu" ){
+                if(baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu" ){
                     var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
                 } else{
                     var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
@@ -361,7 +361,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                       var r = confirm("Registration Successful, you will be redirected to login page now.");
                       if (r == true) {
 
-                        if(baseUrl == "http://websitestg.athena.edu" ){
+                        if(baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu" ){
                             var URL = "https://agestagingapi.azurewebsites.net/Register/GetUserId/"+email_id;
                         } else{
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
@@ -470,7 +470,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 if(msg == ''){
 
 
-                        if(baseUrl == "http://websitestg.athena.edu" ){
+                        if(baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu" ){
                             var URL = "https://agestagingapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
                         } else{
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
