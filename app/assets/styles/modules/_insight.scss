@@ -226,7 +226,6 @@
 		text-overflow: ellipsis;
 	    max-height: 92px;
 	    overflow: hidden;
-
 	}
 
 	.card-title {
@@ -241,7 +240,7 @@
 		/* The number of lines to be displayed */ 
 		-webkit-line-clamp: 2;  
 		-webkit-box-orient: vertical;
-		display: -webkit-box;
+		display: -webkit-box; 
 	}
 	.single-discussion{ .share-icon {
 		position: absolute;
@@ -261,6 +260,7 @@
 		padding: 10px 0;
 	} 
 	.insight-banner {
+		
 		.col-md-4.mobilePadding {border-left:1px solid #eee;}
 		.item {.row {width:auto;}.profile {@media screen and (max-width: 540px){text-align:center; padding-top:10px;}	img {width:100%; @media screen and (max-width: 480px){	width:180px;}}}}
 		.col-md-12{
@@ -281,6 +281,7 @@
 }
 	}
  
+	
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
@@ -511,4 +512,29 @@
     width: 36%;
     margin: 6px 20px 0 0;
 }
+.search-insights {
+	padding:10px;
 
+.form-text{
+	border: 0px;
+    width: 100%;
+    max-width: 570px;
+    height: 56px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 11%), 0 0 4px 0 rgb(0 0 0 / 14%);
+    background-color: #ffffff;
+}
+.form-submit{
+	width: 51px;
+    height: 45px;
+    border-radius: 4px;
+    background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
+    padding-top: 7px;
+    display: inline-block;
+    position: absolute;
+    margin-left: -60px;
+    margin-top: 5px;
+    text-align: center;
+}
+}
