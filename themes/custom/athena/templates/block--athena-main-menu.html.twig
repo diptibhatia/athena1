@@ -168,7 +168,19 @@ align-items: center;box-sizing: border-box;">
                         </li> -->
                         <li><a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a></li>
                         <li><a id="insights" href="{{ url('<front>') }}insights/all">Insights</a></li>
+                        
+                        {% set link = url('<front>')|render %}
+
+                        {% if link == "https://websitestg.athena.edu/" %}
+
+                        <li><a class="loginBtn" href="http://portal.athena.edu/login">Log in</a></li>
+                        
+                        {% else %}
+                        
                         <li><a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a></li>
+                        
+                        {% endif %}
+
                         <li><a class="hideinMobileView getStartedBtn" href="{{ url('<front>') }}registration">Get Started</a></li>
                     </ul>
   </nav>

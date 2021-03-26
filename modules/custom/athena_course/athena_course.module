@@ -263,6 +263,14 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'univ_popular' => NULL,
       ],
     ],
+    'our_popular_courses' => [
+      'variables' => [
+      'base_path' => NULL,      
+      'popular' => NULL,
+      'univ_popular' => NULL,
+      ],
+    ],
+
     'homepage_testimonials' => [
       'variables' => [
       'base_path' => NULL,
@@ -306,12 +314,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       'source' => NULL,
       'campaign' => NULL,
-      'cid' => NULL,      
+      'cid' => NULL,
       'fname' => NULL,
       'lname' => NULL,
       'email' => NULL,
       'ccode' => NULL,
-      'phone' => NULL,      
+      'phone' => NULL,
       'nodes' => NULL,
       ],
     ],
@@ -548,27 +556,45 @@ function athena_course_page_attachments(array &$attachments) {
 
 
         if (strpos($referer, 'MBAPrograms') !== false) {
-          // ENCYL DIGITAL Pixel.
-          $encylPixel = '<img src="http://encyl.offerstrack.net/pixelBack.php?offer_id=3609&adv_id=2132" width="1" height="1" />';
-          $attachments['#attached']['html_head'][] = [
-            [
-              '#tag' => '',
-              '#value' => \Drupal\Core\Render\Markup::create($encylPixel),
-              '#weight' => 10,
-            ],
-            'encyl'
-          ];
 
-          // Monetize pixel.
-          $monetizePixel = '<iframe src="https://monetisetrk.co.uk/p.ashx?o=6101&e=1068&t=' . $uid . '" height="1" width="1" frameborder="0"></iframe>';
-          $attachments['#attached']['html_head'][] = [
-            [
-              '#tag' => '',
-              '#value' => \Drupal\Core\Render\Markup::create($monetizePixel),
-              '#weight' => 10,
-            ],
-            'monetize'
-          ];
+          if ($source == 'ENCYLDIGITAL') {
+            // ENCYL DIGITAL Pixel.
+            $encylPixel = '<img src="http://encyl.offerstrack.net/pixelBack.php?offer_id=3609&adv_id=2132" width="1" height="1" />';
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => '',
+                '#value' => \Drupal\Core\Render\Markup::create($encylPixel),
+                '#weight' => 10,
+              ],
+              'encyl'
+            ];
+          }
+
+          if ($source == 'MONETISEUK') {
+            // Monetize pixel.
+            $monetizePixel = '<iframe src="https://monetisetrk.co.uk/p.ashx?o=6101&e=1068&t=' . $uid . '" height="1" width="1" frameborder="0"></iframe>';
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => '',
+                '#value' => \Drupal\Core\Render\Markup::create($monetizePixel),
+                '#weight' => 10,
+              ],
+              'monetize'
+            ];
+          }
+
+          if ($source == 'NOBBYMEDIA') {
+            // NobbyMedia pixel.
+            $nobbyMediaPixel = '<img src="https://nobbymedia10917966.o18.click/p?mid=5246&t=i&gb=1" width="0px" height="0px">';
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => '',
+                '#value' => \Drupal\Core\Render\Markup::create($nobbyMediaPixel),
+                '#weight' => 10,
+              ],
+              'nobbymedia'
+            ];
+          }
 
         }
 
