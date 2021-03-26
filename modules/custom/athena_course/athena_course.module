@@ -263,6 +263,14 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'univ_popular' => NULL,
       ],
     ],
+    'our_popular_courses' => [
+      'variables' => [
+      'base_path' => NULL,      
+      'popular' => NULL,
+      'univ_popular' => NULL,
+      ],
+    ],
+
     'homepage_testimonials' => [
       'variables' => [
       'base_path' => NULL,

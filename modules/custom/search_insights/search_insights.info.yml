@@ -1,0 +1,6 @@
+name: Search Insights
+type: module
+description: Search Insights Form 
+package: Custom
+version: 1.0
+core: 8.x

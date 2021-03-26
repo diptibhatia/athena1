@@ -1,0 +1,7 @@
+search_insights.SearchInsightsForm:
+  path: '/insights/all'
+  defaults:
+    _form: '\Drupal\search_insights\Form\SearchInsightsForm'
+    _title: 'Search insights Form'
+  requirements:
+    _permission: 'access content'
