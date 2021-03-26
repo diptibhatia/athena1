@@ -11,10 +11,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a 'Search Insights' block.
  *
- * This example demonstrates the use of the form_builder service, an
- * instance of \Drupal\Core\Form\FormBuilder, in order to retrieve and display
- * a form.
- *
  * @Block(
  *   id = "search_insights",
  *   admin_label = @Translation("Search Insights")
@@ -28,12 +24,6 @@ class SearchInsights extends BlockBase implements ContainerFactoryPluginInterfac
    * @var \Drupal\Core\Form\FormBuilderInterface
    */
   protected $formBuilder;
-
-/*
-  public function getCacheMaxAge() {
-    return 0;
-}
-*/
   /**
    * {@inheritdoc}
    */
@@ -66,7 +56,7 @@ class SearchInsights extends BlockBase implements ContainerFactoryPluginInterfac
     //
     // In this case the build() method of a block plugin is expected to return
     // a render array so we add the form to the existing output and return it.
-  $form['#cache'] = [
+    $form['#cache'] = [
       'max-age' => 0
     ];  
 
