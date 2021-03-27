@@ -671,29 +671,10 @@ $countries = array( "BD" => "Bangladesh", "BE" => "Belgium", "BF" => "Burkina Fa
       return '';
     }
     $university_node = Node::load($entity_id);
-    switch($university_node->get('title')->value){
-      case 'Scottish Qualifications Authority, UK':
-        return "sqalogo";
-        break;
-      case 'Guglielmo Marconi University, Italy':
-        return "gmu-white";
-        break;
-      case 'Cambridge International Qualifications, UK':
-        return "ciq-white";
-        break;
-       case 'Universidad Catolica De Murcia (UCAM), Spain':
-        return "ucam-logo";
-        break;
-      case 'Chartered Management Institute, UK':
-        return "cmi-white";
-        break;
-      case 'Bellevue University':
-        return "bellevue-white";
-        break;
-      default:
-        return '';
-        break;
+    if(is_object($university_node->field_white_logo->entity)) {
+      return file_create_url($university_node->field_white_logo->entity->getFileUri());
     }
+    return '';
   }
 
   /**
@@ -704,7 +685,7 @@ function getUniversityLogo($entity_id) {
     return '';
   }
   $university_node = Node::load($entity_id);
-  if(is_object($university_node->field_logo)) {
+  if(is_object($university_node->field_logo->entity)) {
     return file_create_url($university_node->field_logo->entity->getFileUri());
   }
   return '';
