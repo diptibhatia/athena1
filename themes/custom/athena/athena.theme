@@ -246,7 +246,6 @@ function athena_preprocess_page(&$variables) {
 
       if ($node_type == 'affiliate_page') {
         $current_page_node_id = $node->id();
-
         $bundle='course';
         $query = \Drupal::entityQuery('node');
         $query->condition('status', 1);
@@ -289,7 +288,18 @@ function athena_preprocess_page(&$variables) {
                     $universites = $node->field_link_universities->referencedEntities();
                     if(is_array($universites) && count($universites) > 0) {
                       $university = $universites[0];
-                      $university_ref =  $university->get('field_university')->value;
+                      $old_univ_ref = "";
+                      $university_ref = "";
+                      try {
+                        $university_ref =  $university->get('field_university_ref')->target_id;
+                        $old_univ_ref = $university->get('field_university')->value;
+                      }
+                      catch(Exception $e) {
+                        // do nothing
+                      }
+                      if(!empty($old_univ_ref) && empty($university_ref)) {
+                        $university_ref = $old_univ_ref;
+                      }
                       $university_logo = getUniversityLogo($university_ref);
                       $university_white_logo  = getUniversityWhiteLogo($university_ref);
                     }
