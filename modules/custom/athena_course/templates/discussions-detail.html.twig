@@ -1,5 +1,6 @@
 <head>
-<link rel="canonical" href='http://websitestg.athena.edu/insights/discussion-forum?discussion_id={{ discussion.discussion_id }}'/>
+{% set site_url = url("<current>") %}
+<link rel="canonical" href="{{site_url}}{{'?discussion_id='}}{{ discussion.discussion_id }}"/>
 </head>
 
 <div class="col-md-12 col-sm-12">
