@@ -512,14 +512,19 @@
     width: 36%;
     margin: 6px 20px 0 0;
 }
-.search-insights {
+.form-item-search-insights {
 	padding:10px;
+	height: 120px;
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px rgba(213, 219, 251, 0.67);
+    background-color: #d5e2e5;
+    margin: 20px 0;
 
 .form-text{
 	border: 0px;
     width: 100%;
     max-width: 570px;
-    height: 56px;
+    height: 50px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 11%), 0 0 4px 0 rgb(0 0 0 / 14%);
@@ -531,10 +536,13 @@
     border-radius: 4px;
     background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
     padding-top: 7px;
-    display: inline-block;
-    position: absolute;
-    margin-left: -60px;
+    display: inline-block; 
+    position: relative;
+    /* margin-left: -60px; */
     margin-top: 5px;
     text-align: center;
+    top: -53px;
+    left: 281px;
 }
 }
+#block-ourpopularcoursesblock .row {width:auto;}
