@@ -1,3 +1,8 @@
+<head>
+{% set site_url = url("<current>") %}
+<link rel="canonical" href="{{site_url}}{{'?discussion_id='}}{{ discussion.discussion_id }}"/>
+</head>
+
 <div class="col-md-12 col-sm-12">
                <div class="title">
                <img src="/themes/custom/athena/images/discussion-heading.png" alt="" style="width:100%;">
@@ -23,8 +28,9 @@
 
                <li><a class="a2a_button_twitter" target="_blank" rel="nofollow noopener"><img
                         src="/themes/custom/athena/images/icons/twitter.svg"></a></li>
+                        
 
-               <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ site_url }}{{'?discussion_id%3D'}}{{ discussion.discussion_id }}"
+               <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site_url }}{{'?discussion_id%3D'}}{{ discussion.discussion_id }}&title={{' Our Discussions - ' }}{{discussion.title}}{{' -'}} {{discussion.category_title}}&source={{discussion.description|striptags}}"
                      target="_blank" rel="nofollow noopener"><img
                         src="/themes/custom/athena/images/icons/linkedin.svg"></a></li>
 
