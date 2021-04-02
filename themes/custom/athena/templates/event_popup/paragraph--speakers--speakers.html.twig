@@ -47,11 +47,13 @@
   ]
 %}
 {% block paragraph %}
-    <div class="top-search-section homeBannerContainer">
-        <div class="wrapper">
+<div class="col-lg-4 col-md-6">
+    <div class="list-grid-item mt-4">
+      <div class="grid-item-content p-2">
             {% block content %}
             {{ content }}
             {% endblock %}
-        </div>
+       </div>
     </div>
+ </div>
 {% endblock paragraph %}
