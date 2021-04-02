@@ -82,38 +82,11 @@ foreach($paragraph_univ_data as $explore_data) {
            $certificates[]  = file_create_url($images->entity->getFileUri());
        }
 
-        //print "abcs"
-    //   print_r($certificates);
-
-        //if (!empty($university_nid)) {
-       if ( !empty($university_nid) && $university_nid != "")
+ 
+       if (!empty($university_nid) && $university_nid != "")
        {
-       $univ_node = Node::load($university_nid);
-       $white_log  = '';
-       switch($univ_node->get('title')->value){
-           case 'Scottish Qualifications Authority, UK':
-             $white_log = "sqalogo";
-             break;
-           case 'Guglielmo Marconi University, Italy':
-           $white_log = "gmu-white";
-             break;
-           case 'Cambridge International Qualifications, UK':
-           $white_log = "ciq-white";
-             break;
-
-            case 'Universidad Catolica De Murcia (UCAM), Spain':
-                       $white_log = "ucam-logo";
-                         break;
-
-            case 'Chartered Management Institute, UK':
-                       $white_log = "cmi-white";
-                         break;
-            default:
-                    break;
-       }
-
-
-       $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
+       $white_log = getUniversityWhiteLogo($university_nid);
+       $univ_logo = getUniversityLogo($university_nid);
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
@@ -128,7 +101,6 @@ foreach($paragraph_univ_data as $explore_data) {
         'dean_univ' =>$dean_univ,
         'dean_video' =>$dean_video,
         'dean_message' =>$dean_message,
-
         );
         }
 }
@@ -315,40 +287,9 @@ foreach($paragraph_univ_data as $explore_data) {
            $certificates[]  = file_create_url($images->entity->getFileUri());
        }
 
-        //print "abcs"
-       //print_r($certificates);exit;
-
-        if (!empty($university_nid)) {
-       $univ_node = Node::load($university_nid);
-       $univ_logo = file_create_url($univ_node->get('field_logo')->entity->uri->value);
-
-
-       $white_log  = '';
-       switch($univ_node->get('title')->value){
-           case 'Scottish Qualifications Authority, UK':
-             $white_log = "sqalogo";
-             break;
-           case 'Guglielmo Marconi University, Italy':
-           $white_log = "gmu-white";
-             break;
-           case 'Cambridge International Qualifications, UK':
-           $white_log = "ciq-white";
-             break;
-
-            case 'Universidad Catolica De Murcia (UCAM), Spain':
-                       $white_log = "ucam-logo";
-                         break;
-
-            case 'Chartered Management Institute, UK':
-                       $white_log = "cmi-white";
-                         break;
-            default:
-                    break;
-
-
-
-       }
-
+       if (!empty($university_nid)) {
+        $white_log = getUniversityWhiteLogo($university_nid);
+        $univ_logo = getUniversityLogo($university_nid);
         $univ_data[] = array(
         'university' =>Node::load($university_nid),
         'certificates' =>$certificates,
@@ -363,13 +304,8 @@ foreach($paragraph_univ_data as $explore_data) {
         'dean_video' =>$dean_video,
         'dean_message' =>$dean_message,
         'recortimage' =>$recortimage,
-
         );
         }
-
-
-
-
 }
 if(is_object( $node->field_what_you_get)){
 $paragraph_why_course = $node->field_what_you_get->referencedEntities();

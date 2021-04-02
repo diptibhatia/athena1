@@ -70,8 +70,11 @@ if(!empty($discussion_id)) {
     $discussion = Json::decode($response_detail->getBody());
     $posts = Json::decode($post->getBody());
    // print_r($posts['data']['posts']);exit;
-   // print_r($discussion['data']);exit;
-    
+
+//get the popular insight block to display at end of discussion details 
+//$block = getblock('popularinsightsblock_2');
+
+
   /*  $data['title'] = $discussion['data']['data']['title'];
     $data['category_title'] = $discussion['data']['data']['category_title'];
     $data['author_firstname'] = $discussion['data']['data']['author_firstname'];
@@ -85,6 +88,8 @@ if(!empty($discussion_id)) {
   '#discussion' => $discussion['data'],
   '#post' => $posts['data']['posts'],
   '#base_path' => $base_path,
+  '#cache' => [ 'max-age'=>0 ],
+  '#block' => $block
  ];  
  return array($discussion_detail);
 }
@@ -97,7 +102,7 @@ if(!empty($discussion_id)) {
    */
   protected function blockAccess(AccountInterface $account) {
     return AccessResult::allowedIfHasPermission($account, 'access content');
-  }
+    }
 
   /**
    * {@inheritdoc}
