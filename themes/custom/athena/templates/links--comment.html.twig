@@ -1,0 +1,162 @@
+{#
+/**
+ * @file
+ * Theme override for a set of links.
+ *
+ * Available variables:
+ * - attributes: Attributes for the UL containing the list of links.
+ * - links: Links to be output.
+ *   Each link will have the following elements:
+ *   - title: The link text.
+ *   - href: The link URL. If omitted, the 'title' is shown as a plain text
+ *     item in the links list. If 'href' is supplied, the entire link is passed
+ *     to l() as its $options parameter.
+ *   - attributes: (optional) HTML attributes for the anchor, or for the <span>
+ *     tag if no 'href' is supplied.
+ *   - link_key: The link CSS class.
+ * - heading: (optional) A heading to precede the links.
+ *   - text: The heading text.
+ *   - level: The heading level (e.g. 'h2', 'h3').
+ *   - attributes: (optional) A keyed list of attributes for the heading.
+ *   If the heading is a string, it will be used as the text of the heading and
+ *   the level will default to 'h2'.
+ *
+ *   Headings should be used on navigation menus and any list of links that
+ *   consistently appears on multiple pages. To make the heading invisible use
+ *   the 'visually-hidden' CSS class. Do not use 'display:none', which
+ *   removes it from screen readers and assistive technology. Headings allow
+ *   screen reader and keyboard only users to navigate to or skip the links.
+ *   See http://juicystudio.com/article/screen-readers-display-none.php and
+ *   http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_links()
+ */
+
+
+
+{% if links -%}
+    {%- for key, item in links -%}
+        {%- if item.link -%}
+          <span class="btn btn-default btn-sm">
+          	{{ item.link }}
+
+          </span>
+
+          <span>
+          <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#{{'myModalsocialshare'}}{{curr_nid}}">Share</a>
+
+  		  </span>
+
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif %}
+#}
+
+
+{% if links -%}
+  {%- if heading -%}
+    {%- if heading.level -%}
+      <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
+    {%- else -%}
+      <h2{{ heading.attributes }}>{{ heading.text }}</h2>
+    {%- endif -%}
+  {%- endif -%}
+  
+    {%- for item in links -%}
+      <span{{ item.attributes }}>
+        {%- if item.link -%}     
+          {{ item.link }}
+        {%- elseif item.text_attributes -%}
+          <span{{ item.text_attributes }}>{{ item.text }}</span>
+        {%- else -%}
+          {{ item.text }}
+        {%- endif -%}
+      </span>
+    {%- endfor -%}
+  
+{%- endif %}
+
+
+		<span>
+          <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#{{'myModalsocialshare'}}{{curr_nid}}">Share</a>
+
+  		  </span>
+
+
+
+   <div id="{{'myModalsocialshare'}}{{curr_nid}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div style="text-align: right;">
+         <button type="button" class="close" data-dismiss="modal" style="top: -5px;
+          position: relative;">×</button>
+      </div>
+
+      <div class="modal-body">
+       <div class="col-md-12">
+  <div class="col-md-12">
+    <h5 style="font-weight: bold;">Share this page</h5>
+
+    <h6>Show your friends and family what they can learn from athena</h6>
+  </div>
+
+
+
+   <div class="row m-0">
+    <div class="col-md-12 p-0 text-center pb-4">
+
+        <a class="d-inline-block p-2" href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{curr_nid}}" target="_blank">
+            <img src="/themes/custom/athena/images/fb-ico.png" width="45"></a>
+
+        <a class="d-inline-block p-2" href="http://twitter.com/share?url=Check out this - {{my_title}}. {{ url('<front>') }}node/{{curr_nid}}" target="_blank">
+            <img src="/themes/custom/athena/images/tw-co.png" width="45"></a>
+        
+        <a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{curr_nid}}" target="_blank">
+            <img src="/themes/custom/athena/images/li-ico.png" width="45"></a>
+        
+        <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text=Check out this  - {{my_title}}.{{ url('<front>') }}node/{{curr_nid}}" data-action="share/whatsapp/share">
+            <img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
+        
+        <a class="d-inline-block p-2" href="mailto:?subject=Check out this - {{my_title}}&amp;body=Check out this - {{my_title}} {{ url('<front>') }}node/{{curr_nid}}" title="Share by Email" p-1="">
+            <img src="/themes/custom/athena/images/at-ico.png" width="45"></a>
+        
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="bg-white sidebar shadow-lg rounded p-3">
+	<div class="col-md-12 row">
+		<div class="col-md-8" style="
+   /* width: 300px; */
+   overflow: hidden;
+   background: -webkit-linear-gradient(left, black , #eeeeee);
+   background: -o-linear-gradient(right, black, #eeeeee);
+   background: -moz-linear-gradient(right, black, #eeeeee);
+   background: linear-gradient(to right, black , #eeeeee);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   white-space: nowrap;
+   " id="shareurl--copy">
+        		{{ url('<front>') }}node/{{curr_nid}}
+    		</div>
+	<div class="col-md-4 copyToClipboard">
+			<a onclick="copy_to_clipboard()">COPY</a>
+		<div>
+	</div>
+
+
+    </div>
+</div>
+</div>
+      </div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

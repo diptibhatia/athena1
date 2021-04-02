@@ -63,9 +63,10 @@ function comment_reply_count_preprocess_comment(&$variables) {
  * Helper function to fetch Comment reply count.
  */
 function comment_reply_count_count($cid, $nid, $entity_type) {
-  $result = \Drupal::entityQuery('comment')
+    $result = \Drupal::entityQuery('comment')
     ->condition('entity_type', $entity_type)
     ->condition('entity_id', $nid)
+    ->condition('status', 1 )
     ->condition('pid', $cid)
     ->count()
     ->execute();

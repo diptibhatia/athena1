@@ -563,19 +563,34 @@ function athena_preprocess_views_view_field(&$variables) {
 
 function athena_form_alter(&$form, $form_state, $form_id) {
 
-  if($form_id == 'comment_in_comm_form') {    
-    
+  if($form_id == 'comment_in_comm_form') {
     $form['actions']['submit']['#value'] =t('Post Comments');
   }
 }
 
+function athena_preprocess_field(&$variables) {
 
+  if ($variables['element']['#entity_type'] === 'node') {
+    $node = $variables['element']['#object'];
+    $nid = $node->id();    
+    $variables['comment_nid'] = $nid;
+    $stats = \Drupal::service('comment.statistics')->read(array_fill_keys([$nid], ''), 'node');
+    if ($stats[0]->comment_count == "" ) $stats[0]->comment_count = 0;
+    $variables['comment_count'] = $stats[0]->comment_count;
+  }
+}
 
+function athena_preprocess_links(&$variables) {
 
-
-
-
-
-
-
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/node') !== false) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $node_id = $node->id();
+      $variables['curr_nid'] = $node_id; 
+      $title = $node->getTitle();
+      $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $title);
+    }
+  }
+}
 
