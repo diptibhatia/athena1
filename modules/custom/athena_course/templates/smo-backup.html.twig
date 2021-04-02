@@ -1,5 +1,3 @@
-{{ attach_library('athena/affiliate-page') }}
-
     <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
       <div class="top-banner">
           <div class="colorBg"></div>
@@ -22,7 +20,7 @@
 
 
             <p class="desc">{{ects_credit}}  {{node.field_courses_credit_type.0.value|raw }} {{course_title}} from
-                <br>{{awarding_body}}</p>
+                <br>{{awarding_body}}</p>                
             {% if source is not empty %}
 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}" >
   {% else %}
@@ -103,93 +101,45 @@
 
 <div class="login-details">
 <a id="enquiry_form"> </a>
-
-
-          <form id="registration-afpage" class="needs-validation" novalidate method="post">
-            <div class="reg-form">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="firstName">First Name</label>
-                  <input type="text" name="firstName" class="form-control reg-form-control" id="firstName"
-                    placeholder="First Name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" name="lastName" class="form-control reg-form-control" id="lastName"
-                    placeholder="Last Name" required>
-                </div>
-              </div>
-              <div class="form-row regUserEmail">
-                <div class="form-group col-md-12">
-                  <label for="regEmail">Email</label>
-                  <input type="email" name="regEmail" class="form-control reg-form-control" id="regEmail"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
-                </div>
-              </div>
-              <div class="form-row phone-number">
-                <div class="form-group col-md-12">
-                  <label for="reg_mobile_num">Phone Number</label>
-                  <input type="tel" id="reg_mobile_num" name="reg_mobile_num" class="reg-form-control"
-                    placeholder="Enter Mobile number" required>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-12">
-                  <label for="highestQualification">Highest Qualification</label>
-                  <select id="highestQualification" name="highestQualification" class="form-control reg-form-control"
-                    required>
-                    <option value="">Select your highest qualification</option>
-                    <option value="Masters Degree">Masters Degree</option>
-                    <option value="Bachelors Degree">Bachelors Degree</option>
-                    <option value="Diploma">Diploma</option>
-                    <option value="A Level">A Level</option>
-                    <option value="Others">Others</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row" style="display:none;">
-                <div class="form-group col-md-12">
-                  <label for="course">Course</label>
-                  <select name="course" id="course" class="form-control reg-form-control" required>
-                    <option value="{{node.field_cid.value}}" selected="selected">{{node.field_cid.value}}</option>
-                  </select>
-                </div>
-              </div>
-              <!--<div class="form-group text-center form-check consent-check">-->
-              <div class="form-group text-center consent-check">
-                <input type="checkbox" class="form-check-input" id="terms" name="terms[]">
-                <label class="form-check-label terms-label" for="terms">I agree with <a href="/registration-terms"
-                    target="_blank">Terms &amp; Conditions</a></label>
-
-                <button type="button" class="btn btn-pink sign-up-button">Sign Up</button>
-              </div>
-            </div>
-            <div class="ref-form-2" id="ref-form-2" style="display: none;">
-              <div class="form-group col-md-12">
-                <label for="pswd">Password</label>
-                <input type="password" name="pswd" class="form-control reg-form-control" id="pswd"
-                  placeholder="Password" required autocomplete="off">
-                <div class="invalid-feedback">
-                  Please enter a password
-                </div>
-              </div>
-              <div class="form-group col-md-12">
-                <label for="confirmpswd">Confirm Password</label>
-                <input type="password" name="confirmpswd" class="form-control reg-form-control" id="confirmpswd"
-                  placeholder="Re-enter Password" required autocomplete="off">
-                <div class="invalid-feedback confirm-password">
-                  Please enter password again
-                </div>
-              </div>
-              <button type="submit" class="btn btn-pink" style="width:100%;margin-top:0px">Register</button>
-            </div>
-            <input id="cId" name="cId" type="hidden" value="">
-            <input id="modId" name="modId" type="hidden" value="">
-            <input id="countryId" name="countryId" type="hidden" value="">
-            <input id="pay" name="pay" type="hidden" value="">
-          </form>
-
+                        <form id="speak_to_advisor" style="text-align:left">
+                            <h2>Need more detail?</h2>
+                            <h3>Speak to an Advisor<span>&nbsp;</span></h3>
+                            <p>Intrested in more information? Submit a request for call back from our Admission Counsellor.</p>
+                            <div class="login-item names">
+                                <div class="name-item">
+                                    <p>First Name</p>
+                                    <input type="text" id="speak_first_name" name="speak_first_name" placeholder="Enter First Name">
+                                </div>
+                                <div class="name-item">
+                                    <p>Last Name</p>
+                                    <input type="text" id="speak_last_name" name="speak_last_name" placeholder="Enter Last Name">
+                                </div>
+                            </div>
+                            <div class="login-item">
+                                <p>Email</p>
+                                <input type="hidden" id="country_code" value="" />
+                                <input type="email" id="speak_email" name="speak_email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Enter Email Address">
+                            </div>
+                            <div class="login-item" style="display:none">
+                                <p>Country</p>
+                                <input type="text" id="speak_country" placeholder="Country">
+                            </div>
+                            <div class="login-item phone-number">
+                                <p>Mobile Number</p>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter Mobile number">
+                                <span id="valid-msg" class="hide">✓ Valid</span>
+                                <span id="error-msg" class="hide"></span>
+                            </div>
+                            <input type="hidden" id="speak_courseid" value="{{node.field_cid.value}}" >
+                            <input type="hidden" id="nid" value="{{node.id}}" >
+                            <input type="hidden" id="utm_source" value="{{source}}" >
+                            <input type="hidden" id="utm_campaign" value="{{campaign}}" >
+                            <div class="button">
+                                <input type="checkbox" class="form-check-input" id="speak_consent">
+                                <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
+                                <button  type="submit" id="smo_form_submit">Submit</button>
+                            </div>
+                            </form>
                         </div>
                         </div>
                     </div>
@@ -480,6 +430,177 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+
+      jQuery("#smo_form_submit").click(function() {
+
+        var msg = '';
+        var regex = /^[a-zA-Z_ \.]*$/;
+        fname  = jQuery("#speak_first_name").val();
+
+        if(jQuery("#speak_first_name").val() == '') {
+          msg += '\n\u2022  Please enter first name';
+        }else if(!regex.test(jQuery("#speak_first_name").val())) {
+            msg += '\n\u2022  Please enter only alphabets for first name';
+        }else if(fname.length < 2 ) {
+          msg += '\n\u2022  Please enter atleast 2 characters for first name';
+        }else if(fname.length > 16 ) {
+          msg += '\n\u2022  Please do not enter more than 16 characters for first name';
+        }
+
+
+        lname  = jQuery("#speak_last_name").val();
+
+        if(jQuery("#speak_last_name").val() == '') {
+          msg += '\n\u2022  Please enter last name';
+        }else if(!regex.test(jQuery("#speak_last_name").val())) {
+            msg += '\n\u2022  Please enter only alphabets for last name';
+        }else if(lname.length < 2 ) {
+          msg += '\n\u2022  Please enter atleast 2 characters for last name';
+        }else if(lname.length > 16 ) {
+          msg += '\n\u2022  Last name should not be more than 16 characters';
+        }
+
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        var email = jQuery("#speak_email").val();
+
+        if(email == '') {
+          msg += '\n\u2022  Please enter email';
+        }else if(!regex.test(email)) {
+            msg += '\n\u2022  Please enter valid Email id';
+        }
+
+        var ph_num = jQuery("#phone").val();
+        var nid = jQuery("#nid").val();
+        var num_len = ph_num.length;
+
+        if(jQuery("#phone").val() == '') {
+          msg += '\n\u2022  Please enter phone number';
+        }else if(num_len <6 || num_len >15) {
+          msg += '\n\u2022  Please enter valid phone number';
+        }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+            msg += '\n\u2022  Please enter valid phone number';
+        }
+
+
+
+        if(!jQuery("#speak_consent").prop('checked') == true){
+           msg += '\n\u2022  Please accept consent terms';
+        }
+           var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+ var iso2 = countryData.iso2;
+ jQuery.ajax({
+   type: 'GET',
+   url: "https://learn.athena.edu/athenaprod/api/country/"+iso2, //Returns ID in body
+   async: false, // <<== THAT makes us wait until the server is done.
+   success: function(data){
+       jQuery( "#country_code" ).val(data);
+   },
+   error: function() {
+       alert("Error Processing your request, please try again after some time")
+       return FALSE;
+   }
+});
+
+
+        if(msg == ''){
+         var sendInfo = {
+FirstName:String(jQuery("#speak_first_name").val()),
+LastName:String(jQuery("#speak_last_name").val()),
+Email:String(jQuery("#speak_email").val()),
+CountryISO:String(jQuery("#country_code").val()),
+ContactNo:String(jQuery("#phone").val()),
+CourseId:parseInt(jQuery("#speak_courseid").val()),
+Source:String(jQuery("#utm_source").val()),
+Campaign:String(jQuery("#utm_campaign").val()),
+
+       };
+
+
+
+  var enc_fname = btoa(fname);
+  var enc_lname = btoa(lname);
+  var enc_email = btoa(email);
+  var country_code = btoa(jQuery("#country_code").val());
+  var enc_phone = btoa(jQuery("#phone").val());
+
+      var pathparts = location.pathname.split('/');
+      if (location.host == 'localhost') {
+          var url = location.origin+'/'+pathparts[1].trim('/')+'/'; 
+      }else{
+          var url = location.origin; 
+      }
+  
+
+             var utm_source = jQuery("#utm_source").val();
+       var utm_campaign = jQuery("#utm_campaign").val();
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
+                        type: 'POST',  // http method
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(sendInfo) ,  // data to submit
+                         dataType: 'json',
+                        success: function (data, status, xhr) {
+                            var txt;
+                          //  var r = confirm("Registration Successful, you will be redirected to login page now.");
+
+                          
+
+                          if(utm_source !=''){
+                          
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+
+                           }else{
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           }
+                            if (r == true) {
+                             // txt = "You pressed OK!";
+                            } else {
+                              //txt = "You pressed Cancel!";
+                            }
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                                if(jqXhr.status == 200) {
+
+
+                                   if(utm_source !=''){
+
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&utm_source='+utm_source+'&utm_campaign='+utm_campaign+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           }else{
+                           window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                           }
+
+
+
+                                }
+                        }
+                    });
+
+
+            var mailinfo = {
+              'mail': jQuery('#speak_email').val(),
+              'fname': jQuery('#speak_first_name').val(),
+              'lname': jQuery('#speak_last_name').val(),
+              'phone': jQuery('#phone').val(),
+              'cid': jQuery('#speak_courseid').val()
+            };
+            initiateSendingMail('speak_to_advisor', mailinfo);
+
+           jQuery('#speak_first_name').val("");
+          jQuery('#speak_last_name').val("");
+          jQuery('#speak_email').val("");
+          jQuery('#speak_country').val("");
+          jQuery('#phone').val("");
+          jQuery('#speak_consent').prop('checked', false);
+
+
+          return false;
+
+        }else {
+          alert(msg);
+          return false;
+        }
+      });
 
        $('.owl-carousel').owlCarousel({
             loop: true,
