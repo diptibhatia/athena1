@@ -1,5 +1,5 @@
 <style>
-  img{ width:100% }
+  .insightsgif > img{ width:100% }
 </style>
 
 {%
@@ -10,20 +10,20 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div">
+    <div class="insightsgif">
       {% for item in items %}
         {{ item.content }}
       {% endfor %}
   {% else %}
     {% for item in items %}
-      <div">{{ item.content }}
+      <div class="insightsgif">{{ item.content }}
     {% endfor %}
   {% endif %}
 {% else %}
     {% if multiple %}
     {% endif %}
     {% for item in items %}
-      <div class="">{{ item.content }}
+      <div class="insightsgif">{{ item.content }}
     {% endfor %}
     {% if multiple %}
     {% endif %}
