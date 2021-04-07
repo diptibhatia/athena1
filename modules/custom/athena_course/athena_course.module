@@ -29,6 +29,12 @@ function athena_course_mail($key, &$message, $params) {
  */
 function athena_course_theme($existing, $type, $theme, $path) {
     return [
+    'website_subscribe_popup' => [
+      'variables' => [
+        'subscribed' => NULL
+      ],
+    ],
+
     'short_term_course' => [
       'variables' => [
         'nodes' => NULL,
