@@ -27,8 +27,8 @@
 @import "modules/courseTeamSection";
 @import "modules/courseTeamCard";
 @import "modules/courseFaq";
-@import "modules/contactUs";
 @import "modules/courseBottomBanner";
+@import "modules/contactUs";
 @import "modules/aboutUs";
 @import "modules/homePage";
 @import "modules/testimonials";
@@ -44,7 +44,7 @@
 @import "modules/aboutPopular";
 @import "modules/modalPopup";
 @import "modules/shorttermcourses";
-// @import "modules/customShortTermCourses";
+@import "modules/eventPopup";
 // @import "modules/pluginsCustomShortTermCourses";
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
@@ -53,6 +53,7 @@ a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
     top: -35px;
 }
 .views-element-container .testimonials {margin-top: auto;}
+
 .row { width:100%;}
 
 .partners .partner-logos .logo {
@@ -69,7 +70,7 @@ img {
  .insight-thumbnail {    
     overflow: hidden;
     position: relative;
-    max-height: 100px;
+    max-height:100px;
     img.thumbnail {position: relative; /* Take your picture out of the flow */
         top: 0;
         bottom: 0;
@@ -78,17 +79,18 @@ img {
         width: 100%; /* This if for the object-fit */
         height: 90%; /* This if for the object-fit */
         object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
-        object-position: center;}
+        object-position: center;
+        min-height: 100px;
+        max-height: 100px;
+        margin-bottom:5px;
+    }
  }
-
-// .insights-section .section-items .section-item-two img.thumbnail {  
-//   position: relative;
-// } 
-
+//  .insights-section .section-items .section-item-two img.thumbnail {  
+//     position: relative;
+//  } 
 // .insights-section .section-items .section-item-two h4 {
 //     margin: inherit;
 // }
-
 .get-started button {
     background: transparent;
 }
@@ -116,9 +118,10 @@ img {
     border-radius: 50%;
     padding: 20px 10px;
     display: inline-block;
+    text-align: center;
     img {width: 50px;}
 }
-.img-responsive {max-width:100%; min-height:auto;}
+  
 .flx-duration, .error {color:red;}
 //.login-details label {display: block; color:red; clear:both;}
  
@@ -218,6 +221,7 @@ padding: 15px 25px 15px 24px;
 border-radius: 12px;
 background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color: white;
 }
+
 
 .copyToClipboard{
     position: relative;
