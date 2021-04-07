@@ -529,8 +529,9 @@
     border-radius: 5px;
     
     background-color: #ffffff;
+} 
 }
-.form-submit{
+.form-actions {.form-submit{
 	width: 51px;
     height: 45px;
     border-radius: 4px;
@@ -543,6 +544,9 @@
     text-align: center;
     top: -53px;
     left: 281px;
-}
-}
+}}
 #block-ourpopularcoursesblock .row {width:auto;}
+.insights-logos{
+	img {width: 44px;}
+	&.sidebar {width:74px; height:74px; text-align: center;}
+}

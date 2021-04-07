@@ -29,12 +29,11 @@
     <p class="mb-1">{{coursedata.node.field_course_awarding_body.value|raw }}</p>
 
     {% for univ in coursedata.univ  %}
-      <div class="insights-logos">
+      <div class="insights-logos sidebar">
           <img class="m-2" src="{{univ}}" class="rounded-circle">
       </div>
-    {% endfor %}
-    <br/>
-    <a href="{{ url('<front>') }}course/{{coursedata.node.id}}" class="text-right purple-txt d-block">Learn More</a>
+    {% endfor %} 
+    <a href="{{ url('<front>') }}course/{{coursedata.node.id}}" class="pull-right mt-4 purple-txt">Learn More</a>
 
   </div>
 

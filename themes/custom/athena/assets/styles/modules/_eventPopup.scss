@@ -15,29 +15,39 @@
 .employers-icons li {
   margin: 0px !important;
 }
-.register-popup {position: absolute; top:338px; right:0;}
-.register a {
-    position: relative;
-    top: 28px;
-    right: 10px; 
-
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: .3px;
-    max-width: 316px;
-    height: 48px;
-    display: block;
-    margin: 20px auto 0;
-    text-align: center;
-    line-height: 48px;
-    text-decoration: none;
-    border-radius: 3px;
-    background-image: linear-gradient(to right,#ff006e 0%,#ff4e9a 100%,#fff 100%);
+.event_popup {.card { width: 525px;}
+ .event_popup_close {position: absolute;
+  left: -20px;
+  top: -20px;
+  background: #000;
+  padding: 7px 10px;
+  border-radius: 50%;
+  width: 40px;
+  text-align: center;
+  color: #fff;
+&:hover {text-decoration: none;}
+}
+.register-popup {position: absolute; top:338px; right:10px; z-index: 99;}
+.course-partner a {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .3px;
+  display: block;
+  margin: 20px auto 0;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 3px;
+  background-image: linear-gradient(to right,#ff006e 0%,#ff4e9a 100%,#fff 100%);
+  width: 170px;
 
 
 }
-
+}
 /********************
    EMPLOYERS DETAILS
 *********************/
