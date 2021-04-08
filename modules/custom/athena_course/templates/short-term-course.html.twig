@@ -20,6 +20,7 @@
             <div class="how-it-works row">
                 {{ get_static_data('earning_a_degree', TRUE)|raw }}
                 <div class="col-md-12 academic-content p-0 pt-4">
+
                     <!--Find your course heading and Search course Input: START-->
                     <div class="row pb-4 findCourseInput">
                         <div class="col-12 col-md-6 col-lg-8">
@@ -27,11 +28,48 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="row bg-white shadow-sm rounded input-area mr-0">
-                                <input class="col-8" id="search" type="text" placeholder="Keywords / course name" onkeyup="return searchCourses(event)" /><button onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
+                                <input class="col-8" type="text" placeholder="What do you want to learn" /><button onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
                     <!--Find your course heading and Search course Input: END-->
+
+                    <!--Multiple Course Selection buttons: START -->
+                    <div class="container multiple-selection-courses p-0">
+                       <div class="row">
+                          <div class="col-12">
+                              <button type="button" class="btn">All</button>
+                              <button type="button" class="btn selected">Finance</button>
+                              <button type="button" class="btn">Marketing</button>
+                              <button type="button" class="btn selected">Information Technology</button>
+                              <button type="button" class="btn selected">Law</button>
+                              <button type="button" class="btn ">Maketing</button>
+                              <button type="button" class="btn">Information Technology</button>
+                          </div>
+                          <div class="col-12 selected-courses">
+                             <p>Currently Selected: <span class="bold">Financed, Information Technology, Law</span></p>
+                          </div>
+                       </div>
+                    </div>
+                    <!--Multiple Course Selection buttons: END -->
+
+
+                    <!--Multiple Course Selection buttons: START -->
+                    <div class="container category-area">
+                     <div class="row">
+                        <div class="col-12 p-0">
+                           <nav class="nav">
+                              <a class="nav-link active" aria-current="page" href="#"><span>Basic Level</span></a>
+                              <a class="nav-link" href="#"><span>Essentials</span></a>
+                              <a class="nav-link" href="#"><span>Mastering</span></a>
+                              <a class="nav-link" href="#"><span>Diploma</span></a>
+                              <a class="nav-link" href="#"><span>Executive Diploma</span></a>
+                            </nav>
+                        </div>
+                     </div>
+                    </div>
+                    <!--Multiple Course Selection buttons: END -->
+
                     <!--courses List: START-->
                     <div class="row shortterm-courses-area">
                         <div class="col-12 p-0">
