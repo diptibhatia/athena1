@@ -200,10 +200,11 @@ width: 81%;
 	
 
 .intl-tel-input.allow-dropdown input#reg_mobile_num{
-	border: none;
-    background: none;
-    width: 78%;
+	width: 74%;
+    float: right;
+    text-align: left;
+    padding: 7px 10px !important;
     box-shadow: none;
-	height: 40px;
-	padding-left:6px !important;
+    background: none;
+    height: 44px;
 }
