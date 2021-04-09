@@ -511,7 +511,7 @@
     float: left;
     width: 36%;
     margin: 6px 20px 0 0;
-}
+} 
 .form-item-search-insights {
 	padding:10px;
 	height: 120px;
@@ -527,11 +527,13 @@
     height: 50px;
     padding: 10px;
     border-radius: 5px;
+/*    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 11%), 0 0 4px 0 rgb(0 0 0 / 14%); */
     
     background-color: #ffffff;
 } 
 }
-.form-actions { 
+.search-insights
+{.form-actions { 
     position: relative; 
     top: -92px;
     text-align: right;
@@ -542,7 +544,7 @@
     height: 45px;
     border-radius: 4px;
     background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%); 
-}}
+}}}
 #block-ourpopularcoursesblock .row {width:auto;}
 .insights-logos{
 	img {width: 44px;}
