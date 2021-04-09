@@ -160,6 +160,14 @@ img {
     pointer-events: none;
 }   
 .terms-label {color:#303030; a {color:#303030;} a:hover {color:#303030;}}
+.reg-form .btn-pink {
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px #d5dbfb;
+    background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
+    color: #fff;
+}
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
     border: solid 2px $titlePink;
