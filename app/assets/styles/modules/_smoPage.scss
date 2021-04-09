@@ -413,7 +413,8 @@
             }
 
             .course-login-wrapper {
-                
+                height:auto; 
+                margin-bottom:15px;
                 @include belowSize1250 {
                     left: 0;
                 }
