@@ -12,13 +12,16 @@ use Drupal\block_content\Entity\BlockContent;
  */
 
 function athena_preprocess_block(array &$variables) {
-
+    \Drupal::service('cache.render')->invalidateAll();
     $universityContentType = 'universities';
     $universityQuery = \Drupal::entityQuery('node');
     $universityQuery->condition('status', 1);
     $universityQuery->condition('type', $universityContentType);
     $universityData = $universityQuery->execute();
-
+    $bundle='course';
+    $academic = get_course_nav_items('Academic');
+    $certifications = get_course_nav_items('Certifications');
+   
     foreach($universityData as $univNid) {
       $univNodeData = Node::load($univNid);
       $logoPath = file_create_url($univNodeData->get('field_logo')->entity->uri->value);
@@ -32,27 +35,12 @@ function athena_preprocess_block(array &$variables) {
     }
     $variables['all_universities'] = $univDataArr;
 
-    $bundle='course';
-    $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
-    //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-    $query->condition('field_course_category', 'Academic');
-    $query->condition('type', $bundle);
-    $academic = $query->execute();
-
-
     $microquery = \Drupal::entityQuery('node');
     $microquery->condition('status', 1);
     $microquery->condition('field_course_category',  'Micro Credits', '=');
     $microquery->condition('type', $bundle);
     $micro = $microquery->execute();
 
-
-    $querycertification = \Drupal::entityQuery('node');
-    $querycertification->condition('status', 1);
-    $querycertification->condition('field_course_category', 'Certifications', '=');
-    $querycertification->condition('type', $bundle);
-    $certifications = $querycertification->execute();
     $academic = node_load_multiple($academic);
     $academic_node_ids = array();
     foreach($academic as $node_key => $node) {
