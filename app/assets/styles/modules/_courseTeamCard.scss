@@ -1,20 +1,20 @@
 .course-team{
     .wrapper { 
         .owl-carousel{
-                      margin-left:-20px;
-                    .owl-item{
-                        .item{
-                            padding:20px 0;
-                        }
-                        &:first-child{
-                            .item{
-                                padding-left: 20px;
-                            }
-                        }
+            margin-left:-20px;
+            .owl-item{
+                .item{
+                    padding:20px 0;
+                }
+                &:first-child{
+                    .item{
+                        padding-left: 20px;
                     }
+                }
+            }
         }
         .owl-dots{
-            display:none;
+           // display:none;
         }
     }
 }

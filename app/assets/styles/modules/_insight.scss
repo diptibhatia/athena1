@@ -532,10 +532,12 @@
     background-color: #ffffff;
 } 
 }
-.search-insights
-{.form-actions { 
+.search-insights {
+	height: 130px;
+	.form-item-search-insights {label {margin-top:10px; margin-bottom: 15px;}
+	.form-actions { 
     position: relative; 
-    top: -92px;
+    top: -74px;
     text-align: right;
     right: 13px;
 	
@@ -550,3 +552,5 @@
 	img {width: 44px;}
 	&.sidebar {width:74px; height:74px; text-align: center;}
 }
+
+#block-ourpopularcoursesblock {color: #ff006814; padding-bottom: 10px;}
