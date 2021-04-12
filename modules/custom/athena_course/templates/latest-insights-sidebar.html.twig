@@ -20,10 +20,10 @@
 </div>
 
 <div class="container">
-     <div><h5 class="insight-sidebar-title mt-5">Our Popular Courses</h5>
+     <div><h5 class="insight-sidebar-title pt-3">Our Popular Courses</h5>
  {% set indexno = 0 %}
 {% for coursedata in popular %}
-<div class="row mb-2 shadow-sm rounded">
+<div class="row mb-2 shadow-sm rounded" style="background-color:#fff;">
   <div class="col-md-12 col-sm-12 p-3">
     <p class="m-0"><strong><a href="{{ url('<front>') }}course/{{coursedata.node.id}}" style="color:inherit">{{coursedata.node.label}}</a></strong></p>
     <p class="mb-1">{{coursedata.node.field_course_awarding_body.value|raw }}</p>

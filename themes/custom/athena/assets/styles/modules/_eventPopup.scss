@@ -21,7 +21,7 @@
 p {font-size: 12px;
   font-weight: 500; color:#303030;}}}
 
-.event_popup {.card { width: 525px;}
+.event_popup {.row {width:auto; }.card { width: 525px;}
  .event_popup_close {position: absolute;
   left: -20px;
   top: -20px;
@@ -70,7 +70,7 @@ h4.course-title {
     text-decoration: none;
     border-radius: 3px;
     background-image: linear-gradient(to right,#ff006e 0%,#ff4e9a 100%,#fff 100%);
-    width: 170px;
+    //width: 170px;
 }
 }
 /********************

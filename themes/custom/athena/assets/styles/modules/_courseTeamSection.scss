@@ -10,7 +10,7 @@
         padding-bottom: 68px;
     }
 
-    // .wrapper {
+    //.wrapper {
     //     padding: 0;
 
     //     @include atSize480 {
@@ -57,7 +57,7 @@
         position: absolute;
         top: -85px;
         right: 0;
-        display: none;
+       display: none;
 
         @include atSize850 {
             display: block;

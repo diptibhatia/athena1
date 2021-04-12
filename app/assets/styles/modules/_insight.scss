@@ -532,10 +532,14 @@
     background-color: #ffffff;
 } 
 }
-.search-insights
-{.form-actions { 
+.search-insights {
+	height: 130px;
+	.form-item-search-insights {
+		label {margin-top:10px; margin-bottom: 15px;}
+	}
+	.form-actions { 
     position: relative; 
-    top: -92px;
+    top: -74px;
     text-align: right;
     right: 13px;
 	
@@ -545,8 +549,16 @@
     border-radius: 4px;
     background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%); 
 }}}
+
 #block-ourpopularcoursesblock .row {width:auto;}
 .insights-logos{
 	img {width: 44px;}
 	&.sidebar {width:74px; height:74px; text-align: center;}
 }
+
+#block-ourpopularcoursesblock {background-color: #ff006814; padding: 10px;}
+
+.share-icon{
+.a2a_kit {li {
+	margin-bottom: 10px;
+}}}
