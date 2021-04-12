@@ -535,14 +535,14 @@
 .search-insights {
 	height: 130px;
 	.form-item-search-insights {
-		label {margin-top:10px; margin-bottom: 15px;}
+		label {margin-top:10px; margin-bottom: 15px; font-weight:600;}
 	}
 	.form-actions { 
 	.form-submit{
 		
 		position: relative; 
 		top: -74px;
-		text-align: right;
+		float: right;
 		right: 13px;
 		
 	width: 51px;
@@ -558,9 +558,3 @@
 
 #block-ourpopularcoursesblock {background-color: #ff00680d; padding: 10px;}
 #block-ourpopularcoursesblock .row {background-color: #fff; width:auto;}
-
-.share-icon{
-	li {
-	margin-bottom: 10px;
-}
-}
