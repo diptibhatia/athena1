@@ -18,7 +18,7 @@ function athena_preprocess_block(array &$variables) {
     $universityQuery->condition('status', 1);
     $universityQuery->condition('type', $universityContentType);
     $universityData = $universityQuery->execute();
-
+    $bundle='course';
     $academic = get_course_nav_items('Academic');
     $certifications = get_course_nav_items('Certifications');
    
