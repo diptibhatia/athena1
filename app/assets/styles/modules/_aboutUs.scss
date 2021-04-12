@@ -233,7 +233,7 @@
 		margin-top: 60px;
 		padding: 50px;
 		position: relative;
-    	z-index: 99;
+    	//z-index: 99;
 		@include atSize700 { 
 			background: url("images/popular-bg.png") -200px 0 ;			 
 		}
@@ -249,7 +249,7 @@
 	padding: 50px;
 	margin-top: 60px;
 	position: relative;
-	z-index: 99;
+	//z-index: 99;
 	@include atSize700 { 
 		background: url("images/popular-bg.png") -200px 0 ;
 		padding: 60px;
