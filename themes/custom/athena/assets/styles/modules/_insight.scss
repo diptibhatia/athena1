@@ -538,12 +538,13 @@
 		label {margin-top:10px; margin-bottom: 15px;}
 	}
 	.form-actions { 
-    position: relative; 
-    top: -74px;
-    text-align: right;
-    right: 13px;
-	
 	.form-submit{
+		
+		position: relative; 
+		top: -74px;
+		text-align: right;
+		right: 13px;
+		
 	width: 51px;
     height: 45px;
     border-radius: 4px;
@@ -557,3 +558,8 @@
 }
 
 #block-ourpopularcoursesblock {background-color: #ff006814; padding: 10px;}
+
+.share-icon{
+.a2a_kit {li {
+	margin-bottom: 10px;
+}}}
