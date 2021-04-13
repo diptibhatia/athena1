@@ -4,7 +4,8 @@
  */
 
 (function ($) {
-  
+ 'use strict';
+   
   $(document).ready(() => {
     //alert('hi.....');
     $('div.indented').css('display', 'none');
