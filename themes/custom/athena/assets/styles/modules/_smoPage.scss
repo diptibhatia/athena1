@@ -76,7 +76,7 @@
         }
 
         img {
-             
+            
             display: block;
             margin: 0 auto;
         }
@@ -413,10 +413,35 @@
             }
 
             .course-login-wrapper {
-                
+                height:auto; 
+                margin-bottom:25px;
                 @include belowSize1250 {
                     left: 0;
                 }
+
+                .login-item{
+                    input{
+                        border:1px solid #ced4da;                        
+                    }
+                }
+
+               .qualification{
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                position:relative;
+                &:after{content: "";
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-right: 2px solid #d5dbfb;
+                    border-bottom: 2px solid #d5dbfb;
+                    display: block;
+                    right: 26px;
+                    transform: rotate(45deg);
+                    bottom: 31px;}
+               } 
+               select{border:1px solid #ced4da;}
             }
         
         .intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb;width:100%;}

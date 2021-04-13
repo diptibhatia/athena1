@@ -104,38 +104,48 @@
 <div class="login-details">
 <a id="enquiry_form"> </a>
 
+          <h4 class="modal-title" style=" font-size: 27px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.3;
+            letter-spacing: normal;
+            color: #303030;margin-top: 29px;">It’s Time to Start </h4>
+          <h5 style="  font-size: 32px;
+            color: #ff016f;">Investing <span style="color:#303030"> in </span>Yourself </h5>
+          <h3>Sign Up</h3>
 
           <form id="registration-afpage" class="needs-validation" novalidate method="post">
             <div class="reg-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="firstName">First Name</label>
+                  <span for="firstName">First Name</span>
                   <input type="text" name="firstName" class="form-control reg-form-control" id="firstName"
                     placeholder="First Name" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="lastName">Last Name</label>
+                  <span for="lastName">Last Name</span>
                   <input type="text" name="lastName" class="form-control reg-form-control" id="lastName"
                     placeholder="Last Name" required>
                 </div>
               </div>
               <div class="form-row regUserEmail">
                 <div class="form-group col-md-12">
-                  <label for="regEmail">Email</label>
+                  <span for="regEmail">Email</span>
                   <input type="email" name="regEmail" class="form-control reg-form-control" id="regEmail"
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
                 </div>
               </div>
               <div class="form-row phone-number">
                 <div class="form-group col-md-12">
-                  <label for="reg_mobile_num">Phone Number</label>
+                  <span for="reg_mobile_num">Phone Number</span>
                   <input type="tel" id="reg_mobile_num" name="reg_mobile_num" class="reg-form-control"
                     placeholder="Enter Mobile number" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="highestQualification">Highest Qualification</label>
+                  <span for="highestQualification">Highest Qualification</span>
                   <select id="highestQualification" name="highestQualification" class="form-control reg-form-control"
                     required>
                     <option value="">Select your highest qualification</option>
@@ -150,7 +160,7 @@
 
               <div class="form-row" style="display:none;">
                 <div class="form-group col-md-12">
-                  <label for="course">Course</label>
+                  <span for="course">Course</span>
                   <select name="course" id="course" class="form-control reg-form-control" required>
                     <option value="{{node.field_cid.value}}" selected="selected">{{node.field_cid.value}}</option>
                   </select>
@@ -159,15 +169,15 @@
               <!--<div class="form-group text-center form-check consent-check">-->
               <div class="form-group text-center consent-check">
                 <input type="checkbox" class="form-check-input" id="terms" name="terms[]">
-                <label class="form-check-label terms-label" for="terms">I agree with <a href="/registration-terms"
-                    target="_blank">Terms &amp; Conditions</a></label>
+                <span class="form-check-label terms-label" for="terms">I agree with <a href="/registration-terms"
+                    target="_blank">Terms &amp; Conditions</a></span>
 
                 <button type="button" class="btn btn-pink sign-up-button">Sign Up</button>
               </div>
             </div>
             <div class="ref-form-2" id="ref-form-2" style="display: none;">
               <div class="form-group col-md-12">
-                <label for="pswd">Password</label>
+                <span for="pswd">Password</span>
                 <input type="password" name="pswd" class="form-control reg-form-control" id="pswd"
                   placeholder="Password" required autocomplete="off">
                 <div class="invalid-feedback">
@@ -175,7 +185,7 @@
                 </div>
               </div>
               <div class="form-group col-md-12">
-                <label for="confirmpswd">Confirm Password</label>
+                <span for="confirmpswd">Confirm Password</span>
                 <input type="password" name="confirmpswd" class="form-control reg-form-control" id="confirmpswd"
                   placeholder="Re-enter Password" required autocomplete="off">
                 <div class="invalid-feedback confirm-password">

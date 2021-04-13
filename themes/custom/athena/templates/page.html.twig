@@ -11,7 +11,7 @@
     </div>
 {% endif %}
 
-{% if athena_exclude %}
+{% if athena_exclude or error_page == node.id %}
   {{ page.content }}
 {% else %}
     <div class="main-wrapper container-fluid p-0 about-us-wrapper">
