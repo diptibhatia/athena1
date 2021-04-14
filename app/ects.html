@@ -1,4 +1,8 @@
-<div class="card-body">
+<div class="top-curve-background-image">
+    <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
+    </div>
+    
+    <div class="card-body">
     <div class="row">
         <div class="col-md-4">
             <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
@@ -33,3 +37,57 @@
 
     </div>
 </div>
+
+<div class="bottom-curve-background-image">
+    <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
+</div>
+
+<style>
+.top-curve-background-image {
+position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: none;
+    background: #EAEDF9;
+    width: 100%;
+    height: 420px;
+    display: block;
+}
+
+
+.top-curve-background-image .banner-curve {
+    position: absolute;
+    bottom: 0;
+    /* left: 50%; */
+    transform: scaleX(-1);
+    bottom: -3px;
+    z-index: 4;
+    width: 100%;
+}
+
+.bottom-curve-background-image {
+position: absolute;
+    bottom: -390px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: none;
+    background: #EAEDF9;
+    width: 100%;
+    height: 420px;
+    display: block;
+}
+
+    .bottom-curve-background-image .banner-curve {
+        position: absolute;
+    top: 30px;
+    /* left: 50%; */
+    transform: scaleY(-1.5);
+     bottom: -3px; 
+    z-index: 4;
+    width: 100%;
+    height: 223px;
+}
+</style>
