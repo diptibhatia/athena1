@@ -271,7 +271,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
     ],
     'our_popular_courses' => [
       'variables' => [
-      'base_path' => NULL,      
+      'base_path' => NULL,
       'popular' => NULL,
       'univ_popular' => NULL,
       ],
@@ -361,13 +361,15 @@ function athena_course_theme($existing, $type, $theme, $path) {
 
 
 function athena_course_page_attachments(array &$attachments) {
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name == 'athena_smo.smo') {
+      $attachments['#attached']['library'][] = 'athena_course/athena_course';
+    }
+
     $account = \Drupal::currentUser();
     if ($account->id() != 1) {
       $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
     }
-
-
-    $route_name = \Drupal::routeMatch()->getRouteName();
 
     // Custom meta tags on smo and course pages.
     if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
