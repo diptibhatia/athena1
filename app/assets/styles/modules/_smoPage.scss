@@ -71,8 +71,8 @@
         }
 
         @include atSizeXXLarge {
-            left: 50%;
-            transform: translateX(-50%);
+            //left: 50%;
+            //transform: translateX(-50%);
         }
 
         img {
@@ -632,4 +632,3 @@
     color: pink;
     padding-left: 12px;
 }
-
