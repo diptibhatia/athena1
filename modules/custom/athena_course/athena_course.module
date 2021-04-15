@@ -87,6 +87,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
 
 'smo' => [
       'variables' => [
+      'payment' => NULL,
       'course_title' => NULL,
       'ects_credit' => NULL,
       'awarding_body' => NULL,
