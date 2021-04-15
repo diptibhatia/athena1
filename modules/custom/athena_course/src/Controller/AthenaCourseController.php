@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * @file
+ */
 namespace Drupal\athena_course\Controller;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -8,232 +12,246 @@ use \Drupal\Core\Url;
 
 class AthenaCourseController {
 
-public function news_subscription(){
-
-}
-
-public function smo_tq(){
-  if(isset($_REQUEST['nid'])){
-    $node = Node::load($_REQUEST['nid']);
+  public function news_subscription(){
   }
 
-  global $base_url;
-  $theme = \Drupal::theme()->getActiveTheme();
-  $base_path = $base_url.'/'. $theme->getPath();
-
-  $source = $_REQUEST['utm_source'];
-  $campaign = $_REQUEST['utm_campaign'];
-  $fname = $_REQUEST['fname'];
-  $lname = $_REQUEST['lname'];
-  $email = $_REQUEST['email'];
-  $ccode = $_REQUEST['ccode'];
-  $phone = $_REQUEST['phone'];
-
-  $academic =  [
-    '#theme' => 'smotq',
-    '#source' => $source,
-    '#campaign' => $campaign,
-    '#fname' => $fname,
-    '#lname' => $lname,
-    '#email' => $email,
-    '#ccode' => $ccode,
-    '#phone' => $phone,
-    '#node' => $node,
-    '#base_path' => $base_path,
-  ];
-  \Drupal::service('page_cache_kill_switch')->trigger();
-  return array($academic);
-}
-
-public function smo($nid) {
-    $parameters = \Drupal::routeMatch()->getParameters();
-    $node = Node::load($nid);
+  /**
+   * SMO Thank you page.
+   * @return [type] [description]
+   */
+  public function smo_tq(){
+    if(isset($_REQUEST['nid'])){
+      $node = Node::load($_REQUEST['nid']);
+    }
 
     global $base_url;
     $theme = \Drupal::theme()->getActiveTheme();
     $base_path = $base_url.'/'. $theme->getPath();
-    //print $node->get('field_courses_credit_type')->value;exit;
 
-     if(is_object( $node->field_link_universities)){
+    $source = $_REQUEST['utm_source'];
+    $campaign = $_REQUEST['utm_campaign'];
+    $fname = $_REQUEST['fname'];
+    $lname = $_REQUEST['lname'];
+    $email = $_REQUEST['email'];
+    $ccode = $_REQUEST['ccode'];
+    $phone = $_REQUEST['phone'];
 
-    $paragraph_univ_data = $node->field_link_universities->referencedEntities();
-    }
-
-
-foreach($paragraph_univ_data as $explore_data) {
-
-        $university_nid = $explore_data->get('field_university')->value;
-        $university_nid = $explore_data->get('field_university')->value;
-        $message = $explore_data->get('field_message')->value;
-        $msg_title = $explore_data->get('field_message_title')->value;
-        $prof_name = $explore_data->get('field_professor_name')->value;
-        $prof_univ = $explore_data->get('field_prof_university')->value;
-        $dean_name = $explore_data->get('field_dean_name')->value;
-        $dean_univ = $explore_data->get('field_dean_un')->value;
-        $dean_video = $explore_data->get('field_dean_video')->value;
-        $dean_message = $explore_data->get('field_dean_message_la')->value;
-         if(is_object(  $explore_data->get('field_rector_image')->entity)){
-        $rector = $explore_data->get('field_rector_image')->entity->getFileUri();
-       $rectorurl = file_create_url($rector);
-         }
-       $certificates = array();
-       foreach($explore_data->get('field_certificate') as $key=>$images) {
-
-           $certificates[]  = file_create_url($images->entity->getFileUri());
-       }
-
- 
-       if (!empty($university_nid) && $university_nid != "")
-       {
-       $white_log = getUniversityWhiteLogo($university_nid);
-       $univ_logo = getUniversityLogo($university_nid);
-        $univ_data[] = array(
-        'university' =>Node::load($university_nid),
-        'certificates' =>$certificates,
-        'recortimage' =>$rectorurl,
-        'white_log' =>$white_log,
-        'univ_logo' =>$univ_logo,
-        'message' =>$message,
-        'msg_title' =>$msg_title,
-        'prof_name' =>$prof_name,
-        'prof_univ' =>$prof_univ,
-        'dean_name' =>$dean_name,
-        'dean_univ' =>$dean_univ,
-        'dean_video' =>$dean_video,
-        'dean_message' =>$dean_message,
-        );
-        }
-}
-
-//exitl
-$paragraph_why_course = $node->field_what_you_get->referencedEntities();
-$why_course = array();
-//print_r($paragraph_why_course);exit;
-foreach($paragraph_why_course as $why_course_data) {
-	$degree = $why_course_data->get('field_degree')->value;
-	$issued_by = $why_course_data->get('field_issued_by')->value;
-
-    $logo_url = '';
-    if(is_object( $why_course_data->get('field_logo')->entity)){
-	$logo = $why_course_data->get('field_logo')->entity->getFileUri();
-    }
-	$logo_url = file_create_url($logo);
-    $certificates_url = '';
-    if(is_object( $why_course_data->get('field_sample_certification')->entity)){
-	$certificate = $why_course_data->get('field_sample_certification')->entity->getFileUri();
-	$certificates_url = file_create_url($certificate);
-    }
-
-    if(empty($logo)) {
-       $logo_url = $base_path."/images/coursepage/degree-mba.svg";
-    }
-	$why_course[] = array(
-	  'degree' => $degree,
-	  'issued_by' => $issued_by,
-	  'logo_url' => $logo_url,
-	  'certificates_url' => $certificates_url,
-	);
-}
-
-//print_r($why_course);exit;
-
-$paragraph_course_team = $node->field_course_team_member->referencedEntities();
-$course_team = array();
-foreach($paragraph_course_team as $attached_node){
-  $name =  $attached_node->get('title')->value;
-  $designation =  $attached_node->get('field_designation')->value;
-  $linked_in =  $attached_node->get('field_linked_in_link')->value;
-  $user_pic= '';
-  if(is_object( $attached_node->get('field_user_photo')->entity)){
-	$user_pic = $attached_node->get('field_user_photo')->entity->getFileUri();
-    }
-	$user_pic_url = file_create_url($user_pic);
-  $description =  $attached_node->get('field_user_description')->value;
-  $course_team[] = array(
-  'name' => $name,
-  'designation' => $designation,
-  'user_pic' => $user_pic_url,
-  'linked_in' => $linked_in,
-  'description' => $description,
-  );
-
-}
-
-$paragraph_faq = $node->field_faq->referencedEntities();
-$faq = array();
-
-
-foreach($paragraph_faq as $faq_data){
-    //print $faq_data->get('field_category')->value;
-
-    if(!empty($faq_data->get('field_category')->value)) {
-    $faq[$faq_data->get('field_category')->value][] = array(
-       'question' => $faq_data->get('field_question')->value,
-       'answer' => $faq_data->get('field_answer')->value
-    );
-    }
-
-
-}
-
-$fee_pay_per = $node->get('field_course_fee_pay_per')->value;
-if(empty($fee_pay_per)) $fee_pay_per = 'Pay Per Module';
-
-
-$testibundle='testimonials';
-$testiquery = \Drupal::entityQuery('node');
-$testiquery->condition('status', 1);
-$testiquery->condition('type', $testibundle);
-$latest = $testiquery->execute();
-$testinodes = node_load_multiple($latest);
-$testimo =  array_slice($testinodes, 0, 7);
-
-$source = $_REQUEST['utm_source'];
-$campaign = $_REQUEST['utm_campaign'];
-
-    $banner_block =  [
-      '#theme' => 'smo',
-      '#course_title' => $node->get('title')->value,
-      '#ects_credit' => $node->get('field_course_ects_credit')->value,
-      '#awarding_body' => $node->get('field_course_awarding_body')->value,
+    $academic =  [
+      '#theme' => 'smotq',
       '#source' => $source,
       '#campaign' => $campaign,
-      '#description' => $node->get('field_course_banner_description')->value,
-      '#category' => $node->get('field_course_category')->value,
-      '#fees_pay_per' => $fee_pay_per,
-     // '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
-      '#base_path' => $base_path,
+      '#fname' => $fname,
+      '#lname' => $lname,
+      '#email' => $email,
+      '#ccode' => $ccode,
+      '#phone' => $phone,
       '#node' => $node,
-      '#overview' => $node->get('field_course_overview')->value,
-  '#testi' => $testimo,
-  '#node' => $node,
-  '#total_fee' => $node->get('field_course_total_fee')->value,
-  '#univ_data' => $univ_data,
-  '#logo' => $univ_data,
-  '#course_team' => $course_team,
-  '#faq' => $faq,
-  '#why_course' => $why_course,
-  '#duration' => $node->get('field_course_duration')->value,
-  '#certification_label' => $node->get('field_course_certification_label')->value,
-  '#certification' => $node->get('field_course_certification')->value,
-  '#accreditations' => $node->get('field_course_accreditations')->value,
-  '#course_details' => $node->get('field_course_details')->value,
-  '#course_modules' => $node->get('field_course_modules')->value,
-  '#total_credits' => $node->get('field_course_total_credits')->value,
-  '#academic_route' => $node->get('field_course_academic_route')->value,
-  '#academic_route_desc' => $node->get('field_course_academic_route_desc')->value,
-  '#mature_entry_label' => $node->get('field_course_mature_entry_label')->value,
-  '#mature_entry_desc' => $node->get('field_course_mature_desc')->value,
-  '#language_prof_label' => $node->get('field_course_language_prof_label')->value,
-  '#language_prof_desc' => $node->get('field_course_language_prof_desc')->value,
-  '#why_athena' => $node->get('field_course_why_athena')->value,
-
+      '#base_path' => $base_path,
     ];
+    \Drupal::service('page_cache_kill_switch')->trigger();
+    return array($academic);
+  }
 
-    return array(
-       $banner_block,
-    );
-}
+  /**
+   * SMo Page
+   * @param  [type] $nid [description]
+   * @return [type]      [description]
+   */
+  public function smo($nid) {
+      // Payment settings.
+      $is_payment = $_GET['course'] ?? '';
+      if (!empty($is_payment)) {
+        $enrol_decrypt = base64_decode($is_payment);
+        if ($enrol_decrypt == 'enrol') {
+          $payment = 1;
+        }
+      }
+
+      $parameters = \Drupal::routeMatch()->getParameters();
+      $node = Node::load($nid);
+
+      global $base_url;
+      $theme = \Drupal::theme()->getActiveTheme();
+      $base_path = $base_url.'/'. $theme->getPath();
+      //print $node->get('field_courses_credit_type')->value;exit;
+
+       if(is_object( $node->field_link_universities)){
+
+      $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+      }
+
+
+      foreach($paragraph_univ_data as $explore_data) {
+
+              $university_nid = $explore_data->get('field_university')->value;
+              $university_nid = $explore_data->get('field_university')->value;
+              $message = $explore_data->get('field_message')->value;
+              $msg_title = $explore_data->get('field_message_title')->value;
+              $prof_name = $explore_data->get('field_professor_name')->value;
+              $prof_univ = $explore_data->get('field_prof_university')->value;
+              $dean_name = $explore_data->get('field_dean_name')->value;
+              $dean_univ = $explore_data->get('field_dean_un')->value;
+              $dean_video = $explore_data->get('field_dean_video')->value;
+              $dean_message = $explore_data->get('field_dean_message_la')->value;
+               if(is_object(  $explore_data->get('field_rector_image')->entity)){
+              $rector = $explore_data->get('field_rector_image')->entity->getFileUri();
+             $rectorurl = file_create_url($rector);
+               }
+             $certificates = array();
+             foreach($explore_data->get('field_certificate') as $key=>$images) {
+
+                 $certificates[]  = file_create_url($images->entity->getFileUri());
+             }
+
+
+             if (!empty($university_nid) && $university_nid != "")
+             {
+             $white_log = getUniversityWhiteLogo($university_nid);
+             $univ_logo = getUniversityLogo($university_nid);
+              $univ_data[] = array(
+              'university' =>Node::load($university_nid),
+              'certificates' =>$certificates,
+              'recortimage' =>$rectorurl,
+              'white_log' =>$white_log,
+              'univ_logo' =>$univ_logo,
+              'message' =>$message,
+              'msg_title' =>$msg_title,
+              'prof_name' =>$prof_name,
+              'prof_univ' =>$prof_univ,
+              'dean_name' =>$dean_name,
+              'dean_univ' =>$dean_univ,
+              'dean_video' =>$dean_video,
+              'dean_message' =>$dean_message,
+              );
+              }
+      }
+
+      //exitl
+      $paragraph_why_course = $node->field_what_you_get->referencedEntities();
+      $why_course = array();
+      //print_r($paragraph_why_course);exit;
+      foreach($paragraph_why_course as $why_course_data) {
+      	$degree = $why_course_data->get('field_degree')->value;
+      	$issued_by = $why_course_data->get('field_issued_by')->value;
+
+          $logo_url = '';
+          if(is_object( $why_course_data->get('field_logo')->entity)){
+      	$logo = $why_course_data->get('field_logo')->entity->getFileUri();
+          }
+      	$logo_url = file_create_url($logo);
+          $certificates_url = '';
+          if(is_object( $why_course_data->get('field_sample_certification')->entity)){
+      	$certificate = $why_course_data->get('field_sample_certification')->entity->getFileUri();
+      	$certificates_url = file_create_url($certificate);
+          }
+
+          if(empty($logo)) {
+             $logo_url = $base_path."/images/coursepage/degree-mba.svg";
+          }
+      	$why_course[] = array(
+      	  'degree' => $degree,
+      	  'issued_by' => $issued_by,
+      	  'logo_url' => $logo_url,
+      	  'certificates_url' => $certificates_url,
+      	);
+      }
+
+      //print_r($why_course);exit;
+
+      $paragraph_course_team = $node->field_course_team_member->referencedEntities();
+      $course_team = array();
+      foreach($paragraph_course_team as $attached_node){
+        $name =  $attached_node->get('title')->value;
+        $designation =  $attached_node->get('field_designation')->value;
+        $linked_in =  $attached_node->get('field_linked_in_link')->value;
+        $user_pic= '';
+        if(is_object( $attached_node->get('field_user_photo')->entity)){
+      	$user_pic = $attached_node->get('field_user_photo')->entity->getFileUri();
+          }
+      	$user_pic_url = file_create_url($user_pic);
+        $description =  $attached_node->get('field_user_description')->value;
+        $course_team[] = array(
+        'name' => $name,
+        'designation' => $designation,
+        'user_pic' => $user_pic_url,
+        'linked_in' => $linked_in,
+        'description' => $description,
+        );
+      }
+
+      $paragraph_faq = $node->field_faq->referencedEntities();
+      $faq = array();
+
+
+      foreach($paragraph_faq as $faq_data){
+          //print $faq_data->get('field_category')->value;
+
+          if(!empty($faq_data->get('field_category')->value)) {
+          $faq[$faq_data->get('field_category')->value][] = array(
+             'question' => $faq_data->get('field_question')->value,
+             'answer' => $faq_data->get('field_answer')->value
+          );
+          }
+      }
+
+      $fee_pay_per = $node->get('field_course_fee_pay_per')->value;
+      if(empty($fee_pay_per)) $fee_pay_per = 'Pay Per Module';
+
+
+      $testibundle='testimonials';
+      $testiquery = \Drupal::entityQuery('node');
+      $testiquery->condition('status', 1);
+      $testiquery->condition('type', $testibundle);
+      $latest = $testiquery->execute();
+      $testinodes = node_load_multiple($latest);
+      $testimo =  array_slice($testinodes, 0, 7);
+
+      $source = $_REQUEST['utm_source'];
+      $campaign = $_REQUEST['utm_campaign'];
+
+      $banner_block =  [
+        '#theme' => 'smo',
+        '#course_title' => $node->get('title')->value,
+        '#ects_credit' => $node->get('field_course_ects_credit')->value,
+        '#awarding_body' => $node->get('field_course_awarding_body')->value,
+        '#source' => $source,
+        '#campaign' => $campaign,
+        '#description' => $node->get('field_course_banner_description')->value,
+        '#category' => $node->get('field_course_category')->value,
+        '#fees_pay_per' => $fee_pay_per,
+       // '#banner' => $node->get('field_course_banner_image')->entity->uri->value,
+        '#base_path' => $base_path,
+        '#node' => $node,
+        '#overview' => $node->get('field_course_overview')->value,
+        '#testi' => $testimo,
+        '#node' => $node,
+        '#total_fee' => $node->get('field_course_total_fee')->value,
+        '#univ_data' => $univ_data,
+        '#logo' => $univ_data,
+        '#course_team' => $course_team,
+        '#faq' => $faq,
+        '#why_course' => $why_course,
+        '#duration' => $node->get('field_course_duration')->value,
+        '#certification_label' => $node->get('field_course_certification_label')->value,
+        '#certification' => $node->get('field_course_certification')->value,
+        '#accreditations' => $node->get('field_course_accreditations')->value,
+        '#course_details' => $node->get('field_course_details')->value,
+        '#course_modules' => $node->get('field_course_modules')->value,
+        '#total_credits' => $node->get('field_course_total_credits')->value,
+        '#academic_route' => $node->get('field_course_academic_route')->value,
+        '#academic_route_desc' => $node->get('field_course_academic_route_desc')->value,
+        '#mature_entry_label' => $node->get('field_course_mature_entry_label')->value,
+        '#mature_entry_desc' => $node->get('field_course_mature_desc')->value,
+        '#language_prof_label' => $node->get('field_course_language_prof_label')->value,
+        '#language_prof_desc' => $node->get('field_course_language_prof_desc')->value,
+        '#why_athena' => $node->get('field_course_why_athena')->value,
+        '#payment' => $payment
+      ];
+
+      return array(
+         $banner_block,
+      );
+  }
 
 
   public function course($nid) {

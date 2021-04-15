@@ -170,7 +170,7 @@
                 <span class="form-check-label terms-label" for="terms">I agree with <a href="/registration-terms"
                     target="_blank">Terms &amp; Conditions</a></span>
 
-                <button type="button" class="btn btn-pink sign-up-button">Sign Up</button>
+                <button type="button" class="btn btn-pink sign-up-button">{% if payment %} Enrol Now {% else %} Sign Up {% endif %}</button>
               </div>
             </div>
             <div class="ref-form-2" id="ref-form-2" style="display: none;">
@@ -195,7 +195,13 @@
             <input id="cId" name="cId" type="hidden" value="">
             <input id="modId" name="modId" type="hidden" value="">
             <input id="countryId" name="countryId" type="hidden" value="">
-            <input id="pay" name="pay" type="hidden" value="">
+
+            {% if payment %}
+              <input id="pay" name="pay" type="hidden" value="{{ payment }}">
+            {% else %}
+              <input id="pay" name="pay" type="hidden" value="">
+            {% endif %}
+
           </form>
 
                         </div>
