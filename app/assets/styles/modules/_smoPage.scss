@@ -164,7 +164,7 @@
         img {
             display: inline-block;
             height: 40px;
-
+margin-right: 5px;
             @include atSize700 {
                 height: auto;
             }
@@ -183,7 +183,7 @@
     h1 {
         font-size: 2rem;
         font-weight: bold;
-        margin: 35px 0 5px;
+        margin: 20px 0 10px;
 
         @include atSize700 {
             font-size: 2.625rem;
