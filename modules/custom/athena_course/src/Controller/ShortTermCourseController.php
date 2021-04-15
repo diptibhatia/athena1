@@ -26,7 +26,8 @@ class ShortTermCourseController {
      */
     public function shortTermCourse() {
         $limit = $this->_limit;
-        $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit";
+        //$uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit";
+        $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1";
         try {
             $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
             $data = (string)$response->getBody();
@@ -43,7 +44,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://newlms.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),
@@ -92,10 +93,10 @@ class ShortTermCourseController {
         $limit = $this->_limit;
 
         if (!empty($search)) {
-            $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=$pager&limit=$limit&course_name=" . $search;
+            $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;
         }
         else {
-            $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=$pager&limit=$limit";
+            $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1";
         }
 
 
@@ -113,7 +114,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://newlms.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),
@@ -195,7 +196,8 @@ class ShortTermCourseController {
         $limit = $this->_limit;
         $query = trim($query);
         $query = strip_tags($query);
-        $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit&course_name=" . $query;
+        // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit&course_name=" . $query;
+        $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $query;
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
@@ -210,7 +212,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://newlms.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),

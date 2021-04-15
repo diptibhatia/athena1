@@ -372,6 +372,23 @@ function athena_course_page_attachments(array &$attachments) {
       $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
     }
 
+    if ($route_name == 'athena_smotq.smotq') {
+      $uid = $_REQUEST['UId'] ?? '';
+      $source = $_REQUEST['utm_source'] ?? '';
+      if ($source == 'ShareASale') {
+        // ShareASale Pixel.
+        $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#tag' => '',
+            '#value' => \Drupal\Core\Render\Markup::create($shareASalePixel),
+            '#weight' => 9,
+          ],
+          'shareasale'
+        ];
+      }
+    }
+
     // Custom meta tags on smo and course pages.
     if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
       $possible_parameters = \Drupal::routeMatch()->getParameters();
