@@ -456,7 +456,25 @@ function athena_course_page_attachments(array &$attachments) {
           'keywords'
         ];
       }
+
+      if (!empty($meta_tag_value)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'property' => 'og:title',
+              'content' => $meta_tag_value
+            ],
+            '#weight' => -8,
+          ],
+          'keywords'
+        ];
+      }
+
     }
+
+      
 
     if ($route_name == 'athena_course.StudentEnroltoCourse') {
       $from = $_REQUEST['from'] ?? '';
