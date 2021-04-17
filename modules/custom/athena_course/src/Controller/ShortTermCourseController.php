@@ -25,6 +25,15 @@ class ShortTermCourseController {
      * @return [array]
      */
     public function shortTermCourse() {
+
+        $sern_name = $_SERVER['SERVER_NAME'];    
+        if ( $sern_name == "websitestg.athena.edu" )
+            $url = "https://newlms.athena.edu";
+        else        
+            $url = "https://learn.athena.edu";
+
+        print $sern_name;
+
         $limit = $this->_limit;
         //$uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit";
         $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1";
@@ -44,7 +53,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $url.'/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),
@@ -99,6 +108,13 @@ class ShortTermCourseController {
             $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1";
         }
 
+        
+        $sern_name = $_SERVER['SERVER_NAME'];    
+        if ( $sern_name == "websitestg.athena.edu" )
+            $url = "https://newlms.athena.edu";
+        else        
+            $url = "https://learn.athena.edu";
+
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
@@ -114,7 +130,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $url.'/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),

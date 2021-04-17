@@ -472,6 +472,24 @@ function athena_course_page_attachments(array &$attachments) {
         ];
       }
 
+      $currentPageUrl = 'https://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+
+      if (!empty($meta_tag_value)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'property' => 'og:url',
+              'content' => $currentPageUrl
+            ],
+            '#weight' => -7,
+          ],
+          'keywords'
+        ];
+      }
+
+
     }
 
       

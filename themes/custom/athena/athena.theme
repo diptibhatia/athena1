@@ -327,6 +327,10 @@ function athena_preprocess_page(&$variables) {
     }
   }
 
+  if (strpos($current_path, '/ects') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
+
   if (strpos($current_path, '/course') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
@@ -583,3 +587,59 @@ function athena_preprocess_links(&$variables) {
   }
 }
 
+function athena_preprocess_html(&$variables)
+{
+    
+  $route_name = \Drupal::routeMatch()->getRouteName();   
+    
+    // Custom meta tags on smo and course pages.
+    if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
+      $possible_parameters = \Drupal::routeMatch()->getParameters();
+    $possible_parameters_obj = $possible_parameters->all();
+      $nid = $possible_parameters_obj['nid'];
+      $node = Node::load($nid);           
+      $course_category = $node->get('field_course_category')->value;
+      
+      if ($course_category == 'Academic') {
+        $field1 = 'field_course_page_meta_tag';
+        $field2 = 'field_course_page_meta_descripti';
+        $field3 = 'field_course_page_meta_keywords';
+      }
+      if ($course_category == 'Certifications') {
+        $field1 = 'field_smo_page_meta_tag_title';
+        $field2 = 'field_smo_page_meta_tag_descript';
+        $field3 = 'field_smo_page_meta_tag_keywords';
+      }
+      $meta_tag_value = $node->get($field1)->value;
+      $meta_tag_desc = $node->get($field2)->value;
+      $meta_tag_keywords = array();
+      
+      foreach ($node->{$field3}->getValue() as $value) {
+        if (!empty($value['value'])) {
+          $meta_tag_keywords[] = $value['value'];
+        }
+      }
+      if (count($meta_tag_keywords) > 0) {
+        $meta_tag_keywords_list = implode(',', $meta_tag_keywords);
+      }
+
+            $title = [
+                '#tag' => 'meta',
+                '#attributes' => [                    
+                    'property' => 'og:title',
+                    'content' => $meta_tag_value,
+                ],
+            ];
+            $description = [
+                '#tag' => 'meta',
+                '#attributes' => [
+                    'name' => 'description',
+                    'content' => $meta_tag_desc,
+                ],
+            ];
+            $variables['page']['#attached']['html_head'][] = [$title, 'title'];
+            $variables['page']['#attached']['html_head'][] = [$description, 'description'];
+      
+    }
+    
+}
