@@ -78,9 +78,16 @@
             .course-details{
                 clear:both;
                 h3{
-                    font-size:22.1px;
+                    font-size:22px;
                     color:#303030;
                     min-height:3.2rem;
+                    min-height:91px;
+                    max-height:91px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
                 }
                 .course-info{
                     font-size: 14px;
@@ -90,9 +97,9 @@
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
-                    padding-bottom:0.3rem;
-                    min-height:191px;
-                    max-height:191px;
+                    margin-bottom: 10px;
+                    min-height:151px;
+                    max-height:151px;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     -webkit-line-clamp: 5;
