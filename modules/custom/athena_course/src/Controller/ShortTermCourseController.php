@@ -9,15 +9,23 @@ use Drupal\Core\Ajax\AppendCommand;
 use Drupal\Core\Ajax\RemoveCommand;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
-
+use \Drupal\athena_library\Utils\CommonHelper;
 use \Drupal\Core\Url;
 
 class ShortTermCourseController {
 
     public $_limit;
+    public $_lms_url;
+    public $_api;
 
     public function __construct() {
         $this->_limit = 10;
+        $this->_lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+        if ( $this->_lms_url == "https://newlms.athena.edu" )
+            $this->_api = "/athenadev";
+        else
+            $this->_api = "/athenaprod";
+        //$this->_lms_url = "https://newlms.athena.edu";
     }
 
     /**
@@ -27,7 +35,7 @@ class ShortTermCourseController {
     public function shortTermCourse() {
         $limit = $this->_limit;
         //$uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit";
-        $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1";
+        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1";
         try {
             $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
             $data = (string)$response->getBody();
@@ -44,7 +52,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $this->_lms_url .'/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),
@@ -93,12 +101,11 @@ class ShortTermCourseController {
         $limit = $this->_limit;
 
         if (!empty($search)) {
-            $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;
         }
         else {
-            $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1";
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1";
         }
-
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
@@ -114,7 +121,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),
@@ -197,7 +204,7 @@ class ShortTermCourseController {
         $query = trim($query);
         $query = strip_tags($query);
         // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit&course_name=" . $query;
-        $uri = "https://learn.athena.edu/athenaprod/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $query;
+        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $query;
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
@@ -212,7 +219,7 @@ class ShortTermCourseController {
             foreach ($nodes->data->data as $key => $value) {
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => 'https://learn.athena.edu/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->course_introduction, 0, 100),
                     'field_rating' => rand(4, 5),
