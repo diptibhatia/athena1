@@ -39,6 +39,17 @@ class ShortTermCourseController {
         try {
             $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
             $data = (string)$response->getBody();
+
+            $filters_uri = $this->_lms_url .$this->_api. "/api/get_master_table_data?table=subject_area";
+            $response_filters = \Drupal::httpClient()->get($filters_uri, array('headers' => array('Accept' => 'application/json')));
+            $data_filters = (string)$response_filters->getBody();
+            $filters = json_decode($data_filters, TRUE);
+
+            $certificates_uri = $this->_lms_url .$this->_api. "/api/get_master_table_data?table=certification_type";
+            $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
+            $certificate_filters = (string)$response_certificates->getBody();
+            $certificates = json_decode($certificate_filters, TRUE);
+
         }
         catch (RequestException $e) {
             return  [
@@ -76,6 +87,8 @@ class ShortTermCourseController {
         $short_term_course =  [
           '#theme' => 'short_term_course',
           '#nodes' => $short_term_courses_nodes,
+          '#filters' => $filters,
+          '#certificates' => $certificates,
           '#display_load_more' => $display_load_more,
           '#attached' => [
             'library' => [
@@ -204,7 +217,7 @@ class ShortTermCourseController {
         $query = trim($query);
         $query = strip_tags($query);
         // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit&course_name=" . $query;
-        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $query;
+        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1" . $query;
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();

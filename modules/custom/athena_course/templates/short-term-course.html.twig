@@ -17,7 +17,7 @@
     </div>
     <div class="container-fluid academic-bg-wrap pb-3">
         <div class="pt-4 container">
-            <div class="how-it-works row"> 
+            <div class="how-it-works row">
                 <div class="container bg-white shadow-lg rounded-md m-0 mb-4 pl-0">
                     {{ get_static_data('earning_a_degree', TRUE)|raw }}
                </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="row bg-white shadow-sm rounded input-area mr-0">
-                                <input class="col-8" type="text" placeholder="What do you want to learn" /><button onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
+                                <input id="search" class="col-8" type="text" placeholder="What do you want to learn" /><button onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -42,17 +42,15 @@
                     <div class="container multiple-selection-courses p-0">
                        <div class="row">
                           <div class="col-12">
-                              <button type="button" class="btn">All</button>
-                              <button type="button" class="btn selected">Finance</button>
-                              <button type="button" class="btn">Marketing</button>
-                              <button type="button" class="btn selected">Information Technology</button>
-                              <button type="button" class="btn selected">Law</button>
-                              <button type="button" class="btn ">Maketing</button>
-                              <button type="button" class="btn">Information Technology</button>
+
+                              {% for filter_key, filter_value in filters %}
+                                    <button type="button" id="filter_subject_{{ filter_value.id }}" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')" class="btn">{{ filter_value.subject_area }}</button>
+                              {% endfor %}
+
                           </div>
-                          <div class="col-12 selected-courses">
-                             <p>Currently Selected: <span class="bold">Financed, Information Technology, Law</span></p>
-                          </div>
+                          <!-- <div class="col-12 selected-courses">
+                             <p>Currently Selected: <span class="bold" id="selected_filters"></span></p>
+                          </div> -->
                        </div>
                     </div>
                     <!--Multiple Course Selection buttons: END -->
@@ -63,13 +61,14 @@
                      <div class="row">
                         <div class="col-12 p-0">
                            <nav class="nav">
-                              <a class="nav-link active" aria-current="page" href="#"><span>Basic Level</span></a>
-                              <a class="nav-link" href="#"><span>Essentials</span></a>
-                              <a class="nav-link" href="#"><span>Mastering</span></a>
-                              <a class="nav-link" href="#"><span>Diploma</span></a>
-                              <a class="nav-link" href="#"><span>Executive Diploma</span></a>
+
+                              {% for certificate_key, certificate_value in certificates %}
+                                    <a id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link" aria-current="page" href="javascript:void(0)" ><span>{{ certificate_value.certificate_type_name }}</span></a>
+                              {% endfor %}
+
                             </nav>
                         </div>
+                        <input id="selected_keywords" type="hidden"/>
                      </div>
                     </div>
                     <!--Multiple Course Selection buttons: END -->
@@ -186,9 +185,61 @@
         }
     }
 
+    function searchKeyword(id, keyword) {
+        // var keywords = '';
+        // if (keyword == 'All') {
+        //     jQuery('#selected_keywords').val('');
+        //     keywords = keyword;
+        // }
+        // else {
+        //     keywords = jQuery('#selected_keywords').val();
+        //     if (keywords) {
+        //         keywords = keywords + ',' + keyword;
+        //     }
+        //     else {
+        //         keywords = keyword;
+        //     }
+        //     jQuery('#selected_keywords').val(keywords);
+        // }
+
+        // var keywords_arr = keywords.split(',');
+        // var uniq = keywords_arr.reduce(function(a,b){
+        //     if (a.indexOf(b) < 0 ) a.push(b);
+        //     return a;
+        //   },[]);
+
+        // var keywords_unique = uniq.toString();
+
+        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('#filter_subject_' + id).addClass('active');
+        jQuery('#search').val('');
+        jQuery('#selected_filters').html(keyword);
+        jQuery('#selected_keywords').val(id);
+
+        var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id);
+        Drupal.ajax({ 'url': endpoint }).execute();
+        jQuery('#pager').val('1');
+        return false;
+    }
+
+
+    function searchCertificates(id) {
+        jQuery('.category-area .nav-link').removeClass('active');
+        jQuery('#filter_certificate_' + id).addClass('active');
+        jQuery('#search').val('');
+        var subject_id = jQuery('#selected_keywords').val();
+        if (subject_id) {
+            var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+            Drupal.ajax({ 'url': endpoint }).execute();
+            jQuery('#pager').val('1');
+            return false;
+        }
+    }
+
+
     function searchCourseAction() {
         var search_val = jQuery('#search').val();
-        var endpoint = Drupal.url('shortterm-courses/search-data/' + search_val);
+        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
         return false;

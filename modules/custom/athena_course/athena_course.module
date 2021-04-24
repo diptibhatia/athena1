@@ -38,7 +38,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
     'short_term_course' => [
       'variables' => [
         'nodes' => NULL,
-        'display_load_more' => NULL
+        'display_load_more' => NULL,
+        'filters' => NULL,
+        'certificates' => NULL
       ],
     ],
     'course_banner' => [
@@ -488,11 +490,7 @@ function athena_course_page_attachments(array &$attachments) {
           'keywords'
         ];
       }
-
-
     }
-
-      
 
     if ($route_name == 'athena_course.StudentEnroltoCourse') {
       $from = $_REQUEST['from'] ?? '';
