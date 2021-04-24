@@ -90,6 +90,7 @@ class ShortTermCourseController {
           '#filters' => $filters,
           '#certificates' => $certificates,
           '#display_load_more' => $display_load_more,
+          '#portal_url' => $this->_lms_url,
           '#attached' => [
             'library' => [
                 'core/drupal.ajax'
@@ -213,20 +214,32 @@ class ShortTermCourseController {
      * @return [html]
      */
     public function searchCourse($query) {
+        $response = new AjaxResponse();
         $limit = $this->_limit;
         $query = trim($query);
         $query = strip_tags($query);
+
+        if (empty($query)) {
+            $response->addCommand(new InvokeCommand('.show_more_wrapper', 'hide'));
+            $response->addCommand(new HtmlCommand('.shortterm-courses', 'No Content Found'));
+            return $response;
+        }
+
         // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit&course_name=" . $query;
         $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1" . $query;
 
-        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
-        $data = (string)$response->getBody();
+        $response_data = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+        $data = (string)$response_data->getBody();
 
         $nodes = json_decode($data);
 
         $total = $nodes->data->total;
+        if ($total == 0) {
+            $response->addCommand(new InvokeCommand('.show_more_wrapper', 'hide'));
+            $response->addCommand(new HtmlCommand('.shortterm-courses', 'No Content Found'));
+            return $response;
+        }
 
-        $response = new AjaxResponse();
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {

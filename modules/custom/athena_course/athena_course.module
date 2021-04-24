@@ -40,7 +40,8 @@ function athena_course_theme($existing, $type, $theme, $path) {
         'nodes' => NULL,
         'display_load_more' => NULL,
         'filters' => NULL,
-        'certificates' => NULL
+        'certificates' => NULL,
+        'portal_url' => NULL
       ],
     ],
     'course_banner' => [
