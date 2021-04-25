@@ -27,8 +27,7 @@ class OurPopularCoursesBlock extends BlockBase {
       
     global $base_url;
 
- 
-    // get current nodeid 
+        // get current nodeid 
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
     // You can get nid and anything else you need from the node object.
@@ -74,17 +73,29 @@ $query->condition($key, $value, '=');
     
     if(empty($academicnodes)) {
           $bundle='course';
-     $query = \Drupal::entityQuery('node');
+    $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
-  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-$query->condition('field_is_popular_course', '1', '=');
+    //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+    $query->condition('field_is_popular_course', '1', '=');
     $query->condition('type', $bundle);
     $academic = $query->execute();
     
     $academicnodes = node_load_multiple($academic);
         
     }
-     $popular_courses =  array_slice($academicnodes, 0, 2);
+    
+    $current_path = \Drupal::service('path.current')->getPath();
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $node_type = $node->getType();
+
+      if ($node_type == 'testimonials') 
+        $popular_courses =  array_slice($academicnodes, 0, 4);      
+      else
+        $popular_courses =  array_slice($academicnodes, 0, 2);
+    }
+
+     
      
      $aggregated_data = array();
      foreach($popular_courses as $node) {

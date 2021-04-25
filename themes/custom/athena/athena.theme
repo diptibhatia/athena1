@@ -181,6 +181,21 @@ function athena_preprocess_block(array &$variables) {
 
     $variables['certificationsnodes'] = $certifications_node_ids;
 
+    $bundle='course';
+    $query = \Drupal::entityQuery('node');
+    $query->condition('status', 1);
+    $query->condition('type', $bundle);
+    $entity_ids = $query->execute();
+    
+    $node = array();
+
+    if(!empty($entity_ids)) {
+      $nodes = node_load_multiple($entity_ids);
+      }
+
+    $variables['courses_data'] = $nodes;
+
+
 }
 
 function find_data_in_array($arr, $val){

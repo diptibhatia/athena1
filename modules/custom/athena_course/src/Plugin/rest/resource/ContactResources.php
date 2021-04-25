@@ -107,6 +107,7 @@ class ContactResources extends ResourceBase
             $enquiry->set('field_first_name', $data['fname']);
             $enquiry->set('field_last_name', $data['lname']);
             $enquiry->set('field_contact_number', $data['phone']);
+            $enquiry->set('field_user_country', $data['country']);
             $enquiry->enforceIsNew();
         }
 
