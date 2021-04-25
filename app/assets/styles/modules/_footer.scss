@@ -1,98 +1,96 @@
 
 .main-wrapper {
- //background-color: rgba(239, 241, 254, 0.5); 
-}
-
-.footer {
-	position: relative;
-    background: rgba(239, 241, 254, 0.5);
-	a {
-		color: $secondaryColor;
-	}
-    p{
-		font-size: 14px;
-	}
-	.new-footer {
-		padding: 30px 0;
-	
-		.right-border {
-			border : none;
-
-			@include atSize700 { 
-				border-right: 1px solid #dee2e6;
-			}
-			@include atSize1350 { 
-				border-right: 1px solid #dee2e6;
-			}
-		}
-	}
-	.footer-bottom {background: #343a40;
-		color: #fff;
-		font-size: 13px; text-align: center; padding: 10px 0;}
-
-	.social-icons {
-
-		padding-top:20px;
-		img {
-			width : 39px;
-			height : 39px;
-		}
-	}
-
-	.violet-btn {
-		border-color: $voilet;
-		border-radius: 20px;
-		color: $voilet;
-	}
-	.addPadding{
-		margin-top: 20px;;
-	}
-
-	.subscribe-newsletter{
-		font-size:13px;
-	}
-	.news-letter{
-		input{
-			margin-top: 10px;width:85%;
-		}
-	}
-	.subscribe-button{
-		padding-left: 25px;padding-right: 25px;padding-top:5px;padding-bottom: 5px;
-	}
-	.athena-des-footer{
-		position: relative;
-          left: -15px;
-	}
-	
-}
-.hideinMobileView{
-	display: block;
-	@include atSize424 {
-		display: none;
-	} 
-}
-.showinMobileView{
-	display: none;
-	padding-bottom: 20px;
-	text-align: center;
-	@include atSize424 {
-		display: block;
-	} 
-}
-.Buttoninfo {
-	button {
-		border-radius: 30px;
-		  border: solid 2px $buttonPink;
-		  color: $buttonPink;
-		  padding: 5px 10px;
-		  cursor: pointer;
-		  outline: none;
-		  background: white;
-		  width: 186px;
-		  height: 50px;
-		  &:hover {
-			color: white;
-			background: $buttonPink;
-		}
-	}
-}
+	//background-color: rgba(239, 241, 254, 0.5); 
+   }
+   
+   .footer {
+	   position: relative;
+	   background: rgba(239, 241, 254, 0.5);
+	   a {
+		   color: $secondaryColor;
+	   }
+	   p{
+		   font-size: 14px;
+	   }
+	   .new-footer {
+		   padding: 30px 0;
+	   
+		   .right-border {
+			   border : none;
+   
+			   @include atSize700 { 
+				   border-right: 1px solid #dee2e6;
+			   }
+			   @include atSize1350 { 
+				   border-right: 1px solid #dee2e6;
+			   }
+			   @media screen and (max-width:800px) {.footer-social {text-align:center}}
+		   }
+	   }
+   
+	   .social-icons {
+   
+		   padding-top:20px;
+		   img {
+			   width : 39px;
+			   height : 39px;
+		   }
+	   }
+   
+	   .violet-btn {
+		   border-color: $voilet;
+		   border-radius: 20px;
+		   color: $voilet;
+	   }
+	   .addPadding{
+		   margin-top: 20px;;
+	   }
+   
+	   .subscribe-newsletter{
+		   font-size:13px;
+	   }
+	   .news-letter{
+		   input{
+			   margin-top: 10px;width:85%;
+		   }
+	   }
+	   .subscribe-button{
+		   padding-left: 25px;padding-right: 25px;padding-top:5px;padding-bottom: 5px;
+	   }
+	   .athena-des-footer{
+		   position: relative;
+			 left: -15px;
+	   }
+	   
+   }
+   .hideinMobileView{
+	   display: block;
+	   @include atSize424 {
+		   display: none;
+	   } 
+   }
+   .showinMobileView{
+	   display: none;
+	   padding-bottom: 20px;
+	   text-align: center;
+	   @include atSize424 {
+		   display: block;
+	   } 
+   }
+   .Buttoninfo {
+	   button {
+		   border-radius: 30px;
+			 border: solid 2px $buttonPink;
+			 color: $buttonPink;
+			 padding: 5px 10px;
+			 cursor: pointer;
+			 outline: none;
+			 background: white;
+			 width: 186px;
+			 height: 50px;
+			 &:hover {
+			   color: white;
+			   background: $buttonPink;
+		   }
+	   }
+   }

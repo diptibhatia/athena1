@@ -7,7 +7,7 @@ namespace Drupal\athena_course\Controller;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
-
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use \Drupal\Core\Url;
 
 class AthenaCourseController {
@@ -69,6 +69,9 @@ class AthenaCourseController {
 
       $parameters = \Drupal::routeMatch()->getParameters();
       $node = Node::load($nid);
+      if (!is_object($node)) {
+        return new RedirectResponse('/Error');
+      }
 
       global $base_url;
       $theme = \Drupal::theme()->getActiveTheme();

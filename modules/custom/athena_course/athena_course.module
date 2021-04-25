@@ -38,7 +38,10 @@ function athena_course_theme($existing, $type, $theme, $path) {
     'short_term_course' => [
       'variables' => [
         'nodes' => NULL,
-        'display_load_more' => NULL
+        'display_load_more' => NULL,
+        'filters' => NULL,
+        'certificates' => NULL,
+        'portal_url' => NULL
       ],
     ],
     'course_banner' => [
@@ -372,6 +375,27 @@ function athena_course_page_attachments(array &$attachments) {
       $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
     }
 
+    if ($route_name == 'athena_smo.smo' || $route_name == 'athena_course.course') {
+      $taboolaPixel = "window._tfa = window._tfa || [];
+        window._tfa.push({notify: 'event', name: 'page_view', id: 1381678});
+        !function (t, f, a, x) {
+               if (!document.getElementById(x)) {
+                  t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);
+               }
+        }(document.createElement('script'),
+        document.getElementsByTagName('script')[0],
+        '//cdn.taboola.com/libtrc/unip/1381678/tfa.js',
+        'tb_tfa_script');";
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#value' => \Drupal\Core\Render\Markup::create($taboolaPixel),
+          '#weight' => 7,
+        ],
+        'taboola_each_page'
+      ];
+    }
+
     if ($route_name == 'athena_smotq.smotq') {
       $uid = $_REQUEST['UId'] ?? '';
       $source = $_REQUEST['utm_source'] ?? '';
@@ -488,11 +512,7 @@ function athena_course_page_attachments(array &$attachments) {
           'keywords'
         ];
       }
-
-
     }
-
-      
 
     if ($route_name == 'athena_course.StudentEnroltoCourse') {
       $from = $_REQUEST['from'] ?? '';
@@ -683,8 +703,17 @@ function athena_course_page_attachments(array &$attachments) {
           ],
           'ulearn_redirect'
         ];
-
       }
+
+      $taboolaTqPixel = "_tfa.push({notify: 'event', name: 'lead', id: 1381678});";
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#value' => \Drupal\Core\Render\Markup::create($taboolaTqPixel),
+          '#weight' => 11,
+        ],
+        'taboola_tq'
+      ];
     }
 }
 
