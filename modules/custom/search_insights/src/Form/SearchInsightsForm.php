@@ -92,6 +92,16 @@ class SearchInsightsForm extends FormBase {
     elseif (in_array("book-review", $URL_path) )  
         $URL = "/insights/book-review";
 
+    $current_path = \Drupal::service('path.current')->getPath();
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $node_type = $node->getType();
+
+      if ($node_type == 'testimonials') 
+        $URL = "/insights/testimonials";        
+    }  
+
+
     $response = Url::fromUserInput($URL.'?searchstring='.$search);
     $form_state->setRedirectUrl($response);
     
