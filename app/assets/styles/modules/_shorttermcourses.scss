@@ -39,7 +39,7 @@
 .shortterm-courses{
     text-align:center;
     .item{
-        max-width: 283px !important;
+        max-width: 274px;
         box-shadow: 0 6px 15px 2px #d5dbfb;
         background: #fff;
         margin: 0 0px 20px 14px;
@@ -50,9 +50,9 @@
         overflow: hidden;
         position:relative;
         text-align:left;
-        @media screen and (min-width:768px){
-            max-width:287px;
-        }
+        // @media screen and (min-width:768px){
+        //     max-width:287px;
+        // }
         @media screen and (max-width:699px){
             max-width:100% !important;
             margin: 0 0px 20px;
@@ -235,17 +235,16 @@
     display: block;
 }
 .multiple-selection-courses .btn {border-radius: 30px; 
-    border: solid 2px #303030;}
+    border: solid 2px #303030; margin-bottom: 10px;}
 
     .multiple-selection-courses .btn-pink {
         border: solid 2px #fe0490;
   background-color: #fe0490;
         color: #fff;}
-
-.category-area {background-color: #eff1fe; padding:20px 0;}
-.category-area .nav {padding:10px 0 20px;}
-.category-area .nav .nav-link {color:#000; padding-bottom:10px;}
-.category-area .nav .nav-link.active {border: solid 3px #fe0490;}
+.selected-courses {margin:10px;} 
+.category-area {background-color: #eff1fe; padding:20px;} 
+.category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 20px;}
+.category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
 
 /*Star Rating SVG*/
 .rating{
@@ -290,5 +289,3 @@
     -webkit-filter: drop-shadow( -2px -2px 2px #888 );
     filter: drop-shadow( -2px -2px 2px #888 );
   }
-
-

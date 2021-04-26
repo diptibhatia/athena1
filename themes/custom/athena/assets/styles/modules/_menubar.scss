@@ -39,7 +39,53 @@
             top: -6px;
         }
     }
+    .search-form {
+        .search-courses {
+          width: 51px;
+          height: 45px;
+          border-radius: 4px;
+          background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
+          padding-top: 7px;
+          display: inline-block;
+          position: absolute;
+          margin-left: -54px;
+          margin-top: 2px;
+          text-align: center;
+          img {
+            width: 28px;
+            height: 28px;
+            opacity: 0.84; 
+            min-width:auto;
+          }
+          @include atSize424 { 
+            img { 
+                  display: inline-block;
+            }
+          }
+        } 
 
+      input[type="text"] {
+        border: 0px;
+        width: 100%;
+        min-width:300px;
+        max-width: 570px;
+        height: 50px;
+        padding: 0 10px;
+        border-radius: 5px; 
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+        background-color: #ffffff;
+      }
+
+      i {
+        margin-left: 0px;
+        border: 0px;
+        background: none;
+        background-color: $orange;
+        color: black;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
     &__explore-btn {
         background-image: linear-gradient(89deg, #ff006e 0%, 
         #ff4e9a 100%, #ffd85e 100%);
@@ -617,37 +663,8 @@
         > li {
             position: relative;
             border-bottom: .5px solid #ddd;
-            .loginBtn {color:#ff0068;}
-            form.example input[type=text] {
-                padding: 10px;
-                font-size: 17px;
-                border: 1px solid grey;
-                float: left;
-                width: 80%;
-                background: #fff;
-              }
-              
-              form.example button {
-                float: left;
-                width: 20%;
-                padding: 10px;
-                background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
-                color: white;
-                font-size: 17px;
-                border: 1px solid grey;
-                border-left: none;
-                cursor: pointer;
-              }
-              
-              form.example button:hover {
-                background-image: linear-gradient(88deg, #ffc300 99%, #ffac00 99%, #ffd85e 1%);
-              }
-              
-              form.example::after {
-                content: "";
-                clear: both;
-                display: table;
-              }
+            .loginBtn {color:#ff0068; font-weight:bold;}
+           
             &:nth-last-child(1) {
                 border-bottom: none;
                 font-weight: bold;
