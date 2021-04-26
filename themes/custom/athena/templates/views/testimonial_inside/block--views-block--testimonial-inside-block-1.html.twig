@@ -456,12 +456,12 @@
         
       var pathparts = location.pathname.split('/');
       if (location.host == 'localhost') {
-          var url = location.origin+'/'+pathparts[1].trim('/')+'/'; 
+          var url = location.origin+'/'+pathparts[1].trim('/'); 
       }else{
           var url = location.origin; 
       }
   
-      jQuery.ajax(url + 'save/contact', {
+      jQuery.ajax(url + '/save/contact', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -481,13 +481,16 @@
 
 
           var mailinfo = {
-            'mail': jQuery('#speak_email').val(),
-            'fname': jQuery('#speak_first_name').val(),
-            'lname': jQuery('#speak_last_name').val(),
-            'phone': jQuery('#phone').val(),
-            'cid': jQuery('#reg_course').val()
-          };
-          initiateSendingMail('course_speak_to_advisor', mailinfo);
+                            'mail': jQuery('#speak_email').val(),
+                            'fname': jQuery('#speak_first_name').val(),
+                            'lname': jQuery('#speak_last_name').val(),
+                            'phone': jQuery('#phone').val(),
+                            'category': jQuery('#reg_course').val(),
+                            'country_code': jQuery(".country_code").html(),
+                            'action': 'save_newsletter',                            
+                          };
+
+          initiateSendingMail('get_in_touch', mailinfo);
 
           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
