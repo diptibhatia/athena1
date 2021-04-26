@@ -614,7 +614,19 @@ div#block-discussions .title span {
     }
   }
 }
-
+.testimonial-inside { 
+  .photo {
+    position: static !important;
+  }
+  .photo a { 
+  top: 60% !important; 
+  bottom: 0 !important;
+}
+  .testimonial-info {
+    padding-left: 10px;
+    padding-bottom: 10px; 
+  }
+}
 
 .testimonials {
   position:relative;
@@ -987,20 +999,7 @@ div#block-discussions .title span {
   }
 }
 
-.testimonial-inside { 
-  .photo {
-    position: static;
-  }
-  .photo a {
-  position: absolute;
-  top: 60%;
-  right: 12px;
-}
-  .testimonial-info {
-    padding-left: 10px;
-    padding-bottom: 10px; 
-  }
-}
+
 .testimonials_updated {
   margin: 50px 0 0 0;
     .sidebar {
