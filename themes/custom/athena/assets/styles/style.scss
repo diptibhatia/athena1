@@ -48,7 +48,7 @@
 // @import "modules/pluginsCustomShortTermCourses";
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
-
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight:600;}
 #courses-block .owl-nav {
     top: -35px;
 }

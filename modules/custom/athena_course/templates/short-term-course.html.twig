@@ -149,56 +149,6 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="container p-0">
-            <div class="insights-section shawdow-effect">
-                <!-- <h1>News & Updates</h1> -->
-                <img class="img-heading" src="/themes/custom/athena/images/news-updates.svg" alt="">
-                <h2>From Our Insights</h2>
-                <h3>We keep you informed and engaged. Blogs on diverse subjects. Candid interviews of students and
-                    employees. Reviews of books that can change your life. Testimonials from our satisfied students.
-                </h3>
-                <div class="section-items">
-                    <div class="section-item-one">
-                        <div class="section-image">
-                            <a href="{{ url('<front>') }}node/{{last_insight[0].id}}"> <img style="padding:8px"
-                                    src="{{ file_url(last_insight[0].field_insight_article_image_thum.entity.uri.value)}}"></a>
-                            <h4>{{last_insight[0].field_article_insight_type.entity.label}}</h4>
-                            <h5>{{ last_insight[0].title.value }}</h5>
-                            <p>{{last_insight[0].body.value|striptags|truncate(100)}}…<a
-                                    href="{{ url('<front>') }}node/{{last_insight[0].id}}">Read more</a>
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="section-item-two">
-                        <h4>Latest Articles <span><a href="{{ url('<front>') }}/insights/all">View All</a></span></h4>
-
-
-                        <div class="container pb-4">
-                            {% for insightsdata in insig %}
-                            <div class="row mb-1">
-                                <div class="insight-thumbnail col-md-4 d-flex align-items-center">
-                                    <a href="{{ url('<front>') }}node/{{insightsdata.id}}">
-                                        <img class="thumbnail img-fluid mx-auto brd-0"
-                                            src="{{ file_url(insightsdata.field_insight_article_image_thum.entity.uri.value)}}"></a>
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="strong yellow-txt m-0">{{
-                                        insightsdata.field_article_insight_type.entity.label }}</p>
-                                    <p><a href="{{ url('<front>') }}node/{{insightsdata.id}}">{{
-                                            insightsdata.title.value}}</a></p>
-                                </div>
-                            </div>
-                            {% endfor %}
-
-                            <p class="purple-txt"><a href="/insights/all" class="more-link">VIEW ALL INSIGHTS</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
