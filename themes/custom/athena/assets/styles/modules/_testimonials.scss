@@ -739,9 +739,9 @@ div#block-discussions .title span {
       z-index: 0; 
     }
     .photo { 
-      @include atSize424{
-        text-align: center;
-      }
+      // @include atSize424{
+      //   text-align: center;
+      //}
       a{
         position:absolute;
         bottom: 18px;
@@ -927,8 +927,7 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type {
-        margin-top: 1.25rem;
+      &:first-of-type { 
         &:before {
           content: "";
           position: absolute;
@@ -988,18 +987,15 @@ div#block-discussions .title span {
   }
 }
 
-.testimonial-inside {  
-  .photo { 
-    height: 60% !important;
-  }
+.testimonial-inside { 
+  .photo a {
+  position: absolute;
+  top: 60%;
+  right: 12px;
+}
   .testimonial-info {
-    position: relative;
-    top: 180px;
     padding-left: 10px;
-
-    @media screen and (max-width:800px) {
-      top: 0;
-    }
+    padding-bottom: 10px; 
   }
 }
 .testimonials_updated {
@@ -1181,8 +1177,7 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type {
-        margin-top: 0.5rem;
+      &:first-of-type { 
         &:before {
           content: "";
           position: absolute;
@@ -1230,6 +1225,7 @@ div#block-discussions .title span {
       flex: none;
       clear: both;
       margin: 0;
+      margin-bottom: 10px;
       position: relative;
       display: block;
       }
@@ -1513,6 +1509,7 @@ div#block-discussions .title span {
   flex: none;
   clear: both;
   margin: 0;
+      margin-bottom: 10px;
   position: relative;
   display: block;
   }
