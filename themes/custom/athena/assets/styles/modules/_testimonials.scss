@@ -781,6 +781,7 @@ div#block-discussions .title span {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        object-position: top;
         @include atSize424{
           // height: auto !important;
           // width: auto !important;
@@ -987,7 +988,20 @@ div#block-discussions .title span {
   }
 }
 
+.testimonial-inside {  
+  .photo { 
+    height: 60%;
+  }
+  .testimonial-info {
+    position: relative;
+    top: 180px;
+    padding-left: 10px;
 
+    @media screen and (max-width:800px) {
+      top: 0;
+    }
+  }
+}
 .testimonials_updated {
   margin: 50px 0 0 0;
     .sidebar {
@@ -1521,6 +1535,7 @@ div#block-discussions .title span {
   margin: 0 0 0 -68px;
   bottom: 9px;
 }
+
 
 .testimonials #block-athena-content img {
   float: left;
