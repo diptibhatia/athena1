@@ -155,28 +155,16 @@
     }
 
     .logos {
-        width: 150px;
+        width: auto;
 
-        @include atSize700 {
-            width: auto;
+        @media screen and (max-width:540px) {
+            width: 150px;
         }
 
         img {
             display: inline-block;
-            height: 40px;
-margin-right: 5px;
-            @include atSize700 {
-                height: auto;
-            }
-
-            &:nth-of-type(1) {
-                margin-bottom: 10px;
-                margin-right: 20px;
-
-                @include atSize700 {
-                    margin-bottom: 0;
-                }
-            }
+            height: auto;
+            margin-right: 10px; 
         }
     }
 
@@ -632,4 +620,3 @@ margin-right: 5px;
     color: pink;
     padding-left: 12px;
 }
-

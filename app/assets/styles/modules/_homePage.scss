@@ -3,12 +3,12 @@
   }
 
 
-  .loginBtn {
+  /*.loginBtn {
 	  @media (min-width: 1441px) {
 		  position: relative;
 		  right: -62px;
 	  }
-  }
+  }*/
   
   .grid-view {
 	  //width:1170px;
@@ -947,8 +947,9 @@
 	  }
 
 	  .testimonials {	
-		position:relative; 
-		top:120px;  
+		position: relative;
+		top: 120px;
+		margin-top: 200px; 
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
