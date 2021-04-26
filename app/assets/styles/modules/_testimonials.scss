@@ -988,6 +988,9 @@ div#block-discussions .title span {
 }
 
 .testimonial-inside { 
+  .photo {
+    position: static;
+  }
   .photo a {
   position: absolute;
   top: 60%;
