@@ -89,8 +89,8 @@
               var r = confirm("User already registered, please wait while we redirect you");
 
               if (r == true) {
-                //redirCandidate(cData, utmSource);
-                window.location.replace('https://ulearn.athena.edu/login?from=affiliate&mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
+                redirCandidate(cData, utmSource);
+                //window.location.replace('https://ulearn.athena.edu/login?from=affiliate&mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
               } else {
                    window.close();
                    parent.location.reload();
