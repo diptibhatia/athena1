@@ -11,8 +11,7 @@
           <div class="wrapper">
             <div class="logos">
     {% for universities in univ_data %}
-   <img src="{{ universities.white_log}}"
-   style="margin:0px;" alt="ucam logo" width="95">
+   <img src="{{ universities.white_log}}" alt="university logo">
 
  {% endfor %}
                 </div>
@@ -173,7 +172,7 @@
                 <button type="button" class="btn btn-pink sign-up-button">{% if payment %} Enrol Now {% else %} Sign Up {% endif %}</button>
               </div>
             </div>
-            <div class="reg-form" id="ref-form-2" style="display: none;">
+            <div class="ref-form-2" id="ref-form-2" style="display: none;">
               <div class="form-group col-md-12">
                 <span for="pswd">Password</span>
                 <input type="password" name="pswd" class="form-control reg-form-control" id="pswd"

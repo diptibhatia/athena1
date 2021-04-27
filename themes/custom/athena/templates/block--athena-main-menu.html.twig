@@ -1,157 +1,177 @@
 {#
 /**
- * @file
- * Theme override for a menu block.
- *
- * Available variables:
- * - plugin_id: The ID of the block implementation.
- * - label: The configured label of the block if visible.
- * - configuration: A list of the block's configuration values.
- *   - label: The configured label for the block.
- *   - label_display: The display settings for the label.
- *   - provider: The module or other provider that provided this block plugin.
- *   - Block plugin specific settings will also be stored here.
- * - content: The content of this block.
- * - attributes: HTML attributes for the containing element.
- *   - id: A valid HTML ID and guaranteed unique.
- * - title_attributes: HTML attributes for the title element.
- * - content_attributes: HTML attributes for the content element.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the main title tag that appears in the template.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the main title tag that appears in the template.
- *
- * Headings should be used on navigation menus that consistently appear on
- * multiple pages. When this menu block's label is configured to not be
- * displayed, it is automatically made invisible using the 'visually-hidden' CSS
- * class, which still keeps it visible for screen-readers and assistive
- * technology. Headings allow screen-reader and keyboard only users to navigate
- * to or skip the links.
- * See http://juicystudio.com/article/screen-readers-display-none.php and
- * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
- */
+* @file
+* Theme override for a menu block.
+*
+* Available variables:
+* - plugin_id: The ID of the block implementation.
+* - label: The configured label of the block if visible.
+* - configuration: A list of the block's configuration values.
+* - label: The configured label for the block.
+* - label_display: The display settings for the label.
+* - provider: The module or other provider that provided this block plugin.
+* - Block plugin specific settings will also be stored here.
+* - content: The content of this block.
+* - attributes: HTML attributes for the containing element.
+* - id: A valid HTML ID and guaranteed unique.
+* - title_attributes: HTML attributes for the title element.
+* - content_attributes: HTML attributes for the content element.
+* - title_prefix: Additional output populated by modules, intended to be
+* displayed in front of the main title tag that appears in the template.
+* - title_suffix: Additional output populated by modules, intended to be
+* displayed after the main title tag that appears in the template.
+*
+* Headings should be used on navigation menus that consistently appear on
+* multiple pages. When this menu block's label is configured to not be
+* displayed, it is automatically made invisible using the 'visually-hidden' CSS
+* class, which still keeps it visible for screen-readers and assistive
+* technology. Headings allow screen-reader and keyboard only users to navigate
+* to or skip the links.
+* See http://juicystudio.com/article/screen-readers-display-none.php and
+* http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
+*/
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <div class="megamenu-container">
-	<nav class="navbar navbar-expand-lg">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="main_nav">
+  <nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#search_nav">
+      <span class="search-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main_nav">
 
-<ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
+      <ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
 display: inline-flex;
 border-radius: 5px;
 padding: 0 9px;
 height: 35px;
 justify-content: space-evenly;
 align-items: center;box-sizing: border-box;">
-	<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';"> Explore </a>
-	    <ul class="dropdown-menu" style="height: 383px;
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+            style="color:white;font-weight: bold;font-family: 'lato';"> Explore </a>
+          <ul class="dropdown-menu" style="height: 383px;
 		left: -10px;
 		top: 55px;
 		box-shadow: 0 2px 13px 0 #8c8c8c;
 		width: 279px;
 		font-family: 'Lato';
 		font-size: 1rem;">
-		  <li class="has-submenu">
-		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
-		  	 <div class="megasubmenu dropdown-menu box-shadow">
-			   <div class="row">
-	                <div class="col-7">
-	                        <ul class="list-unstyled bindWidth">
-								<h5 style="padding-left: 20px;">Academic</h5>
-								<a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
-								{% set modnum = 1 %}
-                                {% for academic in academicnodes %}
-                                <li>
-                                    <a href="{{url('<front>')}}course/{{academic.nid}}" onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
-                                    <div style="display:none;" id="secondary-data_{{modnum}}">
-                                        <h6>Awarding Body</h6>
-                                        <ul class="list-unstyled">
-                                        {% for univ in academic.universities%}
-                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                           {% endfor %}
-                                        </ul>
-                                    </div>
-                                </li>
-                                {% set modnum = modnum + 1 %}
-                                {% endfor %}
+            <li class="has-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#"> <img
+                  src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic
+                Programs </a>
+              <div class="megasubmenu dropdown-menu box-shadow">
+                <div class="row">
+                  <div class="col-7">
+                    <ul class="list-unstyled bindWidth">
+                      <h5 style="padding-left: 20px;">Academic</h5>
+                      <a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View
+                            all Academic Courses</i></b></a><br />
+                      {% set modnum = 1 %}
+                      {% for academic in academicnodes %}
+                      <li>
+                        <a href="{{url('<front>')}}course/{{academic.nid}}"
+                          onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
+                        <div style="display:none;" id="secondary-data_{{modnum}}">
+                          <h6>Awarding Body</h6>
+                          <ul class="list-unstyled">
+                            {% for univ in academic.universities%}
+                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}"
+                                  alt="logo">{{univ.label}}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </li>
+                      {% set modnum = modnum + 1 %}
+                      {% endfor %}
 
-	                        </ul>
-	                </div><!-- end col-3 -->
-	                <div class="col-5 three-level" id="secondary-data_three-level">
-                      <h6>Awarding Body</h6>
-                      <ul class="list-unstyled">
+                    </ul>
+                  </div><!-- end col-3 -->
+                  <div class="col-5 three-level" id="secondary-data_three-level">
+                    <h6>Awarding Body</h6>
+                    <ul class="list-unstyled">
                       {% for univ in academic_universities%}
-                          <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                         {% endfor %}
-                      </ul>
-	                </div><!-- end col-3 -->
-	            </div><!-- end row -->
-			 </div>
-		  </li>
-		  <li class="has-submenu">
-		  	 <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
-		  	 <div class="megasubmenu dropdown-menu box-shadow">
-				<div class="row">
-					 <div class="col-7">
-							 <ul class="list-unstyled bindWidth">
-               	<h5 style="padding-left: 20px;">Certifications</h5>
-								<a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
+                      <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}"
+                            alt="logo">{{univ.label}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div><!-- end col-3 -->
+                </div><!-- end row -->
+              </div>
+            </li>
+            <li class="has-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#"> <img
+                  src="/themes/custom/athena/images/coursepage/certification-icn.svg"
+                  alt="icon">&nbsp;&nbsp;Certifications </a>
+              <div class="megasubmenu dropdown-menu box-shadow">
+                <div class="row">
+                  <div class="col-7">
+                    <ul class="list-unstyled bindWidth">
+                      <h5 style="padding-left: 20px;">Certifications</h5>
+                      <a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all
+                            Certifications</i></b></a><br />
 
-								{% set modnum = 1 %}
-                                {% for cert in certificationsnodes %}
-                                <li>
-                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data-cert_{{modnum}}')">{{cert.title}}</a>
-                                    <div style="display:none;" id="secondary-data-cert_{{modnum}}">
-                                        <h6>Universities</h6>
-                                        <ul class="list-unstyled">
-                                        {% for univ in cert.universities%}
-                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                           {% endfor %}
-                                        </ul>
-                                    </div>
-                                </li>
-                                {% set modnum = modnum + 1 %}
-                                {% endfor %}
-							 </ul>
-					 </div><!-- end col-3 -->
-            <div class="col-5 three-level" id="secondary-data-cert_three-level">
-                <h6>Awarding Body</h6>
-                <ul class="list-unstyled">
-                {% for univ in certifications_universities%}
-                    <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                   {% endfor %}
-                </ul>
-	          </div><!-- end col-3 -->
-					<!-- end col-3 -->
-				 </div><!-- end row -->
-			  </div>
-		  </li>
-	    </ul>
-	</li>
+                      {% set modnum = 1 %}
+                      {% for cert in certificationsnodes %}
+                      <li>
+                        <a href="{{url('<front>')}}course/{{cert.nid}}"
+                          onmouseover="showThirdLevel('secondary-data-cert_{{modnum}}')">{{cert.title}}</a>
+                        <div style="display:none;" id="secondary-data-cert_{{modnum}}">
+                          <h6>Universities</h6>
+                          <ul class="list-unstyled">
+                            {% for univ in cert.universities%}
+                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}"
+                                  alt="logo">{{univ.label}}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </li>
+                      {% set modnum = modnum + 1 %}
+                      {% endfor %}
+                    </ul>
+                  </div><!-- end col-3 -->
+                  <div class="col-5 three-level" id="secondary-data-cert_three-level">
+                    <h6>Awarding Body</h6>
+                    <ul class="list-unstyled">
+                      {% for univ in certifications_universities%}
+                      <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}"
+                            alt="logo">{{univ.label}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div><!-- end col-3 -->
+                  <!-- end col-3 -->
+                </div><!-- end row -->
+              </div>
+            </li>
+          </ul>
+        </li>
 
-</ul>
+      </ul>
+    </div> <!-- navbar-collapse.// -->
 
-  </div> <!-- navbar-collapse.// -->
- 
-  <form class="example" action="https://websitestg.athena.edu/search-results/abc" method="POST" style="margin:auto;max-width:300px">
-    <input class="top-search-section__search-input" name="search_key" type="text" placeholder="What do you want to learn ?">
-    <button type="submit"><i class="fa fa-search"></i></button> 
-</form>
-</nav>
+    <div class="collapse navbar-collapse" id="search_nav">
+      <form class="search-form" action="{{ url('<front>') }}search-results/abc" method="POST" id="course-search--form">
+        <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
+        <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+        <input type="hidden" name="submit_form">
+        <a class="search-courses" href="javascript:;" onclick="document.getElementById('course-search--form').submit()"><img src="/themes/custom/athena/images/search.svg"
+            alt="search"></a>
+      </form>
+    </div>
+  </nav>
 </div>
 
 
 <div class="site-header__menu-icon">
-    <div class="site-header__menu-icon__middle"></div>
+  <div class="site-header__menu-icon__middle"></div>
 </div>
 <div class="site-header__menu-content">
   <nav class="primary-nav">
-  <ul>
-                      <!--  <li class="about"><a href="{{ url('<front>') }}about-us/our-background">About Us <i class="arrow arrow--down"></i></a>
+    <ul>
+      <!--  <li class="about"><a href="{{ url('<front>') }}about-us/our-background">About Us <i class="arrow arrow--down"></i></a>
                            <ul class="secondary-nav">
                               <li><a href="{{ url('<front>') }}about-us/our-background/">Our Background</a></li>
                               <li><a href="{{ url('<front>') }}about-us/founder-and-ceo">Founder &amp; CEO</a></li>
@@ -170,23 +190,23 @@ align-items: center;box-sizing: border-box;">
                               <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
                            </ul>
                         </li> -->
-                        <li><a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a></li>
-                        <li><a id="insights" href="{{ url('<front>') }}insights/all">Insights</a></li>
-                        
-                        {% set link = url('<front>')|render %}
+      <li><a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a></li>
+      <li><a id="insights" href="{{ url('<front>') }}insights/all">Insights</a></li>
 
-                        {% if link == "https://websitestg.athena.edu/" %}
+      {% set link = url('<front>')|render %}
 
-                        <li><a class="loginBtn" href="http://portal.athena.edu/login">Log in</a></li>
-                        
-                        {% else %}
-                        
-                        <li><a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a></li>
-                        
-                        {% endif %}
+        {% if link == "https://websitestg.athena.edu/" %}
 
-                        <li><a class="hideinMobileView getStartedBtn" href="{{ url('<front>') }}registration">Get Started</a></li>
-                    </ul>
+        <li><a class="loginBtn" href="http://portal.athena.edu/login">Log in</a></li>
+
+        {% else %}
+
+        <li><a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a></li>
+
+        {% endif %}
+
+        <li><a class="hideinMobileView getStartedBtn" href="{{ url('<front>') }}registration">Get Started</a></li>
+    </ul>
   </nav>
 </div>
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}

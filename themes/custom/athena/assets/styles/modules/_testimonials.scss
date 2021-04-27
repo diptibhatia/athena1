@@ -615,7 +615,6 @@ div#block-discussions .title span {
   }
 }
 
-
 .testimonials {
   position:relative;
   margin-top: 50px;
@@ -739,9 +738,9 @@ div#block-discussions .title span {
       z-index: 0; 
     }
     .photo { 
-      @include atSize424{
-        text-align: center;
-      }
+      // @include atSize424{
+      //   text-align: center;
+      //}
       a{
         position:absolute;
         bottom: 18px;
@@ -781,6 +780,7 @@ div#block-discussions .title span {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        object-position: top;
         @include atSize424{
           // height: auto !important;
           // width: auto !important;
@@ -926,8 +926,7 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type {
-        margin-top: 1.25rem;
+      &:first-of-type { 
         &:before {
           content: "";
           position: absolute;
@@ -987,6 +986,19 @@ div#block-discussions .title span {
   }
 }
 
+.testimonial-inside { 
+  .photo {
+    position: static !important;
+  }
+  .photo a { 
+  top: 60% !important; 
+  bottom: auto !important;
+}
+  .testimonial-info {
+    padding-left: 10px;
+    padding-bottom: 10px; 
+  }
+}
 
 .testimonials_updated {
   margin: 50px 0 0 0;
@@ -1167,8 +1179,7 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type {
-        margin-top: 0.5rem;
+      &:first-of-type { 
         &:before {
           content: "";
           position: absolute;
@@ -1216,6 +1227,7 @@ div#block-discussions .title span {
       flex: none;
       clear: both;
       margin: 0;
+      margin-bottom: 10px;
       position: relative;
       display: block;
       }
@@ -1499,6 +1511,7 @@ div#block-discussions .title span {
   flex: none;
   clear: both;
   margin: 0;
+      margin-bottom: 10px;
   position: relative;
   display: block;
   }
@@ -1521,6 +1534,7 @@ div#block-discussions .title span {
   margin: 0 0 0 -68px;
   bottom: 9px;
 }
+
 
 .testimonials #block-athena-content img {
   float: left;
