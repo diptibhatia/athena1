@@ -191,7 +191,7 @@ class ShortTermCourseController {
                         </div>
                         <div class="image">
 
-                            <img src="' . $courses_data['course_image'] . '" alt="course-image">
+                            <img width="274" height="125.25" src="' . $courses_data['course_image'] . '" alt="course-image">
 
                         </div>
                         <div class="course-details">
@@ -308,7 +308,7 @@ class ShortTermCourseController {
                         </div>
                         <div class="image">
 
-                            <img src="' . $courses_data['course_image'] . '" alt="course-image">
+                            <img width="274" height="125.25" src="' . $courses_data['course_image'] . '" alt="course-image">
 
                         </div>
                         <div class="course-details">
