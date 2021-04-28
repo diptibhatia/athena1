@@ -153,12 +153,12 @@ align-items: center;box-sizing: border-box;">
     </div> <!-- navbar-collapse.// -->
 
     <div class="collapse navbar-collapse" id="search_nav">
-      <form class="search-form" action="https://websitestg.athena.edu/search-results/abc" method="POST">
+      <form class="input-group search-form" action="https://websitestg.athena.edu/search-results/abc" method="POST">
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
         <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
         <input type="hidden" name="submit_form">
-        <a class="search-courses" href="javascript:;"><img src="/themes/custom/athena/images/search.svg"
-            alt="search"></a>
+        <a class="search-courses" href="javascript:;" onclick="document.getElementById('course-search--form').submit()">
+          <img src="/themes/custom/athena/images/search.svg" alt="search"></a>
       </form>
     </div>
   </nav>
