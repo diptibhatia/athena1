@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid academic-bg-wrap pb-3">
         <div class="pt-4 container">
             <div class="how-it-works row">
@@ -46,7 +46,7 @@
 
                           </div>
                          <div class="col-12 selected-courses">
-                             <p>Currently Selected: <span class="text-bold" id="selected_filters"></span></p>
+                             <p>Currently Selected: <span class="text-bold" id="selected_filters"></span> <span onclick="clearFilters()" class="text-bold btn" style="float:right;" id="clear_filters">Clear Filters</span></p>
                          </div>
                        </div>
                     </div>
@@ -67,7 +67,7 @@
                         </div>
                         <input id="selected_keywords" type="hidden"/>
                      </div>
-                    
+
                     <!--Multiple Course Selection buttons: END -->
 
                     <!--courses List: START-->
@@ -177,6 +177,15 @@
         if(event.which == 13) {
             searchCourseAction();
         }
+    }
+
+    function clearFilters() {
+        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('#search').val('');
+        jQuery('.category-area .nav-link').removeClass('active');
+        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+        jQuery('#pager').val('1');
+        return false;
     }
 
     function searchKeyword(id, keyword) {
