@@ -71,8 +71,7 @@ class ShortTermCourseController {
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => substr($value->course_introduction, 0, 100),
-                    'field_rating' => rand(4, 5),
+                    'body' => substr($value->website_card_content, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
                     'course_image' => $course_image_path
@@ -149,8 +148,7 @@ class ShortTermCourseController {
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => substr($value->course_introduction, 0, 100),
-                    'field_rating' => rand(4, 5),
+                    'body' => substr($value->website_card_content, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
                     'course_image' => $course_image_path
@@ -169,7 +167,7 @@ class ShortTermCourseController {
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
-                                ' . substr($courses_data['body'], 0, 100) . '...
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -197,13 +195,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                ' . substr($courses_data['body'], 0, 100) . '...
-                            </div>
-                            <div class="row rating m-0">
-                                <div class="col-6 p-0">
-                                    <div class="my-rating"></div>
-                                </div>
-                                <div class="col-2 p-0">' . $courses_data['field_rating'] . '</div>
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -266,8 +258,7 @@ class ShortTermCourseController {
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => substr($value->course_introduction, 0, 100),
-                    'field_rating' => rand(4, 5),
+                    'body' => substr($value->website_card_content, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
                     'course_image' => $course_image_path
@@ -286,7 +277,7 @@ class ShortTermCourseController {
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
-                                ' . substr($courses_data['body'], 0, 100) . '...
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -314,13 +305,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                ' . substr($courses_data['body'], 0, 100) . '...
-                            </div>
-                            <div class="row rating m-0">
-                                <div class="col-6 p-0">
-                                    <div class="my-rating"></div>
-                                </div>
-                                <div class="col-2 p-0">' . $courses_data['field_rating'] . '</div>
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>

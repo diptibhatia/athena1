@@ -9,8 +9,8 @@
             </div>
             <div class="row pt-3">
                 <div class="col-md-12">
-                    <a class="float-left pt-1" href="{{ portal_url }}/registered-courses#findCourse"><button class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button></a>
-                    <a class="float-left pt-1" href="{{ portal_url }}/registered-courses#findCourse">See you course levels ></a>
+                    <a target="_blank" class="float-left pt-1" href="{{ portal_url }}/registered-courses#findCourse"><button class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button></a>
+                    <a target="_blank" class="float-left pt-1" href="{{ portal_url }}/know-your-certifications-levels">See you course levels ></a>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
                                                 <p class="small">{{node.field_certified_level}}</p>
-                                                {{ node.body|striptags|truncate(100)}}…
+                                                {{ node.body|striptags|truncate(100)}}
                                             </div>
                                             <div class="col-12">
                                                 <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
@@ -115,13 +115,7 @@
                                         <div class="course-details">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
-                                                {{ node.body|striptags|truncate(100)}}…
-                                            </div>
-                                            <div class="row rating m-0">
-                                                <div class="col-6 p-0">
-                                                    <div class="my-rating"></div>
-                                                </div>
-                                                <div class="col-2 p-0">{{node.field_rating}}</div>
+                                                {{ node.body|striptags|truncate(100)}}
                                             </div>
                                             <div class="col-12 button-area"><a target="_blank" href="{{node.course_url}}"><button>Start Now</button></a></div>
                                         </div>
@@ -186,30 +180,6 @@
     }
 
     function searchKeyword(id, keyword) {
-        // var keywords = '';
-        // if (keyword == 'All') {
-        //     jQuery('#selected_keywords').val('');
-        //     keywords = keyword;
-        // }
-        // else {
-        //     keywords = jQuery('#selected_keywords').val();
-        //     if (keywords) {
-        //         keywords = keywords + ',' + keyword;
-        //     }
-        //     else {
-        //         keywords = keyword;
-        //     }
-        //     jQuery('#selected_keywords').val(keywords);
-        // }
-
-        // var keywords_arr = keywords.split(',');
-        // var uniq = keywords_arr.reduce(function(a,b){
-        //     if (a.indexOf(b) < 0 ) a.push(b);
-        //     return a;
-        //   },[]);
-
-        // var keywords_unique = uniq.toString();
-
         jQuery('.multiple-selection-courses .btn').removeClass('active');
         jQuery('#filter_subject_' + id).addClass('active');
         jQuery('#search').val('');
@@ -219,6 +189,8 @@
         var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id);
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
+        jQuery('.category-area .nav-link').removeClass('active');
+        jQuery('.category-area .nav-link:first').addClass('active');
         return false;
     }
 
@@ -230,6 +202,12 @@
         var subject_id = jQuery('#selected_keywords').val();
         if (subject_id) {
             var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+            Drupal.ajax({ 'url': endpoint }).execute();
+            jQuery('#pager').val('1');
+            return false;
+        }
+        else {
+            var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
             Drupal.ajax({ 'url': endpoint }).execute();
             jQuery('#pager').val('1');
             return false;
