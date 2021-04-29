@@ -25,7 +25,7 @@
       .search-form {
         .search-courses {
           width: 51px;
-          height: 45px;
+          height: 46px;
           border-radius: 4px;
           background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
           padding-top: 7px;
@@ -33,7 +33,7 @@
           position: absolute;
           margin-left: -60px;
           margin-top: 5px;
-text-align:center;
+          text-align:center;
           img {
             width: 28px;
             height: 28px;
@@ -165,7 +165,7 @@ text-align:center;
           }
         }
       }
-      @media screen and (max-width: $break-small) { 
+      @media screen and (max-width: 780px) {
         .search {
           width: 93%;
           margin: 0 auto;

@@ -22,14 +22,18 @@
 p {font-size: 12px;
   font-weight: 500; color:#303030;}}}
 
-.event_popup {.row {width:auto; }.card { width: 525px; margin: 0}
+.event_popup {
+  .row {width:auto; }
+  .card { 
+    width: 525px; 
+    margin: 0;
 
-@media (max-width: 1366px) {
-  .event_popup { 
-    .card { width: 425px;}
-  }
+@media screen and (max-width: 1366px) { 
+   width: 425px; 
 }
- .event_popup_close {position: absolute;
+  }
+ .event_popup_close {
+   position: absolute;
   left: -20px;
   top: -20px;
   background: #000;
@@ -42,7 +46,9 @@ p {font-size: 12px;
   font-weight: bold;
 &:hover {text-decoration: none;}
 }
-.register-popup {position: absolute; top:338px; right:0; z-index: 99; margin: 0;}
+.register-popup {
+  position: absolute; top:338px; right:0; z-index: 99; margin: 0;
+}
 h4.course-title {    
   font-family: Lato;
   font-size: 14px;
@@ -52,23 +58,28 @@ h4.course-title {
   line-height: normal;
   letter-spacing: normal;
   color: #ff006e;
-  text-transform: uppercase;}
-  h4.course-partner {font-family: Lato;
+  text-transform: uppercase;
+}
+  h4.course-partner {
+    font-family: Lato;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    color: #91278f;}
-    p.course-info {font-family: Lato;
+    color: #91278f;
+  }
+    p.course-info {
+      font-family: Lato;
       font-size: 14px;
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.79;
       letter-spacing: normal;
-      color: #303030;}
+      color: #303030;
+    }
 .course-main .register a {  
     color: #fff;
     letter-spacing: .3px;

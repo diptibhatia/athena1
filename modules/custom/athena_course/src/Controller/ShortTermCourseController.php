@@ -34,8 +34,8 @@ class ShortTermCourseController {
      */
     public function shortTermCourse() {
         $limit = $this->_limit;
-        //$uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&page_limit=$limit";
-        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&page_limit=$limit&fk_type_of_qualification_id=1&status=1";
+        //$uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit";
+        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1";
         try {
             $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
             $data = (string)$response->getBody();
@@ -61,12 +61,6 @@ class ShortTermCourseController {
         $nodes = json_decode($data);
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
-                }
-                else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
-                }
                 $courses_data[] = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/dashboard/course-details?id=' . $value->cid,
@@ -74,7 +68,7 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
-                    'course_image' => $course_image_path
+
                 ];
             }
             $short_term_courses_nodes = $courses_data;
@@ -120,10 +114,10 @@ class ShortTermCourseController {
         $limit = $this->_limit;
 
         if (!empty($search)) {
-            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;
         }
         else {
-            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1";
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&limit=$limit&fk_type_of_qualification_id=1&status=1";
         }
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
@@ -138,12 +132,6 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
-                }
-                else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
-                }
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
@@ -151,7 +139,6 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
-                    'course_image' => $course_image_path
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
@@ -189,7 +176,7 @@ class ShortTermCourseController {
                         </div>
                         <div class="image">
 
-                            <img width="274" height="125.25" src="' . $courses_data['course_image'] . '" alt="course-image">
+                            <img src="/themes/custom/athena/images/course-image2.png" alt="course-image">
 
                         </div>
                         <div class="course-details">
@@ -230,8 +217,8 @@ class ShortTermCourseController {
             return $response;
         }
 
-        // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&page_limit=$limit&course_name=" . $query;
-        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&page_limit=$limit&fk_type_of_qualification_id=1&status=1" . $query;
+        // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&limit=$limit&course_name=" . $query;
+        $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&limit=$limit&fk_type_of_qualification_id=1&status=1" . $query;
 
         $response_data = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response_data->getBody();
@@ -248,12 +235,6 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
-                }
-                else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
-                }
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
@@ -261,7 +242,6 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
-                    'course_image' => $course_image_path
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
@@ -299,7 +279,7 @@ class ShortTermCourseController {
                         </div>
                         <div class="image">
 
-                            <img width="274" height="125.25" src="' . $courses_data['course_image'] . '" alt="course-image">
+                            <img src="/themes/custom/athena/images/course-image2.png" alt="course-image">
 
                         </div>
                         <div class="course-details">

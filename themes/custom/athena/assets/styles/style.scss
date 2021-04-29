@@ -48,7 +48,6 @@
 // @import "modules/pluginsCustomShortTermCourses";
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight:600;}
 #courses-block .owl-nav {
     top: -35px;
 }
@@ -102,25 +101,13 @@ img {
 #block-athena-content img {max-width:100%; min-height:auto;}
  
 .corporate-txt img  {height:auto; max-width:100%;}
-.top-banner .logos {width:auto;}
+//.top-banner .logos {width:auto;}
  
 .mobilePadding{
     @include atSize424{
         //padding-left: 2.0rem !important;
         overflow: hidden;
     }
-}
-
-.insights-logos {
-    border-style: none;
-    width: 84px;
-    height: 84px;
-    border: 1px solid $titleYellow;
-    border-radius: 50%;
-    padding: 20px 10px;
-    display: inline-block;
-    text-align: center;
-    img {width: 50px;}
 }
   
 .flx-duration, .error {color:red;}
@@ -296,4 +283,4 @@ background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color
 	li {
 	margin-bottom: 10px;
 }
-}}  
+}}
