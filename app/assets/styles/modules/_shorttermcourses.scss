@@ -64,8 +64,9 @@
             transition:500s;
             background:#fff;
             width:100%;
-            padding:2rem 1rem;
+            padding:1.2rem;
             z-index:1;
+            min-height: 100%;
             .social-icons{
                 text-align:center;
                 padding-bottom:1rem;
@@ -80,11 +81,11 @@
                 h3{
                     font-size:21px;
                     color:#303030; 
-                    min-height:51px;
-                    max-height:51px;
+                    min-height:71px;
+                    max-height:71px;
                     text-overflow: ellipsis;
                     overflow: hidden;
-                    -webkit-line-clamp: 2;
+                    -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
                     display: -webkit-box;
                 }
@@ -96,6 +97,7 @@
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
+                    margin-top: 10px;
                     margin-bottom: 10px;
                     min-height:151px;
                     max-height:151px;
@@ -123,7 +125,7 @@
                     text-align: center;
                     position: absolute;
                     left: 0;
-                    bottom: -62px;
+                    bottom: -52px;
                     button{
                         width: 196px;
                         height: 46px;
@@ -149,6 +151,7 @@
     }
 
     .course-item{
+        min-height: 100%;
         .heading{
             clear:both;
             background-image:linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
@@ -168,6 +171,8 @@
         }
         .image{
             clear:both;
+            max-height: 125px;
+            overflow: hidden;
             img{
                 border-radius:0;
                 @media screen and (max-width:699px){
@@ -177,15 +182,15 @@
         }
         .course-details{
             clear:both;
-            padding:1.5rem;
+            padding:1.2rem;
             h3{
                 font-size:21px;
                     color:#303030; 
-                    min-height:51px;
-                    max-height:51px;
+                    min-height:71px;
+                    max-height:71px;
                     text-overflow: ellipsis;
                     overflow: hidden;
-                    -webkit-line-clamp: 2;
+                    -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
                     display: -webkit-box;
             }
