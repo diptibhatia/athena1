@@ -61,13 +61,26 @@ class ShortTermCourseController {
         $nodes = json_decode($data);
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
+                
+                if ( empty($value->course_image_path) || $value->course_image_path == "" )
+                    $image = "/themes/custom/athena/images/course-image2.png";                
+                else
+                {
+                    $course_img = explode("?",$value->course_image_path);
+                    $image = stripslashes($course_img[0]);    
+                }    
+                
+                
                 $courses_data[] = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->website_card_content, 0, 100),
+                    'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
+                    
+                    'course_image_path'  => $image
 
                 ];
             }
@@ -99,6 +112,8 @@ class ShortTermCourseController {
         return array(
            $short_term_course
         );
+        \Drupal::service('page_cache_kill_switch')->trigger();
+    
     }
 
     /**
@@ -132,13 +147,25 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
+                if ( empty($value->course_image_path) || $value->course_image_path == "" )
+                    $image = "/themes/custom/athena/images/course-image2.png";                
+                else
+                {
+                    $course_img = explode("?",$value->course_image_path);
+                    $image = stripslashes($course_img[0]);    
+                }
+
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->website_card_content, 0, 100),
+                    'card_intro' => substr($value->course_introduction, 0, 100),
+                    
                     'field_course_amount' => 'Free',
                     'field_certified_level' => 'CPD Certifieid',
+                    
+                    'course_image_path'  => $image
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
@@ -235,13 +262,24 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
+                
+                if ( empty($value->course_image_path) || $value->course_image_path == "" )
+                    $image = "/themes/custom/athena/images/course-image2.png";                
+                else
+                {
+                    $course_img = explode("?",$value->course_image_path);
+                    $image = stripslashes($course_img[0]);    
+                }    
+                
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->website_card_content, 0, 100),
+                    'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => 'CPD Certifieid',
+                    'field_certified_level' => 'CPD Certifieid',                    
+                    'course_image_path'  => $image
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
