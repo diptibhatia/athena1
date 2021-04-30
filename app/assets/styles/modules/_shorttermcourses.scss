@@ -70,7 +70,7 @@
             transition:500s;
             background:#fff;
             width:100%;
-            padding: 2rem;
+            padding: 2rem 1.3rem;
             z-index:1;
             min-height: 100%;
             .social-icons{
@@ -85,11 +85,10 @@
             .course-details{
                 clear:both;
                 h3{
-                    font-size:21px;
+                    font-size:21.1px;
                     color:#303030; 
-                    min-height:71px;
-                    max-height:71px;
-                    margin-bottom: 10px;
+                    min-height:80px;
+                    max-height:80px;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     -webkit-line-clamp: 3;
@@ -191,7 +190,7 @@
             clear:both;
             padding:1.2rem;
             h3{
-                font-size:21px;
+                font-size:21.1px;
                     color:#303030; 
                     min-height:71px;
                     max-height:71px;
@@ -210,8 +209,8 @@
                     letter-spacing: normal;
                     color: #606060;
                     margin-bottom: 10px;
-                    min-height:131px;
-                    max-height:131px;
+                    min-height:121px;
+                    max-height:121px;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     -webkit-line-clamp: 4;
@@ -272,7 +271,7 @@
   background-color: #fe0490;
         color: #fff;}
 .selected-courses {margin:10px;} 
-.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 100px;} 
+.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px;} 
 .category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 20px;}
 .category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
 
