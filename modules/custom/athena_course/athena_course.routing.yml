@@ -123,7 +123,7 @@ athena_course.shortterm-courses:
     _title: 'Short term course'
   requirements:
     _permission: 'access content'
-  options:  
+  options:
     no_cache: TRUE
 
 athena_course.shortterm-courses-load-more:
@@ -133,9 +133,9 @@ athena_course.shortterm-courses-load-more:
     _title: 'Short term course load more'
   requirements:
     _permission: 'access content'
-  options:  
+  options:
     no_cache: TRUE
-  
+
 
 athena_course.shortterm-courses-search:
   path: '/shortterm-courses/search-data/{query}'
@@ -144,6 +144,6 @@ athena_course.shortterm-courses-search:
     _title: 'Short term course search'
   requirements:
     _permission: 'access content'
-  options:  
+  options:
     no_cache: TRUE
 
