@@ -111,8 +111,7 @@ class ShortTermCourseController {
         ];
         return array(
            $short_term_course
-        );
-        \Drupal::service('page_cache_kill_switch')->trigger();
+        );        
     
     }
 
