@@ -46,7 +46,10 @@
 
                           </div>
                          <div class="col-12 selected-courses">
-                             <p>Currently Selected: <span class="text-bold" id="selected_filters"></span></p>
+                             <p>Currently Selected:
+                                <span class="text-bold" id="selected_filters"></span>
+                                <span onclick="clearFilters()" class="text-bold btn" style="float:right;" id="clear_filters">Clear Filters</span>
+                             </p>
                          </div>
                        </div>
                     </div>
@@ -179,6 +182,17 @@
         }
     }
 
+
+    function clearFilters() {
+        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('#search').val('');
+        jQuery('.category-area .nav-link').removeClass('active');
+        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+        Drupal.ajax({ 'url': endpoint }).execute();
+        jQuery('#pager').val('1');
+        return false;
+    }
+
     function searchKeyword(id, keyword) {
         jQuery('.multiple-selection-courses .btn').removeClass('active');
         jQuery('#filter_subject_' + id).addClass('active');
@@ -216,6 +230,11 @@
 
 
     function searchCourseAction() {
+        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('#selected_filters').html('');
+        jQuery('#selected_keywords').val('');
+        jQuery('.category-area .nav-link').removeClass('active');
+
         var search_val = jQuery('#search').val();
         var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
         Drupal.ajax({ 'url': endpoint }).execute();
