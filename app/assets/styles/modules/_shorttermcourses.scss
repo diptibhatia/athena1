@@ -34,7 +34,10 @@
     }
 }
 .shortterm-courses-area{
-    padding-bottom:6rem;
+    padding-bottom:8rem;
+}
+.row.shortterm-courses-area{
+    width:auto;
 }
 .shortterm-courses{
     text-align:center;
@@ -265,7 +268,7 @@
   background-color: #fe0490;
         color: #fff;}
 .selected-courses {margin:10px;} 
-.category-area {background-color: #eff1fe; padding:20px;} 
+.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 20px;} 
 .category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 20px;}
 .category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
 
