@@ -13,9 +13,12 @@
 		   font-size: 14px;
 	   }
 	   .address { 
-		font-size: 12px;
-		line-height: 31px;
-		border-top: 1px solid #979797;}
+		   border-top: 1px solid #979797;
+		p {
+			font-size: 12px;
+			line-height: 31px;
+		}
+		}
 	   .new-footer {
 		   padding: 30px 0;
 	   
@@ -40,7 +43,10 @@
 			   height : 39px;
 		   }
 	   }
-   
+	   .westford-logo {
+		margin-top: 50px;
+		padding-bottom: 0;
+	}
 	   .violet-btn {
 		   border-color: $voilet;
 		   border-radius: 20px;
