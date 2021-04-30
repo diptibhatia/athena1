@@ -146,3 +146,4 @@ athena_course.shortterm-courses-search:
     _permission: 'access content'
   options:  
     no_cache: TRUE
+
