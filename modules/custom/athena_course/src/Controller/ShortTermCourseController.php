@@ -78,7 +78,7 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => 'CPD Certifieid',
+                    'field_certified_level' => (empty($value->awarded_by))?"CPD Certified": $value->awarded_by,
                     
                     'course_image_path'  => $image
 
@@ -111,8 +111,8 @@ class ShortTermCourseController {
         ];
         return array(
            $short_term_course
-        );
-        \Drupal::service('page_cache_kill_switch')->trigger();
+           
+        );        
     
     }
 
@@ -163,7 +163,7 @@ class ShortTermCourseController {
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => 'CPD Certifieid',
+                    'field_certified_level' => (empty($value->awarded_by))?"CPD Certified": $value->awarded_by,
                     
                     'course_image_path'  => $image
                 ];
@@ -278,7 +278,8 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => 'CPD Certifieid',                    
+                    'field_certified_level' => (empty($value->awarded_by))?"CPD Certified": $value->awarded_by,
+                                        
                     'course_image_path'  => $image
                 ];
 
