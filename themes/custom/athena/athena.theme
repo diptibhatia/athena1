@@ -348,6 +348,8 @@ function athena_preprocess_page(&$variables) {
 
   if (strpos($current_path, '/shortterm-courses') !== false) {
     $variables['athena_exclude'] = TRUE;
+    $variables['exclude_footer'] = TRUE;
+    $variables['include_static_links'] = TRUE;
   }
 
   if (strpos($current_path, '/university') !== false) {
