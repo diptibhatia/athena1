@@ -1,5 +1,9 @@
-
 <div class="container-fluid my-container">
+
+{% set site_url = url("<current>") %}
+{% if 'shortterm-courses' in site_url|render|render %}
+{% else %}
+
          <div class="partners">
             <div class="info shawdow-effect">
 
@@ -64,6 +68,10 @@
                </div>
             </div>
          </div>
+
+{% endif %}
+
+
          <div class="insights-section shawdow-effect">
             <!-- <h1>News & Updates</h1> -->
             <img class="img-heading" src="/themes/custom/athena/images/news-updates.svg" alt="">
