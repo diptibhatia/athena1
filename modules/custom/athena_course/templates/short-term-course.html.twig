@@ -9,7 +9,7 @@
             </div>
             <div class="row pt-3">
                 <div class="col-md-12">
-                    <a target="_blank" class="float-left pt-1" href="{{ portal_url }}/registered-courses#findCourse"><button class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button></a>
+                    <a target="_blank" class="float-left pt-1" href="{{ url('<front>')  }}/shortterm-courses#findCourseInput"><button class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button></a>
                     <a target="_blank" class="float-left pt-1" href="{{ portal_url }}/know-your-certifications-levels">See you course levels ></a>
                 </div>
             </div>
@@ -110,12 +110,13 @@
                                             </div>
                                         </div>
                                         <div class="image">
-                                            <img src="/themes/custom/athena/images/course-image2.png" alt="course-image">
+                                            <img src="{{node.course_image_path}}" alt="course-image">
+                                            
                                         </div>
                                         <div class="course-details">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
-                                                {{ node.body|striptags|truncate(100)}}
+                                                {{ node.card_intro|striptags|truncate(100)}}
                                             </div>
                                             <div class="col-12 button-area"><a target="_blank" href="{{node.course_url}}"><button>Start Now</button></a></div>
                                         </div>
