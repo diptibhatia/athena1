@@ -68,12 +68,12 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                foreach ($value->partner_body as $key => $value) {
-                    if( is_object( $value ))
+                foreach ($value->partner_body as $key1 => $value1) {
+                    if( is_object( $value1 ))
                     {
-                    foreach($value as $key1 => $value1) {
-                       if ( $key1 == "university_name" )
-                            $uni_name = $value1;                           
+                    foreach($value1 as $key2 => $value2) {
+                       if ( $key2 == "university_name" )
+                            $uni_name = $value2;                           
                         }
                     }
                 }                
@@ -157,16 +157,14 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                foreach ($value->partner_body as $key => $value) {
-                    if( is_object( $value ))
+                foreach ($value->partner_body as $key1 => $value1) {
+                    if( is_object( $value1 ))
                     {
-                    foreach($value as $key1 => $value1) {
-                       if ( $key1 == "university_name" )
-                            $uni_name = $value1;                          
-                     
+                    foreach($value1 as $key2 => $value2) {
+                       if ( $key2 == "university_name" )
+                            $uni_name = $value2;                           
                         }
-                    }                
-
+                    }
                 }                
 
                 $courses_data = [
@@ -281,17 +279,16 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                foreach ($value->partner_body as $key => $value) {
-                    if( is_object( $value ))
+                foreach ($value->partner_body as $key1 => $value1) {
+                    if( is_object( $value1 ))
                     {
-                    foreach($value as $key1 => $value1) {
-                       if ( $key1 == "university_name" )
-                            $uni_name = $value1;
-                     
+                    foreach($value1 as $key2 => $value2) {
+                       if ( $key2 == "university_name" )
+                            $uni_name = $value2;                           
                         }
-                    }                
-
+                    }
                 }                
+
 
                 $courses_data = [
                     'cid' => $value->cid,
