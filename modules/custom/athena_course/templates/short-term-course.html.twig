@@ -116,7 +116,7 @@
                                         <div class="course-details">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
-                                                {{ node.card_intro|striptags|truncate(100)}}
+                                                <p class="small">{{ node.card_intro|striptags|truncate(100)}}</p>
                                             </div>
                                             <div class="col-12 button-area"><a target="_blank" href="{{node.course_url}}"><button>Start Now</button></a></div>
                                         </div>
