@@ -6,11 +6,6 @@
     }
 }
 
-.how-it-works{
-    @media screen and (max-width:699px){
-        margin:0;
-    }
-}
 .findCourseInput{
     padding:1rem 0;
     @media screen and (max-width:699px){
@@ -70,7 +65,7 @@
             transition:500s;
             background:#fff;
             width:100%;
-            padding: 2rem 1.3rem;
+            padding: 1.7rem ​1.3rem;
             z-index:1;
             min-height: 100%;
             .social-icons{
@@ -103,20 +98,18 @@
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                    min-height:151px;
-                    max-height:151px;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    -webkit-line-clamp: 5;
-                    -webkit-box-orient: vertical;
-                    display: -webkit-box;
+                    margin-top: 10px; 
                 }
                 p.small{
                     font-size:13px;
-                    margin-bottom:7px;
-
+                    margin-bottom:7px; 
+                    min-height:81px;
+                    max-height:81px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
                 }
 
                 h4{
@@ -176,9 +169,11 @@
             }
         }
         .image{
-            clear:both;
+            clear: both;
             max-height: 125px;
             overflow: hidden;
+            width: 100%;
+            min-height: 125px;
             img{
                 border-radius:0;
                 @media screen and (max-width:699px){
@@ -259,22 +254,33 @@
     }
 }
 
-
 .shortterm-courses .item:hover .course-item-hover {
     display: block;
 }
-.multiple-selection-courses .btn {border-radius: 30px; 
-    border: solid 2px #303030; margin-bottom: 10px;}
 
-    .multiple-selection-courses .btn.active {
+.multiple-selection-courses .btn {
+    border-radius: 30px; 
+    border: solid 2px #303030;
+    margin-bottom: 10px;
+}
+
+.multiple-selection-courses .btn.active {
         border: solid 2px #fe0490;
-  background-color: #fe0490;
-        color: #fff;}
+        background-color: #fe0490;
+        color: #fff;
+}
+
 .selected-courses {margin:10px;} 
-.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px;} 
+.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px; margin-top: 80px;} 
 .category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 20px;}
 .category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
-
+.find-your-course .row {width:auto;}
+    @media screen and (min-width: 800px) {
+        .find-your-course {
+            position: relative;
+            top:100px;
+    }
+}
 /*Star Rating SVG*/
 .rating{
     min-height:31px;

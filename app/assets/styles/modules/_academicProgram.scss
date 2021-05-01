@@ -1,5 +1,4 @@
 .academic-program-wrapper {
-
 	a {
 		color: $purpleColor;
 		font-weight: 600;
@@ -8,7 +7,7 @@
 			color: $purpleColor;
 		}
 	}
-
+.row {width: auto;}
 	.academic-header {
 		font-size: $line-height-md;
 		margin-bottom: 32px;
@@ -146,7 +145,10 @@
 		    font-size: $line-height-md;
 		    bottom: -10px;
 		    font-size: 32px;
-
+@media screen and (max-width:540px) {
+	bottom: -40px; 
+    left: 50%;
+}
 			@include atSize700 { 
 				content: ' \2192';		    	
 			    top: 10%;
@@ -390,9 +392,9 @@
 
 // .form-control{height:calc(1.5em + 1rem + 2px);font-size:16px;}
 // .select-option{height:calc(1.5em + 1rem + 2px) !important;font-size:16px;}
-.intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb;width:100%;background:#fff;border:1px solid #ced4da;border-radius:0.25rem;height:calc(1.5em + 1.25rem + 2px);}
+.intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb; width:100%; background:#fff; border:1px solid #ced4da; border-radius:0.25rem; height:calc(1.5em + 1.25rem + 2px);}
 .intl-tel-input .country-list{margin-top:49px;}
-.intl-tel-input.allow-dropdown input{width: 75%;float: right;text-align: left;padding: 14px;box-shadow:none;border:transparent;padding-left:40px !important;background:transparent;}
+.intl-tel-input.allow-dropdown input{width: 75%; float: right; text-align: left; padding: 14px; box-shadow:none; border:transparent; padding-left:40px !important; background:transparent;}
 .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
 	width: 46px;
 	z-index: 1;
