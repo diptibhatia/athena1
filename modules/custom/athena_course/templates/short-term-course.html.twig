@@ -36,7 +36,7 @@
 
                      <!--Multiple Course Selection buttons: START -->
                      <div class="row multiple-selection-courses">
-                        <div class="col-12">
+                        <div class="col-12 subject_filters">
 
                               {% for filter_key, filter_value in filters %}
                                     <button type="button" id="filter_subject_{{ filter_value.id }}" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')" class="btn">{{ filter_value.subject_area }}</button>
@@ -46,10 +46,10 @@
                          <div class="col-12 selected-courses">
                              <p>Currently Selected:
                                 <span class="text-bold" id="selected_filters"></span>
-                                <span onclick="clearFilters()" class="text-bold btn" style="float:right;" id="clear_filters">Clear Filters</span>
+                                <span onclick="clearFilters()" class="text-bold btn active" style="float:right;" id="clear_filters">Clear Filters</span>
                              </p>
                          </div>
-                       </div> 
+                       </div>
                     <!--Multiple Course Selection buttons: END -->
                 </div>
             </div>
@@ -139,13 +139,19 @@
                     <!--courses List: END-->
                 </div>
             </div>
-            <div class="container-fluid" style="margin-top: -200px;">
-                <div class="container">
-                    <div class="how-it-works row">
-                        <div class="col-md-12 academic-content">
-                <div class="bg-white shadow-lg rounded-md mb-4 pt-3">
-                    {{ get_static_data('earning_a_degree', TRUE)|raw }}
+
+            <div class='container-fluid' style='margin-top: -200px;'>
+                <div class='container'>
+                    <div class='how-it-works row'>
+                        <div class='col-md-12 academic-content'>
+                            <div class='bg-white shadow-lg rounded-md mb-4 pt-3'>
+                                {{ get_static_data('earning_a_degree', TRUE)|raw }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
             </div>
         </div>
     </div>
@@ -188,8 +194,9 @@
 
 
     function clearFilters() {
-        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
         jQuery('#search').val('');
+        jQuery('#selected_filters').html('');
         jQuery('.category-area .nav-link').removeClass('active');
         var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
         Drupal.ajax({ 'url': endpoint }).execute();
@@ -198,13 +205,23 @@
     }
 
     function searchKeyword(id, keyword) {
-        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
         jQuery('#filter_subject_' + id).addClass('active');
-        jQuery('#search').val('');
+
+        var search_val = jQuery('#search').val();
+        search_val = search_val.trim();
+        search_val = search_val.replace(/<(.|\n)*?>/g, '');
+
         jQuery('#selected_filters').html(keyword);
         jQuery('#selected_keywords').val(id);
 
-        var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id);
+        if (search_val) {
+            var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + id);
+        }
+        else {
+            var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id);
+        }
+
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
         jQuery('.category-area .nav-link').removeClass('active');
@@ -216,16 +233,34 @@
     function searchCertificates(id) {
         jQuery('.category-area .nav-link').removeClass('active');
         jQuery('#filter_certificate_' + id).addClass('active');
-        jQuery('#search').val('');
         var subject_id = jQuery('#selected_keywords').val();
+
+        var search_val = jQuery('#search').val();
+        search_val = search_val.trim();
+        search_val = search_val.replace(/<(.|\n)*?>/g, '');
+
         if (subject_id) {
-            var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+
+            if (search_val) {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+            }
+            else {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+            }
+
             Drupal.ajax({ 'url': endpoint }).execute();
             jQuery('#pager').val('1');
             return false;
         }
         else {
-            var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
+
+            if (search_val) {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + id);
+            }
+            else {
+                var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
+            }
+
             Drupal.ajax({ 'url': endpoint }).execute();
             jQuery('#pager').val('1');
             return false;
@@ -234,7 +269,7 @@
 
 
     function searchCourseAction() {
-        jQuery('.multiple-selection-courses .btn').removeClass('active');
+        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
         jQuery('#selected_filters').html('');
         jQuery('#selected_keywords').val('');
         jQuery('.category-area .nav-link').removeClass('active');
