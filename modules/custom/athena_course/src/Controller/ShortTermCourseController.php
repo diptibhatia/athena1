@@ -67,6 +67,17 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
+
+                foreach ($value->partner_body as $key => $value) {
+                    if( is_object( $value ))
+                    {
+                    foreach($value as $key1 => $value1) {
+                       if ( $key1 == "university_name" )
+                            $uni_name = $value1;                           
+                        }
+                    }
+                }                
+
                 $courses_data[] = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/dashboard/course-details?id=' . $value->cid,
@@ -74,7 +85,7 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => (empty($value->awarded_by))?"CPD Certified": $value->awarded_by,
+                    'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
                     'course_image' => $course_image_path
                 ];
             }
@@ -145,6 +156,19 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
+
+                foreach ($value->partner_body as $key => $value) {
+                    if( is_object( $value ))
+                    {
+                    foreach($value as $key1 => $value1) {
+                       if ( $key1 == "university_name" )
+                            $uni_name = $value1;                          
+                     
+                        }
+                    }                
+
+                }                
+
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
@@ -152,7 +176,7 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => (empty($value->awarded_by))?"CPD Certified": $value->awarded_by,
+                    'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
                     'course_image' => $course_image_path
                 ];
 
@@ -256,6 +280,19 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
+
+                foreach ($value->partner_body as $key => $value) {
+                    if( is_object( $value ))
+                    {
+                    foreach($value as $key1 => $value1) {
+                       if ( $key1 == "university_name" )
+                            $uni_name = $value1;
+                     
+                        }
+                    }                
+
+                }                
+
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
@@ -263,7 +300,7 @@ class ShortTermCourseController {
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => (empty($value->awarded_by))?"CPD Certified": $value->awarded_by,
+                    'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
                     'course_image' => $course_image_path
                 ];
 
