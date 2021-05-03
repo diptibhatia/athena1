@@ -153,7 +153,7 @@ align-items: center;box-sizing: border-box;">
     </div> <!-- navbar-collapse.// -->
 
     <div class="collapse navbar-collapse" id="search_nav">
-      <form class="input-group search-form" action="https://websitestg.athena.edu/search-results/abc" method="POST">
+      <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc" method="POST">
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
         <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
         <input type="hidden" name="submit_form">
