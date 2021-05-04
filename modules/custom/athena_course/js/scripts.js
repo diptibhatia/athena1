@@ -677,10 +677,12 @@ jQuery.ajax(baseUrl + '/save/contact', {
 
 
 
-function copy_to_clipboard() {
+function copy_to_clipboard(ele) {
   /* Get the text field */
-  var copyText = document.getElementById("shareurl--copy").innerHTML;
-  var dummy = document.createElement('input');document.body.appendChild(dummy);dummy.value = copyText;
+  var ctext = "shareurl--copy"+ele; 
+  var copyText = document.getElementById(ctext).innerText;  
+  var dummy = document.createElement('input');
+  document.body.appendChild(dummy);dummy.value = copyText;
   /* Select the text field */
   dummy.select();
   dummy.setSelectionRange(0, 99999); /For mobile devices/

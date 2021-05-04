@@ -65,30 +65,28 @@
     </div>
 </div>
 
+{% set nodeid = popudata.nid.value %}
+
 <div class="col-md-12">
     <div class="bg-white sidebar shadow-lg rounded p-3">
-	<div class="col-md-12 row">
-		<div id="shareurl--copy" class="col-md-8" style="
-   /* width: 300px; */
-   overflow: hidden;
-   background: -webkit-linear-gradient(left, black , #eeeeee);
-   background: -o-linear-gradient(right, black, #eeeeee);
-   background: -moz-linear-gradient(right, black, #eeeeee);
-   background: linear-gradient(to right, black , #eeeeee);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   white-space: nowrap;
-   ">
-        		{{ url('<front>') }}node/{{popudata.nid.value}}
-    		</div>
-	<div class="col-md-4 copyToClipboard">
-			<a onclick="copy_to_clipboard()">COPY</a>
-		<div>
-	</div>
-
-
-    </div>
-</div>
+    	<div class="col-md-12 row">
+		    <div id="shareurl--copy{{nodeid}}" class="col-md-8" style="
+           /* width: 300px; */
+           overflow: hidden;
+           background: -webkit-linear-gradient(left, black , #eeeeee);
+           background: -o-linear-gradient(right, black, #eeeeee);
+           background: -moz-linear-gradient(right, black, #eeeeee);
+           background: linear-gradient(to right, black , #eeeeee);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           white-space: nowrap;
+           ">
+                		{{ url('<front>') }}node/{{popudata.nid.value}}
+        </div>
+      	<div class="col-md-4 copyToClipboard">
+      			<a onclick="copy_to_clipboard('{{nodeid}}')">COPY</a>
+      	</div>
+      </div>
 </div>
       </div></div>
       </div>
