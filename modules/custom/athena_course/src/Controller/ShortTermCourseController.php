@@ -190,8 +190,8 @@ class ShortTermCourseController {
                         <div class="course-details col-12 text-center p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . $courses_data['field_certified_level'] . '
-                                ' . substr($courses_data['body'], 0, 100) . '</p>
+                                <p class="small">' . $courses_data['field_certified_level'] . '</p>
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -204,10 +204,10 @@ class ShortTermCourseController {
                     </div>
                     <div class="course-item">
                         <div class="row heading m-0">
-                            <div class="col-8">
+                            <div class="col-9">
                                 <h5>' . $courses_data['field_certified_level'] . '</h5>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
                             </div>
                         </div>
@@ -219,7 +219,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                               <p class="small">' .  substr($courses_data['body'], 0, 100) . '</p>
+                               ' .  substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -313,8 +313,8 @@ class ShortTermCourseController {
                         <div class="course-details col-12 text-center p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . $courses_data['field_certified_level'] . '
-                                ' . substr($courses_data['body'], 0, 100) . '</p>
+                                <p class="small">' . $courses_data['field_certified_level'] . '</p>
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -327,10 +327,10 @@ class ShortTermCourseController {
                     </div>
                     <div class="course-item">
                         <div class="row heading m-0">
-                            <div class="col-8">
+                            <div class="col-9">
                                 <h5>' . $courses_data['field_certified_level'] . '</h5>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
                             </div>
                         </div>
@@ -342,7 +342,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . substr($courses_data['body'], 0, 100) . '</p>
+                                ' . substr($courses_data['body'], 0, 100) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
