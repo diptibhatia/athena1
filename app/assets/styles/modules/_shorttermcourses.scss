@@ -100,8 +100,8 @@
                     letter-spacing: normal;
                     color: #606060;
                     margin-top: 10px;
-                    min-height:181px;
-                    max-height:181px;
+                    min-height:191px;
+                    max-height:191px;
 
                     p, h2{
                         font-size:14px;
@@ -209,18 +209,17 @@
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
-                    margin-bottom: 10px;
-            }
-            p.small, h2, p{
-                font-size:14px;
-                margin-bottom:7px; 
-                min-height:108px;
+                    min-height:108px;
                 max-height:108px;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
+            }
+            p.small, h2, p{
+                font-size:14px;
+                margin-bottom:7px;                
             }  
             .rating{font-size:12.9px;line-height:22.1px;color:#303030; padding:0.3rem 0 1.2rem;}
             .button-area{
