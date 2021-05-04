@@ -87,6 +87,8 @@
     </div>
 </div>
 
+{% set nodeid = output %}
+
 <div class="col-md-12">
     <div class="bg-white sidebar shadow-lg rounded p-3">
 	<div class="col-md-12 row">
@@ -100,11 +102,11 @@
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    white-space: nowrap;
-   " id="shareurl--copy">
+   " id="shareurl--copy{{output}}">
         		{{ url('<front>') }}node/{{output}}
     		</div>
    		<div class="col-md-4 copyToClipboard">
-			<a onclick="copy_to_clipboard()">COPY</a>
+			<a onclick="copy_to_clipboard('{{output}}')">COPY</a>
 		<div>
 	</div>
 
