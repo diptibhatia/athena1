@@ -213,21 +213,24 @@ img {
     letter-spacing: normal;
     color: $titlePink;
 }
+
 .registeredDescription{
     text-align: center;
 }
+
 .registeredButton{
-width: 185px;
-text-align: center;
-height: 52px;
-padding: 15px 25px 15px 24px;
-border-radius: 12px;
-background-color: #ff006e;text-align: center;font-weight: bold;border: 0px;color: white;
+    width: 185px;
+    text-align: center;
+    height: 52px;
+    padding: 15px 25px 15px 24px;
+    border-radius: 12px;
+    background-color: #ff006e;
+    text-align: center;
+    font-weight: bold;
+    border: 0px;
+    color: white;
 }
-
-.forms .course-login-wrapper {margin:auto;
-    height: auto;}
-
+ 
 .copyToClipboard{
     position: relative;
     padding-left: 80px;

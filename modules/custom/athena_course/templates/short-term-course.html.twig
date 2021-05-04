@@ -78,7 +78,7 @@
 
                                 {% for node in nodes %}
                                 <div class="item content" style="display:block;">
-                                    <div class="course-item-hover">
+                                    <div class="course-item-hover" style="padding:22px 15px;">
                                         <div class="row">
                                             <div class="col-12 social-icons">
                                                 <a href="http://www.facebook.com/sharer.php?u={{node.course_url}}" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
@@ -86,18 +86,17 @@
                                                 <a href="http://www.linkedin.com/shareArticle?mini=true&url={{node.course_url}}" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                                             </div>
                                         </div>
-                                        <div class="course-details col-12 text-center">
+                                        <div class="course-details text-center">
                                             <h3>{{node.label}}</h3>
                                             <div class="course-info">
                                                 <p class="small">{{node.field_certified_level}}</p>
                                                 <p class="small">{{ node.body|striptags|truncate(100)}}</p>
                                             </div>
-                                            <div class="col-12">
+                                             
                                                 <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
-                                            </div>
-                                            <div class="col-12">
+                                            
                                                 <p class="small">{{node.field_students_enrolled}} <em>Students Enrolled</em></p>
-                                            </div>
+                                            
                                             <div class="col-12 button-area"><a target="_blank" href="{{node.course_url}}"><button>Start Now</button></a></div>
                                         </div>
                                     </div>
@@ -111,7 +110,7 @@
                                             </div>
                                         </div>
                                         <div class="image">
-                                            <img width="274" height="125.25" src="{{node.course_image}}" alt="course-image">
+                                            <img width="100%" src="{{node.course_image}}" alt="course-image">
                                         </div>
                                         <div class="course-details">
                                             <h3>{{node.label}}</h3>
