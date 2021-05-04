@@ -73,10 +73,10 @@ class ShortTermCourseController {
                     {
                     foreach($value1 as $key2 => $value2) {
                        if ( $key2 == "university_name" )
-                            $uni_name = $value2;                           
+                            $uni_name = $value2;
                         }
                     }
-                }                
+                }
 
                 $courses_data[] = [
                     'cid' => $value->cid,
@@ -162,10 +162,10 @@ class ShortTermCourseController {
                     {
                     foreach($value1 as $key2 => $value2) {
                        if ( $key2 == "university_name" )
-                            $uni_name = $value2;                           
+                            $uni_name = $value2;
                         }
                     }
-                }                
+                }
 
                 $courses_data = [
                     'cid' => $value->cid,
@@ -179,7 +179,7 @@ class ShortTermCourseController {
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
-                    <div class="course-item-hover">
+                    <div class="course-item-hover" style="padding:22px 15px 18px;">
                         <div class="row">
                             <div class="col-12 social-icons">
                                 <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
@@ -190,8 +190,8 @@ class ShortTermCourseController {
                         <div class="course-details col-12 text-center p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . $courses_data['field_certified_level'] . '</p>
-                                ' . substr($courses_data['body'], 0, 100) . '
+                                <p class="small">' . $courses_data['field_certified_level'] . '
+                                ' . substr($courses_data['body'], 0, 100) . '</p>
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -213,13 +213,13 @@ class ShortTermCourseController {
                         </div>
                         <div class="image">
 
-                            <img width="274" height="125.25" src="' . $courses_data['course_image'] . '" alt="course-image">
+                            <img width="100%" src="' . $courses_data['course_image'] . '" alt="course-image">
 
                         </div>
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                ' . substr($courses_data['body'], 0, 100) . '
+                               <p class="small">' .  substr($courses_data['body'], 0, 100) . '</p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -284,10 +284,10 @@ class ShortTermCourseController {
                     {
                     foreach($value1 as $key2 => $value2) {
                        if ( $key2 == "university_name" )
-                            $uni_name = $value2;                           
+                            $uni_name = $value2;
                         }
                     }
-                }                
+                }
 
 
                 $courses_data = [
@@ -302,7 +302,7 @@ class ShortTermCourseController {
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
-                    <div class="course-item-hover">
+                    <div class="course-item-hover" style="padding:22px 15px 18px;">
                         <div class="row">
                             <div class="col-12 social-icons">
                                 <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
@@ -313,8 +313,8 @@ class ShortTermCourseController {
                         <div class="course-details col-12 text-center p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . $courses_data['field_certified_level'] . '</p>
-                                ' . substr($courses_data['body'], 0, 100) . '
+                                <p class="small">' . $courses_data['field_certified_level'] . '
+                                ' . substr($courses_data['body'], 0, 100) . '</p>
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -336,13 +336,13 @@ class ShortTermCourseController {
                         </div>
                         <div class="image">
 
-                            <img width="274" height="125.25" src="' . $courses_data['course_image'] . '" alt="course-image">
+                            <img width="100%" src="' . $courses_data['course_image'] . '" alt="course-image">
 
                         </div>
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                ' . substr($courses_data['body'], 0, 100) . '
+                                <p class="small">' . substr($courses_data['body'], 0, 100) . '</p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
