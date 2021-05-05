@@ -987,6 +987,7 @@ div#block-discussions .title span {
 }
 
 .testimonial-inside { 
+  .course-login-wrapper {height: auto; margin: auto;}
   .course-login-wrapper .login-details h3 span { 
     top: 42px;
   }
@@ -994,8 +995,8 @@ div#block-discussions .title span {
     position: static !important;
   }
   .photo a { 
-  top: 60% !important; 
-  bottom: auto !important;
+    top: 60% !important; 
+    bottom: auto !important;
 }
   .testimonial-info {
     padding-left: 10px;
