@@ -665,7 +665,7 @@
             position: relative;
             border-bottom: .5px solid #ddd;
             .loginBtn {color:#ff0068; font-weight:bold;}
-           
+            .getStartedBtn {color:#fff; border-radius:30px;}
             &:nth-last-child(1) {
                 border-bottom: none;
                 font-weight: bold;
@@ -805,7 +805,7 @@
         position: relative;
 
         @include atSize700 {
-            padding: 1rem 1rem;
+            padding: 1rem;
             display: inline-flex;
             height: 100%;
             box-sizing: border-box;
@@ -848,7 +848,7 @@
         // position: relative;
         // padding-right: 0;
 
-        @include atSize700 {
+        /*@include atSize700 {
 
             &::before {
                 content: '';
@@ -875,7 +875,7 @@
             &::after {
                 bottom: 14px;
             }
-        }
+        }*/
     }
 
     @include atSize700 {

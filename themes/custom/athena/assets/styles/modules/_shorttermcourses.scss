@@ -280,14 +280,14 @@
 }
 
 .selected-courses {margin:10px;} 
-.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px; margin-top: 80px;} 
+.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px; margin-top: 20px;} 
 .category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 20px;}
 .category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
 .find-your-course
 { 
         @media screen and (max-width: 800px) { 
             position: relative;
-            top:100px;
+            margin-top:100px;
     }
 }
 /*Star Rating SVG*/

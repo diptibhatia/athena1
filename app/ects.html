@@ -1,9 +1,12 @@
 <div class="bg-white">
     <div class="top-curve-background-image">
-        <h1 class="text-align-center title">What Is <span>ECTS</span></h1>
-        <p class="text-align-center"><strong>When a crisis happens and times are tough it can be easy to lose<br />
-                focus on the importance of supporting and growing </strong></p>
-
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-10 p-3 text-center">
+                <h1 class="title">What Is <span>ECTS</span></h1>
+                <p class="text-bold">When a crisis happens and times are tough it can be easy to lose focus on the
+                    importance of supporting and growing</p>
+            </div>
+        </div>
         <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
     </div>
 </div>
@@ -14,7 +17,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <img alt="" class="img-fluid img-left"
-                    src="https://lh3.googleusercontent.com/SRdBJXaj4y9ln7YXG-XxAfOB6r91y70KcYVVcS0kxM6iQoIXn-a4WehHOv_Lv37hdaC3AMceDQElKJ3vXZC8XF6jFOwxDa2VVLUO9YM6HzfmChQgegEKNUGj1w-LdzPcYLd9E0qo">
+                        src="https://lh3.googleusercontent.com/SRdBJXaj4y9ln7YXG-XxAfOB6r91y70KcYVVcS0kxM6iQoIXn-a4WehHOv_Lv37hdaC3AMceDQElKJ3vXZC8XF6jFOwxDa2VVLUO9YM6HzfmChQgegEKNUGj1w-LdzPcYLd9E0qo">
                 </div>
 
                 <div class="col-lg-8">
@@ -64,7 +67,11 @@
     </div>
 </div>
 <style>
-    .ects {position: relative; z-index: 9;}
+    .ects {
+        position: relative;
+        z-index: 9;
+    }
+
     .ects p {
         line-height: 1.8em;
     }
@@ -75,7 +82,7 @@
 
     h1.title {
         padding: 50px 0 10px 0;
-    } 
+    }
 
     .img-left {
         width: 100%;
@@ -131,7 +138,7 @@
         z-index: 4;
         width: 100%;
         /* height: 134px;*/
-        margin-top: -40px;
+        margin-top: -50px;
     }
 
     .bottom-curve-background-image {
@@ -146,7 +153,7 @@
         /* height: 320px; */
         display: block;
         padding-top: 50px;
-        padding-bottom: 40px;
+        padding-bottom: 50px;
     }
 
     .bottom-curve-background-image .banner-curve {
@@ -162,11 +169,26 @@
 
     @media screen and (max-width: 540px) {
         .ects-title {
-    margin-top: 70px;
-}
+            margin-top: 70px;
+        }
+
+        .img-left {
+            margin-top: 0;
+        }
+
+        h1.title {
+            font-family: Lato;
+            font-size: 38px;
+            padding: 20px ​0 10px;
+        }
+
+        .top-curve-background-image .banner-curve {
+            margin-top: -20px;
+        }
+
         .bottom-curve-background-image {
-            /* height: 250px; */
-            padding-top: 15px;
+            padding-top: 12px;
+            padding-bottom: 20px;
         }
     }
 </style>
