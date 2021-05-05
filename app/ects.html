@@ -1,20 +1,26 @@
-<div class="top-curve-background-image">
-    <h1 class="text-align-center title">What Is <span>ECTS</span></h1>
-    <p class="text-align-center"><strong>When a crisis happens and times are tough it can be easy to lose<br/>
-            focus on the importance of supporting and growing </strong></p>
-
-    <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
+<div class="bg-white">
+    <div class="top-curve-background-image">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-10 p-3 text-center">
+                <h1 class="title">What Is <span>ECTS</span></h1>
+                <p class="text-bold">When a crisis happens and times are tough it can be easy to lose focus on the
+                    importance of supporting and growing</p>
+            </div>
+        </div>
+        <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
+    </div>
 </div>
 
-<div class="main-wrapper container-fluid p-0 about-us-wrapper">
+<div class="main-wrapper container-fluid ects">
     <div class="pt-4 container bg-white">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4"><img alt="" class="img-fluid"
-                        src="https://lh3.googleusercontent.com/SRdBJXaj4y9ln7YXG-XxAfOB6r91y70KcYVVcS0kxM6iQoIXn-a4WehHOv_Lv37hdaC3AMceDQElKJ3vXZC8XF6jFOwxDa2VVLUO9YM6HzfmChQgegEKNUGj1w-LdzPcYLd9E0qo"
-                        style="width:100%; margin-top:80px;"></div>
+                <div class="col-lg-4">
+                    <img alt="" class="img-fluid img-left"
+                        src="https://lh3.googleusercontent.com/SRdBJXaj4y9ln7YXG-XxAfOB6r91y70KcYVVcS0kxM6iQoIXn-a4WehHOv_Lv37hdaC3AMceDQElKJ3vXZC8XF6jFOwxDa2VVLUO9YM6HzfmChQgegEKNUGj1w-LdzPcYLd9E0qo">
+                </div>
 
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <div class="ects-title">
                         <h2>European Credit Transfer and Accumulation System (ECTS)</h2>
                     </div>
@@ -47,25 +53,50 @@
     </div>
 </div>
 
-<div class="bottom-curve-background-image">
+<div class="bg-white">
+    <div class="bottom-curve-background-image">
 
-    <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
+        <img src="/themes/custom/athena/images/curv-home.png" class="banner-curve">
 
-    <h5 class="text-align-center">Call Us</h5>
+        <h5 class="text-align-center">Call Us</h5>
 
-    <h2 class="text-align-center" style="font-weight:500">+353 1 5225 444</h2>
+        <h2 class="text-align-center" style="font-weight:500">+353 1 5225 444</h2>
 
-    <p class="text-align-center">Opening hours: 09:00am - 17:30pm</p>
+        <p class="text-align-center">Opening hours: 09:00am - 17:30pm</p>
 
+    </div>
 </div>
-
 <style>
+    .ects {
+        position: relative;
+        z-index: 9;
+    }
+
+    .ects p {
+        line-height: 1.8em;
+    }
+
+    .ects .row {
+        width: auto;
+    }
+
+    h1.title {
+        padding: 50px 0 10px 0;
+    }
+
+    .img-left {
+        width: 100%;
+        object-fit: cover;
+        min-height: 90% !important;
+        margin-top: 53px;
+    }
+
     .ects-title {
         display: inline-block;
         color: #303030;
         font-weight: bold;
         letter-spacing: .3px;
-        margin-bottom: 30px;
+        margin-bottom: 7px;
         position: relative;
     }
 
@@ -93,20 +124,21 @@
         /* display: none; */
         background: #EAEDF9;
         width: 100%;
-        height: 300px;
+        /* height: 320px; */
         display: block;
     }
 
 
     .top-curve-background-image .banner-curve {
-        position: relative;
+        /*position: relative; */
         /* bottom: 0; */
         /* left: 50%; */
         transform: scaleX(-1);
-        top: 10px;
+        /* top: 13px; */
         z-index: 4;
         width: 100%;
-        height: 160px;
+        /* height: 134px;*/
+        margin-top: -50px;
     }
 
     .bottom-curve-background-image {
@@ -118,17 +150,45 @@
         /* display: none; */
         background: #EAEDF9;
         width: 100%;
-        height: 320px;
+        /* height: 320px; */
         display: block;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .bottom-curve-background-image .banner-curve {
-        position: relative;
+        /* position: relative;
         top: 30px;
-        left: 0;
+        left: 0; */
         transform: scaleY(-1.5);
         z-index: 4;
         width: 100%;
-        height: 123px;
+        /* height: 123px; */
+        margin-bottom: -50px;
+    }
+
+    @media screen and (max-width: 540px) {
+        .ects-title {
+            margin-top: 70px;
+        }
+
+        .img-left {
+            margin-top: 0;
+        }
+
+        h1.title {
+            font-family: Lato;
+            font-size: 38px;
+            padding: 20px ​0 10px;
+        }
+
+        .top-curve-background-image .banner-curve {
+            margin-top: -20px;
+        }
+
+        .bottom-curve-background-image {
+            padding-top: 12px;
+            padding-bottom: 20px;
+        }
     }
 </style>
