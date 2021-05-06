@@ -5,6 +5,7 @@ namespace Drupal\search_insights\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements the SimpleForm form controller.
@@ -83,8 +84,17 @@ class SearchInsightsForm extends FormBase {
         $URL = "/insights/blogs";
     elseif (in_array("all", $URL_path) )  
         $URL = "/insights/all";
-    elseif (in_array("testimonials", $URL_path) )  
-        $URL = "/insights/testimonials";
+    elseif (in_array("testimonials", $URL_path) ) 
+    {
+        $bundle='testimonials';
+        $query = \Drupal::entityQuery('node');
+        $query->condition('status', 1);
+        $query->condition('type', $bundle);
+        $query->sort('created' , 'DESC');
+        $latest = $query->execute();
+        $latest = array_values($latest)[0];
+        $URL = "/node/".$latest;
+    }         
     elseif (in_array("news", $URL_path) )  
         $URL = "/insights/news";
     elseif (in_array("press-release", $URL_path) )  
@@ -95,10 +105,10 @@ class SearchInsightsForm extends FormBase {
     $current_path = \Drupal::service('path.current')->getPath();
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
-      $node_type = $node->getType();
-
-      if ($node_type == 'testimonials') 
-        $URL = "/insights/testimonials";        
+      $node_type = $node->getType();      
+      $nodeid = $node->id();      
+      if ($node_type == 'testimonials')          
+        $URL = "/node/".$nodeid;        
     }  
 
 
