@@ -111,6 +111,7 @@
 
   </div>-->
 
+      
    <div class="row m-0">
     <div class="col-md-12 p-0 text-center pb-4">
 
@@ -123,10 +124,11 @@
         <a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<current>') }}" target="_blank">
             <img src="/themes/custom/athena/images/li-ico.png" width="45"></a>
 
-       <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text=Check out this course - {{course_title}}. {{ url('<current>') }}" data-action="share/whatsapp/share">
+
+       <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text=Check out this course - {{course_title|replace({"&": "and"})|raw}}. {{ url('<current>') }}" data-action="share/whatsapp/share">
               <img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
 
-       <a class="d-inline-block p-2" href="mailto:?subject=Check out this course - {{course_title}}&amp;body=Check out this course - {{course_title}}. {{ url('<current>') }}" title="Share by Email" p-1="">
+       <a class="d-inline-block p-2" href="mailto:?subject=Check out this course - {{course_title|replace({"&": "and"})|raw}}&amp;body=Check out this course - {{course_title|replace({"&": "and"})|raw}}. {{ url('<current>') }}" title="Share by Email" p-1="">
               <img src="/themes/custom/athena/images/at-ico.png" width="45"></a>
 
     </div>
