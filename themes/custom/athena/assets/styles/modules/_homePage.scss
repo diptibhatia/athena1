@@ -1762,7 +1762,7 @@
 						margin: 0 22px;
 					  text-align: left;
 				  }
-				  img {max-width:100%;}
+				  img {max-width:100%; padding:12px; width:100%;}
 			  }
 			  @include atSize424 {
 				  display: none;
