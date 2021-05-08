@@ -670,4 +670,41 @@ function athena_preprocess_html(&$variables)
     }
 
     
+    
+    // Insights discussion forum
+    $page_params = \Drupal::request()->query->all();
+    if(is_array($page_params) && !empty($page_params)) {
+      if(isset($page_params['discussion_id']) && $page_params['discussion_id'] > 0) {
+        $discussion_id = $page_params['discussion_id'];
+        $end_url = 'https://learn.athena.edu/athenaprod/api/';
+        $client_detal = \Drupal::service('http_client_factory')->fromOptions([
+          'base_uri' => $end_url,
+        ]);
+    
+        $response_detail = $client_detal->get('discussions/'.$discussion_id);
+        $discussion = Json::decode($response_detail->getBody());
+       
+        $meta_tag_value = $discussion['data']['title'];
+        $meta_tag_desc =  strip_tags($discussion['data']['description']);
+        
+        $title = [
+            '#tag' => 'meta',
+            '#attributes' => [                    
+                'property' => 'og:title',
+                'content' => $meta_tag_value,
+            ],
+        ];
+        
+      $og_desc = [
+          '#tag' => 'meta',
+          '#attributes' => [                    
+              'property' => 'og:description',
+              'content' => $meta_tag_desc,
+          ],
+      ];
+
+       $variables['page']['#attached']['html_head'][] = [$title, 'title'];
+       $variables['page']['#attached']['html_head'][] = [$og_desc, 'description'];
+      }
+    }
 }
