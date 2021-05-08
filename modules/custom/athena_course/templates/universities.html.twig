@@ -80,7 +80,8 @@
             <div class="section-items">
                <div class="section-item-one">
                   <div class="section-image">
-                    <a href="{{ url('<front>') }}node/{{last_insight[0].id}}"> <img style="padding:8px" src="{{ file_url(last_insight[0].field_insight_article_image_thum.entity.uri.value)}}"></a>
+                    <a href="{{ url('<front>') }}node/{{last_insight[0].id}}">
+                    <img src="{{ file_url(last_insight[0].field_insight_article_image_thum.entity.uri.value)}}"></a>
                      <h4>{{last_insight[0].field_article_insight_type.entity.label}}</h4>
                       <h5>{{ last_insight[0].title.value }}</h5>
                      <p>{{last_insight[0].body.value|striptags|truncate(100)}}…<a href="{{ url('<front>') }}node/{{last_insight[0].id}}">Read more</a>
