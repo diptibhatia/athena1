@@ -237,6 +237,11 @@ form.comment-form {
 .input.error {
     border: none !important;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ccc;
+    opacity: 1;/* Firefox */
+    font-size: 14px;
+  }
 // #block-coursepagetestimonialsblock .why-athena .testimonials {
 //     position: relative;
 //     top: 0;
