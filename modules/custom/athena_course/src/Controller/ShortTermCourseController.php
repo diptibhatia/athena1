@@ -77,10 +77,11 @@ class ShortTermCourseController {
                         }
                     }
                 }
+                
 
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url .'/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
@@ -169,7 +170,7 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
@@ -292,7 +293,7 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url . '/dashboard/course-details?id=' . $value->cid,
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
                     'body' => substr($value->website_card_content, 0, 100),
                     'card_intro' => substr($value->course_introduction, 0, 100),
