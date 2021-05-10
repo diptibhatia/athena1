@@ -489,7 +489,15 @@
         <div class="course-team" style="background-color:#fff;">
             <div class="wrapper">
                 <h2>Know the Batch</h2>
-                <p>Get to know more about the fellow researchers in the DBA program.</p>
+                
+                {% if course_batch_desc is empty %}
+                     {% set batch_desc = "Get to know more about the fellow researchers in the DBA program." %}
+                {% else %}   
+                         {% set batch_desc = course_batch_desc %}
+                {% endif %}        
+
+                <p>{{batch_desc}}</p>
+
                 <div class="owl-carousel course-team-carousel owl-theme owl-loaded owl-drag">
 
                 <div class="owl-stage-outer">
