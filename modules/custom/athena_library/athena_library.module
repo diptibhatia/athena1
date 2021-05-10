@@ -1,6 +1,11 @@
 <?php
 
 use \Drupal\athena_library\Utils\CommonHelper;
+use Drupal\node\NodeTypeInterface;
+use Drupal\node\Entity\NodeType;
+use \Drupal\Core\Entity\EntityInterface;
+use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
 
 /**
  * Get Static data.
@@ -91,3 +96,9 @@ function athena_library_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+function athena_library_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+    if ($entity->getType() == 'insights_viewpages' && $view_mode == 'full') {
+      $build['#cache']['max-age'] = 0;
+    }
+  }
