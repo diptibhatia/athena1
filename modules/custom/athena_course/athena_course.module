@@ -185,6 +185,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'fees_pay_per' => NULL,
       'course_team' => NULL,
       'course_batch' => NULL,
+      'course_batch_desc' => NULL,
       'faq' => NULL,
       'univ_data' => NULL,
       'course_title' => NULL,
