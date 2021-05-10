@@ -30,10 +30,14 @@ p {font-size: 12px;
     box-shadow: 0 2px 18px -1px #d5dbfb;
     border: solid 2px rgba(255, 0, 110, 0.2);
     background: rgb(255,255,255);
-    background: linear-gradient(-45deg, rgba(255,255,255,1) 50%, rgba(209, 209, 209,1) 50%);
+    background: linear-gradient(-45deg, rgba(255,255,255,1) 50%, rgb(243, 243, 243) 50%);
 
 @media screen and (max-width: 1366px) { 
    width: 425px; 
+}
+@media screen and (max-width: 540px) { 
+    width: 90%;
+    left: 20px;
 }
   }
  .event_popup_close {
