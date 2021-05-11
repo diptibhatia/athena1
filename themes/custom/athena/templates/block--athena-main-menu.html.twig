@@ -37,9 +37,9 @@
     <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
       <span class="navbar-toggler-icon"></span>
     </button>-->
-    
+
     <!--<div class="collapse navbar-collapse" id="main_nav">-->
-<div class="" id="main_nav">
+    <div class="" id="main_nav">
       <ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
 display: inline-flex;
 border-radius: 5px;
@@ -50,15 +50,9 @@ align-items: center;box-sizing: border-box;">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
             style="color:white;font-weight: bold;font-family: 'lato';"> Explore </a>
-          <ul class="dropdown-menu" style="height: 383px;
-		left: -10px;
-		top: 55px;
-		box-shadow: 0 2px 13px 0 #8c8c8c;
-		width: 279px;
-		font-family: 'Lato';
-		font-size: 1rem;">
+          <ul class="dropdown-menu">
             <li class="has-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#"> <img
+              <a class="dropdown-item dropdown-toggle" href="{{url('<front>')}}academic-program"> <img
                   src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic
                 Programs </a>
               <div class="megasubmenu dropdown-menu box-shadow">
@@ -101,7 +95,7 @@ align-items: center;box-sizing: border-box;">
               </div>
             </li>
             <li class="has-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#"> <img
+              <a class="dropdown-item dropdown-toggle" href="{{url('<front>')}}certifications"> <img
                   src="/themes/custom/athena/images/coursepage/certification-icn.svg"
                   alt="icon">&nbsp;&nbsp;Certifications </a>
               <div class="megasubmenu dropdown-menu box-shadow">
@@ -151,7 +145,8 @@ align-items: center;box-sizing: border-box;">
     </div> <!-- navbar-collapse.// -->
 
     <div class="collapse navbar-collapse" id="search_nav">
-      <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc" method="POST">
+      <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc"
+        method="POST">
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
         <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
         <input type="hidden" name="submit_form">
@@ -206,7 +201,8 @@ align-items: center;box-sizing: border-box;">
 
         {% endif %}
 
-        <li><a class="hideinMobileView btn btn-pink getStartedBtn" href="{{ url('<front>') }}registration">Get Started</a></li>
+        <li><a class="hideinMobileView btn btn-pink getStartedBtn" href="{{ url('<front>') }}registration">Get
+            Started</a></li>
     </ul>
   </nav>
 </div>

@@ -136,7 +136,8 @@
                     }
                 }
             }
-        }
+        } 
+
 
         .btnLink {
             position: absolute;
@@ -904,8 +905,27 @@
 
 .megamenu-container
 {
-	.megasubmenu{ padding: 20px; }
+	.megasubmenu { padding: 20px; } 
+        .dropdown-menu{
+        height: 383px;
+		left: -10px;
+		top: 55px;
+		box-shadow: 0 2px 13px 0 #8c8c8c;
+		width: 279px;
+		font-family: 'Lato';
+		font-size: 1rem;
 
+        @media screen and (max-width:600px){
+            left:-90px;
+        }
+        }
+    .dropdown-item{
+        font-weight: bold;
+        font-family: 'Lato';
+        opacity: 0.9;
+        font-style: italic;
+        line-height: 2.6;
+    }
 	@media (min-width: 992px){
 
 		.dropdown-menu .dropdown-toggle:after{
@@ -960,25 +980,25 @@
 		}
 
 		.three-level a{
-                font-family: 'lato';
-                background-color: #f3f3f3;
-                color: #303030;
-                text-decoration: none;
-                font-size: .75rem;
-                height: 59px;
-                display: flex;
-                border-radius: 3px;
-                line-height: normal;
-                align-items: center;
-                padding-left: 10px;
-                padding-right: 5px;
-                margin-top: 7px;
-                width:110%;
+			font-family: 'lato';
+			background-color: #f3f3f3;
+            color: #303030;
+            text-decoration: none;
+            font-size: .75rem;
+            height: 59px;
+            display: flex;
+            border-radius: 3px;
+            line-height: normal;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 5px;
+            margin-top: 7px;
+            width:110%;
             }
             .three-level img{
-                width: 56px;
-                display: inline-block;
-                margin-right: 13px;
+            width: 56px;
+            display: inline-block;
+            margin-right: 13px;
             }
 
     }
