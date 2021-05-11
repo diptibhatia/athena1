@@ -41,6 +41,13 @@
     }
     .search-form {
         margin: 0 30px;
+        @media screen and (max-width:600px) {
+            position:fixed;
+            width: 94%;
+            top: 70px;
+            left: -20px; 
+        }
+        
         .search-courses {
           width: 51px;
           height: 40px;
