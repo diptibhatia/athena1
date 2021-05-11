@@ -50,6 +50,13 @@ align-items: center;box-sizing: border-box;">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
             style="color:white;font-weight: bold;font-family: 'lato';"> Explore </a>
+
+<div class="show-mobile">
+
+  
+</div>
+
+
           <ul class="dropdown-menu">
             <li class="has-submenu">
               <a class="dropdown-item dropdown-toggle" href="{{url('<front>')}}academic-program"> <img
@@ -144,7 +151,7 @@ align-items: center;box-sizing: border-box;">
       </ul>
     </div> <!-- navbar-collapse.// -->
 
-    <div class="collapse navbar-collapse" id="search_nav">
+    <div class="collapse navbar-collapse" id="search_nav" style="flex-basis:auto;">
       <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc"
         method="POST">
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
