@@ -238,7 +238,7 @@ form.comment-form {
     border: none !important;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #aeaeae;
+    color: #ccc;
     opacity: 1;/* Firefox */
     font-size: 14px;
   }
@@ -333,3 +333,15 @@ form.comment-form {
 	margin-bottom: 10px;
 }
 }}
+
+.show-mobile {display:none;
+@media screen and (max-width:600px) {
+    display:block;
+}
+}
+
+.hide-mobile {display:block;
+    @media screen and (max-width:600px) {
+        display:none;
+    }
+    }
