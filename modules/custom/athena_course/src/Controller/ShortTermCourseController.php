@@ -77,7 +77,7 @@ class ShortTermCourseController {
                         }
                     }
                 }
-                
+
 
                 $courses_data[] = [
                     'cid' => $value->cid,
@@ -196,9 +196,6 @@ class ShortTermCourseController {
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
-                            </div>
-                            <div class="col-12">
-                                <p class="small">' . $courses_data['field_students_enrolled'] . ' <em>Students Enrolled</em></p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -319,9 +316,6 @@ class ShortTermCourseController {
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
-                            </div>
-                            <div class="col-12">
-                                <p class="small">' . $courses_data['field_students_enrolled'] . ' <em>Students Enrolled</em></p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
