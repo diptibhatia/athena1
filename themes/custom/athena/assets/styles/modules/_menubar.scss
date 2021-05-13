@@ -914,9 +914,9 @@
 {
 	.megasubmenu { padding: 20px;
         @media screen and (max-width:600px){
-            display: none;
+            display: none !important;
             }
-        }
+        } 
         .dropdown-menu{
         height: 383px;
 		left: -10px;
