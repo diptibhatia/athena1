@@ -417,6 +417,10 @@ if(!empty($block_content)){
     $variables['athena_exclude'] = TRUE;
   }
 
+  if (strpos($current_path, '/StudentEnroltoCourse') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
+
 $current_uri = \Drupal::request()->getRequestUri();
 
    if (strpos($current_uri, 'about-us/governance-structure') !== false) {

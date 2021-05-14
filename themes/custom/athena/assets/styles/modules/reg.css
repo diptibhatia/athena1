@@ -1,0 +1,145 @@
+
+.queen-text {
+    text-align: left;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.queen-text h1 {
+    font-size: 52px;
+    font-weight: bold;
+    color: #ff0069;
+    font-family: Lato;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.queen-text p a {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff0069;
+}
+
+.queen-text p {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 500;
+    color: #303030;
+    margin-top: -3px;
+}
+
+.progress {
+    height: 20px;
+    margin-bottom: 20px;
+   
+    display: inline-block;
+    /* float: left; */
+    overflow: visible;
+    background-color: #f6f6ff;
+    box-shadow: 0px 0px 0px #f6f6ff;
+}
+.progress span{
+  transition: all 500ms ease;
+  background: #4A72DA;
+  box-shadow: 1px 2px 3px #f6f6ff;
+  height: 3px;
+  width: 3px;  
+  display: inline-block;
+  border-radius: 10px;
+  animation: wave 2s ease  infinite;
+}  
+
+.progress span:nth-child(1){  animation-delay: 0; }
+.progress span:nth-child(2){  animation-delay: 100ms; }
+.progress span:nth-child(3){  animation-delay: 200ms; }
+.progress span:nth-child(4){  animation-delay: 300ms; }
+.progress span:nth-child(5){  animation-delay: 400ms; }
+.progress span:nth-child(6){  animation-delay: 500ms; }
+.progress span:nth-child(7){  animation-delay: 600ms; }
+.progress span:nth-child(8){  animation-delay: 700ms; }
+
+@keyframes wave{
+  0%, 40%, 100% { 
+    transform: translate(0, 0);
+    background-color:#ff0069;    
+  }
+  10% { 
+    transform: translate(0, -15px); 
+    background-color: #4A72DA;    
+  }  
+}
+/* ----------- 950px - 1200px ----------- */
+@media screen 
+  and (min-width: 1100px) 
+  and (max-width: 1525px){
+
+
+.queen-text {
+    text-align: left;
+    margin: auto;
+    padding-top: 62px!important;
+    color: white;
+}
+
+
+}
+.queen-text h2 {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 500;
+    color: #ff0069;
+    margin-top: 10px;
+    width: 315px;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 899px) {
+    
+  .queen-text {    padding-top: 17px!important;
+    padding-bottom: 47px!important;}
+  .queen-image {
+    background-image: none!important;
+    height: auto!important;
+   
+   
+}
+
+.hidden-xs img {display:none}
+
+.queen-text h2 {
+   
+  
+   
+    width: 165px!important;;
+ 
+}
+
+.queen-text h1 {
+    font-size: 38px!important;
+   
+} 
+}
+
+
+
+@media screen 
+  and (min-width: 900px) 
+  and (max-width: 1099px){
+    .queen-text h1{padding-top: 30px!important;font-size:30px!important}
+  .queen-text {
+    text-align: left;
+    margin: auto;
+    padding-top: 3px!important;
+    color: white;
+}
+}
+
+
+
+@media screen 
+  and (min-width: 1980px) {
+ 
+
+}
+}

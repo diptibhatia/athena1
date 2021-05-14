@@ -359,6 +359,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       ],
     ],
 
+  'reg_redirect' => [
+      'variables' => [
+      'base_path' => NULL,
+      ],
+    ],
+
 
 
   ];
@@ -717,7 +723,7 @@ function athena_course_page_attachments(array &$attachments) {
         $redirect = "<meta http-equiv='refresh' content='3;url=$url' />";
         $attachments['#attached']['html_head'][] = [
           [
-            '#tag' => '',
+            '#tag' => 'refresh',
             '#value' => \Drupal\Core\Render\Markup::create($redirect),
             '#weight' => -10,
           ],
