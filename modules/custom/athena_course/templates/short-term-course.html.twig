@@ -17,7 +17,7 @@
                     <a class="float-left pt-1" href="#findCourseInput"><button
                             class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button></a>
                     <a target="_blank" class="float-left pt-2"
-                        href="{{ portal_url }}/student-dashboard/certification-level">See you course levels ></a>                        
+                        href="{{ portal_url }}/student-dashboard/certification-level">See you course levels ></a>
                 </div>
             </div>
         </div>
@@ -75,6 +75,11 @@
                 <div class="col-12">
                     <nav class="nav">
                         {% for certificate_key, certificate_value in certificates %}
+
+                        {% if certificate_key == 0 %}
+                            <input id="selected_certificate" type="hidden" value="{{ certificate_value.id }}" />
+                        {% endif %}
+
                         <a id="filter_certificate_{{ certificate_value.id }}"
                             onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link"
                             aria-current="page" href="javascript:void(0)"><span>{{
@@ -222,6 +227,8 @@
         var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
+        jQuery('.category-area .nav-link').removeClass('active');
+        jQuery('.category-area .nav-link:first').addClass('active');
         return false;
     }
 
@@ -236,11 +243,13 @@
         jQuery('#selected_filters').html(keyword);
         jQuery('#selected_keywords').val(id);
 
+        var selected_certificate = jQuery('#selected_certificate').val();
+
         if (search_val) {
-            var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + id);
+            var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + id + '&fk_certificate_type_id=' + selected_certificate);
         }
         else {
-            var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id);
+            var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id + '&fk_certificate_type_id=' + selected_certificate);
         }
 
         Drupal.ajax({ 'url': endpoint }).execute();
@@ -294,11 +303,13 @@
         jQuery('#selected_filters').html('');
         jQuery('#selected_keywords').val('');
         jQuery('.category-area .nav-link').removeClass('active');
-
+        var selected_certificate = jQuery('#selected_certificate').val();
         var search_val = jQuery('#search').val();
-        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
+        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + selected_certificate);
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
+        jQuery('.category-area .nav-link').removeClass('active');
+        jQuery('.category-area .nav-link:first').addClass('active');
         return false;
     }
 
@@ -307,18 +318,18 @@
 <script type="text/javascript">
     /*
         $(document).ready(function(){
-    
+
             $.expr[':'].icontains = function(a, i, m) {
               return $(a).text().toUpperCase()
                   .indexOf(m[3].toUpperCase()) >= 0;
             };
-    
+
             $( '#search' ).keyup( function() {
                 var matches = $('.shortterm-courses' ).find('.content:icontains('+ $( this ).val() +') ' );
                 $('.content').not( matches ).slideUp();
                 matches.slideDown();
             });
-    
+
             $(".content").slice(0, 16).show();
             $("#loadMore").on("click", function(e){
                 e.preventDefault();

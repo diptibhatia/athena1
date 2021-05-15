@@ -78,12 +78,17 @@ class ShortTermCourseController {
                     }
                 }
 
+                $website_card_content = $value->website_card_content;
+                if (strlen($website_card_content) > 100) {
+                    $website_card_content = substr($website_card_content, 0, 100);
+                    $website_card_content = $website_card_content . '...';
+                }
 
                 $courses_data[] = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => substr($value->website_card_content, 0, 100),
+                    'body' => $website_card_content,
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
@@ -168,11 +173,17 @@ class ShortTermCourseController {
                     }
                 }
 
+                $website_card_content = $value->website_card_content;
+                if (strlen($website_card_content) > 100) {
+                    $website_card_content = substr($website_card_content, 0, 100);
+                    $website_card_content = $website_card_content . '...';
+                }
+
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => substr($value->website_card_content, 0, 100),
+                    'body' => $website_card_content,
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
@@ -288,11 +299,17 @@ class ShortTermCourseController {
                 }
 
 
+                $website_card_content = $value->website_card_content;
+                if (strlen($website_card_content) > 100) {
+                    $website_card_content = substr($website_card_content, 0, 100);
+                    $website_card_content = $website_card_content . '...';
+                }
+
                 $courses_data = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
-                    'body' => substr($value->website_card_content, 0, 100),
+                    'body' => $website_card_content,
                     'card_intro' => substr($value->course_introduction, 0, 100),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
