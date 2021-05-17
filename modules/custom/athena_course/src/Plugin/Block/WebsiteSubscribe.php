@@ -25,8 +25,8 @@ class WebsiteSubscribe extends BlockBase {
   public function build() {
     $cookie_name = "website_popup";
     $cookie_value = TRUE;
-
     $subscribed = FALSE;
+
     // if(!isset($_COOKIE[$cookie_name])) {
     //   setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/");
     //   $_COOKIE[$cookie_name] = $cookie_value;
@@ -37,7 +37,7 @@ class WebsiteSubscribe extends BlockBase {
 
     $template = [
       '#theme' => 'website_subscribe_popup',
-      '#subscribed' => $subscribed
+      '#subscribed' => TRUE
     ];
     return array($template);
   }
