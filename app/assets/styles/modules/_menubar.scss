@@ -908,7 +908,7 @@
 }
 
 
-
+.navbar-nav .nav-item .dropdown-toggle::after {display: none;}
 
 .megamenu-container
 {
@@ -926,7 +926,7 @@
 		font-family: 'Lato';
 		font-size: 1rem;
         position: absolute;
-        .dropdown-toggle::after {display: none;}
+        
         @media screen and (max-width:600px){
             left:-90px;
         }
