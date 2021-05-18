@@ -17,7 +17,7 @@
 
     &__logo {
         width: 95px;
-        margin-right: 1.375rem;
+        margin-right: 1rem;
 
         img {
             width: 100%;
@@ -926,7 +926,7 @@
 		font-family: 'Lato';
 		font-size: 1rem;
         position: absolute;
-
+        .dropdown-toggle::after {display: none;}
         @media screen and (max-width:600px){
             left:-90px;
         }
