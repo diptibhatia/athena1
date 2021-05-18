@@ -74,7 +74,7 @@
 	   
    }
    .hideinMobileView{
-	   display: inline-block;
+	   display: flex;
 	   @media screen and (max-width:600px) {
 		   display: none;
 	   } 
@@ -84,7 +84,7 @@
 	   padding-bottom: 20px;
 	   text-align: center;
 	   @media screen and (max-width:600px) { 
-		   display: inline-block;
+		   display: flex;
 	   } 
    }
    .Buttoninfo {
