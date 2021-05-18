@@ -1,7 +1,7 @@
-.modal {
-    display: none;
+.modal-reg {
+  //display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 11;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -15,7 +15,7 @@
 .thanks-modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 11;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -42,24 +42,35 @@
 .pop-up-content-thanks {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px 0 0 20px;
     border: 1px solid #888;
     width: 30%;
-    height: 42vh;
+    height: 45vh;
 }
 
-
+.thnks-conent img{
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.thanks-head{
+	font-size: 27px;
+}
+.thanks-para{
+	font-size: 14px;
+}
 .close {
     color: #ffffff;
     float: right;
     font-size: 33px;
     font-weight: 400;
-    background-color: #303030;
-    padding: 4px 23px 30px 15px;
-    width: 10px;
-    height: 10px;
+    background-color: #000000;
+    width: 40px;
+    height: 40px;
     margin-top: -40px;
-    margin-right: -30px;
+    margin-right: -20px;
     text-align: center;
     border-radius: 30px;
     border: 3px solid white;
@@ -78,12 +89,12 @@
     float: right;
     font-size: 33px;
     font-weight: 400;
-    background-color: #303030;
-    padding: 4px 23px 30px 15px;
-    width: 10px;
-    height: 10px;
-    margin-top: -40px;
-    margin-right: -30px;
+    background-color: #161616;
+	opacity: 0.7;
+    width: 50px;
+    height: 50px;
+    margin-top: -20px;
+    margin-right: -20px;
     text-align: center;
     border-radius: 30px;
     border: 3px solid white;
@@ -108,7 +119,7 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: #303030;
+    color: #1b1b1b;
     border-radius: 8px;
     border: none;
     background-color: linear-gradient(to left, #dbdbdb 111%, #8b8b8b 96%, #3f3f3f);
@@ -119,9 +130,6 @@ span {
     color: #ff006e;
 }
 
-.pop-up-heading {
-    margin-bottom: -8px;
-}
 
 .pop-up-para {
     width: 90%;
@@ -163,7 +171,7 @@ span {
 
 .submit-input {
     cursor: pointer;
-    width: 368px;
+    width: 355px;
     color: white;
     height: 43px;
     padding-left: 10px;
@@ -187,7 +195,7 @@ span {
 
 .social-icon-facebook {
     width: 40px;
-    height: 40px;
+    height: 30px;
     margin-right: 10px;
     text-align: center;
     color: rgb(41, 81, 190);
@@ -199,7 +207,7 @@ span {
 
 .social-icon-google {
     width: 40px;
-    height: 40px;
+    height: 30px;
     margin-right: 10px;
     text-align: center;
     color: red;
@@ -211,7 +219,7 @@ span {
 
 .social-icon-linkin {
     width: 40px;
-    height: 40px;
+    height: 30px;
     margin-right: 10px;
     text-align: center;
     color: blue;
@@ -239,13 +247,12 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 80%;
-        height: 62vh;
+        height: 68vh;
     }
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 20px 0 20px;
         border: 1px solid #888;
         width: 80%;
         height: 42vh;
@@ -253,11 +260,10 @@ span {
 
     .thanks-head {
         font-size: 22px;
-        margin-bottom: -8px;
-    }
+	}
 
     .thnks-conent img {
-        margin-left: 30px;
+
 
     }
 
@@ -272,9 +278,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -289,10 +295,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -30px;
         margin-right: -30px;
         text-align: center;
         border-radius: 30px;
@@ -303,7 +308,7 @@ span {
     .pop-up-para {
         width: 90%;
         height: 44px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -340,7 +345,7 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
         padding-left: 10px;
@@ -364,7 +369,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -376,7 +381,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -388,7 +393,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -420,13 +425,12 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 70%;
-        height: 55vh;
+        height: 60vh;
     }
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 0 0 0px;
         border: 1px solid #888;
         width: 80%;
         height: 35vh;
@@ -434,7 +438,7 @@ span {
 
     .thanks-head {
         font-size: 23px;
-        margin-bottom: -8px;
+
     }
 
     .thanks-para {
@@ -443,7 +447,7 @@ span {
     }
 
     .thnks-conent img {
-        margin-left: 40px;
+
     }
 
     .close {
@@ -452,9 +456,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -469,10 +473,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -30px;
         margin-right: -20px;
         text-align: center;
         border-radius: 30px;
@@ -483,7 +486,7 @@ span {
     .pop-up-para {
         width: 90%;
         height: 44px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -520,14 +523,14 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
-        padding-left: 10px;
         border-radius: 3px;
         background-color: #ff006e;
         margin-bottom: 18px;
         border: none;
+		text-align: center;
     }
 
     .sub-text {
@@ -544,7 +547,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -556,7 +559,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -568,7 +571,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -600,13 +603,12 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 80%;
-        height: 62vh;
+        height: 65vh;
     }
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 0 0 0px;
         border: 1px solid #888;
         width: 80%;
         height: 35vh;
@@ -614,16 +616,11 @@ span {
 
     .thanks-head {
         font-size: 20px;
-        margin-bottom: -8px;
     }
 
     .thanks-para {
         font-size: 12px;
-        margin-bottom: 30px;
-    }
-
-    .thnks-conent img {
-        margin-left: 40px;
+        margin-bottom: 20px;
     }
 
     .close {
@@ -632,9 +629,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -649,10 +646,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -30px;
         margin-right: -20px;
         text-align: center;
         border-radius: 30px;
@@ -663,7 +659,7 @@ span {
     .pop-up-para {
         width: 90%;
         height: 44px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -700,10 +696,10 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
-        padding-left: 10px;
+        text-align: center;
         border-radius: 3px;
         background-color: #ff006e;
         margin-bottom: 18px;
@@ -724,7 +720,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -736,7 +732,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -748,7 +744,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -777,13 +773,12 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 70%;
-        height: 55vh;
+        height: 60vh;
     }
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 0 0 0px;
         border: 1px solid #888;
         width: 70%;
         height: 33vh;
@@ -791,17 +786,14 @@ span {
 
     .thanks-head {
         font-size: 20px;
-        margin-bottom: -8px;
     }
 
     .thanks-para {
         font-size: 12px;
-        margin-bottom: 30px;
+        margin-bottom:25px;
     }
 
-    .thnks-conent img {
-        margin-left: 40px;
-    }
+
 
     .close {
         color: #ffffff;
@@ -809,9 +801,8 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -827,10 +818,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -30px;
         margin-right: -20px;
         text-align: center;
         border-radius: 30px;
@@ -841,7 +831,7 @@ span {
     .pop-up-para {
         width: 90%;
         height: 44px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -878,10 +868,10 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
-        padding-left: 10px;
+		text-align: center;
         border-radius: 3px;
         background-color: #ff006e;
         margin-bottom: 18px;
@@ -889,7 +879,7 @@ span {
     }
 
     .sub-text {
-        margin: -8px 20px;
+        margin: -8px 20px 25px 20px;
         font-family: Lato;
         font-size: 12px;
         font-weight: 500;
@@ -902,7 +892,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -914,7 +904,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -926,7 +916,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -958,14 +948,13 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 80%;
-        height: 50vh;
+        height: 55vh;
     }
 
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 0 0 0px;
         border: 1px solid #888;
         width: 80%;
         height: 30vh;
@@ -973,17 +962,13 @@ span {
 
     .thanks-head {
         font-size: 20px;
-        margin-bottom: -8px;
     }
 
     .thanks-para {
         font-size: 12px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
-    .thnks-conent img {
-        margin-left: 40px;
-    }
 
     .close {
         color: #ffffff;
@@ -991,9 +976,8 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -1008,10 +992,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -30px;
         margin-right: -20px;
         text-align: center;
         border-radius: 30px;
@@ -1022,7 +1005,7 @@ span {
     .pop-up-para {
         width: 90%;
         height: 44px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -1059,10 +1042,10 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
-        padding-left: 10px;
+        text-align: center;
         border-radius: 3px;
         background-color: #ff006e;
         margin-bottom: 18px;
@@ -1070,7 +1053,7 @@ span {
     }
 
     .sub-text {
-        margin: -8px 20px;
+        margin: -8px 20px 25px 20px;
         font-family: Lato;
         font-size: 12px;
         font-weight: 500;
@@ -1083,7 +1066,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -1095,7 +1078,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -1107,7 +1090,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -1138,13 +1121,12 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 40%;
-        height: 40vh;
+        height: 45vh;
     }
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 0 0 0px;
         border: 1px solid #888;
         width: 40%;
         height: 23vh;
@@ -1152,17 +1134,15 @@ span {
 
     .thanks-head {
         font-size: 20px;
-        margin-bottom: -8px;
+
     }
 
     .thanks-para {
         font-size: 12px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
-    .thnks-conent img {
-        margin-left: 40px;
-    }
+
 
     .close {
         color: #ffffff;
@@ -1170,9 +1150,8 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -1187,10 +1166,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -30px;
         margin-right: -20px;
         text-align: center;
         border-radius: 30px;
@@ -1239,7 +1217,7 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
         padding-left: 10px;
@@ -1250,7 +1228,7 @@ span {
     }
 
     .sub-text {
-        margin: -8px 20px;
+        margin: -8px 20px 25px 20px;
         font-family: Lato;
         font-size: 12px;
         font-weight: 500;
@@ -1263,7 +1241,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -1275,7 +1253,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -1287,7 +1265,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -1320,13 +1298,12 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 30%;
-        height: 30vh;
+        height: 33vh;
     }
 
     .pop-up-content-thanks {
         background-color: #fefefe;
         margin: auto;
-        padding: 20px 0 0 0px;
         border: 1px solid #888;
         width: 30%;
         height: 18vh;
@@ -1334,17 +1311,14 @@ span {
 
     .thanks-head {
         font-size: 20px;
-        margin-bottom: -8px;
     }
 
     .thanks-para {
-        font-size: 12px;
-        margin-bottom: 30px;
+        font-size: 11px;
+        margin-bottom: 25px;
     }
 
-    .thnks-conent img {
-        margin-left: 40px;
-    }
+
 
     .close {
         color: #ffffff;
@@ -1352,9 +1326,8 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -1369,10 +1342,9 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
-        margin-top: -40px;
+        width: 50px;
+        height: 50px;
+        margin-top: -20px;
         margin-right: -20px;
         text-align: center;
         border-radius: 30px;
@@ -1421,7 +1393,7 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
         padding-left: 10px;
@@ -1432,7 +1404,7 @@ span {
     }
 
     .sub-text {
-        margin: -8px 20px;
+        margin: -8px 20px 25px 20px;
         font-family: Lato;
         font-size: 12px;
         font-weight: 500;
@@ -1445,7 +1417,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -1457,7 +1429,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -1469,7 +1441,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -1498,7 +1470,7 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 55%;
-        height: 58vh;
+        height: 62vh;
     }
 
     .pop-up-content-thanks {
@@ -1530,9 +1502,8 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -20px;
         text-align: center;
@@ -1561,7 +1532,7 @@ span {
     .pop-up-para {
         width: 90%;
         height: 44px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -1599,7 +1570,7 @@ span {
 
     .submit-input {
 
-        width: 260px;
+        width: 250px;
         color: white;
         height: 43px;
         padding-left: 10px;
@@ -1610,7 +1581,7 @@ span {
     }
 
     .sub-text {
-        margin: -8px 20px;
+        margin: -8px 20px 25px 20px;
         font-family: Lato;
         font-size: 12px;
         font-weight: 500;
@@ -1623,7 +1594,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -1635,7 +1606,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -1647,7 +1618,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
@@ -1675,7 +1646,7 @@ span {
         padding: 20px 0 0 20px;
         border: 1px solid #888;
         width: 80%;
-        height: 62vh;
+        height: 65vh;
     }
 
     .pop-up-content-thanks {
@@ -1708,9 +1679,8 @@ span {
         font-size: 33px;
         font-weight: 400;
         background-color: #303030;
-        padding: 4px 23px 30px 15px;
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
         margin-top: -40px;
         margin-right: -10px;
         text-align: center;
@@ -1752,7 +1722,7 @@ span {
 
     .email-input {
 
-        width: 200px;
+        width: 220px;
         height: 33px;
         opacity: 0.5;
         padding-left: 10px;
@@ -1765,7 +1735,7 @@ span {
 
     .name-input {
 
-        width: 200px;
+        width: 220px;
         opacity: 0.5;
         height: 33px;
         padding-left: 10px;
@@ -1777,10 +1747,11 @@ span {
 
     .submit-input {
 
-        width: 215px;
+        width: 220px;
         color: white;
-        height: 43px;
-        padding-left: 10px;
+        height: 45px;
+        text-align: center;
+		line-height: 20px;
         border-radius: 3px;
         background-color: #ff006e;
         margin-bottom: 18px;
@@ -1788,7 +1759,7 @@ span {
     }
 
     .sub-text {
-        margin: -8px 20px;
+        margin: -8px 20px 25px 20px;
         font-family: Lato;
         font-size: 10px;
         font-weight: 500;
@@ -1801,7 +1772,7 @@ span {
 
     .social-icon-facebook {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: rgb(41, 81, 190);
@@ -1813,7 +1784,7 @@ span {
 
     .social-icon-google {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: red;
@@ -1825,7 +1796,7 @@ span {
 
     .social-icon-linkin {
         width: 40px;
-        height: 40px;
+        height: 30px;
         margin-right: 10px;
         text-align: center;
         color: blue;
