@@ -1,8 +1,8 @@
 .modal-reg {
-  //display: none;
+   display: none;
     position: fixed;
     z-index: 11;
-    padding-top: 100px;
+    padding-top: 150px;
     left: 0;
     top: 0;
     width: 100%;
@@ -16,7 +16,7 @@
     display: none;
     position: fixed;
     z-index: 11;
-    padding-top: 100px;
+    padding-top: 150px;
     left: 0;
     top: 0;
     width: 100%;
