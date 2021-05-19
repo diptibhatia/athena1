@@ -81,10 +81,9 @@
    }
    .showinMobileView{
 	   display: none;
-	   padding-bottom: 20px;
-	   text-align: center;
+	   padding-bottom: 20px; 
 	   @media screen and (max-width:600px) { 
-		   display: flex;
+		   display: block;
 	   } 
    }
    .Buttoninfo {
