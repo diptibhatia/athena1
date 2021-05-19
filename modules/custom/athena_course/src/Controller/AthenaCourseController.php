@@ -509,6 +509,7 @@ $course_description_tabs =  [
   '#logo' => $univ_data,
   '#course_title' => $node->get('title')->value,
   '#course_team' => $course_team,
+  '#course_batch_title' => $node->get('field_batch_title')->value,
   '#course_batch_desc' => $node->get('field_batch_desc')->value,
   '#course_batch' => $course_batch,
   '#faq' => $faq,
