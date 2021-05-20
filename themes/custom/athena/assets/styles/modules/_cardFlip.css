@@ -14,8 +14,6 @@
 
 .item-inner {
   position: relative;
-
-  text-align: center;
   transition: transform 0.9s;
   transform-style: preserve-3d;
 
