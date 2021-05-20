@@ -488,7 +488,12 @@
     <!--   Course Batch -->
         <div class="course-team" style="background-color:#fff;">
             <div class="wrapper">
-                <h2>Know the Batch</h2>
+             {% if course_batch_title is empty %}
+                {% set batch_title = "Know the Batch" %}
+             {% else %}   
+                 {% set batch_title = course_batch_title %}
+             {% endif %}   
+                <h2>{{batch_title}}</h2>
                 
                 {% if course_batch_desc is empty %}
                      {% set batch_desc = "Get to know more about the fellow researchers in the DBA program." %}
