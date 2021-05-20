@@ -1,3 +1,7 @@
+<link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/modules/_cardFlip.css">
+
+
+
 <div class="main-wrapper container-fluid p-0 academic-program-wrapper explore-courses-page">
     <div class="banner banner-image p-0 bg-white">
         <img src="/themes/custom/athena/images/academic-program.png"
@@ -98,6 +102,7 @@
                     <div class="shortterm-courses">
                         {% for node in nodes %}
                         <div class="item content" style="display:block;">
+                        <div class="item-inner">
                             <div class="course-item-hover" style="padding:22px 15px 18px;">
                                 <div class="row">
                                     <div class="col-12 social-icons">
@@ -112,7 +117,7 @@
                                                 src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                                     </div>
                                 </div>
-                                <div class="course-details text-center">
+                                <div class="course-details text-center0">
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
                                         <p class="small">{{node.field_certified_level}}</p>
@@ -127,6 +132,8 @@
                                             href="{{node.course_url}}"><button>Start Now</button></a></div>
                                 </div>
                             </div>
+
+
                             <div class="course-item">
                                 <div class="row heading m-0">
                                     <div class="col-9">
@@ -149,6 +156,7 @@
                                 </div>
                             </div>
                         </div>
+                      </div>
                         {% endfor %}
                     </div>
                     <input type="hidden" id="pager" name="pager" value="1" />
