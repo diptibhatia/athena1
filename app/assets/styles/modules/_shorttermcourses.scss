@@ -70,6 +70,7 @@
             padding: 22px 15px 18px;
             z-index:1;
             min-height: 100%;
+            text-align:center;
             .social-icons{
                 text-align:center;
                 padding-bottom:1rem;
@@ -226,7 +227,7 @@ overflow: hidden;
             .button-area{
                 text-align: center;
                 position: absolute;
-                bottom: 20px;
+                bottom: -60px;
                 left: 0;
                 button{
                     width: 196px;
