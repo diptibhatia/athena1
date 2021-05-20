@@ -191,6 +191,7 @@ class ShortTermCourseController {
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
+                    <div class="item-inner">
                     <div class="course-item-hover" style="padding:22px 15px 18px;">
                         <div class="row">
                             <div class="col-12 social-icons">
@@ -199,7 +200,7 @@ class ShortTermCourseController {
                                 <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                             </div>
                         </div>
-                        <div class="course-details col-12 text-center p-0">
+                        <div class="course-details col-12 text-center0 p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
@@ -232,6 +233,7 @@ class ShortTermCourseController {
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
+                    </div>
                     </div>
                 </div>';
             }
@@ -317,6 +319,7 @@ class ShortTermCourseController {
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
+                    <div class="item-inner">
                     <div class="course-item-hover" style="padding:22px 15px 18px;">
                         <div class="row">
                             <div class="col-12 social-icons">
@@ -325,7 +328,7 @@ class ShortTermCourseController {
                                 <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                             </div>
                         </div>
-                        <div class="course-details col-12 text-center p-0">
+                        <div class="course-details col-12 text-center0 p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
@@ -359,6 +362,7 @@ class ShortTermCourseController {
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
                     </div>
+                </div>
                 </div>';
             }
             $response->addCommand(new HtmlCommand('.shortterm-courses', $html));
