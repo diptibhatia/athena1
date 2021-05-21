@@ -147,3 +147,12 @@ athena_course.shortterm-courses-search:
   options:
     no_cache: TRUE
 
+athena_course.website-newsletter-subscribe:
+  path: '/website-newsletter-subscribe/{name}/{email}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\WebsiteSubscribeController::subscribe'
+    _title: 'Subscribe Website Newsletter'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

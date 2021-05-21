@@ -11,6 +11,18 @@ athena_course:
   js:
     js/athena_course.js: {}
   dependencies:
-    - core/jquery #Just to be safe
-    - core/drupal.dialog.ajax #Required for dialogs
-    - core/jquery.form #If you also want to use Ajax for form operations
+    - core/jquery
+    - core/drupal.dialog.ajax
+    - core/jquery.form
+    - core/drupal.ajax
+
+website_subscribe:
+  version: 1.x
+  js:
+    js/website_subscribe.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

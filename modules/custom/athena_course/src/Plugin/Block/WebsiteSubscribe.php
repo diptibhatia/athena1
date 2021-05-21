@@ -19,25 +19,21 @@ use \Drupal\Core\Url;
  */
 class WebsiteSubscribe extends BlockBase {
 
+  public function getCacheMaxAge() {
+      return 0;
+  }
+
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $cookie_name = "website_popup";
-    $cookie_value = TRUE;
-    $subscribed = FALSE;
-
-    // if(!isset($_COOKIE[$cookie_name])) {
-    //   setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/");
-    //   $_COOKIE[$cookie_name] = $cookie_value;
-    // }
-    // else {
-    //   $subscribed = TRUE;
-    // }
+    $cookie_name = "website_subscribe";
+    if(isset($_COOKIE[$cookie_name])) {
+      return;
+    }
 
     $template = [
-      '#theme' => 'website_subscribe_popup',
-      '#subscribed' => TRUE
+      '#theme' => 'website_subscribe_popup'
     ];
     return array($template);
   }

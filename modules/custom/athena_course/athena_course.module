@@ -373,6 +373,18 @@ function athena_course_theme($existing, $type, $theme, $path) {
 
 
 function athena_course_page_attachments(array &$attachments) {
+    $current_path = \Drupal::service('path.current')->getPath();
+    if (strpos($current_path, '/node') !== false) {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node instanceof \Drupal\node\NodeInterface) {
+        $node_type = $node->getType();
+        if ($node_type == 'insight_article' || $node_type == 'insights_viewpages') {
+          $attachments['#attached']['library'][] = 'athena_course/website_subscribe';
+        }
+      }
+    }
+
+
     $route_name = \Drupal::routeMatch()->getRouteName();
     if ($route_name == 'athena_smo.smo') {
       $attachments['#attached']['library'][] = 'athena_course/athena_course';
@@ -522,7 +534,7 @@ function athena_course_page_attachments(array &$attachments) {
       }
 
       $image = file_create_url($node->field_search_list_image->entity->getFileUri());
-      
+
       if (!empty($meta_tag_value)) {
         $attachments['#attached']['html_head'][] = [
           [
@@ -537,7 +549,7 @@ function athena_course_page_attachments(array &$attachments) {
           'keywords'
         ];
       }
-      
+
 
     }
 
