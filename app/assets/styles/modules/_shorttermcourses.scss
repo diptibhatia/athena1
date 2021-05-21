@@ -41,8 +41,8 @@
     text-align:center;
     .item{
         max-width: 274px;
-        box-shadow: 0 6px 15px 2px #d5dbfb;
-        background: #fff;
+        // box-shadow: 0 6px 15px 2px #d5dbfb;
+        // background: #fff;
         margin: 0 0px 20px 14px;
         padding: 0 0 10px;
         min-height: 480px;
@@ -192,6 +192,7 @@ overflow: hidden;
         .course-details{
             clear:both;
             padding:1.2rem;
+            height:297px;
             h3{
                 font-size:21.1px;
                     color:#303030; 
@@ -227,7 +228,6 @@ overflow: hidden;
             .button-area{
                 text-align: center;
                 position: absolute;
-                bottom: -60px;
                 left: 0;
                 button{
                     width: 196px;
