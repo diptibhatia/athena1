@@ -34,7 +34,10 @@ function athena_course_theme($existing, $type, $theme, $path) {
         'subscribed' => NULL
       ],
     ],
-
+    'rsu_ucam' => [
+      'variables' => [
+      ],
+    ],
     'short_term_course' => [
       'variables' => [
         'nodes' => NULL,

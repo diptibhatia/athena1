@@ -156,3 +156,13 @@ athena_course.website-newsletter-subscribe:
     _permission: 'access content'
   options:
     no_cache: TRUE
+
+athena_course.rsu-ucam:
+  path: '/rsu-ucam'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\RsuUcamController::index'
+    _title: 'RSU UCAM'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

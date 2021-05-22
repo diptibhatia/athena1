@@ -27,13 +27,14 @@ class WebsiteSubscribe extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $subscribed = 0;
     $cookie_name = "website_subscribe";
     if(isset($_COOKIE[$cookie_name])) {
-      return;
+      $subscribed = 1;
     }
-
     $template = [
-      '#theme' => 'website_subscribe_popup'
+      '#theme' => 'website_subscribe_popup',
+      '#subscribed' => $subscribed
     ];
     return array($template);
   }
