@@ -188,13 +188,7 @@
 
                 <div class="login-item">
                   <p>Mobile No *</p>
-                  <input
-                    type="Mobile"
-                    id="speak_email"
-                    name="Mobile"
-                    required=""
-                    placeholder="Mobile No"
-                  />
+                  <input id="phone" name="phone" required="required" placeholder="Mobile No" />
                 </div>
 
                 <div class="login-item">
@@ -203,15 +197,8 @@
                 </div>
 
                 <div class="button">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="speak_consent"
-                    name="speak_consent"
-                  />
-                  <label class="form-check-label txt-12" for="exampleCheck1">
-                    I Accept the <a href=""> Terms &conditions </a></label
-                  >
+                  <input type="checkbox" class="form-check-input" id="speak_consent" name="speak_consent">
+                  <label class="form-check-label txt-12" for="exampleCheck1">I Accept the <a href=""> Terms &conditions </a></label>
                   <button type="button" id="smo_form_submit">Submit</button>
                 </div>
               </form>
@@ -281,3 +268,130 @@
   </section>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+      jQuery("#smo_form_submit").click(function() {
+        var msg = '';
+        var regex = /^[a-zA-Z_ \.]*$/;
+
+        fname  = jQuery("#speak_first_name").val();
+
+        if(jQuery("#speak_first_name").val() == '') {
+          msg += '\n\u2022  Please enter first name';
+        }else if(!regex.test(jQuery("#speak_first_name").val())) {
+            msg += '\n\u2022  Please enter only alphabets for first name';
+        }else if(fname.length < 2 ) {
+          msg += '\n\u2022  Please enter atleast 2 characters for first name';
+        }else if(fname.length > 16 ) {
+          msg += '\n\u2022  Please do not enter more than 16 characters for first name';
+        }
+
+
+        lname  = jQuery("#speak_last_name").val();
+
+        if(jQuery("#speak_last_name").val() == '') {
+          msg += '\n\u2022  Please enter last name';
+        }else if(!regex.test(jQuery("#speak_last_name").val())) {
+            msg += '\n\u2022  Please enter only alphabets for last name';
+        }else if(lname.length < 2 ) {
+          msg += '\n\u2022  Please enter atleast 2 characters for last name';
+        }else if(lname.length > 16 ) {
+          msg += '\n\u2022  Last name should not be more than 16 characters';
+        }
+
+        var email = jQuery("#speak_email").val();
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if(email == '') {
+          msg += '\n\u2022  Email cannot be empty';
+        }else if(!regex.test(email)) {
+            msg += '\n\u2022  Invalid Email id';
+        }
+
+        var ph_num = jQuery("#phone").val();
+        var num_len = ph_num.length;
+
+        if(jQuery("#phone").val() == '') {
+          msg += '\n\u2022  Phone number cannot be empty';
+        }else if(num_len <6 || num_len >15) {
+          msg += '\n\u2022  Invalid Phone number';
+        }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+            msg += '\n\u2022  Invalid Phone number';
+        }
+
+        if(!jQuery("#speak_consent").prop('checked') == true){
+           msg += '\n\u2022  Please accept consent terms';
+        }
+
+        if(msg == ''){
+         var sendInfo = {
+            FirstName:String(jQuery("#speak_first_name").val()),
+            LastName:String(jQuery("#speak_last_name").val()),
+            Email:String(jQuery("#speak_email").val()),
+            ContactNo:String(jQuery("#phone").val()),
+          };
+
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(sendInfo),
+            dataType: 'json',
+            success: function (data, status, xhr) {
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+            }
+          });
+
+          var dataObj = {
+            'form_id': "Get in touch",
+            'fname': jQuery('#speak_first_name').val(),
+            'lname': jQuery('#speak_last_name"').val(),
+            'email': jQuery('#speak_email').val(),
+            'phone': jQuery('#phone').val()
+          };
+
+          jQuery.ajax(baseUrl + '/save/contact', {
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(dataObj),
+             dataType: 'json',
+            success: function (data, status, xhr) {
+                alert("Thank you for showing your interest. We will reach out to you shortly")
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+              if(jqXhr.status == 200) {
+                alert("Thank you for showing your interest. We will reach out to you shortly")
+
+              }
+            }
+          });
+
+          var mailinfo = {
+            'mail': jQuery('#speak_email').val(),
+            'fname': jQuery('#speak_first_name').val(),
+            'lname': jQuery('#speak_last_name').val(),
+            'phone': jQuery('#phone').val(),
+          };
+          initiateSendingMail('course_speak_to_advisor', mailinfo);
+
+          jQuery('#speak_first_name').val("");
+          jQuery('#speak_last_name').val("");
+          jQuery('#speak_email').val("");
+          jQuery('#phone').val("");
+          jQuery('#speak_consent').prop('checked', false);
+
+          return false;
+
+        } else {
+          alert(msg);
+          return false;
+        }
+      });
+  });
+
+</script>
