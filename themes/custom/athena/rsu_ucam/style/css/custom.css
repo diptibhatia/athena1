@@ -74,15 +74,16 @@ margin: 14px 21px 8px 5px;
 
 .p-10 {margin-top:10px;margin-bottom:10px}
 
-.bg-design{
-  background-image: url("../images/la-bg.jpg") ;
-  background-repeat:no-repeat;
+.bg-design {
+  background-image: url(../images/la-bg.jpg);
+  background-repeat: no-repeat;
   background-position: top;
-  background-size:cover;
-  margin-left: -100px;
-  margin-right: -70px;
+  background-size: cover;
+  margin-left: -102px;
+  margin-right: -71px;
   font-family: 'Montserrat', sans-serif;
 }
+
 @media only screen and (min-width: 1590px) {
 .container-fluid {
 
@@ -98,7 +99,33 @@ margin: 14px 21px 8px 5px;
     width: 1200px!important;
 }
 }
+@media (max-width: 699px){
+.course-login-wrapper .intl-tel-input.allow-dropdown input {
+     float: left !important;
+     margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+.course-login-wrapper {
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px #d5dbfb;
+    position: relative;
+    width: 345px;
+    height: 750px;
+    right: -15px;
+    z-index: 10;
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
 
+}
+@media screen and (max-width: 600px){
+.site-header .search-form {
+
+    width: 86%;
+    top: 70px;
+    left: -28px;
+}
+}
 @media only screen and (max-width: 768px) {
 .claim-european-mba  h1{
 	margin-top:92px;
@@ -115,9 +142,18 @@ width: 100%!important;}
 
 }
 
+.bg-design {
+  background-image: url(../images/la-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  margin-left: -16px;
+  margin-right: -15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .row {
-    margin-left: 15px!important;
-    margin-right: 15px!important;
+  display: block;
 }
 
 
@@ -146,7 +182,7 @@ width: 100%!important;}
 
 
 .sticky {
-top: 160px!important;
+top: 203px!important;
 
 width: 141px;
     padding: 4px 11px 3px 22px;
@@ -262,8 +298,8 @@ width: 141px;
   color: #303030;margin-top: 0px;
 }
 .inner-class .in-pink-bor {
- margin: 20px 0px 10px;
-  border: solid 2px #ff459a;width:200px;font-family: 'Lato', sans-serif;}
+  margin: 18px -390px 5px;
+  border-bottom: solid 2px #ff459a;width:200px;font-family: 'Lato', sans-serif;}
 
 .overview-points-card__container {
     display: flex;
@@ -320,7 +356,8 @@ width: 141px;
     box-shadow: 0 2px 25px 2px #d5dbfb;
     position: relative;
     width: 400px;
-    height: 700px;
+    height: 750px;
+    right: 0px;
     z-index: 10;
     background-color: #ffffff;font-family: 'Lato', sans-serif;
 }
@@ -357,7 +394,7 @@ font-family: 'Lato', sans-serif;
     width:35%;
 
     position: absolute;
-    top:73px;
+    top:60px;
 
     right: 10px;
 
