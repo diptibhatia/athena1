@@ -185,7 +185,7 @@
 
                 <div class="login-item">
                   <p>Mobile No *</p>
-                  <input id="phone" name="phone" required="required" placeholder="Mobile No" />
+                  <input id="contact_number" name="contact_number" required="required" placeholder="Mobile No" />
                 </div>
 
                 <div class="login-item">
@@ -308,14 +308,14 @@
             msg += '\n\u2022  Invalid Email id';
         }
 
-        var ph_num = jQuery("#phone").val();
+        var ph_num = jQuery("#contact_number").val();
         var num_len = ph_num.length;
 
-        if(jQuery("#phone").val() == '') {
+        if(jQuery("#contact_number").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }else if(num_len <6 || num_len >15) {
           msg += '\n\u2022  Invalid Phone number';
-        }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+        }else if(!jQuery('#contact_number').val().match(/^[0-9]+$/)) {
             msg += '\n\u2022  Invalid Phone number';
         }
 
@@ -328,7 +328,7 @@
             FirstName:String(jQuery("#speak_first_name").val()),
             LastName:String(jQuery("#speak_last_name").val()),
             Email:String(jQuery("#speak_email").val()),
-            ContactNo:String(jQuery("#phone").val()),
+            ContactNo:String(jQuery("#contact_number").val()),
           };
 
           jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
@@ -346,9 +346,9 @@
           var dataObj = {
             'form_id': "Get in touch",
             'fname': jQuery('#speak_first_name').val(),
-            'lname': jQuery('#speak_last_name"').val(),
+            'lname': jQuery('#speak_last_name').val(),
             'email': jQuery('#speak_email').val(),
-            'phone': jQuery('#phone').val()
+            'phone': jQuery('#contact_number').val()
           };
 
           jQuery.ajax(baseUrl + '/save/contact', {
@@ -358,11 +358,11 @@
             data: JSON.stringify(dataObj),
              dataType: 'json',
             success: function (data, status, xhr) {
-                alert("Thank you for showing your interest. We will reach out to you shortly")
+                alert("Thank you for showing your interest. We will reach out to you shortly.")
             },
             error: function (jqXhr, textStatus, errorMessage) {
               if(jqXhr.status == 200) {
-                alert("Thank you for showing your interest. We will reach out to you shortly")
+                alert("Thank you for showing your interest. We will reach out to you shortly.")
 
               }
             }
@@ -372,14 +372,14 @@
             'mail': jQuery('#speak_email').val(),
             'fname': jQuery('#speak_first_name').val(),
             'lname': jQuery('#speak_last_name').val(),
-            'phone': jQuery('#phone').val(),
+            'phone': jQuery('#contact_number').val(),
           };
           initiateSendingMail('course_speak_to_advisor', mailinfo);
 
           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
-          jQuery('#phone').val("");
+          jQuery('#contact_number').val("");
           jQuery('#speak_consent').prop('checked', false);
 
           return false;
