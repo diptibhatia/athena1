@@ -141,13 +141,16 @@ width: 100%!important;}
     width: 227px!important;
 
 }
-
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 61%;
+}
 .bg-design {
   background-image: url(../images/la-bg.jpg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  margin-left: -16px;
+  margin-left: -15px;
   margin-right: -15px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -181,6 +184,7 @@ width: 100%!important;}
 
 
 
+
 .sticky {
 top: 203px!important;
 
@@ -188,7 +192,7 @@ width: 141px;
     padding: 4px 11px 3px 22px;
     background-color: #ffcc00;
     position: absolute;
-    right: 0;
+    right: -476px;
     display: block;
     text-align: left;
     border-top-left-radius: 50px;
@@ -702,17 +706,17 @@ background-color: #ffffff;min-height:50px}
 }
 
 
-.sticky {top:130px;width:150px;
-    padding: 4px 18px 3px 26px;
-
-    background-color: #ffcc00;
-    position: absolute;
-   right:0;
-    display: block;
-    text-align: left;border-top-left-radius:50px;border-bottom-left-radius:50px;
-
-
-
+.sticky {
+  top: 165px;
+  width: 150px;
+  padding: 4px 18px 3px 26px;
+  background-color: #ffcc00;
+  position: absolute;
+  right: -25px;
+  display: block;
+  text-align: left;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 .sticky h6{ font-family: Montserrat;
@@ -752,4 +756,213 @@ font-size: 16px;
   color: #182b4f;opacity: 0.3;font-size: 16px;
 }
 
+
+
+/* .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  flex-direction: row;
+} */
+
+/* .sticky {
+  top: 165px;
+  width: 150px;
+  padding: 4px 18px 3px 26px;
+  background-color: #ffcc00;
+  position: absolute;
+  right: -476px;
+  display: block;
+  text-align: left;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+} */
+
+@media only screen and (width: 360px) {
+  .sticky {
+    top: 165px;
+    width: 150px;
+    padding: 4px 18px 3px 26px;
+    background-color: #ffcc00;
+    position: absolute;
+    right: -62px;
+    display: block;
+    text-align: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+}
+.bg-design {
+  background-image: url(../images/la-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  margin-left: -15px;
+  margin-right: -40px;
+  font-family: 'Montserrat', sans-serif;
+}
+.site-header__menu-icon {
+  width: 26px;
+  height: 19px;
+  position: absolute;
+  right: -38px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+}
+
+@media only screen and (width: 411px) {
+  .sticky {
+    top: 165px;
+    width: 150px;
+    padding: 4px 18px 3px 26px;
+    background-color: #ffcc00;
+    position: absolute;
+    right: 2px;
+    display: block;
+    text-align: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+}
+.bg-design {
+  background-image: url(../images/la-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  margin-left: -16px;
+  margin-right: -15px;
+  font-family: 'Montserrat', sans-serif;
+}
+}
+@media only screen and (width: 414px) {
+  .sticky {
+    top: 165px;
+    width: 150px;
+    padding: 4px 18px 3px 26px;
+    background-color: #ffcc00;
+    position: absolute;
+    right: 2px;
+    display: block;
+    text-align: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+}
+}
+@media only screen and(width:375px){
+  .bg-design {
+    background-image: url(../images/la-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin-left: -16px;
+    margin-right: -16px;
+    font-family: 'Montserrat', sans-serif;
+}
+}
+@media only screen and (width: 768px ){
+
+  .course-login-wrapper {
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px #d5dbfb;
+    position: relative;
+    width: 475px;
+    height: 750px;
+    right: -106px;
+    z-index: 10;
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+  }
+  .col-md-4 {
+    flex: 0 0 33.33333%;
+    max-width: 136.33333%;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+.bg-design {
+  background-image: url(../images/la-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  margin-left: -38px;
+  margin-right: -38px;
+  font-family: 'Montserrat', sans-serif;
+}
+.sticky {
+  top: 165px;
+  width: 150px;
+  padding: 4px 18px 3px 26px;
+  background-color: #ffcc00;
+  position: absolute;
+  right: -22px;
+  display: block;
+  text-align: left;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+}
+@media only screen and (width: 1024px ){
+
+  .course-login-wrapper {
+    border-radius: 6px;
+    box-shadow: 0 2px 25px 2px #d5dbfb;
+    position: relative;
+    width: 475px;
+    height: 750px;
+    right: -106px;
+    z-index: 10;
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+  }
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 30%;
+}
+.col-md-4 {
+  flex: 0 0 33.33333%;
+  max-width: 0.33333%;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+.bg-design {
+  background-image: url(../images/la-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  margin-left: -47px;
+  margin-right: -414px;
+  font-family: 'Montserrat', sans-serif;
+}
+.sticky {
+  top: 165px;
+  width: 150px;
+  padding: 4px 18px 3px 26px;
+  background-color: #ffcc00;
+  position: absolute;
+  right: -397px;
+  display: block;
+  text-align: left;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+}
 
