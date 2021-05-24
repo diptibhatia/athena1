@@ -18,7 +18,8 @@
     &__logo {
         width: 95px;
         margin-right: 1rem;
-
+        position: relative;
+        z-index: 1003;
         img {
             width: 100%;
             display: inline-block;
@@ -42,10 +43,13 @@
     .search-form {
         margin: 0 30px;
         @media screen and (max-width:600px) {
-            position:fixed;
-            width: 94%;
-            top: 70px;
-            left: -20px; 
+            position: absolute;
+    width: auto;
+    top: 0px;
+            left: -142px;
+            background: #fff;
+            height: 130px;
+            z-index: 1001; 
         }
         
         .search-courses {
@@ -54,11 +58,15 @@
           border-radius: 4px;
           background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
           padding-top: 7px;
-          display: inline-block;
+          display: inline-block; 
           position: absolute;
-          right:2px;
-          top:2px;
-          text-align: center;
+         right: 2px;
+         top: 6px;
+         text-align: center;
+
+    @media screen and (max-width:600px) { 
+        top:72px; 
+    }
           img {
             width: 28px;
             height: 28px;
@@ -82,6 +90,8 @@
         border-radius: 5px; 
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
         background-color: #ffffff;
+        position: relative;
+        top: 4px;
       }
 
       i {
