@@ -121,7 +121,7 @@ margin: 14px 21px 8px 5px;
 @media screen and (max-width: 600px){
 .site-header .search-form {
 
-    width: 86%;
+    width: 100%;
     top: 70px;
     left: -28px;
 }
@@ -712,7 +712,7 @@ background-color: #ffffff;min-height:50px}
   padding: 4px 18px 3px 26px;
   background-color: #ffcc00;
   position: absolute;
-  right: -25px;
+  right: -476px;
   display: block;
   text-align: left;
   border-top-left-radius: 50px;
@@ -965,4 +965,36 @@ font-size: 16px;
 }
 
 }
+
+@media only screen and (width: 540px ){
+
+  .sticky {
+    top: 165px;
+    width: 150px;
+    padding: 4px 18px 3px 26px;
+    background-color: #ffcc00;
+    position: absolute;
+    right: 0px;
+    display: block;
+    text-align: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+}
+@media only screen and (width: 280px ){
+
+  .sticky {
+    top: 165px;
+    width: 150px;
+    padding: 4px 18px 3px 26px;
+    background-color: #ffcc00;
+    position: absolute;
+    right: -120px;
+    display: block;
+    text-align: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+}
+
 
