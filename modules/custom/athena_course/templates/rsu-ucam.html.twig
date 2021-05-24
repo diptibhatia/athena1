@@ -329,9 +329,10 @@
             LastName:String(jQuery("#speak_last_name").val()),
             Email:String(jQuery("#speak_email").val()),
             ContactNo:String(jQuery("#contact_number").val()),
+            BU:"RSU"
           };
 
-          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContact', {
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
