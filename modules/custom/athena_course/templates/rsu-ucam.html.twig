@@ -270,6 +270,9 @@
 
 <script type="text/javascript">
   jQuery(document).ready(function() {
+      jQuery('.top-gap').remove();
+      jQuery('.main-wrapper .bg-white').removeClass('pt-4');
+      jQuery('.all-courses').remove();
       jQuery("#smo_form_submit").click(function() {
         var msg = '';
         var regex = /^[a-zA-Z_ \.]*$/;
