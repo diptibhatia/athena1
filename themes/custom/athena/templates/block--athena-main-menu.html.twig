@@ -46,12 +46,13 @@ border-radius: 5px;
 padding: 0 9px;
 height: 35px;
 justify-content: space-evenly;
-align-items: center;box-sizing: border-box;">
+align-items: center; box-sizing: border-box;">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle explore-btn" href="#" data-toggle="dropdown"
-            style="color:white;font-weight: bold;font-family: 'lato';"> Explore <i class="fa fa-angle-down mr-1 ml-3"></i> </a>
-            
-  <!-- <ul class="dropdown-menu">
+            style="color:white;font-weight: bold;font-family: 'lato';"> Explore <i
+              class="fa fa-angle-down mr-1 ml-3"></i> </a>
+
+          <!-- <ul class="dropdown-menu">
     <li>
       <a class="dropdown-item" href="{{url('<front>')}}academic-program"> <img
           src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic
@@ -160,10 +161,13 @@ align-items: center;box-sizing: border-box;">
     </div> <!-- navbar-collapse.// -->
 
     <div class="collapse navbar-collapse" id="search_nav" style="flex-basis:auto;">
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#search_nav" aria-expanded="true">
+      <img src="/themes/custom/athena/images/close.svg" alt="close" style="width: 36px;">
+    </button>
       <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc"
         method="POST">
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
-         
+
         <input type="hidden" name="submit_form">
         <a class="search-courses" href="javascript:;" onClick="document.getElementById('course-search--form').submit()">
           <img src="/themes/custom/athena/images/search.svg" alt="search"></a>
@@ -171,7 +175,7 @@ align-items: center;box-sizing: border-box;">
     </div>
 
     <button class="navbar-toggler ml-4" type="button" data-toggle="collapse" data-target="#search_nav">
-      <img src="/themes/custom/athena/images/search.svg" alt="search" style="width: 36px;"></a>
+      <img src="/themes/custom/athena/images/search.svg" alt="search" style="width: 36px;">
     </button>
   </nav>
 </div>
