@@ -79,28 +79,28 @@ margin: 14px 21px 8px 5px;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  width: 154%;
-   position: relative;
-  font-family: 'Montserrat', sans-serif;
-  margin-left: -15px;
-  margin-top: 31px;
+  width: 100%;
+  position: relative;
+  font-family: 'Montserrat', sans-serif; 
+  margin-top: 20px;
 }
+.bg-design .row {width:auto;}
 /* .get {
   flex: 0 0 100%;
   max-width: 100%;
   margin-left: 60px;
   margin-right: auto;
-} */
+} 
 @media only screen and (min-width: 1590px) {
 .container-fluid {
      width: 100%;
-    /* padding-left: 200px;
-    padding-right: 200px; */
+    padding-left: 200px;
+    padding-right: 200px; 
     margin-right:0;
     margin-left:0;
 
 }
-}
+}*/
 @media (min-width: 992px){
 .col-lg-8 {
     flex: 0 0 66.66667%;
@@ -155,7 +155,8 @@ margin: 14px 21px 8px 5px;
 @media only screen and (max-width: 768px) {
 .claim-european-mba  h1{
 	margin-top:92px;
-  font-size: 20px!important;width:100%!important;
+  font-size: 20px!important;
+  width:100%!important;
   line-height: normal;
     font-family: 'Montserrat', sans-serif;
 	  line-height: 28px;
@@ -171,14 +172,7 @@ width: 100%!important;}
   flex: 0 0 25%;
   max-width: 25%;
 }
-.bg-design {
-  background-image: url(../images/la-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: top;
-  margin-top :31px;
-  background-size: cover;
-  font-family: 'Montserrat', sans-serif;
-}
+
 
 /* .row {
   display: flex;
@@ -196,11 +190,11 @@ width: 100%!important;}
 
     padding-top: 60px;
 }
-
+/* 
 .claim-european-mba {
 
     padding-left: 15px;
-}
+} */
 .border-l {
     border-left: 0px solid #fff!important;
     padding-left: 0px!important;
@@ -217,13 +211,12 @@ width: 100%!important;}
 
 
 .sticky {
-  top: 44px;
+  top: 70px;
   width: 150px;
   padding: 4px 18px 3px 26px;
   background-color: #ffcc00;
   position: absolute;
   right: 0px;
-  float:right;
   display: block;
   text-align: left;
   border-top-left-radius: 50px;
@@ -437,9 +430,9 @@ font-family: 'Lato', sans-serif;
 
     border-top: solid 4px #ff459a;
 }
-.banner-top{
+/* .banner-top{
   width:fit-content;
-}
+} */
 
 .course-login-wrapper .login-details p {
     font-size: 1rem;
@@ -550,7 +543,7 @@ font-family: 'Lato', sans-serif;
 .bg-ash{
 background-color: #f4f8fa;
 padding:60px 0;
-width: 152%;
+width: 100%;
 }
 .bg-ash .bor3-pink{
   border: solid 2px #ff459a;width:100px}
@@ -767,9 +760,10 @@ background-color: #ffffff;min-height:50px}
 	text-align:left;
 
 }
+
+.course-login-wrapper { right: 80px; }
+
 /* 
-
-
 .footer-bottom p{   font-size: 12px;
   font-weight: 500;
   font-stretch: normal;
