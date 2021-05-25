@@ -1,3 +1,8 @@
+{# <link
+  rel="stylesheet"
+  type="text/css"
+  href="/themes/custom/athena/rsu_ucam/style/css/bootstrap.min.css"
+/> #}
 <link
   rel="stylesheet"
   type="text/css"
@@ -6,7 +11,8 @@
 
 
 
-<div class="sticky"><h6>RSU-UCAM Dual Degree</h6></div>
+
+
 
 <div class="content-wrapper">
   <div class="banner-top" role="navigation">
@@ -25,8 +31,12 @@
   <!--/.navbar -->
 
   <div class="bg-design">
+<div class="sticky"><h6>RSU-UCAM Dual Degree</h6></div>
     <div class="container-fluid">
+
+
       <div class="col-md-6 claim-european-mba">
+
         <img
           src="/themes/custom/athena/rsu_ucam/style/images/logo-rsu.svg"
           class="img-res"
@@ -329,10 +339,9 @@
             LastName:String(jQuery("#speak_last_name").val()),
             Email:String(jQuery("#speak_email").val()),
             ContactNo:String(jQuery("#contact_number").val()),
-            BU:"RSU"
           };
 
-          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContact', {
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
