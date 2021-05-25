@@ -284,10 +284,10 @@ width: 100%!important;}
  margin-top: 50px ;font-family: 'Lato', sans-serif;
 }
 
-.sec2 {  width:55%;display:inline-block;padding-bottom:15px}
+.sec2 {  width:60%;display:inline-block;padding-bottom:15px}
 
 .pl-30 {    padding-left: 30px;}
-.pl-b30 {    padding-left: 34px;border-left:1px solid #eee;  min-height: 674px;}
+.pl-b30 {    padding-left: 30px;border-left:1px solid #eee;  min-height: 674px;}
 
 .sec2 h4{
    font-family: 'Lato', sans-serif;
@@ -761,7 +761,7 @@ background-color: #ffffff;min-height:50px}
 
 }
 
-.course-login-wrapper { right: 80px; }
+.course-login-wrapper { right: 60px; }
 
 /* 
 .footer-bottom p{   font-size: 12px;
