@@ -372,7 +372,7 @@
           });
 
           var dataObj = {
-            'form_id': "Get in touch",
+            'form_id': "RSU UCAM",
             'fname': jQuery('#speak_first_name').val(),
             'lname': jQuery('#speak_last_name').val(),
             'email': jQuery('#speak_email').val(),
@@ -395,14 +395,6 @@
               }
             }
           });
-
-          var mailinfo = {
-            'mail': jQuery('#speak_email').val(),
-            'fname': jQuery('#speak_first_name').val(),
-            'lname': jQuery('#speak_last_name').val(),
-            'phone': jQuery('#contact_number').val(),
-          };
-          initiateSendingMail('course_speak_to_advisor', mailinfo);
 
           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
