@@ -85,7 +85,12 @@ margin: 14px 21px 8px 5px;
   margin-left: -15px;
   margin-top: 31px;
 }
-
+.get {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-left: 60px;
+  margin-right: auto;
+}
 @media only screen and (min-width: 1590px) {
 .container-fluid {
      width: 100%;
@@ -128,15 +133,15 @@ margin: 14px 21px 8px 5px;
     padding-left: 0px !important;
 }
 .course-login-wrapper {
-    border-radius: 6px;
-    box-shadow: 0 2px 25px 2px #d5dbfb;
-    position: relative;
-    width: 345px;
-    height: 750px;
-    right: -15px;
-    z-index: 10;
-    background-color: #ffffff;
-    font-family: 'Lato', sans-serif;
+  border-radius: 6px;
+  box-shadow: 0 2px 25px 2px #d5dbfb;
+  position: relative;
+  width: 416px;
+  height: 750px;
+  right: -21px;
+  z-index: 10;
+  background-color: #ffffff;
+  font-family: 'Lato', sans-serif;
 }
 
 }
@@ -188,8 +193,6 @@ width: 100%!important;}
   max-width: 0;
 }
 
-
-
 .pl-30 {
 
     padding-top: 60px;
@@ -215,7 +218,7 @@ width: 100%!important;}
 
 
 .sticky {
-  top: 165px;
+  top: 44px;
   width: 150px;
   padding: 4px 18px 3px 26px;
   background-color: #ffcc00;
@@ -385,16 +388,16 @@ width: 100%!important;}
 }
 
 /* form */
-
 .course-login-wrapper {
-    border-radius: 6px;
-    box-shadow: 0 2px 25px 2px #d5dbfb;
-    position: relative;
-    width: 500px;
-    height: 750px;
-    right: -150px;
-    z-index: 10;
-    background-color: #ffffff;font-family: 'Lato', sans-serif;
+  border-radius: 6px;
+  box-shadow: 0 2px 25px 2px #d5dbfb;
+  position: relative;
+  width: 416px;
+  height: 750px;
+  right: -21px;
+  z-index: 10;
+  background-color: #ffffff;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -741,7 +744,7 @@ background-color: #ffffff;min-height:50px}
 
 
 .sticky {
-  top: 165px;
+  top: 44px;
   width: 150px;
   padding: 4px 18px 3px 26px;
   background-color: #ffcc00;
