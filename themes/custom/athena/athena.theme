@@ -21,7 +21,7 @@ function athena_preprocess_block(array &$variables) {
     $bundle='course';
     $academic = get_course_nav_items('Academic');
     $certifications = get_course_nav_items('Certifications');
-   
+
     foreach($universityData as $univNid) {
       $univNodeData = Node::load($univNid);
       $logoPath = file_create_url($univNodeData->get('field_logo')->entity->uri->value);
@@ -186,7 +186,7 @@ function athena_preprocess_block(array &$variables) {
     $query->condition('status', 1);
     $query->condition('type', $bundle);
     $entity_ids = $query->execute();
-    
+
     $node = array();
 
     if(!empty($entity_ids)) {
@@ -352,6 +352,12 @@ function athena_preprocess_page(&$variables) {
     $variables['include_static_links'] = TRUE;
   }
 
+  if (strpos($current_path, '/rsu-ucam') !== false) {
+    $variables['athena_exclude'] = TRUE;
+    $variables['exclude_footer'] = TRUE;
+    $variables['include_static_links'] = TRUE;
+  }
+
   if (strpos($current_path, '/university') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
@@ -359,11 +365,11 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
 
-  
+
   if (strpos($current_path, '/webform/contact_us') !== false) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
-    $variables['include_static_links'] = TRUE;    
+    $variables['include_static_links'] = TRUE;
   }
 
   if (strpos($current_path, '/webform/contact_us/confirmation') !== false) {
@@ -503,34 +509,34 @@ $variables['enable_popup'] = FALSE;
  }
 }
 
-function athena_preprocess_views_view_field(&$variables) { 
+function athena_preprocess_views_view_field(&$variables) {
 
   $view = $variables['view'];
 
-  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' ) {    
-    if($variables['field']->field == 'nid') {      
+  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' ) {
+    if($variables['field']->field == 'nid') {
       $my_field_value = $variables['field']->getValue($variables['row']);
-      $entity_a = Node::load($my_field_value);      
+      $entity_a = Node::load($my_field_value);
       $variables['read_time']  = get_read_time($entity_a);
 
         $my_altered_value = $entity_a->getTitle();
         $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
-    }    
-         
+    }
+
   }
-   
-    if($view->id() == 'insights_all') {   
+
+    if($view->id() == 'insights_all') {
      if($variables['field']->field == 'read_time') {
         $entity = $variables['row']->_entity;
         $my_altered_value = $entity->getTitle();
         $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
 
-        //$variables['my_title'] = $my_altered_value;        
-     }     
-  }   
-    
+        //$variables['my_title'] = $my_altered_value;
+     }
+  }
+
   if($view->id() == 'insight_interview_view') {
      if($variables['field']->field == 'field_interview_min_read') {
         $entity = $variables['row']->_entity;
@@ -538,18 +544,18 @@ function athena_preprocess_views_view_field(&$variables) {
         //$variables['my_title'] = $my_altered_value;
         $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
-     }  
-     
+     }
+
      if($variables['field']->field == 'read_time') {
       $entity = $variables['row']->_entity;
       $my_altered_value = $entity->getTitle();
       //$variables['my_title'] = $my_altered_value;
       $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
-   }     
-  }   
-    
-  if($view->id() == 'insights_book_review' || $view->id() == 'insights_press_release' || 
+   }
+  }
+
+  if($view->id() == 'insights_book_review' || $view->id() == 'insights_press_release' ||
     $view->id() == 'insight_news' || $view->id() == 'insight_blogs' ) {
      if($variables['field']->field == 'field_insight_article_min_read') {
         $entity = $variables['row']->_entity;
@@ -558,17 +564,17 @@ function athena_preprocess_views_view_field(&$variables) {
         //$variables['my_title'] = $my_altered_value;
         $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
-     }  
-     
+     }
+
      if($variables['field']->field == 'read_time') {
       $entity = $variables['row']->_entity;
       $my_altered_value = $entity->getTitle();
       //$variables['my_title'] = $my_altered_value;
       $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $my_altered_value);
 
-   } 
+   }
   }
-  
+
 }
 
 function athena_form_alter(&$form, $form_state, $form_id) {
@@ -582,7 +588,7 @@ function athena_preprocess_field(&$variables) {
 
   if ($variables['element']['#entity_type'] === 'node') {
     $node = $variables['element']['#object'];
-    $nid = $node->id();    
+    $nid = $node->id();
     $variables['comment_nid'] = $nid;
     $stats = \Drupal::service('comment.statistics')->read(array_fill_keys([$nid], ''), 'node');
     if ($stats[0]->comment_count == "" ) $stats[0]->comment_count = 0;
@@ -597,7 +603,7 @@ function athena_preprocess_links(&$variables) {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_id = $node->id();
-      $variables['curr_nid'] = $node_id; 
+      $variables['curr_nid'] = $node_id;
       $title = $node->getTitle();
       $variables['my_title'] = str_replace( array( '\'', '"', ',' , ';', '<', '>', '&' ), ' ', $title);
     }
@@ -606,16 +612,16 @@ function athena_preprocess_links(&$variables) {
 
 function athena_preprocess_html(&$variables)
 {
-    
-  $route_name = \Drupal::routeMatch()->getRouteName();   
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
     // Custom meta tags on smo and course pages.
     if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
       $possible_parameters = \Drupal::routeMatch()->getParameters();
       $possible_parameters_obj = $possible_parameters->all();
       $nid = $possible_parameters_obj['nid'];
-      $node = Node::load($nid);           
+      $node = Node::load($nid);
       $course_category = $node->get('field_course_category')->value;
-      
+
       if ($course_category == 'Academic') {
         $field1 = 'field_course_page_meta_tag';
         $field2 = 'field_course_page_meta_descripti';
@@ -629,7 +635,7 @@ function athena_preprocess_html(&$variables)
       $meta_tag_value = $node->get($field1)->value;
       $meta_tag_desc = $node->get($field2)->value;
       $meta_tag_keywords = array();
-      
+
       $variables['head_title'] = $meta_tag_value;
 
       foreach ($node->{$field3}->getValue() as $value) {
@@ -643,7 +649,7 @@ function athena_preprocess_html(&$variables)
 
             $title = [
                 '#tag' => 'meta',
-                '#attributes' => [                    
+                '#attributes' => [
                     'property' => 'og:title',
                     'content' => $meta_tag_value,
                 ],
@@ -657,7 +663,7 @@ function athena_preprocess_html(&$variables)
             ];
 
             $image = file_create_url($node->field_search_list_image->entity->getFileUri());
-      
+
             $image = [
                 '#tag' => 'meta',
                 '#attributes' => [
@@ -667,14 +673,14 @@ function athena_preprocess_html(&$variables)
             ];
 
 
-            $variables['page']['#attached']['html_head'][] = [$title, 'title'];            
+            $variables['page']['#attached']['html_head'][] = [$title, 'title'];
             $variables['page']['#attached']['html_head'][] = [$description, 'description'];
             $variables['page']['#attached']['html_head'][] = [$image, 'image'];
-      
+
     }
 
-    
-    
+
+
     // Insights discussion forum
     $page_params = \Drupal::request()->query->all();
     if(is_array($page_params) && !empty($page_params)) {
@@ -684,24 +690,24 @@ function athena_preprocess_html(&$variables)
         $client_detal = \Drupal::service('http_client_factory')->fromOptions([
           'base_uri' => $end_url,
         ]);
-    
+
         $response_detail = $client_detal->get('discussions/'.$discussion_id);
         $discussion = Json::decode($response_detail->getBody());
-       
+
         $meta_tag_value = $discussion['data']['title'];
         $meta_tag_desc =  strip_tags($discussion['data']['description']);
-        
+
         $title = [
             '#tag' => 'meta',
-            '#attributes' => [                    
+            '#attributes' => [
                 'property' => 'og:title',
                 'content' => $meta_tag_value,
             ],
         ];
-        
+
       $og_desc = [
           '#tag' => 'meta',
-          '#attributes' => [                    
+          '#attributes' => [
               'property' => 'og:description',
               'content' => $meta_tag_desc,
           ],
