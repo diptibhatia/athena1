@@ -108,10 +108,17 @@ margin: 14px 21px 8px 5px;
 @media (min-width: 1250px){
 .container {
   max-width: 100%;
-  padding-left: 200px;
+  /* padding-left: 200px; */
   padding-right: 200px;
   margin-right:0;
   margin-left:0;
+}
+.container2 {
+  max-width: 100%;
+  padding-left: 200px;
+  padding-right: 200px;
+  margin-right: 0;
+  margin-left: 0;
 }
 }
 @media (max-width: 699px){
@@ -158,7 +165,7 @@ width: 100%!important;}
 }
 .col-md-3 {
   flex: 0 0 25%;
-  max-width: 61%;
+  max-width: 25%;
 }
 .bg-design {
   background-image: url(../images/la-bg.jpg);
@@ -171,7 +178,11 @@ width: 100%!important;}
 
 .row {
   display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 76px;
 }
+
 .col-lg-8 {
   flex: 0 ;
   max-width: 0;
@@ -308,7 +319,7 @@ width: 100%!important;}
   color: #ff459a;
 }
 .inner-class2 {
-  padding: 30px 0 0 182px;
+  padding: 30px 0 0 0;
   font-family: 'Lato', sans-serif;
 }
 .inner-class2 h3 {
