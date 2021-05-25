@@ -107,13 +107,13 @@ margin: 14px 21px 8px 5px;
      max-width: 66.66667%;
 }
 }
-.nopadding{    padding-right: 0px;
-    padding-left: 0px;}
+/* .nopadding{    padding-right: 0px;
+    padding-left: 0px;} */
 
-@media (min-width: 1250px){
+/* @media (min-width: 1250px){
 .container {
   max-width: 100%;
-  /* padding-left: 200px; */
+  // padding-left: 200px;
   padding-right: 200px;
   margin-right:0;
   margin-left:0;
@@ -125,7 +125,7 @@ margin: 14px 21px 8px 5px;
   margin-right: 0;
   margin-left: 0;
 }
-}
+} */
 @media (max-width: 699px){
 .course-login-wrapper .intl-tel-input.allow-dropdown input {
      float: left !important;
@@ -147,7 +147,6 @@ margin: 14px 21px 8px 5px;
 }
 @media screen and (max-width: 600px){
 .site-header .search-form {
-
     width: 100%;
     top: 70px;
     left: -28px;
@@ -181,12 +180,12 @@ width: 100%!important;}
   font-family: 'Montserrat', sans-serif;
 }
 
-.row {
+/* .row {
   display: flex;
   flex-wrap: wrap;
   margin-right: 0px;
   margin-left: 76px;
-}
+} */
 
 .col-lg-8 {
   flex: 0 ;
@@ -621,7 +620,7 @@ font-family: 'Lato', sans-serif;
 
   }
 
-
+/* 
 
 	.footer { background-color:#f7f8fe;padding-top:80px;padding-bottom:40px;}
 
@@ -634,7 +633,7 @@ font-family: 'Lato', sans-serif;
     z-index: 9;
     padding: 10px 0;
 
-}
+} */
 
 
 .athena-des-footer {padding-top:20px;padding-bottom:20px;}
@@ -649,7 +648,7 @@ font-family: 'Lato', sans-serif;
 
 .halfcontainer {display:inline-block;width:40%;vertical-align: top;}
 .halfcontainer1 {display:inline-block;width:59%;vertical-align: top;}
-.footer p  {
+/* .footer p  {
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -670,7 +669,7 @@ font-family: 'Lato', sans-serif;
   line-height: normal;
   letter-spacing: normal;
   color: #8b00d4;margin-top:30px;background-color:#eff1fe;
-}
+} */
 .news-letter input.form-control{
  border-radius: 6px;
   border: solid 1px rgba(151, 151, 151, 0.18);
@@ -678,7 +677,7 @@ background-color: #ffffff;min-height:50px}
 
 .form-check-label a {color:#ff026f;text-decoration:underline}
 
-
+/* 
 
 .footer p a {
     line-height: 3.14;
@@ -687,7 +686,7 @@ background-color: #ffffff;min-height:50px}
 .footer p a {
     line-height: 3.14;
     color: #303030;
-}
+} */
   .left-barbg {
   border-radius: 6px;
   box-shadow: 0 2px 25px 2px rgba(213, 219, 251, 0.67);
@@ -768,7 +767,7 @@ background-color: #ffffff;min-height:50px}
 	text-align:left;
 
 }
-
+/* 
 
 
 .footer-bottom p{   font-size: 12px;
@@ -778,7 +777,7 @@ background-color: #ffffff;min-height:50px}
   line-height: 1.92;
   letter-spacing: normal;
   color: #ffffff;text-align:center;
-}
+} */
 
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
