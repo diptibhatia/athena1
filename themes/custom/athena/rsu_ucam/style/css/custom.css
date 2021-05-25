@@ -85,12 +85,12 @@ margin: 14px 21px 8px 5px;
   margin-left: -15px;
   margin-top: 31px;
 }
-.get {
+/* .get {
   flex: 0 0 100%;
   max-width: 100%;
   margin-left: 60px;
   margin-right: auto;
-}
+} */
 @media only screen and (min-width: 1590px) {
 .container-fluid {
      width: 100%;
