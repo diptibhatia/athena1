@@ -198,7 +198,7 @@ class AthenaCourseController {
       }
 
       $fee_pay_per = $node->get('field_course_fee_pay_per')->value;
-      if(empty($fee_pay_per)) $fee_pay_per = 'Pay Per Module';
+      if(empty($fee_pay_per)) $fee_pay_per = '';
 
 
       $testibundle='testimonials';
@@ -487,7 +487,7 @@ $banner_block =  [
 ];
 
 $fee_pay_per = $node->get('field_course_fee_pay_per')->value;
-if(empty($fee_pay_per)) $fee_pay_per = 'Pay Per Module';
+if(empty($fee_pay_per)) $fee_pay_per = '';
 
 
 $testibundle='testimonials';
