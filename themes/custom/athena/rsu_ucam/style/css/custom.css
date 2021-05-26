@@ -12,7 +12,7 @@
     letter-spacing: normal;
     color: #2f2f2f;
     font-family: 'Montserrat', sans-serif;
-    padding-left: 0;
+    
 }
 .img-res{width:370px;margin-top:19px}
 
@@ -34,7 +34,8 @@
     margin-bottom: 10px;
 }
 .claim-european-mba  h1{
- padding: 0px 9px 7px 6px;background-color: #ffcc00;font-size:42px;width:600px;font-weight:600;    margin-bottom: 30px;  font-family: 'Montserrat', sans-serif;
+ padding: 0px 9px 7px 6px;
+ background-color: #ffcc00; font-size:42px; width:600px; font-weight:600; margin-bottom: 30px;  font-family: 'Montserrat', sans-serif;
 }
 .claim-european-mba h2 {
   font-size: 65px;
@@ -126,26 +127,20 @@ margin: 14px 21px 8px 5px;
   margin-left: 0;
 }
 } */
-@media (max-width: 699px){
-.course-login-wrapper .intl-tel-input.allow-dropdown input {
+
+.intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=tel] { 
+  padding-left: 115px !important;
+  padding-right: 0!important;
+}
+
+@media screen and (max-width: 800px) {
+/* .course-login-wrapper .intl-tel-input.allow-dropdown input {
      float: left !important;
      margin-left: 0px !important;
     padding-left: 0px !important;
-}
-.course-login-wrapper {
-  border-radius: 6px;
-  box-shadow: 0 2px 25px 2px #d5dbfb;
-  position: relative;
-  width: 419px;
-  height: 750px;
-  right: 102px;
-  z-index: 10;
-  background-color: #ffffff;
-  font-family: 'Lato', sans-serif;
-}
+}  */
+.claim-european-mba { padding-left: 0; }
 
-}
-@media screen and (max-width: 600px){
 .site-header .search-form {
     width: 100%;
     top: 70px;
@@ -166,15 +161,14 @@ margin: 14px 21px 8px 5px;
 width: 100%!important;}
 .img-res {
     width: 227px!important;
-
 }
-.col-md-3 {
+/*.col-md-3 {
   flex: 0 0 25%;
   max-width: 25%;
 }
 
 
-/* .row {
+ .row {
   display: flex;
   flex-wrap: wrap;
   margin-right: 0px;
@@ -287,8 +281,11 @@ width: 100%!important;}
 .sec2 {  width:60%;display:inline-block;padding-bottom:15px}
 
 .pl-30 {    padding-left: 30px;}
-.pl-b30 {    padding-left: 30px;border-left:1px solid #eee;  min-height: 674px;}
+.pl-b30 {    padding-left: 30px; border-left:1px solid #eee;  /*min-height: 674px;*/}
+@media screen and (max-width:800px) {
 
+  .pl-b30 { padding-left: 0 ;border-top:1px solid #eee;}
+}
 .sec2 h4{
    font-family: 'Lato', sans-serif;
   font-size: 16px;
@@ -317,6 +314,7 @@ width: 100%!important;}
   padding: 30px 0 0 0;
   font-family: 'Lato', sans-serif;
 }
+.inner-class2 .row { width:auto;}
 .inner-class2 h3 {
  font-family: 'Lato', sans-serif;
   font-size: 24px;
@@ -328,7 +326,7 @@ width: 100%!important;}
   color: #303030;margin-top: 0px;
 }
 .inner-class .in-pink-bor {
-  margin: 18px -390px 5px;
+  /* margin: 18px -390px 5px; */
   border-bottom: solid 2px #ff459a;width:200px;font-family: 'Lato', sans-serif;}
 
 .overview-points-card__container {
@@ -394,7 +392,7 @@ width: 100%!important;}
 
 
 .course-login-wrapper .login-details {
-   padding: 10px 20px 30px;font-family: 'Lato', sans-serif;
+   padding: 10px 20px 30px; font-family: 'Lato', sans-serif;
 }
 
 .course-login-wrapper .login-details h2 {
@@ -759,8 +757,7 @@ background-color: #ffffff;min-height:50px}
   color: #303030;
 	text-align: left;
 }
-
-.course-login-wrapper { right: 60px; }
+ 
 
 /* .footer-bottom p {
   font-size: 12px;
@@ -1028,5 +1025,3 @@ background-color: #ffffff;min-height:50px}
     border-bottom-left-radius: 50px;
   }
 } */
-
-
