@@ -12,7 +12,7 @@
     letter-spacing: normal;
     color: #2f2f2f;
     font-family: 'Montserrat', sans-serif;
-    
+    padding-left: 0;
 }
 .img-res{width:370px;margin-top:19px}
 
@@ -134,12 +134,12 @@ margin: 14px 21px 8px 5px;
 }
 
 @media screen and (max-width: 800px) {
-/* .course-login-wrapper .intl-tel-input.allow-dropdown input {
+ .course-login-wrapper .intl-tel-input.allow-dropdown input {
      float: left !important;
      margin-left: 0px !important;
     padding-left: 0px !important;
-}  */
-.claim-european-mba { padding-left: 0; }
+} 
+.claim-european-mba { padding-left: 15px; }
 
 .site-header .search-form {
     width: 100%;
@@ -284,7 +284,7 @@ width: 100%!important;}
 .pl-b30 {    padding-left: 30px; border-left:1px solid #eee;  /*min-height: 674px;*/}
 @media screen and (max-width:800px) {
 
-  .pl-b30 { padding-left: 0 ;border-top:1px solid #eee;}
+  .pl-b30 { padding-left: 0 ;border-top:1px solid #eee; border-left:none;}
 }
 .sec2 h4{
    font-family: 'Lato', sans-serif;
@@ -382,14 +382,21 @@ width: 100%!important;}
   border-radius: 6px;
   box-shadow: 0 2px 25px 2px #d5dbfb;
   position: relative;
-  width: 419px;
+  width: 430px;
   height: 750px;
-  right: 102px;
+  right: 80px;
   z-index: 10;
+  margin-bottom: 20px;
   background-color: #ffffff;
   font-family: 'Lato', sans-serif;
 }
-
+@media screen  and (max-width:800px) {
+  .course-login-wrapper {
+    width: 100%;
+    height: auto;
+    right: auto;
+  }
+}
 
 .course-login-wrapper .login-details {
    padding: 10px 20px 30px; font-family: 'Lato', sans-serif;
@@ -715,10 +722,7 @@ background-color: #ffffff;min-height:50px}
 }
 
 .testi-head h2 {opacity: 0.1;font-size: 76px;font-weight:bold;background: -webkit-linear-gradient(#303030, #fff);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
-	.athena-des-footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+ 
 
  .left-barbg ul li a:hover{ color: #eb1772;   text-decoration:none;}
  .left-barbg ul li.li-test{ background-color: #f7f7f7;}
