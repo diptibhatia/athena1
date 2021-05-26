@@ -32,11 +32,10 @@
 
 .pop-up-content {
     background-color: #fefefe;
-    margin: auto;
-    padding: 20px 0 0 20px;
-    border: 1px solid #888;
-    width: 30%;
-    height: 62vh;
+ margin:auto;
+ width:35%;
+ border-radius: 5px;
+ padding: 40px;
 }
 
 .pop-up-content-thanks {
@@ -57,9 +56,13 @@
 }
 .thanks-head{
 	font-size: 27px;
+  padding: 12px 12px 12px 0;
+  display: block;
 }
 .thanks-para{
 	font-size: 14px;
+  padding: 12px 12px 12px 0;
+  display: block;
 }
 .close {
     color: #ffffff;
@@ -69,8 +72,9 @@
     background-color: #000000;
     width: 40px;
     height: 40px;
-    margin-top: -40px;
-    margin-right: -20px;
+    padding: 0px;
+        margin-top: -66px;
+        margin-right: -61px;
     text-align: center;
     border-radius: 30px;
     border: 3px solid white;
@@ -128,12 +132,14 @@
 .text-insight,
 span {
     color: #ff006e;
+    padding: 12px 12px 12px 0;
+
 }
 
 
 .pop-up-para {
     width: 90%;
-    height: 44px;
+
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
@@ -141,50 +147,56 @@ span {
     line-height: 1.57;
     letter-spacing: normal;
     color: #303030;
-    margin-bottom: 30px;
+
+    padding: 12px 12px 12px 0;
+    display: block;
 }
 
 .email-input {
 
-    width: 351px;
-    height: 43px;
-    opacity: 0.5;
-    padding-left: 10px;
     border-radius: 3px;
     box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.432);
     border: solid 1px #979797;
-    margin-bottom: 18px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
 
 }
 
 .name-input {
 
-    width: 351px;
-    opacity: 0.5;
-    height: 43px;
-    padding-left: 10px;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.5);
-    border: solid 1px #979797;
-    margin-bottom: 18px;
+   border-radius: 3px;
+   box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.432);
+   border: solid 1px #979797;
+   width: 100%;
+   margin-bottom: 10px;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   resize: vertical;
 }
 
 .submit-input {
-    cursor: pointer;
-    width: 355px;
-    color: white;
-    height: 43px;
-    padding-left: 10px;
-    border-radius: 3px;
+
     background-color: #ff006e;
-    margin-bottom: 18px;
-    border: none;
+     color: white;
+     padding: 12px 20px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     width:100%;
+     margin:auto
 }
 
 .sub-text {
-    margin: -8px 70px;
+    padding: 12px 12px 12px 0;
+    display: block;
     font-family: Lato;
     font-size: 12px;
+    text-align: center;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -196,7 +208,7 @@ span {
 .social-icon-facebook {
     width: 40px;
     height: 30px;
-    margin-right: 10px;
+  margin-right: 20px;
     text-align: center;
     color: rgb(41, 81, 190);
     display: inline-block;
@@ -208,7 +220,7 @@ span {
 .social-icon-google {
     width: 40px;
     height: 30px;
-    margin-right: 10px;
+ margin-right: 20px;
     text-align: center;
     color: red;
     display: inline-block;
@@ -220,7 +232,7 @@ span {
 .social-icon-linkin {
     width: 40px;
     height: 30px;
-    margin-right: 10px;
+
     text-align: center;
     color: blue;
     display: inline-block;
@@ -230,12 +242,58 @@ span {
 }
 
 .social-content {
-    margin: 20px 0 0 90px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
 
 }
 
+@media screen and (max-width:850px) {
 
-/* screen width of 360px (galaxy and android) */
+  .pop-up-content {
+
+    margin: auto;
+    width: 80%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .close {
+
+    margin-top: -41px;
+    margin-right: -37px;
+
+  }
+}
+
+
+@media screen and (width:2160px) {
+
+  .pop-up-content {
+
+    margin: auto;
+    width: 25%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .close {
+
+    margin-top: -41px;
+    margin-right: -37px;
+
+  }
+
+
+
+
+
+
+
+
+
+/* screen width of 360px (galaxy and android)
 
 
 @media screen and (width: 360px) {
@@ -413,7 +471,7 @@ span {
 
 
 
-/* screen width of 411px (galaxy and android) */
+/* screen width of 411px (galaxy and android)
 
 
 @media screen and (width: 411px) {
@@ -590,7 +648,7 @@ span {
 
 
 
-/* screen width of 375px (iphone) */
+/* screen width of 375px (iphone)
 
 
 
@@ -762,7 +820,7 @@ span {
 }
 
 
-/* screen width of 411px (iphone(7/8/9) plus ) */
+/* screen width of 411px (iphone(7/8/9) plus )
 
 @media screen and (width: 414px) {
 
@@ -936,7 +994,7 @@ span {
 
 
 
-/* screen width of 375px (iphone(x) ) */
+/* screen width of 375px (iphone(x) )
 
 
 @media screen and (width: 375px) and (height: 812px) {
@@ -1108,7 +1166,7 @@ span {
 }
 
 
-/* screen width of 768px (ipad ) */
+/* screen width of 768px (ipad )
 
 
 
@@ -1285,7 +1343,7 @@ span {
 
 
 
-/* screen width of 1024px (ipad Pro ) */
+/* screen width of 1024px (ipad Pro )
 
 
 
@@ -1459,7 +1517,7 @@ span {
 
 
 
-/* screen width of 540px (Surface Duo ) */
+/* screen width of 540px (Surface Duo )
 
 @media screen and (width:540px) {
 
@@ -1635,7 +1693,7 @@ span {
 }
 
 
-/* screen width of 280px (galaxy fold ) */
+/* screen width of 280px (galaxy fold )
 
 @media screen and (width:280px) {
 
@@ -1811,3 +1869,4 @@ span {
 
     }
 }
+*/
