@@ -1,7 +1,7 @@
 .modal-reg {
    display: none;
     position: fixed;
-    z-index: 11;
+    z-index: 30;
     padding-top: 150px;
     left: 0;
     top: 0;
@@ -15,7 +15,7 @@
 .thanks-modal {
     display: none;
     position: fixed;
-    z-index: 11;
+    z-index: 30;
     padding-top: 150px;
     left: 0;
     top: 0;
@@ -43,16 +43,22 @@
     margin: auto;
     border: 1px solid #888;
     width: 30%;
+    padding: 20px;
     height: 45vh;
 }
 
-.thnks-conent img{
-	width: 20%;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	margin-top: 30px;
-	margin-bottom: 20px;
+.thnks-conent img {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 .thanks-head{
 	font-size: 27px;
@@ -95,10 +101,11 @@
     font-weight: 400;
     background-color: #161616;
 	opacity: 0.7;
-    width: 50px;
-    height: 50px;
-    margin-top: -20px;
-    margin-right: -20px;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+    margin-top: -40px;
+    margin-right: -40px;
     text-align: center;
     border-radius: 30px;
     border: 3px solid white;
@@ -116,6 +123,7 @@
     cursor: pointer;
     height: 40px;
     width: 110px;
+    margin-bottom: 20px;
     font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
@@ -265,6 +273,19 @@ span {
     margin-right: -37px;
 
   }
+
+    .pop-up-content-thanks {
+      height: auto;
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+    }
+    .lclose {
+
+      margin-top: -41px;
+      margin-right: -37px;
+    }
+
 }
 
 
@@ -285,6 +306,10 @@ span {
 
   }
 
+
+
+
+}
 
 
 
