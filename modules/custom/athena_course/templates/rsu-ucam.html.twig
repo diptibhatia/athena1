@@ -3,14 +3,12 @@
   type="text/css"
   href="/themes/custom/athena/rsu_ucam/style/css/bootstrap.min.css"
 /> #}
-
 <link
   rel="stylesheet"
   type="text/css"
   href="/themes/custom/athena/rsu_ucam/style/css/custom.css"
 />
 
-<link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
 
 <div class="content-wrapper">
   <div class="banner-top" role="navigation">
@@ -192,15 +190,10 @@
                   />
                 </div>
 
-                <div class="login-item phone-number">
-                    <p>Mobile No *</p>
-                    <input type="tel" id="phone" name="phone" placeholder="Mobile No">
-                    <span id="valid-msg" class="hide">✓ Valid</span>
-                    <span id="error-msg" class="hide"></span>
+                <div class="login-item">
+                  <p>Mobile No *</p>
+                  <input id="contact_number" name="contact_number" required="required" placeholder="Mobile No" />
                 </div>
-
-                <input type="hidden" id="country_code" value="" >
-
 
                 <div class="login-item">
                   <p>Any Queries?</p>
@@ -338,14 +331,14 @@
             msg += '\n\u2022  Invalid Email id';
         }
 
-        var ph_num = jQuery("#phone").val();
+        var ph_num = jQuery("#contact_number").val();
         var num_len = ph_num.length;
 
-        if(jQuery("#phone").val() == '') {
+        if(jQuery("#contact_number").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
         }else if(num_len <6 || num_len >15) {
           msg += '\n\u2022  Invalid Phone number';
-        }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
+        }else if(!jQuery('#contact_number').val().match(/^[0-9]+$/)) {
             msg += '\n\u2022  Invalid Phone number';
         }
 
@@ -353,35 +346,15 @@
            msg += '\n\u2022  Please accept consent terms';
         }
 
-
-        var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
-        var iso2 = countryData.iso2;
-        jQuery.ajax({
-         type: 'GET',
-         url: "https://learn.athena.edu/athenaprod/api/country/"+iso2, //Returns ID in body
-         async: false, // <<== THAT makes us wait until the server is done.
-         success: function(data){
-             jQuery( "#country_code" ).val(data);
-         },
-         error: function() {
-             alert("Error Processing your request, please try again after some time")
-             return FALSE;
-         }
-        });
-
-
         if(msg == ''){
          var sendInfo = {
             FirstName:String(jQuery("#speak_first_name").val()),
             LastName:String(jQuery("#speak_last_name").val()),
             Email:String(jQuery("#speak_email").val()),
-            CountryISO:String(jQuery("#country_code").val()),
-            ContactNo:String(jQuery("#phone").val()),
-            BU:"RSU",
-            CourseId:57
+            ContactNo:String(jQuery("#contact_number").val()),
           };
 
-          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContact', {
+          jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContactRequest', {
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -398,7 +371,7 @@
             'fname': jQuery('#speak_first_name').val(),
             'lname': jQuery('#speak_last_name').val(),
             'email': jQuery('#speak_email').val(),
-            'phone': jQuery('#phone').val()
+            'phone': jQuery('#contact_number').val()
           };
 
           jQuery.ajax(baseUrl + '/save/contact', {
@@ -421,7 +394,7 @@
           jQuery('#speak_first_name').val("");
           jQuery('#speak_last_name').val("");
           jQuery('#speak_email').val("");
-          jQuery('#phone').val("");
+          jQuery('#contact_number').val("");
           jQuery('#speak_consent').prop('checked', false);
 
           return false;
