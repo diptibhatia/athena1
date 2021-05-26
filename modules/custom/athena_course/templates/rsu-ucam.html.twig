@@ -352,7 +352,8 @@
             LastName:String(jQuery("#speak_last_name").val()),
             Email:String(jQuery("#speak_email").val()),
             ContactNo:String(jQuery("#contact_number").val()),
-            BU:"RSU"
+            BU:"RSU",
+            CourseId:57
           };
 
           jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContact', {
