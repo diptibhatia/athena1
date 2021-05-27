@@ -383,7 +383,7 @@ width: 100%!important;}
   box-shadow: 0 2px 25px 2px #d5dbfb;
   position: relative;
   width: 430px;
-  height: 750px;
+  height: auto;
   right: 80px;
   z-index: 10;
   margin-bottom: 20px;
