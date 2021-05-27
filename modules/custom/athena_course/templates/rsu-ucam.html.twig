@@ -329,20 +329,20 @@
       }
 
 
-      // var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
-      // var iso2 = countryData.iso2;
-      // jQuery.ajax({
-      //   type: 'GET',
-      //   url: "https://learn.athena.edu/athenaprod/api/country/" + iso2, //Returns ID in body
-      //   async: false, // <<== THAT makes us wait until the server is done.
-      //   success: function (data) {
-      //     jQuery("#country_code").val(data);
-      //   },
-      //   error: function () {
-      //     alert("Error Processing your request, please try again after some time")
-      //     return FALSE;
-      //   }
-      // });
+      var countryData = jQuery("#phone").intlTelInput("getSelectedCountryData");
+      var iso2 = countryData.iso2;
+      jQuery.ajax({
+        type: 'GET',
+        url: "https://learn.athena.edu/athenaprod/api/country/" + iso2, //Returns ID in body
+        async: false, // <<== THAT makes us wait until the server is done.
+        success: function (data) {
+          jQuery("#country_code").val(data);
+        },
+        error: function () {
+          alert("Error Processing your request, please try again after some time")
+          return FALSE;
+        }
+      });
 
 
       if (msg == '') {
