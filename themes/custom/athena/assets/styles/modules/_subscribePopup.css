@@ -33,7 +33,7 @@
 .pop-up-content {
     background-color: #fefefe;
  margin:auto;
- width:35%;
+ width:30%;
  border-radius: 5px;
  padding: 40px;
 }
@@ -44,7 +44,6 @@
     border: 1px solid #888;
     width: 30%;
     padding: 20px;
-    height: 45vh;
 }
 
 .thnks-conent img {
@@ -101,9 +100,9 @@
     font-weight: 400;
     background-color: #161616;
 	opacity: 0.7;
-  width: 40px;
-  height: 40px;
-  padding: 0px;
+  width: 52px;
+  height: 52px;
+  padding: 0px 0px 0px 0px;
     margin-top: -40px;
     margin-right: -40px;
     text-align: center;
@@ -167,12 +166,29 @@ span {
     border: solid 1px #979797;
     width: 100%;
     margin-bottom: 10px;
-    padding: 12px;
+   padding: 12px 12px 12px 45px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
 
 }
+
+.input-icon i{
+  position: absolute;
+}
+ .input-icons {
+   width: 100%;
+ }
+  .inputi {
+    padding: 12px;
+    color: #46464678;
+    min-width: 46px;
+    font-size: 19px;
+    text-align: center;
+  }
+
+
+
 
 .name-input {
 
@@ -181,7 +197,7 @@ span {
    border: solid 1px #979797;
    width: 100%;
    margin-bottom: 10px;
-   padding: 12px;
+   padding: 12px 12px 12px 45px;
    border: 1px solid #ccc;
    border-radius: 4px;
    resize: vertical;
@@ -257,36 +273,7 @@ span {
 
 }
 
-@media screen and (max-width:850px) {
 
-  .pop-up-content {
-
-    margin: auto;
-    width: 80%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .close {
-
-    margin-top: -41px;
-    margin-right: -37px;
-
-  }
-
-    .pop-up-content-thanks {
-      height: auto;
-      margin: auto;
-      padding: 20px;
-      width: 80%;
-    }
-    .lclose {
-
-      margin-top: -41px;
-      margin-right: -37px;
-    }
-
-}
 
 
 @media screen and (width:2160px) {
@@ -299,6 +286,25 @@ span {
     padding: 20px;
   }
 
+
+  .close {
+
+    margin-top: -41px;
+    margin-right: -37px;
+
+  }
+}
+
+@media screen and (width:1360px) {
+
+  .pop-up-content {
+
+    margin: auto;
+    width: 35%;
+    height: auto;
+    padding: 20px;
+  }
+
   .close {
 
     margin-top: -41px;
@@ -306,10 +312,42 @@ span {
 
   }
 
+  @media screen and (max-width:850px) {
+
+    .pop-up-content {
+
+      margin: auto;
+      width: 80%;
+      height: auto;
+      padding: 20px;
+    }
+
+    .close {
+
+      margin-top: -41px;
+      margin-right: -37px;
+
+    }
+
+    .pop-up-content-thanks {
+      height: auto;
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+    }
+
+    .lclose {
+
+      margin-top: -41px;
+      margin-right: -37px;
+    }
+
+  }
 
 
 
-}
+
+
 
 
 
