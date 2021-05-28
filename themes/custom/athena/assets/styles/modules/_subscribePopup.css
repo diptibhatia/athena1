@@ -295,7 +295,7 @@ span {
   }
 }
 
-@media screen and (width:1360px) {
+@media screen and (max-width:1360px) {
 
   .pop-up-content {
 

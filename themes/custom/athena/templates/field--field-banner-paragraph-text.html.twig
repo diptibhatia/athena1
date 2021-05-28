@@ -47,22 +47,28 @@
       {% for item in items %}
         <p class="top-search-section__text">{{ item.content }}</p>
         <form class="top-search-section__search" action="{{ url('<front>') }}search-results/abc">
-            <input class="top-search-section__search-input" name="search_key" type="text" placeholder="What do you want to learn ?">
+            {# <input class="top-search-section__search-input" name="search_key" type="text" placeholder="What do you want to learn ?">
             <input class="top-search-section__search-btn" name="submit_form" type="submit" value="Search">
             <div class="search-icon">
                 <img src="themes/custom/athena/images/search.svg" alt="search icon">
-            </div>
+            </div> #}
+            <div class="learn-btn">
+            Join Now
+          </div>
         </form>
       {% endfor %}
   {% else %}
     {% for item in items %}
         <p class="top-search-section__text">{{ item.content }}</p>
         <form class="top-search-section__search" action="{{ url('<front>') }}search-results/abc" method="POST">
-            <input class="top-search-section__search-input" name="search_key" type="text" placeholder="What do you want to learn ?">
+            {# <input class="top-search-section__search-input" name="search_key" type="text" placeholder="What do you want to learn ?">
             <input class="top-search-section__search-btn" name="submit_form" type="submit" value="Search">
             <div class="search-icon">
                 <img src="themes/custom/athena/images/search.svg" alt="search icon">
-            </div>
+            </div> #}
+             <div class="learn-btn">
+            Join Now
+          </div>
         </form>
     {% endfor %}
   {% endif %}
@@ -72,10 +78,13 @@
     {% for item in items %}
       <p class="top-search-section__text">{{ item.content }}</p>
       <form class="top-search-section__search">
-          <input class="top-search-section__search-input" type="text" placeholder="What do you want to learn ?">
+          {# <input class="top-search-section__search-input" type="text" placeholder="What do you want to learn ?">
           <input class="top-search-section__search-btn" type="submit" value="Search">
           <div class="search-icon">
               <img src="themes/custom/athena/images/search.svg" alt="search icon">
+          </div> #}
+         <div class="learn-btn">
+            Join Now
           </div>
       </form>
     {% endfor %}
