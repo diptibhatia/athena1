@@ -48,7 +48,7 @@
         min-height: 480px;
         max-height: 480px;
         float: left;
-        overflow: hidden;
+        // overflow: hidden;
         position:relative;
         text-align:left;
         width:100%;
@@ -336,7 +336,7 @@ overflow: hidden;
     filter: drop-shadow( -2px -2px 2px #888 );
   }
 
-  .nav {
+  .nav-scroll {
     display: flex;
     flex-wrap: nowrap;
     padding-left: 0;
@@ -349,7 +349,7 @@ overflow: hidden;
      scrollbar-width: none;
   }
 
-  .nav::-webkit-scrollbar {
+  .nav-scroll::-webkit-scrollbar {
     display: none;
   }
- 
+
