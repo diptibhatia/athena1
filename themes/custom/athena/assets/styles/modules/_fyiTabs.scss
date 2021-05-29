@@ -71,10 +71,10 @@
 
             &.active {
                 font-weight: bold;
-
+            
                 &::after {
-                    transform: scale(1);;
-
+                    transform: scale(1);
+                }
             }
         }
     }
@@ -101,7 +101,7 @@
                 padding: 0;
                 margin-bottom: 15;
             }
-
+    
             li {
                 line-height: 1.6;
                 text-indent: 12px;
@@ -114,7 +114,7 @@
                     font-size: 1rem;
                     line-height: 1.8;
                 }
-
+    
                 &::before {
                     content: '';
                     width: 6px;
@@ -126,7 +126,7 @@
                     top: 13px;
                     position: absolute;
                 }
-
+    
                 span {
                     display: block;
                     text-indent: 0;
@@ -134,14 +134,14 @@
                     @include atSize1250 {
                         text-indent: 50px;
                     }
-
+    
                     i {
                         color: $titlePink;
                         font-style: normal;
                     }
                 }
             }
-
+    
             p {
                 line-height: 1.6;
                 margin-bottom: 15px;
@@ -180,9 +180,9 @@
                 letter-spacing: .3px;
                 margin-bottom: 30px;
                 position: relative;
-
+            
                 @include atSize850 {
-                    font-size: 2rem;
+                    font-size: 2rem; 
                 }
                 &::after {
                     content: '';
@@ -244,7 +244,7 @@
                         &:nth-of-type(2) {
                             color: $secondaryColor;
                             font-style: italic;
-
+                            
                             @include atSize1100 {
                                 font-size: .9rem;
                                 white-space: nowrap;
@@ -321,7 +321,7 @@
     }
 
     &__eligibility, &__why-athena {
-
+        
         @include atSize1250 {
             display: flex;
             justify-content: space-between;
@@ -352,7 +352,7 @@
 
                 @include atSize850 {
                     font-size: 2rem;
-                    text-align: left;
+                    text-align: left; 
                 }
 
                 &::after {
@@ -408,7 +408,7 @@
 
         &_details {
 
-
+            
 
             h3 {
                 font-style: normal;
@@ -422,7 +422,6 @@
                 line-height: 24px;
                 color: $primaryColor;
             }
-          }
         }
-      }
     }
+}
