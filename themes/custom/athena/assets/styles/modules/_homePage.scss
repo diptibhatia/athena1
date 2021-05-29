@@ -3151,3 +3151,11 @@
   color: #303030;
   cursor: pointer;
 }
+
+
+@media (max-width: 479px) {
+.top-search-section__background-image {
+  display: block;
+  min-height: 424px;
+}
+}
