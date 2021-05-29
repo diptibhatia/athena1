@@ -1404,12 +1404,16 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
 
 }, "Please enter only letters");
 
-jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
-    phone_number = phone_number.replace(/\s+/g, "");
-    return this.optional(element) || phone_number.length > 9 &&
-        phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
-}, "Please specify a valid phone number");
 
+jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+    if (phone_number.length == 0) {
+      return false;
+    }
+    if (phone_number.length < 6 || phone_number.length > 15) {
+      return false;
+    }
+    return true;
+}, "Please specify a valid phone number");
 
 
 jQuery("#course_speak_to_advisor").validate({
@@ -1449,13 +1453,8 @@ jQuery("#course_speak_to_advisor").validate({
             },
 
             "phone": {
-
                 required: true,
-
-                minlength: 10,
-
                 phoneUS: true
-
             },
 
         },
