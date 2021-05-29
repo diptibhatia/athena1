@@ -129,6 +129,9 @@
 }, "Please enter only letters");
 
   jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+      if (phone_number.length == 0) {
+        return false;
+      }
       if (phone_number.length < 6 || phone_number.length > 15) {
         return false;
       }

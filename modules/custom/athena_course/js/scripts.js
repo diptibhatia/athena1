@@ -185,7 +185,7 @@ jQuery("#get_in_touch_form").validate({
                 if(jQuery("#phone").val() == '') {
                   msg += '\n\u2022  Phone number cannot be empty';
                 }
-                else (num_len <6 || num_len >15) {
+                else if (num_len <6 || num_len >15) {
                   msg += '\n\u2022  Invalid Phone number';
                 }
 
@@ -439,7 +439,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 if(jQuery("#phone").val() == '') {
                   msg += '\n\u2022  Phone number cannot be empty';
                 }
-                else (num_len <6 || num_len >15) {
+                else if (num_len <6 || num_len >15) {
                   msg += '\n\u2022  Invalid Phone number';
                 }
 
