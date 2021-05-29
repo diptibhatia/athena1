@@ -353,7 +353,8 @@
           CountryISO: String(jQuery("#country_code").val()),
           ContactNo: String(jQuery("#phone").val()),
           BU: "RSU",
-          CourseId: 57
+          CourseId: 57,
+          Remarks:String(jQuery('#review').val())
         };
 
         jQuery.ajax('https://athenawpapi.azurewebsites.net/ContactRequest/SaveContact', {
