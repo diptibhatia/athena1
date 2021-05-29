@@ -3150,6 +3150,16 @@
   letter-spacing: normal;
   color: #303030;
   cursor: pointer;
+  text-decoration: none;
+  a {
+	text-decoration: none;
+	color: #303030; 
+  }
+
+  &:hover {
+	text-decoration: none;
+	color: #303030;
+  }
 }
 
 
