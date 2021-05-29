@@ -182,10 +182,13 @@ jQuery("#get_in_touch_form").validate({
                 var ph_num = jQuery("#phone").val();
                 var num_len = ph_num.length;
 
-                if( ph_num =='' || num_len <6 || num_len >15) {
-                  msg += '\n\u2022  Please enter a valid phone number';
+                if(jQuery("#phone").val() == '') {
+                  msg += '\n\u2022  Phone number cannot be empty';
                 }
-                
+                else (num_len <6 || num_len >15) {
+                  msg += '\n\u2022  Invalid Phone number';
+                }
+
                 if(msg =='') {
 
                     var dataObj = {
@@ -337,7 +340,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                     var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
                 }
 
-                
+
                 jQuery.ajax(URL, {
                   type: 'POST',  // http method
                   contentType: "application/json; charset=utf-8",
@@ -365,7 +368,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
                         }
 
-                        
+
                         jQuery.when( jQuery.get(URL))
                           .then(function( data, textStatus, jqXHR ) {
                           var userId = parseInt(jQuery.trim(data));
@@ -433,8 +436,11 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var ph_num = jQuery("#phone").val();
                 var num_len = ph_num.length;
 
-                if( ph_num =='' || num_len <6 || num_len >15) {
-                  msg += '\n\u2022  Please enter a valid phone number';
+                if(jQuery("#phone").val() == '') {
+                  msg += '\n\u2022  Phone number cannot be empty';
+                }
+                else (num_len <6 || num_len >15) {
+                  msg += '\n\u2022  Invalid Phone number';
                 }
 
                  if(jQuery("#reg_qual").val() == '') {
@@ -472,7 +478,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
                             var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
                         }
 
-                        
+
                     jQuery.ajax({
    type: 'GET',
    url: URL, //Returns ID in body
@@ -481,7 +487,7 @@ jQuery.ajax(baseUrl + '/save/contact', {
        if (data == 'Email Exist') {
             var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
-       
+
 
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
@@ -675,8 +681,8 @@ jQuery.ajax(baseUrl + '/save/contact', {
 
 function copy_to_clipboard(ele) {
   /* Get the text field */
-  var ctext = "shareurl--copy"+ele; 
-  var copyText = document.getElementById(ctext).innerText;  
+  var ctext = "shareurl--copy"+ele;
+  var copyText = document.getElementById(ctext).innerText;
   var dummy = document.createElement('input');
   document.body.appendChild(dummy);dummy.value = copyText;
   /* Select the text field */

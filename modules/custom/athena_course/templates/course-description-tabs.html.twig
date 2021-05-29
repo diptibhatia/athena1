@@ -490,16 +490,16 @@
             <div class="wrapper">
              {% if course_batch_title is empty %}
                 {% set batch_title = "Know the Batch" %}
-             {% else %}   
+             {% else %}
                  {% set batch_title = course_batch_title %}
-             {% endif %}   
+             {% endif %}
                 <h2>{{batch_title}}</h2>
-                
+
                 {% if course_batch_desc is empty %}
                      {% set batch_desc = "Get to know more about the fellow researchers in the IMBA Course." %}
-                {% else %}   
+                {% else %}
                          {% set batch_desc = course_batch_desc %}
-                {% endif %}        
+                {% endif %}
 
                 <p>{{batch_desc}}</p>
 
@@ -1243,7 +1243,7 @@
         }else if(lname.length > 16 ) {
           msg += '\n\u2022  Last name should not be more than 16 characters';
         }
-  
+
         var email = jQuery("#speak_email").val();
         var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
@@ -1259,10 +1259,9 @@
 
         if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
-        }else if(num_len <6 || num_len >15) {
+        }
+        else (num_len <6 || num_len >15) {
           msg += '\n\u2022  Invalid Phone number';
-        }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-            msg += '\n\u2022  Invalid Phone number';
         }
 
         if(!jQuery("#speak_consent").prop('checked') == true){
@@ -1305,11 +1304,11 @@ Campaign:String(jQuery("#utm_campaign").val()),
 
 var pathparts = location.pathname.split('/');
       if (location.host == 'localhost') {
-          var url = location.origin+'/'+pathparts[1].trim('/')+'/'; 
+          var url = location.origin+'/'+pathparts[1].trim('/')+'/';
       }else{
-          var url = location.origin; 
+          var url = location.origin;
       }
-  
+
 
              var utm_source = jQuery("#utm_source").val();
        var utm_campaign = jQuery("#utm_campaign").val();

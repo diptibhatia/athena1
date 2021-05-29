@@ -2,6 +2,26 @@
   $(document).ready(function () {
 
     $("#reg_mobile_num").intlTelInput();
+
+    $.fn.inputFilter = function(inputFilter) {
+      return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+        if (inputFilter(this.value)) {
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        } else {
+          this.value = "";
+        }
+      });
+    };
+    jQuery("#reg_mobile_num").inputFilter(function(value) {
+        return /^\d*$/.test(value);
+    });
+    jQuery('#reg_mobile_num').attr('maxlength', 15);
+
     var cData = {};
 
     //----------------form validation
@@ -10,9 +30,10 @@
     }, "Please enter only letters");
 
     jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
-        phone_number = phone_number.replace(/\s+/g, "");
-        return this.optional(element) || phone_number.length > 9 &&
-            phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+        if (phone_number.length < 6 || phone_number.length > 15) {
+          return false;
+        }
+        return true;
     }, "Please specify a valid phone number");
 
     jQuery.validator.addMethod("emailExt", function(value, element, param) {

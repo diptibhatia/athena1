@@ -43,8 +43,8 @@
     {{ content }}
   {% endblock %}
 </div>
- 
-  <div class="forms testimonial-inside mt-5">               
+
+  <div class="forms testimonial-inside mt-5">
                 <div class="container-fluid p-0 about-us-wrapper form">
                     <div class="course-login-wrapper">
                         <div class="login-details">
@@ -326,16 +326,16 @@
                                 {% for nodedata in courses_data %}
 
                                   <option value="{{nodedata.label}}">{{nodedata.label}}</option>
-                                  
+
                                     {% endfor %}
                             </select>
                         </div>
 
                             <div class="button">
-                             
+
                             <input type="hidden" id="nid" >
                             <input type="hidden" id="country_code" value="" >
-                            
+
                                 <input type="checkbox" class="form-check-input" id="speak_consent" name="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
                                 <button  type="button" id="smo_form_submit">Submit</button>
@@ -385,7 +385,7 @@
         }else if(lname.length > 16 ) {
           msg += '\n\u2022  Last name should not be more than 16 characters';
         }
-  
+
         var email = jQuery("#speak_email").val();
         var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
@@ -405,15 +405,14 @@
 
         if(jQuery("#phone").val() == '') {
           msg += '\n\u2022  Phone number cannot be empty';
-        }else if(num_len <6 || num_len >15) {
+        }
+        else (num_len <6 || num_len >15) {
           msg += '\n\u2022  Invalid Phone number';
-        }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-            msg += '\n\u2022  Invalid Phone number';
         }
 
         if(jQuery("#reg_course").val() == '') {
           msg += '\n\u2022  Please select course';
-        }        
+        }
 
         if(!jQuery("#speak_consent").prop('checked') == true){
            msg += '\n\u2022  Please accept consent terms';
@@ -436,9 +435,9 @@
 
         if(msg == ''){
 
-        var cvalue = jQuery('#speak_country').val();        
+        var cvalue = jQuery('#speak_country').val();
         var country = jQuery('#speak_country option[value="'+cvalue+'"]').text();
-        
+
         var dataObj = {
                       'form_id': "Testimonials Inside",
                       'course': jQuery('#reg_course').val(),
@@ -449,14 +448,14 @@
                       'country': country,
                     };
 
-        
+
       var pathparts = location.pathname.split('/');
       if (location.host == 'localhost') {
-          var url = location.origin+'/'+pathparts[1].trim('/'); 
+          var url = location.origin+'/'+pathparts[1].trim('/');
       }else{
-          var url = location.origin; 
+          var url = location.origin;
       }
-  
+
       jQuery.ajax(url + '/save/contact', {
                         type: 'POST',  // http method
                         contentType: "application/json; charset=utf-8",
@@ -483,7 +482,7 @@
                             'phone': jQuery('#phone').val(),
                             'category': jQuery('#reg_course').val(),
                             'country_code': jQuery(".country_code").html(),
-                            'action': 'save_newsletter',                            
+                            'action': 'save_newsletter',
                           };
 
           initiateSendingMail('get_in_touch', mailinfo);

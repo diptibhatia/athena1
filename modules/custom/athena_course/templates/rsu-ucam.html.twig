@@ -318,9 +318,8 @@
 
       if (jQuery("#phone").val() == '') {
         msg += '\n\u2022  Phone number cannot be empty';
-      } else if (num_len < 6 || num_len > 15) {
-        msg += '\n\u2022  Invalid Phone number';
-      } else if (!jQuery('#phone').val().match(/^[0-9]+$/)) {
+      }
+      else (num_len < 6 || num_len > 15) {
         msg += '\n\u2022  Invalid Phone number';
       }
 
