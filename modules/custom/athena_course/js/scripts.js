@@ -184,10 +184,8 @@ jQuery("#get_in_touch_form").validate({
 
                 if( ph_num =='' || num_len <6 || num_len >15) {
                   msg += '\n\u2022  Please enter a valid phone number';
-                }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-                  msg += '\n\u2022  Please enter a valid phone number';
                 }
-
+                
                 if(msg =='') {
 
                     var dataObj = {
@@ -436,8 +434,6 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var num_len = ph_num.length;
 
                 if( ph_num =='' || num_len <6 || num_len >15) {
-                  msg += '\n\u2022  Please enter a valid phone number';
-                }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
                   msg += '\n\u2022  Please enter a valid phone number';
                 }
 

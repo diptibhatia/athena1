@@ -1,3 +1,20 @@
+(function($) {
+    $.fn.inputFilter = function(inputFilter) {
+      return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+        if (inputFilter(this.value)) {
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        } else {
+          this.value = "";
+        }
+      });
+    };
+  }(jQuery));
+  
 jQuery(".selected-flag").after("<div class='country-code' />");
 jQuery('.iti__flag-container').remove();
 
@@ -82,6 +99,13 @@ jQuery(document).ready(function() {
     // Typing effect in home page - ends here.
 
     jQuery("#phone").intlTelInput();
+
+   
+    jQuery("#phone").inputFilter(function(value) {
+        return /^\d*$/.test(value);
+    });
+    jQuery('#phone').attr('maxlength', 15);
+    
 
     if (jQuery(".country-code").length == 0) {
         jQuery(".selected-flag").after("<div class='country-code' />");
