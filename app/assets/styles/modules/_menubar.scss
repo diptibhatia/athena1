@@ -92,7 +92,11 @@
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
         background-color: #ffffff;
         position: relative;
-        top: 10px;
+        top: 4px;
+        
+    @media screen and (max-width:600px) { 
+        top:10px; 
+    }
       }
 
       i {
