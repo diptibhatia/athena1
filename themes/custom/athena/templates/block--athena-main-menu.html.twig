@@ -161,11 +161,11 @@ align-items: center; box-sizing: border-box;">
     </div> <!-- navbar-collapse.// -->
 
     <div class="collapse navbar-collapse" id="search_nav" style="flex-basis:auto;">
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#search_nav" aria-expanded="true">
-      <img src="/themes/custom/athena/images/close.svg" alt="close" style="width: 36px;">
-    </button>
       <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc"
         method="POST">
+         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#search_nav" aria-expanded="true">
+            <img src="/themes/custom/athena/images/close.svg" alt="close" style="width: 22px;">
+        </button>
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
 
         <input type="hidden" name="submit_form">
@@ -174,7 +174,7 @@ align-items: center; box-sizing: border-box;">
       </form>
     </div>
 
-    <button class="navbar-toggler ml-4" type="button" data-toggle="collapse" data-target="#search_nav">
+    <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#search_nav">
       <img src="/themes/custom/athena/images/search.svg" alt="search" style="width: 36px;">
     </button>
   </nav>
