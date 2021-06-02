@@ -34,7 +34,7 @@
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page=0" hreflang="en">ReadMore</a></span>
                            </p>
 
                            <div class="student-info">
@@ -63,7 +63,7 @@
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page=1" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">
 
@@ -91,7 +91,7 @@
                            </h3>
                            <p>{% set text = testidata.field_testimonial_text.value|render|striptags %}
                               {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}" hreflang="en">ReadMore</a></span>
+                              &nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page=2" hreflang="en">ReadMore</a></span>
                            </p>
                            <div class="student-info">
 
