@@ -20,8 +20,9 @@
 		}
 		}
 	   .new-footer {
-		   padding: 30px 0;
-	   
+		   padding: 20px 0;
+		   .row {width:auto;}
+	   .t-border {border-top: 1px solid #979797;}
 		   .right-border {
 			   border : none;
    
@@ -74,16 +75,15 @@
 	   
    }
    .hideinMobileView{
-	   display: block;
-	   @include atSize424 {
+	   display: flex;
+	   @media screen and (max-width:600px) {
 		   display: none;
 	   } 
    }
    .showinMobileView{
 	   display: none;
-	   padding-bottom: 20px;
-	   text-align: center;
-	   @include atSize424 {
+	   padding-bottom: 20px; 
+	   @media screen and (max-width:600px) { 
 		   display: block;
 	   } 
    }

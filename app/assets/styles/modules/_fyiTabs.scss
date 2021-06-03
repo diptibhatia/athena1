@@ -2,7 +2,7 @@
     font-size: .875rem;
     position: relative;
     top: 40px;
-    z-index: 4;
+    z-index: 11;
     overflow: hidden;
     padding-bottom: 38px;
     background-color: #fff;
@@ -73,7 +73,7 @@
                 font-weight: bold;
             
                 &::after {
-                    transform: scale(1);;
+                    transform: scale(1);
                 }
             }
         }
