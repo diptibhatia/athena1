@@ -4,7 +4,7 @@ use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
 use Drupal\block_content\Entity\BlockContent;
-
+use \Drupal\athena_library\Utils\CommonHelper;
 
 /**
  * @file
@@ -356,6 +356,8 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
     $variables['include_static_links'] = TRUE;
+    $line_app_id = CommonHelper::getConfigSettings('athena_library.common_settings', 'line_app_id');
+    $variables['line_app_id'] = $line_app_id;
   }
 
   if (strpos($current_path, '/university') !== false) {

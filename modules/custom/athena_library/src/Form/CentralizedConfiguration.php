@@ -98,6 +98,12 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#default_value' => $config->get('lms_url'),
     ];
 
+    $form['common_settings']['line_app_id'] = [
+      '#type' => 'textfield',
+      '#title' => 'Line App Id',
+      '#default_value' => $config->get('line_app_id'),
+    ];
+
     $form['static_blocks'] = array(
       '#type' => 'details',
       '#title' => t('Static Blocks'),
@@ -236,6 +242,7 @@ class CentralizedConfiguration extends ConfigFormBase {
     $this->configFactory->getEditable(static::SETTINGS)
       ->set('ulearn_portal_url', $form_state->getValue('ulearn_portal_url'))
       ->set('lms_url', $form_state->getValue('lms_url'))
+      ->set('line_app_id', $form_state->getValue('line_app_id'))
 
       ->set('earning_a_degree.value', $form_state->getValue('earning_a_degree')['value'])
       ->set('earning_a_degree.format', $form_state->getValue('earning_a_degree')['format'])

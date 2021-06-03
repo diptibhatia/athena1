@@ -80,7 +80,7 @@ class ShortTermCourseController {
 
                 $website_card_content = $value->website_card_content;
                 if (strlen($website_card_content) > 100) {
-                    $website_card_content = substr($website_card_content, 0, 100);
+                    $website_card_content = substr($website_card_content, 0, 150);
                     $website_card_content = $website_card_content . '...';
                 }
 
@@ -89,7 +89,7 @@ class ShortTermCourseController {
                     'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
-                    'card_intro' => substr($value->course_introduction, 0, 100),
+                    'card_intro' => substr($value->course_introduction, 0, 150),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
                     'course_image' => $course_image_path
@@ -175,7 +175,7 @@ class ShortTermCourseController {
 
                 $website_card_content = $value->website_card_content;
                 if (strlen($website_card_content) > 100) {
-                    $website_card_content = substr($website_card_content, 0, 100);
+                    $website_card_content = substr($website_card_content, 0, 150);
                     $website_card_content = $website_card_content . '...';
                 }
 
@@ -184,7 +184,7 @@ class ShortTermCourseController {
                     'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
-                    'card_intro' => substr($value->course_introduction, 0, 100),
+                    'card_intro' => substr($value->course_introduction, 0, 150),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
                     'course_image' => $course_image_path
@@ -204,7 +204,7 @@ class ShortTermCourseController {
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
-                                ' . substr($courses_data['body'], 0, 100) . '
+                                ' . substr($courses_data['body'], 0, 150) . '
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -229,7 +229,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                               ' .  substr($courses_data['body'], 0, 100) . '
+                               ' .  substr($courses_data['body'], 0, 150) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -303,7 +303,7 @@ class ShortTermCourseController {
 
                 $website_card_content = $value->website_card_content;
                 if (strlen($website_card_content) > 100) {
-                    $website_card_content = substr($website_card_content, 0, 100);
+                    $website_card_content = substr($website_card_content, 0, 150);
                     $website_card_content = $website_card_content . '...';
                 }
 
@@ -312,7 +312,7 @@ class ShortTermCourseController {
                     'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
-                    'card_intro' => substr($value->course_introduction, 0, 100),
+                    'card_intro' => substr($value->course_introduction, 0, 150),
                     'field_course_amount' => 'Free',
                     'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
                     'course_image' => $course_image_path
@@ -332,7 +332,7 @@ class ShortTermCourseController {
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['field_certified_level'] . '</p>
-                                ' . substr($courses_data['body'], 0, 100) . '
+                                ' . substr($courses_data['body'], 0, 150) . '
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -357,7 +357,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                ' . substr($courses_data['body'], 0, 100) . '
+                                ' . substr($courses_data['body'], 0, 150) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
