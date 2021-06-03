@@ -123,6 +123,8 @@ athena_course.shortterm-courses:
     _title: 'Short term course'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: TRUE
 
 athena_course.shortterm-courses-load-more:
   path: '/shortterm-courses/load-more/{pager}'
@@ -131,6 +133,9 @@ athena_course.shortterm-courses-load-more:
     _title: 'Short term course load more'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: TRUE
+
 
 athena_course.shortterm-courses-search:
   path: '/shortterm-courses/search-data/{query}'
@@ -139,3 +144,25 @@ athena_course.shortterm-courses-search:
     _title: 'Short term course search'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+athena_course.website-newsletter-subscribe:
+  path: '/website-newsletter-subscribe/{name}/{email}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\WebsiteSubscribeController::subscribe'
+    _title: 'Subscribe Website Newsletter'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+athena_course.rsu-ucam:
+  path: '/rsu-ucam'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\RsuUcamController::index'
+    _title: 'RSU UCAM'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

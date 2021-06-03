@@ -1,4 +1,7 @@
-var baseUrl = 'https://athena.edu';
+var baseUrl = window.location.origin;
+//var baseUrl = "https://websitestg.athena.edu";
+
+//alert(baseUrl);
 
         jQuery(document).ready(function() {
             var search_url = baseUrl + '/search-results/abc?univ=';
@@ -179,10 +182,11 @@ jQuery("#get_in_touch_form").validate({
                 var ph_num = jQuery("#phone").val();
                 var num_len = ph_num.length;
 
-                if( ph_num =='' || num_len <6 || num_len >15) {
-                  msg += '\n\u2022  Please enter a valid phone number';
-                }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-                  msg += '\n\u2022  Please enter a valid phone number';
+                if(jQuery("#phone").val() == '') {
+                  msg += '\n\u2022  Phone number cannot be empty';
+                }
+                else if (num_len <6 || num_len >15) {
+                  msg += '\n\u2022  Invalid Phone number';
                 }
 
                 if(msg =='') {
@@ -330,8 +334,14 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var email_id = jQuery("#reg_email").val();
                 var cid = jQuery("#reg_course").val();
 
+                if(baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu" ){
+                    var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
+                } else{
+                    var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
+                }
 
-                jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/SaveLead', {
+
+                jQuery.ajax(URL, {
                   type: 'POST',  // http method
                   contentType: "application/json; charset=utf-8",
                   dataType: "json",
@@ -352,22 +362,29 @@ jQuery.ajax(baseUrl + '/save/contact', {
                       var r = confirm("Registration Successful, you will be redirected to login page now.");
                       if (r == true) {
 
-                        jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id))
+                        if(baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu" ){
+                            var URL = "https://agestagingapi.azurewebsites.net/Register/GetUserId/"+email_id;
+                        } else{
+                            var URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/"+email_id;
+                        }
+
+
+                        jQuery.when( jQuery.get(URL))
                           .then(function( data, textStatus, jqXHR ) {
                           var userId = parseInt(jQuery.trim(data));
                           if( userId > 0) {
                             //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
-                            window.location.replace('https://athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cid+'&mail='+email_id);
+                            window.location.replace(baseUrl + '/StudentEnroltoCourse?UId='+userId+'&CId='+cid+'&mail='+email_id);
 
                           }
                           else{
-                            window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+                            window.location.replace(baseUrl + '/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
 
                           }
 
                         });
                         // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
-                        //window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+                        //window.location.replace(baseUrl + '/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
 
                       } else {
 
@@ -419,10 +436,11 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 var ph_num = jQuery("#phone").val();
                 var num_len = ph_num.length;
 
-                if( ph_num =='' || num_len <6 || num_len >15) {
-                  msg += '\n\u2022  Please enter a valid phone number';
-                }else if(!jQuery('#phone').val().match(/^[0-9]+$/)) {
-                  msg += '\n\u2022  Please enter a valid phone number';
+                if(jQuery("#phone").val() == '') {
+                  msg += '\n\u2022  Phone number cannot be empty';
+                }
+                else if (num_len <6 || num_len >15) {
+                  msg += '\n\u2022  Invalid Phone number';
                 }
 
                  if(jQuery("#reg_qual").val() == '') {
@@ -435,6 +453,9 @@ jQuery.ajax(baseUrl + '/save/contact', {
                     msg += '\n\u2022  Please select level of employment';
                 }
 
+                if(jQuery("#reg_course").val() == '') {
+                    msg += '\n\u2022  Please select course';
+                }
 
                 if(!jQuery("#reg_terms").prop('checked') == true){
                      msg += '\n\u2022  Please accept consent terms';
@@ -451,19 +472,27 @@ jQuery.ajax(baseUrl + '/save/contact', {
                 if(msg == ''){
 
 
+                        if(baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu" ){
+                            var URL = "https://agestagingapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
+                        } else{
+                            var URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email;
+                        }
+
 
                     jQuery.ajax({
    type: 'GET',
-   url: "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/"+c_email, //Returns ID in body
+   url: URL, //Returns ID in body
    async: false, // <<== THAT makes us wait until the server is done.
    success: function(data){
        if (data == 'Email Exist') {
             var email_id = jQuery("#reg_email").val();
        var cid = jQuery("#reg_course").val();
+
+
                                 var redirect = confirm("Email ID already registered, redirect to login page ?");
                                 if (redirect == true) {
                                  // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
-                                 window.location.replace('https://athena.edu/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
+                                 window.location.replace(baseUrl + '/StudentEnroltoCourse?mail='+email_id+'&CId='+cid);
                                 } else {
                                   return false;
                                 }
@@ -650,10 +679,12 @@ jQuery.ajax(baseUrl + '/save/contact', {
 
 
 
-function copy_to_clipboard() {
+function copy_to_clipboard(ele) {
   /* Get the text field */
-  var copyText = document.getElementById("shareurl--copy").innerHTML;
-  var dummy = document.createElement('input');document.body.appendChild(dummy);dummy.value = copyText;
+  var ctext = "shareurl--copy"+ele;
+  var copyText = document.getElementById(ctext).innerText;
+  var dummy = document.createElement('input');
+  document.body.appendChild(dummy);dummy.value = copyText;
   /* Select the text field */
   dummy.select();
   dummy.setSelectionRange(0, 99999); /For mobile devices/

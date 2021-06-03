@@ -1,0 +1,12 @@
+name: Metatag Custom Routes
+type: module
+description: Enables metatags for custom routes.
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - metatag:metatag
+
+# Information added by Drupal.org packaging script on 2020-07-27
+version: '8.x-1.2'
+project: 'metatag_routes'
+datestamp: 1595860749

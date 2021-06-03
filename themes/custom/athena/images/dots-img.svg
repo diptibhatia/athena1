@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="333px" height="221px" viewBox="0 0 333 221" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 7</title>
+    <defs>
+        <circle id="path-1" cx="17" cy="17" r="17"></circle>
+        <filter x="-20.6%" y="-14.7%" width="141.2%" height="141.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.196514423 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="0%" y1="53.8520249%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#FFC300" offset="0%"></stop>
+            <stop stop-color="#FFAC00" offset="100%"></stop>
+            <stop stop-color="#FFD85E" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-4" cx="10.5" cy="10.5" r="10.5"></circle>
+        <filter x="-33.3%" y="-23.8%" width="166.7%" height="166.7%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.196514423 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="0%" y1="53.8520249%" x2="100%" y2="50%" id="linearGradient-6">
+            <stop stop-color="#00A1E8" offset="0%"></stop>
+            <stop stop-color="#004FA1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="registration-thankyou" transform="translate(-171.000000, -170.000000)">
+            <g id="Group-7" transform="translate(175.000000, 172.000000)">
+                <g id="Group-5">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <circle id="Oval" fill="url(#linearGradient-3)" cx="17" cy="17" r="10"></circle>
+                </g>
+                <g id="Group-5-Copy-2" transform="translate(304.000000, 192.000000)">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    </g>
+                    <circle id="Oval" fill="url(#linearGradient-6)" cx="10.5" cy="10.5" r="6.17647059"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

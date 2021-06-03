@@ -1,12 +1,13 @@
 .fyi-tabs {
     font-size: .875rem;
     position: relative;
-    z-index: 4;
+    top: 40px;
+    z-index: 11;
     overflow: hidden;
     padding-bottom: 38px;
-
+    background-color: #fff;
     @include atSize700 {
-        z-index: 11;
+        //z-index: 11;
     }
 
     .nav {
@@ -72,7 +73,7 @@
                 font-weight: bold;
             
                 &::after {
-                    transform: scale(1);;
+                    transform: scale(1);
                 }
             }
         }

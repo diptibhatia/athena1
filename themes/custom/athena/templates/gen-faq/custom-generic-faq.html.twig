@@ -1,0 +1,48 @@
+<div class="course-faq">
+        <div class="wrapper">
+            <h2>{{title}}</h2>
+            <div class="accordion" id="accordion">
+                 {% set faqcategorynum = 1 %}
+             {% for faq_category,faq_data in faqs %}
+                <div class="card">
+                    <div class="card-header" id="headingOne{{faqcategorynum}}">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#sectionOne{{faqcategorynum}}" aria-expanded="false" aria-controls="collapseOne">
+                            {{faq_category}}
+                        </button>
+                        </h5>
+                    </div>
+                    <div id="sectionOne{{faqcategorynum}}" class="collapse" aria-labelledby="headingOne{{faqcategorynum}}" data-parent="#accordion" style="">
+                     {% set questionsnum = 1 %}
+                    {% for questions in faq_data %}
+                        <div class="card-body">
+                            <div class="accordion-inner" id="inner-accordion1">
+                                <div class="card">
+                                    <div class="card-header" id="innerHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstCollapseOne{{faqcategorynum}}{{questionsnum}}" aria-expanded="false" aria-controls="collapseOne">
+                                            {{questions.question|raw}}
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="firstCollapseOne{{faqcategorynum}}{{questionsnum}}" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#inner-accordion1" style="">
+                                        <div class="card-body">
+                                           {{questions.answer|raw}}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        {% set questionsnum = questionsnum+1 %}
+                         {% endfor %}
+                    </div>
+                </div>
+                {% set faqcategorynum = faqcategorynum+1 %}
+               {% endfor %}
+            </div>
+        </div>
+    </div>

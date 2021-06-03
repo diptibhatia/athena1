@@ -3,12 +3,12 @@
   }
 
 
-  .loginBtn {
+  /*.loginBtn {
 	  @media (min-width: 1441px) {
 		  position: relative;
 		  right: -62px;
 	  }
-  }
+  }*/
   
   .grid-view {
 	  //width:1170px;
@@ -444,7 +444,7 @@
 								  }
 								  .course-details {
 									  width: 331px;
-									  min-height: 136px;
+									  min-height: 150px;
 									  height: auto;
 									  border-radius: 6px;
 									  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
@@ -483,6 +483,12 @@
 										  margin: 10px 0 0 5px;
 										  text-align: left;
 										  padding-left: 20px;
+										  text-overflow: ellipsis;
+    max-height: 52px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
 									  }
 									  h2 {
 										  font-size: 14px;
@@ -541,7 +547,7 @@
 				
 			  .owl-dots {
 				  @media screen and (min-width:980px){
-					  display:none;
+					  //display:none;
 				  }
 			  }
   
@@ -941,8 +947,9 @@
 	  }
 
 	  .testimonials {	
-		position:relative; 
-		top:120px;  
+		position: relative;
+		top: 120px;
+		margin-top: 200px; 
 		  .testimonials-background-image{
 			  width: 100%;
 			  position: absolute;
@@ -1740,22 +1747,22 @@
 						font-stretch: normal;
 						color: $blogColor;
 						text-align: left;
-						margin: 10px 22px;
+						margin: 12px;
 				  }
 				  h5 {
 						font-size: 18px;
 						font-weight: bold;
 						color: $primaryColor;
-						margin: 0 22px;
-					  text-align: left;
+						margin: 12px;
+					  	text-align: left;
 				  }
 				  p {
 						font-size: 16px;
 						color: $primaryColor;
-						margin: 0 22px;
+						margin: 12px;
 					  text-align: left;
 				  }
-				  img {max-width:100%;}
+				  img {max-width:100%; padding:12px; width:100%;}
 			  }
 			  @include atSize424 {
 				  display: none;
@@ -2228,7 +2235,7 @@
 				  }
 				  .course-details {
 					  width: 331px;
-					  min-height: 146px;
+					  min-height: 160px;
 					  height: auto;
 					  border-radius: 6px;
 					  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
@@ -2267,6 +2274,12 @@
 						  margin: 10px 0 0 5px;
 						  text-align: left;
 						  padding-left: 20px;
+						  text-overflow: ellipsis;
+    max-height: 52px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
 					  }
 					  h2 {
 						  font-size: 14px;
@@ -2386,7 +2399,7 @@
 				  }
 				  .course-details {
 					  width: 331px;
-					  height: 146px;
+					  height: 160px;
 					  border-radius: 6px;
 					  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.19);
 					  background-color: #ffffff;
@@ -2424,6 +2437,12 @@
 						  margin: 10px 0 0 5px;
 						  text-align: left;
 						  padding-left: 20px;
+						  text-overflow: ellipsis;
+    max-height: 52px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
 					  }
 					  h2 {
 						  font-size: 14px;
@@ -2823,10 +2842,6 @@
 	.explore-courses .owl-carousel .owl-stage{
 		margin-left:0;
 	}
-	.hideinMobileView {
-		text-align: center;
-	}
-
 	.explore-courses{
 		margin:79px 0 10px 0;
 

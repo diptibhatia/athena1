@@ -29,10 +29,22 @@ function athena_course_mail($key, &$message, $params) {
  */
 function athena_course_theme($existing, $type, $theme, $path) {
     return [
+    'website_subscribe_popup' => [
+      'variables' => [
+        'subscribed' => NULL
+      ],
+    ],
+    'rsu_ucam' => [
+      'variables' => [
+      ],
+    ],
     'short_term_course' => [
       'variables' => [
         'nodes' => NULL,
-        'display_load_more' => NULL
+        'display_load_more' => NULL,
+        'filters' => NULL,
+        'certificates' => NULL,
+        'portal_url' => NULL
       ],
     ],
     'course_banner' => [
@@ -81,6 +93,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
 
 'smo' => [
       'variables' => [
+      'payment' => NULL,
       'course_title' => NULL,
       'ects_credit' => NULL,
       'awarding_body' => NULL,
@@ -175,6 +188,8 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'fees_pay_per' => NULL,
       'course_team' => NULL,
       'course_batch' => NULL,
+      'course_batch_desc' => NULL,
+      'course_batch_title' => NULL,
       'faq' => NULL,
       'univ_data' => NULL,
       'course_title' => NULL,
@@ -263,6 +278,14 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'univ_popular' => NULL,
       ],
     ],
+    'our_popular_courses' => [
+      'variables' => [
+      'base_path' => NULL,
+      'popular' => NULL,
+      'univ_popular' => NULL,
+      ],
+    ],
+
     'homepage_testimonials' => [
       'variables' => [
       'base_path' => NULL,
@@ -306,12 +329,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'base_path' => NULL,
       'source' => NULL,
       'campaign' => NULL,
-      'cid' => NULL,      
+      'cid' => NULL,
       'fname' => NULL,
       'lname' => NULL,
       'email' => NULL,
       'ccode' => NULL,
-      'phone' => NULL,      
+      'phone' => NULL,
       'nodes' => NULL,
       ],
     ],
@@ -340,6 +363,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       ],
     ],
 
+  'reg_redirect' => [
+      'variables' => [
+      'base_path' => NULL,
+      ],
+    ],
+
 
 
   ];
@@ -347,13 +376,65 @@ function athena_course_theme($existing, $type, $theme, $path) {
 
 
 function athena_course_page_attachments(array &$attachments) {
+    $current_path = \Drupal::service('path.current')->getPath();
+    if (strpos($current_path, '/node') !== false) {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node instanceof \Drupal\node\NodeInterface) {
+        $node_type = $node->getType();
+        if ($node_type == 'insight_article' || $node_type == 'insights_viewpages') {
+          $attachments['#attached']['library'][] = 'athena_course/website_subscribe';
+        }
+      }
+    }
+
+
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name == 'athena_smo.smo') {
+      $attachments['#attached']['library'][] = 'athena_course/athena_course';
+    }
+
     $account = \Drupal::currentUser();
     if ($account->id() != 1) {
       $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
     }
 
+    if ($route_name == 'athena_smo.smo' || $route_name == 'athena_course.course') {
+      $taboolaPixel = "window._tfa = window._tfa || [];
+        window._tfa.push({notify: 'event', name: 'page_view', id: 1381678});
+        !function (t, f, a, x) {
+               if (!document.getElementById(x)) {
+                  t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);
+               }
+        }(document.createElement('script'),
+        document.getElementsByTagName('script')[0],
+        '//cdn.taboola.com/libtrc/unip/1381678/tfa.js',
+        'tb_tfa_script');";
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#value' => \Drupal\Core\Render\Markup::create($taboolaPixel),
+          '#weight' => 7,
+        ],
+        'taboola_each_page'
+      ];
+    }
 
-    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name == 'athena_smotq.smotq') {
+      $uid = $_REQUEST['UId'] ?? '';
+      $source = $_REQUEST['utm_source'] ?? '';
+      if ($source == 'ShareASale') {
+        // ShareASale Pixel.
+        $shareASalePixel = '<img src="https://www.shareasale.com/sale.cfm?tracking=' . $uid . '&amount=0.00&merchantID=102553&transtype=lead" width="1" height="1">';
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#tag' => '',
+            '#value' => \Drupal\Core\Render\Markup::create($shareASalePixel),
+            '#weight' => 9,
+          ],
+          'shareasale'
+        ];
+      }
+    }
 
     // Custom meta tags on smo and course pages.
     if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
@@ -422,6 +503,57 @@ function athena_course_page_attachments(array &$attachments) {
           'keywords'
         ];
       }
+
+      if (!empty($meta_tag_value)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'property' => 'og:title',
+              'content' => $meta_tag_value
+            ],
+            '#weight' => -8,
+          ],
+          'keywords'
+        ];
+      }
+
+      $currentPageUrl = 'https://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+
+      if (!empty($meta_tag_value)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'property' => 'og:url',
+              'content' => $currentPageUrl
+            ],
+            '#weight' => -7,
+          ],
+          'keywords'
+        ];
+      }
+
+      $image = file_create_url($node->field_search_list_image->entity->getFileUri());
+
+      if (!empty($meta_tag_value)) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => [
+              'property' => 'og:image',
+              'content' => $image
+            ],
+            '#weight' => -6,
+          ],
+          'keywords'
+        ];
+      }
+
+
     }
 
     if ($route_name == 'athena_course.StudentEnroltoCourse') {
@@ -548,27 +680,76 @@ function athena_course_page_attachments(array &$attachments) {
 
 
         if (strpos($referer, 'MBAPrograms') !== false) {
-          // ENCYL DIGITAL Pixel.
-          $encylPixel = '<img src="http://encyl.offerstrack.net/pixelBack.php?offer_id=3609&adv_id=2132" width="1" height="1" />';
-          $attachments['#attached']['html_head'][] = [
-            [
-              '#tag' => '',
-              '#value' => \Drupal\Core\Render\Markup::create($encylPixel),
-              '#weight' => 10,
-            ],
-            'encyl'
-          ];
 
-          // Monetize pixel.
-          $monetizePixel = '<iframe src="https://monetisetrk.co.uk/p.ashx?o=6101&e=1068&t=' . $uid . '" height="1" width="1" frameborder="0"></iframe>';
-          $attachments['#attached']['html_head'][] = [
-            [
-              '#tag' => '',
-              '#value' => \Drupal\Core\Render\Markup::create($monetizePixel),
-              '#weight' => 10,
-            ],
-            'monetize'
-          ];
+          if ($source == 'LINKCONNECTOR') {
+            // LINKCONNECTOR Pixel.
+            $linkConnectorPixel = "var uts_eventid = '5326';  // Lead EventID
+              var uts_orderid = 'orderid'; // unique transaction identifier such as email address or
+              customerid
+              var uts_saleamount = 'amount';  // needs to be a positive value (not 0).  It is only used
+              to store the value in our DB and not to determine commission
+              var uts_coupon = '';  // leave blank
+              var uts_discount = ''; // leave blank
+              var uts_currency = 'USD';";
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => 'script',
+                '#value' => \Drupal\Core\Render\Markup::create($linkConnectorPixel),
+                '#weight' => 10,
+              ],
+              'LINKCONNECTOR'
+            ];
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#type' => 'html_tag',
+                '#tag' => 'script',
+                '#attributes' => [
+                  'src' => 'https://www.linkconnector.com/uts_tm.php?cgid=901759',
+                ],
+                '#weight' => 10,
+              ],
+              'LINKCONNECTOR2'
+            ];
+          }
+
+          if ($source == 'ENCYLDIGITAL') {
+            // ENCYL DIGITAL Pixel.
+            $encylPixel = '<img src="http://encyl.offerstrack.net/pixelBack.php?offer_id=3609&adv_id=2132" width="1" height="1" />';
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => '',
+                '#value' => \Drupal\Core\Render\Markup::create($encylPixel),
+                '#weight' => 10,
+              ],
+              'encyl'
+            ];
+          }
+
+          if ($source == 'MONETISEUK') {
+            // Monetize pixel.
+            $monetizePixel = '<iframe src="https://monetisetrk.co.uk/p.ashx?o=6101&e=1068&t=' . $uid . '" height="1" width="1" frameborder="0"></iframe>';
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => '',
+                '#value' => \Drupal\Core\Render\Markup::create($monetizePixel),
+                '#weight' => 10,
+              ],
+              'monetize'
+            ];
+          }
+
+          if ($source == 'NOBBYMEDIA') {
+            // NobbyMedia pixel.
+            $nobbyMediaPixel = '<img src="https://nobbymedia10917966.o18.click/p?mid=5246&t=i&gb=1" width="0px" height="0px">';
+            $attachments['#attached']['html_head'][] = [
+              [
+                '#tag' => '',
+                '#value' => \Drupal\Core\Render\Markup::create($nobbyMediaPixel),
+                '#weight' => 10,
+              ],
+              'nobbymedia'
+            ];
+          }
 
         }
 
@@ -589,14 +770,23 @@ function athena_course_page_attachments(array &$attachments) {
         $redirect = "<meta http-equiv='refresh' content='3;url=$url' />";
         $attachments['#attached']['html_head'][] = [
           [
-            '#tag' => '',
+            '#tag' => 'refresh',
             '#value' => \Drupal\Core\Render\Markup::create($redirect),
             '#weight' => -10,
           ],
           'ulearn_redirect'
         ];
-
       }
+
+      $taboolaTqPixel = "_tfa.push({notify: 'event', name: 'lead', id: 1381678});";
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#value' => \Drupal\Core\Render\Markup::create($taboolaTqPixel),
+          '#weight' => 11,
+        ],
+        'taboola_tq'
+      ];
     }
 }
 
@@ -645,29 +835,10 @@ $countries = array( "BD" => "Bangladesh", "BE" => "Belgium", "BF" => "Burkina Fa
       return '';
     }
     $university_node = Node::load($entity_id);
-    switch($university_node->get('title')->value){
-      case 'Scottish Qualifications Authority, UK':
-        return "sqalogo";
-        break;
-      case 'Guglielmo Marconi University, Italy':
-        return "gmu-white";
-        break;
-      case 'Cambridge International Qualifications, UK':
-        return "ciq-white";
-        break;
-       case 'Universidad Catolica De Murcia (UCAM), Spain':
-        return "ucam-logo";
-        break;
-      case 'Chartered Management Institute, UK':
-        return "cmi-white";
-        break;
-      case 'Bellevue University':
-        return "bellevue-white";
-        break;
-      default:
-        return '';
-        break;
+    if(is_object($university_node->field_white_logo->entity)) {
+      return file_create_url($university_node->field_white_logo->entity->getFileUri());
     }
+    return '';
   }
 
   /**
@@ -678,7 +849,7 @@ function getUniversityLogo($entity_id) {
     return '';
   }
   $university_node = Node::load($entity_id);
-  if(is_object($university_node->field_logo)) {
+  if(is_object($university_node->field_logo->entity)) {
     return file_create_url($university_node->field_logo->entity->getFileUri());
   }
   return '';

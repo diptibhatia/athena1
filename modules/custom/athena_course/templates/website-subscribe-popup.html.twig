@@ -1,0 +1,53 @@
+{% if subscribed == 0 %}
+    <link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/modules/_subscribePopup.css">
+    <script src="https://kit.fontawesome.com/31cbd00155.js" crossorigin="anonymous"></script>
+
+    <button id="popBtn" style="display:none;">Pop Up</button>
+    <div id="register-pop-up" class="modal-reg">
+        <div class="pop-up-content">
+            <span class="close">&times;</span>
+            <div class="content">
+                <h2 class="pop-up-heading">Subscribe to our <span class="text-insight">Insights</span></h2>
+                <p class="pop-up-para">Want to be notified wen our article is published? Enter
+                    your email address and name below to be the first to know.</p>
+                <div class="input-content">
+                <div class="input-icon">
+                    <i class="far fa-envelope inputi"></i>
+                    <input type="text" id="email" placeholder="Email" class="email-input" required>
+                  </div>
+                  <div class="input-icon">
+                  <i class="fas fa-user inputi"></i>
+                    <input type="text" id="name" placeholder="Name" class="name-input" required>
+                </div>
+                    <button class="submit-input" id="popthnksBtn">SIGNUP FOR THE NEWSLETTER NOW </button>
+                    <p class="sub-text">Dont’t Worry ! You will not be spammed</p>
+                </div>
+                <div class="social-content">
+                    <div class="social-icon-facebook">
+                        <p><i class="fab fa-facebook-f"></i></p>
+                    </div>
+                    <div class="social-icon-google">
+                       <img src="/themes/custom/athena/images/google-logo.png" alt="google logo" class="google-logo">
+                    </div>
+                    <div class="social-icon-linkin">
+                        <p><i class="fab fa-linkedin-in"></i></p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="thanks-up" class="thanks-modal">
+        <div class="pop-up-content-thanks">
+            <span class="lclose">&times;</span>
+            <div class="thnks-conent">
+                <img src="/themes/custom/athena/images/star-insights.svg">
+                <h2 class="thanks-head">Thank you for Subscribing !</h2>
+                <p class="thanks-para"> You’ve sucessfully subscribed to our <Span> Insights </Span></p>
+                <Button class="okay">Okay</Button>
+            </div>
+
+        </div>
+    </div>
+{% endif %}

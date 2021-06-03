@@ -1,0 +1,209 @@
+.employers-list-bg {
+  padding: 180px 0px 80px 0px;
+  background-image: url("../images/employers-list-bg.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center center;
+}
+
+.employers-list-img img {
+  width: 99px;
+  height: 99px;
+  object-fit: cover;
+  border: solid 1.3px #ffac00;
+}
+
+.employers-icons li {
+  margin: 0px !important;
+}
+
+.grid-list-desc{h5 {font-size: 14px;
+  font-weight: bold; color:#303030;
+p {font-size: 12px;
+  font-weight: 500; color:#303030;}}}
+
+.event_popup {
+  .row {width:auto; }
+  .card { 
+    width: 525px; 
+    margin: 0;
+    box-shadow: 0 2px 18px -1px #d5dbfb;
+    border: solid 2px rgba(255, 0, 110, 0.2);
+    background: rgb(255,255,255);
+    background: linear-gradient(-45deg, rgba(255,255,255,1) 50%, rgba(249, 249, 249,1) 50%);
+
+@media screen and (max-width: 1366px) { 
+   width: 425px; 
+}
+@media screen and (max-width: 540px) { 
+    width: 90%;
+    left: 20px;
+}
+  }
+ .event_popup_close {
+   position: absolute;
+  left: -20px;
+  top: -20px;
+  background: #000;
+  padding: 7px 10px;
+  border-radius: 50%;
+  width: 43px;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #fff;
+  font-weight: bold;
+&:hover {text-decoration: none;}
+}
+.register-popup {
+  position: absolute; top:338px; right:0; z-index: 99; margin: 0;
+}
+h4.course-title {    
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ff006e;
+  text-transform: uppercase;
+}
+  h4.course-partner {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #91278f;
+  }
+    p.course-info {
+      font-family: Lato;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.79;
+      letter-spacing: normal;
+      color: #303030;
+    }
+.course-main .register a {  
+    color: #fff;
+    letter-spacing: .3px;
+    display: block; 
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 3px;
+    background-image: linear-gradient(to right,#ff006e 0%,#ff4e9a 100%,#fff 100%);
+    //width: 170px;
+}
+}
+/********************
+   EMPLOYERS DETAILS
+*********************/
+.employers-details-bg {
+  padding: 180px 0px 80px 0px;
+  background-image: url("../images/employers-details-bg.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center center;
+}
+
+.employers-details {
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.employers-share-job li a {
+  height: 40px;
+  width: 40px;
+  color: #777777;
+  text-align: center;
+  font-size: 19px;
+  display: inline-block;
+  line-height: 38px;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: 6px 0;
+  transition: all 0.5s;
+}
+
+.employers-share-job li a:hover {
+  background-color: #ff4f6c;
+  color: #ffffff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-color: #ff4f6c;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 3px 20px -8px #000000;
+          box-shadow: 0 3px 20px -8px #000000;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .m-14 {
+    margin: 14px 0px;
+  }
+}
+
+@media (max-width: 425px) {
+  .employers-details-time h6 {
+    text-align: center !important;
+  }
+  .employers-details-item-border {
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+  }
+}
+
+.list-grid-item {
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.list-grid-item:hover {
+  -webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+          box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-color: transparent;
+}
+
+.left-sidebar .card-body {
+    border-bottom: 1px solid #ececec;
+}
+
+.custom-control {
+    margin: 11px 20px;
+}
+
+.card-header {
+    background-color: transparent;
+    margin-bottom: 0 !important;
+}
+
+.pagination.job-pagination .page-link {
+  border-radius: 50% !important;
+  margin: 0 4px;
+  height: 46px;
+  width: 45px;
+  line-height: 29px;
+  text-align: center;
+  color: #777777;
+}
+
+.page-item.active .page-link {
+  background-color: #ff4f6c;
+  border-color: #ff4f6c;
+  color: #ffffff !important;
+}
+
+.f-14 {
+    font-size: 14px;
+}

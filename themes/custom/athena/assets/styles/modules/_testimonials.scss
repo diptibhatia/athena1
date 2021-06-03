@@ -615,10 +615,9 @@ div#block-discussions .title span {
   }
 }
 
-
 .testimonials {
   position:relative;
-  margin-top: 200px;
+  margin-top: 50px;
     .sidebar {
     .list-group-item {
       padding: 20px 1.25rem;
@@ -736,19 +735,12 @@ div#block-discussions .title span {
     }
     .meta {
       position: relative;
-      z-index: 0;
-      height: 200px;
+      z-index: 0; 
     }
-    .photo {
-      position: absolute;
-      height: auto;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      @include atSize424{
-        text-align: center;
-      }
+    .photo { 
+      // @include atSize424{
+      //   text-align: center;
+      //}
       a{
         position:absolute;
         bottom: 18px;
@@ -788,9 +780,10 @@ div#block-discussions .title span {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        object-position: top;
         @include atSize424{
-          height: auto !important;
-          width: auto !important;
+          // height: auto !important;
+          // width: auto !important;
         }
       }
     }
@@ -933,8 +926,7 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type {
-        margin-top: 1.25rem;
+      &:first-of-type { 
         &:before {
           content: "";
           position: absolute;
@@ -957,7 +949,14 @@ div#block-discussions .title span {
         flex-basis: 37%;
         height: auto;
         width: 100%;
-
+      }
+      .photo {
+        position: absolute;
+        height: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
       }
       .description {
         flex-basis: 61%;
@@ -987,6 +986,23 @@ div#block-discussions .title span {
   }
 }
 
+.testimonial-inside { 
+  .course-login-wrapper {height: auto; margin: auto;}
+  .course-login-wrapper .login-details h3 span { 
+    top: 42px;
+  }
+  .photo {
+    position: static !important;
+  }
+  .photo a { 
+    top: 60% !important; 
+    bottom: auto !important;
+}
+  .testimonial-info {
+    padding-left: 10px;
+    padding-bottom: 10px; 
+  }
+}
 
 .testimonials_updated {
   margin: 50px 0 0 0;
@@ -1167,8 +1183,7 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type {
-        margin-top: 0.5rem;
+      &:first-of-type { 
         &:before {
           content: "";
           position: absolute;
@@ -1216,6 +1231,7 @@ div#block-discussions .title span {
       flex: none;
       clear: both;
       margin: 0;
+      margin-bottom: 10px;
       position: relative;
       display: block;
       }
@@ -1499,6 +1515,7 @@ div#block-discussions .title span {
   flex: none;
   clear: both;
   margin: 0;
+      margin-bottom: 10px;
   position: relative;
   display: block;
   }

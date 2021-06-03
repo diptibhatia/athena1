@@ -30,7 +30,7 @@
     nav: true,
     //navContainer: '.nav-outside-shop',
     navClass: ['owl-prev', 'owl-next'],
-    //navText: ['<img src="/themes/custom/athena/images/affiliatepage/previous.svg" />', 
+    //navText: ['<img src="/themes/custom/athena/images/affiliatepage/previous.svg" />',
     //'<img src="/themes/custom/athena/images/affiliatepage/next.svg" />'],
       dots: true,
     responsive: {
@@ -69,6 +69,27 @@
       }
   });
   $("#reg_mobile_num").intlTelInput();
+
+  $.fn.inputFilter = function(inputFilter) {
+    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (this.hasOwnProperty("oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      } else {
+        this.value = "";
+      }
+    });
+  };
+  jQuery("#reg_mobile_num").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+  });
+  jQuery('#reg_mobile_num').attr('maxlength', 15);
+
+
   var cData = {};
   $(".btn-try a").on('click', function(e) {
     e.preventDefault();
@@ -76,7 +97,7 @@
   });
   $(document).on('show.bs.modal', '#registrationModal', function(e) {
     //get data-id attribute of the clicked element
-    var cId = $(e.relatedTarget).data('cid');    
+    var cId = $(e.relatedTarget).data('cid');
     var modId = $(e.relatedTarget).data('mid');
     var pay = $(e.relatedTarget).data('pay');
     // console.log(modId);
@@ -97,7 +118,7 @@
         .end();
         jQuery("#registration-afpage").validate().resetForm();
         $('#registration-afpage .reg-form-control').removeClass('help-inline-error');
-        
+
     $(".ref-form-2").hide("fast");
     $(".reg-form").show("slow");
   });
@@ -105,13 +126,17 @@
   //----------------form validation
   jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-zA-Z_ \.]*$/i.test(value);
-}, "Please enter only letters"); 
+}, "Please enter only letters");
 
-jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
-    phone_number = phone_number.replace(/\s+/g, "");
-    return this.optional(element) || phone_number.length > 9 &&
-        phone_number.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
-}, "Please specify a valid phone number");
+  jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+      if (phone_number.length == 0) {
+        return false;
+      }
+      if (phone_number.length < 6 || phone_number.length > 15) {
+        return false;
+      }
+      return true;
+  }, "Please specify a valid phone number");
 
 jQuery.validator.addMethod("emailExt", function(value, element, param) {
     return value.match(/^[a-zA-Z0-9_\.%\+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,}$/);
@@ -132,7 +157,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
         lettersonly: true
       },
       regEmail: {
-        required: true,        
+        required: true,
         emailExt: true
       },
       reg_mobile_num: {
@@ -169,10 +194,10 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
     errorElement: "span",
     errorClass: "help-inline-error",
   });
-  $(".sign-up-button").click(function(e) {    
+  $(".sign-up-button").click(function(e) {
     e.preventDefault();
     cData.email = String(jQuery("#regEmail").val());
-    cData.cId = parseInt(jQuery("#course").val());    
+    cData.cId = parseInt(jQuery("#course").val());
     cData.modId = jQuery("#modId").val();
     cData.pay = jQuery("#pay").val();
     var utmSource = getParameterByName("utm_source");
@@ -183,15 +208,16 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
         success: function(response) {
           // console.log(response);
           if(response == "Email Exist") {
-            var r = confirm("User already registered, please wait while we redirect you");
-            
+            var r = confirm("User already register, please wait while we redirect you to payment page");
+
             if (r == true) {
               redirCandidate(cData, utmSource);
+              //window.location.replace('https://ulearn.athena.edu/login?from=affiliate&mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
             } else {
                  window.close();
-                 parent.location.reload();       
+                 parent.location.reload();
             }
-            
+
           }
           else {
             $(".reg-form").hide("fast");
@@ -261,9 +287,9 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
               redirCandidate(cData, utmSource);
             } else {
                  window.close();
-                 parent.location.reload();       
+                 parent.location.reload();
             }
-            
+
           }
         },
         error: function (jqXhr, textStatus, errorMessage) {
@@ -282,23 +308,23 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
 
   function redirCandidate(cData, utmSource) {
     // console.log(cData);
-    
+
     if(cData.hasOwnProperty('pay') && cData.pay == 1) {
       jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
         .then(function( data, textStatus, jqXHR ) {
         //   alert(data);
         // alert( jqXHR.status );
         var userId = parseInt(jQuery.trim(data));
-        if( userId > 0) {          
+        if( userId > 0) {
           window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?from=affiliate&UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
-          
+
           //window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId+'&source='+utmSource);
 
         } else {
           alert("Something went wrong please try again");
         }
       });
-    } else {      
+    } else {
       //window.location.replace('https://ulearn.athena.edu/login?mail='+cData.email+'&CId='+cData.cId);
       window.location.replace('https://athena.edu/StudentEnroltoCourse?from=affiliate&mail='+cData.email+'&CId='+cData.cId+'&source='+utmSource);
     }

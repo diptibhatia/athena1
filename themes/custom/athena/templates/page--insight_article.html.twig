@@ -1,9 +1,9 @@
-
 <header class="site-header">
     <div class="wrapper">
     {{ page.header }}
 </header>
 <div class="top-gap"></div>
+
 {% if page.highlighted %}
     <div class="highlighted">
     <aside class="layout-container section clearfix" role="complementary">
@@ -15,13 +15,17 @@
 {% if athena_exclude %}
   {{ page.content }}
 {% else %}
+
     <div class="main-wrapper container-fluid p-0 insight-wrapper">
+
     {% if page.featured_top %}
             {{ page.featured_top }}
     {% endif %}
       <div id="progress-bar" class="progress-bar">
           <div class="fill"></div>
       </div>
+
+</div>
       <div class="row bg-white wrapper">
         <div class="col-md-7 mobilePadding">
                 {{ page.content }}
@@ -39,7 +43,9 @@
 
         <div class="col-md-4 mobilePadding">
           {% if page.sidebar_second %}
+
                   {{ page.sidebar_second }}
+          
           {% endif %}
 
         </div>
@@ -64,7 +70,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
      <script src="jquery.min.js"></script>
     <script type="text/javascript">
-        includeHTML();
+
+    includeHTML();
         function includeHTML() {
             var z, i, elmnt, file, xhttp;
             /* Loop through a collection of all HTML elements: */

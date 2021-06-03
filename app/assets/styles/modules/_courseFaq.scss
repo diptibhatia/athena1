@@ -1,6 +1,6 @@
 .course-faq {
     position: relative;
-    background-color: #fff;
+    background-color: #eff1fe;
     padding-top: 20px;
     @include atSize850 {
       //  padding-top: 60px;
@@ -120,7 +120,8 @@
 
             &-body {
                 padding: 0;
-                box-shadow: 0 2px 25px 2px #d5dbfb;
+                //box-shadow: 0 2px 25px 2px #d5dbfb;
+                border: 1px solid #eee;
                 max-width: 1170px;
                 margin: 0 auto;
                 position: relative;
