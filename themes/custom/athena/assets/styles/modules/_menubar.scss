@@ -884,6 +884,7 @@
                 background-color: #979797;
                 position: absolute;
                 left: 2px;
+                display:none;
             }
 
             &::after {
@@ -894,6 +895,7 @@
                 position: absolute;
                 bottom: 6px;
                 opacity: .5;
+                display:none;
             }
         }
 
