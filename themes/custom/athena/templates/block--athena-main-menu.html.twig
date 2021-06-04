@@ -34,7 +34,60 @@
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 
 <div class="megamenu-container">
-	<nav class="navbar navbar-expand-lg">
+
+<div class="explore-btn-main" onClick="javascript(0);">
+    <span>Explore</span>
+    <div class="dd-level1">
+        <ul>
+            <li><a href=#><img style="float:left;margin-right:10px;" src="acadamic-icn.svg" />Academic Programs</a>
+                <div class="dd-level2">
+                    <div class="dd-level2-inner">
+                            <h4>Academic</h4>
+                            <p><a href="{{url('<front>')}}academic-program">View all Academic Courses</a></p>
+                        <ul>
+                            {% for academic in academicnodes %}
+                            <li><a href="{{url('<front>')}}course/{{academic.nid}}" href=#>{{academic.title}}</a>
+                                <div class="dd-level3">
+                                    <ul>
+                                        <li><h4>Awarding Body</h4></li>
+                                        {% for univ in academic.universities%}
+                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="{{univ.label}}">{{univ.label}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li><a href=#><img src="certification-icn.svg" style="float:left;margin-right:10px;" />Certifications</a>
+                <div class="dd-level2">
+                    <div class="dd-level2-inner">
+                        <h4>Certification</h4>
+                        <p><a href="{{url('<front>')}}certifications">View all Certification</a></p>
+                        <ul>
+                            {% for cert in certificationsnodes %}
+                                <li><a href="{{url('<front>')}}course/{{cert.nid}}">{{cert.title}}</a>
+                                    <div class="dd-level3">
+                                        <ul>
+                                            {% for univ in cert.universities%}
+                                                <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="{{univ.label}}">{{univ.label}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+{# 	<nav class="navbar navbar-expand-lg">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -156,7 +209,7 @@ align-items: center;box-sizing: border-box;">
       <img src="/themes/custom/athena/images/search.svg" alt="search" style="width: 36px;">
     </button>
 
-</nav>
+</nav> #}
 </div>
 
 
