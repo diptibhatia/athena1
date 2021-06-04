@@ -40,6 +40,74 @@
         }
     }
 
+.search-form {
+       margin: 0 30px;
+       @media screen and (max-width:600px) {
+           position: absolute;
+           width: auto;
+           top: 0px;
+           left: -112px;
+           background: #fff;
+           height: 130px;
+           z-index: 1001;
+           margin: 0 -15px 0 0;
+       }
+       
+       .search-courses {
+         width: 51px;
+         height: 40px;
+         border-radius: 4px;
+         background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
+         padding-top: 7px;
+         display: inline-block; 
+         position: absolute;
+        right: 2px;
+        top: 6px;
+        text-align: center;
+   @media screen and (max-width:600px) { 
+       top:72px; 
+   }
+         img {
+           width: 28px;
+           height: 28px;
+           opacity: 0.84; 
+           min-width:auto;
+         }
+         @include atSize424 { 
+           img { 
+                 display: inline-block;
+           }
+         }
+       } 
+    
+     input[type="text"] {
+       border: 0px;
+       width: 100%;
+       min-width:350px;
+       max-width: 570px;
+       height: 44px;
+       padding: 0 10px;
+       border-radius: 5px; 
+       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+       background-color: #ffffff;
+       position: relative;
+       top: 4px;
+       
+   @media screen and (max-width:600px) { 
+       top:10px; 
+   }
+     }
+     i {
+       margin-left: 0px;
+       border: 0px;
+       background: none;
+       background-color: $orange;
+       color: black;
+       padding: 10px;
+       cursor: pointer;
+     }
+   }
+
     &__explore-btn {
         background-image: linear-gradient(89deg, #ff006e 0%, 
         #ff4e9a 100%, #ffd85e 100%);
