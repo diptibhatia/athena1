@@ -6,6 +6,18 @@ use Drupal\node\Entity\NodeType;
 use \Drupal\Core\Entity\EntityInterface;
 use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
+/**
+ * Put dots if string has more than chars.
+ */
+function put_dots_in_string($string, $length) {
+    $string = trim($string);
+    if (strlen($string) > $length) {
+        $string = substr($string, 0, $length);
+        $string = $string . '...';
+        return $string;
+    }
+    return $string;
+}
 
 /**
  * Get Static data.
@@ -73,7 +85,7 @@ function get_course_nav_items($type = 'Academic') {
         ->orderBy('n.created', DESC);
         $data_1 = $query->execute()->fetchAllKeyed(0, 0);
     }
-    
+
     $data = is_array($data_1) && !empty($data_1) ? array_merge($data_1 , $data_0) : $data_0;
     return  $data;
 }
