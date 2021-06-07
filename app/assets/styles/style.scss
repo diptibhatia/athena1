@@ -135,7 +135,7 @@ form.comment-form {
     background: transparent;
 }
 
-.help-inline-error {color:red; font-size: 14px;}
+.help-inline-error, .user-login-form .description {color:red; font-size: 14px;}
 #reg_mobile_num-error {float:left; margin-bottom:15px;}
 #registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
@@ -203,6 +203,12 @@ form.comment-form {
     box-shadow: 0 2px 25px 2px #d5dbfb;
     background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
     color: #fff;
+}
+.js-form-submit.form-submit {
+    max-width:480px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border:none;
 }
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;

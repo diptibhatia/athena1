@@ -14,6 +14,7 @@
 	   }
 	   .address { 
 		   border-top: 1px solid #979797;
+		   @media screen and (max-width:800px) {border-top: none;}
 		p {
 			font-size: 12px;
 			line-height: 31px;

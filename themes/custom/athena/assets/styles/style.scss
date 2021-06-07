@@ -204,6 +204,12 @@ form.comment-form {
     background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
     color: #fff;
 }
+.js-form-submit.form-submit {
+    max-width:480px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border:none;
+}
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
     border: solid 2px $titlePink;
