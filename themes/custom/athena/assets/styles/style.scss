@@ -135,7 +135,7 @@ form.comment-form {
     background: transparent;
 }
 
-.help-inline-error {color:red; font-size: 14px;}
+.help-inline-error, .user-login-form .description {color:red; font-size: 14px;}
 #reg_mobile_num-error {float:left; margin-bottom:15px;}
 #registrationModal  {padding-right:0 !important;}
 #block-latestinsightssidebarblock .row {width: auto;}
