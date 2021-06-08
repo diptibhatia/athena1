@@ -18,7 +18,8 @@
     &__logo {
         width: 95px;
         margin-right: 1.375rem;
-
+        position: relative;
+        z-index:1003;
         img {
             width: 100%;
             display: inline-block;
@@ -41,12 +42,12 @@
     }
 
 .search-form {
-       margin: 0 30px;
+       margin: 0 20px 0 30px;
        @media screen and (max-width:600px) {
            position: absolute;
            width: auto;
            top: 0px;
-           left: -112px;
+           left: -130px;
            background: #fff;
            height: 130px;
            z-index: 1001;
@@ -65,7 +66,8 @@
         top: 6px;
         text-align: center;
    @media screen and (max-width:600px) {
-       top:72px;
+       top:71px;
+       right: 15px;
    }
          img {
            width: 28px;
@@ -95,6 +97,7 @@
 
    @media screen and (max-width:600px) {
        top:10px;
+       margin: 13px;
    }
      }
      i {
