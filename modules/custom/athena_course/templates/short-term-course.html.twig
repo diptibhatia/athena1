@@ -354,11 +354,11 @@
     function searchCertificates(id) {
         jQuery('.category-area .nav-link').removeClass('active');
         jQuery('#filter_certificate_' + id).addClass('active');
-        var subject_id = jQuery('#selected_keywords').val();
+        var subject_id = jQuery('#selected_keywords_ids').val();
+        subject_id = sanitizeInput(subject_id);
 
         var search_val = jQuery('#search').val();
-        search_val = search_val.trim();
-        search_val = search_val.replace(/<(.|\n)*?>/g, '');
+        search_val = sanitizeInput(search_val);
 
         if (subject_id) {
 
