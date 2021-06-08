@@ -125,7 +125,7 @@
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
                                         <p class="small">{{node.field_certified_level}}</p>
-                                        <p class="small">{{ node.body }}</p>
+                                        <p class="small">{{ node.body|raw }}</p>
                                     </div>
 
                                     <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
@@ -153,7 +153,7 @@
                                 <div class="course-details">
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
-                                        <p class="small">{{ node.card_intro }}</p>
+                                        <p class="small">{{ node.card_intro|raw }}</p>
                                     </div>
                                     <div class="col-12 button-area"><a target="_blank"
                                             href="{{node.course_url}}"><button>Start Now</button></a></div>
@@ -235,6 +235,8 @@
         jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
         jQuery('#search').val('');
         jQuery('#selected_filters').html('');
+        jQuery('#selected_keywords').val('');
+        jQuery('#selected_keywords_ids').val('');
         jQuery('.category-area .nav-link').removeClass('active');
         var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
         Drupal.ajax({ 'url': endpoint }).execute();
