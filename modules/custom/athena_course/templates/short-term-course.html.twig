@@ -92,6 +92,7 @@
                     </nav>
                 </div>
                 <input id="selected_keywords" type="hidden" />
+                <input id="selected_keywords_ids" type="hidden" />
             </div>
 
             <!--Multiple Course Selection buttons: END -->
@@ -121,7 +122,7 @@
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
                                         <p class="small">{{node.field_certified_level}}</p>
-                                        <p class="small">{{ node.body|striptags|truncate(100)}}</p>
+                                        <p class="small">{{ node.body }}</p>
                                     </div>
 
                                     <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
@@ -149,7 +150,7 @@
                                 <div class="course-details">
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
-                                        <p class="small">{{ node.card_intro|striptags|truncate(100)}}</p>
+                                        <p class="small">{{ node.card_intro }}</p>
                                     </div>
                                     <div class="col-12 button-area"><a target="_blank"
                                             href="{{node.course_url}}"><button>Start Now</button></a></div>
@@ -240,24 +241,106 @@
         return false;
     }
 
+
+    function sanitizeInput(inp_string) {
+        inp_string = inp_string.trim();
+        inp_string = inp_string.replace(/<(.|\n)*?>/g, '');
+        return inp_string;
+    }
+
+    function removeValue(list, value, separator) {
+        separator = separator || ", ";
+        var values = list.split(separator);
+        for(var i = 0 ; i < values.length ; i++) {
+            if(values[i] == value) {
+                values.splice(i, 1);
+                return values.join(separator);
+            }
+        }
+        return list;
+    }
+
+
     function searchKeyword(id, keyword) {
-        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
-        jQuery('#filter_subject_' + id).addClass('active');
-
+        // jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
+        jQuery('#filter_subject_' + id).toggleClass('active');
         var search_val = jQuery('#search').val();
-        search_val = search_val.trim();
-        search_val = search_val.replace(/<(.|\n)*?>/g, '');
+        search_val = sanitizeInput(search_val);
 
-        jQuery('#selected_filters').html(keyword);
-        jQuery('#selected_keywords').val(id);
+        if (jQuery('#filter_subject_' + id).hasClass('active')) {
+            var selected_keywords = jQuery('#selected_keywords').val();
+            selected_keywords = sanitizeInput(selected_keywords);
 
-        var selected_certificate = jQuery('#selected_certificate').val();
+            var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
+            selected_keywords_ids = sanitizeInput(selected_keywords_ids);
 
-        if (search_val) {
-            var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + id + '&fk_certificate_type_id=' + selected_certificate);
+            if (selected_keywords && selected_keywords.indexOf(keyword) === -1) {
+                selected_keywords = selected_keywords + ', ' + keyword;
+                jQuery('#selected_keywords').val(selected_keywords);
+                jQuery('#selected_filters').html(selected_keywords);
+            }
+            else {
+                jQuery('#selected_keywords').val(keyword);
+                jQuery('#selected_filters').html(keyword);
+            }
+
+            if (selected_keywords_ids && selected_keywords_ids.indexOf(id) === -1) {
+                selected_keywords_ids =  selected_keywords_ids + ',' + id;
+                jQuery('#selected_keywords_ids').val(selected_keywords_ids);
+            }
+            else {
+                jQuery('#selected_keywords_ids').val(id);
+            }
+
         }
         else {
-            var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + id + '&fk_certificate_type_id=' + selected_certificate);
+            var selected_keywords = jQuery('#selected_keywords').val();
+            selected_keywords = sanitizeInput(selected_keywords);
+
+            var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
+            selected_keywords_ids = sanitizeInput(selected_keywords_ids);
+
+            if (selected_keywords && selected_keywords.indexOf(keyword) != -1) {
+                selected_keywords = removeValue(selected_keywords, keyword, ', ');
+                jQuery('#selected_keywords').val(selected_keywords);
+                jQuery('#selected_filters').html(selected_keywords);
+            }
+            else {
+                jQuery('#selected_keywords').val(keyword);
+                jQuery('#selected_filters').html(keyword);
+            }
+
+            if (selected_keywords_ids && selected_keywords_ids.indexOf(id) != -1) {
+                selected_keywords_ids = removeValue(selected_keywords_ids, id, ',');
+                jQuery('#selected_keywords_ids').val(selected_keywords_ids);
+            }
+            else {
+                jQuery('#selected_keywords_ids').val(id);
+            }
+
+        }
+
+        var selected_certificate = jQuery('#selected_certificate').val();
+        var multiple_subject_id = jQuery('#selected_keywords_ids').val();
+
+        if (search_val) {
+
+            if (multiple_subject_id) {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + multiple_subject_id + '&fk_certificate_type_id=' + selected_certificate);
+            }
+            else {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val +  + '&fk_certificate_type_id=' + selected_certificate);
+            }
+
+        }
+        else {
+            if (multiple_subject_id) {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + multiple_subject_id + '&fk_certificate_type_id=' + selected_certificate);
+            }
+            else {
+                var endpoint = Drupal.url('shortterm-courses/search-data/&fk_certificate_type_id=' + selected_certificate);
+            }
+
         }
 
         Drupal.ajax({ 'url': endpoint }).execute();
