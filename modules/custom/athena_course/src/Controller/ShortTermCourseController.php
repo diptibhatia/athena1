@@ -62,8 +62,6 @@ class ShortTermCourseController {
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
 
-                print "course name=".$value->slug;
-
                 if (!empty($value->course_image_path)) {
                     $course_image_path = $value->course_image_path;
                 }
