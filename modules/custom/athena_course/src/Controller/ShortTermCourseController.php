@@ -61,6 +61,9 @@ class ShortTermCourseController {
         $nodes = json_decode($data);
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
+
+                print "course name=".$value->slug;
+
                 if (!empty($value->course_image_path)) {
                     $course_image_path = $value->course_image_path;
                 }
@@ -82,7 +85,7 @@ class ShortTermCourseController {
 
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid,
+                    'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
@@ -173,7 +176,7 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid.'/'.$value->slug,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
@@ -297,7 +300,7 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid,
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid .'/'.$value->slug,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
