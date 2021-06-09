@@ -69,7 +69,7 @@
   padding: 12px 12px 12px 0;
   display: block;
 }
-.close {
+#register-pop-up .close {
     color: #ffffff;
     float: right;
     font-size: 33px;
@@ -86,14 +86,14 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
-.close:hover,
-.close:focus {
+#register-pop-up .close:hover,
+#register-pop-up .close:focus {
     color: rgb(255, 255, 255);
     text-decoration: none;
     cursor: pointer;
 }
 
-.lclose {
+.#thanks-up .close {
     color: #ffffff;
     float: right;
     font-size: 33px;
@@ -111,8 +111,8 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
-.lclose:hover,
-.lclose:focus {
+.#thanks-up .close:hover,
+.#thanks-up .close:focus {
     color: rgb(255, 255, 255);
     text-decoration: none;
     cursor: pointer;
@@ -290,7 +290,7 @@ span {
   }
 
 
-  .close {
+  #register-pop-up .close {
 
     margin-top: -41px;
     margin-right: -37px;
@@ -308,7 +308,7 @@ span {
     padding: 20px;
   }
 
-  .close {
+  #register-pop-up .close {
 
     margin-top: -41px;
     margin-right: -37px;
@@ -325,7 +325,7 @@ span {
       padding: 20px;
     }
 
-    .close {
+    #register-pop-up .close {
 
       margin-top: -41px;
       margin-right: -37px;
@@ -339,7 +339,7 @@ span {
       width: 80%;
     }
 
-    .lclose {
+    .#thanks-up .close {
 
       margin-top: -41px;
       margin-right: -37px;
@@ -396,7 +396,7 @@ span {
         margin-bottom: 30px;
     }
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -413,7 +413,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -574,7 +574,7 @@ span {
 
     }
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -591,7 +591,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -747,7 +747,7 @@ span {
         margin-bottom: 20px;
     }
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -764,7 +764,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -919,7 +919,7 @@ span {
 
 
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -936,7 +936,7 @@ span {
     }
 
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1094,7 +1094,7 @@ span {
     }
 
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1110,7 +1110,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1268,7 +1268,7 @@ span {
 
 
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1284,7 +1284,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1444,7 +1444,7 @@ span {
 
 
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1460,7 +1460,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1620,7 +1620,7 @@ span {
         margin-left: 40px;
     }
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1636,7 +1636,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1797,7 +1797,7 @@ span {
         width: 30%;
     }
 
-    .close {
+    #register-pop-up .close {
         color: #ffffff;
         float: right;
         font-size: 33px;
@@ -1813,7 +1813,7 @@ span {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .lclose {
+    .#thanks-up .close {
         color: #ffffff;
         float: right;
         font-size: 30px;
