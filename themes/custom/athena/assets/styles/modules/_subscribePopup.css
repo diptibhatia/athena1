@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 
-.#thanks-up .close {
+#thanks-up .lclose {
     color: #ffffff;
     float: right;
     font-size: 33px;
