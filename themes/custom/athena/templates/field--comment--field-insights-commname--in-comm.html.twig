@@ -1,16 +1,18 @@
+
 {% if items|length > 0 %}
     {% for item in items %}		
 		    	{% set initials = item.content|render|trim|split(' ') %}
-				<div class="p-2"><span width="50" class="rounded-circle">
-		        {% for txt in initials|slice(0,2) %}
-		        	{{- txt|first|render|trim -}}
-		    	{% endfor %}
+				<div class="p-2"><span class="initial">
+			        {% for txt in initials|slice(0,2) %}
+			        	{{- txt|first|render|trim -}}
+			    	{% endfor %}
 		    	</span></div>
 	
-			<h6 class="font-medium">
+			<h5 class="font-medium">
 					{{- item.content|render|trim -}}
-			</h6>
+					&nbsp;&nbsp; <small> 
 
+			
     {% endfor -%}
 {% endif %}
 
