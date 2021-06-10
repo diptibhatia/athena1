@@ -699,17 +699,17 @@ function athena_course_page_attachments(array &$attachments) {
               ],
               'LINKCONNECTOR'
             ];
-            $attachments['#attached']['html_head'][] = [
-              [
-                '#type' => 'html_tag',
-                '#tag' => 'script',
-                '#attributes' => [
-                  'src' => 'https://www.linkconnector.com/uts_tm.php?cgid=901759',
-                ],
-                '#weight' => 10,
-              ],
-              'LINKCONNECTOR2'
-            ];
+            // $attachments['#attached']['html_head'][] = [
+            //   [
+            //     '#type' => 'html_tag',
+            //     '#tag' => 'script',
+            //     '#attributes' => [
+            //       'src' => 'https://www.linkconnector.com/uts_tm.php?cgid=901759',
+            //     ],
+            //     '#weight' => 10,
+            //   ],
+            //   'LINKCONNECTOR2'
+            // ];
           }
 
           if ($source == 'ENCYLDIGITAL') {

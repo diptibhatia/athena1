@@ -12,6 +12,7 @@ use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
  */
 function put_dots_in_string($string, $length, $html_decode = TRUE) {
     $string = trim($string);
+    $string = str_replace('<p class="small"></p>', '', $string);
     if (empty($string)) {
         return $string;
     }
