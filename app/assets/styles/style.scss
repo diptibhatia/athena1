@@ -92,10 +92,11 @@ img {
 //     margin: inherit;
 // }
 
+/* Comment section */
 #node-insight-article-field-comm{
     h2 {
         font-family: Lato;
-        font-size: 36px;
+        font-size: 30px;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
@@ -103,7 +104,7 @@ img {
         letter-spacing: normal;
         color: #303030;
         margin: 20px 0 5px 0;
-
+padding-top:10px;
         &::after {
             width: 140px;
             border-bottom: solid 4px #ff008e;
@@ -112,7 +113,21 @@ img {
         }
     }
 }
-
+.js-ajax-comments-id-13 {border: 1px solid #ddd;}
+.rate-widget.thumbsup {margin:0 10px; float: left;}
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up:before {
+    display: inline;
+    font-size: 1.8em;
+    font-family: FontAwesome;
+    content: "\f087";
+}
+.rate-widget.thumbsup:nth-last-child(1) {float:right}
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up:before { 
+    content: "\f08a";
+}
+.rate-widget.thumbsup:nth-last-child(1) div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up:before { 
+    content: "\f024";
+}
 form.comment-form {
     input[type="text"], input[type="email"], textarea {
         display: block;
@@ -130,7 +145,7 @@ form.comment-form {
         transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
     }
 }
-
+/* Comment section Ends */
 .get-started button {
     background: transparent;
 }
@@ -204,12 +219,27 @@ form.comment-form {
     background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
     color: #fff;
 }
+.form-wrapper {text-align: center;}
 .js-form-submit.form-submit {
-    max-width:480px;
-    margin-top:20px;
-    margin-bottom:20px;
-    border:none;
+    max-width: 480px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    width: auto;
+    padding: 0 20px;
 }
+.js-ajax-comments-messages {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6; 
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.cke_chrome { border:none;}
+.cke_contents {border: 1px solid #d1d1d1;}
 .athena-btn.violet-btn, .btn-primary {
     border-radius: 30px;
     border: solid 2px $titlePink;
