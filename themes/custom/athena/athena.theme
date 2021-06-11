@@ -427,6 +427,16 @@ if(!empty($block_content)){
 
   if (strpos($current_path, '/StudentEnroltoCourse') !== false) {
     $variables['athena_exclude'] = TRUE;
+    $referer = $_SERVER['HTTP_REFERER'];
+    $lead_source = $_REQUEST['source'] ?? '';
+    $lead_user = $_REQUEST['UId'] ?? '';
+
+    if (strpos($referer, 'MBAPrograms') !== false) {
+      if ($lead_source == 'LINKCONNECTOR') {
+        $variables['link_connector_pixel'] = TRUE;
+        $variables['lead_user'] = $lead_user;
+      }
+    }
   }
 
 $current_uri = \Drupal::request()->getRequestUri();
