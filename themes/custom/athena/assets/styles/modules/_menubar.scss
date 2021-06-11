@@ -1,23 +1,27 @@
 .site-header {
     background-color: #fff;
-    position: relative;
+    position: fixed;
     z-index: 30;
+    box-shadow: 0 2px 3px 0 RGBA(0,0,0, 0.07), 0 2px 3px 0 RGBA(0,0,0, 0.09);
+    top:0;
 
     .wrapper {
         display: flex;
-        height: $mainMenuHeight;
+/*        height: $mainMenuHeight; */
+        height: 4.36rem;
         align-items: center;
         position: relative;
-        padding-top: 25px;
+        padding-top: 3px;
+        max-width:1140px;
 
         @include atSize850 {
-            height: 4.56rem;
+            height: 4.36rem;
         }
     }
 
     &__logo {
         width: 95px;
-        margin-right: 1.375rem;
+        margin-right: 1rem;
         position: relative;
         z-index:1003;
         img {
@@ -26,6 +30,7 @@
 
             @include atSize850 {
                 width: 146px;
+                margin-right: 1.375rem;
             }
         }
 
@@ -44,10 +49,10 @@
 .search-form {
        margin: 0 20px 0 30px;
        @media screen and (max-width:600px) {
-           position: absolute;
-           width: auto;
+           position: fixed;
+           width: 100.5%;
            top: 0px;
-           left: -130px;
+           left: 0;
            background: #fff;
            height: 130px;
            z-index: 1001;
@@ -55,18 +60,18 @@
        }
 
        .search-courses {
-         width: 51px;
-         height: 40px;
-         border-radius: 4px;
-         background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
-         padding-top: 7px;
-         display: inline-block;
-         position: absolute;
+        width: 36px;
+        height: 30px;
+        border-radius: 2px;
+        background-image: linear-gradient(88deg,#ffc300 1%,#ffac00 99%,#ffd85e 99%);
+        padding-top: 1px;
+        display: inline-block;
+        position: absolute;
         right: 2px;
-        top: 6px;
+        top: 2px;
         text-align: center;
    @media screen and (max-width:600px) {
-       top:71px;
+       top:76px;
        right: 15px;
    }
          img {
@@ -83,22 +88,22 @@
        }
 
      input[type="text"] {
-       border: 0px;
-       width: 100%;
-       min-width:350px;
-       max-width: 570px;
-       height: 44px;
-       padding: 0 10px;
-       border-radius: 5px;
-       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11), 0 0 4px 0 rgba(0, 0, 0, 0.14);
-       background-color: #ffffff;
-       position: relative;
-       top: 4px;
+        border: 0px;
+        width: 100%;
+        min-width: 275px;
+        max-width: 570px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 RGBA(0,0,0,0.11), 0 0 4px 0 RGBA(0,0,0,0.14);
+        background-color: #ffffff;
+        position: relative;
+        top: 0px;
 
-   @media screen and (max-width:600px) {
-       top:10px;
-       margin: 13px;
-   }
+        @media screen and (max-width:600px) {
+            top:10px;
+            margin: 13px;
+        }
      }
      i {
        margin-left: 0px;
@@ -654,11 +659,9 @@
             z-index: 9999;
             transform: scaleY(1);
         }
-@media screen and (max-width:700px) {
-
-        display: none;
-
-}
+        @media screen and (max-width:700px) {
+            display: none;
+        }
         @include atSize700 {
             opacity: 1;
             z-index: 5;
@@ -684,6 +687,7 @@
         flex-direction: column;
         text-align: center;
         margin: 0;
+
 
         > li {
             position: relative;
@@ -822,6 +826,7 @@
             justify-content: space-between;
             margin: 0;
             height: 100%;
+            padding-top:6px;
         }
     }
 
@@ -833,6 +838,7 @@
         padding: 1.2rem 0;
         transition: background-color .3s ease-out;
         position: relative;
+        white-space: nowrap;
 
         @include atSize700 {
             padding: 1rem 1rem;
@@ -843,7 +849,8 @@
         }
 
         @include atSize850 {
-            font-size: 1rem;
+            font-size: 0.9rem;
+            max-height:44px;
         }
 
         &.is-active {
@@ -931,13 +938,13 @@
 
 .megamenu-container
 {
-
-
     .explore-btn-main{
-        float:left;padding:5px 16px;border-radius:6px;background-image:linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);color:#fff;font-size:16px;display:block;width:108px;
+        float:left;padding:5px 16px;border-radius:6px;background-image:linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);color:#fff;font-size:16px;display:block;width:87px;
         text-decoration:none;font-weight:bold;cursor:pointer;
         @include belowSize700{
-            width:108px;
+            width:87px !important;
+            padding:5px 8px !important;
+            margin-top:14px !important;
         }
         a{
             text-decoration:none;

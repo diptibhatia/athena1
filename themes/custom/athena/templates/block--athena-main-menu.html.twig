@@ -87,21 +87,21 @@
 </div>
 
 
-	<nav class="navbar navbar-expand-lg d-none d-md-block">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+	<nav class="navbar navbar-expand-lg">
+  <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#main_nav">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="main_nav">
+  <div class="collapse navbar-collapse d-none d-md-block" id="main_nav">
 
 <ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
 display: inline-flex;
 border-radius: 5px;
-padding: 0 9px;
-height: 35px;
+padding: 0;
+height: 38px;
 justify-content: space-evenly;
 align-items: center;box-sizing: border-box;">
 	<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';"> Explore </a>
+		<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';font-size:14px;letter-spacing:1px;"> Explore <span style="padding-left:5px" class="glyphicon glyphicon-chevron-down"></span></a>
 	    <ul class="dropdown-menu" style="height: 383px;
 		left: -10px;
 		top: 55px;
@@ -205,7 +205,7 @@ align-items: center;box-sizing: border-box;">
       </form>
     </div>
 
-    <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#search_nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#search_nav">
       <img src="/themes/custom/athena/images/search.svg" alt="search" style="width: 36px;">
     </button>
 
@@ -241,7 +241,7 @@ align-items: center;box-sizing: border-box;">
                         <li><a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a></li>
                         <li><a id="insights" href="{{ url('<front>') }}insights/all">Insights</a></li>
                         <li><a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a></li>
-                        <li><a class="hideinMobileView btn btn-pink getStartedBtn" href="{{ url('<front>') }}registration">Get Started</a></li>
+                        <li><a class="hideinMobileView btn btn-pink getStartedBtn mt-0" style="box-shadow:none;" href="{{ url('<front>') }}registration">Get Started</a></li>
                     </ul>
   </nav>
 </div>
