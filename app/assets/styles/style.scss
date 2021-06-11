@@ -173,6 +173,18 @@ form.comment-form {
 .cke_contents {border: 1px solid #d1d1d1 !important;}
 
 /* Comment section Ends */
+
+.register-wrapper 
+{
+    .nav-pills>li {
+        float: left;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-left: -2px;
+        border-left: none;
+    }    
+
+}
 .get-started button {
     background: transparent;
 }
