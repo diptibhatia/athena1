@@ -454,61 +454,101 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
 
 
 function athena_preprocess_node(&$variables) {
-      $current_path = \Drupal::service('path.current')->getPath();
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_uri = \Drupal::request()->getRequestUri();
+
+  $variables['leaders'] = '0';
+
+  if ($variables['node']->getType() === 'about_us_pages') {
+    if (strpos($current_uri, 'about-us/governance-structure') !== false) {
+      $alias = \Drupal::service('path.alias_manager')->getPathByAlias('/about-board-of-governance');
+      $params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+      $entity_type = key($params);
+      $node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+      $paragraph_data = $node->field_about_us_profile->referencedEntities();
+      $profile = array();
+      $i=0;
+      foreach($paragraph_data as $profile_data) {
+        $designation = $profile_data->get('field_designation')->value;
+        $name = $profile_data->get('field_profile_name')->value;
+        $field_profile_desc = $profile_data->get('field_profile_desc')->value;
+        $popup_image = $profile_data->get('field_popup_image')->entity->getFileUri();
+        $profile_image = $profile_data->get('field_abiut_us_profile_img')->entity->getFileUri();
+        $p_image_path = file_create_url($popup_image);
+        $p_image = file_url_transform_relative($p_image_path);
+        $prof_image_path = file_create_url($profile_image);
+        $prof_image = file_url_transform_relative($prof_image_path);
+
+        $profile[] =  array(
+         'designation' =>$designation,
+         'name' =>$name,
+         'desc' =>$field_profile_desc,
+         'prof_image' =>$prof_image,
+         'p_image' =>$p_image,
+         'unique_id' => "popup_about_".$i,
+        );
+          $i++;
+      }
+      $variables['about_profile'] = $profile;
+      $variables['enable_popup'] = TRUE; 
+    }
+
+    // code added for restructuring of about us pages
+    elseif ((strpos($current_uri, 'about-us/dean') !== false) || (strpos($current_uri, 'about-us/founder-and-ceo') !== false) || (strpos($current_uri, 'about-us/academic-director') !== false )) {
+      
+        $variables['enable_popup'] = FALSE;
+
+        $variables['leaders'] = '1';  
+        $node = \Drupal::routeMatch()->getParameter('node');
+      
+        $heading = $node->get('field_heading')->value;
+        $variables['heading'] = $heading;
+
+        if ( $heading != "" )
+        {
+          $image =$node->get('field_image')->entity->getFileUri();
+          $image =  file_create_url($image);
+          $variables['image'] = $image;
+      
+        }
+
+        
+        $body = $node->get('body')->value;
+        $variables['body'] = $body;
+
+        
+        $linkdn = $node->get('field_linked_in_link')->value;
+        $variables['linkdn'] = $linkdn;
 
 
-$current_uri = \Drupal::request()->getRequestUri();
+        // get bio - description of leaders  
 
-     if ($variables['node']->getType() === 'about_us_pages') {
-      if (strpos($current_uri, 'about-us/governance-structure') !== false) {
+        $bundle='athena_people';
+        $query = \Drupal::entityQuery('node');
+        $query->condition('status', 1);
 
+        if (strpos($current_uri, 'about-us/dean'))
+            $query->condition('title', 'Dr. William Painter', 'CONTAINS');
+        elseif (strpos($current_uri, 'about-us/founder-and-ceo')) 
+          $query->condition('title', 'Firoz Thairinil');
+        elseif (strpos($current_uri, 'about-us/academic-director')) 
+          $query->condition('title', 'Col (Rtd). Anil Ahluwalia');
+              
 
+        $query->condition('type', $bundle);
+        $entity_ids = $query->execute();
 
-$alias = \Drupal::service('path.alias_manager')->getPathByAlias('/about-board-of-governance');
-$params = Url::fromUri("internal:" . $alias)->getRouteParameters();
-$entity_type = key($params);
-$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+        
+        foreach ($entity_ids as $value) {
+                  $node = Node::load($value);
+              }
 
-//print_r($node);exit;
-
-$paragraph_data = $node->field_about_us_profile->referencedEntities();
-
-$profile = array();
-$i=0;
-foreach($paragraph_data as $profile_data) {
-
-    $designation = $profile_data->get('field_designation')->value;
-    $name = $profile_data->get('field_profile_name')->value;
-    $field_profile_desc = $profile_data->get('field_profile_desc')->value;
-    $popup_image = $profile_data->get('field_popup_image')->entity->getFileUri();
-    $profile_image = $profile_data->get('field_abiut_us_profile_img')->entity->getFileUri();
-    $p_image_path = file_create_url($popup_image);
-    $p_image = file_url_transform_relative($p_image_path);
-    $prof_image_path = file_create_url($profile_image);
-    $prof_image = file_url_transform_relative($prof_image_path);
-
-    $profile[] =  array(
-     'designation' =>$designation,
-     'name' =>$name,
-     'desc' =>$field_profile_desc,
-     'prof_image' =>$prof_image,
-     'p_image' =>$p_image,
-     'unique_id' => "popup_about_".$i,
-    );
-
-
-    $i++;
-
-}
-
-
- $variables['about_profile'] = $profile;
- $variables['enable_popup'] = TRUE;
-
-  }else {
-$variables['enable_popup'] = FALSE;
-}
- }
+        $description = $node->get('field_description')->value;
+        $variables['description'] =  $description;    
+      }
+    }
 }
 
 function athena_preprocess_views_view_field(&$variables) {
