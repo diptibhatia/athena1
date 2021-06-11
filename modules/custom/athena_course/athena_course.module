@@ -681,37 +681,6 @@ function athena_course_page_attachments(array &$attachments) {
 
         if (strpos($referer, 'MBAPrograms') !== false) {
 
-          if ($source == 'LINKCONNECTOR') {
-            // LINKCONNECTOR Pixel.
-            $linkConnectorPixel = "var uts_eventid = '5326';  // Lead EventID
-              var uts_orderid = 'orderid'; // unique transaction identifier such as email address or
-              customerid
-              var uts_saleamount = 'amount';  // needs to be a positive value (not 0).  It is only used
-              to store the value in our DB and not to determine commission
-              var uts_coupon = '';  // leave blank
-              var uts_discount = ''; // leave blank
-              var uts_currency = 'USD';";
-            $attachments['#attached']['html_head'][] = [
-              [
-                '#tag' => 'script',
-                '#value' => \Drupal\Core\Render\Markup::create($linkConnectorPixel),
-                '#weight' => 10,
-              ],
-              'LINKCONNECTOR'
-            ];
-            // $attachments['#attached']['html_head'][] = [
-            //   [
-            //     '#type' => 'html_tag',
-            //     '#tag' => 'script',
-            //     '#attributes' => [
-            //       'src' => 'https://www.linkconnector.com/uts_tm.php?cgid=901759',
-            //     ],
-            //     '#weight' => 10,
-            //   ],
-            //   'LINKCONNECTOR2'
-            // ];
-          }
-
           if ($source == 'ENCYLDIGITAL') {
             // ENCYL DIGITAL Pixel.
             $encylPixel = '<img src="http://encyl.offerstrack.net/pixelBack.php?offer_id=3609&adv_id=2132" width="1" height="1" />';
