@@ -1,11 +1,19 @@
 .top-search-section {
     position: relative;
+    padding-top:4.36rem;
+    .homepage--banner-dots{
+        position: absolute;
+        top: 95px;
+        left: 46px;
+        width: 42% !important;
+    }
+    
 
     &__title {
-        font-family: 'Opens Sans', sans-serif;
+        font-family: 'Lato', sans-serif;
         font-size: 2.4rem;
         font-weight: bold;
-        color: $primaryColor;
+        color: $pink-light;
         width: 17rem;
         line-height: 1.29;
         margin: 0;
@@ -14,7 +22,7 @@
 
         &::before {
             content: '';
-            display: inline-block;
+            display: none;
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -31,7 +39,7 @@
 
         &::after {
             content: '';
-            display: inline-block;
+            display: none;
             width: 14px;
             height: 14px;
             border-radius: 50%;
@@ -47,40 +55,39 @@
         }
 
         @include atSize700 {
-            font-size: 4rem;
-            width: 50rem;
+            font-size: 4.1rem;
+            width: 32rem;
         }
 
         @include atSize850 {
-            padding-top: 4rem;
             line-height: 1.18;
         }
 
         @include atSize1100 {
             &::before {
                 content: '';
-                display: inline-block;
-                width: 34px;
-                height: 34px;
+                display: none;
+                width: 28px;
+                height: 28px;
                 border-radius: 50%;
                 background-color: #fff;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
                 position: absolute;
-                top: 8px;
-                left: 15rem;
+                top: 71px;
+                left: 11.1rem;
             }
 
             &::after {
                 content: '';
-                display: inline-block;
-                width: 20px;
-                height: 20px;
+                display: none;
+                width: 18px;
+                height: 18px;
                 border-radius: 50%;
                 background-image: linear-gradient(88deg, 
                 #ffc300 2%, #ffac00 98%, #ffd85e 98%);
                 position: absolute;
-                top: 14.5px;
-                left: 15.44rem;
+                top: 77.5px;
+                left: 11.33rem;
             }
         }
 
@@ -114,7 +121,7 @@
 
             &::before {
                 content: '';
-                display: inline-block;
+                display: none;
                 width: 24px;
                 height: 24px;
                 border-radius: 50%;
@@ -122,12 +129,12 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
                 position: absolute;
                 bottom: -105px;
-                left: -2.5rem;
+                left: -4.5rem;
             }
 
             &::after {
                 content: '';
-                display: inline-block;
+                display: none;
                 width: 14px;
                 height: 14px;
                 border-radius: 50%;
@@ -135,7 +142,7 @@
                 2%, #540081 98%, #ffd85e 98%);
                 position: absolute;
                 bottom: -100px;
-                left: -2.2rem;
+                left: -4.15rem;
             }
         }
     }
@@ -202,14 +209,14 @@
         &::before {
             content: '';
             display: inline-block;
-            width: 17px;
-            height: 17px;
+            width: 15px;
+            height: 15px;
             border-radius: 50%;
             background-color: #fff;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: -25px;
-            left: 17.14rem;
+            top: -16px;
+            left: 10.14rem;
 
             @include atSize700 {
                 display: none;
@@ -219,14 +226,14 @@
         &::after {
             content: '';
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background-image: linear-gradient(88deg, #ff006e 
             2%, #ff4e9a 98%, #ffd85e 98%);
             position: absolute;
-            top: -21.5px;
-            left: 17.37rem;
+            top: -12.5px;
+            left: 10.37rem;
 
             @include atSize700 {
                 display: none;
@@ -246,7 +253,7 @@
 
             &::before {
                 content: '';
-                display: inline-block;
+                display: none;
                 width: 17px;
                 height: 17px;
                 border-radius: 50%;
@@ -259,7 +266,7 @@
 
             &::after {
                 content: '';
-                display: inline-block;
+                display: none;
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
@@ -291,7 +298,7 @@
             position: relative;
             text-align: right;
             img {
-                width: 60%;
+                width: 100%;
                 margin-top:-29px;
                 @include atSize479{
                     display:none;
@@ -341,27 +348,27 @@
     @include atSize1100 {
         &::before {
             content: '';
-            display: inline-block;
+            display: none;
             width: 21px;
             height: 21px;
             border-radius: 50%;
             background-color: #fff;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: 36px;
-            left: 40rem;
+            top: 104px;
+            left: 37rem;
         }
 
         &::after {
             content: '';
-            display: inline-block;
+            display: none;
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background-image: linear-gradient(88deg, #00a1e8 2%, #004fa1 98%);
             position: absolute;
-            top: 40.5px;
-            left: 40.28rem;
+            top: 109.7px;
+            left: 37.32rem;
         }
     }
 }
