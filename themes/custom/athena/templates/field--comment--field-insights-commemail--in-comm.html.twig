@@ -2,13 +2,13 @@
   {% if multiple %}
       {% for item in items %}
         {{ item.content }}
-        &nbsp;&nbsp;
+        &nbsp;&nbsp;</small><small class='commentdate'>
       {% endfor %}
     
   {% else %}
     {% for item in items %}
       {{ item.content }}
-      &nbsp;&nbsp;
+      &nbsp;&nbsp;</small><small class='commentdate'>
     {% endfor %}
   {% endif %}
 
@@ -19,7 +19,7 @@
     {% for item in items %}
       
       {{ item.content }}
-      &nbsp;&nbsp;
+      &nbsp;&nbsp;</small><small class='commentdate'>
     
     {% endfor %}
     {% if multiple %}
