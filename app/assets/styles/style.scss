@@ -196,26 +196,40 @@ form.comment-form {
 
 .register-wrapper 
 {
-    ul.nav-pills {
-        margin-top:30px; 
-        margin-left: 20px;
+    .nav-pills {
+        margin-top:30px;
      li {
         border: 1px solid #303030;
-        border-radius: 5px;
         margin-left: -2px;
-        padding: 10px 20px;
-        background-color: #fff;
+    } 
+    li:nth-child(2) { border-left:none;}
+    .nav-link {
+        padding: .5rem 2rem;
     }
-    li a.nav-link {color:#303030}
-    li.active {background-color:$titlePink;}
-    li.active a.nav-link {background-color:$titlePink;}	
+    a.nav-link:hover {
+        color: $titlePink;
+    }
+    .nav-link.active, .show>.nav-link {
+        color: #fff;
+        background-color: $titlePink;
+    }
 }
+
 input, select { 
     border-radius: 0 !important;
     box-shadow: none !important;
     border: none !important;
     border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
 } 
+.intl-tel-input.allow-dropdown {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+    width: 100%;
+    background: #fff;
+    height: calc(1.5em + 1.25rem + 2px);
+}
 }
 
 /* register section Ends */
