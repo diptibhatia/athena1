@@ -6,7 +6,7 @@
 		crossorigin="anonymous"></script>
 </head>
 <div class="container-fluid p-0 about-us-wrapper">
-	<div class="container bg-white login-wrapper register-wrapper">
+	<div class="container bg-white login-wrapper">
 		<div class="row">
 			<div class="col-md-6 col-sm-12">
 				<h1>Register <span>Now</span></h1>
@@ -21,10 +21,10 @@
 						<span><a href="https://ulearn.athena.edu/login?Cid={{cid}}">Sign In</a></span>
 					</h4>
 					{% endif %}
-
+<div class="register-wrapper">
 					<ul class="nav nav-pills">
-						<li class="active"><a data-toggle="pill" href="#ac">Acadamic Courses</a></li>
-						<li><a data-toggle="pill" href="#pc"> Professional Certification</a></li>
+						<li class="active"><a class="nav-link show" data-toggle="pill" href="#ac">Acadamic Courses</a></li>
+						<li><a class="nav-link" data-toggle="pill" href="#pc"> Professional Certification</a></li>
 					</ul>
 
 					<div class="tab-content">
@@ -773,7 +773,7 @@
 							</div>
 						</div>
 					</div>
-			</div>
+			</div></div>
 			<div class="col-md-6 col-sm-12 register-images">
 				<img src="/themes/custom/athena/images/Register-athena-img.png" alt="login image">
 			</div>
