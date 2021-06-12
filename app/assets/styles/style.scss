@@ -202,34 +202,32 @@ form.comment-form {
         border: 1px solid #303030;
         margin-left: -2px;
     } 
-    li:nth-child(2) { border-left:none;}
+    
     .nav-link {
         padding: .5rem 2rem;
+        border: 1px solid #303030;
+        color: #303030;
     }
-    a.nav-link:hover {
-        color: $titlePink;
-    }
+    .nav-link:nth-child(2) { border-left:none;}
     .nav-link.active, .show>.nav-link {
-        color: #fff;
         background-color: $titlePink;
+    } 
+}
+    input, select { 
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+    } 
+    .intl-tel-input.allow-dropdown {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+        width: 100%;
+        background: #fff;
+        height: calc(1.5em + 1.25rem + 2px);
     }
-}
-
-input, select { 
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
-} 
-.intl-tel-input.allow-dropdown {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
-    width: 100%;
-    background: #fff;
-    height: calc(1.5em + 1.25rem + 2px);
-}
 }
 
 /* register section Ends */
