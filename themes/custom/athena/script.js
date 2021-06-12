@@ -99,13 +99,25 @@ jQuery(document).ready(function() {
     // Typing effect in home page - ends here.
 
     jQuery("#phone").intlTelInput();
+    jQuery(".ac-form #phone").intlTelInput();
+    jQuery(".pc-form #phone").intlTelInput();
+    
+    jQuery(".ac-form #phone").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+     });
+    jQuery('.pc-form #phone').attr('maxlength', 15);
+
+    jQuery(".pc-form #phone").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+     });
+    jQuery('.pc-form #phone').attr('maxlength', 15);
 
    
     jQuery("#phone").inputFilter(function(value) {
         return /^\d*$/.test(value);
     });
     jQuery('#phone').attr('maxlength', 15);
-    
+   
 
     if (jQuery(".country-code").length == 0) {
         jQuery(".selected-flag").after("<div class='country-code' />");
@@ -125,6 +137,12 @@ jQuery(document).ready(function() {
             element.dispatchEvent(new Event("click"));
             jQuery("li.country[data-country-code='" + countrycode +
             "']").trigger('click');
+
+            var element = document.getElementsByClassName("selected-flag")[1];
+            element.dispatchEvent(new Event("click"));
+            jQuery("li.country[data-country-code='" + countrycode +
+            "']").trigger('click');
+
 
             window.scrollTo(0, 0);
         });
