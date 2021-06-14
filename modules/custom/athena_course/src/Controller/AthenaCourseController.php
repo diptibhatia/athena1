@@ -543,15 +543,26 @@ return array(
 
   public function registration() {
     // New D8 procedural code.
-   $parameters = \Drupal::routeMatch()->getParameters();
+ //  $parameters = \Drupal::routeMatch()->getParameters();
 
-     $bundle='course';
-     $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
-    $query->condition('type', $bundle);
-    $entity_ids = $query->execute();
-if(!empty($entity_ids)) {
-$nodes = node_load_multiple($entity_ids);
+//      $bundle='course';
+//      $query = \Drupal::entityQuery('node');
+//     $query->condition('status', 1);
+//     $query->condition('type', $bundle);
+//     $entity_ids = $query->execute();
+// if(!empty($entity_ids)) {
+// $nodes = node_load_multiple($entity_ids);
+// }
+
+$academics = $certifications = [];
+$academic_ids = get_course_nav_items('Academic');
+if(!empty($academic_ids)) {
+  $academics = node_load_multiple($academic_ids);
+}
+
+$certifications_id = get_course_nav_items('Certifications');
+if(!empty($certifications_id)) {
+  $certifications = node_load_multiple($certifications_id);
 }
 
 
@@ -596,7 +607,9 @@ $registration =  [
   '#ccode' => $ccode,
   '#phone' => $phone,
   '#cid' => $cid,
-  '#nodes' => $nodes,
+  // '#nodes' => $nodes,
+  '#academics' => $academics,
+  '#certifications' => $certifications,
 ];
 
 return array(
