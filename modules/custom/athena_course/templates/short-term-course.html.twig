@@ -79,18 +79,14 @@
                 <div class="col-12">
                     <nav class="nav nav-scroll">
 
-{#                         <a id="filter_certificate_all" onclick="searchAllCertificates()" class="nav-link" aria-current="page" href="javascript:void(0)"><span>All</span></a> #}
+                        <input id="selected_certificate" type="hidden" value="all" />
+
+                        <a id="filter_certificate_all" onclick="searchCertificates('all')" class="nav-link" aria-current="page" href="javascript:void(0)"><span>All</span></a>
 
                         {% for certificate_key, certificate_value in certificates %}
 
-                        {% if certificate_key == 0 %}
-                            <input id="selected_certificate" type="hidden" value="{{ certificate_value.id }}" />
-                        {% endif %}
+                            <a id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link" aria-current="page" href="javascript:void(0)"><span>{{certificate_value.certificate_type_name }}</span></a>
 
-                        <a id="filter_certificate_{{ certificate_value.id }}"
-                            onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link"
-                            aria-current="page" href="javascript:void(0)"><span>{{
-                                certificate_value.certificate_type_name }}</span></a>
                         {% endfor %}
                     </nav>
                 </div>
@@ -200,6 +196,7 @@
 <script src="jquery.star-rating-svg.min.js"></script>
 
 <script type="text/javascript">
+    jQuery('.category-area .nav-link:first').addClass('active');
     jQuery("#showMore").on('click', function () {
         var pagerVal = jQuery('#pager').val();
         var pager = parseInt(pagerVal);
@@ -325,27 +322,22 @@
 
         }
 
-        var selected_certificate = jQuery('#selected_certificate').val();
         var multiple_subject_id = jQuery('#selected_keywords_ids').val();
-
         if (search_val) {
-
             if (multiple_subject_id) {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + multiple_subject_id + '&fk_certificate_type_id=' + selected_certificate);
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + multiple_subject_id);
             }
             else {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val +  + '&fk_certificate_type_id=' + selected_certificate);
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
             }
-
         }
         else {
             if (multiple_subject_id) {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + multiple_subject_id + '&fk_certificate_type_id=' + selected_certificate);
+                var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + multiple_subject_id);
             }
             else {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&fk_certificate_type_id=' + selected_certificate);
+                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
             }
-
         }
 
         Drupal.ajax({ 'url': endpoint }).execute();
@@ -366,12 +358,21 @@
         search_val = sanitizeInput(search_val);
 
         if (subject_id) {
-
             if (search_val) {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+                if (id == 'all') {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id);
+                }
+                else {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+                }
             }
             else {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+                if (id == 'all') {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id);
+                }
+                else {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+                }
             }
 
             Drupal.ajax({ 'url': endpoint }).execute();
@@ -381,10 +382,20 @@
         else {
 
             if (search_val) {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + id);
+                if (id == 'all') {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
+                }
+                else {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + id);
+                }
             }
             else {
-                var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
+                if (id == 'all') {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+                }
+                else {
+                    var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
+                }
             }
 
             Drupal.ajax({ 'url': endpoint }).execute();
@@ -399,9 +410,8 @@
         jQuery('#selected_filters').html('');
         jQuery('#selected_keywords').val('');
         jQuery('.category-area .nav-link').removeClass('active');
-        var selected_certificate = jQuery('#selected_certificate').val();
         var search_val = jQuery('#search').val();
-        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + selected_certificate);
+        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
         jQuery('.category-area .nav-link').removeClass('active');
