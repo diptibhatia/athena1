@@ -102,19 +102,9 @@
                     letter-spacing: normal;
                     color: #606060;
                     margin-top: 10px;
-                    min-height:191px;
-                    max-height:191px;
-overflow: hidden;
-                    p, h2{
+                    
+                    p, h2, p.small{
                         font-size:14px;
-                        margin-bottom:7px;
-                        min-height:86px;
-                        max-height:86px;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        -webkit-line-clamp: 4;
-                        -webkit-box-orient: vertical;
-                        display: -webkit-box;
                         margin-bottom:7px;
                     }
                 }
@@ -212,13 +202,6 @@ overflow: hidden;
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
-                    min-height:108px;
-                max-height:108px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                display: -webkit-box;
             }
             p.small, h2, p{
                 font-size:14px;
