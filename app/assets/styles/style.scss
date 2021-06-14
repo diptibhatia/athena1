@@ -199,7 +199,6 @@ form.comment-form {
     .nav-pills {
         margin-top:30px;
      li {
-        border: 1px solid #303030;
         margin-left: -2px;
     } 
     
@@ -208,7 +207,8 @@ form.comment-form {
         border: 1px solid #303030;
         color: #303030;
     }
-    .nav-link:nth-child(2) { border-left:none;}
+    li:nth-child(2) .nav-link { border-left:none; border-left: none;
+        border-radius: 0 .25rem .25rem 0;}
     .nav-link.active, .show>.nav-link {
         color: #fff;
         background-color: $titlePink;
