@@ -446,9 +446,15 @@
     <div class="adm-process">
         <div class="wrapper">
 
-                {{ get_static_data('admission_process', TRUE)|raw }}
+                {% if course_title == "Doctorate of Business Administration" %}
 
+                    {{ get_static_data('admission_process_DBA', TRUE)|raw }}
 
+                {% else %}
+
+                    {{ get_static_data('admission_process', TRUE)|raw }}
+
+                {% endif %}
 
         </div>
     </div>
