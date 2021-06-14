@@ -48,7 +48,7 @@
         min-height: 480px;
         max-height: 480px;
         float: left;
-        overflow: hidden;
+        // overflow: hidden;
         position:relative;
         text-align:left;
         width:100%;
@@ -84,7 +84,7 @@
                 clear:both;
                 h3{
                     font-size:21.1px;
-                    color:#303030; 
+                    color:#303030;
                     min-height:76px;
                     max-height:76px;
                     text-overflow: ellipsis;
@@ -102,19 +102,9 @@
                     letter-spacing: normal;
                     color: #606060;
                     margin-top: 10px;
-                    min-height:191px;
-                    max-height:191px;
-overflow: hidden;
-                    p, h2{
+                    
+                    p, h2, p.small{
                         font-size:14px;
-                        margin-bottom:7px; 
-                        min-height:86px;
-                        max-height:86px;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        -webkit-line-clamp: 4;
-                        -webkit-box-orient: vertical;
-                        display: -webkit-box;
                         margin-bottom:7px;
                     }
                 }
@@ -195,7 +185,7 @@ overflow: hidden;
             height:297px;
             h3{
                 font-size:21.1px;
-                    color:#303030; 
+                    color:#303030;
                     min-height:76px;
                     max-height:76px;
                     text-overflow: ellipsis;
@@ -212,18 +202,11 @@ overflow: hidden;
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
-                    min-height:108px;
-                max-height:108px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                display: -webkit-box;
             }
             p.small, h2, p{
                 font-size:14px;
-                margin-bottom:7px;                
-            }  
+                margin-bottom:7px;
+            }
             .rating{font-size:12.9px;line-height:22.1px;color:#303030; padding:0.3rem 0 1.2rem;}
             .button-area{
                 text-align: center;
@@ -270,7 +253,7 @@ overflow: hidden;
 }
 
 .multiple-selection-courses .btn {
-    border-radius: 30px; 
+    border-radius: 30px;
     border: solid 2px #303030;
     margin-bottom: 10px;
 }
@@ -281,13 +264,13 @@ overflow: hidden;
         color: #fff;
 }
 
-.selected-courses {margin:10px;} 
-.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px; margin-top: 20px;} 
+.selected-courses {margin:10px;}
+.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px; margin-top: 20px;}
 .category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 20px;}
 .category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
 .find-your-course
-{ 
-        @media screen and (max-width: 800px) { 
+{
+        @media screen and (max-width: 800px) {
             position: relative;
             margin-top:100px;
     }
@@ -335,3 +318,21 @@ overflow: hidden;
     -webkit-filter: drop-shadow( -2px -2px 2px #888 );
     filter: drop-shadow( -2px -2px 2px #888 );
   }
+
+  .nav-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    white-space: nowrap;
+    overflow: auto;
+    flex-direction: row;
+     -ms-overflow-style: none;
+     scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
