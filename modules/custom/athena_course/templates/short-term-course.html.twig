@@ -124,7 +124,7 @@
                                 <div class="course-details text-center0">
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
-                                        <p class="small">{{node.field_certified_level}}</p>
+                                        <p class="small">{{node.univ_name}}</p>
                                         {{ node.body|raw }}
                                     </div>
 
@@ -141,7 +141,7 @@
                             <div class="course-item">
                                 <div class="row heading m-0">
                                     <div class="col-9">
-                                        <h5>{{node.field_certified_level}}</h5>
+                                        <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
                                     </div>
                                     <div class="col-3">
                                         <span class="free-text">{{node.field_course_amount}}</span>

@@ -70,11 +70,17 @@ class ShortTermCourseController {
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
-                    if( is_object( $value1 ))
-                    {
-                    foreach($value1 as $key2 => $value2) {
-                       if ( $key2 == "university_name" )
-                            $uni_name = $value2;
+                    if( is_object( $value1 )) {
+                        foreach($value1 as $key2 => $value2) {
+                           if ( $key2 == "logo" ) {
+                                $value2 = str_replace("pdfassets", "university", $value2);
+                                $value2 = str_replace(".svg", "-white.svg", $value2);
+                                $value2 = str_replace(".png", "-white.svg", $value2);
+                                $white_logo = $value2;
+                           }
+                           if ( $key2 == "university_name" ) {
+                                $univ_name = $value2;
+                           }
                         }
                     }
                 }
@@ -88,7 +94,8 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
+                    'white_logo' => $white_logo ?? '',
+                    'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
             }
@@ -161,11 +168,17 @@ class ShortTermCourseController {
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
-                    if( is_object( $value1 ))
-                    {
-                    foreach($value1 as $key2 => $value2) {
-                       if ( $key2 == "university_name" )
-                            $uni_name = $value2;
+                    if( is_object( $value1 )) {
+                        foreach($value1 as $key2 => $value2) {
+                           if ( $key2 == "logo" ) {
+                                $value2 = str_replace("pdfassets", "university", $value2);
+                                $value2 = str_replace(".svg", "-white.svg", $value2);
+                                $value2 = str_replace(".png", "-white.svg", $value2);
+                                $white_logo = $value2;
+                           }
+                           if ( $key2 == "university_name" ) {
+                                $univ_name = $value2;
+                           }
                         }
                     }
                 }
@@ -179,7 +192,8 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
+                    'white_logo' => $white_logo ?? '',
+                    'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
 
@@ -196,7 +210,7 @@ class ShortTermCourseController {
                         <div class="course-details col-12 text-center0 p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . $courses_data['field_certified_level'] . '</p>
+                                <p class="small">' . $courses_data['univ_name'] . '</p>
                                 ' . put_dots_in_string($courses_data['body'], 150) . '
                             </div>
                             <div class="col-12">
@@ -208,7 +222,7 @@ class ShortTermCourseController {
                     <div class="course-item">
                         <div class="row heading m-0">
                             <div class="col-9">
-                                <h5>' . $courses_data['field_certified_level'] . '</h5>
+                                <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
                             </div>
                             <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -284,15 +298,20 @@ class ShortTermCourseController {
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
-                    if( is_object( $value1 ))
-                    {
-                    foreach($value1 as $key2 => $value2) {
-                       if ( $key2 == "university_name" )
-                            $uni_name = $value2;
+                    if( is_object( $value1 )) {
+                        foreach($value1 as $key2 => $value2) {
+                           if ( $key2 == "logo" ) {
+                                $value2 = str_replace("pdfassets", "university", $value2);
+                                $value2 = str_replace(".svg", "-white.svg", $value2);
+                                $value2 = str_replace(".png", "-white.svg", $value2);
+                                $white_logo = $value2;
+                           }
+                           if ( $key2 == "university_name" ) {
+                                $univ_name = $value2;
+                           }
                         }
                     }
                 }
-
 
                 $website_card_content = put_dots_in_string($value->website_card_content, 150);
 
@@ -303,7 +322,8 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
                     'field_course_amount' => 'Free',
-                    'field_certified_level' => (empty($uni_name))?"CPD Certified": $uni_name,
+                    'white_logo' => $white_logo ?? '',
+                    'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
 
@@ -320,7 +340,7 @@ class ShortTermCourseController {
                         <div class="course-details col-12 text-center0 p-0">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                <p class="small">' . $courses_data['field_certified_level'] . '</p>
+                                <p class="small">' . $courses_data['univ_name'] . '</p>
                                 ' . put_dots_in_string($courses_data['body'], 150) . '
                             </div>
                             <div class="col-12">
@@ -332,7 +352,7 @@ class ShortTermCourseController {
                     <div class="course-item">
                         <div class="row heading m-0">
                             <div class="col-9">
-                                <h5>' . $courses_data['field_certified_level'] . '</h5>
+                                <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
                             </div>
                             <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
