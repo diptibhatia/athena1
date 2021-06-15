@@ -335,7 +335,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'email' => NULL,
       'ccode' => NULL,
       'phone' => NULL,
-      'nodes' => NULL,
+      // 'nodes' => NULL,
+      'academics' => NULL,
+      'certifications' => NULL,
       ],
     ],
     'universities' => [
