@@ -46,7 +46,7 @@
 
         @include atSize1250 {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
         }
     }
 }

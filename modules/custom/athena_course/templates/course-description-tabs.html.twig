@@ -66,9 +66,17 @@
                                 </div>
                             </div>
                                 {% endif %}
-                            <div class="overview-points-card__container">
-                                 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
-                            </div>
+
+                                {% if course_title == "Doctorate of Business Administration" %}
+
+                                {% else %}
+
+                                    <div class="overview-points-card__container">
+                                         <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
+                                    </div>
+
+                                {% endif %}
+
                         </div>
                     </div>
                 </div>
@@ -146,9 +154,17 @@
                                 </div>
                                 {% endif %}
                             </div>
-                            <div class="overview-points-card__container">
-                             <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
-                            </div>
+
+                            {% if course_title == "Doctorate of Business Administration" %}
+
+                                {% else %}
+
+                                    <div class="overview-points-card__container">
+                                         <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
+                                    </div>
+
+                            {% endif %}
+                                
                         </div>
                     </div>
                 </div>
@@ -213,9 +229,17 @@
                                 </div>
                                 {% endif %}
                             </div>
-                            <div class="overview-points-card__container">
-                                 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
-                            </div>
+
+                            {% if course_title == "Doctorate of Business Administration" %}
+
+                                {% else %}
+
+                                    <div class="overview-points-card__container">
+                                         <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
+                                    </div>
+
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
@@ -265,9 +289,17 @@
                                 {% endif %}
 
                             </div>
-                            <div class="overview-points-card__container">
-                                 <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
-                            </div>
+
+                            {% if course_title == "Doctorate of Business Administration" %}
+
+                                {% else %}
+
+                                    <div class="overview-points-card__container">
+                                         <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
+                                    </div>
+
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
@@ -775,7 +807,17 @@
                 <div class="register">
                     <h3>Ready to Start ?</h3>
                     <p>It is really easy to start with us. You can register for this course with minimum details and get access to one of the modules of this course for 7 days. During this period, you may enroll in this course by submitting the required documents and making a module fee.</p>
-                    <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now for 7 day trial</a>
+
+                    {% if course_title == "Doctorate of Business Administration" %}
+
+                        <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now</a>
+                    {% else %}
+
+                        <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now for 7 day trial</a>
+
+                    {% endif %}
+
+
                 </div>
                 <a id="enquiry_form"></a>
                 <div class="container-fluid p-0 about-us-wrapper form">

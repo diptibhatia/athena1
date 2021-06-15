@@ -352,6 +352,15 @@ function athena_preprocess_page(&$variables) {
     $variables['include_static_links'] = TRUE;
   }
 
+  $cert_level = \Drupal::service('path.alias_manager')->getPathByAlias('/certification-level');
+    if (strpos($current_path, $cert_level) !== false) {
+  
+    $variables['athena_exclude'] = TRUE;
+    $variables['exclude_footer'] = TRUE;
+    $variables['include_static_links'] = TRUE;
+  }
+
+
   if (strpos($current_path, '/rsu-ucam') !== false) {
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
