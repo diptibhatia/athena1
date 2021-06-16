@@ -10,10 +10,11 @@
     
 
     &__title {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 2.4rem;
         font-weight: bold;
-        color: $pink-light;
+/*        color: $pink-light; */
+        color: #303030;
         width: 17rem;
         line-height: 1.29;
         margin: 0;
@@ -22,7 +23,7 @@
 
         &::before {
             content: '';
-            display: none;
+            display: inline-block;
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -39,7 +40,7 @@
 
         &::after {
             content: '';
-            display: none;
+            display: inline-block;
             width: 14px;
             height: 14px;
             border-radius: 50%;
@@ -55,7 +56,7 @@
         }
 
         @include atSize700 {
-            font-size: 4.1rem;
+            font-size: 65px;
             width: 32rem;
         }
 
@@ -66,28 +67,28 @@
         @include atSize1100 {
             &::before {
                 content: '';
-                display: none;
-                width: 28px;
-                height: 28px;
+                display: inline-block;
+                width: 34px;
+                height: 34px;
                 border-radius: 50%;
                 background-color: #fff;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
                 position: absolute;
-                top: 71px;
-                left: 11.1rem;
+                top: 8px;
+                left: 15rem;
             }
 
             &::after {
                 content: '';
-                display: none;
-                width: 18px;
-                height: 18px;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
                 border-radius: 50%;
                 background-image: linear-gradient(88deg, 
                 #ffc300 2%, #ffac00 98%, #ffd85e 98%);
                 position: absolute;
-                top: 77.5px;
-                left: 11.33rem;
+                top: 14.5px;
+                left: 15.44rem;
             }
         }
 
@@ -121,7 +122,7 @@
 
             &::before {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 24px;
                 height: 24px;
                 border-radius: 50%;
@@ -129,12 +130,12 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
                 position: absolute;
                 bottom: -105px;
-                left: -4.5rem;
+                left: -2.5rem;
             }
 
             &::after {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 14px;
                 height: 14px;
                 border-radius: 50%;
@@ -142,7 +143,7 @@
                 2%, #540081 98%, #ffd85e 98%);
                 position: absolute;
                 bottom: -100px;
-                left: -4.15rem;
+                left: -2.2rem;
             }
         }
     }
@@ -253,7 +254,7 @@
 
             &::before {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 17px;
                 height: 17px;
                 border-radius: 50%;
@@ -266,7 +267,7 @@
 
             &::after {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
@@ -298,7 +299,7 @@
             position: relative;
             text-align: right;
             img {
-                width: 100%;
+                width: 69%;
                 margin-top:-29px;
                 @include atSize479{
                     display:none;
@@ -348,27 +349,27 @@
     @include atSize1100 {
         &::before {
             content: '';
-            display: none;
+            display: inline-block;
             width: 21px;
             height: 21px;
             border-radius: 50%;
             background-color: #fff;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: 104px;
-            left: 37rem;
+            top: 36px;
+            left: 40rem;
         }
 
         &::after {
             content: '';
-            display: none;
+            display: inline-block;
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background-image: linear-gradient(88deg, #00a1e8 2%, #004fa1 98%);
             position: absolute;
-            top: 109.7px;
-            left: 37.32rem;
+            top: 40.5px;
+            left: 40.28rem;
         }
     }
 }
