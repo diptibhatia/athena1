@@ -99,14 +99,13 @@ img {
         color: #303030;
         margin: 20px 0 5px 0;
         padding-top:10px;
-        &:after {
-            width: 140px;
-            border-bottom: solid 4px #ff008e;
-            border-radius: 4px;
-            height: 0px;
-        }
     }
-    
+     h2::after {
+        width: 140px;
+        border-bottom: solid 4px #ff008e;
+        border-radius: 4px;
+        height: 0px;
+    }
 }
 
 .by-viewer {padding-bottom:10px; margin-bottom:10px;
@@ -212,7 +211,7 @@ form.comment-form {
 .form-email { 
     margin-top: .25rem;}
 
-h5.font-medium {font-weight:600; color: $voilet}
+h5.font-medium {font-weight:600; color: #5b1a87}
 .cke_reset { height: auto !important;}
 .cke_chrome { border:none !important;}
 .cke_contents {border: 1px solid #d1d1d1 !important;}
