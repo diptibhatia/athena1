@@ -40,6 +40,10 @@ function initiateSendingMail(form_id, mailinfo) {
 
 jQuery(document).ready(function() {
 
+    jQuery(".mat-expansion-panel .mat-expansion-panel-header").click(function(){
+        jQuery(this).toggleClass("mat-expanded");
+        jQuery(this).siblings(".mat-panel-content").slideToggle();
+      });
     // Typing effect in home page - starts here.
     // https://css-tricks.com/snippets/css/typewriter-effect/
     // var TxtType = function(el, toRotate, period) {
@@ -173,4 +177,6 @@ function scrollEvent(){
 }
 
 window.onload = scrollEvent();
+
+
 

@@ -92,6 +92,7 @@
       position: relative;
       padding:13px;
       border-radius: 3px;
+      cursor: pointer;
 
         .mat-panel-title{
           &:after {
@@ -145,5 +146,5 @@
   
   }
   .mat-expansion-panel .mat-expansion-panel-header[style]{
-    height:52px !important;
+    height:52px !important;    
   }
