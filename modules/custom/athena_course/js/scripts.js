@@ -527,7 +527,7 @@ jQuery(document).ready(function () {
       msg += '\n\u2022  Please enter first name';
     } else if (fname.length < 2 || fname.length > 16) {
       msg += '\n\u2022  Please enter 2 to 16 characters for first name';
-    } else if (!regex.test(jQuery("#reg_first_name").val())) {
+    } else if (!regex.test(jQuery(".ac-form #reg_first_name").val())) {
       msg += '\n\u2022  Please enter only letters for first name';
     }
 
@@ -535,7 +535,7 @@ jQuery(document).ready(function () {
       msg += '\n\u2022  Please enter last name';
     } else if (lname.length < 2 || lname.length > 16) {
       msg += '\n\u2022  Please enter 2 to 16 characters for last name';
-    } else if (!regex.test(jQuery("#reg_last_name").val())) {
+    } else if (!regex.test(jQuery(".ac-form #reg_last_name").val())) {
       msg += '\n\u2022  Please enter only letters for last name';
     }
 
@@ -546,7 +546,7 @@ jQuery(document).ready(function () {
     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (jQuery(".ac-form #reg_email").val() == '') {
       msg += '\n\u2022  Please enter email id';
-    } else if (!regex.test(jQuery("#reg_email").val())) {
+    } else if (!regex.test(jQuery(".ac-form #reg_email").val())) {
       msg += '\n\u2022  Please enter valid Email id';
     }
 
@@ -647,7 +647,7 @@ jQuery(document).ready(function () {
       msg += '\n\u2022  Please enter first name';
     } else if (fname.length < 2 || fname.length > 16) {
       msg += '\n\u2022  Please enter 2 to 16 characters for first name';
-    } else if (!regex.test(jQuery("#reg_first_name").val())) {
+    } else if (!regex.test(jQuery(".pc-form #reg_first_name").val())) {
       msg += '\n\u2022  Please enter only letters for first name';
     }
 
@@ -655,7 +655,7 @@ jQuery(document).ready(function () {
       msg += '\n\u2022  Please enter last name';
     } else if (lname.length < 2 || lname.length > 16) {
       msg += '\n\u2022  Please enter 2 to 16 characters for last name';
-    } else if (!regex.test(jQuery("#reg_last_name").val())) {
+    } else if (!regex.test(jQuery(".pc-form #reg_last_name").val())) {
       msg += '\n\u2022  Please enter only letters for last name';
     }
 
@@ -666,7 +666,7 @@ jQuery(document).ready(function () {
     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (jQuery(".pc-form #reg_email").val() == '') {
       msg += '\n\u2022  Please enter email id';
-    } else if (!regex.test(jQuery("#reg_email").val())) {
+    } else if (!regex.test(jQuery(".pc-form #reg_email").val())) {
       msg += '\n\u2022  Please enter valid Email id';
     }
 
