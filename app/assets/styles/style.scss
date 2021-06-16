@@ -46,6 +46,7 @@
 @import "modules/shorttermcourses";
 @import "modules/eventPopup";
 // @import "modules/pluginsCustomShortTermCourses";
+@import "modules/certificationLevels.scss";
  
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 #courses-block .owl-nav {
@@ -207,13 +208,18 @@ form.comment-form {
         border: 1px solid #303030;
         color: #303030;        
     }
-    li:nth-child(1) .nav-link { border-right:none; border-left: none;
-        border-radius: .25rem 0 0 .25rem;}
+    li:nth-child(1) .nav-link { border-right:none; border-radius: .25rem 0 0 .25rem;}
     li:nth-child(2) .nav-link { border-left:none; border-radius: 0 .25rem .25rem 0;}
     .nav-link.active, .show>.nav-link {
         color: #fff;
         background-color: $titlePink;
     } 
+    @media screen and (max-width:540px) {
+        .nav-link {
+            padding: 0.4rem;
+            font-size:12px;     
+        }   
+    }
 }
     input, select { 
         border-radius: 0 !important;
