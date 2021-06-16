@@ -11,6 +11,9 @@
         margin: 0;
         padding-top: 1.75rem;
         position: relative;
+        span{
+            color:#303030;
+        }
 
         &::before {
             content: '';
@@ -48,7 +51,7 @@
 
         @include atSize700 {
             font-size: 4rem;
-            width: 50rem;
+            width: 34rem;
         }
 
         @include atSize850 {
@@ -291,12 +294,11 @@
             position: relative;
             text-align: right;
             img {
-                width: 60%;
+                width: 100%;
                 margin-top:-29px;
                 @include atSize479{
                     display:none;
                 }
-        
             }
         }
 
