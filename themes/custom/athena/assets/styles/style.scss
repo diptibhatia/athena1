@@ -87,7 +87,7 @@ img {
  }
  
 /* Comment section */
-#node-insight-article-field-comm{
+#node-insight-article-field-comm {
     h2 {
         font-family: Lato;
         font-size: 30px;
@@ -98,7 +98,7 @@ img {
         letter-spacing: normal;
         color: #303030;
         margin: 20px 0 5px 0;
-padding-top:10px;
+        padding-top:10px;
         &::after {
             width: 140px;
             border-bottom: solid 4px #ff008e;
@@ -118,16 +118,22 @@ padding-top:10px;
 div.thumbsup-rating-wrapper > div > div.rating-option-result {padding:0;}
 .rate-widget.thumbsup {margin:0 10px; float: left;}
 div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label {margin-bottom: 0;}
-div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up:before { 
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:before { 
     font-size: 1.2em;
     content: "\f08a";
     margin:0 5px;
+}
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up.rate-voted:before {
+   content: "\f004";
 }
 .rate-widget.thumbsup:nth-last-child(1) {float:right} 
 .rate-widget.thumbsup:nth-last-child(1) .rating-option-result {display: none;}
 .rate-widget.thumbsup:nth-last-child(1) div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up:before { 
     content: "\f024";
     margin:0 5px;
+}
+.rate-widget.thumbsup:nth-last-child(1) div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label.rate-voted:before { 
+    content: "\f11d";
 }
 .by-viewer a[rel="bookmark"] {display:none;}
 .by-viewer h5.font-medium small.commentemail {font-size: 60%;}
@@ -187,7 +193,24 @@ form.comment-form {
     border: 1px solid transparent;
     border-radius: 30px;
 }
+.field--type-string {
+    width: 49%;
+    float: left;
+    margin: 10px 0;
 
+    @media screen and (max-width:800px) {
+        margin: 0;
+    }
+}
+.field--type-email {
+    width: 49%;
+    float: left;
+}
+.form-email { 
+    margin-top: .25rem;}
+
+h5.font-medium {font-weight:600; color: $purpleColor}
+.cke_reset { height: auto !important;}
 .cke_chrome { border:none !important;}
 .cke_contents {border: 1px solid #d1d1d1 !important;}
 
@@ -236,7 +259,7 @@ form.comment-form {
         height: calc(1.5em + 1.25rem + 2px);
     }
 }
-
+.intl-tel-input allow-dropdown
 /* register section Ends */
 .get-started button {
     background: transparent;
