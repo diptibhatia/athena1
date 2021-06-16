@@ -22,7 +22,7 @@
 
         &::before {
             content: '';
-            display: none;
+            display: inline-block;
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -39,7 +39,7 @@
 
         &::after {
             content: '';
-            display: none;
+            display: inline-block;
             width: 14px;
             height: 14px;
             border-radius: 50%;
@@ -66,7 +66,7 @@
         @include atSize1100 {
             &::before {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 28px;
                 height: 28px;
                 border-radius: 50%;
@@ -79,7 +79,7 @@
 
             &::after {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 18px;
                 height: 18px;
                 border-radius: 50%;
@@ -121,7 +121,7 @@
 
             &::before {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 24px;
                 height: 24px;
                 border-radius: 50%;
@@ -134,7 +134,7 @@
 
             &::after {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 14px;
                 height: 14px;
                 border-radius: 50%;
@@ -253,7 +253,7 @@
 
             &::before {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 17px;
                 height: 17px;
                 border-radius: 50%;
@@ -266,7 +266,7 @@
 
             &::after {
                 content: '';
-                display: none;
+                display: inline-block;
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
@@ -298,7 +298,7 @@
             position: relative;
             text-align: right;
             img {
-                width: 100%;
+                width: 69%;
                 margin-top:-29px;
                 @include atSize479{
                     display:none;
@@ -348,7 +348,7 @@
     @include atSize1100 {
         &::before {
             content: '';
-            display: none;
+            display: inline-block;
             width: 21px;
             height: 21px;
             border-radius: 50%;
@@ -361,7 +361,7 @@
 
         &::after {
             content: '';
-            display: none;
+            display: inline-block;
             width: 12px;
             height: 12px;
             border-radius: 50%;
