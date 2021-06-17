@@ -74,8 +74,8 @@ class ShortTermCourseController {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
                                 $value2 = str_replace("pdfassets", "university", $value2);
-                                $value2 = str_replace(".svg", "-white.svg", $value2);
-                                $value2 = str_replace(".png", "-white.svg", $value2);
+                                // $value2 = str_replace(".svg", "-white.svg", $value2);
+                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -172,8 +172,8 @@ class ShortTermCourseController {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
                                 $value2 = str_replace("pdfassets", "university", $value2);
-                                $value2 = str_replace(".svg", "-white.svg", $value2);
-                                $value2 = str_replace(".png", "-white.svg", $value2);
+                                // $value2 = str_replace(".svg", "-white.svg", $value2);
+                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -302,8 +302,8 @@ class ShortTermCourseController {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
                                 $value2 = str_replace("pdfassets", "university", $value2);
-                                $value2 = str_replace(".svg", "-white.svg", $value2);
-                                $value2 = str_replace(".png", "-white.svg", $value2);
+                                // $value2 = str_replace(".svg", "-white.svg", $value2);
+                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
