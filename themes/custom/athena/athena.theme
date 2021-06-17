@@ -354,7 +354,7 @@ function athena_preprocess_page(&$variables) {
 
   $cert_level = \Drupal::service('path.alias_manager')->getPathByAlias('/certification-level');
     if (strpos($current_path, $cert_level) !== false) {
-  
+
     $variables['athena_exclude'] = TRUE;
     $variables['exclude_footer'] = TRUE;
     $variables['include_static_links'] = TRUE;
@@ -436,16 +436,6 @@ if(!empty($block_content)){
 
   if (strpos($current_path, '/StudentEnroltoCourse') !== false) {
     $variables['athena_exclude'] = TRUE;
-    $referer = $_SERVER['HTTP_REFERER'];
-    $lead_source = $_REQUEST['source'] ?? '';
-    $lead_user = $_REQUEST['UId'] ?? '';
-
-    if (strpos($referer, 'MBAPrograms') !== false) {
-      if ($lead_source == 'LINKCONNECTOR') {
-        $variables['link_connector_pixel'] = TRUE;
-        $variables['lead_user'] = $lead_user;
-      }
-    }
   }
 
 $current_uri = \Drupal::request()->getRequestUri();
@@ -511,17 +501,17 @@ function athena_preprocess_node(&$variables) {
           $i++;
       }
       $variables['about_profile'] = $profile;
-      $variables['enable_popup'] = TRUE; 
+      $variables['enable_popup'] = TRUE;
     }
 
     // code added for restructuring of about us pages
     elseif ((strpos($current_uri, 'about-us/dean') !== false) || (strpos($current_uri, 'about-us/founder-and-ceo') !== false) || (strpos($current_uri, 'about-us/academic-director') !== false )) {
-      
+
         $variables['enable_popup'] = FALSE;
 
-        $variables['leaders'] = '1';  
+        $variables['leaders'] = '1';
         $node = \Drupal::routeMatch()->getParameter('node');
-      
+
         $heading = $node->get('field_heading')->value;
         $variables['heading'] = $heading;
 
@@ -530,19 +520,19 @@ function athena_preprocess_node(&$variables) {
           $image =$node->get('field_image')->entity->getFileUri();
           $image =  file_create_url($image);
           $variables['image'] = $image;
-      
+
         }
 
-        
+
         $body = $node->get('body')->value;
         $variables['body'] = $body;
 
-        
+
         $linkdn = $node->get('field_linked_in_link')->value;
         $variables['linkdn'] = $linkdn;
 
 
-        // get bio - description of leaders  
+        // get bio - description of leaders
 
         $bundle='athena_people';
         $query = \Drupal::entityQuery('node');
@@ -550,22 +540,22 @@ function athena_preprocess_node(&$variables) {
 
         if (strpos($current_uri, 'about-us/dean'))
             $query->condition('title', 'Dr. William Painter', 'CONTAINS');
-        elseif (strpos($current_uri, 'about-us/founder-and-ceo')) 
+        elseif (strpos($current_uri, 'about-us/founder-and-ceo'))
           $query->condition('title', 'Firoz Thairinil');
-        elseif (strpos($current_uri, 'about-us/academic-director')) 
+        elseif (strpos($current_uri, 'about-us/academic-director'))
           $query->condition('title', 'Col (Rtd). Anil Ahluwalia');
-              
+
 
         $query->condition('type', $bundle);
         $entity_ids = $query->execute();
 
-        
+
         foreach ($entity_ids as $value) {
                   $node = Node::load($value);
               }
 
         $description = $node->get('field_description')->value;
-        $variables['description'] =  $description;    
+        $variables['description'] =  $description;
       }
     }
 }
@@ -673,6 +663,21 @@ function athena_preprocess_links(&$variables) {
 
 function athena_preprocess_html(&$variables)
 {
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/StudentEnroltoCourse') !== false) {
+    $referer = $_SERVER['HTTP_REFERER'];
+    $lead_source = $_REQUEST['source'] ?? '';
+    $lead_user = $_REQUEST['UId'] ?? '';
+
+    if (strpos($referer, 'MBAPrograms') !== false) {
+      if ($lead_source == 'LINKCONNECTOR') {
+        $variables['link_connector_pixel'] = TRUE;
+        $variables['lead_user'] = $lead_user;
+      }
+    }
+  }
+
 
   $route_name = \Drupal::routeMatch()->getRouteName();
     // Custom meta tags on smo and course pages.
