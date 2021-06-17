@@ -57,7 +57,7 @@
 
         @include atSize700 {
             font-size: 65px;
-            width: 32rem;
+            width: 37rem;
         }
 
         @include atSize850 {
@@ -68,27 +68,27 @@
             &::before {
                 content: '';
                 display: inline-block;
-                width: 34px;
-                height: 34px;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 background-color: #fff;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
                 position: absolute;
-                top: 8px;
-                left: 15rem;
+                top: -16px;
+                left: 12rem;
             }
 
             &::after {
                 content: '';
                 display: inline-block;
-                width: 20px;
-                height: 20px;
+                width: 18px;
+                height: 18px;
                 border-radius: 50%;
                 background-image: linear-gradient(88deg, 
                 #ffc300 2%, #ffac00 98%, #ffd85e 98%);
                 position: absolute;
-                top: 14.5px;
-                left: 15.44rem;
+                top: -9.5px;
+                left: 12.34rem;
             }
         }
 
@@ -299,7 +299,7 @@
             position: relative;
             text-align: right;
             img {
-                width: 69%;
+                width: 66%;
                 margin-top:-29px;
                 @include atSize479{
                     display:none;
@@ -350,26 +350,26 @@
         &::before {
             content: '';
             display: inline-block;
-            width: 21px;
-            height: 21px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background-color: #fff;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: 36px;
-            left: 40rem;
+            top: 84px;
+            left: 38rem;
         }
 
         &::after {
             content: '';
             display: inline-block;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-image: linear-gradient(88deg, #00a1e8 2%, #004fa1 98%);
             position: absolute;
-            top: 40.5px;
-            left: 40.28rem;
+            top: 87.5px;
+            left: 38.18rem;
         }
     }
 }
