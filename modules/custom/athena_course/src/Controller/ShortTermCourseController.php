@@ -34,6 +34,7 @@ class ShortTermCourseController {
             $this->_curr_url = $this->_lms_url; 
         */
             $this->_curr_url = $this->_lms_url;
+            
     }
 
     /**
