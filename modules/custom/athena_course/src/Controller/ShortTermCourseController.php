@@ -22,16 +22,12 @@ class ShortTermCourseController {
         $this->_limit = 10;
         $this->_lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
         if ( $this->_lms_url == "https://newlms.athena.edu" )        
-            $this->_api = "/athenadev";        
+            $this->_api = "/athenadev";
+        elseif ( $this->_lms_url == "https://learnstaging.athena.edu" )
+            $this->_api = "/athenastg";    
         else
             $this->_api = "/athenaprod";
         //$this->_lms_url = "https://newlms.athena.edu";
-
-        
-        if (strpos($_SERVER['HTTP_HOST'], 'websiteprod') !== false)  
-            $this->_curr_url = "http://learnstaging.athena.edu";
-        else
-            $this->_curr_url = $this->_lms_url;
         
     }
 
@@ -97,7 +93,7 @@ class ShortTermCourseController {
 
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_curr_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
+                    'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
@@ -195,7 +191,7 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_curr_url . '/student-dashboard/course/' . $value->cid.'/'.$value->slug,                    
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid.'/'.$value->slug,                    
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
@@ -325,7 +321,7 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_curr_url . '/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
