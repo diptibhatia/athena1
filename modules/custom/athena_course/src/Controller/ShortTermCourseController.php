@@ -27,14 +27,12 @@ class ShortTermCourseController {
             $this->_api = "/athenaprod";
         //$this->_lms_url = "https://newlms.athena.edu";
 
-        /*
-        if (str_contains($_SERVER['HTTP_HOST'], 'websiteprod'))  
+        
+        if (strpos($_SERVER['HTTP_HOST'], 'websiteprod') !== false)  
             $this->_curr_url = "http://learnstaging.athena.edu";
         else
-            $this->_curr_url = $this->_lms_url; 
-        */
             $this->_curr_url = $this->_lms_url;
-            
+        
     }
 
     /**
