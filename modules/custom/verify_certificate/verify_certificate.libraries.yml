@@ -1,10 +1,10 @@
-# verify_certificate:
-#   version: 1.x
-#   css:
-#     theme:
-#       css/verify-certificate.css: {}
-#   js:
-#     js/verify-certificate.js: {}
-#   dependencies:
-#     - core/jquery
-#     - core/jquery.once
+verify_certificate:
+  version: 1.x
+  css:
+    theme:
+      css/verify-certificate.css: {}
+  js:
+    js/verify-certificate.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

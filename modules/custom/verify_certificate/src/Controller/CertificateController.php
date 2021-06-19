@@ -4,15 +4,15 @@ namespace Drupal\verify_certificate\Controller;
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Provides route responses for the Example module.
+ * Provides route responses for the verify_certificate module.
  */
 class CertificateController extends ControllerBase {
   public $certID;
   /**
-   * Returns a simple page.
+   * Returns the certificate verification page.
    *
    * @return array
-   *   A simple renderable array.
+   *   A simple custom themed renderable array.
    */
   public function verificationPage() {
     $this->certID = isset($_REQUEST['certID']) ? $_REQUEST['certID'] : '';
