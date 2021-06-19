@@ -1,0 +1,134 @@
+{{ attach_library('verify_certificate/verify_certificate') }}
+<div class="content-wrapper cert-inner-container m-40">
+  <div class="container bg-color pad-20">
+    <div class="row">
+      <div class="col-md-8"> </div>
+      <div class="col-md-4">
+        <form class="search-cert" action="/verify/certificate" method="get">
+          <input type="text" placeholder="Certificate ID " name="certID" value={{ queryParams.certID }}>
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="sub-header">
+    <div class="container inner3 ">
+      <div class="row">
+        <div class="col-md-1 text-center">
+          <img src="/themes/custom/athena/images/head-shot.png" class="pro-img">
+        </div>
+        <div class="col-md-7">
+          <p style="padding-top:19px;">This Certificate was issued to <span> {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span> on {{ candidateDetails.issueDate }}.</p>
+          <p>Expires on : No Expiration Date</p>
+        </div>
+        {% if certDetails.certUniqueId %}
+            <p>Our website is in maintenance mode. Please, come back later.</p>
+        {% else %}
+        {% endif %}
+        <div class="col-md-4 head-text text-right"> <img src="/themes/custom/athena/images/head-icon.jpg"> <strong> Blockchain ID: </strong>
+        {% if certDetails.certUniqueId %}{{certDetails.certUniqueId}}{% else %} NA {% endif %}</div>
+        <!-- .container -->
+      </div>
+    </div>
+  </div>
+  <div class="container bg-color">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="border-width text-center">
+          <div class="pad-b border-width-in">
+          {% if certDetails.certficateImage %}
+            <img data-toggle="modal" data-target="#myModal-img" src="{{certDetails.certficateImage}}" alt="{{certDetails.certficateImage}}" style="width:100%;background-color:#dddddd;padding:5px">
+          {% else %}
+            <img data-toggle="modal" data-target="#myModal-img" src="/themes/custom/athena/images/certificate.jpg" alt="Certificate Preview" style="width:100%;background-color:#dddddd;padding:5px">
+          {% endif %}
+
+          <a href="#" data-toggle="modal" data-target="#myModal-img">Click to Enlarge</a>
+          <button class="ver-a" data-toggle="modal" data-target="#myModal">Verify Details</button>
+          <div class="view-trans">
+            <a href="#">See More Details</a></div>
+          </div>
+          <div class="so-share" style="padding: 0 20px 0px 20px ;">
+            <div class="so-share-1">
+              <p>You can easly share your digital
+                certificate with your friends, family
+                and colleagues</p>
+              <div class="mr-so">
+                <!-- Add font awesome icons -->
+                <a href="https://www.facebook.com/sharer.php?u={{certDetails.certficateImage}}" target="blank" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/share?text=[TITLE]&url={{certDetails.certficateImage}}" target="blank" class="fa fa-twitter"></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{certDetails.certficateImage}}" target="blank" class="fa fa-linkedin"></a>
+                <a href="https://api.whatsapp.com/send?text={{certDetails.certficateImage}}" target="blank" class="fa fa-whatsapp"></a>
+              </div>
+              <div class="bg-copy">
+                <div class="bg-fade"> </div>
+                <p id="copy-text">{% if certDetails.certficateImage %}{{certDetails.certficateImage}}{% else %} NA {% endif %}</p>
+                <h6 id="copy-btn">COPY</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 inner-txt">
+        <div class="pad-20a">
+          <h1>Diploma in Human Resourse Management </h1>
+          <p> Issued by <strong> Athena Global Education </strong> </p>
+          <p class="txt">Earners of this designation demonstrated the skills, knowledge and competencies to build a
+            secure Hyperledger Fabric network for commercial deployment, including the ability to install,
+            configure, operate, manage, and troubleshoot the nodes on that network. Earners demonstrated proficiency in
+            Application Lifecycle Management, Network Install and Configuration,
+            Diagnostics and Troubleshooting, Membership Service Provider, Network Maintenance and Operations.</p>
+          <p> <strong>Modules Covered in this Program</strong> </p>
+          <ul>
+            <li> Human Resourse Planning </li>
+            <li>Recruitment Process</li>
+            <li>Staff Appraisals</li>
+            <li>Human Resourse Leadership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog dia-wi">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Verification - DEV TODO</h4>
+        </div>
+        <div class="modal-body">
+          <p><i class="fa fa-check" aria-hidden="true"></i> Issued on 10 November 2020</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Issued by Athena Global Education</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Issued to Rachel Cave</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on 30 October 2020</p>
+
+          <div class="modal-footer text-left">
+            <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal-img" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <img src="{{certDetails.certficateImage}}" alt="{{certDetails.certificateFileName}}" style="width:100%;" />
+        </div>
+
+      </div>
+    </div>
+  </div>

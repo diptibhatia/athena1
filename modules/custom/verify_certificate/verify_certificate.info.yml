@@ -1,0 +1,5 @@
+name: Verify Certificate
+description: This module will enable a certificate verification page
+package: Custom
+type: module
+core: 8.x

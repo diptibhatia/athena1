@@ -452,11 +452,14 @@ $current_uri = \Drupal::request()->getRequestUri();
  * Implements hook_theme_suggestions_page_alter().
  */
 function athena_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__' . $node->bundle();
   }
-
-
+  if($path_alias == "/verify/certificate") {
+    $suggestions[] = 'page__verify_certificate';
+  }
 }
 
 

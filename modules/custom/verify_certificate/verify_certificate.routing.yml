@@ -1,0 +1,7 @@
+verify_certificate.verify_cert_page:
+  path: '/verify/certificate'
+  defaults:
+    _controller: '\Drupal\verify_certificate\Controller\CertificateController::verificationPage'
+    _title: 'Verify your Certificate'
+  requirements:
+    _permission: 'access content'
