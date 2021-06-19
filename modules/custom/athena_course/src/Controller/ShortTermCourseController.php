@@ -21,14 +21,14 @@ class ShortTermCourseController {
     public function __construct() {
         $this->_limit = 10;
         $this->_lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
-        if ( $this->_lms_url == "https://newlms.athena.edu" )        
+        if ( $this->_lms_url == "https://newlms.athena.edu" )
             $this->_api = "/athenadev";
         elseif ( $this->_lms_url == "https://learnstaging.athena.edu" )
-            $this->_api = "/athenastg";    
+            $this->_api = "/athenastg";
         else
             $this->_api = "/athenaprod";
         //$this->_lms_url = "https://newlms.athena.edu";
-        
+
     }
 
     /**
@@ -89,16 +89,16 @@ class ShortTermCourseController {
                 }
 
                 $website_card_content = put_dots_in_string($value->website_card_content, 150);
-                
+
 
                 $courses_data[] = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
+                    'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? '',
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -191,12 +191,12 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid.'/'.$value->slug,                    
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid.'/'.$value->slug,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? '',
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -321,12 +321,12 @@ class ShortTermCourseController {
 
                 $courses_data = [
                     'cid' => $value->cid,
-                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid .'/'.$value->slug,
                     'label' => $value->course_name,
                     'body' => $website_card_content,
                     'card_intro' => put_dots_in_string($value->course_introduction, 150),
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? '',
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];

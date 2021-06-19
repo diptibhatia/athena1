@@ -5,6 +5,16 @@ use \Drupal\Core\Link;
 use Drupal\node\Entity\Node;
 
 /**
+ * Get image path from current theme.
+ */
+function athena_course_current_theme_image($image_dir, $image_name) {
+  global $base_url;
+  $theme = \Drupal::theme()->getActiveTheme();
+  $image_url = $base_url.'/'. $theme->getPath() .'/' . $image_dir . '/' . $image_name;
+  return $image_url;
+}
+
+/**
 * Implements hook_mail().
 */
 function athena_course_mail($key, &$message, $params) {
