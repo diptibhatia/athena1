@@ -80,6 +80,9 @@ class ShortTermCourseController {
                                 // $value2 = str_replace(".svg", "-white.svg", $value2);
                                 // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
+                                if (!@getimagesize($white_logo)) {
+                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -179,6 +182,9 @@ class ShortTermCourseController {
                                 // $value2 = str_replace(".svg", "-white.svg", $value2);
                                 // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
+                                if (!@getimagesize($white_logo)) {
+                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -240,7 +246,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                               ' .  put_dots_in_string($courses_data['body'], 150) . '
+                               ' .  put_dots_in_string($courses_data['card_intro'], 150) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -309,6 +315,9 @@ class ShortTermCourseController {
                                 // $value2 = str_replace(".svg", "-white.svg", $value2);
                                 // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
+                                if (!@getimagesize($white_logo)) {
+                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -370,7 +379,7 @@ class ShortTermCourseController {
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
-                                ' . put_dots_in_string($courses_data['body'], 150) . '
+                                ' . put_dots_in_string($courses_data['card_intro'], 150) . '
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
