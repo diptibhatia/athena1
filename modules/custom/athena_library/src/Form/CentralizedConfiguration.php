@@ -104,6 +104,22 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#default_value' => $config->get('line_app_id'),
     ];
 
+
+    $form['verify_cetificate'] = array(
+      '#type' => 'details',
+      '#title' => t('Certificate Verification'),
+      '#collapsible' => TRUE,
+      '#group' => 'central_config',
+    );
+
+    $form['verify_cetificate']['course_details_default'] = [
+      '#type' => 'text_format',
+      '#title' => 'Course Details Default',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('course_details_default.value'),
+      '#format' => $config->get('course_details_default.format'),
+    ];
+
     $form['static_blocks'] = array(
       '#type' => 'details',
       '#title' => t('Static Blocks'),
@@ -251,6 +267,9 @@ class CentralizedConfiguration extends ConfigFormBase {
       ->set('ulearn_portal_url', $form_state->getValue('ulearn_portal_url'))
       ->set('lms_url', $form_state->getValue('lms_url'))
       ->set('line_app_id', $form_state->getValue('line_app_id'))
+
+      ->set('course_details_default.value', $form_state->getValue('course_details_default')['value'])
+      ->set('course_details_default.format', $form_state->getValue('course_details_default')['format'])
 
       ->set('earning_a_degree.value', $form_state->getValue('earning_a_degree')['value'])
       ->set('earning_a_degree.format', $form_state->getValue('earning_a_degree')['format'])

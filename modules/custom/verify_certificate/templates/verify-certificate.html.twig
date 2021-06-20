@@ -66,20 +66,15 @@
       </div>
       <div class="col-md-8 inner-txt">
         <div class="pad-20a">
-          <h1>{{ certDetails.courseName }} </h1>
-          <p> Issued by <strong> {{ certDetails.instituteName }} </strong> </p>
-          <p class="txt">Earners of this designation demonstrated the skills, knowledge and competencies to build a
-            secure Hyperledger Fabric network for commercial deployment, including the ability to install,
-            configure, operate, manage, and troubleshoot the nodes on that network. Earners demonstrated proficiency in
-            Application Lifecycle Management, Network Install and Configuration,
-            Diagnostics and Troubleshooting, Membership Service Provider, Network Maintenance and Operations.</p>
-          <p> <strong>Modules Covered in this Program</strong> </p>
-          <ul>
-            <li> Human Resourse Planning </li>
-            <li>Recruitment Process</li>
-            <li>Staff Appraisals</li>
-            <li>Human Resourse Leadership</li>
-          </ul>
+
+          {% if coursedetails %}
+            <h1>{{ certDetails.courseName }} </h1>
+            <p> Issued by <strong> {{ certDetails.instituteName }} </strong> </p>
+            {{ coursedetails|raw }}
+          {% else %}
+            {{ coursedetailsdefault|raw }}
+          {% endif %}
+
         </div>
       </div>
     </div>
@@ -105,14 +100,14 @@
           <div class="modal-footer text-left">
             <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
           </div>
-          {% else %} 
+          {% else %}
           <div class="modal-footer text-center">
             <div><i class="fa fa-minus-circle" aria-hidden="true"></i>Verification failed</div>
           </div>
           {% endif %}
-          
 
-          
+
+
         </div>
 
       </div>

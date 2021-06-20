@@ -9,6 +9,8 @@ function verify_certificate_theme($existing, $type, $theme, $path) {
         'queryParams' => [],
         'candidateDetails' => [],
         'certDetails' => [],
+        'coursedetails' => [],
+        'coursedetailsdefault' => [],
         'verify' => 0
       ]
     ],
