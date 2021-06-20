@@ -273,7 +273,9 @@ textarea {
 .pad-20 {
   padding: 15px 15px
 }
-
+.padt-40 {
+  padding-top: 40px;
+}
 .bg-color {
   background-color: #efefef;
 }
@@ -487,4 +489,10 @@ textarea {
 .cert-inner-container .container .row {
   margin-left: inherit;
   margin-right: inherit;
+}
+.fa-minus-circle:before {
+  color: red;
+}
+#myModal .modal-header, #myModal .modal-footer{
+  display: initial;
 }

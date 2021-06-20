@@ -17,6 +17,7 @@ class CertificateController extends ControllerBase {
   public function verificationPage() {
     $this->certID = isset($_REQUEST['certID']) ? $_REQUEST['certID'] : '';
     $certDetails = $candidateDetails = [];
+    $verify = 0;
     $queryParams = [
       'certID' => $this->certID
     ];
@@ -54,6 +55,11 @@ class CertificateController extends ControllerBase {
           'http_errors' => false,
         ])->getBody()->getContents();
         $certDetails = json_decode($response, TRUE)[0];
+        
+        if($candidateDetails['firstName'] == $certDetails['firstName'] && $candidateDetails['lastName'] == $certDetails['lastName'] && $candidateDetails['courseName'] == $certDetails['courseName'] && $candidateDetails['issueDate'] == $certDetails['certPrintDate']) {
+          $verify = 1;
+        }
+
       }
     }
     catch (\Exception $e) {
@@ -64,7 +70,8 @@ class CertificateController extends ControllerBase {
       '#theme' => 'verify_certificate',
       '#queryParams' => $queryParams,
       '#candidateDetails' => $candidateDetails,
-      '#certDetails' => $certDetails
+      '#certDetails' => $certDetails,
+      '#verify' => $verify
     ];
   }
 
