@@ -5,7 +5,7 @@
       <div class="col-md-8"> </div>
       <div class="col-md-4">
         <form class="search-cert" action="/verify/certificate" method="get">
-          <input type="text" placeholder="Certificate ID " name="certID" value={{ queryParams.certID }}>
+          <input type="text" placeholder="Certificate ID " name="certID" value={% if queryParams.certID %}{{queryParams.certID}}{% else %}{{''}} {% endif %}>
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
@@ -66,8 +66,8 @@
       </div>
       <div class="col-md-8 inner-txt">
         <div class="pad-20a">
-          <h1>{{ candidateDetails.courseName }} </h1>
-          <p> Issued by <strong> {{ candidateDetails.certifier }} </strong> </p>
+          <h1>{{ certDetails.courseName }} </h1>
+          <p> Issued by <strong> {{ certDetails.instituteName }} </strong> </p>
           <p class="txt">Earners of this designation demonstrated the skills, knowledge and competencies to build a
             secure Hyperledger Fabric network for commercial deployment, including the ability to install,
             configure, operate, manage, and troubleshoot the nodes on that network. Earners demonstrated proficiency in
@@ -99,9 +99,9 @@
         <div class="modal-body">
           {% if verify %}
           <p><i class="fa fa-check" aria-hidden="true"></i> Issued on {{ candidateDetails.issueDate }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Issued by {{ candidateDetails.certifier }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Issued to {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on 30 October 2020</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Issued by {{ certDetails.instituteName }}</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Issued to {{ certDetails.firstName ~ ' ' ~ certDetails.lastName }}</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on {{ candidateDetails.issueDate }}</p>
           <div class="modal-footer text-left">
             <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
           </div>

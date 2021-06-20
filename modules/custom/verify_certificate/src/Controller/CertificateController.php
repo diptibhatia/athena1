@@ -56,7 +56,7 @@ class CertificateController extends ControllerBase {
         ])->getBody()->getContents();
         $certDetails = json_decode($response, TRUE)[0];
         
-        if($candidateDetails['firstName'] == $certDetails['firstName'] && $candidateDetails['lastName'] == $certDetails['lastName'] && $candidateDetails['courseName'] == $certDetails['courseName'] && $candidateDetails['issueDate'] == $certDetails['certPrintDate']) {
+        if($candidateDetails['firstName'] != '' && $candidateDetails['firstName'] == $certDetails['firstName'] && $candidateDetails['lastName'] == $certDetails['lastName'] && $candidateDetails['courseName'] == $certDetails['courseName'] && $candidateDetails['ID'] == $certDetails['certUniqueId']) {
           $verify = 1;
         }
 

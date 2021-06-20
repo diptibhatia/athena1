@@ -468,7 +468,6 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
 function athena_page_attachments_alter(array &$attachments) {
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
-  echo $path_alias;
   // We want to prevent the search engines from indexing this content
   if ($path_alias == "/verify/certificate") {
     // add the metatag
