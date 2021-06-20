@@ -1,5 +1,5 @@
 {{ attach_library('verify_certificate/verify_certificate') }}
-<div class="content-wrapper cert-inner-container m-40">
+<div class="content-wrapper cert-inner-container m-70">
   <div class="container bg-color pad-20">
     <div class="row">
       <div class="col-md-8"> </div>
@@ -21,10 +21,6 @@
           <p style="padding-top:19px;">This Certificate was issued to <span> {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span> on {{ candidateDetails.issueDate }}.</p>
           <p>Expires on : No Expiration Date</p>
         </div>
-        {% if certDetails.certUniqueId %}
-            <p>Our website is in maintenance mode. Please, come back later.</p>
-        {% else %}
-        {% endif %}
         <div class="col-md-4 head-text text-right"> <img src="/themes/custom/athena/images/head-icon.jpg"> <strong> Blockchain ID: </strong>
         {% if certDetails.certUniqueId %}{{certDetails.certUniqueId}}{% else %} NA {% endif %}</div>
         <!-- .container -->
