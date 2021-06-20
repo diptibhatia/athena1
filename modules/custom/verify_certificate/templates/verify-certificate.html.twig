@@ -5,7 +5,7 @@
       <div class="col-md-8"> </div>
       <div class="col-md-4">
         <form class="search-cert" action="/verify/certificate" method="get">
-          <input type="text" placeholder="Certificate ID " name="certID" value={% if queryParams.certID %}{{queryParams.certID}}{% else %}{{''}} {% endif %}>
+          <input type="text" placeholder="Certificate ID " name="certID" value={% if queryParams.certID != '' %}{{queryParams.certID}}{% else %}{{''}} {% endif %}>
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>

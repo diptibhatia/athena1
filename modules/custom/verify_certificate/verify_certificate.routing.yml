@@ -5,3 +5,5 @@ verify_certificate.verify_cert_page:
     _title: 'Verify your Certificate'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
