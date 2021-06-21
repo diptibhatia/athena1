@@ -1296,8 +1296,12 @@ div#block-discussions .title span {
   position: relative;
   width: 325px;
   min-width: 275px;
-  margin: 1.25rem 0.75rem 0rem;
+  margin: 2.25rem 0.75rem 0rem;
   background: white;
+
+  @media screen and (max-width:640px) {
+    margin: 2.25rem 0rem;
+  }
   .card-img {
     width: 100%;
     height: var(--card-img-height);
