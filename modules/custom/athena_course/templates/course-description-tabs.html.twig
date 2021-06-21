@@ -60,26 +60,24 @@
                                <div class="overview-points-card__container-contains">
                                     <h3>Accreditations</h3>
                                         <p>{{ node.field_course_accreditations.0.value|raw }}</p>
- <p>{{ node.field_course_accreditations.1.value|raw }}</p>
+                                 <p>{{ node.field_course_accreditations.1.value|raw }}</p>
 
 
                                 </div>
                             </div>
                                 {% endif %}
+                                
+                                {% if free_trial_link is empty %}
+                                    {% set label = "Take a Free Trial Now" %}
+                                {% else %}
+                                    {% set label = free_trial_link %}
+                                 {% endif %}   
 
-                                {% if course_title == "Doctorate of Business Administration" %}
-                                        
-                                        <div class="overview-points-card__container">
-                                         <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now</a>
+                                <div class="overview-points-card__container">
+                                <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">{{label}}</a>
                                         </div>
 
-                                {% else %}
-
-                                    <div class="overview-points-card__container">
-                                         <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Take a Free Trial Now</a>
-                                    </div>
-
-                                {% endif %}
+                                
 
                         </div>
                     </div>
@@ -493,17 +491,45 @@
 
 
     <div class="adm-process">
-        <div class="wrapper">
+        <div class="wrapper">                
 
-                {% if course_title == "Doctorate of Business Administration" %}
+                {% if admission_process is empty %}
 
-                    {{ get_static_data('admission_process_DBA', TRUE)|raw }}
+                    <h1>Admission Process</h1>
+
+                    <p>Please find below the detailed steps to be followed as a part of the admission process.</p>
+
+                    <div class="admission-steps-card-container">
+                    <div class="admission-steps-card">
+                    <div><img alt="icon" src="/themes/custom/athena/images/coursepage/admission1.svg" />
+                    <h3>Step 1 :<span style="font-weight:bold">Register for a free trial</span></h3>
+                    </div>
+
+                    <p>Register for a 7-Day Trial&nbsp;and get complete access to the first module of this program for 7 days without any obligations.</p>
+                    </div>
+
+                    <div class="admission-steps-card">
+                    <div><img alt="icon" src="/themes/custom/athena/images/coursepage/admission2.svg" />
+                    <h3>Step 2 :<span style="font-weight:bold">Submit online enrollment form</span></h3>
+                    </div>
+
+                    <p>For Masters &amp; Doctorate Program, you need to make a quick online application. For Certifications &amp; Diplomas, you can enroll directly by making payment for 1st module.</p>
+                    </div>
+
+                    <div class="admission-steps-card">
+                    <div><img alt="icon" src="/themes/custom/athena/images/coursepage/admission3.svg" />
+                    <h3>Step 3 :&nbsp;<span style="font-weight:bold">Pay &amp; Start</span></h3>
+                    </div>
+
+                    <p>Once your applications is approved, you will be able to start right away by making fee payment from your student portal&nbsp;</p>
+                    </div>
+                    </div>
 
                 {% else %}
 
-                    {{ get_static_data('admission_process', TRUE)|raw }}
+                    {{admission_process}}
 
-                {% endif %}
+                {% endif %}    
 
         </div>
     </div>
@@ -822,18 +848,22 @@
             </div>
             <div class="forms">
                 <div class="register">
-                    <h3>Ready to Start ?</h3>
-                    <p>It is really easy to start with us. You can register for this course with minimum details and get access to one of the modules of this course for 7 days. During this period, you may enroll in this course by submitting the required documents and making a module fee.</p>
-
-                    {% if course_title == "Doctorate of Business Administration" %}
-
-                        <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now</a>
+                    <h3>Ready to Start ?</h3>                    
+                    
+                    {% if ready_to_start_desc is empty %}
+                        <p>It is really easy to start with us. You can register for this course with minimum details and get access to one of the modules of this course for 7 days. During this period, you may enroll in this course by submitting the required documents and making a module fee.</p>
                     {% else %}
-
-                        <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Register Now for 7 day trial</a>
-
+                        <p> {{ ready_to_start_desc }} </p>
                     {% endif %}
 
+                    {% if register_now_link is empty %}
+                        {% set label = "Register Now for 7 day trial" %}
+                    {% else %}
+                        {% set label = register_now_link %}
+                    {% endif %}
+
+                    <a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">{{label}}</a>
+                    
 
                 </div>
                 <a id="enquiry_form"></a>

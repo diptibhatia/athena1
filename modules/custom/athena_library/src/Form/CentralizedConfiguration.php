@@ -143,22 +143,6 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('seven_day_free_trial.format'),
     ];
 
-    $form['static_blocks']['admission_process'] = [
-      '#type' => 'text_format',
-      '#title' => 'Admission Process',
-      '#format' => 'full_html',
-      '#default_value' => $config->get('admission_process.value'),
-      '#format' => $config->get('admission_process.format'),
-    ];
-
-    $form['static_blocks']['admission_process_DBA'] = [
-      '#type' => 'text_format',
-      '#title' => 'Admission Process DBA',
-      '#format' => 'full_html',
-      '#default_value' => $config->get('admission_process_DBA.value'),
-      '#format' => $config->get('admission_process_DBA.format'),
-    ];
-
     $form['static_blocks']['how_you_learn'] = [
       '#type' => 'text_format',
       '#title' => 'How you learn',
@@ -276,13 +260,7 @@ class CentralizedConfiguration extends ConfigFormBase {
 
       ->set('seven_day_free_trial.value', $form_state->getValue('seven_day_free_trial')['value'])
       ->set('seven_day_free_trial.format', $form_state->getValue('seven_day_free_trial')['format'])
-
-      ->set('admission_process.value', $form_state->getValue('admission_process')['value'])
-      ->set('admission_process.format', $form_state->getValue('admission_process')['format'])
-
-      ->set('admission_process_DBA.value', $form_state->getValue('admission_process_DBA')['value'])
-      ->set('admission_process_DBA.format', $form_state->getValue('admission_process_DBA')['format'])
-
+      
       ->set('how_you_learn.value', $form_state->getValue('how_you_learn')['value'])
       ->set('how_you_learn.format', $form_state->getValue('how_you_learn')['format'])
 
