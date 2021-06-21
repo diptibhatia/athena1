@@ -562,7 +562,7 @@
     padding: 15px 5px;
     display: inline-block;
     text-align: center;
-    img {width: 50px;}
+    img {width: 50px; max-height: 30px;}
 }
 
 #block-ourpopularcoursesblock {background-color: #ff00680d; padding: 10px;}
