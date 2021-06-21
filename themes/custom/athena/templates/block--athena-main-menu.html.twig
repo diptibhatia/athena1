@@ -38,10 +38,10 @@
 <div class="explore-btn-main d-block d-md-none" >
     <span onClick="drop();">Explore</span>
     <div id="dropcontent" class="dd-level1">
-    <div class="back-button" style="color:#303030;font-size: 14px;float: left;margin-Left: 14px;padding: 1px 0 0 8px;border-radius: 19px;width: 65px;height: 22px;margin-bottom: 10px;">&lt; Back</div>
-    <i class="fas fa-times" style="color: #303030;font-size: 18px;float: right;margin-right: 27px;margin-bottom: 10px;" onclick="closbtn()"></i>
-  {# <div class="close-button" style="color: #303030;font-size: 18px;float: right;margin-right: 27px;margin-bottom: 10px;" onclick="closbtn()">X</div> #}
-        <ul>
+    <div id="clbt" class="back-button" style="color:#303030;display:none;font-size: 14px;float: left;margin-Left: 14px;padding: 1px 0 0 8px;border-radius: 19px;width: 65px;height: 22px;margin-bottom: 10px;" onclick="remove()">&lt; Back</div>
+    {# <i class="fas fa-times" style="color: #303030;font-size: 18px;float: right;margin-right: 27px;margin-bottom: 10px;" onclick="closbtn()"></i> #}
+   <div class="close-button" style="float: right;margin-right: 24px;margin-bottom: 10px;" onclick="closbtn()"><img src="themes\custom\athena\images\icons\cancel.png" style="width:20px"></div>
+        <ul onclick="eplcour()" >
             <li><a href=#><img style="float:left;margin-right:10px;" src="acadamic-icn.svg" />Academic Programs</a>
                 <div class="dd-level2">
                     <div class="dd-level2-inner">
@@ -275,14 +275,34 @@ function drop() {
 
 function closbtn() {
   var drpcnt = document.getElementById("dropcontent");
+  var cos = document.getElementById("clbt");
   if ( drpcnt.style.display === "none") {
     drpcnt.style.display = "block";
+    cos.style.display = "none";
   } else {
     drpcnt.style.display = "none";
+    cos.style.display = "none";
   }
+}
+
+function eplcour(){
+   var cos = document.getElementById("clbt");
+   if(cos.style.display === "none"){
+     cos.style.display = "block";
+   }else{
+     cos.style.display = "block";
+   }
+}
+
+function remove(){
+  var cos = document.getElementById("clbt");
+   if(cos.style.display === "block"){
+     cos.style.display = "none";
+   }else{
+     cos.style.display = "none";
+   }
 }
 
 
 
 </script>
-<script src="https://kit.fontawesome.com/31cbd00155.js" crossorigin="anonymous"></script>
