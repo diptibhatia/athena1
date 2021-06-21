@@ -196,14 +196,22 @@ form.comment-form {
     margin: 10px 10px 10px 0;
 
     @media screen and (max-width:800px) {
-        margin: 0;
+        width: 100%;
+        float: none;
     }
 }
+
 .field--type-email {
     width: 49%;
     float: left;
     margin: 10px 0;
+
+    @media screen and (max-width:800px) {
+        width: 100%;
+        float: none;
+    }
 }
+
 .form-email { 
     margin-top: .25rem;}
 
