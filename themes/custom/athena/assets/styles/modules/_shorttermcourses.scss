@@ -166,9 +166,10 @@ min-height:200px;
             .free-text{
                 font-size:16.6px;
                 font-style: italic;
-                float:right;
+                text-align:right;
+                margin-top:5px;
             }
-            img {width: 70px;}
+            img {width: 36px;}
         }
         .image{
             clear: both;
@@ -270,7 +271,7 @@ min-height:200px;
 }
 
 .selected-courses {margin:10px;}
-.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 130px; margin-top: 20px;}
+.category-area {background-color: #eff1fe; padding:20px; padding-bottom: 230px; margin-top: 20px;}
 .category-area .nav a.nav-link {color:#000; padding-bottom:15px; margin-bottom: 20px; font-size: 19px;}
 .category-area .nav a.nav-link.active {border-bottom: solid 3px #fe0490;}
 .find-your-course
