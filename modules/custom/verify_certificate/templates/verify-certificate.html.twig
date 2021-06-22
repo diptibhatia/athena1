@@ -15,7 +15,12 @@
     <div class="container inner3 ">
       <div class="row">
         <div class="col-md-1 text-center">
-          <img src="/themes/custom/athena/images/head-shot.png" class="pro-img">
+          {% if certDetails.profilePic %}
+            <img src="{{ certDetails.profilePic }}" class="pro-img">
+          {% else %}
+            <img src="/themes/custom/athena/images/head-shot.png" class="pro-img">
+          {% endif %}
+
         </div>
         <div class="col-md-7">
           <p style="padding-top:19px;">This Certificate was issued to <span> {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span> on {{ candidateDetails.issueDate }}.</p>

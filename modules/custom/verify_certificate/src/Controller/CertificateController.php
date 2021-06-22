@@ -85,6 +85,18 @@ class CertificateController extends ControllerBase {
         }
 
         if($candidateDetails['firstName'] != '' && $candidateDetails['firstName'] == $certDetails['firstName'] && $candidateDetails['lastName'] == $certDetails['lastName'] && $candidateDetails['courseName'] == $certDetails['courseName'] && $candidateDetails['ID'] == $certDetails['certUniqueId']) {
+
+          //Get the user details from Blockchain API
+          $response = \Drupal::httpClient()->get($this->_lms_url . $this->_api . '/api/getClaimedCertificateByBlockchainId/' . $this->certID, [
+            'headers' => [
+              'Content-Type' => 'application/json'
+            ],
+            'http_errors' => false,
+          ])->getBody()->getContents();
+          $userDetails = json_decode($response, TRUE)[0];
+          $picSrc = $userDetails['userProfile']['profile_pic'] ?? '/themes/custom/athena/images/head-shot.png';
+          $certDetails['profilePic'] = $picSrc;
+
           $verify = 1;
         }
 
