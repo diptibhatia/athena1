@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
+   
+    <link href='assets/styles/style.scss' rel='stylesheet' type='text/css'>
+    <title>SMO</title>
+    <style>
+
+.course-login-wrapper {
+    width: 500px;
+    right:-40px;
+    top: -200px;
+    height: auto !important;
+    }
+
+    .top-banner .forecolor { 
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 100%, #ff006e -10%);
+    z-index: 1;
+    opacity: .8;
+    top: 0;
+    left: 0;
+}
+.top-banner .bg {max-width: max-content;}
+
+
+.hexagon {
+    width: 104px;
+    height: 60px;
+    background-image: linear-gradient(to bottom, #b0d9ef 100%, #e7f4fc 0%);
+    position: relative;
+    display: inline-block;
+}
+.hexagon:before {
+    content: " ";
+    width: 0; height: 0;
+    border-bottom: 30px solid;
+    border-color: inherit;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+    position: absolute;
+    top: -30px;
+}
+.hexagon:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -30px;
+    border-top: 30px solid;
+    border-color: inherit;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+
+    </style>
+</head>
+<body>
+    <header class="site-header">
+    <div class="wrapper">
+        <div class="site-header__logo">
+            <img src="images/logo_pink.svg" alt="Site Logo">
+        </div>
+        <div class="site-header__explore-btn" id="explore-menu-btn">
+            <div class="btnLink"></div>
+            <a href="#">Explore Courses <i class="arrow arrow--down arrow--white"></i></a>
+            <img class="close-btn" src="images/coursepage/faq-add.svg" alt="close">
+            <ul class="exp-primary-menu">
+                <li><img src="images/coursepage/acadamic-icn.svg" alt="icon"> Academic Programs 
+                    <i class="arrow arrow--right secondary-arrow"></i>
+                    <ul class="exp-secondary-menu">
+                        <li class="heading">Acadamic</li>
+                        <li><a href="#">View all Acadamic Courses</a></li>
+                        <li>Doctorate of Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 1</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA - Business Analytics
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 2</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 3</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Master of Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 4</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Master of International Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 5</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA - Topup
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 6</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><img src="images/coursepage/micro-credits.svg" alt="icon"> Micro-Credits 
+                    <i class="arrow arrow--right secondary-arrow"></i>
+                    <ul class="exp-secondary-menu">
+                        <li class="heading">Micro Credits</li>
+                        <li><a href="#">View all Micro Credits</a></li>
+                        <li>Doctorate of Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 1</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA - Business Analytics
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 2</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 3</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Master of Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 4</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Master of International Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 5</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA - Topup
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 6</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><img src="images/coursepage/certification-icn.svg" alt="icon"> Certifications 
+                    <i class="arrow arrow--right secondary-arrow"></i>
+                    <ul class="exp-secondary-menu">
+                        <li class="heading">Certifications</li>
+                        <li><a href="#">View all Certifications</a></li>
+                        <li>Doctorate of Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 1</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA - Business Analytics
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 2</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 3</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Master of Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 4</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Master of International Business Administration
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 5</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                        <li>Executive MBA - Topup
+                            <ul class="exp-tertiary-menu">
+                                <li>Universities 6</li>
+                                <li><a href="#"><img src="images/coursepage/ucam-logo-color.svg" alt="logo"> Catholic University of Murcia Spain</a></li>
+                                <li><a href="#"><img src="images/coursepage/gmu-logo.svg" alt="logo"> Guglielmo Marconi University, Italy</a></li>
+                                <li><a href="#"><img src="images/coursepage/sqa-logo-color.svg" alt="logo"> Qualification Authority, UK</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="site-header__menu-icon">
+            <div class="site-header__menu-icon__middle"></div>
+        </div>
+        <div class="site-header__menu-content">
+            <nav class="primary-nav">
+                <ul>
+                    <li class="about"><a href="#">About Us <i class="arrow arrow--down"></i></a>
+                        <ul class="secondary-nav">
+                            <li><a href="#">Our Background</a></li>
+                            <li><a href="#">Founder & CEO</a></li>
+                            <li><a href="#">Board of Directors</a></li>
+                            <li><a href="#">Governance Structure</a></li>
+                            <li><a href="#">Executive Council</a></li>
+                            <li><a href="#">Academic Council</a></li>
+                            <li><a href="#">Key Staffs & Contacts</a></li>
+                            <li><a href="#">Accreditation & Partnerships</a></li>
+                            <li><a href="#">Athena and Associated Entities</a></li>
+                            <li><a href="#">Awards and Recognitions</a></li>
+                            <li><a href="#">Policies & Procedure</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Insights</a></li>
+                    <li><a class="loginBtn ac-btn" href="#">Log in</a><a class="getStartedBtn ac-btn" 
+                        href="#">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </header>
+    <div class="top-gap"></div>
+    <div class="top-banner">
+        <div class="forecolor"></div>
+        <div class="wrapper">
+        <div class="logos">
+            
+            </div>
+        <h1>Diploma in International<br/>
+            HR Management</h1>
+        <p class="desc">This course in International Marketing, which draws upon contemporary developments in marketing, should give you the chance to explore the skills which may be needed to work with those successful international businesses, who are looking for world-class professionals to lead their global marketing strategies. 
+        </p>
+        </div>
+        <div class="bg">
+        <img src="images/smo/shortcourse-assets/banner-img.png" alt="background-image">
+        
+        </div>
+    </div>
+    <div class="why-section">
+        <div class="wrapper">
+            <div class="main-section">
+            <div class="desc">
+                <h2>Why this Course</h2>
+                <div style="text-align:left">
+                    <p>This Executive MBA is completely delivered online, through a combination of pre-recorded lectures followed by well-developed learning materials along with a dedicated Personal Tutor support. The students gain flexibility of learning while maintaining access to face time with the tutors through the synchronous live online sessions.</p>
+
+<h5><strong>Highlights of this course are:</strong></h5>
+
+<ul>
+	<li>This is triple certification program, Executive MBA from UCAM, Spain, Diploma from CIQ, UK and a Certified Manager certification from CMI, UK (optional)</li>
+	<li>The program consists of 60 ECTS Credits</li>
+	<li>Universidad Catolica De Murcia (UCAM) Spain, accredited by Ministry of Education, Spain, is a member of Bologna Process in European Higher Education Area (EHEA) and It is also a NARIC approved university</li>
+	<li>The course delivery and assessments are based on real life situations and application which will directly benefit the learner at their workplace to improve their performance</li>
+	<li>The course is designed to provide you with a range of knowledge which is crucial to lead a business organisation. The program&nbsp;aims to provide you with skills and business acumen to be successful in different domains of business.</li>
+	<li>Option to attend the annual convocation conducted by the University at Murcia, Spain</li>
+</ul>
+
+</div>
+                <p>Build your skills in all areas of managing and leading organizations</p>
+            </div>
+            <div class="forms">
+                <div class="container-fluid p-0 about-us-wrapper form">
+                    <div class="course-login-wrapper">
+                        <div class="login-details">
+                            <h2>Still Not Sure ?</h2>
+                            <h3>Speak to an Advisor<span>&nbsp;</span></h3>
+                            <p>Not sure if this course  is right for you? Fill in your details below and one of our Course Advisors will be in contact to provide you with the information you need to make a decision.</p>
+                            <div class="login-item names">
+                                <div class="name-item">
+                                    <p>First Name</p>
+                                    <input type="text" placeholder="Enter First Name" />
+                                </div>
+                                <div class="name-item">
+                                    <p>Last Name</p>
+                                    <input type="text" placeholder="Enter Last Name" />
+                                </div>
+                            </div>
+                            <div class="login-item">
+                                <p>Email</p>
+                                <input type="email" placeholder="Enter Email Address" />
+                            </div>
+                            <!-- <div class="login-item">
+                                <p>Country</p>
+                                <input type="text" placeholder="Country" />
+                            </div> -->
+                            <div class="login-item phone-number">
+                                <p>Mobile Number</p>
+                                <input type="tel" id="phone" placeholder="Enter Mobile number">
+                            </div>
+                            <div class="login-item qualification">
+                                <p>Highest Qualification</p>
+                                <select>
+                                    <option>Select your highest qualification</option>
+                                    <option>High School</option>
+                                    <option>Graduate</option>
+                                    <option>Post Graduate</option>
+                                </select>
+                            </div>
+                            <div class="button">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement & I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+        
+        <div class="container-fluid academic-bg-wrap pb-3">
+            <div class="pt-4 container"> 
+                <div class="row justify-content-center">
+                         <div class="col-md-7 text-center">
+                            <h2>Target Group</h2>
+                            <p class="msg">Marketing Professionals- Brand Managers, Marketing Managers, SEO Managers Business Leaders, leading business in international markets Entrepreneurs, to understand the customer base better Communication Managers</p>
+                        </div>
+                         </div>
+    <div class="row mb-3 academic-card pt-5 pb-5 justify-content-center">
+    <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+        <img alt="marketing icon" src="images/smo/shortcourse-assets/marketing-icn.svg">
+        </span>
+    <h6 class="card-title">Marketing Professionals</h6>
+      </div>
+    
+    <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+        <img alt="seo icon" src="images/smo/shortcourse-assets/seo-icn.svg"></span>
+    <h6 class="card-title">SEO Managers</h6>
+     </div>
+    
+    <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+        <img alt="business icon" src="images/smo/shortcourse-assets/business-icn.svg"></span>
+    <h6 class="card-title">Business Leaders</h6>
+    
+    </div>
+    
+    <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+        <img alt="enterprenurs icon" src="images/smo/shortcourse-assets/enterprenurs-icn.svg"></span>
+    <h6 class="card-title">Entrepreneurs</h6>
+    </div>
+    </div>
+     
+            </div>
+        </div>
+    
+    <div class="what-you-get">
+    <div class="wrapper">
+        <h2>Other Courses You might Interested</h2> 
+        <div class="container">
+            <!--courses List: START-->
+     <div class="row">
+        <div class="col-12 p-0">
+             <div class="shortterm-courses">
+                   <div class="item content">
+                      <div class="item-inner">
+                       <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                       <div class="course-item">
+                          <div class="row heading m-0">
+                              <div class="col-8">
+                                 <h5>CPD Certified</h5>
+                              </div>
+                              <div class="col-4">
+                                 <span class="free-text">Free</span>
+                              </div>
+                          </div> 
+                          <div class="image">
+                             <img src="images/course-image2.png" alt="course-image">
+                          </div>
+                          <div class="course-details">
+                             <h3>Master of Business Administration</h3>
+                             <div class="course-info">
+                                 Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                                 the
+                              </div>
+                              <div class="row rating m-0">
+                                 <div class="col-6 p-0">
+                                      <div class="my-rating"></div>
+                                 </div>
+                                 <div class="col-2 p-0">4.5</div>
+                              </div>
+                              <div class="col-12 button-area"><button>Start Now</button></div>
+                          </div>
+                       </div>
+                      </div>
+
+                   </div>
+                    
+                   <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+                 <div class="item content">
+                    <div class="item-inner">
+                     <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div> 
+                     <div class="course-item">
+                        <div class="row heading m-0">
+                            <div class="col-8">
+                               <h5>CPD Certified</h5>
+                            </div>
+                            <div class="col-4">
+                               <span class="free-text">Free</span>
+                            </div>
+                        </div> 
+                        <div class="image">
+                           <img src="images/course-image2.png" alt="course-image">
+                        </div>
+                        <div class="course-details">
+                           <h3>Master of Business Administration</h3>
+                           <div class="course-info">
+                               Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the dummy text of
+                               the
+                            </div>
+                            <div class="row rating m-0">
+                               <div class="col-6 p-0">
+                                    <div class="my-rating"></div>
+                               </div>
+                               <div class="col-2 p-0">4.5</div>
+                            </div>
+                            <div class="col-12 button-area"><button>Start Now</button></div>
+                        </div>
+                     </div>
+                    </div>
+
+                 </div>
+
+                
+
+             </div>
+        </div>
+        <div class="col-12 text-center">
+            <button id="loadMore" class="btn athena-btn purple-btn"><a href="http://athena.edu/course-home" style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
+            <button id="showLess" class="btn athena-btn purple-btn" style="display: none;text-decoration:none;">Show Less</button>
+        </div>
+
+    </div>
+    <!--courses List: END-->
+        </div>
+    </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/js/intlTelInput.min.js"></script>
+    <script src="bundled.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $("#phone").intlTelInput();
+        $(".selected-flag").after("<div class='country-code' />");
+        var CountryCode = $(".country.active .dial-code").text();
+        $(".country-code").text(CountryCode);
+
+        $(".country-list").click(function(){
+            var CountryCode = $(".country.active .dial-code").text();
+            $(".country-code").text(CountryCode);
+        });
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            autoWidth: true,
+            responsiveClass: true,
+            responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 3,
+                nav: false
+            },
+            1000: {
+                items: 4,
+                nav: true,
+                loop: false,
+                margin: 20
+            }
+            }
+        })
+        $(window).scroll(function() {
+            if($(window).width() > 1249) {
+                if(($(window).scrollTop() > $(".course-login-wrapper").offset().top) && 
+                ($(window).scrollTop() < ($(".course-login-wrapper").offset().top + $(".course-login-wrapper").height() - 
+                $(".testimonials").height() + 10))) {
+                    $(".testimonials").css("position", "fixed");
+                    console.log("Yo");
+                } else {
+                    $(".testimonials").css("position", "static");
+                }
+            }
+        })
+    })
+    </script>
+          <!-- GetButton.io widget -->
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                facebook: "2610140028997323", // Facebook page ID
+                whatsapp: "+44 7447 134314", // WhatsApp number
+                instagram: "age_athena", // Instagram username
+                company_logo_url: "//static.getbutton.io/img/flag.png", // URL of company logo (png, jpg, gif)
+                greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
+                call_to_action: "Message us", // Call to action
+                button_color: "#FF6550", // Color of button
+                position: "right", // Position may be 'right' or 'left'
+                order: "facebook,instagram,whatsapp", // Order of buttons
+                ga: true, // Google Analytics enabled
+                branding: true, // Show branding string
+                mobile: true, // Mobile version enabled
+                desktop: true, // Desktop version enabled
+                greeting: false, // Greeting message enabled
+                shift_vertical: 0, // Vertical position, px
+                shift_horizontal: 0, // Horizontal position, px
+                domain: "website.athena.edu", // site domain
+                key: "w65CtynYQ2eEPebewXlB1w", // pro-widget key
+            };
+            var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /GetButton.io widget -->
+</body>
+</html>
