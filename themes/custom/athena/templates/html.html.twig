@@ -93,9 +93,9 @@
       <!-- Generic Cart Variables -->
       <script type="text/javascript">
       var uts_eventid = '5326';  // Lead EventID
-      var uts_orderid = "{{ lead_user }}"; // unique transaction identifier such as email address or
+      var uts_orderid = "{{ lead_mail }}"; // unique transaction identifier such as email address or
       customerid
-      var uts_saleamount = '0.00';  // needs to be a positive value (not 0).  It is only used
+      var uts_saleamount = "{{ lead_cid }}";  // needs to be a positive value (not 0).  It is only used
       to store the value in our DB and not to determine commission
       var uts_coupon = '';  // leave blank
       var uts_discount = ''; // leave blank

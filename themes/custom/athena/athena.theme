@@ -690,11 +690,15 @@ function athena_preprocess_html(&$variables)
     $referer = $_SERVER['HTTP_REFERER'];
     $lead_source = $_REQUEST['source'] ?? '';
     $lead_user = $_REQUEST['UId'] ?? '';
+    $lead_cid = $_REQUEST['CId'] ?? '';
+    $lead_mail = $_REQUEST['mail'] ?? '';
 
     if (strpos($referer, 'MBAPrograms') !== false) {
       if ($lead_source == 'LINKCONNECTOR') {
         $variables['link_connector_pixel'] = TRUE;
         $variables['lead_user'] = $lead_user;
+        $variables['lead_cid'] = $lead_cid;
+        $variables['lead_mail'] = $lead_mail;
       }
     }
   }
