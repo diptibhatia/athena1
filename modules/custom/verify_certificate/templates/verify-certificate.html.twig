@@ -55,10 +55,16 @@
                 and colleagues</p>
               <div class="mr-so">
                 <!-- Add font awesome icons -->
-                <a href="https://www.facebook.com/sharer.php?u={{certDetails.certficateImage}}" target="blank" class="fa fa-facebook"></a>
-                <a href="https://twitter.com/share?text=[TITLE]&url={{certDetails.certficateImage}}" target="blank" class="fa fa-twitter"></a>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{certDetails.certficateImage}}" target="blank" class="fa fa-linkedin"></a>
-                <a href="https://api.whatsapp.com/send?text={{certDetails.certficateImage}}" target="blank" class="fa fa-whatsapp"></a>
+
+                <a href="https://www.facebook.com/sharer.php?u={{ url('<front>') }}verify/certificate?/certID={{certDetails.certUniqueId}}" target="blank" class="fa fa-facebook"></a>
+                
+
+                <a href="https://twitter.com/share?url={{ url('<front>') }}verify/certificate?/certID={{certDetails.certUniqueId}}" target="blank" class="fa fa-twitter"></a>
+
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}verify/certificate?/certID={{certDetails.certUniqueId}}" target="blank" class="fa fa-linkedin"></a>
+                
+                <a href="https://api.whatsapp.com/send?text={{ url('<front>') }}verify/certificate?/certID={{certDetails.certUniqueId}}" target="blank" class="fa fa-whatsapp" data-action="share/whatsapp/share"></a>
+
               </div>
               <div class="bg-copy">
                 <div class="bg-fade"> </div>
