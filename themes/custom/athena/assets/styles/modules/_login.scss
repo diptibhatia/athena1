@@ -92,13 +92,15 @@
 				-webkit-appearance: none;
 
 			}
-      i{
+      .passyeye {
          margin-left: -30px;
          cursor: pointer;
          color: grey;
          font-size: 13px;
+         position: absolute;
+         top: 67%;
       }
-      i:hover{
+      .passyeye:hover {
         color: rgba(0, 128, 0, 0.555);
       }
 		}
