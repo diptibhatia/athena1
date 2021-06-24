@@ -236,10 +236,32 @@ function athena_preprocess_image(&$variables) {
   }
 }
 
+function getShortCourse($node)
+{
+    try {
+        $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+        if ($lms_url == "https://newlms.athena.edu") {
+            $api = "/athenadev";
+        } elseif ($lms_url == "https://learnstaging.athena.edu") {
+            $api = "/athenastg";
+        } else {
+            $api = "/athenaprod";
+        }
+        $course_name = $node->get('field_course_name')->value;
+        $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=1&fk_type_of_qualification_id=1&status=1&course_name=".trim($course_name);
+        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+        $data = (string)$response->getBody();
+        $nodes = json_decode($data)->data->data;
+        return $nodes;
+    } catch (Exception $e) {
+      return [];
+    }
+}
 
 
 
 function athena_preprocess_page(&$variables) {
+
   $variables['error_page'] = (int) filter_var(\Drupal::config('system.site')->get('page')['403'], FILTER_SANITIZE_NUMBER_INT);
   $current_path = \Drupal::service('path.current')->getPath();
 
@@ -247,6 +269,14 @@ function athena_preprocess_page(&$variables) {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
+
+      if ($node_type == 'short_course') {
+        $course_data = getShortCourse($node);
+        if(!empty($course_data)) {
+          $variables['course_title'] = $course_data[0]->course_name;
+          $variables['course_overview'] = $course_data[0]->course_overview;
+        }
+      }
 
       if ($node_type == 'affiliate_page') {
         $current_page_node_id = $node->id();
@@ -489,7 +519,6 @@ function athena_preprocess_node(&$variables) {
   $current_uri = \Drupal::request()->getRequestUri();
 
   $variables['leaders'] = '0';
-
   if ($variables['node']->getType() === 'about_us_pages') {
     if (strpos($current_uri, 'about-us/governance-structure') !== false) {
       $alias = \Drupal::service('path.alias_manager')->getPathByAlias('/about-board-of-governance');
@@ -809,3 +838,4 @@ function athena_preprocess_html(&$variables)
       }
     }
 }
+
