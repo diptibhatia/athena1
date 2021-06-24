@@ -1,4 +1,5 @@
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet'
 		type='text/css'>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
@@ -385,8 +386,8 @@
 													</div>
 													<div class="login-item">
 														<p>Confirm Password</p>
-														<input type="password" id="reg_confirm_pass"
-															placeholder="Confirm Password">
+														<input type="password" id="reg_confirm_pass" placeholder="Confirm Password">
+                            <i class="far fa-eye" id="togglePassword"></i>
 													</div>
 													<div class="login-item" style="text-align:center">
 														<button
@@ -808,3 +809,21 @@
 		</div>
 	</div>
 </div>
+
+
+
+<script>
+
+  const togglePassword = document.querySelector('#togglePassword');
+  const reg_confirm_pass = document.querySelector('#reg_confirm_pass');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = reg_confirm_pass.getAttribute('type') === 'password' ? 'text' : 'password';
+    reg_confirm_pass.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+
+</script>

@@ -26,7 +26,7 @@
 		letter-spacing: normal;
 		color: #ff016e;
 		padding: 30px 0 10px 0;
-		margin:0; 
+		margin:0;
 		span {
 			color: #303030;
 		}
@@ -92,6 +92,15 @@
 				-webkit-appearance: none;
 
 			}
+      i{
+         margin-left: -30px;
+         cursor: pointer;
+         color: grey;
+         font-size: 13px;
+      }
+      i:hover{
+        color: rgba(0, 128, 0, 0.555);
+      }
 		}
 		.names {
 			display: flex;
@@ -100,7 +109,7 @@
 				margin-right: 10px;
 				input {
 					width: 219px;
-					 
+
 				}
 			}
 		}
@@ -167,7 +176,7 @@
 		}
 	}
 }
- 
+
 .intl-tel-input.allow-dropdown{
 width:100%;
 }
@@ -195,9 +204,9 @@ width: 81%;
 		box-shadow: none !important;
 		height: 40px !important;
 	}
-	
+
 	}
-	
+
 .intl-tel-input.allow-dropdown input#reg_mobile_num{
 	width: 74%;
     float: right;
