@@ -23,7 +23,7 @@
 
         </div>
         <div class="col-md-7">
-          <p style="padding-top:19px;">This Certificate was issued to <span> {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span> on {{ candidateDetails.issueDate }}.</p>
+          <p style="padding-top:19px;">This Certificate was issued to <span> {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span> on {% if certDetails.certPrintDate %}{{ certDetails.certPrintDate|date('d F Y') }} {% endif %}.</p>
           <p>Expires on : No Expiration Date</p>
         </div>
         <div class="col-md-4 head-text text-right"> <img src="/themes/custom/athena/images/head-icon.jpg"> <strong> Blockchain ID: </strong>
@@ -112,10 +112,10 @@
         </div>
         <div class="modal-body">
           {% if verify %}
-          <p><i class="fa fa-check" aria-hidden="true"></i> Issued on {{ candidateDetails.issueDate }}</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Issued on {{ certDetails.certPrintDate|date('d F Y') }}</p>
           <p><i class="fa fa-check" aria-hidden="true"></i> Issued by {{ certDetails.instituteName }}</p>
           <p><i class="fa fa-check" aria-hidden="true"></i> Issued to {{ certDetails.firstName ~ ' ' ~ certDetails.lastName }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on {{ candidateDetails.issueDate }}</p>
+          <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on {{ certDetails.certPrintDate|date('d F Y') }}</p>
           <div class="modal-footer text-left">
             <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
           </div>

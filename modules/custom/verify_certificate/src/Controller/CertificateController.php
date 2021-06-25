@@ -74,7 +74,7 @@ class CertificateController extends ControllerBase {
 
         $courseName = $certDetails['courseName'] ?? '';
         if (!empty($courseName)) {
-          $api_uri = $this->_lms_url .$this->_api. "/api/courselist?page=0&page_limit=1&fk_type_of_qualification_id=1&status=1&course_name=" . $courseName;
+          $api_uri = $this->_lms_url .$this->_api. "/api/courselist?course_name=" . $courseName;
           $response_data = \Drupal::httpClient()->get($api_uri, array('headers' => array('Accept' => 'application/json')));
           $course_api_data = (string)$response_data->getBody();
           $course_api_data = json_decode($course_api_data, TRUE);
