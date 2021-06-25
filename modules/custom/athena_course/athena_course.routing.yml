@@ -147,6 +147,46 @@ athena_course.shortterm-courses-search:
   options:
     no_cache: TRUE
 
+athena_course.shortterm-courses-subject:
+  path: '/short/course/subject/{id}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::shortTermCourse'
+    _title: 'Short term course load Subject List'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+athena_course.shortterm-courses-certificate:
+  path: '/short/course/certificate/{id}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::shortTermCourse'
+    _title: 'Short term course load Certificate List'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+athena_course.shortterm-courses-certificate-search:
+  path: '/short/course/subject/{id}/search-data/{query}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::searchSubjectCourse'
+    _title: 'Short term course search'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+athena_course.shortterm-courses-subject-search:
+  path: '/short/course/certificate/{id}/search-data/{query}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::searchSubjectCourse'
+    _title: 'Short term course search'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
 athena_course.website-newsletter-subscribe:
   path: '/website-newsletter-subscribe/{name}/{email}'
   defaults:
