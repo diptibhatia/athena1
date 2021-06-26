@@ -285,6 +285,140 @@ class ShortTermCourseController {
         return $response;
     }
 
+
+    /**
+     * Load more
+     * @param  [int] $pager
+     * @return [html]
+     */
+    public function SubjectloadMore($id , $pager) {
+        $search = $_REQUEST['search'] ?? '';
+        $search = trim($search);
+        $search = strip_tags($search);
+
+        $limit = $this->_limit;
+
+
+        if (!empty($search)) {
+        
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;            
+        }
+        else {
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1";
+        }
+
+
+        if ( $this->sublist == "SubjectList" )        
+            $uri.= "&subject_area_id=".$id;   
+        else
+            $uri.= "&fk_certificate_type_id=".$id;
+
+        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+        $data = (string)$response->getBody();
+
+        $nodes = json_decode($data);
+
+        $total = $nodes->data->total;
+        $total_pages = $total/$limit;
+
+        $response = new AjaxResponse();
+        $html = '';
+        if (count($nodes) > 0) {
+            foreach ($nodes->data->data as $key => $value) {
+                if (!empty($value->course_image_path)) {
+                    $course_image_path = $value->course_image_path;
+                }
+                else {
+                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                }
+
+                foreach ($value->partner_body as $key1 => $value1) {
+                    if( is_object( $value1 )) {
+                        foreach($value1 as $key2 => $value2) {
+                           if ( $key2 == "logo" ) {
+                                $value2 = str_replace("pdfassets", "university", $value2);
+                                // $value2 = str_replace(".svg", "-white.svg", $value2);
+                                // $value2 = str_replace(".png", "-white.svg", $value2);
+                                $white_logo = $value2;
+                                if (!@getimagesize($white_logo)) {
+                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                                }
+                           }
+                           if ( $key2 == "university_name" ) {
+                                $univ_name = $value2;
+                           }
+                        }
+                    }
+                }
+
+                $website_card_content = put_dots_in_string($value->website_card_content, 150);
+
+                $courses_data = [
+                    'cid' => $value->cid,
+                    'course_url' => $this->_lms_url . '/student-dashboard/course/' . $value->cid.'/'.$value->slug,
+                    'label' => $value->course_name,
+                    'body' => $website_card_content,
+                    'card_intro' => put_dots_in_string($value->course_introduction, 150),
+                    'field_course_amount' => 'Free',
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
+                    'univ_name' => $univ_name ?? '',
+                    'course_image' => $course_image_path
+                ];
+
+                $html .= '<div class="item content" style="display:block;">
+                            <div class="item-inner">                    
+                                <div class="course-item">
+                                    <div class="row heading m-0">
+                                        <div class="col-9">
+                                            <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                                        </div>
+                                        <div class="col-3">
+                                            <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="image col-md-4">
+                                            <img src="' . $courses_data['course_image'] . '" alt="course-image">
+                                        </div>
+                                        <div class="course-details  col-md-8">
+                                            <h3>' . $courses_data['label'] . '</h3>
+                                            <div class="course-info">
+                                                ' . put_dots_in_string($courses_data['card_intro'], 150) . '
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="social-icons">
+                                                        <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                                        <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '">
+                                                    <button>Start Now &nbsp;></button></a>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+
+            }
+            $response->addCommand(new AppendCommand('.shortterm-smo-courses', $html));
+        }
+
+        if ($pager > $total_pages) {
+            $response->addCommand(new InvokeCommand('.show_more_wrapper', 'hide'));
+        }
+
+
+        return $response;
+    }
+
+
     /**
      * Search more
      * @param  [string] $query
@@ -448,7 +582,7 @@ class ShortTermCourseController {
         $total = $nodes->data->total;
         if ($total == 0) {
             $response->addCommand(new InvokeCommand('.show_more_wrapper', 'hide'));
-            $response->addCommand(new HtmlCommand('.shortterm-courses', 'No Content Found'));
+            $response->addCommand(new HtmlCommand('.shortterm-smo-courses', 'No Content Found'));
             return $response;
         }
 
@@ -516,12 +650,26 @@ class ShortTermCourseController {
                                             <div class="course-info">
                                                 ' . put_dots_in_string($courses_data['card_intro'], 150) . '
                                             </div>
-                                            <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
+                                            
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="social-icons">
+                                                        <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                                        <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '">
+                                                    <button>Start Now &nbsp;></button></a>
+                                                </div>
+                                            </div>
+                                        
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>';
+
             }
             $response->addCommand(new HtmlCommand('.shortterm-smo-courses', $html));
         }

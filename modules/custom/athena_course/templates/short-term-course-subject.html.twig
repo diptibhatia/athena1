@@ -6,7 +6,7 @@
             <p>With Globalisation business are categing to global customers, creating a demand for professionals with international approach to marketing Gain competitive advantage in your career as a Marketing Professional Become</p>
         </div>
         <div class="bg-overlay"></div>
-            <img src="../" class="col-lg-12 col-md-12 d-none d-md-block d-lg-block p-0" alt="Banner image">
+            <img src="/themes/custom/athena/images/smo/shortcourse-sm-banner.png" class="col-lg-12 col-md-12 d-none d-md-block d-lg-block p-0" alt="Banner image">
             <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
         </div>
 
@@ -57,28 +57,22 @@
                                                 <input type="hidden" id="id" name="id" value="{{id}}" />
 
                                                 {% if SubOrCertList == "SubjectList" %}
-
-                                                <input id="selected_certificate" type="hidden" value="all" />
-
-                                                {% for certificate_key, certificate_value in certificates %}
-
-                                                <input type="checkbox" id="filter_certificate_{{ certificate_value.id }}" name="{{certificate_value.certificate_type_name }}" value="{{certificate_value.certificate_type_name }}" onclick="searchCertificates('{{ certificate_value.id }}')">
-                                                <label for="{{certificate_value.certificate_type_name }}">{{certificate_value.certificate_type_name }}</label>
                                                 
-                                                {% endfor %}
+                                                    {% for certificate_key, certificate_value in certificates %}
 
-                                                
-                                                {% elseif SubjectList == "CertList" %}
+                                                    <input type="checkbox" id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}', '{{ certificate_value.certificate_type_name }}')">
+                                                    <label for="filter_certificate_{{ certificate_value.id }}">{{certificate_value.certificate_type_name }}</label>
+                                                    
+                                                    {% endfor %}
+                                                    
+                                                {% elseif SubOrCertList == "CertList" %}
 
+                                                    {% for filter_key, filter_value in filters %}
 
-                                                <input id="selected_certificate" type="hidden" value="all" />
-
-                                                {% for filter_key, filter_value in filters %}
-
-                                                <input type="checkbox" id="filter_subject_{{ filter_value.id }}" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')">
-                                                <label for="filter_subject_{{ filter_value.id }}">{{filter_value.subject_area }}</label>
-                                                
-                                                {% endfor %}
+                                                    <input type="checkbox" id="filter_subject_{{ filter_value.id }}" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')">
+                                                    <label for="filter_subject_{{ filter_value.id }}">{{filter_value.subject_area }}</label>
+                                                    
+                                                    {% endfor %}
 
 
                                                 {% endif %}
@@ -214,8 +208,9 @@
 
     jQuery('.category-area .nav-link:first').addClass('active');
     jQuery("#showMore").on('click', function () {
+        
         var pagerVal = jQuery('#pager').val();
-        var suborcert = jQuery('#SubjectList').val();
+        var suborcert = jQuery('#SubOrCertList').val();
         var id = jQuery('#id').val();               
         var pager = parseInt(pagerVal);
         pager = pager + 1;
@@ -226,6 +221,7 @@
 
         var endpoint = Drupal.url($url);
         
+        //alert(endpoint);
         var search_val = jQuery('#search').val();
         Drupal.ajax({
             'url': endpoint,
@@ -383,72 +379,123 @@
     }
 
 
-    function searchCertificates(id) {
-        jQuery('.category-area .nav-link').removeClass('active');
-        jQuery('#filter_certificate_' + id).addClass('active');
-        var subject_id = jQuery('#selected_keywords_ids').val();
-        subject_id = sanitizeInput(subject_id);
-
+    function searchCertificates( id , keyword ) {
+        jQuery('#filter_certificate_' + id).toggleClass('active');
         var search_val = jQuery('#search').val();
         search_val = sanitizeInput(search_val);
 
-        if (subject_id) {
-            if (search_val) {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id);
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
-                }
+        //alert(id);
+        //alert(keyword);
+
+        if (jQuery('#filter_certificate_' + id).hasClass('active')) {
+            var selected_keywords = jQuery('#selected_keywords').val();
+            selected_keywords = sanitizeInput(selected_keywords);
+
+            var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
+            selected_keywords_ids = sanitizeInput(selected_keywords_ids);
+
+            if (selected_keywords && selected_keywords.indexOf(keyword) === -1) {
+                selected_keywords = selected_keywords + ', ' + keyword;
+                jQuery('#selected_keywords').val(selected_keywords);
+                jQuery('#selected_filters').html(selected_keywords);
             }
             else {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id);
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
-                }
+                jQuery('#selected_keywords').val(keyword);
+                jQuery('#selected_filters').html(keyword);
             }
 
-            Drupal.ajax({ 'url': endpoint }).execute();
-            jQuery('#pager').val('1');
-            return false;
+            if (selected_keywords_ids && selected_keywords_ids.indexOf(id) === -1) {
+                selected_keywords_ids =  selected_keywords_ids + ',' + id;
+                jQuery('#selected_keywords_ids').val(selected_keywords_ids);
+            }
+            else {
+                jQuery('#selected_keywords_ids').val(id);
+            }
+
         }
         else {
+            var selected_keywords = jQuery('#selected_keywords').val();
+            selected_keywords = sanitizeInput(selected_keywords);
 
-            if (search_val) {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + id);
-                }
+            var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
+            selected_keywords_ids = sanitizeInput(selected_keywords_ids);
+
+            if (selected_keywords && selected_keywords.indexOf(keyword) != -1) {
+                selected_keywords = removeValue(selected_keywords, keyword, ', ');
+                jQuery('#selected_keywords').val(selected_keywords);
+                jQuery('#selected_filters').html(selected_keywords);
             }
             else {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
-                }
+                jQuery('#selected_keywords').val(keyword);
+                jQuery('#selected_filters').html(keyword);
             }
 
-            Drupal.ajax({ 'url': endpoint }).execute();
-            jQuery('#pager').val('1');
-            return false;
+            if (selected_keywords_ids && selected_keywords_ids.indexOf(id) != -1) {
+                selected_keywords_ids = removeValue(selected_keywords_ids, id, ',');
+                jQuery('#selected_keywords_ids').val(selected_keywords_ids);
+            }
+            else {
+                jQuery('#selected_keywords_ids').val(id);
+            }
+
         }
+
+        var courseid = jQuery('#id').val();               
+
+
+        var multiple_subject_id = jQuery('#selected_keywords_ids').val();
+        //alert(multiple_subject_id);
+
+        if (search_val) {
+            if (multiple_subject_id) {
+
+                var endpoint = Drupal.url("short/course/subject/"+ courseid +"/search-data/&course_name=" + search_val + "&subject_area_id=" + courseid + '&fk_certificate_type_id=' + multiple_subject_id );
+
+            }
+            else {                
+                var endpoint = Drupal.url('short/course/subject/'+ courseid +'/search-data/&course_name=' + search_val + "&subject_area_id=" + courseid );
+            }
+        }
+        else {
+            //alert("here");
+            if (multiple_subject_id) {
+                var endpoint = Drupal.url('short/course/subject/'+ courseid +'/search-data/&fk_certificate_type_id=' + multiple_subject_id + "&subject_area_id=" + courseid );
+            }
+            else {
+                var endpoint = Drupal.url("short/course/subject/"+ courseid +'/search-data/&subject_area_id=' + courseid + '&course_name=' );
+                           
+            }
+        }
+
+        //alert(endpoint);        
+
+        Drupal.ajax({ 'url': endpoint }).execute();
+        jQuery('#pager').val('1');
+        jQuery('.category-area .nav-link').removeClass('active');
+        jQuery('.category-area .nav-link:first').addClass('active');
+        return false;
     }
+    
 
 
     function searchCourseAction() {        
+        
         var courseid = jQuery('#id').val();
+        var suborcert = jQuery('#SubOrCertList').val();
+        var search_val = jQuery('#search').val();
+        
+        if ( suborcert == "SubjectList" )
+            $url = "/short/course/subject/" + courseid + '/search-data/&subject_area_id=' + courseid + '&course_name=' + search_val;
+        else
+             $url = "/short/course/certificate/" + courseid + '/search-data/&fk_certificate_type_id=' + courseid + '&course_name=' + search_val;
+
         jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
         jQuery('#selected_filters').html('');
         jQuery('#selected_keywords').val('');
         jQuery('.category-area .nav-link').removeClass('active');
-        var search_val = jQuery('#search').val();
         
-        var endpoint = Drupal.url("short/course/certificate/"+ courseid +'/search-data/&course_name=' + search_val);
+        
+        var endpoint = Drupal.url($url);
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
         jQuery('.category-area .nav-link').removeClass('active');
