@@ -32,8 +32,12 @@
                         <!--Find your course heading and Search course Input: END-->
 
                         <!--courses List: START-->
-                        <div class="row">
-                            <div class="col-md-4">
+                        <div class="row multiple-selection-courses">
+                            <div class="col-md-4 subject_filters">
+
+                                <input type="hidden" id="SubOrCertList" name="SubOrCertList" value="{{SubOrCertList}}" />
+
+                                <input type="hidden" id="id" name="id" value="{{id}}" />
 
                                 <!--Filter Area:START-->
                                 <div class="filter-area">
@@ -42,8 +46,8 @@
                                             <h3>Filter</h3>
                                         </div>
                                         <div class="col-6 pr-0 text-right">
-                                            <a href="#">Clear</a>
-                                            <i class="fas fa-chevron-down"></i>
+                                            <span onclick="clearFilters()" class="text-bold btn" style="float:right;"
+                                             id="clear_filters">Clear</span>     
                                         </div>
                                     </div>
                                     <div class="row">
@@ -51,11 +55,7 @@
                                             <h5>Select Level</h5>
 
                                             <form>
-
-                                                <input type="hidden" id="SubOrCertList" name="SubOrCertList" value="{{SubOrCertList}}" />
-
-                                                <input type="hidden" id="id" name="id" value="{{id}}" />
-
+                                                
                                                 {% if SubOrCertList == "SubjectList" %}
                                                 
                                                     {% for certificate_key, certificate_value in certificates %}
@@ -134,6 +134,7 @@
                                                             <button>Start Now &nbsp;></button></a>
                                                         </div>
                                                     </div>
+                                                
                                                 </div>
                                             </div>
                                         </div>
@@ -215,9 +216,9 @@
         var pager = parseInt(pagerVal);
         pager = pager + 1;
         if ( suborcert == "SubjectList" )
-            $url = "/short/course/subject/"+id+"/load-more/"+pager;
+            $url = "short/course/subject/"+id+"/load-more/"+pager;
         else
-            $url = "/short/course/certificate/"+id+"/load-more/"+pager;
+            $url = "short/course/certificate/"+id+"/load-more/"+pager;
 
         var endpoint = Drupal.url($url);
         
@@ -255,8 +256,21 @@
         jQuery('#selected_keywords').val('');
         jQuery('#selected_keywords_ids').val('');
         jQuery('.category-area .nav-link').removeClass('active');
-        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+        
+        var suborcert = jQuery('#SubOrCertList').val();
+        var id = jQuery('#id').val();               
+                
+        if ( suborcert == "SubjectList" )
+            $url = "short/course/subject/" + id + '/search-data/&subject_area_id=' + id + '&course_name=';
+        else
+             $url = "short/course/certificate/" + id + '/search-data/&fk_certificate_type_id=' + id + '&course_name=';
+
+
+        var endpoint = Drupal.url($url);
+        
+
         Drupal.ajax({ 'url': endpoint }).execute();
+        
         jQuery('#pager').val('1');
         jQuery('.category-area .nav-link').removeClass('active');
         jQuery('.category-area .nav-link:first').addClass('active');
@@ -485,9 +499,9 @@
         var search_val = jQuery('#search').val();
         
         if ( suborcert == "SubjectList" )
-            $url = "/short/course/subject/" + courseid + '/search-data/&subject_area_id=' + courseid + '&course_name=' + search_val;
+            $url = "short/course/subject/" + courseid + '/search-data/&subject_area_id=' + courseid + '&course_name=' + search_val;
         else
-             $url = "/short/course/certificate/" + courseid + '/search-data/&fk_certificate_type_id=' + courseid + '&course_name=' + search_val;
+             $url = "short/course/certificate/" + courseid + '/search-data/&fk_certificate_type_id=' + courseid + '&course_name=' + search_val;
 
         jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
         jQuery('#selected_filters').html('');
