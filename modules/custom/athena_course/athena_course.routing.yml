@@ -187,6 +187,26 @@ athena_course.shortterm-courses-subject-search:
   options:
     no_cache: TRUE
 
+athena_course.shortterm-courses-subject-load-more:
+  path: '/short/course/subject/{id}/load-more/{pager}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::SubjectloadMore'
+    _title: 'Short term course load more'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+athena_course.shortterm-courses-certificate-load-more:
+  path: '/short/course/certificate/{id}/load-more/{pager}'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::SubjectloadMore'
+    _title: 'Short term course load more'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
 athena_course.website-newsletter-subscribe:
   path: '/website-newsletter-subscribe/{name}/{email}'
   defaults:
