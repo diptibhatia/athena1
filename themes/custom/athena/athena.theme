@@ -236,8 +236,7 @@ function athena_preprocess_image(&$variables) {
   }
 }
 
-function getShortCourse($node)
-{
+function getShortCourse($node) {
     try {
         $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
         if ($lms_url == "https://newlms.athena.edu") {
@@ -247,7 +246,7 @@ function getShortCourse($node)
         } else {
             $api = "/athenaprod";
         }
-        $course_name = $node->get('field_course_name')->value;
+        $course_name = $node->getTitle();
         $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=1&fk_type_of_qualification_id=1&status=1&course_name=".trim($course_name);
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
@@ -258,7 +257,43 @@ function getShortCourse($node)
     }
 }
 
-
+function getRelatedShortCourses() {
+  try {
+    $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+    if ($lms_url == "https://newlms.athena.edu") {
+        $api = "/athenadev";
+    } elseif ($lms_url == "https://learnstaging.athena.edu") {
+        $api = "/athenastg";
+    } else {
+        $api = "/athenaprod";
+    }
+    $related_courses = $related_courses_data = [];
+    $current_page = 1;
+    $total = 0;
+    $uri = $lms_url . $api . "/api/get_master_table_data?table=subject_area";
+    $course_ids = [];
+    $course_subjects = json_decode(\Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody()->getContents());
+    foreach ($course_subjects as $course_subject) {
+      $course_ids[] = $course_subject->id;
+    }
+    $random_subject_id = array_rand($course_ids);
+    $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=10&fk_type_of_qualification_id=1&status=1&subject_area_id=".$random_subject_id;
+    $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody();
+    $all_data = json_decode($response);
+    if($all_data->status == 200) {
+      $related_courses = $all_data->data->data;
+      $total = $all_data->data->total;
+      $current_page = $all_data->data->current_page;
+    }
+    $related_courses_data["related_courses"] = $related_courses;
+    $related_courses_data["total"] = $total;
+    $related_courses_data["current_page"] = $current_page;
+    $related_courses_data["subject_id"] = $random_subject_id;
+  return $related_courses_data;
+  } catch (Exception $e) {
+    return [];
+  }
+}
 
 function athena_preprocess_page(&$variables) {
 
@@ -272,9 +307,12 @@ function athena_preprocess_page(&$variables) {
 
       if ($node_type == 'short_course') {
         $course_data = getShortCourse($node);
+        $related_course_data = getRelatedShortCourses();
         if(!empty($course_data)) {
-          $variables['course_title'] = $course_data[0]->course_name;
-          $variables['course_overview'] = $course_data[0]->course_overview;
+          $variables['course_info'] = $course_data[0];
+        }
+        if(!empty($related_course_data)){
+          $variables['related_courses_data'] = $related_course_data;
         }
       }
 
