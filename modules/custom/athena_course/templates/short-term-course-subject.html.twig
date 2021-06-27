@@ -32,8 +32,8 @@
                         <!--Find your course heading and Search course Input: END-->
 
                         <!--courses List: START-->
-                        <div class="row multiple-selection-courses">
-                            <div class="col-md-4 subject_filters">
+                        <div class="row">
+                            <div class="col-md-4 ">
 
                                 <input type="hidden" id="SubOrCertList" name="SubOrCertList" value="{{SubOrCertList}}" />
 
@@ -50,8 +50,8 @@
                                              id="clear_filters">Clear</span>     
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12 pb-3 mb-4 select-level">
+                                    <div class="row multiple-selection-courses">
+                                        <div class="col-12 pb-3 mb-4 select-level subject_filters">
                                             <h5>Select Level</h5>
 
                                             <form>
@@ -60,7 +60,7 @@
                                                 
                                                     {% for certificate_key, certificate_value in certificates %}
 
-                                                    <input type="checkbox" id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}', '{{ certificate_value.certificate_type_name }}')">
+                                                    <input type="checkbox" id="filter_certificate_{{ certificate_value.id }}" class="chk1" name="allchkfilters" onclick="searchCertificates('{{ certificate_value.id }}', '{{ certificate_value.certificate_type_name }}')">
                                                     <label for="filter_certificate_{{ certificate_value.id }}">{{certificate_value.certificate_type_name }}</label>
                                                     
                                                     {% endfor %}
@@ -69,7 +69,7 @@
 
                                                     {% for filter_key, filter_value in filters %}
 
-                                                    <input type="checkbox" id="filter_subject_{{ filter_value.id }}" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')">
+                                                    <input type="checkbox" id="filter_subject_{{ filter_value.id }}" class="chk1" name="allchkfilters" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')">
                                                     <label for="filter_subject_{{ filter_value.id }}">{{filter_value.subject_area }}</label>
                                                     
                                                     {% endfor %}
@@ -250,16 +250,16 @@
 
 
     function clearFilters() {
-        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
+        jQuery( "input[name*='allchkfilters']" ).prop("checked", false);
+        jQuery('.chk1').removeClass('active');
         jQuery('#search').val('');
         jQuery('#selected_filters').html('');
         jQuery('#selected_keywords').val('');
         jQuery('#selected_keywords_ids').val('');
-        jQuery('.category-area .nav-link').removeClass('active');
         
         var suborcert = jQuery('#SubOrCertList').val();
         var id = jQuery('#id').val();               
-                
+
         if ( suborcert == "SubjectList" )
             $url = "short/course/subject/" + id + '/search-data/&subject_area_id=' + id + '&course_name=';
         else
