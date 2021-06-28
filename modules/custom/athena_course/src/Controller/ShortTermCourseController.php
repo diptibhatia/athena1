@@ -296,11 +296,13 @@ class ShortTermCourseController {
         $search = trim($search);
         $search = strip_tags($search);
 
+        $multiple_subject_id = $_REQUEST['multiple_subject_id'] ?? '';
+
         $limit = $this->_limit;
 
+        if (!empty($search)) {           
 
-        if (!empty($search)) {
-        
+
             $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;            
         }
         else {
@@ -308,10 +310,21 @@ class ShortTermCourseController {
         }
 
 
-        if ( $this->sublist == "SubjectList" )        
-            $uri.= "&subject_area_id=".$id;   
+        if ( $this->sublist == "SubjectList" )
+        {            
+            $uri = $uri . "&subject_area_id=".$id;
+            if ( !empty($multiple_subject_id) )            
+                $uri = $uri. "&fk_certificate_type_id=".$multiple_subject_id;
+        }               
         else
-            $uri.= "&fk_certificate_type_id=".$id;
+        {
+            $uri = $uri. "&fk_certificate_type_id=".$id;
+            if ( !empty($multiple_subject_id) )
+                $uri = $uri. "&subject_area_id=".$multiple_subject_id;
+        }
+
+        //print $uri;
+        //exit;
 
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
