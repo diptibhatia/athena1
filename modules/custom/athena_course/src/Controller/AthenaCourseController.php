@@ -489,6 +489,8 @@ $banner_block =  [
 $fee_pay_per = $node->get('field_course_fee_pay_per')->value;
 if(empty($fee_pay_per)) $fee_pay_per = '';
 
+$duration = $node->get('field_duration')->value;
+if(empty($duration)) $duration = 'Flexible Duration';
 
 $testibundle='testimonials';
 $testiquery = \Drupal::entityQuery('node');
@@ -517,8 +519,9 @@ $course_description_tabs =  [
   '#faq' => $faq,
   '#admission_process' => $node->get('field_admission_process')->value,
   '#why_course' => $why_course,
-  '#free_trial_link' => $node->get('field_free_trial_link')->value,  
-  '#duration' => $node->get('field_course_duration')->value,
+  '#free_trial_link' => $node->get('field_free_trial_link')->value,
+  '#duration' => $duration,  
+  '#course_duration' => $node->get('field_course_duration')->value,
   '#certification_label' => $node->get('field_course_certification_label')->value,
   '#certification' => $node->get('field_course_certification')->value,
   '#accreditations' => $node->get('field_course_accreditations')->value,
