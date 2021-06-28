@@ -208,8 +208,11 @@
 <script type="text/javascript">
 
     jQuery('.category-area .nav-link:first').addClass('active');
+    
     jQuery("#showMore").on('click', function () {
         
+        var multiple_subject_id = jQuery('#selected_keywords_ids').val();
+        //alert(multiple_subject_id);
         var pagerVal = jQuery('#pager').val();
         var suborcert = jQuery('#SubOrCertList').val();
         var id = jQuery('#id').val();               
@@ -226,7 +229,7 @@
         var search_val = jQuery('#search').val();
         Drupal.ajax({
             'url': endpoint,
-            'submit': { 'search': search_val }
+            'submit': { 'search': search_val, 'multiple_subject_id': multiple_subject_id }
         }).execute();
         jQuery('#pager').val(pager);
         jQuery("#showMore").focus();
@@ -365,7 +368,7 @@
 
         }
 
-        var courseid = jQuery('#id').val();               
+        var courseid = jQuery('#id').val();
         
         var multiple_subject_id = jQuery('#selected_keywords_ids').val();
         if (search_val) {
@@ -373,7 +376,7 @@
                 var endpoint = Drupal.url("short/course/certificate/"+ courseid +"/search-data/&course_name=" + search_val + "&subject_area_id=" + multiple_subject_id + '&fk_certificate_type_id=' + courseid );
             }
             else {
-                var endpoint = Drupal.url("short/course/certificate/"+ courseid +"/search-data/&course_name=" + search_val + "&subject_area_id=" + multiple_subject_id + '&fk_certificate_type_id=' + courseid );
+                var endpoint = Drupal.url("short/course/certificate/"+ courseid +"/search-data/&course_name=" + search_val + '&fk_certificate_type_id=' + courseid );
             }
         }
         else {
@@ -510,6 +513,7 @@
         
         
         var endpoint = Drupal.url($url);
+        alert( endpoint );
         Drupal.ajax({ 'url': endpoint }).execute();
         jQuery('#pager').val('1');
         jQuery('.category-area .nav-link').removeClass('active');
