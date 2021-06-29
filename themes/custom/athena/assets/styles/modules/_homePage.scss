@@ -2721,6 +2721,7 @@
     display: block;
     transform: translate(-50%, -50%);
     left: 50%;
+	color:#d6106a;
 	@include belowSize700{
 		padding:25px 15px 25px 15px !important;
 	}

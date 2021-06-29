@@ -242,11 +242,13 @@
 		-webkit-box-orient: vertical;
 		display: -webkit-box; 
 	}
-	.single-discussion{ .share-icon {
+	.single-discussion{ 
+		.share-icon {
 		position: absolute;
 		padding-left: 0;
 		top: 220px;
-	}}
+		}
+	}
 	.insight-card-footer {
 		border-top: 1px solid $purpleColor;
 		padding: 10px 0;
@@ -261,27 +263,101 @@
 	} 
 	.insight-banner {
 		
-		.col-md-4.mobilePadding {border-left:1px solid #eee;}
-		.item {.row {width:auto;}.profile {@media screen and (max-width: 540px){text-align:center; padding-top:10px;}	img {width:100%; @media screen and (max-width: 480px){	width:180px;}}}}
-		.col-md-12{
-			 span {
-				 font-weight: 600;
-		font-size: 13px;
-		text-transform: uppercase;
-		 padding: 15px 0;
-		float: left; 
-		@media screen and (max-width: 540px){			 
-		   float: none; 
-	}}
-  span:nth-child(3) {float: right;
-	@media screen and (max-width: 540px){	
-		float: none;
+		.col-md-4.mobilePadding {
+			border-left:1px solid #eee;
+		}
+		.item {
+			.row {
+				width:auto;
+			}
+			.profile {
+				@media screen and (max-width: 540px){
+					text-align:center; 
+					padding-top:10px;
+				}
+				img {
+					width:100%; 
+					@media screen and (max-width: 480px){
+						width:180px;}
+					}
+				}
+			}
+			.col-md-12{
+				span {
+					font-weight: 600;
+					font-size: 13px;
+					text-transform: uppercase;
+					padding: 15px 0;
+					float: left; 
+					@media screen and (max-width: 540px){			 
+					float: none; 
+					}
+			}
+			span:nth-child(3) {
+				float: right;
+				@media screen and (max-width: 540px){	
+					float: none;
+				}
+			}
+		}
+
+		.insight-logo{
+			width: 155px;
+			height: 62px;
+			padding: 4px 18px 4px 11px;
+			border-radius: 30.5px;
+			border-top-left-radius:0;
+			border-bottom-left-radius:0;
+			background-color: rgba(0, 0, 0, 0.58);
+			top:auto !important;
+			bottom:0;
+			margin: 2px 0 0;
+			font-size: 9.5px;
+			font-weight: 600;
+			line-height: 10px;
+			letter-spacing: 0.6px;
+			color: #ffffff;
+			text-align:left;
+
+
+			&:before{
+				content:"";
+				width: 35px;
+				height: 35px;
+				margin: 0 82px 7px 0;
+				border-radius: 2.7px;
+				background-color: #005cac;
+				position:relative;
+				float:left;
+			}
+			&:after{
+				content:"";
+				width: 13px;
+				height: 13px;
+				margin: 0 82px 7px 0;
+				border-right: #005cac solid 4px;
+				border-top: #005cac solid 4px;
+				position:absolute;
+				top:17px;
+				right:-59px;
+				transform:rotate(45deg);
+			}
+			.text{
+				font-size: 27.3px;
+				font-weight: 600;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: #ffffff;
+				position:absolute;
+				top: 5px;
+			    left: 24px;
+			}
+
+		}
 	}
-	}
-}
-	}
- 
-	
+
 	.sidebar {
 		.list-group-item {
 			padding: 20px 10px;
