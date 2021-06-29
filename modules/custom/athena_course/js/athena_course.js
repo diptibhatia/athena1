@@ -204,6 +204,31 @@
         return false;
       }
     });
+    // Show more on Shortcourse page
+    $('#loadMore').one().click(function (e) {
+      e.preventDefault();
+      $('#loadMore').hide();
+      $('.loader').show();
+      let total = $('input#total').val();
+      let nextpage = parseInt($('input#current_page').val()) + 1;
+      console.log(nextpage);
+      let pages = Math.ceil(total/10);
+      $.ajax({
+        type: 'GET',
+        url: "/shortterm-courses/list?subject_id="+$('input#subject_id').val()+"&total="+$('input#total').val()+"&current_page="+$('input#current_page').val(),
+        success: function (data) {
+          console.log($(data).find("#current_page").html());
+          $('.shortterm-courses').append($(data).find(".cards").children());
+          $('#current_page').val($(data).find("#current_page").html());
+          $('.loader').hide();
+          if (pages > nextpage) {
+            $('#loadMore').show();
+          } 
+        },
+        error: function (jqXHR) {
+        }
+      });
+    });
   });
 })(jQuery, Drupal);
 

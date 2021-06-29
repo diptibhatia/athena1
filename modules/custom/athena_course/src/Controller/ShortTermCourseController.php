@@ -11,6 +11,7 @@ use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
 use \Drupal\athena_library\Utils\CommonHelper;
 use \Drupal\Core\Url;
+use \Symfony\Component\HttpFoundation\Request;
 
 class ShortTermCourseController {
 
@@ -398,5 +399,88 @@ class ShortTermCourseController {
         }
 
         return $response;
+    }
+    /**
+     * List courses as per pagination.
+     * @return [html]
+     */
+    public function shorttermCourseList(Request $request) {
+        $subject_id = $request->query->get('subject_id');
+        $current_page = $request->query->get('current_page');
+        $total = $request->query->get('total');
+        $pages = ceil($total/10);
+        $next_page = $current_page+1;
+        if($pages >= $next_page) {
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=".$next_page."&page_limit=10&fk_type_of_qualification_id=1&status=1&subject_area_id=".$subject_id; 
+            $html = "";
+            try {
+                $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody();
+                $all_data = json_decode($response);
+
+                $courses = json_decode($all_data->data, TRUE);
+                if($all_data->status == 200) {
+                    $related_courses = $all_data->data->data;
+                    $total = $all_data->data->total;
+                    $current_page = $all_data->data->current_page;
+                    foreach ($related_courses as $course) {
+                        // echo $course->course_name;
+                        $html .= '<div class="item content" style="display:block;">
+                        <div class="item-inner">
+                        <div class="course-item-hover" style="padding:22px 15px 18px;">
+                            <div class="row">
+                                <div class="col-12 social-icons">
+                                    <a href="https://www.facebook.com/sharer.php?u='. $course->course_url .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                    <a href="https://www.twitter.com/share?url='. $course->course_url .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $course->course_url .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                </div>
+                            </div>
+                            <div class="course-details col-12 text-center0 p-0">
+                                <h3>' . $course->course_name . '</h3>
+                                <div class="course-info">
+                                    <p class="small">' . $course->university_name . '</p>
+                                    ' . put_dots_in_string($course->course_overview, 150) . '
+                                </div>
+                                <div class="col-12">
+                                    <h4><a target="_blank" href="' . $course->course_url . '">More Information ></a></h4>
+                                </div>
+                                <div class="col-12 button-area"><a target="_blank" href="' . $course->course_url . '"><button>Start Now</button></a></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="row heading m-0">
+                                <div class="col-9">
+                                    <img src="' . $course->white_logo . '" alt="' . $course->university_name . '">
+                                </div>
+                                <div class="col-3">
+                                    <span class="free-text">' . $course->field_course_amount . '</span>
+                                </div>
+                            </div>
+                            <div class="image">
+
+                                <img width="100%" src="' . $course->course_image_path . '" alt="course-image">
+
+                            </div>
+                            <div class="course-details">
+                                <h3>' . $course->course_name . '</h3>
+                                <div class="course-info">
+                                    ' . put_dots_in_string($course->course_introduction, 150) . '
+                                </div>
+                                <div class="col-12 button-area"><a target="_blank" href="' . $course->course_url . '"><button>Start Now</button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>';        
+                    }
+                }
+
+            }
+            catch (\Exception $e) {
+                \Drupal::logger('type')->error($e->getMessage());
+            }
+            return [
+                '#markup' => '<div class="cards">'.$html.'</div><p id="current_page">'.$next_page.'<p>',
+            ];
+        }
+        
     }
 }

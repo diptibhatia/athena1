@@ -270,13 +270,15 @@ function getRelatedShortCourses() {
     $related_courses = $related_courses_data = [];
     $current_page = 1;
     $total = 0;
+    $limit = 10;
     $uri = $lms_url . $api . "/api/get_master_table_data?table=subject_area";
     $course_ids = [];
     $course_subjects = json_decode(\Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody()->getContents());
     foreach ($course_subjects as $course_subject) {
       $course_ids[] = $course_subject->id;
     }
-    $random_subject_id = array_rand($course_ids);
+    // $random_subject_id = array_rand($course_ids);
+    $random_subject_id = 6;
     $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=10&fk_type_of_qualification_id=1&status=1&subject_area_id=".$random_subject_id;
     $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody();
     $all_data = json_decode($response);
@@ -285,11 +287,12 @@ function getRelatedShortCourses() {
       $total = $all_data->data->total;
       $current_page = $all_data->data->current_page;
     }
+    $pages = ceil($total / $limit);
     $related_courses_data["related_courses"] = $related_courses;
     $related_courses_data["total"] = $total;
     $related_courses_data["current_page"] = $current_page;
     $related_courses_data["subject_id"] = $random_subject_id;
-  return $related_courses_data;
+    return $related_courses_data;
   } catch (Exception $e) {
     return [];
   }
