@@ -2723,7 +2723,8 @@
     left: 50%;
 	color:#d6106a;
 	@include belowSize700{
-		padding:25px 15px 25px 15px !important;
+		padding: 25px 15px 25px 15px !important;
+		font-size: 0.9rem;
 	}
 		a {
 			font-family: Lato;

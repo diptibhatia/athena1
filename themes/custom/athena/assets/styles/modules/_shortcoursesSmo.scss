@@ -194,10 +194,10 @@
             background-image: linear-gradient(347deg, rgba(231,244,252,1) 0%, rgba(176,217,239,1) 100%);
             border-radius: 25px;
             width: 193px;
-            height: 123.34px;
+    height: 123.34px;
             box-sizing: border-box;
             transition: all 1s;
-            margin:0 auto;
+            margin:3.5rem auto;
             transform:rotate(30deg);
             img{
                 position: absolute;
@@ -222,14 +222,18 @@
             &:before {
                 transform: rotate(60deg);
                 background-image: linear-gradient(277deg, rgba(231,244,252,1) 0%, rgba(176,217,239,1) 100%);
-                top: -0.4vh;
-                left: -0.1vh;
+                top: 0.4vh;
+                left: 0.5vh;
+                width: 193px;
+                height: 123.34px;
             }
             &:after {
                 transform: rotate(-60deg);
                 background-image: linear-gradient(405deg, rgba(231,244,252,1) 0%, rgba(176,217,239,1) 100%);
-                top: 0.6vh;
-                left: -0.1vh;
+                top: 0.2vh;
+                left: 0.1vh;
+                width: 193px;
+                height: 123.34px;
             }
     
         }
