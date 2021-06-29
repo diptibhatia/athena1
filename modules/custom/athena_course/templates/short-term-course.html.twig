@@ -94,6 +94,7 @@
                 </div>
                 <input id="selected_keywords" type="hidden" />
                 <input id="selected_keywords_ids" type="hidden" />
+                <input id="selected_cert_ids" type="hidden" />                
             </div>
 
             <!--Multiple Course Selection buttons: END -->
@@ -198,16 +199,21 @@
 <script src="jquery.star-rating-svg.min.js"></script>
 
 <script type="text/javascript">
+    
     jQuery('.category-area .nav-link:first').addClass('active');
+    
     jQuery("#showMore").on('click', function () {
         var pagerVal = jQuery('#pager').val();
         var pager = parseInt(pagerVal);
         pager = pager + 1;
         var endpoint = Drupal.url('shortterm-courses/load-more/' + pager);
+        var selected_cert_ids = jQuery('#selected_cert_ids').val();
         var search_val = jQuery('#search').val();
+        var subject_id = jQuery('#selected_keywords_ids').val();
+
         Drupal.ajax({
             'url': endpoint,
-            'submit': { 'search': search_val }
+            'submit': { 'search': search_val , 'selected_cert_ids' : selected_cert_ids , 'subject_id' : subject_id }
         }).execute();
         jQuery('#pager').val(pager);
         jQuery("#showMore").focus();
@@ -267,6 +273,7 @@
 
     function searchKeyword(id, keyword) {
         // jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
+        jQuery('#selected_cert_ids').val('');
         jQuery('#filter_subject_' + id).toggleClass('active');
         var search_val = jQuery('#search').val();
         search_val = sanitizeInput(search_val);
@@ -351,6 +358,9 @@
 
 
     function searchCertificates(id) {
+
+        jQuery('#selected_cert_ids').val(id);            
+        
         jQuery('.category-area .nav-link').removeClass('active');
         jQuery('#filter_certificate_' + id).addClass('active');
         var subject_id = jQuery('#selected_keywords_ids').val();
