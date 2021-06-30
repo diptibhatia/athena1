@@ -203,6 +203,7 @@ class ShortTermCourseController {
                     else
                         $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
+
                 $white_logo = athena_course_current_theme_image('images', 'no-university.png');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
