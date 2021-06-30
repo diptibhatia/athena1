@@ -100,7 +100,8 @@ class CertificateController extends ControllerBase {
           $picSrc = $userDetails['userProfilePic'] ?? '/themes/custom/athena/images/head-shot.png';
           $certDetails['profilePic'] = $picSrc;
           $certDetails['awarded_by'] = $awarded_by;
-
+          $transcript = $userDetails['transcript']['transcript_path'] ?? '';
+          $certDetails['transcript'] = $transcript;
           $verify = 1;
         }
 
