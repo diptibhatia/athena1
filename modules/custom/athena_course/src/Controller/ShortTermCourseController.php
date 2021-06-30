@@ -76,7 +76,9 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                    if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))         $course_image_path = '/themes/custom/athena/images/smo-course-img.png';
+                    else
+                        $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
                 $white_logo = athena_course_current_theme_image('images', 'no-university.png');
                 $univ_name = '';
@@ -196,8 +198,12 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+
+                    if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))         $course_image_path = '/themes/custom/athena/images/smo-course-img.png';
+                    else
+                        $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
+
                 $white_logo = athena_course_current_theme_image('images', 'no-university.png');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
@@ -339,7 +345,7 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                    $course_image_path = '/themes/custom/athena/images/smo-course-img.png';
                 }
                 $white_logo = athena_course_current_theme_image('images', 'no-university.png');
                 $univ_name = '';
@@ -463,7 +469,7 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                   $course_image_path = '/themes/custom/athena/images/course-image2.png';              
                 }
                 $white_logo = athena_course_current_theme_image('images', 'no-university.png');
                 $univ_name = '';
