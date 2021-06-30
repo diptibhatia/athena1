@@ -78,18 +78,13 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-
+                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
-                                $value2 = str_replace("pdfassets", "university", $value2);
-                                // $value2 = str_replace(".svg", "-white.svg", $value2);
-                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
-                                if (!@getimagesize($white_logo)) {
-                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
-                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -144,11 +139,11 @@ class ShortTermCourseController {
 
         $short_term_course_subject =  [
           '#SubOrCertList' => $this->sublist,
-          "#id" => $id,          
+          "#id" => $id,
       ];
 
 
-        if ( ($this->sublist == "SubjectList") || ($this->sublist == "CertList") ) 
+        if ( ($this->sublist == "SubjectList") || ($this->sublist == "CertList") )
             $short_term_course = array_merge($short_term_course,$short_term_course_subject );
 
         return array(
@@ -179,7 +174,7 @@ class ShortTermCourseController {
             $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1";
         }
 
-        if ( !empty($subject_id) )            
+        if ( !empty($subject_id) )
                 $uri = $uri. "&subject_area_id=".$subject_id;
 
         if ( !empty($selected_cert_ids) && ($selected_cert_ids != "all") )
@@ -203,18 +198,13 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-
+                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
-                                $value2 = str_replace("pdfassets", "university", $value2);
-                                // $value2 = str_replace(".svg", "-white.svg", $value2);
-                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
-                                if (!@getimagesize($white_logo)) {
-                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
-                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -310,10 +300,10 @@ class ShortTermCourseController {
 
         $limit = $this->_limit;
 
-        if (!empty($search)) {           
+        if (!empty($search)) {
 
 
-            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;            
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1&course_name=" . $search;
         }
         else {
             $uri = $this->_lms_url .$this->_api. "/api/courselist?page=$pager&page_limit=$limit&fk_type_of_qualification_id=1&status=1";
@@ -321,11 +311,11 @@ class ShortTermCourseController {
 
 
         if ( $this->sublist == "SubjectList" )
-        {            
+        {
             $uri = $uri . "&subject_area_id=".$id;
-            if ( !empty($multiple_subject_id) )            
+            if ( !empty($multiple_subject_id) )
                 $uri = $uri. "&fk_certificate_type_id=".$multiple_subject_id;
-        }               
+        }
         else
         {
             $uri = $uri. "&fk_certificate_type_id=".$id;
@@ -351,18 +341,13 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-
+                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
-                                $value2 = str_replace("pdfassets", "university", $value2);
-                                // $value2 = str_replace(".svg", "-white.svg", $value2);
-                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
-                                if (!@getimagesize($white_logo)) {
-                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
-                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -386,7 +371,7 @@ class ShortTermCourseController {
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
-                            <div class="item-inner">                    
+                            <div class="item-inner">
                                 <div class="course-item">
                                     <div class="row heading m-0">
                                         <div class="col-9">
@@ -396,7 +381,7 @@ class ShortTermCourseController {
                                             <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="image col-md-4">
                                             <img src="' . $courses_data['course_image'] . '" alt="course-image">
@@ -406,7 +391,7 @@ class ShortTermCourseController {
                                             <div class="course-info">
                                                 ' . put_dots_in_string($courses_data['card_intro'], 150) . '
                                             </div>
-                                            
+
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="social-icons">
@@ -419,7 +404,7 @@ class ShortTermCourseController {
                                                     <button>Start Now &nbsp;></button></a>
                                                 </div>
                                             </div>
-                                        
+
                                         </div>
                                     </div>
                                 </div>
@@ -458,7 +443,7 @@ class ShortTermCourseController {
 
         // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&page_limit=$limit&course_name=" . $query;
         $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&page_limit=$limit&fk_type_of_qualification_id=1&status=1" . $query;
-                
+
         $response_data = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response_data->getBody();
 
@@ -480,18 +465,13 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-
+                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
-                                $value2 = str_replace("pdfassets", "university", $value2);
-                                // $value2 = str_replace(".svg", "-white.svg", $value2);
-                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
-                                if (!@getimagesize($white_logo)) {
-                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
-                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -593,7 +573,7 @@ class ShortTermCourseController {
 
         // $uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&page_limit=$limit&course_name=" . $query;
         $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&page_limit=$limit&fk_type_of_qualification_id=1&status=1" . $query;
-                
+
         $response_data = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response_data->getBody();
 
@@ -615,18 +595,13 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-
+                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
                            if ( $key2 == "logo" ) {
-                                $value2 = str_replace("pdfassets", "university", $value2);
-                                // $value2 = str_replace(".svg", "-white.svg", $value2);
-                                // $value2 = str_replace(".png", "-white.svg", $value2);
                                 $white_logo = $value2;
-                                if (!@getimagesize($white_logo)) {
-                                    $white_logo = athena_course_current_theme_image('images', 'no-university.png');
-                                }
                            }
                            if ( $key2 == "university_name" ) {
                                 $univ_name = $value2;
@@ -650,7 +625,7 @@ class ShortTermCourseController {
                 ];
 
                 $html .= '<div class="item content" style="display:block;">
-                            <div class="item-inner">                    
+                            <div class="item-inner">
                                 <div class="course-item">
                                     <div class="row heading m-0">
                                         <div class="col-9">
@@ -660,7 +635,7 @@ class ShortTermCourseController {
                                             <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="image col-md-4">
                                             <img src="' . $courses_data['course_image'] . '" alt="course-image">
@@ -670,7 +645,7 @@ class ShortTermCourseController {
                                             <div class="course-info">
                                                 ' . put_dots_in_string($courses_data['card_intro'], 150) . '
                                             </div>
-                                            
+
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="social-icons">
@@ -683,7 +658,7 @@ class ShortTermCourseController {
                                                     <button>Start Now &nbsp;></button></a>
                                                 </div>
                                             </div>
-                                        
+
                                         </div>
                                     </div>
                                 </div>
