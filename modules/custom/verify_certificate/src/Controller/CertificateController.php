@@ -81,6 +81,7 @@ class CertificateController extends ControllerBase {
           $course_api_data_arr = $course_api_data['data'] ?? '';
           if (count($course_api_data_arr) > 0) {
             $course_details = $course_api_data_arr['data'][0]['course_introduction'];
+            $awarded_by = $course_api_data_arr['data'][0]['awarded_by'];
           }
         }
 
@@ -98,6 +99,7 @@ class CertificateController extends ControllerBase {
           $userDetails = json_decode($response, TRUE);
           $picSrc = $userDetails['userProfilePic'] ?? '/themes/custom/athena/images/head-shot.png';
           $certDetails['profilePic'] = $picSrc;
+          $certDetails['awarded_by'] = $awarded_by;
 
           $verify = 1;
         }
