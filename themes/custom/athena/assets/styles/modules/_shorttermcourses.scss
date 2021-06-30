@@ -96,16 +96,25 @@
                 }
                 .course-info{
                     font-size: 14px;
-                    font-weight: normal;
+                    font-weight: 400;
                     font-stretch: normal;
                     font-style: normal;
                     line-height: 1.58;
                     letter-spacing: normal;
                     color: #606060;
-                    margin-top: 10px;
-max-height:200px;
-min-height:200px;
-word-break: break-all;
+                    padding-bottom: .3rem;
+                    min-height: 156px;
+                    border: 1px solid #fff;
+                    height: 123px;
+                    overflow: hidden;
+                    .course-info-text{
+                        p{
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+                    }
                     p, h2, p.small{
                         font-size:14px;
                         margin-bottom:7px;
