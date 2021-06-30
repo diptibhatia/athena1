@@ -25,7 +25,7 @@
                                 <div class="row bg-white shadow-sm rounded input-area mr-0">
                                     <input id="search" class="col-8" type="text"
                                     placeholder="What do you want to learn" /><button
-                                    onclick="return searchCourseAction(event)" class="col-4 text-right">search <i class="fa fa-search" aria-hidden="true"></i></button>
+                                    onclick="return searchCourseAction(event)" class="col-4 text-right"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -108,10 +108,10 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="image col-md-4">
+                                                <div class="image col-md-3 pr-0">
                                                     <img src="{{node.course_image}}" alt="course-image">
                                                 </div>
-                                                <div class="course-details col-md-8">
+                                                <div class="course-details col-md-9">
                                                     <h3>{{node.label}}</h3>
                                                     <div class="course-info">{{ node.card_intro|raw }}
                                                     </div>
