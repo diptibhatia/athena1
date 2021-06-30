@@ -201,16 +201,25 @@ word-break: break-all;
                     display: -webkit-box;
             }
             .course-info{
-                    font-size: 14px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.58;
-                    letter-spacing: normal;
-                    color: #606060;
-                    min-height: 120px;
-                    max-height: 120px;
-                    overflow: hidden;
+                font-size: 14px;
+                font-weight: 400;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.58;
+                letter-spacing: normal;
+                color: #606060;
+                padding-bottom: .3rem;
+                height: 106px;
+                overflow: hidden;
+
+                &.course-info-text{
+                    p{
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                }
             }
             p.small, h2, p{
                 font-size:14px;
