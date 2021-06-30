@@ -76,7 +76,9 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                    if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))         $course_image_path = '/themes/custom/athena/images/smo-course-img.png';
+                    else
+                        $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
@@ -201,7 +203,10 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+
+                    if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))         $course_image_path = '/themes/custom/athena/images/smo-course-img.png';
+                    else
+                        $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
@@ -349,7 +354,7 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                    $course_image_path = '/themes/custom/athena/images/smo-course-img.png';
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
@@ -478,7 +483,7 @@ class ShortTermCourseController {
                     $course_image_path = $value->course_image_path;
                 }
                 else {
-                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
+                   $course_image_path = '/themes/custom/athena/images/course-image2.png';              
                 }
 
                 foreach ($value->partner_body as $key1 => $value1) {
