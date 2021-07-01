@@ -124,7 +124,7 @@
                                     <h3>{{node.label}}</h3>
                                     <div class="course-info">
                                         <p class="small">{{node.univ_name}}</p>
-                                        {{ node.body|raw }}
+                                        <span class="course-info-text"><p>{{ node.body|raw }}</p></span>
                                     </div>
 
                                     <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
@@ -151,8 +151,8 @@
                                 </div>
                                 <div class="course-details">
                                     <h3>{{node.label}}</h3>
-                                    <div class="course-info">
-                                        <p class="small">{{ node.card_intro|raw }}</p>
+                                    <div class="course-info course-info-text">
+                                        <p>{{ node.card_intro|raw }}</p>
                                     </div>
                                     <div class="col-12 button-area"><a target="_blank"
                                             href="{{node.course_url}}"><button>Start Now</button></a></div>

@@ -45,8 +45,9 @@
 
           <a href="#" data-toggle="modal" data-target="#myModal-img">Click to Enlarge</a>
           <button class="ver-a" data-toggle="modal" data-target="#myModal">Verify Details</button>
-          <div class="view-trans">
-            <a href="#">See More Details</a></div>
+          <div class="view-trans" id="view_transcript_link">
+            <a href="javascript:void(0)">View Transcript</a>
+          </div>
           </div>
           <div class="so-share" style="padding: 0 20px 0px 20px ;">
             <div class="so-share-1">
@@ -86,13 +87,19 @@
       <div class="col-md-8 inner-txt">
         <div class="pad-20a">
 
-          {% if coursedetails %}
-            <h1>{{ certDetails.courseName }} </h1>
-            <p> Issued by <strong> {{ certDetails.awarded_by }} </strong> </p>
-            {{ coursedetails|raw }}
-          {% else %}
-            {{ coursedetailsdefault|raw }}
-          {% endif %}
+          <div id="course_details" style="display:block;">
+            {% if coursedetails %}
+              <h1>{{ certDetails.courseName }} </h1>
+              <p> Issued by <strong> {{ certDetails.awarded_by }} </strong> </p>
+              {{ coursedetails|raw }}
+            {% else %}
+              {{ coursedetailsdefault|raw }}
+            {% endif %}
+          </div>
+
+          <div id="transcript_details" style="display:none;">
+              <img src="{{ certDetails.transcript }}">
+          </div>
 
         </div>
       </div>
@@ -100,53 +107,67 @@
   </div>
 </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog dia-wi">
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog dia-wi">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Verification</h4>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Verification</h4>
+      </div>
+      <div class="modal-body">
+        {% if verify %}
+        <p><i class="fa fa-check" aria-hidden="true"></i> Issued on {{ certDetails.certPrintDate|date('d F Y') }}</p>
+        <p><i class="fa fa-check" aria-hidden="true"></i> Issued by {{ certDetails.awarded_by }}</p>
+        <p><i class="fa fa-check" aria-hidden="true"></i> Issued to {{ certDetails.firstName ~ ' ' ~ certDetails.lastName }}</p>
+        <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on {{ certDetails.certPrintDate|date('d F Y') }}</p>
+        <div class="modal-footer text-left">
+          <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
         </div>
-        <div class="modal-body">
-          {% if verify %}
-          <p><i class="fa fa-check" aria-hidden="true"></i> Issued on {{ certDetails.certPrintDate|date('d F Y') }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Issued by {{ certDetails.awarded_by }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Issued to {{ certDetails.firstName ~ ' ' ~ certDetails.lastName }}</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on {{ certDetails.certPrintDate|date('d F Y') }}</p>
-          <div class="modal-footer text-left">
-            <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
-          </div>
-          {% else %}
-          <div class="modal-footer text-center">
-            <div><i class="fa fa-minus-circle" aria-hidden="true"></i>Verification failed</div>
-          </div>
-          {% endif %}
-
-
-
+        {% else %}
+        <div class="modal-footer text-center">
+          <div><i class="fa fa-minus-circle" aria-hidden="true"></i>Verification failed</div>
         </div>
+        {% endif %}
+
+
 
       </div>
+
     </div>
   </div>
+</div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal-img" role="dialog">
-    <div class="modal-dialog">
+<!-- Modal -->
+<div class="modal fade" id="myModal-img" role="dialog">
+  <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-        </div>
-        <div class="modal-body">
-          <img src="{{certDetails.certficateImage}}" alt="{{certDetails.certificateFileName}}" style="width:100%;" />
-        </div>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
 
       </div>
+      <div class="modal-body">
+        <img src="{{certDetails.certficateImage}}" alt="{{certDetails.certificateFileName}}" style="width:100%;" />
+      </div>
+
     </div>
   </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+  jQuery('#view_transcript_link a').on('click', function(){
+    jQuery('#transcript_details').toggle();
+    jQuery('#course_details').toggle();
+    if (jQuery('#course_details').is(":visible")) {
+      jQuery('#view_transcript_link a').text('View Transcript');
+    }
+    else {
+      jQuery('#view_transcript_link a').text('View Course Details');
+    }
+  });
+</script>

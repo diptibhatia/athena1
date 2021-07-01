@@ -245,8 +245,10 @@ class ShortTermCourseController {
                             <h3>' . $courses_data['label'] . '</h3>
                             <div class="course-info">
                                 <p class="small">' . $courses_data['univ_name'] . '</p>
-                                ' . put_dots_in_string($courses_data['body'], 150) . '
+                                 
+                                <span class="course-info-text"><p>' . $courses_data['body'] . '</p></span>
                             </div>
+                            
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
                             </div>
@@ -269,8 +271,9 @@ class ShortTermCourseController {
                         </div>
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
-                            <div class="course-info">
-                               ' .  put_dots_in_string($courses_data['card_intro'], 150) . '
+                            
+                            <div class="course-info course-info-text"><p>
+                               ' .  $courses_data['card_intro'] . '</p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -393,7 +396,7 @@ class ShortTermCourseController {
                                         <div class="course-details  col-md-8">
                                             <h3>' . $courses_data['label'] . '</h3>
                                             <div class="course-info">
-                                                ' . put_dots_in_string($courses_data['card_intro'], 150) . '
+                                                ' . $courses_data['card_intro'] . '
                                             </div>
 
                                             <div class="row">
@@ -510,9 +513,9 @@ class ShortTermCourseController {
                         </div>
                         <div class="course-details col-12 text-center0 p-0">
                             <h3>' . $courses_data['label'] . '</h3>
-                            <div class="course-info">
+                            <div class="course-info ">
                                 <p class="small">' . $courses_data['univ_name'] . '</p>
-                                ' . put_dots_in_string($courses_data['body'], 150) . '
+                                <span class="course-info-text"><p>' . $courses_data['body'] . '</p></span>
                             </div>
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
@@ -534,10 +537,11 @@ class ShortTermCourseController {
                             <img width="100%" src="' . $courses_data['course_image'] . '" alt="course-image">
 
                         </div>
+                        
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
-                            <div class="course-info">
-                                ' . put_dots_in_string($courses_data['card_intro'], 150) . '
+                            <div class="course-info course-info-text">
+                            <p>' . $courses_data['card_intro'] . '</p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
@@ -646,8 +650,8 @@ class ShortTermCourseController {
                                         </div>
                                         <div class="course-details  col-md-8">
                                             <h3>' . $courses_data['label'] . '</h3>
-                                            <div class="course-info">
-                                                ' . put_dots_in_string($courses_data['card_intro'], 150) . '
+                                            <div class="course-info course-info-text">
+                                                ' . $courses_data['card_intro'] . '
                                             </div>
 
                                             <div class="row">
