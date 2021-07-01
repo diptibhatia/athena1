@@ -1444,47 +1444,17 @@
         <div class="col-12 p-0">
           <div class="shortterm-courses">
             {% for course in related_courses_data.related_courses %}
-                {# <div class="item content">
-                  <div class="item-inner">
-                    <div class="course-item-hover" w3-include-html="shortterm-course-hover.html"></div>
-                    <div class="course-item">
-                      <div class="row heading m-0">
-                        <div class="col-8">
-                          <h5>CPD Certified</h5>
-                        </div>
-                        <div class="col-4">
-                          <span class="free-text">Free</span>
-                        </div>
-                      </div>
-                      <div class="image">
-                        <img src="{{course.course_image_path}}" alt="course-image">
-                      </div>
-                      <div class="course-details">
-                        <h3>{{course.course_name}}</h3>
-                        <div class="course-info">
-                          {{course.course_overview}}
-                        </div>
-                        <div class="row rating m-0">
-                          <div class="col-6 p-0">
-                            <div class="my-rating"></div>
-                          </div>
-                          <div class="col-2 p-0">4.5</div>
-                        </div>
-                        <div class="col-12 button-area"><button>Start Now</button></div>
-                      </div>
-                    </div>
-                  </div>
-                </div> #}
+                {% set course_url =  related_courses_data.lms_url ~ '/student-dashboard/course/' ~ course.cid ~ '/' ~ course.slug %}
                 <div class="item content" style="display:block;">
                   <div class="item-inner">
                     <div class="course-item-hover" style="padding:22px 15px 18px;">
                       <div class="row">
                         <div class="col-12 social-icons card-icon">
-                          <a href="http://www.facebook.com/sharer.php?u={{course.course_url}}" target="_blank"><img
+                          <a href="http://www.facebook.com/sharer.php?u={{course_url}}" target="_blank"><img
                               src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                          <a href="http://twitter.com/share?url={{course.course_url}}" target="_blank"><img
+                          <a href="http://twitter.com/share?url={{course_url}}" target="_blank"><img
                               src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                          <a href="http://www.linkedin.com/shareArticle?mini=true&url={{course.course_url}}"
+                          <a href="http://www.linkedin.com/shareArticle?mini=true&url={{course_url}}"
                             target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                         </div>
                       </div>
@@ -1494,8 +1464,8 @@
                           <p class="small">{{course.university_name}}</p>
                           {{ course.course_overview|raw }}
                         </div>
-                        <h4><a target="_blank" href="{{course.course_url}}">More Information ></a></h4>
-                        <div class="col-12 button-area"><a target="_blank" href="{{course.course_url}}"><button>Start
+                        <h4><a target="_blank" href="{{course_url}}">More Information ></a></h4>
+                        <div class="col-12 button-area"><a target="_blank" href="{{course_url}}"><button>Start
                               Now</button></a></div>
                       </div>
                     </div>
@@ -1516,7 +1486,7 @@
                         <div class="course-info">
                           <p class="small">{{ course.course_introduction|raw }}</p>
                         </div>
-                        <div class="col-12 button-area"><a target="_blank" href="{{course.course_url}}"><button>Start
+                        <div class="col-12 button-area"><a target="_blank" href="{{course_url}}"><button>Start
                               Now</button></a></div>
                       </div>
                     </div>
@@ -1535,8 +1505,8 @@
                 <div id="loading" class="loader">
                 <img style="height: 50px;" src="/themes/custom/athena/images/smo/shortcourse-assets/load-more-spinner.gif" alt="loader">
                 </div>
-              <button id="showLess" class="btn athena-btn purple-btn" style="display: none;text-decoration:none;">Show
-                Less</button>
+              {# <button id="showLess" class="btn athena-btn purple-btn" style="display: none;text-decoration:none;">Show
+                Less</button> #}
             </div>
         {% endif %}
         

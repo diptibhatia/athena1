@@ -423,15 +423,15 @@ class ShortTermCourseController {
                     $total = $all_data->data->total;
                     $current_page = $all_data->data->current_page;
                     foreach ($related_courses as $course) {
-                        // echo $course->course_name;
+                        $url = $this->_lms_url . '/student-dashboard/course/' . $course->cid .'/'.$course->slug;
                         $html .= '<div class="item content" style="display:block;">
                         <div class="item-inner">
                         <div class="course-item-hover" style="padding:22px 15px 18px;">
                             <div class="row">
                                 <div class="col-12 social-icons">
-                                    <a href="https://www.facebook.com/sharer.php?u='. $course->course_url .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                    <a href="https://www.twitter.com/share?url='. $course->course_url .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $course->course_url .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                    <a href="https://www.facebook.com/sharer.php?u='. $url .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                    <a href="https://www.twitter.com/share?url='. $url .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $url .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
                                 </div>
                             </div>
                             <div class="course-details col-12 text-center0 p-0">
@@ -441,9 +441,9 @@ class ShortTermCourseController {
                                     ' . put_dots_in_string($course->course_overview, 150) . '
                                 </div>
                                 <div class="col-12">
-                                    <h4><a target="_blank" href="' . $course->course_url . '">More Information ></a></h4>
+                                    <h4><a target="_blank" href="' . $url . '">More Information ></a></h4>
                                 </div>
-                                <div class="col-12 button-area"><a target="_blank" href="' . $course->course_url . '"><button>Start Now</button></a></div>
+                                <div class="col-12 button-area"><a target="_blank" href="' . $url . '"><button>Start Now</button></a></div>
                             </div>
                         </div>
                         <div class="course-item">
@@ -465,7 +465,7 @@ class ShortTermCourseController {
                                 <div class="course-info">
                                     ' . put_dots_in_string($course->course_introduction, 150) . '
                                 </div>
-                                <div class="col-12 button-area"><a target="_blank" href="' . $course->course_url . '"><button>Start Now</button></a></div>
+                                <div class="col-12 button-area"><a href="'.$url.'"><button>Start Now</button></a></div>
                             </div>
                         </div>
                     </div>

@@ -288,6 +288,7 @@ function getRelatedShortCourses() {
       $current_page = $all_data->data->current_page;
     }
     $pages = ceil($total / $limit);
+    $related_courses_data["lms_url"] = $lms_url;
     $related_courses_data["related_courses"] = $related_courses;
     $related_courses_data["total"] = $total;
     $related_courses_data["current_page"] = $current_page;
@@ -309,6 +310,7 @@ function athena_preprocess_page(&$variables) {
       $node_type = $node->getType();
 
       if ($node_type == 'short_course') {
+        \Drupal::service('page_cache_kill_switch')->trigger();
         $course_data = getShortCourse($node);
         $related_course_data = getRelatedShortCourses();
         if(!empty($course_data)) {
