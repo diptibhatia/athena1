@@ -12,7 +12,7 @@
         padding-top:2.4rem !important;
         overflow:hidden;
         @media screen and (max-width:767px){
-            height: 350px !important;
+            height: 300px !important;
         }
         .bg-overlay{
             @media screen and (max-width:767px){
@@ -35,7 +35,7 @@
             max-width: 1170px;
             padding:24px 15px;
                 @media screen and (max-width:768px){
-                    padding:14px 15px;
+                    padding:35px 15px;
                 }
             .rating-text{
                 display:block;
@@ -80,8 +80,12 @@
         margin-bottom:1rem;
         @media screen and (max-width:767px){
             padding:14px 24px;
-
         }
+        &.opened{
+            transform:rotate(0deg);
+            .arrow{transform:rotate(-45deg);}
+        }
+        .arrow{float:right;width:14px;height:14px;border-right:#ccc solid 2px;border-bottom:#ccc solid 2px;position:relative;transform:rotate(45deg);transition: all ease 0.5s;margin-top:0.2rem;}
         h3{
             font-size:24px;
             font-weight:700;
