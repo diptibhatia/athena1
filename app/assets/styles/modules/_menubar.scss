@@ -955,6 +955,9 @@
                         border-top:#666 solid 1px;border-right:#666 solid 1px;position:relative;transform:rotate(45deg);
                         @include belowSize700{
                             left:90%;top:12px;position:absolute !important;transform:rotate(135deg);                        
+                            &:focus{
+                                left:90%;top:12px;position:absolute !important;transform:rotate(135deg);                        
+                            }
                         }
                     }
                     @include belowSize700{
@@ -971,7 +974,7 @@
                             border: none;border-radius: 0;background: transparent;position: relative;z-index: 1;font-size: 14px;font-weight: normal;left: 0;top: 0;width: 100%;padding: 20px 0 0 0;                        
                         }
                         .dd-level2-inner{
-                            overflow:hidden; overflow-y:auto;width:240px;height:340px;overflow-y: scroll;
+                            overflow:hidden; overflow-y:auto;width:240px;height:340px;
                             scrollbar-color: rgba(0,0,0,0.8) rgba(0,0,0,0.3); scrollbar-width: thin;
                             &::-webkit-scrollbar {width: 8px;margin-right:10px;
                             }
