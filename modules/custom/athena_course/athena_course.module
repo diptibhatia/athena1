@@ -237,7 +237,11 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'why_athena' => NULL,
       'tax_value' => NULL,
       'base_path' => NULL,
-      'campaign_params' => NULL
+      'campaign_params' => NULL,
+      'source' => NULL,
+      'medium' => NULL,
+      'campaign' => NULL
+
       ],
     ],
 
