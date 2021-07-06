@@ -209,6 +209,16 @@
 
 <script type="text/javascript">
 
+    //toggele filter area for mobile view    
+    if(window.innerWidth <= 768){
+        jQuery(".select-level").hide();
+        jQuery(".filter-area h3").click(function(){
+            jQuery(this).parents(".filter-area").toggleClass("opened");
+            jQuery(".select-level").fadeToggle();
+        });
+    };
+
+
     jQuery('.category-area .nav-link:first').addClass('active');
     
     jQuery("#showMore").on('click', function () {
@@ -525,12 +535,4 @@
 
 </script>
 
-/*
-        if(window.innerWidth <= 768){
-            $(".select-level").hide();
-            $(".filter-area h3").click(function(){
-                $(this).parents(".filter-area").toggleClass("opened");
-                $(".select-level").fadeToggle();
-            });
-        };
-*/
+
