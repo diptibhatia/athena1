@@ -180,7 +180,10 @@
                 text-align:right;
                 margin-top:5px;
             }
-            img {height: 34px;}
+            img {
+              max-height: 32px;
+              max-width: 70px !important;
+            }
         }
         .image{
             clear: both;
