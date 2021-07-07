@@ -46,8 +46,10 @@
                                             <h3>Filter</h3>
                                         </div>
                                         <div class="col-6 pr-0 text-right pt-2">
-                                            <div class="d-block d-md-none arrow"></div>
-                                            <span onclick="clearFilters()" class="text-bold btn" style="float:right;"
+
+                                            <img  class="float-right filter-link" style="display:none;" src="images/smo/filter-course.svg" />
+                                            <div class="float-right arrow" style="display:none;"></div>
+                                            <span onclick="clearFilters()" class="text-bold btn" style="float:right;margin-right:1rem;"
                                              id="clear_filters">Clear</span>     
                                         </div>
 
@@ -211,11 +213,21 @@
 
     //toggele filter area for mobile view    
     if(window.innerWidth <= 768){
-        jQuery(".select-level").hide();
-        jQuery(".filter-area h3").click(function(){
-            jQuery(this).parents(".filter-area").toggleClass("opened");
-            jQuery(".select-level").fadeToggle();
-        });
+            $(".select-level").hide();
+            $(".filter-link").show();
+            $(".arrow").hide();
+            $(".filter-area .filter-link").click(function(){
+                $(this).parents(".filter-area").addClass("opened");
+                $(".filter-link").hide();
+                $(".arrow").show();
+                $(".select-level").fadeToggle();
+            });
+            $(".filter-area .arrow").click(function(){
+                $(this).parents(".filter-area").removeClass("opened");
+                $(".filter-link").show();
+                $(".arrow").hide();
+                $(".select-level").fadeToggle();
+            });
     };
 
 

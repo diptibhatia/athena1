@@ -83,11 +83,7 @@
         @media screen and (max-width:767px){
             padding:14px 24px;
         }
-        &.opened{
-            transform:rotate(0deg);
-            .arrow{transform:rotate(-45deg);}
-        }
-        .arrow{float:right;width:14px;height:14px;border-right:#ccc solid 2px;border-bottom:#ccc solid 2px;position:relative;transform:rotate(45deg);transition: all ease 0.5s;margin-top:0.2rem;}
+        .arrow{float:right;width:14px;height:14px;border-right:#303030 solid 2px;border-bottom:#303030 solid 2px;position:relative;transform:rotate(-135deg);transition: all ease 0.5s;margin-top:0.6rem;margin-left:0.35rem;}
         h3{
             font-size:24px;
             font-weight:700;
