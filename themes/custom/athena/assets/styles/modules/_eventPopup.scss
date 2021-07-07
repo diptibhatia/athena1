@@ -23,7 +23,10 @@ p {font-size: 12px;
   font-weight: 500; color:#303030;}}}
 
 .event_popup {
-  .row {width:auto; }
+  .row {
+    width: auto;
+    justify-content: space-evenly;
+  }
   .card {
     width: 525px;
     margin: 0;
@@ -208,6 +211,9 @@ h4.course-title {
     font-size: 14px;
 }
 
-.row {
-  justify-content: space-evenly;
-}
+// .event_popup{
+// .row{
+//   justify-content: space-evenly;
+
+// }
+// }
