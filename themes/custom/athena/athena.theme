@@ -701,6 +701,15 @@ function athena_preprocess_html(&$variables)
         $variables['lead_mail'] = $lead_mail;
       }
     }
+
+    if (strpos($referer, 'pgcertificateEnrol') !== false) {
+      if ($lead_source == 'LINKCONNECTOR') {
+        $variables['link_connector_pixel'] = TRUE;
+        $variables['lead_user'] = $lead_user;
+        $variables['lead_cid'] = $lead_cid;
+        $variables['lead_mail'] = $lead_mail;
+      }
+    }
   }
 
 
