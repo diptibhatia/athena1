@@ -1,0 +1,404 @@
+{{ attach_library('athena_course/athena_course') }}
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
+
+<header class="site-header container-fluid">
+  <div class="wrapper">
+    {{ page.header }}
+  </div>
+</header>
+<div class="top-gap"></div>
+<!--- BANNER START -->
+<div class="top-banner">
+  <div class="forecolor"></div>
+  <div class="wrapper">
+    <div class="logos">
+
+    </div>
+    <h1>{{ course_info.course_name }}</h1>
+    <p class="desc">{{ course_info.course_overview|striptags }}</p>
+    <p>{{ course_info.university_name|striptags }}</p>
+  </div>
+  <div class="bg">
+    <img src="/themes/custom/athena/images/smo/shortcourse-assets/banner-img.png" alt="background-image">
+
+  </div>
+</div>
+<!--- BANNER END -->
+<!--- WHY SECTION START -->
+<div class="why-section">
+  <div class="wrapper">
+    <div class="main-section">
+      <div class="desc">
+        <h2>Why this Course</h2>
+        <div style="text-align:left">
+          <p>This Executive MBA is completely delivered online, through a combination of pre-recorded lectures
+            followed by well-developed learning materials along with a dedicated Personal Tutor support. The
+            students gain flexibility of learning while maintaining access to face time with the tutors
+            through the synchronous live online sessions.</p>
+
+          <h5><strong>Highlights of this course are:</strong></h5>
+
+          <ul>
+            <li>This is triple certification program, Executive MBA from UCAM, Spain, Diploma from CIQ, UK
+              and a Certified Manager certification from CMI, UK (optional)</li>
+            <li>The program consists of 60 ECTS Credits</li>
+            <li>Universidad Catolica De Murcia (UCAM) Spain, accredited by Ministry of Education, Spain, is
+              a member of Bologna Process in European Higher Education Area (EHEA) and It is also a NARIC
+              approved university</li>
+            <li>The course delivery and assessments are based on real life situations and application which
+              will directly benefit the learner at their workplace to improve their performance</li>
+            <li>The course is designed to provide you with a range of knowledge which is crucial to lead a
+              business organisation. The program&nbsp;aims to provide you with skills and business acumen
+              to be successful in different domains of business.</li>
+            <li>Option to attend the annual convocation conducted by the University at Murcia, Spain</li>
+          </ul>
+
+        </div>
+        <p>Build your skills in all areas of managing and leading organizations</p>
+      </div>
+      <div class="forms">
+        <div class="container-fluid p-0 about-us-wrapper form">
+          <div class="course-login-wrapper">
+            <div class="login-details">
+              <h2>Still Not Sure ?</h2>
+              <h3>Speak to an Advisor<span>&nbsp;</span></h3>
+              <p>Not sure if this course is right for you? Fill in your details below and one of our
+                Course Advisors will be in contact to provide you with the information you need to make
+                a decision.</p>
+                 <form id="registration-afpage" class="needs-validation" novalidate method="post">
+            <div class="reg-form">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <span for="firstName">First Name</span>
+                  <input type="text" name="firstName" class="form-control reg-form-control" id="firstName"
+                    placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <span for="lastName">Last Name</span>
+                  <input type="text" name="lastName" class="form-control reg-form-control" id="lastName"
+                    placeholder="Last Name" required>
+                </div>
+              </div>
+              <div class="form-row regUserEmail">
+                <div class="form-group col-md-12">
+                  <span for="regEmail">Email</span>
+                  <input type="email" name="regEmail" class="form-control reg-form-control" id="regEmail"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-row phone-number">
+                <div class="form-group col-md-12">
+                  <span for="reg_mobile_num">Phone Number</span>
+                  <input type="tel" id="reg_mobile_num" name="reg_mobile_num" class="reg-form-control"
+                    placeholder="Enter Mobile number" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <span for="highestQualification">Highest Qualification</span>
+                  <select id="highestQualification" name="highestQualification" class="form-control reg-form-control"
+                    required>
+                    <option value="">Select your highest qualification</option>
+                    <option value="Masters Degree">Masters Degree</option>
+                    <option value="Bachelors Degree">Bachelors Degree</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="A Level">A Level</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row" style="display:none;">
+                <div class="form-group col-md-12">
+                  <span for="course">Course</span>
+                  <select name="course" id="course" class="form-control reg-form-control" required>
+                    <option value="{{node.field_cid.value}}" selected="selected">{{node.field_cid.value}}</option>
+                  </select>
+                </div>
+              </div>
+              <!--<div class="form-group text-center form-check consent-check">-->
+              <div class="form-group text-center consent-check">
+                <input type="checkbox" class="form-check-input" id="terms" name="terms[]">
+                <span class="form-check-label terms-label" for="terms">I agree with <a href="/registration-terms"
+                    target="_blank">Terms &amp; Conditions</a></span>
+
+                <button type="button" class="btn btn-pink sign-up-button">{% if payment %} Enrol Now {% else %} Sign Up {% endif %}</button>
+              </div>
+            </div>
+            <div class="ref-form-2" id="ref-form-2" style="display: none;">
+              <div class="form-group col-md-12">
+                <span for="pswd">Password</span>
+                <input type="password" name="pswd" class="form-control reg-form-control" id="pswd"
+                  placeholder="Password" required autocomplete="off">
+                <div class="invalid-feedback">
+                  Please enter a password
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <span for="confirmpswd">Confirm Password</span>
+                <input type="password" name="confirmpswd" class="form-control reg-form-control" id="confirmpswd"
+                  placeholder="Re-enter Password" required autocomplete="off">
+                <div class="invalid-feedback confirm-password">
+                  Please enter password again
+                </div>
+              </div>
+              <button type="submit" class="btn btn-pink" style="width:100%;margin-top:0px">Register</button>
+            </div>
+            <input id="cId" name="cId" type="hidden" value="">
+            <input id="modId" name="modId" type="hidden" value="">
+            <input id="countryId" name="countryId" type="hidden" value="">
+
+            {% if payment %}
+              <input id="pay" name="pay" type="hidden" value="{{ payment }}">
+            {% else %}
+              <input id="pay" name="pay" type="hidden" value="">
+            {% endif %}
+
+          </form>
+              {# <div class="login-item names">
+                <div class="name-item">
+                  <p>First Name</p>
+                  <input type="text" placeholder="Enter First Name">
+                </div>
+                <div class="name-item">
+                  <p>Last Name</p>
+                  <input type="text" placeholder="Enter Last Name">
+                </div>
+              </div>
+              <div class="login-item">
+                <p>Email</p>
+                <input type="email" placeholder="Enter Email Address">
+              </div>
+              <!-- <div class="login-item">
+                            <p>Country</p>
+                            <input type="text" placeholder="Country" />
+                        </div> -->
+              <div class="login-item phone-number">
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter Mobile number">
+                                    <span id="valid-msg" class="hide">✓ Valid</span>
+                                    <span id="error-msg" class="hide"></span>
+                                </div>
+              <div class="login-item qualification">
+                <p>Highest Qualification</p>
+                <select>
+                  <option>Select your highest qualification</option>
+                  <option>High School</option>
+                  <option>Graduate</option>
+                  <option>Post Graduate</option>
+                </select>
+              </div>
+              <div class="button">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global
+                  Education processing my personal information in accordance with the Athena Global
+                  Education Privacy Statement &amp; I agree to receive personalised information and
+                  updates about Athena Global Education courses by phone and email.</label>
+                <button>Submit</button>
+              </div> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- WHY SECTION END -->
+<!-- TAGGS START-->
+<div class="container-fluid academic-bg-wrap pb-3">
+  <div class="pt-4 container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 text-center">
+        <h2>Target Group</h2>
+        <p class="msg">Marketing Professionals- Brand Managers, Marketing Managers, SEO Managers Business
+          Leaders, leading business in international markets Entrepreneurs, to understand the customer base
+          better Communication Managers</p>
+      </div>
+    </div>
+    <div class="row mb-3 academic-card pt-5 pb-5 justify-content-center">
+      <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+          <img alt="marketing icon" src="/themes/custom/athena/images/smo/shortcourse-assets/marketing-icn.svg">
+        </span>
+        <h6 class="card-title">Marketing Professionals</h6>
+      </div>
+
+      <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+          <img alt="seo icon" src="/themes/custom/athena/images/smo/shortcourse-assets/seo-icn.svg"></span>
+        <h6 class="card-title">SEO Managers</h6>
+      </div>
+
+      <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+          <img alt="business icon" src="/themes/custom/athena/images/smo/shortcourse-assets/business-icn.svg"></span>
+        <h6 class="card-title">Business Leaders</h6>
+
+      </div>
+
+      <div class="col-md-3 col-sm-12 text-center box">
+        <span class="hexagon">
+          <img alt="enterprenurs icon" src="/themes/custom/athena/images/smo/shortcourse-assets/enterprenurs-icn.svg"></span>
+        <h6 class="card-title">Entrepreneurs</h6>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- TAGGS END -->
+
+<!-- OTHER COURSES START -->
+<div class="what-you-get">
+  <div class="wrapper">
+    <h2>Other Courses You might Interested</h2>
+    <div class="container">
+      <!--courses List: START-->
+      <div class="row">
+        <div class="col-12 p-0">
+          <div class="shortterm-courses">
+            {% for course in related_courses_data.related_courses %}
+                {% set course_url =  related_courses_data.lms_url ~ '/student-dashboard/course/' ~ course.cid ~ '/' ~ course.slug %}
+                <div class="item content" style="display:block;">
+                  <div class="item-inner">
+                    <div class="course-item-hover" style="padding:22px 15px 18px;">
+                      <div class="row">
+                        <div class="col-12 social-icons card-icon">
+                          <a href="http://www.facebook.com/sharer.php?u={{course_url}}" target="_blank"><img
+                              src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                          <a href="http://twitter.com/share?url={{course_url}}" target="_blank"><img
+                              src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                          <a href="http://www.linkedin.com/shareArticle?mini=true&url={{course_url}}"
+                            target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                        </div>
+                      </div>
+                      <div class="course-details text-center0">
+                        <h3>{{course.course_name}}</h3>
+                        <div class="course-info">
+                          <p class="small">{{course.university_name}}</p>
+                          {{ course.course_overview|raw }}
+                        </div>
+                        <h4><a target="_blank" href="{{course_url}}">More Information ></a></h4>
+                        <div class="col-12 button-area"><a target="_blank" href="{{course_url}}"><button>Start
+                              Now</button></a></div>
+                      </div>
+                    </div>
+                    <div class="course-item">
+                      <div class="row heading m-0">
+                        <div class="col-9">
+                          <img src="{{course.white_logo}}" alt="{{ course.university_name }}">
+                        </div>
+                        <div class="col-3">
+                          <span class="free-text">{{course.field_course_amount}}</span>
+                        </div>
+                      </div>
+                      <div class="image">
+                        <img width="100%" src="{{course.course_image_path}}" alt="course-image">
+                      </div>
+                      <div class="course-details">
+                        <h3>{{course.course_name}}</h3>
+                        <div class="course-info">
+                          <p class="small">{{ course.course_introduction|raw }}</p>
+                        </div>
+                        <div class="col-12 button-area"><a target="_blank" href="{{course_url}}"><button>Start
+                              Now</button></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+            <input type="hidden" id="total" value="{{related_courses_data.total}}">
+            <input type="hidden" id="current_page" value="{{related_courses_data.current_page}}">
+            <input type="hidden" id="subject_id" value="{{related_courses_data.subject_id}}">
+          </div>
+        </div>
+        {% if related_courses_data.total > 10 %}
+            <div class="col-12 text-center">
+              <button id="loadMore" class="btn athena-btn purple-btn"><a href="http://athena.edu/course-home"
+                  style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
+                <div id="loading" class="loader">
+                <img style="height: 50px;" src="/themes/custom/athena/images/smo/shortcourse-assets/load-more-spinner.gif" alt="loader">
+                </div>
+              {# <button id="showLess" class="btn athena-btn purple-btn" style="display: none;text-decoration:none;">Show
+                Less</button> #}
+            </div>
+        {% endif %}
+        
+
+      </div>
+      <!--courses List: END-->
+    </div>
+  </div>
+</div>
+<!-- OTHER COURSES END -->
+
+
+{% if page.featured_bottom %}
+<div class="featured-bottom">
+  <aside class="layout-container clearfix" role="complementary">
+    {{ page.featured_bottom }}
+  </aside>
+</div>
+{% endif %}
+
+{% if exclude_footer == false %}
+{{footercoursemenu|raw}}
+{{ get_static_data('footer_links', TRUE)|raw }}
+{% endif %}
+
+{% if include_static_links == true %}
+{{ get_static_data('footer_links', TRUE)|raw }}
+{% endif %}
+
+
+<script type="text/javascript">
+  (function () {
+
+    {% set site_url = url("<current>") %} 
+    {% if 'rsu-ucam' in site_url | render | render %}
+
+    var options = {
+      line: "https://line.me/R/ti/p/{{ line_app_id }}", // Line QR code URL
+      call_to_action: "Message us", // Call to action
+      position: "right", // Position may be 'right' or 'left'
+    };
+
+    {% else %}
+
+    var options = {
+      email: "admission@athena.edu",
+      whatsapp: "+971558795492",
+      facebook: "AthenaGlobalEducation", // Facebook page ID
+      instagram: "age_athena", // Instagram username
+      company_logo_url: "//static.getbutton.io/img/flag.png", // URL of company logo (png, jpg, gif)
+      greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
+      call_to_action: "Message us", // Call to action
+      button_color: "#FF6550", // Color of button
+      position: "right", // Position may be 'right' or 'left'
+      ga: true, // Google Analytics enabled
+      branding: true, // Show branding string
+      mobile: true, // Mobile version enabled
+      desktop: true, // Desktop version enabled
+      greeting: false, // Greeting message enabled
+      shift_vertical: 0, // Vertical position, px
+      shift_horizontal: 0, // Horizontal position, px
+      domain: "athena.edu", // site domain
+      key: "w65CtynYQ2eEPebewXlB1w", // pro-widget key
+    };
+
+
+    {% endif %}
+
+    var proto = document.location.protocol,
+      host = "getbutton.io",
+      url = proto + "//static." + host;
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url + '/widget-send-button/js/init.js';
+    s.onload = function () {
+      WhWidgetSendButton.init(host, proto, options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+
+</script>
