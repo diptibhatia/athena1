@@ -44,6 +44,13 @@ jQuery(document).ready(function() {
         jQuery(this).toggleClass("mat-expanded");
         jQuery(this).siblings(".mat-panel-content").slideToggle();
       });
+      //Switch tab in reg page based on course
+      let type = getURLParameterByName("type");
+      if(type == "cert") {
+        jQuery('ul.nav a[href="' + '#uc' + '"]').tab('show');
+      } else if(type == "acad") {
+        jQuery('ul.nav a[href="' + '#ac' + '"]').tab('show');
+      }
     // Typing effect in home page - starts here.
     // https://css-tricks.com/snippets/css/typewriter-effect/
     var TxtType = function(el, toRotate, period) {
@@ -178,5 +185,11 @@ function scrollEvent(){
 
 window.onload = scrollEvent();
 
-
-
+function getURLParameterByName(name, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
