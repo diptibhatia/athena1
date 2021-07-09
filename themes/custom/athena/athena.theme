@@ -756,8 +756,17 @@ function athena_preprocess_links(&$variables) {
 
 function athena_preprocess_html(&$variables)
 {
-
   $current_path = \Drupal::service('path.current')->getPath();
+  $mbaprograms = \Drupal::service('path.alias_manager')->getPathByAlias('/MBAPrograms');
+  $pgcertificateEnrol = \Drupal::service('path.alias_manager')->getPathByAlias('/pgcertificateEnrol');
+ 
+  if ((strpos($current_path, $mbaprograms) !== false) || (strpos($current_path, $pgcertificateEnrol ) !== false) ) {
+      $lead_source = $_REQUEST['ref'] ?? '';
+      if ($lead_source == 'AF-LINKCONNECTOR-CS') {
+        $variables['linkconnectscript'] = TRUE;
+      } 
+  }  
+
   if (strpos($current_path, '/StudentEnroltoCourse') !== false) {
     $referer = $_SERVER['HTTP_REFERER'];
     $lead_source = $_REQUEST['source'] ?? '';
@@ -765,16 +774,7 @@ function athena_preprocess_html(&$variables)
     $lead_cid = $_REQUEST['CId'] ?? '';
     $lead_mail = $_REQUEST['mail'] ?? '';
 
-    if (strpos($referer, 'MBAPrograms') !== false) {
-      if ($lead_source == 'LINKCONNECTOR') {
-        $variables['link_connector_pixel'] = TRUE;
-        $variables['lead_user'] = $lead_user;
-        $variables['lead_cid'] = $lead_cid;
-        $variables['lead_mail'] = $lead_mail;
-      }
-    }
-
-    if (strpos($referer, 'pgcertificateEnrol') !== false) {
+    if ((strpos($referer, 'MBAPrograms') !== false) || (strpos($referer, 'pgcertificateEnrol') !== false) ) {
       if ($lead_source == 'LINKCONNECTOR') {
         $variables['link_connector_pixel'] = TRUE;
         $variables['lead_user'] = $lead_user;
@@ -783,7 +783,6 @@ function athena_preprocess_html(&$variables)
       }
     }
   }
-
 
   $route_name = \Drupal::routeMatch()->getRouteName();
     // Custom meta tags on smo and course pages.
