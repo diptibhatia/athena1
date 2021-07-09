@@ -763,7 +763,7 @@
 												<div class="login-item">
 													<p>Confirm Password</p>
 													<input type="password" class="pass-cls" id="reg_confirm_pass_second" placeholder="Confirm Password">
-                          <i class="far fa-eye passyeye" id="togglePassword" onclick="eye('reg_confirm_pass_second')"></i>
+                          <i class="far fa-eye passyeye" id="togglePassword_second" onclick="eye('reg_confirm_pass_second')"></i>
 												</div>
 												<div class="login-item" style="text-align:center">
 													<button style="background-image: linear-gradient(to right,#ff006e,#ff4e9a 113%,#ffd85e 141%);color:white" id="registration_form_passchck" class="btn btn-default">Register</button>
@@ -801,26 +801,22 @@
 
 <script>
 
-	{# const togglePassword = document.querySelector('#togglePassword');
-const reg_confirm_pass = document.querySelector('#reg_confirm_pass');
 
-togglePassword.addEventListener('click', function (e) { // toggle the type attribute
-const type = reg_confirm_pass.getAttribute('type') === 'password' ? 'text' : 'password';
-reg_confirm_pass.setAttribute('type', type);
-// toggle the eye slash icon
-this.classList.toggle('fa-eye-slash');
-}); #}
+ function eye(id) {
+var pas = document.getElementById("togglePassword");
+var sap = document.getElementById("togglePassword_second");
 
-
-
-function eye(id) {
 
 var x=document.getElementById(id).getAttribute("type");
 
 let typeValue=(x=="password") ? "text" : "password";
 
 document.getElementById(id).setAttribute("type", typeValue);
+pas.classList.toggle('fa-eye-slash');
+sap.classList.toggle('fa-eye-slash');
+
 }
+
 
 
 </script>
