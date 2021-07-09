@@ -428,14 +428,8 @@ h5.font-medium {font-weight:600; color: #5b1a87}
 .player {max-width:100% !important;}
 
 .bs_grid {background: #eee;
-   &.auth-pic {
-     .ath-pic img {
-       height: 180px;
-       width: 180px;
-       object-position: 50% 0%;
-     }
-   }
-   
+
+
     padding: 15px;
     img {
         border:3px solid $titleYellow;
@@ -490,4 +484,12 @@ h5.font-medium {font-weight:600; color: #5b1a87}
     @media screen and (max-width:600px) {
         display:none;
     }
+    }
+
+    .auth-pic {
+      .ath-pic img {
+        height: 180px;
+        width: 180px;
+        object-position: 50% 0%;
+      }
     }
