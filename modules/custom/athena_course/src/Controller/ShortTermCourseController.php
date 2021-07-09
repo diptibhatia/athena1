@@ -686,6 +686,7 @@ class ShortTermCourseController {
         }
 
         return $response;
+    }
     /**
      * List courses as per pagination.
      * @return [html]
