@@ -51,16 +51,17 @@
 <div{{ attributes.addClass(classes) }}>
 {% block content %}
 
-	<div class="bs_grid auth-pic">
+	<div class="bs_grid ">
 		<div class="row" data-row-lg="none" data-row-md="none" data-row-none="4_8" data-row-sm="none" data-row-xl="none">
 
-			<div class="col-md-4 text-center">
+<div class="col-md-4 text-center auth-pic">
+
 
 			{% if content.field_linked_in_link is not null and content.field_linked_in_link is not empty %}
 			{{content.field_linked_in_link}}
 			{% endif %}
 
-			<p height="701" width="526" class="ath-pic">{{content.field_author_image}}</a></p>
+			<p height="701" width="526"><a class="ath-pic">{{content.field_author_image}}</a></p>
 			</div>
 
 			<div class="col-md-8 pt-2">
