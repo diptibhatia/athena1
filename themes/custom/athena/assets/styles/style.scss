@@ -428,12 +428,11 @@ h5.font-medium {font-weight:600; color: #5b1a87}
 .player {max-width:100% !important;}
 
 .bs_grid {background: #eee;
-
-
     padding: 15px;
     img {
         border:3px solid $titleYellow;
         border-radius: 50%;
+        min-height: 180px;
         max-height: 180px;
         min-width: 180px;
         overflow: hidden;
