@@ -16,7 +16,9 @@
     </div>
     <h1>{{ course_info.course_name }}</h1>
     <p class="desc">{{ course_info.course_overview|striptags }}</p>
-    <p>{{ course_info.university_name|striptags }}</p>
+    <p>{{ course_info.university_name|striptags }}
+    
+    </p>
   </div>
   <div class="bg">
     <img src="/themes/custom/athena/images/smo/shortcourse-assets/banner-img.png" alt="background-image">
@@ -112,7 +114,7 @@
                 <div class="form-group col-md-12">
                   <span for="course">Course</span>
                   <select name="course" id="course" class="form-control reg-form-control" required>
-                    <option value="{{node.field_cid.value}}" selected="selected">{{node.field_cid.value}}</option>
+                    <option value="{{course_info.cid}}" selected="selected">{{course_info.cid}}</option>
                   </select>
                 </div>
               </div>
@@ -155,46 +157,7 @@
             {% endif %}
 
           </form>
-              {# <div class="login-item names">
-                <div class="name-item">
-                  <p>First Name</p>
-                  <input type="text" placeholder="Enter First Name">
-                </div>
-                <div class="name-item">
-                  <p>Last Name</p>
-                  <input type="text" placeholder="Enter Last Name">
-                </div>
-              </div>
-              <div class="login-item">
-                <p>Email</p>
-                <input type="email" placeholder="Enter Email Address">
-              </div>
-              <!-- <div class="login-item">
-                            <p>Country</p>
-                            <input type="text" placeholder="Country" />
-                        </div> -->
-              <div class="login-item phone-number">
-                                    <input type="tel" id="phone" name="phone" placeholder="Enter Mobile number">
-                                    <span id="valid-msg" class="hide">✓ Valid</span>
-                                    <span id="error-msg" class="hide"></span>
-                                </div>
-              <div class="login-item qualification">
-                <p>Highest Qualification</p>
-                <select>
-                  <option>Select your highest qualification</option>
-                  <option>High School</option>
-                  <option>Graduate</option>
-                  <option>Post Graduate</option>
-                </select>
-              </div>
-              <div class="button">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global
-                  Education processing my personal information in accordance with the Athena Global
-                  Education Privacy Statement &amp; I agree to receive personalised information and
-                  updates about Athena Global Education courses by phone and email.</label>
-                <button>Submit</button>
-              </div> #}
+              
             </div>
           </div>
         </div>
