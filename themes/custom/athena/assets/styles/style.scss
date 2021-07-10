@@ -133,7 +133,7 @@ div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up.rate-voted:be
 }
 .by-viewer a[rel="bookmark"] {display:none;}
 .by-viewer h5.font-medium small.commentemail {font-size: 60%;}
-.by-viewer h5.font-medium small.commentdate {font-size: 60%; text-transform: uppercase; color:#303030;}
+.by-viewer h5.font-medium small.commentdate {font-size: 60%; text-transform: uppercase; color:#919191;}
 span.comment-show, .by-viewer .btn-link, .rating-table {color: $titlePink;}
 div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:hover, div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:active, div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:focus {
     color: $titlePink;
@@ -243,6 +243,7 @@ h5.font-medium {font-weight:600; color: #5b1a87}
     .nav-link.active, .show>.nav-link {
         color: #fff;
         background-color: $titlePink;
+        border-color: $titlePink;
     }
     @media screen and (max-width:540px) {
         .nav-link {
@@ -255,16 +256,21 @@ h5.font-medium {font-weight:600; color: #5b1a87}
         border-radius: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+        border-bottom: solid 1.2px rgba(255, 61, 145, 0) !important;
     }
+  
     .intl-tel-input.allow-dropdown {
         border-radius: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+        border-bottom: solid 1.2px rgba(255, 61, 145, 0) !important;
         background: #fff;
         height: calc(1.5em + 1.25rem + 2px);
     }
+    input:focus, select:focus, .intl-tel-input.allow-dropdown:focus {
+        border-bottom: solid 1.2px rgb(255, 61, 145) !important;
+    }
+    
 }
 .intl-tel-input allow-dropdown
 /* register section Ends */
@@ -428,12 +434,11 @@ h5.font-medium {font-weight:600; color: #5b1a87}
 .player {max-width:100% !important;}
 
 .bs_grid {background: #eee;
-
-
     padding: 15px;
     img {
         border:3px solid $titleYellow;
         border-radius: 50%;
+        min-height: 180px;
         max-height: 180px;
         min-width: 180px;
         overflow: hidden;

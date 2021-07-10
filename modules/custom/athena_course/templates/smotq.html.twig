@@ -12,7 +12,13 @@
 <input type="hidden" id="email" value="{{email}}" >
 <input type="hidden" id="ccode" value="{{ccode}}" >
 <input type="hidden" id="phone1" value="{{phone}}" >
-
+{% set type = 'cert' %}
+{% if node.field_course_category.value == 'Academic' %}
+{% set type = 'acad' %}
+{% elseif node.field_course_category.value == 'Micro Credits' %}
+{% set type = 'mcred' %}
+{% endif %}
+<input type="hidden" id="type" value="{{type}}" >
                            
 <div class="row" style="margin-bottom:31px;">
 <div class="col">
@@ -37,9 +43,9 @@
 <div class="row">
 <div class="col registeredDescription">
  {% if source is not empty %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&phone={{phone}}" >
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&phone={{phone}}&type={{type}}" >
   {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&phone={{phone}}" > 
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&phone={{phone}}&type={{type}}" > 
  {% endif %}
 
 
