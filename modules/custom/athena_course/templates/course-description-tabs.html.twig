@@ -1380,6 +1380,7 @@
 });
 
         if(msg == ''){
+        $("#smo_form_submit").attr("disabled", true).html('Please wait<span class="dot dot1">.</span><span class="dot dot2">.</span><span class="dot dot3">.</span>');
          var sendInfo = {
 FirstName:String(jQuery("#speak_first_name").val()),
 LastName:String(jQuery("#speak_last_name").val()),
