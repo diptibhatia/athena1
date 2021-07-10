@@ -956,9 +956,9 @@
 			  transform:translateX(-50%);
 			  left:50%;
 			  z-index:-1;
-			  margin-top:0;
+			  margin-top:-16rem;
 			  @media screen and (min-width:1441px) and (max-width:1920px){
-				  margin-top:-16rem;
+				  margin-top:0 !important;
 			  }
 			  @media screen and (min-width:1921px){
 				  margin-top:-31rem;
@@ -1496,6 +1496,7 @@
   }
   .reason-section {
 	  .testimonials-background-image{
+		  
 		  width: 100%;
 		  position: absolute;
 		  z-index:-1;
@@ -1503,9 +1504,14 @@
 		  transform:translateX(-50%);
 		  margin-top:0;
 		  @media screen and (min-width:1441px) and (max-width:1920px){
-			  margin-top:-16rem;
+				
+				
+		
+						 
+			  margin-top:0 !important; //Made changes here for 7days trial BG
 		  }
-		  
+
+
 		  @media screen and (min-width:1921px){
 			  margin-top:-33rem;
 		  }
@@ -1517,6 +1523,7 @@
 			  left:50%;
 			  @media (min-width: 1440px) and (max-width: 2559px){
 				  top:0;
+				
 			  }
 			  @include atSize424{
 				  top:-88px;
