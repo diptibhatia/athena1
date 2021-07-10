@@ -243,6 +243,7 @@ h5.font-medium {font-weight:600; color: #5b1a87}
     .nav-link.active, .show>.nav-link {
         color: #fff;
         background-color: $titlePink;
+        border-color: $titlePink;
     }
     @media screen and (max-width:540px) {
         .nav-link {
@@ -255,16 +256,21 @@ h5.font-medium {font-weight:600; color: #5b1a87}
         border-radius: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+        border-bottom: solid 1.2px rgba(255, 61, 145, 0) !important;
     }
+  
     .intl-tel-input.allow-dropdown {
         border-radius: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        border-bottom: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+        border-bottom: solid 1.2px rgba(255, 61, 145, 0) !important;
         background: #fff;
         height: calc(1.5em + 1.25rem + 2px);
     }
+    input:focus, select:focus, .intl-tel-input.allow-dropdown:focus {
+        border-bottom: solid 1.2px rgb(255, 61, 145) !important;
+    }
+    
 }
 .intl-tel-input allow-dropdown
 /* register section Ends */
