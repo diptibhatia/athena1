@@ -49,6 +49,8 @@
 @import "modules/certificationLevels.scss";
 @import "modules/shortcoursesSmo.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 a:focus, button:focus, input, input#reg_mobile_num:focus{outline: none;}
 #courses-block .owl-nav {
     top: -35px;
@@ -88,6 +90,7 @@ img {
  }
 
 /* Comment section */
+#node-insight-article-field-comm {font-family: 'Poppins', sans-serif;}
 #node-insight-article-field-comm > h2 {
         font-family: Lato;
         font-size: 30px;
@@ -107,6 +110,9 @@ img {
 
 .by-viewer {padding-bottom:10px; margin-bottom:10px;
 .comment-show, .comment-reply {margin: 0 15px; cursor: pointer;}
+.indented {
+    span.comment-show, span.comment-reply, span.btn-link {display:none;}
+}
 .btn.btn-link {padding: 0 0.75rem; margin-top: -5px;}
 }
 .indented {position:relative; left: 30px; margin-top:-10px;}
@@ -272,7 +278,7 @@ h5.font-medium {font-weight:600; color: #5b1a87}
     }
     
 }
-.intl-tel-input allow-dropdown
+.intl-tel-input.allow-dropdown
 /* register section Ends */
 .get-started button {
     background: transparent;
