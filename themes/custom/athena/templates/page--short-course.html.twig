@@ -1,33 +1,21 @@
 {{ attach_library('athena_course/athena_course') }}
     <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css' rel='stylesheet' type='text/css'>
-
-<header class="site-header container-fluid">
-  <div class="wrapper">
-    {{ page.header }}
-  </div>
-</header>
-<div class="top-gap"></div>
-<!--- BANNER START -->
-<div class="top-banner">
-  <div class="forecolor"></div>
-  <div class="wrapper">
-    <div class="logos">
-
-    </div>
-    <h1>{{ course_info.course_name }}</h1>
+ <h1>{{ course_info.course_name }}</h1>
     <p class="desc">{{ course_info.course_overview|striptags }}</p>
     <p>{{ course_info.university_name|striptags }}
-    
-    </p>
-  </div>
- 
-  <div class="bg">
-  <div class="bg-overlay"></div>
-            <img src="/themes/custom/athena/images/smo/shortcourse-sm-banner.png" class="col-lg-12 col-md-12 d-none d-md-block d-lg-block p-0" alt="Banner image">
-            <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
-      
-  </div>
-</div>
+
+      <div class="main-wrapper container-fluid shortCorsesSmo p-0 explore-courses-page">
+
+        <div class="banner container-fluid banner-image p-0 bg-white">
+            <div class="banner-text">                        
+                <h1>Marketing</h1>
+                <p>With Globalisation business are categing to global customers, creating a demand for professionals with international approach to marketing Gain competitive advantage in your career as a Marketing Professional Become</p>
+            </div>
+            <div class="bg-overlay"></div>
+                <img src="/themes/custom/athena/images/smo/shortcourse-sm-banner.png" class="col-lg-12 col-md-12 d-none d-md-block d-lg-block p-0" alt="Banner image">
+                <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
+            </div>
+
 <!--- BANNER END -->
 <!--- WHY SECTION START -->
 <div class="why-section">
@@ -213,7 +201,7 @@
 <div class="what-you-get">
   <div class="wrapper">
     <h2>Other Courses You might Interested</h2>
-    <div class="container">
+     
       <!--courses List: START-->
       <div class="row">
         <div class="col-12 p-0">
@@ -288,11 +276,11 @@
 
       </div>
       <!--courses List: END-->
-    </div>
+     
   </div>
 </div>
 <!-- OTHER COURSES END -->
-
+</div>
 
 {% if page.featured_bottom %}
 <div class="featured-bottom">
