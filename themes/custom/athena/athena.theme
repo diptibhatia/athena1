@@ -825,3 +825,13 @@ function athena_preprocess_html(&$variables)
       }
     }
 }
+
+/**
+ * Implements hook_js_alter().
+ */
+function athena_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  if($current_path == "/registration") {
+    unset($javascript['themes/custom/athena/prodbundled.js']);
+  }
+}

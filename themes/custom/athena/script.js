@@ -46,11 +46,11 @@ jQuery(document).ready(function() {
       });
       //Switch tab in reg page based on course
       let type = getURLParameterByName("type");
-      // if(type == "cert") {
-      //   jQuery('ul.nav a[href="' + '#uc' + '"]').tab('show');
-      // } else if(type == "acad") {
-      //   jQuery('ul.nav a[href="' + '#ac' + '"]').tab('show');
-      // }
+      if(type == "cert") {
+        jQuery('ul.nav a[href="' + '#uc' + '"]').tab('show');
+      } else if(type == "acad") {
+        jQuery('ul.nav a[href="' + '#ac' + '"]').tab('show');
+      }
     // Typing effect in home page - starts here.
     // https://css-tricks.com/snippets/css/typewriter-effect/
     var TxtType = function(el, toRotate, period) {
