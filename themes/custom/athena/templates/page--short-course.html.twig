@@ -235,10 +235,10 @@
                     <div class="course-item">
                       <div class="row heading m-0">
                         <div class="col-9">
-                          <img src="{{course.white_logo}}" alt="{{ course.university_name }}">
+                          <img src="{{course.logo ? course.logo : '/themes/custom/athena/images/no-university.png' }}" alt="{{ course.university_name }}" title="{{ course.university_name }}">
                         </div>
                         <div class="col-3">
-                          <span class="free-text">{{course.field_course_amount}}</span>
+                          <span class="free-text">{{course.field_course_amount ? course.field_course_amount : 'Free'}}</span>
                         </div>
                       </div>
                       <div class="image">
