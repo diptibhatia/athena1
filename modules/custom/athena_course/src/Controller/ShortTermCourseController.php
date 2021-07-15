@@ -711,6 +711,21 @@ class ShortTermCourseController {
                     $current_page = $all_data->data->current_page;
                     foreach ($related_courses as $course) {
                         $url = $this->_lms_url . '/student-dashboard/course/' . $course->cid .'/'.$course->slug;
+                        $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                        $univ_name = '';
+                        foreach ($course->partner_body as $key1 => $value1) {
+                            if( is_object( $value1 )) {
+                                foreach($value1 as $key2 => $value2) {
+                                if ( $key2 == "logo" ) {
+                                        $white_logo = $value2;
+                                }
+                                if ( $key2 == "university_name" ) {
+                                        $univ_name = $value2;
+                                }
+                                }
+                            }
+                        }
+                        $course_amount = ($course->field_course_amount != "") ?  $course->field_course_amount : 'Free';
                         $html .= '<div class="item content" style="display:block;">
                         <div class="item-inner">
                         <div class="course-item-hover" style="padding:22px 15px 18px;">
@@ -736,10 +751,10 @@ class ShortTermCourseController {
                         <div class="course-item">
                             <div class="row heading m-0">
                                 <div class="col-9">
-                                    <img src="' . $course->white_logo . '" alt="' . $course->university_name . '">
+                                    <img src="' . $white_logo . '" alt="' . $course->university_name . '">
                                 </div>
                                 <div class="col-3">
-                                    <span class="free-text">' . $course->field_course_amount . '</span>
+                                    <span class="free-text">' . $course_amount . '</span>
                                 </div>
                             </div>
                             <div class="image">
@@ -752,7 +767,7 @@ class ShortTermCourseController {
                                 <div class="course-info">
                                     ' . put_dots_in_string($course->course_introduction, 150) . '
                                 </div>
-                                <div class="col-12 button-area"><a href="'.$url.'"><button>Start Now</button></a></div>
+                                <div class="col-12 button-area"><a target="_blank" href="'.$url.'"><button>Start Now</button></a></div>
                             </div>
                         </div>
                     </div>
