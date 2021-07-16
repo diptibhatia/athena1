@@ -242,9 +242,9 @@
 .why-section {
     color: $primaryColor;
 
-    @include atSize1250 {
-        height: 890px;
-    }
+    // @include atSize1250 {
+    //     height: 890px;
+    // }
 
     .usp {
         display: flex;

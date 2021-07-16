@@ -1,4 +1,4 @@
-{#
+{#{#
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -47,32 +47,41 @@
   ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-		
-	<div class="bs_grid">
-	<div class="row" data-row-lg="none" data-row-md="none" data-row-none="4_8" data-row-sm="none" data-row-xl="none">
 
-		<div class="col-md-4 text-center">
+<div{{ attributes.addClass(classes) }}>
+{% block content %}
 
-		{% if content.field_linked_in_link is not null and content.field_linked_in_link is not empty %}
-		{{content.field_linked_in_link}}
-		{% endif %}
+	<div class="bs_grid ">
+		<div class="row" data-row-lg="none" data-row-md="none" data-row-none="4_8" data-row-sm="none" data-row-xl="none">
 
-		<p height="701" width="526">{{content.field_author_image}}</a></p>
+<div class="col-lg-5 text-center auth-pic">
+
+
+			{% if content.field_linked_in_link is not null and content.field_linked_in_link is not empty %}
+			{{content.field_linked_in_link}}
+			{% endif %}
+
+			<p><a class="ath-pic">{{content.field_author_image}}</a></p>
+			</div>
+
+			<div class="col-lg-7 pt-2">
+			<h5>{{content.field_author_name}}</h5>
+			{{content.field_author_designation}}<br>
+			{{content.field_author_organization}}
+			</div>
+
 		</div>
 
-		<div class="col-md-8 pt-2">
-		<h5>{{content.field_author_name}}</h5>
-		{{content.field_author_designation}}<br>
-		{{content.field_author_organization}}		
-		{{content.field_author_description}}
-		</div>
 
-	</div>
+
+			{{content.field_author_description}}
+
+
+
 	</div>
 
 	{% endblock %}
   </div>
 
 {% endblock paragraph %}
+

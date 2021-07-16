@@ -407,7 +407,7 @@ jQuery(document).ready(function () {
       msg += '\n\u2022 please confirm pass';
     }
 
-    if (jQuery(".pc-form #reg_pass").val() !== jQuery(".pc-form #reg_confirm_pass").val()) {
+    if (jQuery(".pc-form #reg_pass").val() !== jQuery(".pc-form #reg_confirm_pass_second").val()) {
       msg += '\n\u2022 password and confirm password do not match';
     }
 

@@ -226,3 +226,13 @@ athena_course.rsu-ucam:
     _permission: 'access content'
   options:
     no_cache: TRUE
+
+athena_course.short-term-courses:
+  path: '/shortterm-courses/list'
+  defaults:
+    _controller: '\Drupal\athena_course\Controller\ShortTermCourseController::shorttermCourseList'
+    _title: 'Short Term Course List'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
