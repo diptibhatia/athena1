@@ -6,22 +6,22 @@
   {% if multiple %}
     <div{{ attributes }}>
       {% for item in items %}
-        <span{{ item.attributes }}>{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
+        <span{{ item.attributes }} class="meta">{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <span{{ attributes }} >{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
+      <span{{ attributes }} class="meta" >{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
     {% endfor %}
   {% endif %}
 {% else %}
   <div{{ attributes }} >
-    <span{{ title_attributes.addClass(title_classes) }} >{{ label }}&nbsp;&nbsp;|&nbsp;&nbsp;
+    <span{{ title_attributes.addClass(title_classes) }} class="meta" >{{ label }}&nbsp;&nbsp;|&nbsp;&nbsp;
     {% if multiple %}
       <div>
     {% endif %}
     {% for item in items %}
-      <span{{ item.attributes }} >{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
+      <span{{ item.attributes }} class="meta" >{{ item.content }}&nbsp;&nbsp;|&nbsp;&nbsp;
     {% endfor %}
     {% if multiple %}
       </div>
