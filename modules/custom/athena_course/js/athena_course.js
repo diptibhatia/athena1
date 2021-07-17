@@ -110,7 +110,7 @@
           success: function(response) {
             // console.log(response);
             if(response == "Email Exist") {
-              var r = confirm("User already register, please wait while we redirect you to login page");
+              var r = confirm("User already registered, please wait while we redirect you to login page");
 
               if (r == true) {
                 redirCandidate(cData, utmSource);

@@ -208,7 +208,13 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
         success: function(response) {
           // console.log(response);
           if(response == "Email Exist") {
-            var r = confirm("User already register, please wait while we redirect you to payment page");
+            var r = null;
+            if(cData.pay == 1) {
+              var r = confirm("User already registered, please wait while we redirect you to payment page");
+            }
+            else {
+              var r = confirm("User already registered, you will be redirected to login page now.");
+            }
 
             if (r == true) {
               redirCandidate(cData, utmSource);
