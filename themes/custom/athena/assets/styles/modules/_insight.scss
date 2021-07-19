@@ -247,6 +247,7 @@
 		position: absolute;
 		padding-left: 0;
 		top: 220px;
+		right:0;
 		}
 	}
 	.insight-card-footer {
@@ -272,6 +273,11 @@
 				font-size:13px;
 				text-decoration:none;
 			}
+		}
+		.meta{
+			color:#8d8d8d;
+			font-size:13px;
+			text-decoration:none;
 		}
 		.item {
 			.row {
@@ -650,3 +656,11 @@
 
 #block-ourpopularcoursesblock {background-color: #ff00680d; padding: 10px;}
 #block-ourpopularcoursesblock .row {background-color: #fff; width:auto;}
+
+.paragraph--type--question-answer{
+	margin:0 -15px;
+	blockquote {
+		padding: 1px 20px;
+		margin:0 20px 20px;
+	}
+}
