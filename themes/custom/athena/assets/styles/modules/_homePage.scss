@@ -1504,17 +1504,18 @@
 		  transform:translateX(-50%);
 		  margin-top:0;
 		  @media screen and (min-width:1441px) and (max-width:1920px){
-
-
-
-
-			  margin-top:0 !important; //Made changes here for 7days trial BG
+			  margin-top:0;
 		  }
 
 
 		  @media screen and (min-width:1921px){
 			  margin-top:-33rem;
 		  }
+		  @media only screen and (min-device-width: 1025px) and (max-device-width: 1165px) {
+			margin-top:8rem;
+		 }
+	 
+	 
 		  img{
 			  width: 100%;
 			  position: absolute;
