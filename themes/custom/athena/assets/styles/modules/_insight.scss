@@ -30,7 +30,7 @@
     	padding-right: 20px;
 	}
 
-	.progress-bar {		
+	.progress-bar {
 		width: 100%;
 		background-color: transparent;
 		position: fixed;
@@ -42,8 +42,8 @@
 			padding: 2px;
 			width: 30%;
 			display: block;
-		}	
-		
+		}
+
 	}
 
 	.corporate-title {
@@ -72,10 +72,10 @@
 	}
 
 	.share-icon {
-		position: relative;		
+		position: relative;
 		//width: 20px;
 		//padding-left: 30px;
-		
+
 		li {
 			margin-top: 10px;
 
@@ -85,8 +85,8 @@
 
 				@include atSize700 {
 					width: 40px;
-					height: 40px;	
-				}					
+					height: 40px;
+				}
 			}
 		}
 	}
@@ -104,7 +104,7 @@
 	}
 
 	.insight-cards {
-		
+
 		@include atSize700 {
 			max-width: 252px;
 			margin:0.5rem auto !important;
@@ -119,7 +119,7 @@
 				max-width: 240px;
 				height:auto;
 			}
-			
+
 		}
 		.insight-card-footer{
 			.readMin{
@@ -132,13 +132,13 @@
 
 	.banner {
 
-		&-image {			
+		&-image {
 			position: relative;
 
-			@include atSize700 { 
+			@include atSize700 {
 				bottom: 20px;
 			}
-			@include atSize1350 { 
+			@include atSize1350 {
 				bottom: 20px;
 			}
 
@@ -146,14 +146,14 @@
 				bottom: 20%;
 				width: 90%;
 				left: 0%;
-				right:0%;				
+				right:0%;
 
-				@include atSize700 { 
+				@include atSize700 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
 				}
-				@include atSize1350 { 
+				@include atSize1350 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
@@ -170,13 +170,13 @@
         	margin: 0;
 
 	        @include atSize700 {
-	            font-size: 4rem;        
-	            line-height: 1.8;	  
+	            font-size: 4rem;
+	            line-height: 1.8;
 	            letter-spacing: normal;
-	                 
+
 	        }
 
-	        @include atSize1350 {	            
+	        @include atSize1350 {
 	            font-size: 4rem;
 	            line-height: 1.8;
 
@@ -188,13 +188,13 @@
         	line-height: 1.8;
 
 			@include atSize700 {
-	           font-size: 1rem;        
+	           font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
 
 	        @include atSize1350 {
-	            font-size: 1rem;	        
+	            font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
@@ -207,7 +207,7 @@
 				span {
 					color: $primaryColor;
 				}
-			}			
+			}
 		}
 	}
 
@@ -233,16 +233,16 @@
 		line-height: 1.5;
 		margin: 0;
 		font-weight: 800;
-		text-overflow: ellipsis; 
+		text-overflow: ellipsis;
 		max-height: 52px;
 		overflow: hidden;
 		//white-space: nowrap;
-		/* The number of lines to be displayed */ 
-		-webkit-line-clamp: 2;  
+		/* The number of lines to be displayed */
+		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
-		display: -webkit-box; 
+		display: -webkit-box;
 	}
-	.single-discussion{ 
+	.single-discussion{
 		.share-icon {
 		position: absolute;
 		padding-left: 0;
@@ -261,9 +261,9 @@
 
 	.insight-card-body {
 		padding: 10px 0;
-	} 
+	}
 	.insight-banner {
-		
+
 		.col-md-4.mobilePadding {
 			border-left:1px solid #eee;
 		}
@@ -285,11 +285,11 @@
 			}
 			.profile {
 				@media screen and (max-width: 540px){
-					text-align:center; 
+					text-align:center;
 					padding-top:10px;
 				}
 				img {
-					width:100%; 
+					width:100%;
 					@media screen and (max-width: 480px){
 						width:180px;}
 					}
@@ -301,14 +301,14 @@
 					font-size: 13px;
 					text-transform: uppercase;
 					padding: 15px 0;
-					float: left; 
-					@media screen and (max-width: 540px){			 
-					float: none; 
+					float: left;
+					@media screen and (max-width: 540px){
+					float: none;
 					}
 			}
 			span:nth-child(3) {
 				float: right;
-				@media screen and (max-width: 540px){	
+				@media screen and (max-width: 540px){
 					float: none;
 				}
 			}
@@ -391,13 +391,13 @@
 					    position: relative;
 					    bottom: -7px;
 					}
-				}				
+				}
 
 				&:hover {
 					color: $purpleColor;
 				}
 			}
-		}		
+		}
 	}
 
 	.navigation {
@@ -423,7 +423,7 @@
 	    justify-content: center;
 	    margin: 0;
 
-	    h1 {    
+	    h1 {
 	      color: $primaryColor;
 	      font-size: 32px;
 	      text-shadow: 5px 5px 10px $lt-gray;
@@ -433,8 +433,8 @@
 
 	  .view {
 	    text-align: center;
-	    display: block;	   
-	    background-color: $background-pale;	    
+	    display: block;
+	    background-color: $background-pale;
 
 	    a {
 	      font-size: 18px;
@@ -468,7 +468,7 @@
 	    border: none;
 		 @media screen and (max-width:540px) {
 			flex: 1 0 0%;
-			 margin-bottom: 0; 
+			 margin-bottom: 0;
 		}
 	    .card-img {
 	      width: 100%;
@@ -537,7 +537,7 @@
 	      }
 	      p {
 	        font-size: 14px;
-	        
+
 	        i {
 	          margin-top: 20px;
 	          margin-right: 4px;
@@ -569,7 +569,7 @@
 				right: 0;
 				top: 0
 			}
-		}		
+		}
 	}
 
 	.viewAll {
@@ -580,12 +580,12 @@
 
 		&:after {
 			content: ' \2193';
-			color: $purpleColor;		    
-		    font-size: $line-height-md;		   
+			color: $purpleColor;
+		    font-size: $line-height-md;
 
-			@include atSize700 { 
+			@include atSize700 {
 				content: ' \2192';
-			}	    	
+			}
 		}
 	}
 	.unpad-extra{
@@ -600,7 +600,7 @@
     float: left;
     width: 36%;
     margin: 6px 20px 0 0;
-} 
+}
 .form-item-search-insights {
 	padding:10px;
 	height: 120px;
@@ -616,19 +616,19 @@
     padding: 10px;
     border-radius: 5px;
 /*    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 11%), 0 0 4px 0 rgb(0 0 0 / 14%); */
-    
+
     background-color: #ffffff;
-} 
+}
 }
 .search-insights {
 	height: 130px;
 	.form-item-search-insights {
 		label {margin-top:10px; margin-bottom: 15px; font-weight:600;}
 	}
-	.form-actions { 
+	.form-actions {
 	.form-submit{
-		
-		position: relative; 
+
+		position: relative;
 		top: -74px;
 		float: right;
 		right: 13px;
@@ -641,7 +641,7 @@
 }}}
 
 
- 
+
 .insights-logos {
     border-style: none;
     width: 74px;
@@ -663,4 +663,8 @@
 		padding: 1px 20px;
 		margin:0 20px 20px;
 	}
+}
+
+.in-para {
+  color: #616161;
 }
