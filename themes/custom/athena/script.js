@@ -108,7 +108,12 @@ jQuery(document).ready(function() {
     css.innerHTML = ".typewrite > .typewrite-wrap { border-right: 0.08em solid #ff026f}";
     document.body.appendChild(css);
     // Typing effect in home page - ends here.
-
+    // Search by enter key in shaort course page
+    jQuery("#search").keyup(function(event) {
+      if (event.keyCode === 13) {
+          $(".search-btn").click();
+      }
+    });
     jQuery("#phone").intlTelInput();
     jQuery(".ac-form #phone").intlTelInput();
     jQuery(".pc-form #phone").intlTelInput();
