@@ -2,22 +2,22 @@
   {% if multiple %}
     <div{{ attributes }}>
       {% for item in items %}
-        <span{{ item.attributes }}>{{ item.content }}</span>
+        <span{{ item.attributes }} class="meta">{{ item.content }}</span>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <span{{ attributes }} >{{ item.content }}</span>
+      <span{{ attributes }} class="meta" >{{ item.content }}</span>
     {% endfor %}
   {% endif %}
 {% else %}
   <div{{ attributes }} >
-    <span{{ title_attributes.addClass(title_classes) }} >{{ label }}</span>
+    <span{{ title_attributes.addClass(title_classes) }} class="meta" >{{ label }}</span>
     {% if multiple %}
       <div>
     {% endif %}
     {% for item in items %}
-      <span{{ item.attributes }} >{{ item.content }}</span>
+      <span{{ item.attributes }}  class="meta">{{ item.content }}</span>
     {% endfor %}
     {% if multiple %}
       </div>

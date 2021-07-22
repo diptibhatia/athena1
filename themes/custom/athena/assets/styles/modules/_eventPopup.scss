@@ -23,19 +23,22 @@ p {font-size: 12px;
   font-weight: 500; color:#303030;}}}
 
 .event_popup {
-  .row {width:auto; }
-  .card { 
-    width: 525px; 
+  .row {
+    width: auto;
+    justify-content: space-evenly;
+  }
+  .card {
+    width: 525px;
     margin: 0;
     box-shadow: 0 2px 18px -1px #d5dbfb;
     border: solid 2px rgba(255, 0, 110, 0.2);
     background: rgb(255,255,255);
     background: linear-gradient(-45deg, rgba(255,255,255,1) 50%, rgba(249, 249, 249,1) 50%);
 
-@media screen and (max-width: 1366px) { 
-   width: 425px; 
+@media screen and (max-width: 1366px) {
+   width: 425px;
 }
-@media screen and (max-width: 540px) { 
+@media screen and (max-width: 540px) {
     width: 90%;
     left: 20px;
 }
@@ -57,7 +60,7 @@ p {font-size: 12px;
 .register-popup {
   position: absolute; top:338px; right:0; z-index: 99; margin: 0;
 }
-h4.course-title {    
+h4.course-title {
   font-family: Lato;
   font-size: 14px;
   font-weight: bold;
@@ -88,10 +91,10 @@ h4.course-title {
       letter-spacing: normal;
       color: #303030;
     }
-.course-main .register a {  
+.course-main .register a {
     color: #fff;
     letter-spacing: .3px;
-    display: block; 
+    display: block;
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
@@ -207,3 +210,10 @@ h4.course-title {
 .f-14 {
     font-size: 14px;
 }
+
+// .event_popup{
+// .row{
+//   justify-content: space-evenly;
+
+// }
+// }

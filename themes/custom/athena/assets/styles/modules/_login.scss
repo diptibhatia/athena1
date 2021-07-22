@@ -92,6 +92,17 @@
 				-webkit-appearance: none;
 
 			}
+.pass-cls{
+
+	height: 50px !important;
+	border-radius: 6px !important;
+	box-shadow: 0 2px 18px -1px #d5dbfb !important;
+	border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+	background-color: #ffffff !important;
+}
+
+
+
       .passyeye {
          margin-left: -30px;
          cursor: pointer;
@@ -209,7 +220,7 @@ width: 81%;
 
 	}
 
-  
+
 .intl-tel-input.allow-dropdown input#reg_mobile_num{
 	width: 74%;
     float: right;

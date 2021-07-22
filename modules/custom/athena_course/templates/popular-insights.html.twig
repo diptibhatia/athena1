@@ -1,5 +1,5 @@
 <div class="about-popular-content OuterContainer">
-	<div class="container pt-4">
+	<div class="container pt-5">
 		<h2 class="text-center">Our Popular Insights</h2>
 		<div class="card-group">
       {% for popudata in popu %}
@@ -129,7 +129,7 @@
 				</div>
 			</div>
          {% else %}
-         <div class="card mr-2">
+         <div class="card">
          	<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
             <div class="insight-logo"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></div>
             <div class="readTime">{#{popudata.field_insight_article_min_read.value}#} {{popudata.read_time}}</div></a>

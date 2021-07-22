@@ -20,9 +20,14 @@
             <p class="course-banner__uni">{{awarding_body}}</p>
             <p class="course-banner__details">{{description}}
             </p>
-            
+            {% set type = 'cert' %}
+            {% if node.field_course_category.value == 'Academic' %}
+            {% set type = 'acad' %}
+            {% elseif node.field_course_category.value == 'Micro Credits' %}
+            {% set type = 'mcred' %}
+            {% endif %}
             <div class="course-banner__apply-btn">
-                <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Apply now</a>
+                <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&type={{type}}{{campaign_params}}">Apply now</a>
     {% if node.field_courses_credit_type.0.value %}
 
                 <p>{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
