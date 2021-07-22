@@ -114,9 +114,9 @@ img {
 .comment-show, .comment-reply {margin: 0 15px; cursor: pointer;}
 .btn.btn-link {padding: 0 0.75rem; margin-top: -5px;}
 }
-.indented {position:relative; left: 30px; margin-top:-10px;}
 .indented {
-    span.comment-show, span.comment-reply, span.btn-link {display:none;}
+    position:relative; left: 30px; margin-top:-10px;
+    span.comment-show, span.comment-reply, a.btn-link {display:none;}
 }
 .indented .by-viewer {border-bottom: none;}
 div.thumbsup-rating-wrapper > div > div.rating-option-result {padding:0;}

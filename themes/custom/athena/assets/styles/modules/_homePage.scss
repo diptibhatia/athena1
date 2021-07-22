@@ -571,6 +571,7 @@
 
   .why-athena {
 	  display: flex;
+    margin-bottom: 10%;
 	  .athena-background-image {
 		  width: 100%;
 		  position: absolute;
@@ -1504,17 +1505,18 @@
 		  transform:translateX(-50%);
 		  margin-top:0;
 		  @media screen and (min-width:1441px) and (max-width:1920px){
-
-
-
-
-			  margin-top:0 !important; //Made changes here for 7days trial BG
+			  margin-top:0;
 		  }
 
 
 		  @media screen and (min-width:1921px){
 			  margin-top:-33rem;
 		  }
+		  @media only screen and (min-device-width: 1025px) and (max-device-width: 1165px) {
+			margin-top:8rem;
+		 }
+
+
 		  img{
 			  width: 100%;
 			  position: absolute;
@@ -3557,9 +3559,11 @@
    .pink-strip {
      width: 79% !important;
    }
- 
+ }
 
- 
+ .p-10 {
+   padding-left: 10px
+ }
 
  .bg-bor {
    border: solid 2px #feb92a;
@@ -3574,6 +3578,77 @@
    }
  }
 
+ //eligibility content
 
- 
-  
+ .eli-blk {
+   position: relative;
+   bottom: -79px;
+   padding: 9px 8px 8px;
+   border: 7px solid #eff1fe;
+   border-radius: 6px;
+   background-color: #ffffff;
+   height: 150px;
+   display: flex;
+
+
+ }
+
+ .eli-blk .nor a {
+   padding: 14px 46px 14px 47px;
+   border-radius: 5.4px;
+   background-color: #ff008e;
+   font-family: Lato;
+   font-size: 14.4px;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #ffffff;
+   position: relative;
+   top: 52px;
+   margin-top: 50px !important;
+
+ }
+
+ .eli-blk img {
+   position: relative;
+   margin-top: -68px;
+   width: 100%;
+ }
+
+ .eli-blk h2 span {
+   font-weight: bold;
+   color: #ff008e;
+ }
+
+ .eli-blk h2 {
+   font-family: Lato;
+   font-size: 32px;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: 1.38;
+   letter-spacing: normal;
+   color: #303030;
+   padding: 15px;
+  font-weight: bold;
+ }
+
+ @media screen and (max-width: 770px) {
+
+  .nor {
+     display: flex;
+     justify-content: center;
+     margin-top: -19%;
+     top: 38px;
+   }
+   .eli-blk img {
+
+     margin-top: 0;
+   }
+   .eli-blk{
+     display: flex;
+     flex-direction: column;
+   }
+ }
+
