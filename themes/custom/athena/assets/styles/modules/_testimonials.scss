@@ -179,7 +179,7 @@ div#block-discussions .title span {
             padding: 0 4px 0 0;
           }
         }
-      
+
       }
       .single-post {
       display: flex;
@@ -639,13 +639,13 @@ div#block-discussions .title span {
               position: relative;
               bottom: -7px;
           }
-        }       
+        }
 
         &:hover {
           color: $purpleColor;
         }
       }
-    }   
+    }
   }
   .title {
     display: flex;
@@ -735,9 +735,9 @@ div#block-discussions .title span {
     }
     .meta {
       position: relative;
-      z-index: 0; 
+      z-index: 0;
     }
-    .photo { 
+    .photo {
       // @include atSize424{
       //   text-align: center;
       //}
@@ -765,7 +765,7 @@ div#block-discussions .title span {
           top: 50%;
           font-size:22px;
         }
-  
+
       }
       .photo a.linkedin {
         position: absolute;
@@ -831,7 +831,7 @@ div#block-discussions .title span {
                 right: 8px;
               }
 
-              
+
         }
         p{
           font-size:8px;
@@ -920,13 +920,13 @@ div#block-discussions .title span {
       position:absolute;
       right:10px;
       bottom:20px;
-    }      
+    }
 
     }
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type { 
+      &:first-of-type {
         &:before {
           content: "";
           position: absolute;
@@ -986,21 +986,21 @@ div#block-discussions .title span {
   }
 }
 
-.testimonial-inside { 
+.testimonial-inside {
   .course-login-wrapper {height: auto; margin: auto;}
-  .course-login-wrapper .login-details h3 span { 
+  .course-login-wrapper .login-details h3 span {
     top: 42px;
   }
   .photo {
     position: static !important;
   }
-  .photo a { 
-    top: 60% !important; 
+  .photo a {
+    top: 60% !important;
     bottom: auto !important;
 }
   .testimonial-info {
     padding-left: 10px;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
   }
 }
 
@@ -1027,13 +1027,13 @@ div#block-discussions .title span {
               position: relative;
               bottom: -7px;
           }
-        }       
+        }
 
         &:hover {
           color: $purpleColor;
         }
       }
-    }   
+    }
   }
   .title {
     display: flex;
@@ -1183,7 +1183,8 @@ div#block-discussions .title span {
     p {
       position: relative;
       margin: 1rem 0 0;
-      &:first-of-type { 
+      color: #616161;
+      &:first-of-type {
         &:before {
           content: "";
           position: absolute;
@@ -1298,7 +1299,7 @@ div#block-discussions .title span {
   min-width: 275px;
   margin: 2.25rem 0.75rem 0rem;
   background: white;
- 
+
   .card-img {
     width: 100%;
     height: var(--card-img-height);
