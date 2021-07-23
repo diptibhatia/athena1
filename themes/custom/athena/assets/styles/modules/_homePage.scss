@@ -3222,6 +3222,7 @@
 }
 
 //New Testimonial Properties
+.why-athena{
 .testimonials{
   .row{
   display: flex;
@@ -3230,6 +3231,7 @@
   margin-left: 0px;
       }
   }
+}
 .testi-head h2 {
   opacity: 0.1;
   font-size: 60px;
@@ -3277,6 +3279,7 @@
 .st-test-bg {
   padding: 14px 12px 11px 18px;
   border-radius: 6px;
+ // height: 380px;
   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
 }
@@ -3301,7 +3304,7 @@
   color: #ff008e;
 }
 .st-test-bg h4 {
-  margin: 7px 0 34px;
+  margin: 7px 20px 34px 0;
   opacity: 0.8;
   font-family: Lato;
   font-size: 16px;
@@ -3311,10 +3314,13 @@
   line-height: 1.63;
   letter-spacing: normal;
   color: #303030;
+  position: absolute;
 }
 .st-test-bg .lin {
   width: 50%;
   display: inline-block;
+  margin-top: 150px;
+  position: relative;
 }
 .st-test-bg .lin a {
   text-decoration: underline;
@@ -3325,6 +3331,7 @@
   width: 21px;
   height: 21px;
   margin-right: 5px;
+  margin-bottom: 17px;
 }
 
 .st-test-bg .con {
@@ -3517,6 +3524,7 @@
      color: #ffffff;
      text-align: left;
    }
+
    .bgg-co h4 {
      font-family: Lato;
      font-size: 1px;
@@ -3529,6 +3537,7 @@
 .bgg-co {
   padding: 18px 0 18px 19px;
   border-radius: 12px;
+  height: 320px;
   background-image: linear-gradient(to top, rgba(18, 28, 48, 1), rgba(18, 28, 48, .5));
 }
 .mt-40 {
