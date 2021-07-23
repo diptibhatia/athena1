@@ -6,7 +6,7 @@
                   <img src="/themes/custom/athena/images/testimonial-bg.png" />
    </div>
       <div class="my-container">
-         {# <div class="testimonials-item">
+          <div class="testimonials-item">
             <!-- <img src="/themes/custom/athena/images/testimonial-bg.png" alt=""/> -->
             <div class="item-one shawdow-effect">
                <!-- <h1>Testimonials</h1> --><img alt="testimonials" src="/themes/custom/athena/images/Testimonials-1.png" />
@@ -138,194 +138,69 @@
                {% endfor %}
                            <button  onclick="window.location='/insights/testimonials'; ">View All</button>
             </div>
-         </div> #}
+         </div> 
 
 
+{#
 <div class="row">
 	<div class="col-md-6">
-<div
-	class="item-one shawdow-effect"><!-- <h1>Testimonials</h1> -->
-	<img alt="testimonials" src="/themes/custom/athena/images/Testimonials-1.png"/>
-	<h2>Our Students Say<br/>
-		About Us
-	</h2>
-	<h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.</h3>
+		<div
+			class="item-one shawdow-effect"><!-- <h1>Testimonials</h1> -->
+			<img alt="testimonials" src="/themes/custom/athena/images/Testimonials-1.png"/>
+			<h2>Our Students Say<br/>
+				About Us
+			</h2>
+			<h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.</h3>
 
-</div>
+		</div>
 
 	</div>
 	<div class="col-md-6"></div>
 </div>
+
 <div class="row">
+	{% set count = 0 %}
+	{% for testidata in testi %}
 
-	<div class="col-md-4 mb-30">
+		<div class="col-md-4 mb-30">
 		<div class=" st-test-bg">
-			<img src="/themes/custom/athena/images/testimonials/test1.jpg" class="img-responsive">
-			<p>
-				<span>Audrey Robertson-Tarugarira
-				</span>
-				Managing Partner l
-				<br>
-				A Robertson Law Chambers
-			</p>
 
-			<h3>No better education system than Athena!</h3>
-			<h4>My DBA journey with Athena Global Education has so far been an incredible experience! The
-				                            administrative staff...
+			<img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+
+			<p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}				</span></p>
+
+			<h3>
+				{% set text = testidata.title.value|render|striptags %}
+                {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
+			</h3>
+			<h4>
+				{% set text = testidata.field_testimonial_text.value|render|striptags %}
+                {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
 			</h4>
 
-			<div class="lin"><img src="/themes/custom/athena/images/testimonials/lnkedin.png">
-				<a href="">
-					Detailed Review
-				</a>
+			<div class="lin">
+				
+				{% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+					
+                	<a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+
+                {% endif %}
+
+				<a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">Detailed Review</a>
 			</div>
 			<div class="con">
-				Zimbabwe
-				<img src="/themes/custom/athena/images/testimonials/zim.jpg"></div>
+				{% if testidata.field_testimonials_country_selec.value %}
+
+                    <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+                {% endif %}
+			</div>
 
 		</div>
 	</div>
-
-	<div class="col-md-4 mb-30">
-		<div class=" st-test-bg">
-			<img src="/themes/custom/athena/images/testimonials/test1.jpg" class="img-responsive">
-			<p>
-				<span>Audrey Robertson-Tarugarira
-				</span>
-				Managing Partner l
-				<br>
-				A Robertson Law Chambers
-			</p>
-
-			<h3>No better education system than Athena!</h3>
-			<h4>My DBA journey with Athena Global Education has so far been an incredible experience! The
-				                            administrative staff...
-			</h4>
-
-			<div class="lin"><img src="/themes/custom/athena/images/testimonials/lnkedin.png">
-				<a href="">
-					Detailed Review
-				</a>
-			</div>
-			<div class="con">
-				Zimbabwe
-				<img src="/themes/custom/athena/images/testimonials/zim.jpg"></div>
-
-		</div>
-	</div>
-
-	<div class="col-md-4 mb-30">
-		<div class=" st-test-bg">
-			<img src="/themes/custom/athena/images/testimonials/test1.jpg" class="img-responsive">
-			<p>
-				<span>Audrey Robertson-Tarugarira
-				</span>
-				Managing Partner l
-				<br>
-				A Robertson Law Chambers
-			</p>
-
-			<h3>No better education system than Athena!</h3>
-			<h4>My DBA journey with Athena Global Education has so far been an incredible experience! The
-				                            administrative staff...
-			</h4>
-
-			<div class="lin"><img src="/themes/custom/athena/images/testimonials/lnkedin.png">
-				<a href="">
-					Detailed Review
-				</a>
-			</div>
-			<div class="con">
-				Zimbabwe
-				<img src="/themes/custom/athena/images/testimonials/zim.jpg"></div>
-
-		</div>
-	</div>
-
-	<div class="col-md-4 mb-30">
-		<div class=" st-test-bg">
-			<img src="/themes/custom/athena/images/testimonials/test1.jpg" class="img-responsive">
-			<p>
-				<span>Audrey Robertson-Tarugarira
-				</span>
-				Managing Partner l
-				<br>
-				A Robertson Law Chambers
-			</p>
-
-			<h3>No better education system than Athena!</h3>
-			<h4>My DBA journey with Athena Global Education has so far been an incredible experience! The
-				                            administrative staff...
-			</h4>
-
-			<div class="lin"><img src="/themes/custom/athena/images/testimonials/lnkedin.png">
-				<a href="">
-					Detailed Review
-				</a>
-			</div>
-			<div class="con">
-				Zimbabwe
-				<img src="/themes/custom/athena/images/testimonials/zim.jpg"></div>
-
-		</div>
-	</div>
-
-	<div class="col-md-4 mb-30">
-		<div class=" st-test-bg">
-			<img src="/themes/custom/athena/images/testimonials/test1.jpg" class="img-responsive">
-			<p>
-				<span>Audrey Robertson-Tarugarira
-				</span>
-				Managing Partner l
-				<br>
-				A Robertson Law Chambers
-			</p>
-
-			<h3>No better education system than Athena!</h3>
-			<h4>My DBA journey with Athena Global Education has so far been an incredible experience! The
-				                            administrative staff...
-			</h4>
-
-			<div class="lin"><img src="/themes/custom/athena/images/testimonials/lnkedin.png">
-				<a href="">
-					Detailed Review
-				</a>
-			</div>
-			<div class="con">
-				Zimbabwe
-				<img src="/themes/custom/athena/images/testimonials/zim.jpg"></div>
-
-		</div>
-	</div>
-
-	<div class="col-md-4 mb-30">
-		<div class=" st-test-bg">
-			<img src="/themes/custom/athena/images/testimonials/test1.jpg" class="img-responsive">
-			<p>
-				<span>Audrey Robertson-Tarugarira
-				</span>
-				Managing Partner l
-				<br>
-				A Robertson Law Chambers
-			</p>
-
-			<h3>No better education system than Athena!</h3>
-			<h4>My DBA journey with Athena Global Education has so far been an incredible experience! The
-				                            administrative staff...
-			</h4>
-
-			<div class="lin"><img src="/themes/custom/athena/images/testimonials/lnkedin.png">
-				<a href="">
-					Detailed Review
-				</a>
-			</div>
-			<div class="con">
-				Zimbabwe
-				<img src="/themes/custom/athena/images/testimonials/zim.jpg"></div>
-
-		</div>
-	</div>
-
+{% set count = count + 1 %}	
+{% endfor %}
+</div>
+	
 
 	<div class="col-md-12 text-center m-40a">
 		<a href="#">
@@ -333,7 +208,7 @@
 		</a>
 	</div>
 
-</div>
+#}
 
 
 
