@@ -9,7 +9,7 @@
 		<h3>Some of our courses are in high demand. As acknowledged by our students, they have contributed to their professional achievements and enabled them to tackle challenging situations at the workplace.
 		</h3>
 
-		
+
 		<div class="courses custom-carousel">
 					<div class="owl-carousel owl-theme partner-logos">
 						{% for coursedata in course %}
@@ -85,14 +85,14 @@
 						{% endfor %}
 
 					</div>
-				</div> 
-				
+				</div>
 
-		{#		
+
+		{#
 		<div class="row">
 
 			{% for coursedata in course %}
-						
+
 			<div class="col-md-4 ">
 
 				<div class="bg-co bg-co-1 ">
@@ -119,8 +119,8 @@
 							{% set durlabel = "Flexible Duration" %}
 						{% else %}
 							{% set durlabel = coursedata.field_duration.value %}
-						{% endif %}						
-						
+						{% endif %}
+
 						<p class="p-10"><b>{{durlabel}} :</b>
 
 						{{coursedata.field_course_duration.value}}</p>
@@ -136,7 +136,7 @@
 		<div class="row" style="margin-top:30px;">
 
 		{% for coursedata1 in course1 %}
-						
+
 			<div class="col-md-4 ">
 
 				<div class="bg-co bg-co-1 ">
@@ -163,8 +163,8 @@
 							{% set durlabel = "Flexible Duration" %}
 						{% else %}
 							{% set durlabel = coursedata1.field_duration.value %}
-						{% endif %}						
-						
+						{% endif %}
+
 						<p class="p-10"><b>{{durlabel}} :</b>
 
 						{{coursedata1.field_course_duration.value}}</p>
