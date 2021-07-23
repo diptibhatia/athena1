@@ -272,7 +272,11 @@
 }
 
 .bg-skyblue {
-	background-color: $skyblue;
+	border-radius: 6px !important;
+    box-shadow: 0 5px 12px 3px rgba(0, 0, 0, 0.09)!important;
+    background-color: #d8e5ed;
+    padding: 20px 15px 0!important;
+	
 }
 
 .txt-blue {
