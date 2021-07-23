@@ -163,7 +163,8 @@
         position: relative;
         max-width: 571px;
         margin-bottom: 2.875rem;
-
+        z-index: 1;
+        
         &-input {
             border: none;
             display: block;
