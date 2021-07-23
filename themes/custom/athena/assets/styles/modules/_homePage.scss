@@ -3279,7 +3279,7 @@
 .st-test-bg {
   padding: 14px 12px 11px 18px;
   border-radius: 6px;
-  height: 380px;
+ // height: 380px;
   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
 }
@@ -3304,7 +3304,7 @@
   color: #ff008e;
 }
 .st-test-bg h4 {
-  margin: 7px 0 34px;
+  margin: 7px 20px 34px 0;
   opacity: 0.8;
   font-family: Lato;
   font-size: 16px;
@@ -3331,6 +3331,7 @@
   width: 21px;
   height: 21px;
   margin-right: 5px;
+  margin-bottom: 17px;
 }
 
 .st-test-bg .con {
@@ -3523,7 +3524,7 @@
      color: #ffffff;
      text-align: left;
    }
-   
+
    .bgg-co h4 {
      font-family: Lato;
      font-size: 1px;
