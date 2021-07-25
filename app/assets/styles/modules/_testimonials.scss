@@ -485,10 +485,27 @@ div#block-discussions .title span {
     .partners-new-logo {
       display: flex;
       .partner-logo-item {
-        margin: 0 5px 0 0;
+        margin: 0 5px 0 0; 
+          border-style: none;
+          width: 74px;
+          height: 74px;
+          border: 1px solid #ffad00;
+          border-radius: 50%;
+          padding: 15px 5px;
+          display: inline-block;
+          text-align: center;
+          position: relative;
         img {
-          width: 58px;
+/*          width: 58px;
           height: 58px;
+*/
+          width: 50px;
+          max-height: 30px;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+
         }
       }
     }
