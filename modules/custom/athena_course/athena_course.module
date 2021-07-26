@@ -299,6 +299,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'variables' => [
       'base_path' => NULL,
       'course' => NULL,
+      'course1' => NULL,
       ],
     ],
     'latest_insights_sidebar' => [
@@ -321,6 +322,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'variables' => [
       'base_path' => NULL,
       'testi' => NULL,
+      'testi1' => NULL,
       ],
     ],
     'coursepage_testimonials' => [

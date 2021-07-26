@@ -61,14 +61,15 @@ $query->condition('field_is_popular_course', '1', '=');
     $query->condition('type', $bundle);
     $academic = $query->execute();
     
-    $popular_courses = node_load_multiple($academic);
+    $popular_courses_arr = node_load_multiple($academic);
         
     }
     // $popular_courses =  array_slice($academicnodes, 0, 5);
-     
-     
+    $popular_courses =  array_slice($popular_courses_arr, 0, 3);      
+    $popular_courses1 =  array_slice($popular_courses_arr, 3, 3);     
+ 
     
-  //  print_r($academicnodes);exit;
+    //print_r($popular_courses);exit;
     
     // Base theme path.
 $theme = \Drupal::theme()->getActiveTheme();
@@ -77,9 +78,12 @@ $base_path = $base_url.'/'. $theme->getPath();
    $homepage_course_tabs =  [
   '#theme' => 'popular_course',
   '#course' => $popular_courses,
+  '#course1' => $popular_courses1,
   '#base_path' => $base_path,
 
-]; 
+];
+
+//print_r($homepage_course_tabs); exit; 
 
     return array($homepage_course_tabs);
   }
