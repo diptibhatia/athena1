@@ -737,6 +737,12 @@ function athena_preprocess_field(&$variables) {
     $stats = \Drupal::service('comment.statistics')->read(array_fill_keys([$nid], ''), 'node');
     if ($stats[0]->comment_count == "" ) $stats[0]->comment_count = 0;
     $variables['comment_count'] = $stats[0]->comment_count;
+    if (!empty(\Drupal::hasService('nodeviewcount.records_manager'))) {
+      $nodeviewcount = \Drupal::service('nodeviewcount.records_manager')->getNodeViewsCount($node,\Drupal\user\Entity\User::getAnonymousUser());
+      if ($nodeviewcount) {
+        $variables['node_stats'] = $nodeviewcount[0]->expression;
+      }
+    }
   }
 }
 
