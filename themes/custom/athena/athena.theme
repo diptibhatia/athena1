@@ -322,6 +322,21 @@ function athena_preprocess_page(&$variables) {
       }
 
       if ($node_type == 'affiliate_page') {
+        /*LOG IP GEO INFO*/
+        $ipdata = "https://api.ipdata.co?api-key=272b689fa6863f7205dff78e661f0fe6a29c07ddec10d9caba8b05d1";
+        if (!file_exists('zUiWgb3cpi.json')) {
+            touch('zUiWgb3cpi.json');
+            $response = \Drupal::httpClient()->get($ipdata, array('headers' => array('Accept' => 'application/json')));
+            $data = $response->getBody();
+            file_put_contents('zUiWgb3cpi.json',json_encode(json_decode($data)));
+        } else {
+          $response = \Drupal::httpClient()->get($ipdata, array('headers' => array('Accept' => 'application/json')));
+          $data = json_decode($response->getBody());
+          if( strpos(file_get_contents('zUiWgb3cpi.json'),$data->ip) == false) {
+            file_put_contents('zUiWgb3cpi.json', json_encode($data).PHP_EOL , FILE_APPEND | LOCK_EX);
+          }
+        }
+        /*LOG IP GEO INFO:END*/
         $current_page_node_id = $node->id();
         $bundle='course';
         $query = \Drupal::entityQuery('node');
