@@ -251,14 +251,14 @@
 	margin-top: 60px;
 	position: relative;
 	//z-index: 99;
-	@include atSize700 { 
+	/*@include atSize700 { 
 		background: url("images/popular-bg.png") -200px 0 ; 
 	}
 
 	@include atSizeXXLarge {
 		background: url('images/popular-bg.png') 0 0 ;
 		padding: 100px;
-	}
+	}*/
 	.card-group {
 		.card-title {color:$titlePink}
 			}

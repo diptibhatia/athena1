@@ -6,9 +6,11 @@
 			<img src="/themes/custom/athena/images/popular-courses.svg" alt="">
 		</div>
 		<h2>Our Popular Course</h2>
-		<h3>Some of our courses are in high demand. As acknowledged by our students, they have contributed to their professional achievements and enabled them to tackle challenging situations at the workplace.
+		<h3 style="padding: 0 20px; margin-bottom: 20px;">Some of our courses are in high demand. As acknowledged by our students, they have contributed to their professional achievements and enabled them to tackle challenging situations at the workplace.
 		</h3>
-		{# <div class="courses custom-carousel">
+
+		{#
+		<div class="courses custom-carousel">
 					<div class="owl-carousel owl-theme partner-logos">
 						{% for coursedata in course %}
 							<div class="item">
@@ -83,10 +85,13 @@
 						{% endfor %}
 
 					</div>
-				</div> #}
+				</div>
+		#}
 
 
 		<div class="row">
+
+			{% for coursedata in course %}
 
 			<div class="col-md-4 ">
 
@@ -94,148 +99,82 @@
 					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
 						<div class="text-right">
 
-							<span class="doller">$ 4400.00
+							<span class="doller">${{coursedata.field_course_total_fee.value}}
 							</span>
 						</div>
-						<h3 class="p-10 mt-40">
-							Master of Business
-												                            Administration
+						<h3 class="p-10 mt-40 head-h3">
+							{{coursedata.label}}
 						</h3>
-						<div style="background-color: #ff0571;">
-							<p class="pink-strip">Guglielmo Marconi University, Italy</p>
+						<div style="background-color: #ff0571;" class="pink-line">
+							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
+
 							<img src="/themes/custom/athena/images/gmu-new.png">
+
+
 						</div>
-						<h3 class="p-10">Learn More</h3>
+						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
 						<div class="bg-bor" style="margin-left:10px"></div>
-						<p class="p-10">Duration : Flexible ( 9 to 36 Months)</p>
+
+						{% if coursedata.field_duration.value is empty %}
+							{% set durlabel = "Flexible Duration" %}
+						{% else %}
+							{% set durlabel = coursedata.field_duration.value %}
+						{% endif %}
+
+						<p class="p-10"><b>{{durlabel}} :</b>
+
+						{{coursedata.field_course_duration.value}}</p>
 
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 ">
-				<div class="bg-co bg-co-2 ">
-					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
-						<div class="text-right">
 
-							<span class="doller">$ 4400.00
-							</span>
-						</div>
-						<h3 class="p-10 mt-40">
-							Master of Business
-												                            Administration
-						</h3>
-						<div style="background-color: #ff0571;">
-							<p class="pink-strip">Guglielmo Marconi University, Italy</p>
-							<img src="/themes/custom/athena/images/gmu-new.png">
-						</div>
-						<h3 class="p-10">Learn More</h3>
-						<div class="bg-bor" style="margin-left:10px"></div>
-						<p class="p-10">Duration : Flexible ( 9 to 36 Months)</p>
+			{% endfor %}
 
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 ">
-				<div class="bg-co bg-co-3 ">
-					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
-						<div class="text-right">
-
-							<span class="doller">$ 4400.00
-							</span>
-						</div>
-						<h3 class="p-10 mt-40">
-							Master of Business
-												                            Administration
-						</h3>
-						<div style="background-color: #ff0571;">
-							<p class="pink-strip">Guglielmo Marconi University, Italy</p>
-							<img src="/themes/custom/athena/images/gmu-new.png">
-						</div>
-						<h3 class="p-10">Learn More</h3>
-						<div class="bg-bor" style="margin-left:10px"></div>
-						<p class="p-10">Duration : Flexible ( 9 to 36 Months)</p>
-
-					</div>
-				</div>
-
-			</div>
 		</div>
 
 		<div class="row" style="margin-top:30px;">
 
+		{% for coursedata1 in course1 %}
+
 			<div class="col-md-4 ">
 
-				<div class="bg-co bg-co-4 ">
+				<div class="bg-co bg-co-1 ">
 					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
 						<div class="text-right">
 
-							<span class="doller">$ 4400.00
+							<span class="doller">${{coursedata1.field_course_total_fee.value}}
 							</span>
 						</div>
-						<h3 class="p-10 mt-40">
-							Master of Business
-												                            Administration
+						<h3 class="p-10 mt-40 head-h3">
+							{{coursedata1.label}}
 						</h3>
-						<div style="background-color: #ff0571;">
-							<p class="pink-strip">Guglielmo Marconi University, Italy</p>
+						<div style="background-color: #ff0571;" class="pink-line">
+							<p class="pink-strip">{{coursedata1.field_course_awarding_body.value|raw }}</p>
+
 							<img src="/themes/custom/athena/images/gmu-new.png">
+
+
 						</div>
-						<h3 class="p-10">Learn More</h3>
+						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata1.id}}">Learn More</a></h3>
 						<div class="bg-bor" style="margin-left:10px"></div>
-						<p class="p-10">Duration : Flexible ( 9 to 36 Months)</p>
+
+						{% if coursedata1.field_duration.value is empty %}
+							{% set durlabel = "Flexible Duration" %}
+						{% else %}
+							{% set durlabel = coursedata1.field_duration.value %}
+						{% endif %}
+
+						<p class="p-10"><b>{{durlabel}} :</b>
+
+						{{coursedata1.field_course_duration.value}}</p>
 
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 ">
-				<div class="bg-co bg-co-3 ">
-					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
-						<div class="text-right">
 
-							<span class="doller">$ 4400.00
-							</span>
-						</div>
-						<h3 class="p-10 mt-40">
-							Master of Business
-												                            Administration
-						</h3>
-						<div style="background-color: #ff0571;">
-							<p class="pink-strip">Guglielmo Marconi University, Italy</p>
-							<img src="/themes/custom/athena/images/gmu-new.png">
-						</div>
-						<h3 class="p-10">Learn More</h3>
-						<div class="bg-bor" style="margin-left:10px"></div>
-						<p class="p-10">Duration : Flexible ( 9 to 36 Months)</p>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 ">
-				<div class="bg-co bg-co-4 ">
-					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
-						<div class="text-right">
-
-							<span class="doller">$ 4400.00
-							</span>
-						</div>
-						<h3 class="p-10 mt-40">
-							Master of Business
-												                            Administration
-						</h3>
-						<div style="background-color: #ff0571;">
-							<p class="pink-strip">Guglielmo Marconi University, Italy</p>
-							<img src="/themes/custom/athena/images/gmu-new.png">
-						</div>
-						<h3 class="p-10">Learn More</h3>
-						<div class="bg-bor" style="margin-left:10px"></div>
-						<p class="p-10">Duration : Flexible ( 9 to 36 Months)</p>
-
-					</div>
-				</div>
-
-			</div>
+			{% endfor %}
 		</div>
-
 
 		<div class="show-more">
 			<a href="{{ url('<front>') }}/search-results/abc?search_key=showallpopular">
