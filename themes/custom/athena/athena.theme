@@ -441,6 +441,12 @@ function athena_preprocess_page(&$variables) {
     $line_app_id = CommonHelper::getConfigSettings('athena_library.common_settings', 'line_app_id');
     $variables['line_app_id'] = $line_app_id;
   }
+  
+  $faq_gloss = \Drupal::service('path.alias_manager')->getPathByAlias('/FAQ-Glossary');
+  if (strpos($current_path, $faq_gloss ) !== false) {
+      $variables['athena_exclude'] = TRUE;
+    }
+    
 
   if (strpos($current_path, '/university') !== false) {
     $variables['athena_exclude'] = TRUE;
