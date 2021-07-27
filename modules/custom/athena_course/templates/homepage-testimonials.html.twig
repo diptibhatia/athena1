@@ -170,6 +170,11 @@
 
 			<p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}				</span></p>
 
+         <p><span>
+         {{testidata.field_testimonial_course.entity.label}}
+         {{testidata.field_testimonial_batch.value|raw}}   
+         </span></p>
+
 			<h3>
 				{% set text = testidata.title.value|render|striptags %}
                 {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
@@ -192,12 +197,69 @@
 			<div class="con">
 				{% if testidata.field_testimonials_country_selec.value %}
 
-                    <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
-                {% endif %}
+               {% set list_value = testidata.field_testimonials_country_selec.value %}
+               {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
+                        
+              <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+             {% endif %}
 			</div>
 
 		</div>
 	</div>
+{% set count = count + 1 %}
+{% endfor %}
+</div>
+
+
+
+<div class="row">
+   {% set count = 3 %}
+   {% for testidata in testi1 %}
+
+      <div class="col-md-4 mb-30">
+      <div class=" st-test-bg">
+
+         <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+
+         <p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}
+         </span></p>
+
+         <p><span>
+         {{testidata.field_testimonial_course.entity.label}}
+         {{testidata.field_testimonial_batch.value|raw}}   
+         </span></p>
+
+         <h3>
+            {% set text = testidata.title.value|render|striptags %}
+                {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
+         </h3>
+         <h4>
+            {% set text = testidata.field_testimonial_text.value|render|striptags %}
+                {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
+         </h4>
+
+         <div class="lin">
+
+            {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
+                  <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+
+                {% endif %}
+
+            <a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">Detailed Review</a>
+         </div>
+         <div class="con">
+            {% if testidata.field_testimonials_country_selec.value %}
+
+               {% set list_value = testidata.field_testimonials_country_selec.value %}
+               {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
+                        
+              <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+             {% endif %}
+         </div>
+
+      </div>
+   </div>
 {% set count = count + 1 %}
 {% endfor %}
 </div>
