@@ -1,6 +1,6 @@
 <div class="about-popular-content OuterContainer">
 	<div class="container pt-5">
-		<h2 class="text-center">Our Popular Insights</h2>
+		<!-- <h2 class="text-center">Our Popular Insights</h2> -->
 		<div class="card-group">
 			{% for popudata in popu %}
 				<!--  popup -->
@@ -93,7 +93,9 @@
 				</div>
 
 				{% if loop.index ==3 %}
-					<div class="card">
+					<div class="card testi-node">
+<div class="news-he">Latest News</div>
+
 						<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="https://drupalathena.s3.amazonaws.com/s3fs-public/2020-10/insight-corporate.png"/></a>
 						<div class="insight-logo">
 							<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></a>
@@ -114,7 +116,9 @@
 							</p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card testi-node">
+<div class="news-he">Events</div>
+
 						<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="https://drupalathena.s3.amazonaws.com/s3fs-public/2020-10/insight-corporate.png"/></a>
 						<!-- <div class="insight-logo">
 							<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></a>

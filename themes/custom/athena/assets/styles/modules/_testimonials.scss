@@ -1298,9 +1298,23 @@ div#block-discussions .title span {
   position: relative;
   width: 325px;
   min-width: 275px;
-  margin: 2.25rem 0.75rem 0rem;
+  margin: 5.25rem 1.75rem 0rem;
   background: white;
 
+ .news-he {
+   position: absolute;
+   width: 100%;
+   top: -60px;
+   text-align: center;
+   font-family: Lato;
+   font-size: 32px;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #303030;
+ }
   .card-img {
     width: 100%;
     height: var(--card-img-height);
