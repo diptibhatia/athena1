@@ -244,6 +244,7 @@
 		}*/
 	}
 }
+
 .about-popular-content {
 	background: #eff1fe;
 	//padding: 40px;
@@ -271,8 +272,13 @@
 	color: $primaryWhite;
 }
 
+
+
 .bg-skyblue {
 	background-color: $skyblue;
+	border-radius: 6px !important;
+    box-shadow: 0 5px 12px 3px rgba(0, 0, 0, 0.09)!important;
+    padding: 20px 15px 20px !important;
 }
 
 .txt-blue {

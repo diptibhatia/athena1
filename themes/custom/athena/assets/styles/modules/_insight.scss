@@ -1,17 +1,31 @@
 .select-option {
 	display: block;
     width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 4px;
-    font-size: 0.8rem;
+    //height: calc(1.5em + 0.75rem + 2px);
+	height:50px;
+    //padding: 4px;
+	padding-left: 23px;
+    //font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    //color: #495057;
+	color: #8d8d8d;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+    //border-radius: 0.25rem;
+	border-radius: 8px;
+	margin-bottom: 2.5rem;
 }
+
+.inp-fields{
+	height: 53px;
+	padding-left: 30px;
+	color: #8d8d8d;
+	margin-bottom: 2.5rem;
+	border-radius: 8px;
+
+  }
 
 .insight-wrapper {
 	h1, h2, h3 {
