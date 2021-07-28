@@ -3,3 +3,8 @@ services:
     class: Drupal\athena_course\UniversityLinkFunc
     tags:
       - { name: twig.extension }
+
+  athena_course.function1:
+    class: Drupal\athena_course\getUniversityWhiteLogo
+    tags:
+      - { name: twig.extension }

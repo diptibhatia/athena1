@@ -117,10 +117,27 @@
 							{{coursedata.label}}
 						</h3>
 						<div style="background-color: #ff0571;" class="pink-line">
+							
 							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
+							
+							{% for univ in coursedata.field_link_universities %}
+								{% if loop.index == 1 %}
+									<img src="{{getUniversityWhiteLogo(univ.entity.field_university.value)}}" alt="university">
+								{% endif %}
+							{% endfor %}	
 
-							<img src="/themes/custom/athena/images/gmu-new.png">
+							{#
+							{% if coursedata.entity.field_university.value is not empty %}
 
+								{{ coursedata.entity.field_university.value }}
+
+	              				<img src="{{ getUniversityWhiteLogo(coursedata.entity.field_university.value) }}">	
+
+	              			{% else %}	
+
+								<img src="/themes/custom/athena/images/gmu-new.png">
+
+							{% endif %}	#}
 
 						</div>
 						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
@@ -174,7 +191,11 @@
 						<div style="background-color: #ff0571;" class="pink-line">
 							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
 
-							<img src="/themes/custom/athena/images/gmu-new.png">
+							{% for univ in coursedata.field_link_universities %}
+								{% if loop.index == 1 %}
+									<img src="{{getUniversityWhiteLogo(univ.entity.field_university.value)}}" alt="university">
+								{% endif %}
+							{% endfor %}
 
 
 						</div>
