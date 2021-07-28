@@ -35,9 +35,8 @@ class HomepageTestimonialsBlock extends BlockBase {
 
 
     $testinodes = node_load_multiple($latest);
-
-    $testimo =  array_slice($testinodes, 0, 3);
-    $testimo1 =  array_slice($testinodes, 3, 3);
+    $testimonial_row1 =  array_slice($testinodes, 0, 3);
+    $testimonial_row2 =  array_slice($testinodes, 3, 3);
 
     //echo "<pre>";
     //print_r($testimo);exit;
@@ -48,8 +47,8 @@ class HomepageTestimonialsBlock extends BlockBase {
   $base_path = $base_url.'/'. $theme->getPath();
     $homepage_testimonials =  [
     '#theme' => 'homepage_testimonials',
-    '#testi' => $testimo,
-    '#testi1' => $testimo1,
+    '#testimonial_row1' => $testimonial_row1,
+    '#testimonial_row2' => $testimonial_row2,
     '#base_path' => $base_path,
 
   ];
