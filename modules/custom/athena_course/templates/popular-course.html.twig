@@ -96,8 +96,18 @@
 			<div class="col-md-4 ">
 
 				<div class="bg-co bg-co-1 ">
-					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
-             <img class="bk-mg" src="/themes/custom/athena/images/Supply Chain Management Practitioner.jpg">
+					<div class="bgg-co " style="padding: 18px 0 18px 0px;">						        
+ 
+                        {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+ 
+		                    <img class="bk-mg" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course">
+
+           				{% else %}
+            				
+            				<img class="bk-mg" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+
+            			{% endif %}
+
 						<div class="text-right">
 
 							<span class="doller">${{coursedata.field_course_total_fee.value}}
@@ -142,7 +152,17 @@
 
 				<div class="bg-co bg-co-1 ">
 					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
-             <img class="bk-mg" src="/themes/custom/athena/images/Supply Chain Management Practitioner.jpg">
+
+                        {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+ 
+		                    <img class="bk-mg" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course">
+
+           				{% else %}
+            				
+            				<img class="bk-mg" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+
+            			{% endif %}
+
 						<div class="text-right">
 
 							<span class="doller">${{coursedata1.field_course_total_fee.value}}
