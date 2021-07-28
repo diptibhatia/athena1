@@ -298,8 +298,8 @@ function athena_course_theme($existing, $type, $theme, $path) {
   'popular_course' => [
       'variables' => [
       'base_path' => NULL,
-      'course' => NULL,
-      'course1' => NULL,
+      'courses_row1' => NULL,
+      'courses_row2' => NULL,
       ],
     ],
     'latest_insights_sidebar' => [
