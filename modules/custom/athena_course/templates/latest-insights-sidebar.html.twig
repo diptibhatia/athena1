@@ -61,18 +61,18 @@
         </select>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control txt-12" id="get_in_touch_fname" name="get_in_touch_fname" placeholder="First Name">
+        <input type="text" class="form-control txt-12 inp-fields" id="get_in_touch_fname" name="get_in_touch_fname" placeholder="First Name">
       </div>
        <div class="form-group">
-        <input type="text" class="form-control txt-12" id="get_in_touch_lname" name="get_in_touch_lname" placeholder="Last Name">
+        <input type="text" class="form-control txt-12 inp-fields" id="get_in_touch_lname" name="get_in_touch_lname" placeholder="Last Name">
       </div>
        <div class="form-group">
-        <input type="email" class="form-control txt-12" id="get_in_touch_email" name="get_in_touch_email" placeholder="Email Address">
+        <input type="email" class="form-control txt-12 inp-fields" id="get_in_touch_email" name="get_in_touch_email" placeholder="Email Address">
       </div>
-      <div class="form-group>
-        <select class="custom-select txt-12" id="contact_form_phone">
-            <input type="tel" class="form-control txt-12" id="phone" name="phone" placeholder="Enter Mobile number">
-        </select>
+      <div class="form-group intl-tel-input allow-dropdown">
+       <!-- <select class="custom-select txt-12 " id="contact_form_phone">-->
+            <input type="tel" class="form-control txt-12 num inp-fields" id="phone" name="phone" placeholder="Enter Mobile number">
+       <!-- </select>-->
       </div>
       <div class="form-check mb-2">
         <input type="checkbox" class="form-check-input" id="get_in_touch_consent" name="get_in_touch_consent[]">
@@ -80,13 +80,13 @@
       </div>
         <p class="txt-12">Do you want to hear about the latest insights, Newsletters and professional networking events that are relevant to you?</p>
         <div class="form-group txt-12">
-            <div class="custom-control-inline">
+            <div class="custom-control-inline" style="align-items:baseline;">
               <input type="radio" value="1" name="register-latest">
-             <label for="customRadioInline1">&nbsp;&nbsp;Yes</label>
+            <b> <label for="customRadioInline1">&nbsp;&nbsp;Yes</label></b>
              </div>
-            <div class="custom-control-inline">
+            <div class="custom-control-inline" style="align-items:baseline;">
               <input type="radio" value="0" name="register-latest">
-              <label for="customRadioInline2">&nbsp;&nbsp;No</label>
+             <b> <label for="customRadioInline2">&nbsp;&nbsp;No</label></b>
              </div>
         </div>
     </div>
