@@ -140,7 +140,7 @@
             </div>
          </div>
 #}
-         
+
 
 
 <div class="row">
@@ -170,9 +170,9 @@
 
 			<p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}				</span></p>
 
-         <p><span>
+         <p class="deg-ba"><span>
          {{testidata.field_testimonial_course.entity.label}}
-         {{testidata.field_testimonial_batch.value|raw}}   
+         {{testidata.field_testimonial_batch.value|raw}}
          </span></p>
 
 			<h3>
@@ -199,7 +199,7 @@
 
                {% set list_value = testidata.field_testimonials_country_selec.value %}
                {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
-                        
+
               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
              {% endif %}
 			</div>
@@ -224,9 +224,9 @@
          <p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}
          </span></p>
 
-         <p><span>
+         <p class="deg-ba"><span>
          {{testidata.field_testimonial_course.entity.label}}
-         {{testidata.field_testimonial_batch.value|raw}}   
+         {{testidata.field_testimonial_batch.value|raw}}
          </span></p>
 
          <h3>
@@ -253,7 +253,7 @@
 
                {% set list_value = testidata.field_testimonials_country_selec.value %}
                {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
-                        
+
               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
              {% endif %}
          </div>

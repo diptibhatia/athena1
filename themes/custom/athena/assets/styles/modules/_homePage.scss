@@ -3852,9 +3852,9 @@ button.credit-section {
 .st-test-bg {
   padding: 14px 12px 11px 18px;
   border-radius: 6px;
-  // box-shadow: 0 2px 12px 6px rgb(0 0 0 / 8%);
+ box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
-  height: 423px;
+  height: 510px;
 }
 
 .st-test-bg img {
@@ -3866,8 +3866,9 @@ button.credit-section {
   margin-right: 15px;
 }
 
+
 .st-test-bg h3 {
-  margin: 73px 0px 29px 0;
+  margin: 13px 0px 29px 0;
   font-family: Lato;
   font-size: 17px;
   font-weight: bold;
@@ -3898,7 +3899,7 @@ button.credit-section {
 .st-test-bg .lin {
   width: 50%;
   display: inline-block;
-  margin-top: 133px;
+  margin-top: 123px;
   position: relative;
 }
 
@@ -3942,6 +3943,13 @@ button.credit-section {
 
 .st-test-bg p span {
   font-weight: bold;
+}
+
+.deg-ba {
+  position: relative !important;
+  margin-top: 58px;
+  height: 81px;
+  width: 100% !important;
 }
 
 .item-one {
@@ -4005,7 +4013,7 @@ button.credit-section {
   // margin-left: 9px;
   // margin-right: 13px;
   background-size: cover;
-  //box-shadow: 0 2px 9px 3px rgb(0 0 0 / 8%), 0 2px 9px 2px rgb(213 219 251 / 74%);
+   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 

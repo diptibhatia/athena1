@@ -294,7 +294,7 @@
 
     &__background-image {
         position: absolute;
-        top: 0;
+        top: -5%;
         left: 0;
         right: 0;
         z-index: -1;
@@ -306,7 +306,7 @@
         }
 
         span.homepage--banner-image {
-            width: 77%;
+            width: 100%;
             display: block;
             position: relative;
             text-align: right;
