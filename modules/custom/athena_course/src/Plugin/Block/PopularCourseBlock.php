@@ -65,8 +65,8 @@ $query->condition('field_is_popular_course', '1', '=');
         
     }
     // $popular_courses =  array_slice($academicnodes, 0, 5);
-    $popular_courses =  array_slice($popular_courses_arr, 0, 3);      
-    $popular_courses1 =  array_slice($popular_courses_arr, 3, 3);     
+    $popular_courses_row1 =  array_slice($popular_courses_arr, 0, 3);      
+    $popular_courses_row2 =  array_slice($popular_courses_arr, 3, 3);     
  
     
     //print_r($popular_courses);exit;
@@ -77,8 +77,8 @@ $theme = \Drupal::theme()->getActiveTheme();
 $base_path = $base_url.'/'. $theme->getPath();
    $homepage_course_tabs =  [
   '#theme' => 'popular_course',
-  '#course' => $popular_courses,
-  '#course1' => $popular_courses1,
+  '#courses_row1' => $popular_courses_row1,
+  '#courses_row2' => $popular_courses_row2,
   '#base_path' => $base_path,
 
 ];

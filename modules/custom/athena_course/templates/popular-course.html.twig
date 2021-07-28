@@ -91,12 +91,23 @@
 
 		<div class="row">
 
-			{% for coursedata in course %}
+			{% for coursedata in courses_row1 %}
 
 			<div class="col-md-4 ">
 
 				<div class="bg-co bg-co-1 ">
-					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
+					<div class="bgg-co " style="padding: 18px 0 18px 0px;">						        
+ 
+                        {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+ 
+		                    <img class="bk-mg" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course">
+
+           				{% else %}
+            				
+            				<img class="bk-mg" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+
+            			{% endif %}
+
 						<div class="text-right">
 
 							<span class="doller">${{coursedata.field_course_total_fee.value}}
@@ -135,39 +146,50 @@
 
 		<div class="row" style="margin-top:30px;">
 
-		{% for coursedata1 in course1 %}
+		{% for coursedata in courses_row2 %}
 
 			<div class="col-md-4 ">
 
 				<div class="bg-co bg-co-1 ">
 					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
+
+                        {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+ 
+		                    <img class="bk-mg" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course">
+
+           				{% else %}
+            				
+            				<img class="bk-mg" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+
+            			{% endif %}
+
 						<div class="text-right">
 
-							<span class="doller">${{coursedata1.field_course_total_fee.value}}
+							<span class="doller">${{coursedata.field_course_total_fee.value}}
 							</span>
 						</div>
 						<h3 class="p-10 mt-40 head-h3">
-							{{coursedata1.label}}
+							{{coursedata.label}}
 						</h3>
 						<div style="background-color: #ff0571;" class="pink-line">
-							<p class="pink-strip">{{coursedata1.field_course_awarding_body.value|raw }}</p>
+							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
 
 							<img src="/themes/custom/athena/images/gmu-new.png">
 
 
 						</div>
-						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata1.id}}">Learn More</a></h3>
+						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
 						<div class="bg-bor" style="margin-left:10px"></div>
 
-						{% if coursedata1.field_duration.value is empty %}
+						{% if coursedata.field_duration.value is empty %}
 							{% set durlabel = "Flexible Duration" %}
 						{% else %}
-							{% set durlabel = coursedata1.field_duration.value %}
+							{% set durlabel = coursedata.field_duration.value %}
 						{% endif %}
 
 						<p class="p-10"><b>{{durlabel}} :</b>
 
-						{{coursedata1.field_course_duration.value}}</p>
+						{{coursedata.field_course_duration.value}}</p>
 
 					</div>
 				</div>

@@ -1298,9 +1298,37 @@ div#block-discussions .title span {
   position: relative;
   width: 325px;
   min-width: 275px;
-  margin: 2.25rem 0.75rem 0rem;
+  margin: 8.25rem 0.75rem 0rem 0.75rem;
   background: white;
 
+ .news-he {
+   position: absolute;
+   width: 100%;
+   top: -60px;
+   text-align: center;
+   font-family: Lato;
+   font-size: 32px;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #303030;
+ }
+ .news-foo{
+   position: absolute;
+   width: 100%;
+   text-align: center;
+   bottom: -49px;
+   font-family: Lato;
+   font-size: 18px;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #ff008e;
+ }
   .card-img {
     width: 100%;
     height: var(--card-img-height);
@@ -1550,5 +1578,11 @@ div#block-discussions .title span {
   @media screen and (max-width:700px){
       margin: 0;
       width: 100%;
+  }
+}
+
+.about-popular-content{
+  .pb-4{
+    padding-top: 4.5rem !important;
   }
 }

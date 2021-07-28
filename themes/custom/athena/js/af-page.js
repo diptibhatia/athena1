@@ -253,7 +253,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       var phnNumber = $("#reg_mobile_num").val(); // get full number eg +17024181234
       var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj
       var phoneNum = "+" + countryCode + phnNumber;
-      var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
+      var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West','Kerala'];
       let BU = "AGE"
       utmSource = (utmSource == null || utmSource == '') ? "Direct":utmSource;
       //API URL
@@ -267,12 +267,12 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       cData.pay = jQuery("#pay").val();
       let ip,province;
       jQuery.ajax({
-        url : "https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8",
+        url : "https://api.ipdata.co?api-key=272b689fa6863f7205dff78e661f0fe6a29c07ddec10d9caba8b05d1",
         type : "get",
         async: false,
         success : function(data) {
           ip = data.ip;
-          province = data.state_prov;
+          province = data.region;
           // province = "Free State";
           console.log(ip + ' ' + province);
           if(prov_list.includes(province)) {
