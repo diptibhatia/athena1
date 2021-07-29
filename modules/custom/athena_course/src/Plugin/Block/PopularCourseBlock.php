@@ -23,30 +23,30 @@ class PopularCourseBlock extends BlockBase {
    */
   public function build() {
       
-      global $base_url;
-        $ip = $_SERVER['REMOTE_ADDR']; // This will contain the ip of the request
+    global $base_url;
+      $ip = $_SERVER['REMOTE_ADDR']; // This will contain the ip of the request
 
-// You can use a more sophisticated method to retrieve the content of a webpage with php using a library or something
-// We will retrieve quickly with the file_get_contents
-$dataArray = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip));
-
-
-$ccd = $dataArray->geoplugin_countryCode;
-
-$key = "field_is_popular_course";
-$value = 1;
-if(!empty($ccd)) {
-    
-    $key = "field_course_country";
-    $value = $ccd;
-}
+    // You can use a more sophisticated method to retrieve the content of a webpage with php using a library or something
+    // We will retrieve quickly with the file_get_contents
+    $dataArray = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip));
 
 
-  $bundle='course';
-     $query = \Drupal::entityQuery('node');
+    $ccd = $dataArray->geoplugin_countryCode;
+
+    $key = "field_is_popular_course";
+    $value = 1;
+    if(!empty($ccd)) {
+        
+        $key = "field_course_country";
+        $value = $ccd;
+    }
+
+
+    $bundle='course';
+    $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
-  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-$query->condition($key, $value, '=');
+    //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+    $query->condition($key, $value, '=');
     $query->condition('type', $bundle);
     $academic = $query->execute();
     
@@ -59,13 +59,14 @@ $query->condition($key, $value, '=');
       //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
       $query->condition('field_is_popular_course', '1', '=');
       $query->condition('type', $bundle);
-      $academic = $query->execute();
-      
+      $academic = $query->execute();      
       $popular_courses_arr = node_load_multiple($academic);
           
     }
-    // $popular_courses =  array_slice($academicnodes, 0, 5);
-    $popular_courses_row1 =  array_slice($popular_courses_arr, 0, 3);      
+    
+    // data for row1 
+    if (!empty($popular_courses_arr) && $popular_courses_arr != "")    
+      $popular_courses_row1 =  array_slice($popular_courses_arr, 0, 3);      
     
     foreach ($popular_courses_row1 as $node) 
     {
@@ -87,7 +88,9 @@ $query->condition($key, $value, '=');
         $white_logo[] = getUniversityWhiteLogo($university_nid);
     }
 
-    $popular_courses_row2 =  array_slice($popular_courses_arr, 3, 3);     
+    // data for row2 
+    if (!empty($popular_courses_arr) && $popular_courses_arr != "")    
+        $popular_courses_row2 =  array_slice($popular_courses_arr, 3, 3);     
 
     foreach ($popular_courses_row2 as $node) 
     {
