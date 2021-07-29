@@ -91,6 +91,7 @@
 
 		<div class="row">
 
+			{% set count = 0 %}
 			{% for coursedata in courses_row1 %}
 
 			<div class="col-md-4 ">
@@ -120,24 +121,9 @@
 							
 							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
 							
-							{% for univ in coursedata.field_link_universities %}
-								{% if loop.index == 1 %}
-									<img src="{{getUniversityWhiteLogo(univ.entity.field_university.value)}}" alt="university">
-								{% endif %}
-							{% endfor %}	
+							<img src="{{ white_logo[count] }}" alt="university">
 
-							{#
-							{% if coursedata.entity.field_university.value is not empty %}
-
-								{{ coursedata.entity.field_university.value }}
-
-	              				<img src="{{ getUniversityWhiteLogo(coursedata.entity.field_university.value) }}">	
-
-	              			{% else %}	
-
-								<img src="/themes/custom/athena/images/gmu-new.png">
-
-							{% endif %}	#}
+							{% set count = count + 1 %}
 
 						</div>
 						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
@@ -191,12 +177,9 @@
 						<div style="background-color: #ff0571;" class="pink-line">
 							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
 
-							{% for univ in coursedata.field_link_universities %}
-								{% if loop.index == 1 %}
-									<img src="{{getUniversityWhiteLogo(univ.entity.field_university.value)}}" alt="university">
-								{% endif %}
-							{% endfor %}
+							<img src="{{ white_logo[count] }}" alt="university">
 
+							{% set count = count + 1 %}
 
 						</div>
 						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
