@@ -4197,8 +4197,11 @@ button.credit-section {
 }
 
 .bg-bor {
-  border: solid 2px #feb92a;
-  width: 50px
+  background-color:  #feb92a;
+  width: 50px;
+  height: 3px;
+  margin-top: -4px;
+  margin-bottom: 8px;
 }
 
 .popular-courses {
