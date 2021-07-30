@@ -73,15 +73,22 @@ class ShortTermCourseController {
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
 
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
+                if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))
+                {
+                    if (!empty($value->website_image_path)) 
+                        $course_image_path = $value->website_image_path;                    
+                    else 
+                        $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                else {
-                    if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))         $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
-                    else
+                else
+                {
+                    if (!empty($value->course_image_path)) 
+                        $course_image_path = $value->course_image_path;                    
+                    else 
                         $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'uniathena.jfif');
+
+                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -106,7 +113,7 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'uniathena.jfif'),
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -203,12 +210,12 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                $white_logo = athena_course_current_theme_image('images', 'uniathena.jfif');
+                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -227,7 +234,7 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'uniathena.jfif'),
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -343,13 +350,15 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
+
+                if (!empty($value->website_image_path)) {
+                    $course_image_path = $value->website_image_path;
                 }
                 else {
                     $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'uniathena.jfif');
+
+                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -373,7 +382,7 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'uniathena.jfif'),
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -473,7 +482,7 @@ class ShortTermCourseController {
                 else {
                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'uniathena.jfif');
+                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -497,7 +506,7 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'uniathena.jfif'),
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -598,18 +607,18 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
+                if (!empty($value->website_image_path)) {
+                    $course_image_path = $value->website_image_path;
                 }
                 else {
                     $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'uniathena.jfif');
+                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -628,7 +637,7 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'uniathena.jfif'),
+                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
                     'univ_name' => $univ_name ?? '',
                     'course_image' => $course_image_path
                 ];
@@ -711,12 +720,12 @@ class ShortTermCourseController {
                     $current_page = $all_data->data->current_page;
                     foreach ($related_courses as $course) {
                         $url = $this->_lms_url . '/student-dashboard/course/' . $course->cid .'/'.$course->slug;
-                        $white_logo = athena_course_current_theme_image('images', 'uniathena.jfif');
+                        $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
                         $univ_name = '';
                         foreach ($course->partner_body as $key1 => $value1) {
                             if( is_object( $value1 )) {
                                 foreach($value1 as $key2 => $value2) {
-                                if ( $key2 == "logo" ) {
+                                if ( $key2 == "university_image" ) {
                                         $white_logo = $value2;
                                 }
                                 if ( $key2 == "university_name" ) {
