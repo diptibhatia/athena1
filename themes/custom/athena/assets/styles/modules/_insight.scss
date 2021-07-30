@@ -741,7 +741,7 @@
 	left: 0;
 	height: 9px;
 	width: 9px;
-	background-color: #eee;
+	background-color: #fff;
 	border-radius: 2px;
   }
   
@@ -754,7 +754,7 @@
   .lab-container input:checked ~ .checkmark {
 	background-color: white;
 	box-shadow:
-		0 0 0 1px hsl(240, 100%, 50%),
+		0 0 0 1px hsl(212, 100%, 50%),
 		0 0 0 1px hsl(0, 0%, 90%);
   }
   
@@ -777,6 +777,5 @@
 	  width: 7px;
 	  height: 7px;
 	  border-radius: 2px;
-	  background: blue;
+	  background: #0075ff;
   }
-  
