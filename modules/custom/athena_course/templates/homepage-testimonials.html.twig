@@ -140,7 +140,7 @@
             </div>
          </div>
 #}
-
+         
 
 
 <div class="row">
@@ -161,7 +161,7 @@
 
 <div class="row">
 	{% set count = 0 %}
-	{% for testidata in testi %}
+	{% for testidata in testimonial_row1 %}
 
 		<div class="col-md-4 mb-30">
 		<div class=" st-test-bg">
@@ -171,8 +171,10 @@
 			<p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}				</span></p>
 
          <p class="deg-ba"><span>
-         {{testidata.field_testimonial_course.entity.label}}
-         {{testidata.field_testimonial_batch.value|raw}}
+            {% for univ in testidata.field_testimonial_course %}
+               {{univ.entity.title.value}}
+            {% endfor %}
+            {{testidata.field_testimonial_batch.value|raw}}
          </span></p>
 
 			<h3>
@@ -199,7 +201,7 @@
 
                {% set list_value = testidata.field_testimonials_country_selec.value %}
                {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
-
+                        
               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
              {% endif %}
 			</div>
@@ -214,7 +216,7 @@
 
 <div class="row">
    {% set count = 3 %}
-   {% for testidata in testi1 %}
+   {% for testidata in testimonial_row2 %}
 
       <div class="col-md-4 mb-30">
       <div class=" st-test-bg">
@@ -225,8 +227,10 @@
          </span></p>
 
          <p class="deg-ba"><span>
-         {{testidata.field_testimonial_course.entity.label}}
-         {{testidata.field_testimonial_batch.value|raw}}
+            {% for univ in testidata.field_testimonial_course %}
+               {{univ.entity.title.value}}
+            {% endfor %}
+            {{testidata.field_testimonial_batch.value|raw}}   
          </span></p>
 
          <h3>
@@ -253,7 +257,7 @@
 
                {% set list_value = testidata.field_testimonials_country_selec.value %}
                {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
-
+                        
               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
              {% endif %}
          </div>
@@ -266,13 +270,10 @@
 
 
 	<div class="col-md-12 text-center m-40a">
-		<a href="#">
-			Show More
-		</a>
+      <a href="{{ url('<front>') }}/insights/testimonials">
+         Show More
+      </a>
 	</div>
-
-
-
 
 
 

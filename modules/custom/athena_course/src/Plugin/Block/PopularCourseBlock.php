@@ -23,64 +23,106 @@ class PopularCourseBlock extends BlockBase {
    */
   public function build() {
       
-      global $base_url;
-        $ip = $_SERVER['REMOTE_ADDR']; // This will contain the ip of the request
+    global $base_url;
+      $ip = $_SERVER['REMOTE_ADDR']; // This will contain the ip of the request
 
-// You can use a more sophisticated method to retrieve the content of a webpage with php using a library or something
-// We will retrieve quickly with the file_get_contents
-$dataArray = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip));
-
-
-$ccd = $dataArray->geoplugin_countryCode;
-
-$key = "field_is_popular_course";
-$value = 1;
-if(!empty($ccd)) {
-    
-    $key = "field_course_country";
-    $value = $ccd;
-}
+    // You can use a more sophisticated method to retrieve the content of a webpage with php using a library or something
+    // We will retrieve quickly with the file_get_contents
+    $dataArray = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip));
 
 
-  $bundle='course';
-     $query = \Drupal::entityQuery('node');
+    $ccd = $dataArray->geoplugin_countryCode;
+
+    $key = "field_is_popular_course";
+    $value = 1;
+    if(!empty($ccd)) {
+        
+        $key = "field_course_country";
+        $value = $ccd;
+    }
+
+
+    $bundle='course';
+    $query = \Drupal::entityQuery('node');
     $query->condition('status', 1);
-  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-$query->condition($key, $value, '=');
+    //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+    $query->condition($key, $value, '=');
     $query->condition('type', $bundle);
     $academic = $query->execute();
     
     //$academicnodes = node_load_multiple($academic);
     
     if(empty($academicnodes)) {
-          $bundle='course';
-     $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
-  //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-$query->condition('field_is_popular_course', '1', '=');
-    $query->condition('type', $bundle);
-    $academic = $query->execute();
-    
-    $popular_courses_arr = node_load_multiple($academic);
-        
+      $bundle='course';
+      $query = \Drupal::entityQuery('node');
+      $query->condition('status', 1);
+      //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
+      $query->condition('field_is_popular_course', '1', '=');
+      $query->condition('type', $bundle);
+      $academic = $query->execute();      
+      $popular_courses_arr = node_load_multiple($academic);
+          
     }
-    // $popular_courses =  array_slice($academicnodes, 0, 5);
-    $popular_courses_row1 =  array_slice($popular_courses_arr, 0, 3);      
-    $popular_courses_row2 =  array_slice($popular_courses_arr, 3, 3);     
- 
     
-    //print_r($popular_courses);exit;
+    // data for row1 
+    if (!empty($popular_courses_arr) && $popular_courses_arr != "")    
+      $popular_courses_row1 =  array_slice($popular_courses_arr, 0, 3);      
+    
+    foreach ($popular_courses_row1 as $node) 
+    {
+      if(is_object( $node->field_link_universities))
+        $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+      
+      $i=0;
+      foreach($paragraph_univ_data as $explore_data) 
+      {
+        if ( $i==0 )
+        {
+          $university_nid = $explore_data->get('field_university')->value;
+          break;  
+        }       
+      }
+
+      $white_log = array();      
+      if (!empty($university_nid) && $university_nid != "")
+        $white_logo[] = getUniversityWhiteLogo($university_nid);
+    }
+
+    // data for row2 
+    if (!empty($popular_courses_arr) && $popular_courses_arr != "")    
+        $popular_courses_row2 =  array_slice($popular_courses_arr, 3, 3);     
+
+    foreach ($popular_courses_row2 as $node) 
+    {
+      if(is_object( $node->field_link_universities))
+        $paragraph_univ_data = $node->field_link_universities->referencedEntities();
+      
+      $i=0;
+      foreach($paragraph_univ_data as $explore_data) 
+      {
+        if ( $i==0 )
+        {
+          $university_nid = $explore_data->get('field_university')->value;
+          break;  
+        }       
+      }
+      
+      if (!empty($university_nid) && $university_nid != "")
+        $white_logo[] = getUniversityWhiteLogo($university_nid);
+    }
+ 
+    //print_r($white_logo);exit;
     
     // Base theme path.
-$theme = \Drupal::theme()->getActiveTheme();
+  $theme = \Drupal::theme()->getActiveTheme();
 
-$base_path = $base_url.'/'. $theme->getPath();
-   $homepage_course_tabs =  [
-  '#theme' => 'popular_course',
-  '#courses_row1' => $popular_courses_row1,
-  '#courses_row2' => $popular_courses_row2,
-  '#base_path' => $base_path,
-
+   $base_path = $base_url.'/'. $theme->getPath();
+    $homepage_course_tabs =  [
+      '#theme' => 'popular_course',
+      '#courses_row1' => $popular_courses_row1,
+      '#courses_row2' => $popular_courses_row2,
+      '#white_logo'  => $white_logo,
+      '#base_path' => $base_path,
 ];
 
 //print_r($homepage_course_tabs); exit; 

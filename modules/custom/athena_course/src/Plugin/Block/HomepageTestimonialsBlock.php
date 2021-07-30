@@ -35,24 +35,23 @@ class HomepageTestimonialsBlock extends BlockBase {
 
 
     $testinodes = node_load_multiple($latest);
+    
+    if (!empty($testinodes) && $testinodes != "")
+    {
+      $testimonial_row1 =  array_slice($testinodes, 0, 3);
+      $testimonial_row2 =  array_slice($testinodes, 3, 3);
+    }
+    
+    // Base theme path.
+    $theme = \Drupal::theme()->getActiveTheme();
 
-    $testimo =  array_slice($testinodes, 0, 3);
-    $testimo1 =  array_slice($testinodes, 3, 3);
-
-    //echo "<pre>";
-    //print_r($testimo);exit;
-
-  // Base theme path.
-  $theme = \Drupal::theme()->getActiveTheme();
-
-  $base_path = $base_url.'/'. $theme->getPath();
+    $base_path = $base_url.'/'. $theme->getPath();
     $homepage_testimonials =  [
-    '#theme' => 'homepage_testimonials',
-    '#testi' => $testimo,
-    '#testi1' => $testimo1,
-    '#base_path' => $base_path,
-
-  ];
+      '#theme' => 'homepage_testimonials',
+      '#testimonial_row1' => $testimonial_row1,
+      '#testimonial_row2' => $testimonial_row2,
+      '#base_path' => $base_path,
+    ];
 
     return array($homepage_testimonials);
   }
