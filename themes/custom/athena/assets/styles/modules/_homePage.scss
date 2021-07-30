@@ -2582,10 +2582,10 @@ button.owl-next {
     letter-spacing: normal;
     text-align: center;
 
-     @include atSize424 {
+    @include atSize424 {
       // padding: 0 20px;
-       font-size: 20px !important;
-     }
+      font-size: 20px !important;
+    }
   }
 
   .courses {
@@ -3852,7 +3852,7 @@ button.credit-section {
 .st-test-bg {
   padding: 14px 12px 11px 18px;
   border-radius: 6px;
- box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
   height: 510px;
 }
@@ -4013,7 +4013,7 @@ button.credit-section {
   // margin-left: 9px;
   // margin-right: 13px;
   background-size: cover;
-   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
@@ -4078,6 +4078,7 @@ button.credit-section {
 
 .head-h3 {
   height: 37%;
+  padding-top: 27px !important;
 }
 
 .bgg-co img {
@@ -4197,7 +4198,7 @@ button.credit-section {
 }
 
 .bg-bor {
-  background-color:  #feb92a;
+  background-color: #feb92a;
   width: 50px;
   height: 3px;
   margin-top: -4px;
@@ -4288,4 +4289,3 @@ button.credit-section {
     flex-direction: column;
   }
 }
-
