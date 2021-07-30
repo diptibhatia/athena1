@@ -181,8 +181,12 @@
                 margin-top:5px;
             }
             img {
-              max-height: 32px;
-              max-width: 70px !important;
+                max-height: 32px;
+                max-width: 100px !important;
+                position: absolute;
+                transform: translate(0, -50%);
+                left: 1.2rem;
+                top: 50%;
             }
         }
         .image{
