@@ -294,7 +294,7 @@
 
     &__background-image {
         position: absolute;
-        top: -5%;
+        top: -8%;
         left: 0;
         right: 0;
         z-index: -1;
@@ -304,6 +304,7 @@
             display:block;
             min-height:320px;
         }
+
 
         span.homepage--banner-image {
             width: 100%;
@@ -335,6 +336,55 @@
             justify-content: flex-end;
         }
     }
+
+        &.home-ban {
+          position: absolute;
+          top: -17%;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          display: none;
+          background: #EAEDF9;
+
+          @include atSize479 {
+            display: block;
+            min-height: 320px;
+          }
+
+
+          span.homepage--banner-image {
+            width: 100%;
+            display: block;
+            position: relative;
+            text-align: right;
+
+            img {
+              width: 89%;
+              margin-top: -29px;
+
+              @include atSize479 {
+                display: none;
+              }
+
+            }
+          }
+
+          img.homepage--banner-curve {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -3px;
+            z-index: 4;
+            width: 100%;
+          }
+
+          @include atSize850 {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+
 
     &__mobile-background-image {
         position: absolute;
