@@ -9,10 +9,10 @@
     {% for item in items %}
       <span{{ attributes }} class="meta" >{{ item.content }}</span>
       {% if comment_count %}
-      <span class="meta">  | {{comment_count}}</span> <img src="/themes/custom/athena/images/comment.svg">
+      <span class="meta-count">  | {{comment_count}}</span> <img src="/themes/custom/athena/images/comment.svg">
       {% endif %}
       {% if node_stats %}
-        | {{node_stats}} <img alt="eye icon" src="/themes/custom/athena/images/eye.svg">
+      <span class="meta-count">  | {{node_stats}} </span><img alt="eye icon" src="/themes/custom/athena/images/eye.svg">
       {% endif %}
     {% endfor %}
   {% endif %}
