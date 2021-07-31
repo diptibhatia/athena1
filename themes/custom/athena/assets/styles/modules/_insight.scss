@@ -28,7 +28,7 @@
   }
 
 
-  
+
 
 .insight-wrapper {
 	h1, h2, h3 {
@@ -634,6 +634,12 @@
       padding-right: 10px;
       margin-right: 10px;
 		}
+    .meta-count {
+      margin-left: 21px;
+      padding-right: 5px;
+      font-size: 13px;
+      color: #8d8d8d;
+    }
 	}
 	.meta{
 		color:#8d8d8d;
@@ -733,9 +739,9 @@
 	user-select: none;
 	display:inline-flex;
 	align-items:base-line;
-	
+
   }
-  
+
   /* Hide the browser's default radio button */
   .lab-container input {
 	position: absolute;
@@ -743,9 +749,9 @@
 	cursor: pointer;
 	padding:0;
 	margin:0;
-	
+
   }
-  
+
   /* Create a custom radio button */
   .checkmark {
 	position: absolute;
@@ -756,12 +762,12 @@
 	background-color: #fff;
 	border-radius: 2px;
   }
-  
+
   /* On mouse-over, add a grey background color */
   .lab-container:hover input ~ .checkmark {
 	background-color: #ccc;
   }
-  
+
   /* When the radio button is checked, add a blue background */
   .lab-container input:checked ~ .checkmark {
 	background-color: white;
@@ -769,19 +775,19 @@
 		0 0 0 1px hsl(212, 100%, 50%),
 		0 0 0 1px hsl(0, 0%, 90%);
   }
-  
+
   /* Create the indicator (the dot/circle - hidden when not checked) */
   .checkmark:after {
 	content: "";
 	position: absolute;
 	display: none;
   }
-  
+
   /* Show the indicator (dot/circle) when checked */
   .lab-container input:checked ~ .checkmark:after {
 	display: block;
   }
-  
+
   /* Style the indicator (dot/circle) */
   .lab-container .checkmark:after {
 	   top: 1px;
