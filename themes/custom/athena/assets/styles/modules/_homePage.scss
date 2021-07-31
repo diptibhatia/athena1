@@ -3854,7 +3854,7 @@ button.credit-section {
   border-radius: 6px;
   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
-  height: 395px;
+  height: 374px;
 }
 
 .st-test-bg img {
@@ -3873,12 +3873,12 @@ button.credit-section {
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  height: 52px;
+  height: 51px;
   line-height: 1.44;
   letter-spacing: normal;
   position: relative;
   color: #ff008e;
-
+  margin-top: 66px;
 }
 
 .st-test-bg h4 {
@@ -4038,8 +4038,9 @@ button.credit-section {
   padding: 9px 13px 11px 28px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  color: #ffffff;
-  background-color: #ffc100
+  color: #000000;
+  background-color: #ffc100;
+  font-weight: bold;
 }
 
 .m-40 {
@@ -4077,7 +4078,7 @@ button.credit-section {
 
 .head-h3 {
   height: 37%;
-  padding-top: 27px !important;
+  padding-top: 22px !important;
 }
 
 .bgg-co img {
@@ -4133,7 +4134,7 @@ button.credit-section {
 
 .bgg-co h3 {
   font-family: Lato;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -4169,6 +4170,9 @@ button.credit-section {
   display: inline-block;
   padding-left: 10px;
 }
+.pink-line{
+  padding-top: 8px;
+}
 
 @media (min-width: 221px) and (max-width: 767px) {
 
@@ -4200,7 +4204,7 @@ button.credit-section {
   background-color: #feb92a;
   width: 50px;
   height: 3px;
-  margin-top: -4px;
+  margin-top: 0px;
   margin-bottom: 8px;
 }
 
