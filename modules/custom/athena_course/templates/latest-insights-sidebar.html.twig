@@ -30,7 +30,7 @@
 
     {% for univ in coursedata.univ  %}
       <div class="insights-logos sidebar">
-          <img src="{{univ}}" class="rounded-circle">
+          <img src="{{univ}}">
       </div>
     {% endfor %} 
     <a href="{{ url('<front>') }}course/{{coursedata.node.id}}" class="pull-right mt-4 purple-txt">Learn More</a>
