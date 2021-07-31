@@ -168,14 +168,13 @@
 
 			<img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
 
-			<p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}				</span></p>
-
-         <p class="deg-ba"><span>
-            {% for univ in testidata.field_testimonial_course %}
-               {{univ.entity.title.value}}
-            {% endfor %}
-            {{testidata.field_testimonial_batch.value|raw}}
-         </span></p>
+			<p><b>{{testidata.field_name.value|raw}}<br>
+               {{testidata.field_designation.value|raw}}</b><br>
+               {% for univ in testidata.field_testimonial_course %}
+                  {{univ.entity.title.value}}
+               {% endfor %} {{' | '}}
+               <b>{{testidata.field_testimonial_batch.value|raw}}</b>
+         </p>
 
 			<h3>
 				{% set text = testidata.title.value|render|striptags %}
@@ -223,15 +222,13 @@
 
          <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
 
-         <p><span>{{testidata.field_testimonial_name_and_desig.value|raw}}
-         </span></p>
-
-         <p class="deg-ba"><span>
+         <p><b>{{testidata.field_name.value|raw}}<br>
+            {{testidata.field_designation.value|raw}}</b><br>
             {% for univ in testidata.field_testimonial_course %}
                {{univ.entity.title.value}}
-            {% endfor %}
-            {{testidata.field_testimonial_batch.value|raw}}   
-         </span></p>
+            {% endfor %} {{' | '}}
+            <b>{{testidata.field_testimonial_batch.value|raw}}</b>
+         </p>
 
          <h3>
             {% set text = testidata.title.value|render|striptags %}
