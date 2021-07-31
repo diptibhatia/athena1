@@ -329,7 +329,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
     'coursepage_testimonials' => [
       'variables' => [
       'base_path' => NULL,
-      'testi' => NULL,
+      'testimonial_row1' => NULL,      
+      'testimonial_row2' => NULL,
+     
       ],
     ],
     'popular_insights' => [
