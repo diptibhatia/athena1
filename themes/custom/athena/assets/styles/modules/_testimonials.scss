@@ -1300,6 +1300,10 @@ div#block-discussions .title span {
   min-width: 275px;
   margin: 8.25rem 0.75rem 0rem 0.75rem;
   background: white;
+  @media screen and (max-width:767px){
+      width:auto;
+      max-width:100%;    
+  }
 
  .news-he {
    position: absolute;
