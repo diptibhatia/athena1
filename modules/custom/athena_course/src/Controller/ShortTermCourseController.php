@@ -246,12 +246,12 @@ class ShortTermCourseController {
                             <div class="col-12 social-icons">
                                 
 
-                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] . $courses_data['cid'].'/'.$courses_data['label'].'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
                                 
-                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
                                 
 
-                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] . $courses_data['cid'] .'/ '.$courses_data['label'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
                                 
 
                             </div>
@@ -420,13 +420,14 @@ class ShortTermCourseController {
                                                 <div class="col-6">
                                                     <div class="social-icons">
                                                         
-                                                        <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] . $courses_data['cid'].'/'.$courses_data['label'].'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                
-                                                        <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                
+                                                        
+                                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                                
+                                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                                
 
-                                                        <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] . $courses_data['cid'] .'/ '.$courses_data['label'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
-                                
+                                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-6 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '">
@@ -529,13 +530,14 @@ class ShortTermCourseController {
                         <div class="row">
                             <div class="col-12 social-icons">
                                 
-                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] . $courses_data['cid'].'/'.$courses_data['label'].'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
                                 
-                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
                                 
 
-                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] . $courses_data['cid'] .'/ '.$courses_data['label'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
-                                
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+
                             </div>
                         </div>
                         <div class="course-details col-12 text-center0 p-0">
@@ -685,14 +687,15 @@ class ShortTermCourseController {
                                                 <div class="col-6">
                                                     <div class="social-icons">
                                                         
-                                                        <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] . $courses_data['cid'].'/'.$courses_data['label'].'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                
-                                                            <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                                            
+                                                        
+                                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                                
+                                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                                
 
-                                                            <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] . $courses_data['cid'] .'/ '.$courses_data['label'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
-                                                            
-                                                    </div>
+                                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+
+                                                                    </div>
                                                 </div>
                                                 <div class="col-6 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '">
                                                     <button>Start Now &nbsp;></button></a>
@@ -763,12 +766,13 @@ class ShortTermCourseController {
                             <div class="row">
                                 <div class="col-12 social-icons">
                             
-                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] . $courses_data['cid'].'/'.$courses_data['label'].'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
                                 
-                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
                                 
 
-                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] . $courses_data['cid'] .'/ '.$courses_data['label'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
                                 
                                 </div>
                             </div>
