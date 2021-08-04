@@ -300,6 +300,7 @@
         z-index: -1;
         display: none;
         background:#EAEDF9;
+        -webkit-transform: scaleX(-1);
         @include atSize479{
             display:block;
             min-height:320px;
