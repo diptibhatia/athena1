@@ -3837,6 +3837,7 @@ button.credit-section {
 
 }
 
+
 .test-head h3 {
   position: relative;
   top: -53px;
@@ -3856,14 +3857,25 @@ button.credit-section {
   border-radius: 6px;
   box-shadow: 0 2px 12px 6px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
-  height: 374px;
+  height: 296px;
+
+  .test-linkd {
+    vertical-align: top;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-left: -38px;
+    margin-top: 39px;
+    margin-right: 8px;
+  }
 }
 
 .st-test-bg img {
   vertical-align: top;
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 82px;
+  height: 82px;
   border-radius: 100%;
   margin-right: 15px;
 }
@@ -3880,11 +3892,11 @@ button.credit-section {
   letter-spacing: normal;
   position: relative;
   color: #ff008e;
-  margin-top: 66px;
+  margin-top: 24px;
 }
 
 .st-test-bg h4 {
-  margin: 11px 20px 34px 0;
+  margin: -24px 20px 34px 0;
   opacity: 0.8;
   font-family: Lato;
   font-size: 16px;
@@ -3900,8 +3912,15 @@ button.credit-section {
 .st-test-bg .lin {
   width: 50%;
   display: inline-block;
-  margin-top: 123px;
+  margin-top: 75px;
   position: relative;
+  background-color: #000;
+  background-image: linear-gradient(45deg, #000, #fff);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 
 .st-test-bg .lin a {
@@ -3930,7 +3949,7 @@ button.credit-section {
 
 .st-test-bg p {
   display: inline-block;
-  width: 64%;
+  width: 59%;
   font-family: Lato;
   font-size: 16px;
   font-weight: normal;
