@@ -56,7 +56,7 @@
 									</div>
 								</div>
 								<div class="login-item">
-									<p>Email</p>
+									<p>Email Address</p>
 									<input type="email" id="reg_email" value="{{email}}" placeholder="Enter Email Address">
 								</div>
 								<div class="login-item" style="display:none">
@@ -325,8 +325,9 @@
 											{% else %}
 												<option value="{{nodedata.field_cid.value}}">{{nodedata.label}}</option>
 											{% endif %}
-										{% endfor %}
+										{% endfor %}								
 									</select>
+									<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 								</div>
 								<div class="login-item">
 									<p>Highest Qualification</p>
@@ -337,8 +338,9 @@
 										<option value="Diploma">Diploma</option>
 										<option value="A Level">A Level</option>
 										<option value="Others">Others</option>
-
+                                       
 									</select>
+									<img src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 								</div>
 								<div class="login-item names">
 									<div class="name-item">
@@ -363,6 +365,7 @@
 										</option>
 										
 									</select>
+									<img src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 								</div>
 
 								<input type="hidden" id="utm_source" value="{{source}}">
