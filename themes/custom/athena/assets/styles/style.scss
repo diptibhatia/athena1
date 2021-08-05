@@ -244,6 +244,8 @@ h5.font-medium {font-weight:600; color: #5b1a87}
         margin-top:30px;
      li {
         margin-left: -2px;
+        min-width: 43%;
+        text-align:center
     }
 
     .nav-link {
@@ -268,8 +270,8 @@ h5.font-medium {font-weight:600; color: #5b1a87}
     input, select {
         border-radius: 0 !important;
         box-shadow: none !important;
-        border: none !important;
-        border-bottom: solid 1.2px rgba(255, 61, 145, 0) !important;
+      //  border: none !important;
+        border-bottom: solid 1.2px rgba(255, 61, 145, 0);
     }
   
     .intl-tel-input.allow-dropdown {
