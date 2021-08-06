@@ -34,11 +34,11 @@
     {% endif %}
       {% for column in row.content %}
         {% if loop.index % 3 %}
-          <div class="card mr-2">
+          <div class="card mr-3">
             {{- column.content -}}
           </div>
         {% else %}
-          <div class="card">
+          <div class="card mr-3">
             {{- column.content -}}
           </div>
         {% endif %}

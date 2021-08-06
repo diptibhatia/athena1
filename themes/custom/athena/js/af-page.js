@@ -257,10 +257,13 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       let BU = "AGE"
       utmSource = (utmSource == null || utmSource == '') ? "Direct":utmSource;
       //API URL
-      var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
-      if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
-        URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
+
+     if (baseUrl == "http://websitestg.athena.edu" || baseUrl == "https://websitestg.athena.edu") {
+        var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
+      } else {
+        var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
       }
+
       cData.email = String(jQuery("#regEmail").val());
       cData.cId = parseInt(jQuery("#course").val());
       cData.modId = jQuery("#modId").val();
