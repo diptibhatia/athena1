@@ -22,6 +22,7 @@
                   {% if loop.index ==1 %}
                      <div class="image-dot-testimonials-one"><img alt="dots" src="/themes/custom/athena/images/dots-course.svg" /></div>
                      <div class="student-review">
+                        
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
 
@@ -32,6 +33,7 @@
                            {% endif %}
 
                         </div>
+                        
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
@@ -166,34 +168,37 @@
 		<div class="col-md-4 mb-30">
 		<div class=" st-test-bg">
 
-			<img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+         <div class="student-image">
 
-			<p><b>{{testidata.field_name.value|raw}}<br>
-               {{testidata.field_designation.value|raw}}</b><br>
-               {% for univ in testidata.field_testimonial_course %}
-                  {{univ.entity.title.value}}
-               {% endfor %} {{' | '}}
-               <b>{{testidata.field_testimonial_batch.value|raw}}</b>
-         </p>
+   			<img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+
+            {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
+               <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img class="test-linkd" src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+            {% endif %}         
+
+   			<p><b>{{testidata.field_name.value|raw}}</b><br>
+                  {{testidata.field_designation.value|raw}}
+            </p>
+
+         </div>   
 
 			<h3>
 				{% set text = testidata.title.value|render|striptags %}
-                {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
+                {{ text|length > 36 ? text|slice(0, 36 ) ~ '...' : text }}
 			</h3>
+
 			<h4>
 				{% set text = testidata.field_testimonial_text.value|render|striptags %}
-                {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
+            {{ text|length > 70 ? text|slice(0, 70 ) ~ '...' : text }}&nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">ReadMore</a></span>    
 			</h4>
 
 			<div class="lin">
+            {% for univ in testidata.field_testimonial_course %}         
+               {% set text = univ.entity.title.value %}
+               {{ text|length > 20 ? text|slice(0, 20) : text }}
+            {% endfor %}
 
-				{% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
-
-                	<a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
-
-                {% endif %}
-
-				<a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">Detailed Review</a>
 			</div>
 			<div class="con">
 				{% if testidata.field_testimonials_country_selec.value %}
@@ -220,34 +225,37 @@
       <div class="col-md-4 mb-30">
       <div class=" st-test-bg">
 
-         <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+         <div class="student-image">
 
-         <p><b>{{testidata.field_name.value|raw}}<br>
-            {{testidata.field_designation.value|raw}}</b><br>
-            {% for univ in testidata.field_testimonial_course %}
-               {{univ.entity.title.value}}
-            {% endfor %} {{' | '}}
-            <b>{{testidata.field_testimonial_batch.value|raw}}</b>
-         </p>
-
-         <h3>
-            {% set text = testidata.title.value|render|striptags %}
-                {{ text|length > 90 ? text|slice(0, 90) ~ '...' : text }}
-         </h3>
-         <h4>
-            {% set text = testidata.field_testimonial_text.value|render|striptags %}
-                {{ text|length > 110 ? text|slice(0, 110) ~ '...' : text }}
-         </h4>
-
-         <div class="lin">
+            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
 
             {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
 
-                  <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+               <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img class="test-linkd" src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+            {% endif %}         
 
-                {% endif %}
+            <p><b>{{testidata.field_name.value|raw}}</b><br>
+                  {{testidata.field_designation.value|raw}}
+            </p>
 
-            <a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">Detailed Review</a>
+         </div>   
+
+         <h3>
+            {% set text = testidata.title.value|render|striptags %}
+                {{ text|length > 36 ? text|slice(0, 36 ) ~ '...' : text }}
+         </h3>
+
+         <h4>
+            {% set text = testidata.field_testimonial_text.value|render|striptags %}
+            {{ text|length > 70 ? text|slice(0, 70 ) ~ '...' : text }}&nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">ReadMore</a></span>    
+         </h4>
+
+         <div class="lin">
+            {% for univ in testidata.field_testimonial_course %}         
+               {% set text = univ.entity.title.value %}
+               {{ text|length > 20 ? text|slice(0, 20) : text }}
+            {% endfor %}
+
          </div>
          <div class="con">
             {% if testidata.field_testimonials_country_selec.value %}
