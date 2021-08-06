@@ -88,7 +88,7 @@ class ShortTermCourseController {
                         $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
+                $white_logo ='';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -104,8 +104,8 @@ class ShortTermCourseController {
                 }
 
                 $website_card_content = $value->website_card_content;
-
-
+                
+                
                 $courses_data[] = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,
@@ -113,8 +113,8 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name, 
                     'course_image' => $course_image_path
                 ];
             }
@@ -210,7 +210,7 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -234,10 +234,12 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
 
                 $html .= '<div class="item content" style="display:block;">
                     <div class="item-inner">
@@ -272,8 +274,7 @@ class ShortTermCourseController {
                     </div>
                     <div class="course-item">
                         <div class="row heading m-0">
-                            <div class="col-9">
-                                <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                            <div class="col-9"> '.$image_add.'  
                             </div>
                             <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -365,7 +366,7 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
 
-                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -389,17 +390,20 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
 
                 $html .= '<div class="item content" style="display:block;">
                             <div class="item-inner">
                                 <div class="course-item">
                                     <div class="row heading m-0">
-                                        <div class="col-9">
-                                            <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                                        <div class="col-9"> '.$image_add.'
                                         </div>
                                         <div class="col-3">
                                             <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -495,7 +499,8 @@ class ShortTermCourseController {
                 else {
                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
+
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -519,10 +524,13 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
 
                 $html .= '<div class="item content" style="display:block;">
                     <div class="item-inner">
@@ -554,8 +562,8 @@ class ShortTermCourseController {
                     </div>
                     <div class="course-item">
                         <div class="row heading m-0">
-                            <div class="col-9">
-                                <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                            <div class="col-9"> '. $image_add .'
+                                
                             </div>
                             <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -632,7 +640,7 @@ class ShortTermCourseController {
                 else {
                     $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
@@ -656,17 +664,19 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'athen-course-logo.svg'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
 
                 $html .= '<div class="item content" style="display:block;">
                             <div class="item-inner">
                                 <div class="course-item">
                                     <div class="row heading m-0">
-                                        <div class="col-9">
-                                            <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                                        <div class="col-9"> '. $image_add .'
                                         </div>
                                         <div class="col-3">
                                             <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -745,7 +755,8 @@ class ShortTermCourseController {
                     $current_page = $all_data->data->current_page;
                     foreach ($related_courses as $course) {
                         $url = $this->_lms_url . '/student-dashboard/course/' . $course->cid .'/'.$course->slug;
-                        $white_logo = athena_course_current_theme_image('images', 'athen-course-logo.svg');
+
+                        $white_logo = '';
                         $univ_name = '';
                         foreach ($course->partner_body as $key1 => $value1) {
                             if( is_object( $value1 )) {
@@ -759,7 +770,12 @@ class ShortTermCourseController {
                                 }
                             }
                         }
+                        
                         $course_amount = ($course->field_course_amount != "") ?  $course->field_course_amount : 'Free';
+
+                        $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
+
                         $html .= '<div class="item content" style="display:block;">
                         <div class="item-inner">
                         <div class="course-item-hover" style="padding:22px 15px 18px;">
@@ -790,8 +806,8 @@ class ShortTermCourseController {
                         </div>
                         <div class="course-item">
                             <div class="row heading m-0">
-                                <div class="col-9">
-                                    <img src="' . $white_logo . '" alt="' . $course->university_name . '">
+                                <div class="col-9"> '. $image_add .'
+                                    
                                 </div>
                                 <div class="col-3">
                                     <span class="free-text">' . $course_amount . '</span>

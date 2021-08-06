@@ -141,7 +141,10 @@
                             <div class="course-item">
                                 <div class="row heading m-0">
                                     <div class="col-8">
-                                        <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
+                                        {% if node.univ_name is not empty and node.univ_name is not null %}
+                                            <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
+                                        {% endif %}
+
                                     </div>
                                     <div class="col-4">
                                         <span class="free-text">{{node.field_course_amount}}</span>

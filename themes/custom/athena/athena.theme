@@ -663,7 +663,7 @@ function athena_preprocess_views_view_field(&$variables) {
 
   $view = $variables['view'];
 
-  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' ) {
+  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' || $view->id() == 'most_viewed_popular_insights' ) {
     if($variables['field']->field == 'nid') {
       $my_field_value = $variables['field']->getValue($variables['row']);
       $entity_a = Node::load($my_field_value);

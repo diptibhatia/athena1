@@ -28,9 +28,9 @@
 {% if options.alignment == 'horizontal' %}
   {% for row in items %}
     {% if loop.index ==1 %}
-      <div class="row" {{ 'row-' ~ loop.index}} >
+      <div class="row card-group" {{ 'row-' ~ loop.index}} >
     {% else %}
-      <div class="row pt-3" {{ 'row-' ~ loop.index}} >
+      <div class="row pt-3 card-group" {{ 'row-' ~ loop.index}} >
     {% endif %}
       {% for column in row.content %}
         {% if loop.index % 3 %}
