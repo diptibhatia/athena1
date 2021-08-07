@@ -121,7 +121,7 @@
         			margin-left: -9%;
     			}
 			}
-			
+
 .pass-cls{
 
 	height: 50px !important;
@@ -235,7 +235,7 @@ width: 81%;
 .login-wrapper .intl-tel-input.allow-dropdown input#phone{
 	width:75% !important;
 	box-shadow: none !important;
-    border: none !important;
+    //border: none !important;
     height: 44px !important;
 	padding-left: 10px !important;
 	@include belowSize700{
