@@ -16,7 +16,7 @@
   position: relative;
   transition: transform 0.9s;
   transform-style: preserve-3d;
-background-color: #fff;
+/* background-color: #fff; */
 }
 
 .item:hover .item-inner {
