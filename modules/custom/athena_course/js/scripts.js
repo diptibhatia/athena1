@@ -10,15 +10,15 @@ jQuery(document).ready(function () {
     type : "get",
     async: false,
     success : function(data) {
-      console.log(data);
+      // console.log(data);
       ip = data.ip;
       province = data.region;
       // province = "Free State";
-      console.log(ip + ' ' + province);
+      // console.log(ip + ' ' + province);
       if(prov_list.includes(province)) {
         BU = "DicioMarketing"
       }
-      console.log(BU);
+      // console.log(BU);
     },
     error: function() {
       alert("Something went wrong please try again");
