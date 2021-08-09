@@ -1310,7 +1310,16 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-
+        jQuery("#phone").intlTelInput({
+        initialCountry: "auto",
+        geoIpLookup: function(success, failure) {
+            jQuery.get("https://ipinfo.io/?token=8ac111a31f0784", function() {}, "jsonp").always(function(resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "us";
+            success(countryCode);
+            });
+        },
+        separateDialCode: true
+        });
       jQuery("#smo_form_submit").click(function() {
         var msg = '';
         var regex = /^[a-zA-Z_ \.]*$/;
@@ -1398,6 +1407,7 @@ Medium:String(jQuery("#utm_medium").val()),
   var enc_lname = btoa(lname);
   var enc_email = btoa(email);
   var country_code = btoa(jQuery("#country_code").val());
+  var enc_ciso = btoa(iso2);
   var enc_phone = btoa(jQuery("#phone").val());
 
 var pathparts = location.pathname.split('/');
@@ -1420,12 +1430,12 @@ var pathparts = location.pathname.split('/');
                             var txt;
                           //  var r = confirm("Registration Successful, you will be redirected to login page now.");
 
-                          window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                          window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&ciso='+enc_ciso+'&phone='+enc_phone);
                         },
                         error: function (jqXhr, textStatus, errorMessage) {
                                 if(jqXhr.status == 200) {
 
-                                  window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&phone='+enc_phone);
+                                  window.location.replace(url+'/smo-tq?nid='+nid+'&fname='+enc_fname+'&lname='+enc_lname+'&email='+enc_email+'&ccode='+country_code+'&ciso='+enc_ciso+'&phone='+enc_phone);
 
 
                                 }

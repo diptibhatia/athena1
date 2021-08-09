@@ -270,7 +270,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       cData.pay = jQuery("#pay").val();
       let ip,province;
       jQuery.ajax({
-        url : "https://api.ipdata.co?api-key=272b689fa6863f7205dff78e661f0fe6a29c07ddec10d9caba8b05d1",
+        url : "https://ipinfo.io/?token=8ac111a31f0784",
         type : "get",
         async: false,
         success : function(data) {

@@ -2,8 +2,28 @@ var baseUrl = window.location.origin;
 //var baseUrl = "https://websitestg.athena.edu";
 
 //alert(baseUrl);
-
+let ip,province,BU = "AGE";
 jQuery(document).ready(function () {
+  var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
+  jQuery.ajax({
+    url : "https://ipinfo.io/?token=8ac111a31f0784",
+    type : "get",
+    async: false,
+    success : function(data) {
+      console.log(data);
+      ip = data.ip;
+      province = data.region;
+      // province = "Free State";
+      console.log(ip + ' ' + province);
+      if(prov_list.includes(province)) {
+        BU = "DicioMarketing"
+      }
+      console.log(BU);
+    },
+    error: function() {
+      alert("Something went wrong please try again");
+    }
+  });
   var search_url = baseUrl + '/search-results/abc?univ=';
   jQuery("#partner_search").change(function () {
     var partner = jQuery("#partner_search").val();
@@ -445,7 +465,9 @@ jQuery(document).ready(function () {
       Yearsofexperience: parseInt(jQuery(".pc-form #reg_exp").val()),
       Monthofexperience: parseInt(jQuery(".pc-form #reg_months").val()),
       IsAccepted: true,
-      Employmentlevel: String(jQuery("#reg_level").val())
+      Employmentlevel: String(jQuery("#reg_level").val()),
+      IPAddress:ip,
+      BU:BU
     };
 
     var email_id = jQuery(".pc-form #reg_email").val();

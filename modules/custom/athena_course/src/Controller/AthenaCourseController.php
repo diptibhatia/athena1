@@ -34,6 +34,7 @@ class AthenaCourseController {
     $lname = $_REQUEST['lname'];
     $email = $_REQUEST['email'];
     $ccode = $_REQUEST['ccode'];
+    $ciso = $_REQUEST['ciso'];
     $phone = $_REQUEST['phone'];
 
     $academic =  [
@@ -44,6 +45,7 @@ class AthenaCourseController {
       '#lname' => $lname,
       '#email' => $email,
       '#ccode' => $ccode,
+      '#ciso' => $ciso,
       '#phone' => $phone,
       '#node' => $node,
       '#base_path' => $base_path,
@@ -606,6 +608,9 @@ if( isset($_REQUEST['email']))
 if( isset($_REQUEST['ccode']))
   $ccode = base64_decode($_REQUEST['ccode']);
 
+if( isset($_REQUEST['ccode']))
+  $ciso = base64_decode($_REQUEST['ciso']);
+
 if( isset($_REQUEST['phone']))
   $phone = base64_decode($_REQUEST['phone']);
 
@@ -619,6 +624,7 @@ $registration =  [
   '#lname' => $lname,
   '#email' => $email,
   '#ccode' => $ccode,
+  '#ciso' => $ciso,
   '#phone' => $phone,
   '#cid' => $cid,
   // '#nodes' => $nodes,
