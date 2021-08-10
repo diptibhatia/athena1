@@ -2,7 +2,23 @@ var baseUrl = window.location.origin;
 (function ($, Drupal) {
   $(document).ready(function () {
 
-    $("#reg_mobile_num").intlTelInput();
+    jQuery("#reg_mobile_num").intlTelInput({
+      initialCountry: "auto",
+      geoIpLookup: function(success, failure) {
+        jQuery.ajax({
+          url: 'https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137',
+          type: 'GET',
+          // dataType: "jsonp",
+          success: function (resp) {
+              //console.log(resp);
+              var countryCode = (resp && resp.country_code) ? resp.country_code : "in";
+              success(countryCode.toLowerCase());
+          },
+          async: false
+        });
+      },
+      separateDialCode: true
+    });
 
     $.fn.inputFilter = function(inputFilter) {
       return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
@@ -145,7 +161,7 @@ var baseUrl = window.location.origin;
 
     $('#registration-afpage').submit(function(e) {
       if (v.form()) {
-        var utmSource = getParameterByName("utm_source"), campaign = getParameterByName("utm_campaign");
+        var utmSource = getParameterByName("utm_source"), campaign = getParameterByName("utm_campaign") == null ? "" : getParameterByName("utm_campaign");
         var phnNumber = $("#reg_mobile_num").val(); // get full number eg +17024181234
         var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj
         var phoneNum = "+" + countryCode + phnNumber;
@@ -163,18 +179,17 @@ var baseUrl = window.location.origin;
         cData.pay = jQuery("#pay").val();
         let ip,province;
         jQuery.ajax({
-          url : "https://ipinfo.io/?token=8ac111a31f0784",
-          type : "get",
+          url : "https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137",
+          type : "GET",
           async: false,
           success : function(data) {
             ip = data.ip;
             province = data.region;
-            // province = "Free State";
-            console.log(ip + ' ' + province);
+            // console.log(ip + ' ' + province);
             if(prov_list.includes(province)) {
               BU = "DicioMarketing"
             }
-            console.log(BU);
+            // console.log(BU);
           },
           error: function() {
             alert("Something went wrong please try again");
@@ -201,6 +216,7 @@ var baseUrl = window.location.origin;
         jQuery.ajax({
           url: URL,
           type: 'POST', // http method
+          async: false,
           contentType: "application/json; charset=utf-8",
           data: JSON.stringify(sendInfo), // data to submit
           success: function (data, status, xhr) {

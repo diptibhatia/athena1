@@ -72,11 +72,17 @@ var baseUrl = window.location.origin;
   jQuery("#reg_mobile_num").intlTelInput({
     initialCountry: "auto",
     geoIpLookup: function(success, failure) {
-       jQuery.get("https://ipinfo.io/?token=8ac111a31f0784", function() {}, "jsonp").always(function(resp) {
-        //  console.log(resp);
-         var countryCode = (resp && resp.country) ? resp.country : "us";
-         success(countryCode);
-       });
+      jQuery.ajax({
+          url: 'https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137',
+          type: 'GET',
+          success: function (resp) {
+              // console.log(resp);
+              var countryCode = (resp && resp.country_code) ? resp.country_code : "in";
+              // console.log(countryCode);
+              success(countryCode.toLowerCase());
+          },
+          async: false
+      });
     },
     separateDialCode: true
   });
@@ -259,11 +265,11 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
 
   $('#registration-afpage').submit(function(e) {
     if (v.form()) {
-      var utmSource = getParameterByName("utm_source"), campaign = getParameterByName("utm_campaign");
+      var utmSource = getParameterByName("utm_source"), campaign = getParameterByName("utm_campaign") == null ? "" : getParameterByName("utm_campaign");
       var phnNumber = $("#reg_mobile_num").val(); // get full number eg +17024181234
       var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj
       var phoneNum = "+" + countryCode + phnNumber;
-      var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West','Kerala'];
+      var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
       let BU = "AGE"
       utmSource = (utmSource == null || utmSource == '') ? "Direct":utmSource;
       //API URL
@@ -280,14 +286,12 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       cData.pay = jQuery("#pay").val();
       let ip,province;
       jQuery.ajax({
-        url : "https://ipinfo.io/?token=8ac111a31f0784",
-        type : "get",
+        url : "https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137",
+        type : "GET",
         async: false,
         success : function(data) {
           ip = data.ip;
           province = data.region;
-          // province = "Free State";
-          // console.log(ip + ' ' + province);
           if(prov_list.includes(province)) {
             BU = "DicioMarketing"
           }
@@ -318,6 +322,7 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       jQuery.ajax({
         url: URL,
         type: 'POST', // http method
+        async: false,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(sendInfo), // data to submit
         success: function (data, status, xhr) {

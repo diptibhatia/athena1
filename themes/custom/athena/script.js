@@ -118,25 +118,22 @@ jQuery(document).ready(function() {
       initialCountry: "auto",
       geoIpLookup: function(success, failure) {
         jQuery.ajax({
-            url: 'https://ipinfo.io/?token=8ac111a31f0784',
+            url: 'https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137',
             type: 'GET',
-            dataType: "jsonp",
             success: function (resp) {
-              // console.log(resp);
-                jQuery.getJSON('/themes/custom/athena/assets/cnames.json', function(country) {
-                  jQuery("#edit-country").val(country[resp.country]);
-                });
-                countryCode = resp && resp.country_code2;
-                var countryCode = (resp && resp.country) ? resp.country : "us";
-                success(countryCode);
+                // console.log(resp);
+                var countryCode = (resp && resp.country_code) ? resp.country_code : "in";
+                // console.log(countryCode);
+                success(countryCode.toLowerCase());
             },
             async: false
         });
       },
       separateDialCode: true
-    };
+    }
     let ciso = getURLParameterByName("ciso");
     if(ciso !== null) {
+      console.log("ciso");
       telConfig = {
         initialCountry: atob(ciso),
         separateDialCode: true
@@ -172,7 +169,7 @@ jQuery(document).ready(function() {
     // });
 
     // if (jQuery(".country-code").length > 0) {
-    //     jQuery.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8', function(data) {
+    //     jQuery.get('https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137', function(data) {
     //         var countrycode = data.country_code2;
     //         countrycode = countrycode.toLowerCase();
 
