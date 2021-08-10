@@ -220,7 +220,11 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
     var utmSource = getParameterByName("utm_source");
     // var userId = 0;
     if (v.form()) {
-      jQuery.ajax('https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/' + cData.email, {
+      var URL = "https://agestagingapi.azurewebsites.net/Register/GetCheckuser/Email/";
+        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+          URL = "https://athenawpapi.azurewebsites.net/Register/GetCheckuser/Email/";
+        }
+      jQuery.ajax(URL + cData.email, {
         type: 'GET', // http method
         success: function(response) {
           // console.log(response);
@@ -363,7 +367,11 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
     // console.log(cData);
 
     if(cData.hasOwnProperty('pay') && cData.pay == 1) {
-      jQuery.when( jQuery.get("https://athenawpapi.azurewebsites.net/Register/GetUserId/"+cData.email))
+      var URL = "https://agestagingapi.azurewebsites.net/Register/GetUserId/";
+        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+          URL = "https://athenawpapi.azurewebsites.net/Register/GetUserId/";
+        }
+      jQuery.when( jQuery.get(URL+cData.email))
         .then(function( data, textStatus, jqXHR ) {
         //   alert(data);
         // alert( jqXHR.status );
