@@ -674,6 +674,9 @@
                 {% endfor %}
 
                 </div>
+
+                {% if node.field_upload_brochure_.value is not empty and node.field_upload_specifications.value is not empty and node.field_fact_sheet_document.value is not empty %}
+
                 <div class="course-resources-card">
                     <h3>Course Resources</h3>
                     <p>For more detailed information about the course, please click on the links below.</p>
@@ -689,6 +692,9 @@
                      {% endif %}
                     </div>
                 </div>
+
+                {% endif %}
+                
             </div>
         </div>
     </div>
