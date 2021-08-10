@@ -204,10 +204,14 @@
 				{% if testidata.field_testimonials_country_selec.value %}
 
                {% set list_value = testidata.field_testimonials_country_selec.value %}
-               {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
+
+               {% set text = testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] %}
+               {{ text|length > 15 ? text|slice(0, 15) : text }}
+
                         
-              <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
-             {% endif %}
+               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+            
+            {% endif %}
 			</div>
 
 		</div>
@@ -261,7 +265,9 @@
             {% if testidata.field_testimonials_country_selec.value %}
 
                {% set list_value = testidata.field_testimonials_country_selec.value %}
-               {{ testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] }}
+
+               {% set text = testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] %}
+               {{ text|length > 15 ? text|slice(0, 15) : text }}
                         
               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
              {% endif %}

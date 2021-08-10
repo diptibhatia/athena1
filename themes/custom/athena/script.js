@@ -15,8 +15,8 @@
     };
   }(jQuery));
 
-jQuery(".selected-flag").after("<div class='country-code' />");
-jQuery('.iti__flag-container').remove();
+// jQuery(".selected-flag").after("<div class='country-code' />");
+// jQuery('.iti__flag-container').remove();
 
 function initiateSendingMail(form_id, mailinfo) {
   var dataObj = {
@@ -114,9 +114,37 @@ jQuery(document).ready(function() {
           $(".search-btn").click();
       }
     });
-    jQuery("#phone").intlTelInput();
-    jQuery(".ac-form #phone").intlTelInput();
-    jQuery(".pc-form #phone").intlTelInput();
+    var telConfig = {
+      initialCountry: "auto",
+      geoIpLookup: function(success, failure) {
+        jQuery.ajax({
+            url: 'https://ipinfo.io/?token=8ac111a31f0784',
+            type: 'GET',
+            dataType: "jsonp",
+            success: function (resp) {
+              // console.log(resp);
+                jQuery.getJSON('/themes/custom/athena/assets/cnames.json', function(country) {
+                  jQuery("#edit-country").val(country[resp.country]);
+                });
+                countryCode = resp && resp.country_code2;
+                var countryCode = (resp && resp.country) ? resp.country : "us";
+                success(countryCode);
+            },
+            async: false
+        });
+      },
+      separateDialCode: true
+    };
+    let ciso = getURLParameterByName("ciso");
+    if(ciso !== null) {
+      telConfig = {
+        initialCountry: atob(ciso),
+        separateDialCode: true
+      };
+    }
+    jQuery("#phone").intlTelInput(telConfig);
+    jQuery(".ac-form #phone").intlTelInput(telConfig);
+    jQuery(".pc-form #phone").intlTelInput(telConfig);
 
     jQuery(".ac-form #phone").inputFilter(function(value) {
       return /^\d*$/.test(value);
@@ -134,34 +162,34 @@ jQuery(document).ready(function() {
     });
     jQuery('#phone').attr('maxlength', 15);
 
-    if (jQuery(".country-code").length == 0) {
-        jQuery(".selected-flag").after("<div class='country-code' />");
-        jQuery(".country-code").text("+1");
-    }
+    // if (jQuery(".country-code").length == 0) {
+    //     jQuery(".selected-flag").after("<div class='country-code' />");
+    //     jQuery(".country-code").text("+1");
+    // }
 
-    jQuery(".country-list li").on('click', function(){
-        jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
-    });
+    // jQuery(".country-list li").on('click', function(){
+    //     jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
+    // });
 
-    if (jQuery(".country-code").length > 0) {
-        jQuery.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8', function(data) {
-            var countrycode = data.country_code2;
-            countrycode = countrycode.toLowerCase();
+    // if (jQuery(".country-code").length > 0) {
+    //     jQuery.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8', function(data) {
+    //         var countrycode = data.country_code2;
+    //         countrycode = countrycode.toLowerCase();
 
-            var element = document.getElementsByClassName("selected-flag")[0];
-            element.dispatchEvent(new Event("click"));
-            jQuery("li.country[data-country-code='" + countrycode +
-            "']").trigger('click');
+    //         var element = document.getElementsByClassName("selected-flag")[0];
+    //         element.dispatchEvent(new Event("click"));
+    //         jQuery("li.country[data-country-code='" + countrycode +
+    //         "']").trigger('click');
 
-            var element = document.getElementsByClassName("selected-flag")[1];
-            element.dispatchEvent(new Event("click"));
-            jQuery("li.country[data-country-code='" + countrycode +
-            "']").trigger('click');
+    //         var element = document.getElementsByClassName("selected-flag")[1];
+    //         element.dispatchEvent(new Event("click"));
+    //         jQuery("li.country[data-country-code='" + countrycode +
+    //         "']").trigger('click');
 
 
-            window.scrollTo(0, 0);
-        });
-    }
+    //         window.scrollTo(0, 0);
+    //     });
+    // }
 });
 
 jQuery(document).on("click", ".country-list li", function(event) {

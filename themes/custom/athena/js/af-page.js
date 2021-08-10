@@ -69,7 +69,17 @@ var baseUrl = window.location.origin;
           }
       }
   });
-  $("#reg_mobile_num").intlTelInput();
+  jQuery("#reg_mobile_num").intlTelInput({
+    initialCountry: "auto",
+    geoIpLookup: function(success, failure) {
+       jQuery.get("https://ipinfo.io/?token=8ac111a31f0784", function() {}, "jsonp").always(function(resp) {
+        //  console.log(resp);
+         var countryCode = (resp && resp.country) ? resp.country : "us";
+         success(countryCode);
+       });
+    },
+    separateDialCode: true
+  });
 
   $.fn.inputFilter = function(inputFilter) {
     return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
@@ -270,18 +280,18 @@ jQuery.validator.addMethod("emailExt", function(value, element, param) {
       cData.pay = jQuery("#pay").val();
       let ip,province;
       jQuery.ajax({
-        url : "https://api.ipdata.co?api-key=272b689fa6863f7205dff78e661f0fe6a29c07ddec10d9caba8b05d1",
+        url : "https://ipinfo.io/?token=8ac111a31f0784",
         type : "get",
         async: false,
         success : function(data) {
           ip = data.ip;
           province = data.region;
           // province = "Free State";
-          console.log(ip + ' ' + province);
+          // console.log(ip + ' ' + province);
           if(prov_list.includes(province)) {
             BU = "DicioMarketing"
           }
-          console.log(BU);
+          // console.log(BU);
         },
         error: function() {
           alert("Something went wrong please try again");

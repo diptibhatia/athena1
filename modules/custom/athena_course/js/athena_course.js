@@ -163,12 +163,12 @@ var baseUrl = window.location.origin;
         cData.pay = jQuery("#pay").val();
         let ip,province;
         jQuery.ajax({
-          url : "https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8",
+          url : "https://ipinfo.io/?token=8ac111a31f0784",
           type : "get",
           async: false,
           success : function(data) {
             ip = data.ip;
-            province = data.state_prov;
+            province = data.region;
             // province = "Free State";
             console.log(ip + ' ' + province);
             if(prov_list.includes(province)) {
