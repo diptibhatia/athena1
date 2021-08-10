@@ -2,15 +2,15 @@
 	border-radius: 6px;
   box-shadow: 0 2px 25px 2px #d5dbfb;
   position: relative;
-  z-index: 10; 
-  background-color: #ffffff; 
+  z-index: 10;
+  background-color: #ffffff;
 
   @include atSize700 {
 	  width: 500px;
 	  height: 750px;
-	  right: -40px; 
+	  right: -40px;
   }
-	
+
   .login-details {
 	  padding: 20px 23px;
 	  label {display: block; color:red; clear:both;}
@@ -23,10 +23,10 @@
 
 		  @include atSize700 {
 			  font-size: 1.25rem;
-		  } 
-		
+		  }
+
 		  &::after {
-			  content: none;	
+			  content: none;
 		  }
 	  }
 
@@ -49,8 +49,8 @@
 			  top: 72px;
 			  margin-left: 10px;
 			  border:none;
-			  border-top: solid 4px #ff459a; 
-			  
+			  border-top: solid 4px #ff459a;
+
 			  @include atSize700 {
 				  display: inline-block;
 			  }
@@ -77,7 +77,7 @@
 			  font-size: .9rem;
 			  color: $primaryColor;
 			  margin: 0 0 7px 2px;
-			  
+
 			  @include atSize700 {
 				  font-size: 1rem;
 			  }
@@ -96,15 +96,15 @@
 			  margin: 0;
 			  font-size: 16px;
 			  -webkit-appearance: none;
-			  
+
 			  &::-webkit-input-placeholder { /* Edge */
 				  opacity: .4;
 				}
-				
+
 			  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
 				  opacity: .4;
 				}
-				
+
 			  &::placeholder {
 				  opacity: .4;
 				}
@@ -217,4 +217,3 @@
 	  }
   }
 }
-
