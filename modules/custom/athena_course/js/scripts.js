@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
     success : function(data) {
       // console.log(data);
       ip = data.ip;
-      province = data.state_prov;
+      province = data.region;
       // province = data.region;
       // console.log(ip + ' ' + province);
       if(prov_list.includes(province)) {
