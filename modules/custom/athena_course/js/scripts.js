@@ -6,14 +6,14 @@ let ip,province,BU = "AGE";
 jQuery(document).ready(function () {
   var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
   jQuery.ajax({
-    url : "https://ipinfo.io/?token=8ac111a31f0784",
-    type : "get",
+    url : "https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137",
+    type : "GET",
     async: false,
     success : function(data) {
       // console.log(data);
       ip = data.ip;
       province = data.region;
-      // province = "Free State";
+      // province = data.region;
       // console.log(ip + ' ' + province);
       if(prov_list.includes(province)) {
         BU = "DicioMarketing"
@@ -365,8 +365,8 @@ jQuery(document).ready(function () {
       type: 'POST',  // http method
       contentType: "application/json; charset=utf-8",
       dataType: "json",
+      async: false,
       data: JSON.stringify(sendInfo),  // data to submit
-      dataType: 'json',
       success: function (data, status, xhr) {
         var txt;
         var r = confirm("Registration Successful, you will be redirected to login page now.");
