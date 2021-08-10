@@ -12,7 +12,7 @@
 		font-size: $line-height-md;
 		margin-bottom: 32px;
 
-		@include atSize700 { 
+		@include atSize700 {
 			font-size: 32px;
 		}
 	}
@@ -34,15 +34,15 @@
 		}
 	}
 
-	.academic-bg-wrap {		
+	.academic-bg-wrap {
 .row {width: auto;}
 		@media (max-width: 700px) {
 			margin-top: 30px;
 			position: relative;
     padding-top: 120px;
-		}		
+		}
 
-	    @include atSize700 { 
+	    @include atSize700 {
 			background: url("images/academic-bg.png");
 			background-position-y: 290px;
 		    position: relative;
@@ -52,17 +52,17 @@
 
 	.banner {
 
-		&-image {			
+		&-image {
 			position: relative;
 
-			@include atSize700 { 
+			@include atSize700 {
 				bottom: 20px;
 			}
-			@include atSize1350 { 
+			@include atSize1350 {
 				bottom: 20px;
 			}
 
-			@include atSizeIpodPotrait {				
+			@include atSizeIpodPotrait {
 				bottom: -80px;
 			}
 
@@ -74,14 +74,14 @@
 				@media screen and (max-width:767px){
 					bottom:auto;
 					top:10%;
-				}				
+				}
 
-				@include atSize700 { 
+				@include atSize700 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
 				}
-				@include atSize1350 { 
+				@include atSize1350 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
@@ -98,19 +98,19 @@
         	margin: 0;
 
 	        @include atSize700 {
-	            font-size: 4rem;        
-	            line-height: 1.8;	  
+	            font-size: 4rem;
+	            line-height: 1.8;
 	            letter-spacing: normal;
-	                 
+
 	        }
 
-	        @include atSize1350 {	            
+	        @include atSize1350 {
 	            font-size: 4rem;
 	            line-height: 1.8;
 
 	        }
 
-	        @include atSizeIpodPotrait {				
+	        @include atSizeIpodPotrait {
 				font-size: 3rem;
 			}
 		}
@@ -120,24 +120,24 @@
         	line-height: 1.8;
 
 			@include atSize700 {
-	           font-size: 1rem;        
+	           font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
 
 	        @include atSize1350 {
-	            font-size: 1rem;	        
+	            font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
 		}
 	}
 
-	.box {		
+	.box {
 
 		margin-bottom: 50px;
 
-		@include atSize700 { 
+		@include atSize700 {
 			padding: 0 30px;
 			margin: 0;
 		}
@@ -150,14 +150,14 @@
 		    bottom: -10px;
 		    font-size: 32px;
 @media screen and (max-width:540px) {
-	bottom: -40px; 
+	bottom: -40px;
     left: 50%;
 }
-			@include atSize700 { 
-				content: ' \2192';		    	
+			@include atSize700 {
+				content: ' \2192';
 			    top: 10%;
-			    right: -6px;			    
-			}	    	
+			    right: -6px;
+			}
 		}
 
 		&:last-child {
@@ -197,10 +197,10 @@
 
 					right: 6%;
 					top: 50%;
-					@include atSize700 { 
+					@include atSize700 {
 						right: 0%;
 						top: 35%;
-					}				
+					}
 				}
 
 				.owl-nav {
@@ -266,19 +266,19 @@
 						// 	width: 140px !important;
     					// 	height: 88px !important;
 						// }
-						
+
 
 						&.link_img {
 							width: 40px !important;
 						    height: 40px !important;
 					     	top: -45px;
 							left: 86px;
-							
+
 							@include atSize700 {
 							    top: -40px;
-							    left: 100px;	
+							    left: 100px;
 							}
-							
+
 						}
 					}
 				}
@@ -298,11 +298,11 @@
 						}
 					}
 				}
-			}		
+			}
 		}
 	}
 
-	.academic-content { 
+	.academic-content {
 		p {
 				//font-size: 14px;
 			}
@@ -371,7 +371,7 @@
 		}
 
 		.banner_text {
-			@include atSize700 { 
+			@include atSize700 {
 				width: 50%;
 			}
 		}
@@ -382,7 +382,7 @@
 		color: $purpleColor;
 	}
 
-	
+
 }
 .OuterContainer{
 	background-color: #eff1fe;
@@ -396,7 +396,7 @@
 // .select-option{height:calc(1.5em + 1rem + 2px) !important;font-size:16px;}
 .intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb; width:100%; background:#fff; border:1px solid #ced4da; border-radius:8px; /*height:calc(1.5em + 1.25rem + 2px);*/ height:50px;}
 .intl-tel-input .country-list{margin-top:49px;}
-.intl-tel-input.allow-dropdown input{width: 75%; float: right; text-align: left; padding: 14px; box-shadow:none; border:transparent; padding-left:52px !important; background:transparent;}
+.intl-tel-input.allow-dropdown input{width: 75%; float: right; text-align: left; padding: 14px; box-shadow:none; border:transparent; padding-left:30px !important; background:transparent;}
 .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
 	width: 46px;
 	z-index: 1;

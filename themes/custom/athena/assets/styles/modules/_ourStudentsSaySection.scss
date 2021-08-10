@@ -2,7 +2,7 @@
     padding-top: 35px;
     padding-bottom: 50px;
     background-color: #eff1fe;
-    
+
     @include atSize1250 {
         margin-bottom: 270px;
         margin-top: 257px;
@@ -39,7 +39,7 @@
             }
         }
     }
-    
+
     .testimonials {
         padding-top: 25px;
         top: 0;
@@ -94,7 +94,7 @@
                     height: 270px;
                     padding: 50px 28px 30px 47px;
                 }
-    
+
                 .studentImg {
                     width: 80px;
                     position: absolute;
@@ -102,7 +102,7 @@
                     top: -30px;
                     height:80px;
                 }
-                
+
                 .msg {
                     font-size: .875rem;
                     line-height: 1.71;
@@ -119,27 +119,27 @@
                         }
                     }
                 }
-    
+
                 .detail {
-    
+
                     p {
                         line-height: 1.25;
                         margin: 0;
                         color: #d90493;
                         font-size: .9rem;
-                        
+
                         @include atSize700 {
                             font-size: 1rem;
                         }
                     }
-    
+
                     .name {
                         font-weight: bold;
                         letter-spacing: .2px;
                     }
-    
+
                 }
-    
+
                 a {
                     position: absolute;
                     top: 5px;
@@ -150,7 +150,7 @@
                         bottom: 44px;
                         top: inherit;
                     }
-    
+
                     img {
                         width: 45px;
                     }
@@ -213,7 +213,7 @@
                     height: 270px;
                     padding: 50px 28px 30px 47px;
                 }
-    
+
                 .studentImg {
                     width: 80px;
                     position: absolute;
@@ -221,7 +221,7 @@
                     top: -30px;
                     height:80px;
                 }
-                
+
                 .msg {
                     font-size: .875rem;
                     line-height: 1.71;
@@ -238,27 +238,27 @@
                         }
                     }
                 }
-    
+
                 .detail {
-    
+
                     p {
                         line-height: 1.25;
                         margin: 0;
                         color: #d90493;
                         font-size: .9rem;
-                        
+
                         @include atSize700 {
                             font-size: 1rem;
                         }
                     }
-    
+
                     .name {
                         font-weight: bold;
                         letter-spacing: .2px;
                     }
-    
+
                 }
-    
+
                 a {
                     position: absolute;
                     top: 5px;
@@ -269,7 +269,7 @@
                         bottom: 44px;
                         top: inherit;
                     }
-    
+
                     img {
                         width: 45px;
                     }
@@ -353,7 +353,7 @@
                 text-decoration: none;
                 border-radius: 3px;
                 background-image: linear-gradient(to right, #ff006e 0%, #ff4e9a 100%, #ffffff 100%);
-                
+
                 @include atSize700 {
                     position: absolute;
                     bottom: 28px;
@@ -369,4 +369,18 @@
             margin: 0 auto;
         }
     }
+}
+
+.login-details{
+	.intl-tel-input.allow-dropdown{
+	.flag-container{
+		.selected-flag{
+			padding: 0px 10px !important;
+			background-color: white;
+		}
+	}
+}
+}
+.intl-tel-input.allow-dropdown input#phone {
+    margin-top: -3px !important;
 }
