@@ -241,20 +241,18 @@ class ShortTermCourseController {
 
                 $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
 
-                $html .= '<div class="item content" style="display:block;">
-                    <div class="item-inner">
-                    <div class="course-item-hover" style="padding:22px 15px 18px;">
+                $html .= '<div class="flip-card">
+                    <div class="flip-card-inner">
+                    
+                    <div class="flip-card-back">
                         <div class="row">
-                            <div class="col-12 social-icons">
-                                
+                            <div class="col-12 social-icons">                                
 
                                 <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
                                 
-                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>                                
 
-                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
-                                
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>                                
 
                             </div>
                         </div>
@@ -272,11 +270,11 @@ class ShortTermCourseController {
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
                     </div>
-                    <div class="course-item">
+                    <div class="flip-card-front">
                         <div class="row heading m-0">
-                            <div class="col-9"> '.$image_add.'  
+                            <div class="col-8"> '.$image_add.'  
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
                             </div>
                         </div>
@@ -532,40 +530,40 @@ class ShortTermCourseController {
                 $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
 
 
-                $html .= '<div class="item content" style="display:block;">
-                    <div class="item-inner">
-                    <div class="course-item-hover" style="padding:22px 15px 18px;">
+$html .= '<div class="flip-card">
+                    <div class="flip-card-inner">
+                    
+                    <div class="flip-card-back">
                         <div class="row">
-                            <div class="col-12 social-icons">
-                                
-                                
+                            <div class="col-12 social-icons">                                
+
                                 <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
                                 
-                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>                                
 
-                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>                                
 
                             </div>
                         </div>
                         <div class="course-details col-12 text-center0 p-0">
                             <h3>' . $courses_data['label'] . '</h3>
-                            <div class="course-info ">
+                            <div class="course-info">
                                 <p class="small">' . $courses_data['univ_name'] . '</p>
+                                 
                                 <span class="course-info-text"><p>' . $courses_data['body'] . '</p></span>
                             </div>
+                            
                             <div class="col-12">
                                 <h4><a target="_blank" href="' . $courses_data['course_url'] . '">More Information ></a></h4>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
                     </div>
-                    <div class="course-item">
+                    <div class="flip-card-front">
                         <div class="row heading m-0">
-                            <div class="col-9"> '. $image_add .'
-                                
+                            <div class="col-8"> '.$image_add.'  
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
                             </div>
                         </div>
@@ -574,16 +572,16 @@ class ShortTermCourseController {
                             <img width="100%" src="' . $courses_data['course_image'] . '" alt="course-image">
 
                         </div>
-                        
                         <div class="course-details">
                             <h3>' . $courses_data['label'] . '</h3>
-                            <div class="course-info course-info-text">
-                            <p>' . $courses_data['card_intro'] . '</p>
+                            
+                            <div class="course-info course-info-text"><p>
+                               ' .  $courses_data['card_intro'] . '</p>
                             </div>
                             <div class="col-12 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '"><button>Start Now</button></a></div>
                         </div>
                     </div>
-                </div>
+                    </div>
                 </div>';
             }
             $response->addCommand(new HtmlCommand('.shortterm-courses', $html));

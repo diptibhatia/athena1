@@ -769,6 +769,8 @@ function athena_preprocess_links(&$variables) {
 function athena_preprocess_html(&$variables)
 {
   $current_path = \Drupal::service('path.current')->getPath();
+  
+  /*
   $mbaprograms = \Drupal::service('path.alias_manager')->getPathByAlias('/MBAPrograms');
   $pgcertificateEnrol = \Drupal::service('path.alias_manager')->getPathByAlias('/pgcertificateEnrol');
  
@@ -795,6 +797,7 @@ function athena_preprocess_html(&$variables)
       }
     }
   }
+  */
 
   $route_name = \Drupal::routeMatch()->getRouteName();
     // Custom meta tags on smo and course pages.
