@@ -11,18 +11,23 @@
 
  {% endfor %}
 
-                                           <a data-toggle="modal" class="showinMobileView btn btn-default"  style="position: relative;float:right;color:white;" data-dismiss="modal" data-target="#myModalsocialshare">
+                                         <!--  <a data-toggle="modal" class="showinMobileView btn btn-default"  style="position: relative;float:right;color:white;" data-dismiss="modal" data-target="#myModalsocialshare">
                     <img src="/themes/custom/athena/images/coursepage/share.svg" alt="share icon" style="width:30px;">
                     Share
-                </a>
+                </a>-->
             </div>
             <h1 class="course-banner__title">{{course_title}}</h1>
             <p class="course-banner__uni">{{awarding_body}}</p>
             <p class="course-banner__details">{{description}}
             </p>
-            
+            {% set type = 'cert' %}
+            {% if node.field_course_category.value == 'Academic' %}
+            {% set type = 'acad' %}
+            {% elseif node.field_course_category.value == 'Micro Credits' %}
+            {% set type = 'mcred' %}
+            {% endif %}
             <div class="course-banner__apply-btn">
-                <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}{{campaign_params}}">Apply now</a>
+                <a class="apply-btn" style="color:#000;" href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&type={{type}}{{campaign_params}}">Apply now</a>
     {% if node.field_courses_credit_type.0.value %}
 
                 <p>{{ects_credit}} Credits ({{node.field_courses_credit_type.0.value|raw }})</p>
@@ -34,7 +39,7 @@
                     <i>Watch</i><i>Intro</i>
                 </a>
             </div> -->
-            <div class="hideinMobileView shareIcon">
+            <div class="shareIcon">
                 <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare">
                     <img src="/themes/custom/athena/images/coursepage/share.svg" alt="share icon">
                     Share

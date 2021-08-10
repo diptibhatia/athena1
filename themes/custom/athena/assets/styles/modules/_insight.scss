@@ -1,17 +1,34 @@
 .select-option {
 	display: block;
     width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 4px;
-    font-size: 0.8rem;
+    //height: calc(1.5em + 0.75rem + 2px);
+	height:50px;
+    //padding: 4px;
+	padding-left: 23px;
+    //font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    //color: #495057;
+	color: #8d8d8d;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+    //border-radius: 0.25rem;
+	border-radius: 8px;
+	margin-bottom: 2.5rem;
 }
+
+.inp-fields{
+	height: 53px;
+	padding-left: 30px;
+	color: #8d8d8d;
+	margin-bottom: 2.5rem;
+	border-radius: 8px;
+
+  }
+
+
+
 
 .insight-wrapper {
 	h1, h2, h3 {
@@ -30,7 +47,7 @@
     	padding-right: 20px;
 	}
 
-	.progress-bar {		
+	.progress-bar {
 		width: 100%;
 		background-color: transparent;
 		position: fixed;
@@ -42,8 +59,8 @@
 			padding: 2px;
 			width: 30%;
 			display: block;
-		}	
-		
+		}
+
 	}
 
 	.corporate-title {
@@ -72,10 +89,10 @@
 	}
 
 	.share-icon {
-		position: relative;		
+		position: relative;
 		//width: 20px;
 		//padding-left: 30px;
-		
+
 		li {
 			margin-top: 10px;
 
@@ -85,8 +102,8 @@
 
 				@include atSize700 {
 					width: 40px;
-					height: 40px;	
-				}					
+					height: 40px;
+				}
 			}
 		}
 	}
@@ -104,7 +121,7 @@
 	}
 
 	.insight-cards {
-		
+
 		@include atSize700 {
 			max-width: 252px;
 			margin:0.5rem auto !important;
@@ -119,7 +136,7 @@
 				max-width: 240px;
 				height:auto;
 			}
-			
+
 		}
 		.insight-card-footer{
 			.readMin{
@@ -132,13 +149,13 @@
 
 	.banner {
 
-		&-image {			
+		&-image {
 			position: relative;
 
-			@include atSize700 { 
+			@include atSize700 {
 				bottom: 20px;
 			}
-			@include atSize1350 { 
+			@include atSize1350 {
 				bottom: 20px;
 			}
 
@@ -146,14 +163,14 @@
 				bottom: 20%;
 				width: 90%;
 				left: 0%;
-				right:0%;				
+				right:0%;
 
-				@include atSize700 { 
+				@include atSize700 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
 				}
-				@include atSize1350 { 
+				@include atSize1350 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
@@ -170,13 +187,13 @@
         	margin: 0;
 
 	        @include atSize700 {
-	            font-size: 4rem;        
-	            line-height: 1.8;	  
+	            font-size: 4rem;
+	            line-height: 1.8;
 	            letter-spacing: normal;
-	                 
+
 	        }
 
-	        @include atSize1350 {	            
+	        @include atSize1350 {
 	            font-size: 4rem;
 	            line-height: 1.8;
 
@@ -188,13 +205,13 @@
         	line-height: 1.8;
 
 			@include atSize700 {
-	           font-size: 1rem;        
+	           font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
 
 	        @include atSize1350 {
-	            font-size: 1rem;	        
+	            font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
@@ -207,7 +224,7 @@
 				span {
 					color: $primaryColor;
 				}
-			}			
+			}
 		}
 	}
 
@@ -233,20 +250,21 @@
 		line-height: 1.5;
 		margin: 0;
 		font-weight: 800;
-		text-overflow: ellipsis; 
+		text-overflow: ellipsis;
 		max-height: 52px;
 		overflow: hidden;
 		//white-space: nowrap;
-		/* The number of lines to be displayed */ 
-		-webkit-line-clamp: 2;  
+		/* The number of lines to be displayed */
+		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
-		display: -webkit-box; 
+		display: -webkit-box;
 	}
-	.single-discussion{ 
+	.single-discussion{
 		.share-icon {
 		position: absolute;
 		padding-left: 0;
 		top: 220px;
+		right:0;
 		}
 	}
 	.insight-card-footer {
@@ -260,11 +278,28 @@
 
 	.insight-card-body {
 		padding: 10px 0;
-	} 
+	}
 	.insight-banner {
-		
+
 		.col-md-4.mobilePadding {
 			border-left:1px solid #eee;
+		}
+		.col-md-12{
+      .img-fluid {
+        margin-bottom: 29px;
+      }
+			.meta{
+				color: #8d8d8d;
+				font-size: 13px;
+				text-decoration: none;
+				padding-right: 10px;
+				margin-right: 10px;
+			}
+		}
+		.meta{
+			color:#8d8d8d;
+			font-size:13px;
+			text-decoration:none;
 		}
 		.item {
 			.row {
@@ -272,11 +307,11 @@
 			}
 			.profile {
 				@media screen and (max-width: 540px){
-					text-align:center; 
+					text-align:center;
 					padding-top:10px;
 				}
 				img {
-					width:100%; 
+					width:100%;
 					@media screen and (max-width: 480px){
 						width:180px;}
 					}
@@ -288,14 +323,14 @@
 					font-size: 13px;
 					text-transform: uppercase;
 					padding: 15px 0;
-					float: left; 
-					@media screen and (max-width: 540px){			 
-					float: none; 
+					float: left;
+					@media screen and (max-width: 540px){
+					float: none;
 					}
 			}
 			span:nth-child(3) {
 				float: right;
-				@media screen and (max-width: 540px){	
+				@media screen and (max-width: 540px){
 					float: none;
 				}
 			}
@@ -378,13 +413,13 @@
 					    position: relative;
 					    bottom: -7px;
 					}
-				}				
+				}
 
 				&:hover {
 					color: $purpleColor;
 				}
 			}
-		}		
+		}
 	}
 
 	.navigation {
@@ -410,7 +445,7 @@
 	    justify-content: center;
 	    margin: 0;
 
-	    h1 {    
+	    h1 {
 	      color: $primaryColor;
 	      font-size: 32px;
 	      text-shadow: 5px 5px 10px $lt-gray;
@@ -420,8 +455,8 @@
 
 	  .view {
 	    text-align: center;
-	    display: block;	   
-	    background-color: $background-pale;	    
+	    display: block;
+	    background-color: $background-pale;
 
 	    a {
 	      font-size: 18px;
@@ -455,7 +490,7 @@
 	    border: none;
 		 @media screen and (max-width:540px) {
 			flex: 1 0 0%;
-			 margin-bottom: 0; 
+			 margin-bottom: 0;
 		}
 	    .card-img {
 	      width: 100%;
@@ -524,7 +559,7 @@
 	      }
 	      p {
 	        font-size: 14px;
-	        
+
 	        i {
 	          margin-top: 20px;
 	          margin-right: 4px;
@@ -556,7 +591,7 @@
 				right: 0;
 				top: 0
 			}
-		}		
+		}
 	}
 
 	.viewAll {
@@ -567,12 +602,12 @@
 
 		&:after {
 			content: ' \2193';
-			color: $purpleColor;		    
-		    font-size: $line-height-md;		   
+			color: $purpleColor;
+		    font-size: $line-height-md;
 
-			@include atSize700 { 
+			@include atSize700 {
 				content: ' \2192';
-			}	    	
+			}
 		}
 	}
 	.unpad-extra{
@@ -583,11 +618,41 @@
 	}
 }
 
+.insight-banner {
+
+	.col-md-4.mobilePadding {
+		border-left:1px solid #eee;
+	}
+	.col-md-12{
+    .img-fluid {
+      margin-bottom: 29px;
+    }
+		.meta{
+			color:#8d8d8d;
+			font-size:13px;
+			text-decoration:none;
+      padding-right: 10px;
+      margin-right: 10px;
+		}
+    .meta-count {
+      margin-left: 21px;
+      padding-right: 5px;
+      font-size: 13px;
+      color: #8d8d8d;
+    }
+	}
+	.meta{
+		color:#8d8d8d;
+		font-size:13px;
+		text-decoration:none;
+	}
+}
+
 .single-testimonial .person-img {
     float: left;
     width: 36%;
     margin: 6px 20px 0 0;
-} 
+}
 .form-item-search-insights {
 	padding:10px;
 	height: 120px;
@@ -603,24 +668,24 @@
     padding: 10px;
     border-radius: 5px;
 /*    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 11%), 0 0 4px 0 rgb(0 0 0 / 14%); */
-    
+
     background-color: #ffffff;
-} 
+}
 }
 .search-insights {
 	height: 130px;
 	.form-item-search-insights {
 		label {margin-top:10px; margin-bottom: 15px; font-weight:600;}
 	}
-	.form-actions { 
+	.form-actions {
 	.form-submit{
-		
-		position: relative; 
+
+		position: relative;
 		top: -74px;
 		float: right;
 		right: 13px;
 		margin:0;
-	width: 51px;
+	  width: 51px;
     height: 45px;
     border-radius: 4px;
     background-image: linear-gradient(88deg, #ffc300 1%, #ffac00 99%, #ffd85e 99%);
@@ -628,7 +693,7 @@
 }}}
 
 
- 
+
 .insights-logos {
     border-style: none;
     width: 74px;
@@ -638,8 +703,108 @@
     padding: 15px 5px;
     display: inline-block;
     text-align: center;
-    img {width: 50px; max-height:30px;}
+	position:relative;
+    img {width: 50px; max-height:30px;position:absolute;transform:translate(-50%,-50%);left:50%;top:50%;}
 }
 
 #block-ourpopularcoursesblock {background-color: #ff00680d; padding: 10px;}
 #block-ourpopularcoursesblock .row {background-color: #fff; width:auto;}
+
+.paragraph--type--question-answer{
+	margin:0 -15px;
+  color: #616161;
+	blockquote {
+		padding: 1px 20px;
+		margin:0 20px 20px;
+    color: #616161;
+	}
+}
+
+.in-para {
+  color: #616161;
+}
+
+
+/* The container */
+.lab-container {
+	display: block;
+	position: relative;
+	padding-left: 15px;
+	margin-right: 30px;
+	cursor: pointer;
+	font-size: 14px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display:inline-flex;
+	align-items:base-line;
+
+  }
+
+  /* Hide the browser's default radio button */
+  .lab-container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	padding:0;
+	margin:0;
+
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+	position: absolute;
+	top: 11px;
+	left: 0;
+	height: 11px;
+	width: 10px;
+	background-color: #fff;
+	border:1px solid #828384;
+	border-radius: 2px;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .lab-container:hover input ~ .checkmark {
+	background-color: #ccc;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .lab-container input:checked ~ .checkmark {
+	background-color: white;
+	box-shadow:
+		0 0 0 1px hsl(212, 100%, 50%),
+		0 0 0 1px hsl(0, 0%, 90%);
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .lab-container input:checked ~ .checkmark:after {
+	display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .lab-container .checkmark:after {
+	   top: 1px;
+	  left: 1px;
+	  width: 6px;
+	  height: 6px;
+	  border-radius: 2px;
+	  background: #0075ff;
+  }
+
+  .lineheight{
+	  line-height:32px !important;
+  }
+
+  .getin-btn{
+
+	width:90% !important;
+	margin:0 auto !important;
+  }

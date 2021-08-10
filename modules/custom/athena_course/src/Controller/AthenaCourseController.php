@@ -264,8 +264,11 @@ class AthenaCourseController {
     $utm_campaign = $_GET['utm_campaign'] ?? '';
     $url_params = '';
     if (!empty($ref) && !empty($utm_source) && !empty($utm_medium) && !empty($utm_campaign)) {
-      $url_params = '&ref=' . $ref . '&utm_source=' . $source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
+      $url_params = '&ref=' . $ref . '&utm_source=' . $utm_source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
     }
+
+    //print $url_params;
+
 
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();
@@ -537,7 +540,11 @@ $course_description_tabs =  [
   '#why_athena' => $node->get('field_course_why_athena')->value,
   '#tax_value' => $tax_value,
   '#base_path' => $base_path,
-  '#campaign_params' => $url_params
+  '#campaign_params' => $url_params,
+  '#source' => $utm_source,
+  '#medium' => $utm_medium,
+  '#campaign' => $utm_campaign
+
 ];
 
 return array(

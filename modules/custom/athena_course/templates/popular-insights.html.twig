@@ -2,160 +2,179 @@
 	<div class="container pt-4">
 		<h2 class="text-center">Our Popular Insights</h2>
 		<div class="card-group">
-      {% for popudata in popu %}
-       <!--  popup -->
+			{% for popudata in popu %}
+				<!--  popup -->
 
-         <div id="myModalsocialshare{{loop.index}}" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+				<div id="myModalsocialshare{{loop.index}}" class="modal fade" role="dialog">
+					<div
+						class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
+						<!-- Modal content-->
+						<div
+							class="modal-content">
 
-      <!--
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-      -->
-      <div style="
-          text-align: right;
-      ">
-                <button type="button" class="close close-modal" data-dismiss="modal">×</button>
-              </div>
-
-
-      <div class="modal-body">
-       <div class="col-md-12">
-  <div class="col-md-12">
-    <h5 style="font-weight: bold;">Share this page</h5>
-
-    <h6>Show your friends and family what they can learn from athena</h6>
-  </div>
-  <!--<div class="col-md-12 row" style="margin-bottom: 20px;text-align:center;">
-    <div class="col-md-1"></div>
-    <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" width="45"></div>
-    <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/tw-co.png" width="45"></div>
-    <div class="col-md-2"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/li-ico.png" width="45"></div>
-    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
-<img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
-</div>
-    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
-<a href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}node/{{popudata.nid.value}}"
-   title="Share by Email">
-  <img src="/themes/custom/athena/images/at-ico.png" width="45">
-</a>
-</div>
-
-    <div class="col-md-1"></div>
+							<!--
+							        <div class="modal-header">
+							          <button type="button" class="close" data-dismiss="modal">&times;</button>
+							        </div>
+							      -->
+							<div style="
+									          text-align: right;
+									      ">
+								<button type="button" class="close close-modal" data-dismiss="modal">×</button>
+							</div>
 
 
-  </div>-->
+							<div class="modal-body">
+								<div class="col-md-12">
+									<div class="col-md-12">
+										<h5 style="font-weight: bold;">Share this page</h5>
 
-    <div class="row m-0">
-    <div class="col-md-12 p-0 text-center pb-4">
-        <a class="d-inline-block p-2" href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank">
-            <img src="/themes/custom/athena/images/fb-ico.png" width="45"></a>
-        <a class="d-inline-block p-2" href="http://twitter.com/share?url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank">
-            <img src="/themes/custom/athena/images/tw-co.png" width="45"></a>
-        <a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank">
-            <img src="/themes/custom/athena/images/li-ico.png" width="45"></a>
-        <a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
-            <img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
-        <a class="d-inline-block p-2" href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}node/{{popudata.nid.value}}" title="Share by Email" p-1="">
-            <img src="/themes/custom/athena/images/at-ico.png" width="45"></a>
-    </div>
-</div>
+										<h6>Show your friends and family what they can learn from athena</h6>
+									</div>
+									<!--<div class="col-md-12 row" style="margin-bottom: 20px;text-align:center;">
+									    <div class="col-md-1"></div>
+									    <div class="col-md-2"><a href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/fb-ico.png" width="45"></div>
+									    <div class="col-md-2"><a href="http://twitter.com/share?url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/tw-co.png" width="45"></div>
+									    <div class="col-md-2"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank"><img src="/themes/custom/athena/images/li-ico.png" width="45"></div>
+									    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
+									<img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
+									</div>
+									    <div class="col-md-2"><a href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
+									<a href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}node/{{popudata.nid.value}}"
+									   title="Share by Email">
+									  <img src="/themes/custom/athena/images/at-ico.png" width="45">
+									</a>
+									</div>
 
-{% set nodeid = popudata.nid.value %}
-
-<div class="col-md-12">
-    <div class="bg-white sidebar shadow-lg rounded p-3">
-    	<div class="col-md-12 row">
-		    <div id="shareurl--copy{{nodeid}}" class="col-md-8" style="
-           /* width: 300px; */
-           overflow: hidden;
-           background: -webkit-linear-gradient(left, black , #eeeeee);
-           background: -o-linear-gradient(right, black, #eeeeee);
-           background: -moz-linear-gradient(right, black, #eeeeee);
-           background: linear-gradient(to right, black , #eeeeee);
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-           white-space: nowrap;
-           ">
-                		{{ url('<front>') }}node/{{popudata.nid.value}}
-        </div>
-      	<div class="col-md-4 copyToClipboard">
-      			<a onclick="copy_to_clipboard('{{nodeid}}')">COPY</a>
-      	</div>
-      </div>
-</div>
-      </div></div>
-      </div>
-      <!--
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-      -->
-    </div>
-
-  </div>
-</div>
+									    <div class="col-md-1"></div>
 
 
+									  </div>-->
 
+									<div class="row m-0">
+										<div class="col-md-12 p-0 text-center pb-4">
+											<a class="d-inline-block p-2" href="http://www.facebook.com/sharer.php?u= {{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank">
+												<img src="/themes/custom/athena/images/fb-ico.png" width="45"></a>
+											<a class="d-inline-block p-2" href="http://twitter.com/share?url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank">
+												<img src="/themes/custom/athena/images/tw-co.png" width="45"></a>
+											<a class="d-inline-block p-2" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url('<front>') }}node/{{popudata.nid.value}}" target="_blank">
+												<img src="/themes/custom/athena/images/li-ico.png" width="45"></a>
+											<a class="d-inline-block p-2" href="https://api.whatsapp.com/send?text={{ url('<front>') }}node/{{popudata.nid.value}}" data-action="share/whatsapp/share">
+												<img src="/themes/custom/athena/images/wt-ico.png" width="45"></a>
+											<a class="d-inline-block p-2" href="mailto:?subject=Athena Insights&amp;body=Check out this {{ url('<front>') }}node/{{popudata.nid.value}}" title="Share by Email" p-1="">
+												<img src="/themes/custom/athena/images/at-ico.png" width="45"></a>
+										</div>
+									</div>
 
-         {% if loop.index ==3 %}
-			<div class="card">
-				<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" /></a>
-                <div class="insight-logo"><a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></a></div>
-          <div class="readTime"><a href="/node/{{popudata.nid.value}}">{#{popudata.field_insight_article_min_read.value}#} {{popudata.read_time}}</a></div>
-				<div class="card-body">
-					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
-					<p class="card-text">
-                  {% set text = popudata.body.value|render|striptags %}
-                  {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
-               </p>
+									{% set nodeid = popudata.nid.value %}
+
+									<div class="col-md-12">
+										<div class="bg-white sidebar shadow-lg rounded p-3">
+											<div class="col-md-12 row">
+												<div id="shareurl--copy{{nodeid}}" class="col-md-8" style="
+														           /* width: 300px; */
+														           overflow: hidden;
+														           background: -webkit-linear-gradient(left, black , #eeeeee);
+														           background: -o-linear-gradient(right, black, #eeeeee);
+														           background: -moz-linear-gradient(right, black, #eeeeee);
+														           background: linear-gradient(to right, black , #eeeeee);
+														           -webkit-background-clip: text;
+														           -webkit-text-fill-color: transparent;
+														           white-space: nowrap;
+														           ">
+													{{ url('<front>') }}node/{{popudata.nid.value}}
+												</div>
+												<div class="col-md-4 copyToClipboard">
+													<a onclick="copy_to_clipboard('{{nodeid}}')">COPY</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							      </div>
+							      -->
+						</div>
+
+					</div>
 				</div>
-				<div class="card-footer d-flex justify-content-between purple-txt">
-					<span class="cursor shareText">
-                    <a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
-                    <img src="/themes/custom/athena/images/share.svg">
-                    Share
-                </a>
 
-                    </span>
-					<span  style="margin-top:6px;">
-						<a href="/node/{{popudata.nid.value}}">Read More</a>
-					</span>
-				</div>
-			</div>
-         {% else %}
-         <div class="card mr-2">
-         	<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}" />
-            <div class="insight-logo"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></div>
-            <div class="readTime">{#{popudata.field_insight_article_min_read.value}#} {{popudata.read_time}}</div></a>
-				<div class="card-body">
-					<h5 class="card-title short-title"><a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a></h5>
-					<p class="card-text">
-                  {% set text = popudata.body.value|render|striptags %}
-                  {{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
-               </p>
-				</div>
-				<div class="card-footer d-flex justify-content-between purple-txt">
-					<span class="cursor shareText"><a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
-                    <img src="/themes/custom/athena/images/share.svg">
-                    Share
-                </a></span>
-					<span style="margin-top:6px;">
-						<a href="/node/{{popudata.nid.value}}">Read More</a>
-					</span>
-				</div>
-			</div>
-         {% endif %}
-      {% endfor %}
+
+				{% if loop.index ==3 %}
+					<div class="card">
+						<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}"/></a>
+						<div class="insight-logo">
+							<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></a>
+						</div>
+						<div class="readTime">
+							<a
+								href="/node/{{popudata.nid.value}}">
+								{#{popudata.field_insight_article_min_read.value}#}
+								{{popudata.read_time}}</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title short-title">
+								<a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a>
+							</h5>
+							<p class="card-text">
+								{% set text = popudata.body.value|render|striptags %}
+								{{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
+							</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between purple-txt">
+							<span class="cursor shareText">
+								<a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
+									<img src="/themes/custom/athena/images/share.svg">
+									Share
+								</a>
+
+							</span>
+							<span style="margin-top:6px;">
+								<a href="/node/{{popudata.nid.value}}">Read More</a>
+							</span>
+						</div>
+					</div>
+				{% else %}
+					<div class="card mr-2">
+						<a href="/node/{{popudata.nid.value}}"><img class="card-img-top" width="365" height="193" src="{{file_url(popudata.field_insight_article_image_thum[0].entity.uri.value)}}"/>
+							<div class="insight-logo"><img class="card-img-top" src="/themes/custom/athena/images/insights.svg" alt="insights"></div>
+							<div
+								class="readTime">
+								{#{popudata.field_insight_article_min_read.value}#}
+								{{popudata.read_time}}</div>
+						</a>
+						<div class="card-body">
+							<h5 class="card-title short-title">
+								<a href="/node/{{popudata.nid.value}}">{{popudata.title.value}}</a>
+							</h5>
+							<p class="card-text">
+								{% set text = popudata.body.value|render|striptags %}
+								{{ text|length > 120 ? text|slice(0, 120) ~ '...' : text }}
+							</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between purple-txt">
+							<span class="cursor shareText">
+								<a data-toggle="modal" class="btn btn-default" data-dismiss="modal" data-target="#myModalsocialshare{{loop.index}}">
+									<img src="/themes/custom/athena/images/share.svg">
+									Share
+								</a>
+							</span>
+							<span style="margin-top:6px;">
+								<a href="/node/{{popudata.nid.value}}">Read More</a>
+							</span>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
 		</div>
-		<div class="text-center pt-4 pb-4">
+		<div class="text-center pt-4 pb-4 cen-text">
 			<button onclick="window.location='/insights/all';" class="athena-btn violet-btn" type="button">View All</button>
 		</div>
 	</div>
 </div>
+
 

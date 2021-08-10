@@ -1,80 +1,212 @@
 <div class="container-fluid my-container">
-         <div class="popular-courses shawdow-effect">
-            <!-- <h1>Popular Courses</h1> -->
-            <div class="heading-image">
-               <img src="/themes/custom/athena/images/popular-courses.svg" alt="">
-            </div>
-            <h2>Our Popular Course</h2>
-            <h3>Some of our courses are in high demand. As acknowledged by our students, they have contributed to their professional achievements and enabled them to tackle challenging situations at the workplace.
-            </h3>
-            <div class="courses custom-carousel">
-             <div class="owl-carousel owl-theme partner-logos">
-            {% for coursedata in course %}
-            <div class="item">
-               <div class="course-item">
-                  <div class="image">
-                    {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+	<div
+		class="popular-courses shawdow-effect">
+		<!-- <h1>Popular Courses</h1> -->
+		<div class="heading-image">
+			<img src="/themes/custom/athena/images/popular-courses.svg" alt="">
+		</div>
+		<h2>Our Popular Course</h2>
+		<h3 style="padding: 0 20px; margin-bottom: 20px;">Some of our courses are in high demand. As acknowledged by our students, they have contributed to their professional achievements and enabled them to tackle challenging situations at the workplace.
+		</h3>
+
+		{#
+		<div class="courses custom-carousel">
+					<div class="owl-carousel owl-theme partner-logos">
+						{% for coursedata in course %}
+							<div class="item">
+								<div class="course-item">
+									<div class="image">
+										{% if coursedata.field_search_list_image.entity.uri.value is not empty %}
 
 
-        <a href="{{ url('<front>') }}course/{{coursedata.id}}"> <img class="course-img" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}"  alt="Course"></a>
-         {% else %}
-          <img class="course-img" src="/themes/custom/athena/images/course-image2.png" alt="Course">
-           {% endif %}
+											<a href="{{ url('<front>') }}course/{{coursedata.id}}">
+												<img class="course-img" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course"></a>
+										{% else %}
+											<img class="course-img" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+										{% endif %}
 
 
-                  </div>
-                  <div class="price-tag">
-                     <p>${{coursedata.field_course_total_fee.value}}</p>
-                  </div>
-                  <div class="course-details">
-                     <h1 class="headerWrap">{{coursedata.label}}</h1>
-                     <h2>{{coursedata.field_course_awarding_body.value|raw }}</h2>
-                     
-                    {% if ( coursedata.field_course_level.value is empty ) and ( coursedata.field_course_ects_credit.value is empty ) and ( coursedata.field_courses_credit_type.value is empty ) %}
+									</div>
+									<div class="price-tag">
+										<p>${{coursedata.field_course_total_fee.value}}</p>
+									</div>
+									<div class="course-details">
+										<h1 class="headerWrap">{{coursedata.label}}</h1>
+										<h2>{{coursedata.field_course_awarding_body.value|raw }}</h2>
 
-                    <div class="course-tags-empty"></div>
+										{% if ( coursedata.field_course_level.value is empty ) and ( coursedata.field_course_ects_credit.value is empty ) and ( coursedata.field_courses_credit_type.value is empty ) %}
 
-                    {% else %}
+											<div class="course-tags-empty"></div>
 
-                     <div class="course-tags">
+										{% else %}
 
-                        <p>
-                        {% if coursedata.field_course_level.value is not empty %}
-                          <span class="circle"></span>{{coursedata.field_course_level.value}}
-                        {% endif %}
-                        
+											<div class="course-tags">
 
-                        {% if coursedata.field_course_ects_credit.value is not empty %}
-                          <span>|</span>{{coursedata.field_course_ects_credit.value}}
-                        {% if coursedata.field_courses_credit_type.value is not empty %}
-                          {{coursedata.field_courses_credit_type.value}}
-                        {% endif %}
+												<p>
+													{% if coursedata.field_course_level.value is not empty %}
+														<span class="circle"></span>
+														{{coursedata.field_course_level.value}}
+													{% endif %}
 
-                        {% endif %}
-                        
-                        </p>
-                     </div>
-                     
-                     {% endif %}
 
-                     <h3><b>Duration : </b> {{coursedata.field_course_duration.value}}</h3>
-                  </div>
-                  <div class="course-info">
-                     {{coursedata.field_course_banner_description.value | truncate(60, true)}} {{'...'}}
-                     <span><a style="color: inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}" >Read More</a></span>
-                  </div>
-                  <div class="know-more">
-                     <p><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}" >Know More</a></p>
-                  </div>
-               </div>
-               </div>
-               {% endfor %}
+													{% if coursedata.field_course_ects_credit.value is not empty %}
+														<span>|</span>
+														{{coursedata.field_course_ects_credit.value}}
+														{% if coursedata.field_courses_credit_type.value is not empty %}
+															{{coursedata.field_courses_credit_type.value}}
+														{% endif %}
 
-            </div>
-            </div>
-            <div class="show-more">
-             <a href="{{ url('<front>') }}/search-results/abc?search_key=showallpopular">  <button>View all</button></a>
-            </div>
+													{% endif %}
 
-         </div>
-      </div>
+												</p>
+											</div>
+
+										{% endif %}
+
+										<h3>
+											<b>Duration :
+											</b>
+											{{coursedata.field_course_duration.value}}</h3>
+									</div>
+									<div class="course-info">
+										{{coursedata.field_course_banner_description.value | truncate(60, true)}}
+										{{'...'}}
+										<span>
+											<a style="color: inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Read More</a>
+										</span>
+									</div>
+									<div class="know-more">
+										<p>
+											<a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Know More</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+				</div>
+		#}
+
+
+		<div class="row">
+
+			{% set count = 0 %}
+			{% for coursedata in courses_row1 %}
+
+			<div class="col-md-4 ">
+
+				<div class="bg-co bg-co-1 ">
+					<div class="bgg-co " style="padding: 18px 0 18px 0px;">						        
+ 
+                        {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+ 
+		                    <img class="bk-mg" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course">
+
+           				{% else %}
+            				
+            				<img class="bk-mg" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+
+            			{% endif %}
+
+						<div class="text-right">
+
+							<span class="doller">${{coursedata.field_course_total_fee.value}}
+							</span>
+						</div>
+						<h3 class="p-10 mt-40 head-h3">
+							{{coursedata.label}}
+						</h3>
+						<div style="background-color: #ff0571;" class="pink-line">
+							
+							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
+							
+							<img src="{{ white_logo[count] }}" alt="university">
+
+							{% set count = count + 1 %}
+
+						</div>
+						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
+						<div class="bg-bor" style="margin-left:10px"></div>
+
+						{% if coursedata.field_duration.value is empty %}
+							{% set durlabel = "Flexible Duration" %}
+						{% else %}
+							{% set durlabel = coursedata.field_duration.value %}
+						{% endif %}
+
+						<p class="p-10"><b>{{durlabel}} :</b>
+
+						{{coursedata.field_course_duration.value}}</p>
+
+					</div>
+				</div>
+			</div>
+
+			{% endfor %}
+
+		</div>
+
+		<div class="row" style="margin-top:30px;">
+
+		{% for coursedata in courses_row2 %}
+
+			<div class="col-md-4 ">
+
+				<div class="bg-co bg-co-1 ">
+					<div class="bgg-co " style="padding: 18px 0 18px 0px;">
+
+                        {% if coursedata.field_search_list_image.entity.uri.value is not empty %}
+ 
+		                    <img class="bk-mg" src=" {{ file_url(coursedata.field_search_list_image.entity.uri.value)}}" alt="Course">
+
+           				{% else %}
+            				
+            				<img class="bk-mg" src="/themes/custom/athena/images/course-image2.png" alt="Course">
+
+            			{% endif %}
+
+						<div class="text-right">
+
+							<span class="doller">${{coursedata.field_course_total_fee.value}}
+							</span>
+						</div>
+						<h3 class="p-10 mt-40 head-h3">
+							{{coursedata.label}}
+						</h3>
+						<div style="background-color: #ff0571;" class="pink-line">
+							<p class="pink-strip">{{coursedata.field_course_awarding_body.value|raw }}</p>
+
+							<img src="{{ white_logo[count] }}" alt="university">
+
+							{% set count = count + 1 %}
+
+						</div>
+						<h3 class="p-10"><a style="color:inherit;" href="{{ url('<front>') }}course/{{coursedata.id}}">Learn More</a></h3>
+						<div class="bg-bor" style="margin-left:10px"></div>
+
+						{% if coursedata.field_duration.value is empty %}
+							{% set durlabel = "Flexible Duration" %}
+						{% else %}
+							{% set durlabel = coursedata.field_duration.value %}
+						{% endif %}
+
+						<p class="p-10"><b>{{durlabel}} :</b>
+
+						{{coursedata.field_course_duration.value}}</p>
+
+					</div>
+				</div>
+			</div>
+
+			{% endfor %}
+		</div>
+
+		<div class="show-more">
+			<a href="{{ url('<front>') }}/search-results/abc?search_key=showallpopular">
+				<button>View all</button>
+			</a>
+		</div>
+
+	</div>
+</div>

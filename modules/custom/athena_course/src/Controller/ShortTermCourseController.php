@@ -11,6 +11,7 @@ use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
 use \Drupal\athena_library\Utils\CommonHelper;
 use \Drupal\Core\Url;
+use \Symfony\Component\HttpFoundation\Request;
 
 class ShortTermCourseController {
 
@@ -72,20 +73,27 @@ class ShortTermCourseController {
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
 
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
+                if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))
+                {
+                    if (!empty($value->website_image_path)) 
+                        $course_image_path = $value->website_image_path;                    
+                    else 
+                        $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                else {
-                    if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" ))         $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
-                    else
+                else
+                {
+                    if (!empty($value->course_image_path)) 
+                        $course_image_path = $value->course_image_path;                    
+                    else 
                         $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+
+                $white_logo ='';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -96,8 +104,8 @@ class ShortTermCourseController {
                 }
 
                 $website_card_content = $value->website_card_content;
-
-
+                
+                
                 $courses_data[] = [
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,
@@ -105,8 +113,8 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name, 
                     'course_image' => $course_image_path
                 ];
             }
@@ -202,12 +210,12 @@ class ShortTermCourseController {
                     $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
 
-                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -226,19 +234,28 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
 
                 $html .= '<div class="item content" style="display:block;">
                     <div class="item-inner">
                     <div class="course-item-hover" style="padding:22px 15px 18px;">
                         <div class="row">
                             <div class="col-12 social-icons">
-                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                
+
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                
+
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+                                
+
                             </div>
                         </div>
                         <div class="course-details col-12 text-center0 p-0">
@@ -257,8 +274,7 @@ class ShortTermCourseController {
                     </div>
                     <div class="course-item">
                         <div class="row heading m-0">
-                            <div class="col-9">
-                                <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                            <div class="col-9"> '.$image_add.'  
                             </div>
                             <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -342,18 +358,20 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
+
+                if (!empty($value->website_image_path)) {
+                    $course_image_path = $value->website_image_path;
                 }
                 else {
                     $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -372,17 +390,20 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
 
                 $html .= '<div class="item content" style="display:block;">
                             <div class="item-inner">
                                 <div class="course-item">
                                     <div class="row heading m-0">
-                                        <div class="col-9">
-                                            <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                                        <div class="col-9"> '.$image_add.'
                                         </div>
                                         <div class="col-3">
                                             <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -402,9 +423,15 @@ class ShortTermCourseController {
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="social-icons">
-                                                        <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                                        <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                                        
+                                                        
+                                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                                
+                                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                                
+
+                                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-6 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '">
@@ -472,12 +499,13 @@ class ShortTermCourseController {
                 else {
                    $course_image_path = '/themes/custom/athena/images/course-image2.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -496,19 +524,28 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
 
                 $html .= '<div class="item content" style="display:block;">
                     <div class="item-inner">
                     <div class="course-item-hover" style="padding:22px 15px 18px;">
                         <div class="row">
                             <div class="col-12 social-icons">
-                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                
+                                
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                
+
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+
                             </div>
                         </div>
                         <div class="course-details col-12 text-center0 p-0">
@@ -525,8 +562,8 @@ class ShortTermCourseController {
                     </div>
                     <div class="course-item">
                         <div class="row heading m-0">
-                            <div class="col-9">
-                                <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                            <div class="col-9"> '. $image_add .'
+                                
                             </div>
                             <div class="col-3">
                                 <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -597,18 +634,18 @@ class ShortTermCourseController {
         $html = '';
         if (count($nodes) > 0) {
             foreach ($nodes->data->data as $key => $value) {
-                if (!empty($value->course_image_path)) {
-                    $course_image_path = $value->course_image_path;
+                if (!empty($value->website_image_path)) {
+                    $course_image_path = $value->website_image_path;
                 }
                 else {
                     $course_image_path = '/themes/custom/athena/images/smo/smo-course-img.png';
                 }
-                $white_logo = athena_course_current_theme_image('images', 'no-university.png');
+                $white_logo = '';
                 $univ_name = '';
                 foreach ($value->partner_body as $key1 => $value1) {
                     if( is_object( $value1 )) {
                         foreach($value1 as $key2 => $value2) {
-                           if ( $key2 == "logo" ) {
+                           if ( $key2 == "university_image" ) {
                                 $white_logo = $value2;
                            }
                            if ( $key2 == "university_name" ) {
@@ -627,17 +664,19 @@ class ShortTermCourseController {
                     'body' => $website_card_content,
                     'card_intro' => $value->course_introduction,
                     'field_course_amount' => 'Free',
-                    'white_logo' => $white_logo ?? athena_course_current_theme_image('images', 'no-university.png'),
-                    'univ_name' => $univ_name ?? '',
+                    'white_logo' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 ) || $white_logo == '' || ( empty ( $white_logo ) == 1 ) ) ? '' : $white_logo,
+                    'univ_name' => ( $univ_name == "None" || $univ_name == '' || ( empty ( $univ_name ) == 1 )) ? '' : $univ_name,
                     'course_image' => $course_image_path
                 ];
+
+                $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
 
                 $html .= '<div class="item content" style="display:block;">
                             <div class="item-inner">
                                 <div class="course-item">
                                     <div class="row heading m-0">
-                                        <div class="col-9">
-                                            <img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '">
+                                        <div class="col-9"> '. $image_add .'
                                         </div>
                                         <div class="col-3">
                                             <span class="free-text">' . $courses_data['field_course_amount'] . '</span>
@@ -657,10 +696,16 @@ class ShortTermCourseController {
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="social-icons">
-                                                        <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                                        <a href="https://www.twitter.com/share?url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url='. $courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
-                                                    </div>
+                                                        
+                                                        
+                                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                                
+                                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                                
+
+                                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+
+                                                                    </div>
                                                 </div>
                                                 <div class="col-6 button-area"><a target="_blank" href="' . $courses_data['course_url'] . '">
                                                     <button>Start Now &nbsp;></button></a>
@@ -685,5 +730,115 @@ class ShortTermCourseController {
         }
 
         return $response;
+    }
+    /**
+     * List courses as per pagination.
+     * @return [html]
+     */
+    public function shorttermCourseList(Request $request) {
+        $subject_id = $request->query->get('subject_id');
+        $current_page = $request->query->get('current_page');
+        $total = $request->query->get('total');
+        $pages = ceil($total/10);
+        $next_page = $current_page+1;
+        if($pages >= $next_page) {
+            $uri = $this->_lms_url .$this->_api. "/api/courselist?page=".$next_page."&page_limit=10&fk_type_of_qualification_id=1&status=1&subject_area_id=".$subject_id; 
+            $html = "";
+            try {
+                $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody();
+                $all_data = json_decode($response);
+
+                $courses = json_decode($all_data->data, TRUE);
+                if($all_data->status == 200) {
+                    $related_courses = $all_data->data->data;
+                    $total = $all_data->data->total;
+                    $current_page = $all_data->data->current_page;
+                    foreach ($related_courses as $course) {
+                        $url = $this->_lms_url . '/student-dashboard/course/' . $course->cid .'/'.$course->slug;
+
+                        $white_logo = '';
+                        $univ_name = '';
+                        foreach ($course->partner_body as $key1 => $value1) {
+                            if( is_object( $value1 )) {
+                                foreach($value1 as $key2 => $value2) {
+                                if ( $key2 == "university_image" ) {
+                                        $white_logo = $value2;
+                                }
+                                if ( $key2 == "university_name" ) {
+                                        $univ_name = $value2;
+                                }
+                                }
+                            }
+                        }
+                        
+                        $course_amount = ($course->field_course_amount != "") ?  $course->field_course_amount : 'Free';
+
+                        $image_add = ( $courses_data['univ_name'] == "" ) ? '' : '<img src="' . $courses_data['white_logo'] . '" alt="' . $courses_data['univ_name'] . '"> ';
+
+
+                        $html .= '<div class="item content" style="display:block;">
+                        <div class="item-inner">
+                        <div class="course-item-hover" style="padding:22px 15px 18px;">
+                            <div class="row">
+                                <div class="col-12 social-icons">
+                            
+                                
+                                <a href="https://www.facebook.com/sharer.php?u='. $courses_data['course_url'] . $courses_data['cid'] .'/'.$courses_data['label'] .'&quote=Check out this course -'. $courses_data['label'] .'. '. $courses_data['course_url'] .'&title= '.$courses_data['cid'].'"   target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>
+                                
+                                <a href="https://www.twitter.com/share?text=Check out this course -'. $courses_data['label'] .'. '.'&url='.$courses_data['course_url'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+                                
+
+                                <a href="https://www.linkedin.com/share?mini=true&url='.$courses_data['course_url'] .'&title='.$courses_data['course_url']. $courses_data['cid'] .'/'.$courses_data['label'] .'" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" class="ml-2 mr-2" /></a>
+                                
+                                </div>
+                            </div>
+                            <div class="course-details col-12 text-center0 p-0">
+                                <h3>' . $course->course_name . '</h3>
+                                <div class="course-info">
+                                    <p class="small">' . $course->university_name . '</p>
+                                    ' . put_dots_in_string($course->course_overview, 150) . '
+                                </div>
+                                <div class="col-12">
+                                    <h4><a target="_blank" href="' . $url . '">More Information ></a></h4>
+                                </div>
+                                <div class="col-12 button-area"><a target="_blank" href="' . $url . '"><button>Start Now</button></a></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="row heading m-0">
+                                <div class="col-9"> '. $image_add .'
+                                    
+                                </div>
+                                <div class="col-3">
+                                    <span class="free-text">' . $course_amount . '</span>
+                                </div>
+                            </div>
+                            <div class="image">
+
+                                <img width="100%" src="' . $course->course_image_path . '" alt="course-image">
+
+                            </div>
+                            <div class="course-details">
+                                <h3>' . $course->course_name . '</h3>
+                                <div class="course-info">
+                                    ' . put_dots_in_string($course->course_introduction, 150) . '
+                                </div>
+                                <div class="col-12 button-area"><a target="_blank" href="'.$url.'"><button>Start Now</button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>';        
+                    }
+                }
+
+            }
+            catch (\Exception $e) {
+                \Drupal::logger('type')->error($e->getMessage());
+            }
+            return [
+                '#markup' => '<div class="cards">'.$html.'</div><p id="current_page">'.$next_page.'<p>',
+            ];
+        }
+        
     }
 }

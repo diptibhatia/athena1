@@ -162,12 +162,13 @@
 
     .course-item{
         min-height: 100%;
+        background-color: #fff;
         .heading{
             clear:both;
             background-image:linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
             color:#fff;
             padding:0.3rem 0;
-            height:48px;
+            height:46px;
             h5{
                 font-size:12.9px;
                 line-height:22.1px;
@@ -180,7 +181,14 @@
                 text-align:right;
                 margin-top:5px;
             }
-            img {width: 36px;}
+            img {
+                max-height: 32px;
+                max-width: 100px !important;
+                position: absolute;
+                transform: translate(0, -50%);
+                left: 1.2rem;
+                top: 50%;
+            }
         }
         .image{
             clear: both;
@@ -199,6 +207,7 @@
             clear:both;
             padding:1.2rem;
             height:297px;
+            text-align: center;
             h3{
                 font-size:21.1px;
                     color:#303030;

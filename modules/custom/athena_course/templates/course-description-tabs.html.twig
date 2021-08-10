@@ -127,8 +127,8 @@
                             <div class="overview-points-card__container">
                                 <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>Flexible</h3>
-                                    <p>{{duration}}</p>
+                                    <h3>{{duration}}</h3>
+                                    <p>{{course_duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -206,8 +206,8 @@
                             <div class="overview-points-card__container">
                                 <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>Flexible</h3>
-                                    <p>{{duration}}</p>
+                                    <h3>{{duration}}</h3>
+                                    <p>{{course_duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -269,8 +269,8 @@
                             <div class="overview-points-card__container">
                                 <img src="/themes/custom/athena/images/coursepage/course-flexible.svg" alt="icon" class="overview-points-card__container-img">
                                 <div class="overview-points-card__container-contains">
-                                    <h3>Flexible</h3>
-                                    <p>{{duration}}</p>
+                                    <h3>{{duration}}</h3>
+                                    <p>{{course_duration}}</p>
                                 </div>
                             </div>
                             <div class="overview-points-card__container">
@@ -1148,6 +1148,7 @@
                             <input type="hidden" id="country_code" value="" >
                             <input type="hidden" id="utm_source" value="{{source}}" >
                             <input type="hidden" id="utm_campaign" value="{{campaign}}" >
+                            <input type="hidden" id="utm_medium" value="{{medium}}" >
 
                                 <input type="checkbox" class="form-check-input" id="speak_consent" name="speak_consent">
                                 <label class="form-check-label txt-12" for="exampleCheck1">I consent to Athena Global Education processing my personal information in accordance with the Athena Global Education Privacy Statement &amp; I agree to receive personalised information and updates about Athena Global Education  courses by phone and email.</label>
@@ -1379,6 +1380,7 @@
 });
 
         if(msg == ''){
+        $("#smo_form_submit").attr("disabled", true).html('Please wait<span class="dot dot1">.</span><span class="dot dot2">.</span><span class="dot dot3">.</span>');
          var sendInfo = {
 FirstName:String(jQuery("#speak_first_name").val()),
 LastName:String(jQuery("#speak_last_name").val()),
@@ -1388,6 +1390,7 @@ ContactNo:String(jQuery("#phone").val()),
 CourseId:parseInt(jQuery("#speak_courseid").val()),
 Source:String(jQuery("#utm_source").val()),
 Campaign:String(jQuery("#utm_campaign").val()),
+Medium:String(jQuery("#utm_medium").val()),
 
        };
 

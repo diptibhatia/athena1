@@ -1,5 +1,5 @@
 .about-us-wrapper {
-		
+
 	h3 {
 		font-size : 1.5rem;
 		line-height: 1.8;
@@ -12,17 +12,17 @@
 	.aboutus-modal {
 		.right-img {
 			img {
-				width: 284px; 
+				width: 284px;
 			}
 		}
 	}
 
 	.award-content {
 		p {
-			font-size : 18px; 
+			font-size : 18px;
 			margin: 0;
 
-			@include atSize700 { 
+			@include atSize700 {
 				font-size : 16px;
 			}
 		}
@@ -36,7 +36,7 @@
 					flex-direction: column-reverse;
 				}
 			}
-		@include atSize700 { 
+		@include atSize700 {
 			padding : 0;
 		}
 
@@ -61,7 +61,7 @@
 				margin: -71px 0 0 42px;
 				float: left;
 				clear: both;
-			}		
+			}
 
 		}
 
@@ -85,15 +85,15 @@
 
 	.banner {
 
-		&-image {			
+		&-image {
 			position: relative;
 			max-width: 100%;
 			max-height: auto;
 
-			@include atSize700 { 
+			@include atSize700 {
 				bottom: 20px;
 			}
-			@include atSize1350 { 
+			@include atSize1350 {
 				bottom: 20px;
 			}
 
@@ -105,14 +105,14 @@
 				bottom: 20%;
 				width: 90%;
 				left: 0%;
-				right:0%;				
+				right:0%;
 
-				@include atSize700 { 
+				@include atSize700 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
 				}
-				@include atSize1350 { 
+				@include atSize1350 {
 					bottom: 25%;
 					width: 100%;
 					padding-left: 3rem;
@@ -133,13 +133,13 @@
         	margin: 0;
 
 	        @include atSize700 {
-	            font-size: 4rem;        
-	            line-height: 1.8;	  
+	            font-size: 4rem;
+	            line-height: 1.8;
 	            letter-spacing: normal;
-	                 
+
 	        }
 
-	        @include atSize1350 {	            
+	        @include atSize1350 {
 	            font-size: 4rem;
 	            line-height: 1.8;
 
@@ -151,13 +151,13 @@
         	line-height: 1.8;
 
 			@include atSize700 {
-	           font-size: 1rem;        
+	           font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
 
 	        @include atSize1350 {
-	            font-size: 1rem;	        
+	            font-size: 1rem;
 	        	line-height: 1.8;
 	        	width: 50%;
 	        }
@@ -165,7 +165,7 @@
 	}
 
 	.list-group-item {
-		
+
 	}
 
 	.list-item-none {
@@ -206,16 +206,16 @@
 					    position: relative;
 					    bottom: -7px;
 					}
-				}				
+				}
 
 				&:hover {
 					color: $purpleColor;
 				}
 			}
-		}		
+		}
 	}
 
-	.quotes {		 
+	.quotes {
 		font-weight: 700;
 	    text-align: center;
 	    font-size: 2vw;
@@ -229,37 +229,43 @@
 	}
 
 	.about-popular-content {
-		background: #eff1fe; 
+		background: #eff1fe;
 		margin-top: 60px;
 		padding: 40px;
 		position: relative;
     	z-index: 99;
-		@include atSize700 { 
-			background: url("images/popular-bg.png") -200px 0 ;			 
+		/*@include atSize700 {
+			background: url("images/popular-bg.png") -200px 0 ;
 		}
 
 		@include atSizeXXLarge {
 			background: url('images/popular-bg.png') 0 0 ;
 			padding: 100px;
-		}
+		}*/
 	}
 }
+
 .about-popular-content {
 	background: #eff1fe;
 	//padding: 40px;
 	margin-top: 60px;
 	position: relative;
+  padding: 31px 0 33px 0;
 	//z-index: 99;
-	@include atSize700 { 
-		background: url("images/popular-bg.png") -200px 0 ; 
+	/*@include atSize700 {
+		background: url("images/popular-bg.png") -200px 0 ;
 	}
 
 	@include atSizeXXLarge {
 		background: url('images/popular-bg.png') 0 0 ;
 		padding: 100px;
-	}
+	}*/
 	.card-group {
 		.card-title {color:$titlePink}
+		.card-img-top-new img{
+			width: 100%;
+			height: auto;
+		}
 			}
 }
 .z-999 {
@@ -271,8 +277,13 @@
 	color: $primaryWhite;
 }
 
+
+
 .bg-skyblue {
 	background-color: $skyblue;
+	border-radius: 6px !important;
+    box-shadow: 0 5px 12px 3px rgba(0, 0, 0, 0.09)!important;
+    padding: 20px 15px 20px !important;
 }
 
 .txt-blue {
@@ -285,4 +296,8 @@
 
 .text-secondaryColor {
 	color: $primaryColor;
+}
+
+.foore{
+	background-color:#f1f4fe;
 }

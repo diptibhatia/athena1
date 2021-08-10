@@ -1,3 +1,4 @@
+var baseUrl = window.location.origin;
 (function ($, Drupal) {
   $(document).ready(function () {
 
@@ -110,7 +111,7 @@
           success: function(response) {
             // console.log(response);
             if(response == "Email Exist") {
-              var r = confirm("User already register, please wait while we redirect you to payment page");
+              var r = confirm("User already registered, please wait while we redirect you to login page");
 
               if (r == true) {
                 redirCandidate(cData, utmSource);
@@ -148,11 +149,37 @@
         var phnNumber = $("#reg_mobile_num").val(); // get full number eg +17024181234
         var countryCode = $("#reg_mobile_num").intlTelInput("getSelectedCountryData").dialCode; // get country data as obj
         var phoneNum = "+" + countryCode + phnNumber;
-
+        var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
+        let BU = "AGE";
+        utmSource = (utmSource == null || utmSource == '') ? "Direct":utmSource;
+        //API URL
+        var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
+        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+          URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
+        }
         cData.email = String(jQuery("#regEmail").val());
         cData.cId = parseInt(jQuery("#course").val());
         cData.modId = jQuery("#modId").val();
         cData.pay = jQuery("#pay").val();
+        let ip,province;
+        jQuery.ajax({
+          url : "https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8",
+          type : "get",
+          async: false,
+          success : function(data) {
+            ip = data.ip;
+            province = data.state_prov;
+            // province = "Free State";
+            console.log(ip + ' ' + province);
+            if(prov_list.includes(province)) {
+              BU = "DicioMarketing"
+            }
+            console.log(BU);
+          },
+          error: function() {
+            alert("Something went wrong please try again");
+          }
+        });
         // var userId = 0;
         var sendInfo = {
           UserName: String(jQuery("#regEmail").val()),
@@ -167,10 +194,12 @@
           source:String(utmSource),
           CampainName:String(campaign),
           IsAccepted:true,
+          IPAddress:ip,
+          BU:BU
         };
         //console.log(JSON.stringify(sendInfo));
         jQuery.ajax({
-          url: "https://athenawpapi.azurewebsites.net/Register/SaveLead",
+          url: URL,
           type: 'POST', // http method
           contentType: "application/json; charset=utf-8",
           data: JSON.stringify(sendInfo), // data to submit
@@ -203,6 +232,31 @@
         });
         return false;
       }
+    });
+    // Show more on Shortcourse page
+    $('#loadMore').one().click(function (e) {
+      e.preventDefault();
+      $('#loadMore').hide();
+      $('.loader').show();
+      let total = $('input#total').val();
+      let nextpage = parseInt($('input#current_page').val()) + 1;
+      console.log(nextpage);
+      let pages = Math.ceil(total/10);
+      $.ajax({
+        type: 'GET',
+        url: "/shortterm-courses/list?subject_id="+$('input#subject_id').val()+"&total="+$('input#total').val()+"&current_page="+$('input#current_page').val(),
+        success: function (data) {
+          console.log($(data).find("#current_page").html());
+          $('.shortterm-courses').append($(data).find(".cards").children());
+          $('#current_page').val($(data).find("#current_page").html());
+          $('.loader').hide();
+          if (pages > nextpage) {
+            $('#loadMore').show();
+          } 
+        },
+        error: function (jqXHR) {
+        }
+      });
     });
   });
 })(jQuery, Drupal);

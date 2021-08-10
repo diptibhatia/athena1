@@ -45,10 +45,14 @@
                                         <div class="col-6">
                                             <h3>Filter</h3>
                                         </div>
-                                        <div class="col-6 pr-0 text-right">
-                                            <span onclick="clearFilters()" class="text-bold btn" style="float:right;"
+                                        <div class="col-6 pr-0 text-right pt-2">
+
+                                            <img  class="float-right filter-link" style="display:none;" src="/themes/custom/athena/images/smo/filter-course.svg" />
+                                            <div class="float-right arrow" style="display:none;"></div>
+                                            <span onclick="clearFilters()" class="text-bold btn" style="float:right;margin-right:1rem;"
                                              id="clear_filters">Clear</span>     
                                         </div>
+
                                     </div>
                                     <div class="row multiple-selection-courses">
                                         <div class="col-12 pb-3 mb-4 select-level subject_filters">
@@ -100,10 +104,16 @@
                                     <div class="item-inner">
                                         <div class="course-item">
                                             <div class="row heading m-0">
-                                                <div class="col-9">
-                                                <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
+                                                <div class="col-8">
+
+                                                {% if node.univ_name is not empty and node.univ_name is not null %}
+                                            
+                                                    <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
+                                                    
+                                                {% endif %}
+
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-4">
                                                     <span class="free-text">{{node.field_course_amount}}</span>
                                                 </div>
                                             </div>
@@ -119,15 +129,17 @@
                                                     <div class="row">
                                                         <div class="col-6">
                                                             <div class="social-icons">
-                                                                <a href="http://www.facebook.com/sharer.php?u={{node.course_url}}"
-                                                            target="_blank"><img
-                                                                src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                                                        <a href="http://twitter.com/share?url={{node.course_url}}" target="_blank"><img
-                                                                src="/themes/custom/athena/images/icons/twitter.svg"
-                                                                class="ml-2 mr-2" /></a>
-                                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url={{node.course_url}}"
-                                                            target="_blank"><img
-                                                                src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+                                                                
+                                                                                                
+                                                    <a href="https://www.facebook.com/sharer.php?u={{node.course_url}}{{node.cid}}/{{node.label}}&quote=Check out this course - {{node.label}}{{'. '}} {{node.course_url}}{{node.cid}}/{{node.label}}&title={{node.cid}}"
+                                                    target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>        
+
+                                                    <a href="https://twitter.com/share?text=Check out this course - {{node.label}}{{'. '}}  &url={{node.course_url}}{{node.cid}}/{{node.label}}"
+                                                    target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
+
+                                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{node.course_url}}{{node.cid}}/{{node.label}}&title={{node.course_url}}{{node.cid}}/{{node.label}}"
+                                                    target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
+
                                                             </div>
                                                         </div>
                                                         <div class="col-6 button-area"><a target="_blank" href="{{node.course_url}}">
@@ -206,6 +218,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript">
+
+    //toggele filter area for mobile view    
+    if(window.innerWidth <= 768){
+            $(".select-level").hide();
+            $(".filter-link").show();
+            $(".arrow").hide();
+            $(".filter-area .filter-link").click(function(){
+                $(this).parents(".filter-area").addClass("opened");
+                $(".filter-link").hide();
+                $(".arrow").show();
+                $(".select-level").fadeToggle();
+            });
+            $(".filter-area .arrow").click(function(){
+                $(this).parents(".filter-area").removeClass("opened");
+                $(".filter-link").show();
+                $(".arrow").hide();
+                $(".select-level").fadeToggle();
+            });
+    };
+
 
     jQuery('.category-area .nav-link:first').addClass('active');
     
@@ -522,3 +554,5 @@
     }
 
 </script>
+
+
