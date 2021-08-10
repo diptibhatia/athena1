@@ -675,7 +675,10 @@
 
                 </div>
 
-                {% if node.field_upload_brochure_.value is not empty and node.field_upload_specifications.value is not empty and node.field_fact_sheet_document.value is not empty %}
+                {% if node.field_upload_brochure_.value is empty and node.field_upload_specifications.value is empty and node.field_fact_sheet_document.value is empty %}
+
+
+                {% else %}
 
                 <div class="course-resources-card">
                     <h3>Course Resources</h3>
@@ -694,7 +697,7 @@
                 </div>
 
                 {% endif %}
-                
+
             </div>
         </div>
     </div>
