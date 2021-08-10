@@ -808,3 +808,19 @@
 	width:90% !important;
 	margin:0 auto !important;
   }
+
+	.container{
+		.intl-tel-input.allow-dropdown{
+		.flag-container{
+			.selected-flag{
+				padding: 0px 10px !important;
+				background-color: white;
+			}
+		}
+	}
+	}
+	.intl-tel-input.allow-dropdown input#phone {
+		margin-top: -3px !important;
+    padding-left: 30px !important;
+
+	}
