@@ -1,438 +1,415 @@
 <link rel="stylesheet" type="text/css" href="/themes/custom/athena/assets/styles/modules/_cardFlip.css">
 
-
-
 <div class="main-wrapper container-fluid p-0 academic-program-wrapper explore-courses-page">
-    <div class="banner banner-image p-0 bg-white">
-        <img src="/themes/custom/athena/images/academic-program.png"
-            class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
-        <img src="/themes/custom/athena/images/about-us-mobile-banner.png"
-            class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
-        <div class="container carousel-caption text-left pl-0">
-            <h1 class="strong text-secondaryColor banner_title"><span class=""
-                    style="color:deeppink">Certification</span> programs</h1>
-            <div class="text-secondaryColor banner_text">
-                Microcredentials and programs allow you to pursue further study in a specialised field. Created or
-                accredited by leading universities, microcredentials are professional credentials designed for you to
-                build in-demand .
-            </div>
+  <div class="banner banner-image p-0 bg-white">
+    <img src="/themes/custom/athena/images/academic-program.png" class="col-lg-12 col-md-12 d-none d-lg-block d-md-block p-0" alt="Banner image">
+    <img src="/themes/custom/athena/images/about-us-mobile-banner.png" class="col-lg-12 col-md-12 d-sm-block d-lg-none d-md-none p-0" alt="Banner image">
+    <div class="container carousel-caption text-left pl-0">
+      <h1 class="strong text-secondaryColor banner_title">
+        <span class="" style="color:deeppink">Certification</span>
+        programs</h1>
+      <div class="text-secondaryColor banner_text">
+        Microcredentials and programs allow you to pursue further study in a specialised field. Created or accredited by leading universities, microcredentials are professional credentials designed for you to build in-demand .
+      </div>
 
-            
-            <div class="row pt-3">
-                <div class="col-md-12">
-                    <a class="float-left pt-1" href="#findCourseInput"><button
-                            class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button></a>
-                    <a target="_blank" class="float-left pt-2"
-                        href="{{ url('<front>') }}certification-level">See your course levels ></a>
-                </div>
-            </div>
+      <div class="row pt-3">
+        <div class="col-md-12">
+          <a class="float-left pt-1" href="#findCourseInput">
+            <button class="float-left btn academic-btn btn-outline-violet mr-2">See all Courses</button>
+          </a>
+          <a target="_blank" class="float-left pt-2" href="{{ url('<front>') }}certification-level">See your course levels ></a>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container-fluid find-your-course">
-        <div class="pt-4 pb-4 container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!--Find your course heading and Search course Input: START-->
-                    <div class="row pb-4 findCourseInput">
-                        <div class="col-12 col-md-6 col-lg-8">
-                            <h2 class="title">Find Your Course</h2>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="row bg-white shadow-sm rounded input-area mr-0">
-                                <input id="search" class="col-8" type="text"
-                                    placeholder="What do you want to learn" /><button
-                                    onclick="return searchCourseAction(event)" class="col-4 text-right">search <i
-                                        class="fa fa-search search-btn" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Find your course heading and Search course Input: END-->
-
-                    <!--Multiple Course Selection buttons: START -->
-                    <div class="row multiple-selection-courses">
-                        <div class="col-12 subject_filters">
-
-                            {% for filter_key, filter_value in filters %}
-                            <button type="button" id="filter_subject_{{ filter_value.id }}"
-                                onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')"
-                                class="btn">{{ filter_value.subject_area }}</button>
-                            {% endfor %}
-
-                        </div>
-                        <div class="col-12 selected-courses">
-                            <p>Currently Selected:
-                                <span class="text-bold" id="selected_filters"></span>
-                                <span onclick="clearFilters()" class="text-bold btn active" style="float:right;"
-                                    id="clear_filters">Clear Filters</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!--Multiple Course Selection buttons: END -->
-                </div>
+  <div class="container-fluid find-your-course">
+    <div class="pt-4 pb-4 container">
+      <div class="row">
+        <div class="col-md-12">
+          <!--Find your course heading and Search course Input: START-->
+          <div class="row pb-4 findCourseInput">
+            <div class="col-12 col-md-6 col-lg-8">
+              <h2 class="title">Find Your Course</h2>
             </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="row bg-white shadow-sm rounded input-area mr-0">
+                <input id="search" class="col-8" type="text" placeholder="What do you want to learn"/>
+                <button onclick="return searchCourseAction(event)" class="col-4 text-right">search
+                  <i class="fa fa-search search-btn" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--Find your course heading and Search course Input: END-->
+
+          <!--Multiple Course Selection buttons: START -->
+          <div class="row multiple-selection-courses">
+            <div class="col-12 subject_filters">
+
+              {% for filter_key, filter_value in filters %}
+                <button type="button" id="filter_subject_{{ filter_value.id }}" onclick="searchKeyword('{{ filter_value.id }}', '{{ filter_value.subject_area }}')" class="btn">{{ filter_value.subject_area }}</button>
+              {% endfor %}
+
+            </div>
+            <div class="col-12 selected-courses">
+              <p>Currently Selected:
+                <span class="text-bold" id="selected_filters"></span>
+                <span onclick="clearFilters()" class="text-bold btn active" style="float:right;" id="clear_filters">Clear Filters</span>
+              </p>
+            </div>
+          </div>
+          <!--Multiple Course Selection buttons: END -->
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container-fluid category-area">
-        <!--Multiple Course Selection buttons: START -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="nav nav-scroll">
+  <div class="container-fluid category-area">
+    <!--Multiple Course Selection buttons: START -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="nav nav-scroll">
 
-                        <input id="selected_certificate" type="hidden" value="all" />
+            <input id="selected_certificate" type="hidden" value="all"/>
 
-                        <a id="filter_certificate_all" onclick="searchCertificates('all')" class="nav-link" aria-current="page" href="javascript:void(0)"><span>All</span></a>
+            <a id="filter_certificate_all" onclick="searchCertificates('all')" class="nav-link" aria-current="page" href="javascript:void(0)">
+              <span>All</span></a>
 
-                        {% for certificate_key, certificate_value in certificates %}
+            {% for certificate_key, certificate_value in certificates %}
 
-                            <a id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link" aria-current="page" href="javascript:void(0)"><span>{{certificate_value.certificate_type_name }}</span></a>
+              <a id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link" aria-current="page" href="javascript:void(0)">
+                <span>{{certificate_value.certificate_type_name }}</span></a>
 
-                        {% endfor %}
-                    </nav>
-                </div>
-                <input id="selected_keywords" type="hidden" />
-                <input id="selected_keywords_ids" type="hidden" />
-                <input id="selected_cert_ids" type="hidden" />                
-            </div>
+            {% endfor %}
+          </nav>
+        </div>
+        <input id="selected_keywords" type="hidden"/>
+        <input id="selected_keywords_ids" type="hidden"/>
+        <input id="selected_cert_ids" type="hidden"/>
+      </div>
 
-            <!--Multiple Course Selection buttons: END -->
+      <!--Multiple Course Selection buttons: END -->
 
-            <!--courses List: START-->
-            <div class="row shortterm-courses-area" id="findCourseInput">
-                <div class="col-12 p-0">
-                    <div class="shortterm-courses">
-                        {% for node in nodes %}
-                        <div class="item content" style="display:block;">
-                        <div class="item-inner">
-                            <div class="course-item-hover" style="padding:22px 15px 18px;">
-                                <div class="row">
-                                    <div class="col-12 social-icons card-icon">
-                                        
-                                        <a href="https://www.facebook.com/sharer.php?u={{node.course_url}}{{node.cid}}/{{node.label}}&quote=Check out this course - {{node.label}}{{'. '}} {{node.course_url}}&title={{node.cid}}"
-                                        target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg" /></a>        
+      <!--courses List: START-->
+      <div class="row shortterm-courses-area" id="findCourseInput">
+        <div class="col-12 p-0">
+          <div class="shortterm-courses">
+            {% for node in nodes %}
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="row heading m-0">
+                      <div class="col-8">
+                        {% if node.univ_name is not empty and node.univ_name is not null %}
+                          <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
+                        {% endif %}
 
-                                        <a href="https://twitter.com/share?text=Check out this course - {{node.label}}{{'. '}}  &url={{node.course_url}}"
-                                        target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{node.course_url}}&title={{node.course_url}}{{node.cid}}/{{node.label}}"
-                                        target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
-
-                                    </div>
-                                </div>
-                                <div class="course-details text-center0">
-                                    <h3>{{node.label}}</h3>
-                                    <div class="course-info">
-                                        <p class="small">{{node.univ_name}}</p>
-                                        <span class="course-info-text"><p>{{ node.body|raw }}</p></span>
-                                    </div>
-
-                                    <h4><a target="_blank" href="{{node.course_url}}">More Information ></a></h4>
-
-                                    <!-- <p class="small">{{node.field_students_enrolled}} <em>Students Enrolled</em></p> -->
-
-                                    <div class="col-12 button-area"><a target="_blank"
-                                            href="{{node.course_url}}"><button>Start Now</button></a></div>
-                                </div>
-                            </div>
-
-
-                            <div class="course-item">
-                                <div class="row heading m-0">
-                                    <div class="col-8">
-                                        {% if node.univ_name is not empty and node.univ_name is not null %}
-                                            <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
-                                        {% endif %}
-
-                                    </div>
-                                    <div class="col-4">
-                                        <span class="free-text">{{node.field_course_amount}}</span>
-                                    </div>
-                                </div>
-                                <div class="image">
-                                    <img width="100%" src="{{node.course_image}}" alt="course-image">
-                                </div>
-                                <div class="course-details">
-                                    <h3>{{node.label}}</h3>
-                                    <div class="course-info course-info-text">
-                                        <p>{{ node.card_intro|raw }}</p>
-                                    </div>
-                                    <div class="col-12 button-area"><a target="_blank"
-                                            href="{{node.course_url}}"><button>Start Now</button></a></div>
-                                </div>
-                            </div>
-                        </div>
                       </div>
-                        {% endfor %}
+                      <div class="col-4">
+                        <span class="free-text">{{node.field_course_amount}}</span>
+                      </div>
                     </div>
-                    <input type="hidden" id="pager" name="pager" value="1" />
-                </div>
-
-                {% if display_load_more %}
-                <div class="show_more_wrapper col-12 text-center mt-4">
-                    <button id="showMore" class="btn athena-btn purple-btn"><a href="javascript:void(0)"
-                            style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
-                </div>
-                {% endif %}
-
-            </div>
-            <!--courses List: END-->
-        </div>
-    </div>
-
-    <div class='container-fluid' style='margin-top: -200px;'>
-        <div class='container'>
-            <div class='how-it-works row'>
-                <div class='col-md-12 academic-content'>
-                    <div class='bg-white shadow-lg rounded-md mb-4 p-3'>
-                        {{ get_static_data('earning_a_degree', TRUE)|raw }}
+                    <div class="image">
+                      <img width="100%" src="{{node.course_image}}" alt="course-image">
                     </div>
+                    <div class="course-details">
+                      <h3>{{node.label}}</h3>
+                      <div class="course-info course-info-text">
+                        <p>{{ node.card_intro|raw }}</p>
+                      </div>
+                      <div class="col-12 button-area">
+                        <a target="_blank" href="{{node.course_url}}">
+                          <button>Start Now</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="row">
+                      <div class="col-12 social-icons card-icon">
+
+                        <a href="https://www.facebook.com/sharer.php?u={{node.course_url}}{{node.cid}}/{{node.label}}&quote=Check out this course - {{node.label}}{{'. '}} {{node.course_url}}&title={{node.cid}}" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg"/></a>
+
+                        <a href="https://twitter.com/share?text=Check out this course - {{node.label}}{{'. '}}  &url={{node.course_url}}" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2"/></a>
+
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{node.course_url}}&title={{node.course_url}}{{node.cid}}/{{node.label}}" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg"/></a>
+
+                      </div>
+                    </div>
+                    <div class="course-details text-center0">
+                      <h3>{{node.label}}</h3>
+                      <div class="course-info">
+                        <p class="small">{{node.univ_name}}</p>
+                        <span class="course-info-text">
+                          <p>{{ node.body|raw }}</p>
+                        </span>
+                      </div>
+
+                      <h4>
+                        <a target="_blank" href="{{node.course_url}}">More Information ></a>
+                      </h4>
+
+                      <!-- <p class="small">{{node.field_students_enrolled}} <em>Students Enrolled</em></p> -->
+
+                      <div class="col-12 button-area">
+                        <a target="_blank" href="{{node.course_url}}">
+                          <button>Start Now</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+            {% endfor %}
+          </div>
+          <input type="hidden" id="pager" name="pager" value="1"/>
         </div>
+
+        {% if display_load_more %}
+          <div class="show_more_wrapper col-12 text-center mt-4">
+            <button id="showMore" class="btn athena-btn purple-btn">
+              <a href="javascript:void(0)" style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a>
+            </button>
+          </div>
+        {% endif %}
+
+      </div>
+      <!--courses List: END-->
     </div>
+  </div>
+
+  <div class='container-fluid' style='margin-top: -200px;'>
+    <div class='container'>
+      <div class='how-it-works row'>
+        <div class='col-md-12 academic-content'>
+          <div class='bg-white shadow-lg rounded-md mb-4 p-3'>
+            {{ get_static_data('earning_a_degree', TRUE)|raw }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 </div>
 </div>
 </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="jquery.star-rating-svg.min.js"></script>
 
 <script type="text/javascript">
-    
-    jQuery('.category-area .nav-link:first').addClass('active');
-    
-    jQuery("#showMore").on('click', function () {
-        var pagerVal = jQuery('#pager').val();
-        var pager = parseInt(pagerVal);
-        pager = pager + 1;
-        var endpoint = Drupal.url('shortterm-courses/load-more/' + pager);
-        var selected_cert_ids = jQuery('#selected_cert_ids').val();
-        var search_val = jQuery('#search').val();
-        var subject_id = jQuery('#selected_keywords_ids').val();
 
-        Drupal.ajax({
-            'url': endpoint,
-            'submit': { 'search': search_val , 'selected_cert_ids' : selected_cert_ids , 'subject_id' : subject_id }
-        }).execute();
-        jQuery('#pager').val(pager);
-        jQuery("#showMore").focus();
-    });
+jQuery('.category-area .nav-link:first').addClass('active');
 
-    jQuery(".my-rating").starRating({
-        emptyColor: 'lightgray',
-        hoverColor: '#ffc300',
-        activeColor: '#ffc300',
-        initialRating: 4.5,
-        //strokeColor: '#ffc300',
-        //strokeWidth: 6,
-        starSize: 20
-    });
+jQuery("#showMore").on('click', function() {
+var pagerVal = jQuery('#pager').val();
+var pager = parseInt(pagerVal);
+pager = pager + 1;
+var endpoint = Drupal.url('shortterm-courses/load-more/' + pager);
+var selected_cert_ids = jQuery('#selected_cert_ids').val();
+var search_val = jQuery('#search').val();
+var subject_id = jQuery('#selected_keywords_ids').val();
 
-    function searchCourses(event) {
-        if (event.which == 13) {
-            searchCourseAction();
-        }
-    }
+Drupal.ajax({
+'url': endpoint,
+'submit': {
+  'search': search_val,
+  'selected_cert_ids': selected_cert_ids,
+  'subject_id': subject_id
+}
+}).execute();
+jQuery('#pager').val(pager);
+jQuery("#showMore").focus();
+});
 
+jQuery(".my-rating").starRating({
+emptyColor: 'lightgray', hoverColor: '#ffc300', activeColor: '#ffc300', initialRating: 4.5,
+//strokeColor: '#ffc300', strokeWidth: 6,
+starSize: 20
+});
 
-    function clearFilters() {
-        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
-        jQuery('#search').val('');
-        jQuery('#selected_filters').html('');
-        jQuery('#selected_keywords').val('');
-        jQuery('#selected_keywords_ids').val('');
-        jQuery('.category-area .nav-link').removeClass('active');
-        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
-        Drupal.ajax({ 'url': endpoint }).execute();
-        jQuery('#pager').val('1');
-        jQuery('.category-area .nav-link').removeClass('active');
-        jQuery('.category-area .nav-link:first').addClass('active');
-        return false;
-    }
+function searchCourses(event) {
+if (event.which == 13) {
+searchCourseAction();
+}
+}
 
+function clearFilters() {
+jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
+jQuery('#search').val('');
+jQuery('#selected_filters').html('');
+jQuery('#selected_keywords').val('');
+jQuery('#selected_keywords_ids').val('');
+jQuery('.category-area .nav-link').removeClass('active');
+var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+Drupal.ajax({'url': endpoint}).execute();
+jQuery('#pager').val('1');
+jQuery('.category-area .nav-link').removeClass('active');
+jQuery('.category-area .nav-link:first').addClass('active');
+return false;
+}
 
-    function sanitizeInput(inp_string) {
-        inp_string = inp_string.trim();
-        inp_string = inp_string.replace(/<(.|\n)*?>/g, '');
-        return inp_string;
-    }
+function sanitizeInput(inp_string) {
+inp_string = inp_string.trim();
+inp_string = inp_string.replace(/<(.|\n)*?>/g, '');
+return inp_string;
+}
 
-    function removeValue(list, value, separator) {
-        separator = separator || ", ";
-        var values = list.split(separator);
-        for(var i = 0 ; i < values.length ; i++) {
-            if(values[i] == value) {
-                values.splice(i, 1);
-                return values.join(separator);
-            }
-        }
-        return list;
-    }
+function removeValue(list, value, separator) {
+separator = separator || ", ";
+var values = list.split(separator);
+for (var i = 0; i < values.length; i++) {
+if (values[i] == value) {
+  values.splice(i, 1);
+  return values.join(separator);
+}
+}
+return list;
+}
 
+function searchKeyword(id, keyword) {
+// jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
+jQuery('#selected_cert_ids').val('');
+jQuery('#filter_subject_' + id).toggleClass('active');
+var search_val = jQuery('#search').val();
+search_val = sanitizeInput(search_val);
 
-    function searchKeyword(id, keyword) {
-        // jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
-        jQuery('#selected_cert_ids').val('');
-        jQuery('#filter_subject_' + id).toggleClass('active');
-        var search_val = jQuery('#search').val();
-        search_val = sanitizeInput(search_val);
+if (jQuery('#filter_subject_' + id).hasClass('active')) {
+var selected_keywords = jQuery('#selected_keywords').val();
+selected_keywords = sanitizeInput(selected_keywords);
 
-        if (jQuery('#filter_subject_' + id).hasClass('active')) {
-            var selected_keywords = jQuery('#selected_keywords').val();
-            selected_keywords = sanitizeInput(selected_keywords);
+var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
+selected_keywords_ids = sanitizeInput(selected_keywords_ids);
 
-            var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
-            selected_keywords_ids = sanitizeInput(selected_keywords_ids);
+if (selected_keywords && selected_keywords.indexOf(keyword) === -1) {
+  selected_keywords = selected_keywords + ', ' + keyword;
+  jQuery('#selected_keywords').val(selected_keywords);
+  jQuery('#selected_filters').html(selected_keywords);
+} else {
+  jQuery('#selected_keywords').val(keyword);
+  jQuery('#selected_filters').html(keyword);
+}
 
-            if (selected_keywords && selected_keywords.indexOf(keyword) === -1) {
-                selected_keywords = selected_keywords + ', ' + keyword;
-                jQuery('#selected_keywords').val(selected_keywords);
-                jQuery('#selected_filters').html(selected_keywords);
-            }
-            else {
-                jQuery('#selected_keywords').val(keyword);
-                jQuery('#selected_filters').html(keyword);
-            }
+if (selected_keywords_ids && selected_keywords_ids.indexOf(id) === -1) {
+  selected_keywords_ids = selected_keywords_ids + ',' + id;
+  jQuery('#selected_keywords_ids').val(selected_keywords_ids);
+} else {
+  jQuery('#selected_keywords_ids').val(id);
+}
 
-            if (selected_keywords_ids && selected_keywords_ids.indexOf(id) === -1) {
-                selected_keywords_ids =  selected_keywords_ids + ',' + id;
-                jQuery('#selected_keywords_ids').val(selected_keywords_ids);
-            }
-            else {
-                jQuery('#selected_keywords_ids').val(id);
-            }
+} else {
+var selected_keywords = jQuery('#selected_keywords').val();
+selected_keywords = sanitizeInput(selected_keywords);
 
-        }
-        else {
-            var selected_keywords = jQuery('#selected_keywords').val();
-            selected_keywords = sanitizeInput(selected_keywords);
+var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
+selected_keywords_ids = sanitizeInput(selected_keywords_ids);
 
-            var selected_keywords_ids = jQuery('#selected_keywords_ids').val();
-            selected_keywords_ids = sanitizeInput(selected_keywords_ids);
+if (selected_keywords && selected_keywords.indexOf(keyword) != -1) {
+  selected_keywords = removeValue(selected_keywords, keyword, ', ');
+  jQuery('#selected_keywords').val(selected_keywords);
+  jQuery('#selected_filters').html(selected_keywords);
+} else {
+  jQuery('#selected_keywords').val(keyword);
+  jQuery('#selected_filters').html(keyword);
+}
 
-            if (selected_keywords && selected_keywords.indexOf(keyword) != -1) {
-                selected_keywords = removeValue(selected_keywords, keyword, ', ');
-                jQuery('#selected_keywords').val(selected_keywords);
-                jQuery('#selected_filters').html(selected_keywords);
-            }
-            else {
-                jQuery('#selected_keywords').val(keyword);
-                jQuery('#selected_filters').html(keyword);
-            }
+if (selected_keywords_ids && selected_keywords_ids.indexOf(id) != -1) {
+  selected_keywords_ids = removeValue(selected_keywords_ids, id, ',');
+  jQuery('#selected_keywords_ids').val(selected_keywords_ids);
+} else {
+  jQuery('#selected_keywords_ids').val(id);
+}
 
-            if (selected_keywords_ids && selected_keywords_ids.indexOf(id) != -1) {
-                selected_keywords_ids = removeValue(selected_keywords_ids, id, ',');
-                jQuery('#selected_keywords_ids').val(selected_keywords_ids);
-            }
-            else {
-                jQuery('#selected_keywords_ids').val(id);
-            }
+}
 
-        }
+var multiple_subject_id = jQuery('#selected_keywords_ids').val();
+if (search_val) {
+if (multiple_subject_id) {
+  var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + multiple_subject_id);
+} else {
+  var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
+}
+} else {
+if (multiple_subject_id) {
+  var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + multiple_subject_id);
+} else {
+  var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+}
+}
 
-        var multiple_subject_id = jQuery('#selected_keywords_ids').val();
-        if (search_val) {
-            if (multiple_subject_id) {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + multiple_subject_id);
-            }
-            else {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
-            }
-        }
-        else {
-            if (multiple_subject_id) {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + multiple_subject_id);
-            }
-            else {
-                var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
-            }
-        }
+Drupal.ajax({'url': endpoint}).execute();
+jQuery('#pager').val('1');
+jQuery('.category-area .nav-link').removeClass('active');
+jQuery('.category-area .nav-link:first').addClass('active');
+return false;
+}
 
-        Drupal.ajax({ 'url': endpoint }).execute();
-        jQuery('#pager').val('1');
-        jQuery('.category-area .nav-link').removeClass('active');
-        jQuery('.category-area .nav-link:first').addClass('active');
-        return false;
-    }
+function searchCertificates(id) {
 
+jQuery('#selected_cert_ids').val(id);
 
-    function searchCertificates(id) {
+jQuery('.category-area .nav-link').removeClass('active');
+jQuery('#filter_certificate_' + id).addClass('active');
+var subject_id = jQuery('#selected_keywords_ids').val();
+subject_id = sanitizeInput(subject_id);
 
-        jQuery('#selected_cert_ids').val(id);            
-        
-        jQuery('.category-area .nav-link').removeClass('active');
-        jQuery('#filter_certificate_' + id).addClass('active');
-        var subject_id = jQuery('#selected_keywords_ids').val();
-        subject_id = sanitizeInput(subject_id);
+var search_val = jQuery('#search').val();
+search_val = sanitizeInput(search_val);
 
-        var search_val = jQuery('#search').val();
-        search_val = sanitizeInput(search_val);
+if (subject_id) {
+if (search_val) {
+  if (id == 'all') {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id);
+  } else {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+  }
+} else {
+  if (id == 'all') {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id);
+  } else {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
+  }
+}
 
-        if (subject_id) {
-            if (search_val) {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id);
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
-                }
-            }
-            else {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id);
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&subject_area_id=' + subject_id + '&fk_certificate_type_id=' + id);
-                }
-            }
+Drupal.ajax({'url': endpoint}).execute();
+jQuery('#pager').val('1');
+return false;
+} else {
 
-            Drupal.ajax({ 'url': endpoint }).execute();
-            jQuery('#pager').val('1');
-            return false;
-        }
-        else {
+if (search_val) {
+  if (id == 'all') {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
+  } else {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + id);
+  }
+} else {
+  if (id == 'all') {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
+  } else {
+    var endpoint = Drupal.url('shortterm-courses/search-data/&fk_certificate_type_id=' + id);
+  }
+}
 
-            if (search_val) {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val + '&fk_certificate_type_id=' + id);
-                }
-            }
-            else {
-                if (id == 'all') {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=');
-                }
-                else {
-                    var endpoint = Drupal.url('shortterm-courses/search-data/' + '&fk_certificate_type_id=' + id);
-                }
-            }
+Drupal.ajax({'url': endpoint}).execute();
+jQuery('#pager').val('1');
+return false;
+}
+}
 
-            Drupal.ajax({ 'url': endpoint }).execute();
-            jQuery('#pager').val('1');
-            return false;
-        }
-    }
-
-
-    function searchCourseAction() {
-        jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
-        jQuery('#selected_filters').html('');
-        jQuery('#selected_keywords').val('');
-        jQuery('.category-area .nav-link').removeClass('active');
-        var search_val = jQuery('#search').val();
-        var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
-        Drupal.ajax({ 'url': endpoint }).execute();
-        jQuery('#pager').val('1');
-        jQuery('.category-area .nav-link').removeClass('active');
-        jQuery('.category-area .nav-link:first').addClass('active');
-        return false;
-    }
-
+function searchCourseAction() {
+jQuery('.multiple-selection-courses .subject_filters .btn').removeClass('active');
+jQuery('#selected_filters').html('');
+jQuery('#selected_keywords').val('');
+jQuery('.category-area .nav-link').removeClass('active');
+var search_val = jQuery('#search').val();
+var endpoint = Drupal.url('shortterm-courses/search-data/&course_name=' + search_val);
+Drupal.ajax({'url': endpoint}).execute();
+jQuery('#pager').val('1');
+jQuery('.category-area .nav-link').removeClass('active');
+jQuery('.category-area .nav-link:first').addClass('active');
+return false;
+}
 </script>
