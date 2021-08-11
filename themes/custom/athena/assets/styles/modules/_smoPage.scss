@@ -442,12 +442,14 @@
         }
         }
         .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
-            width: 46px;
+            width: 83px;
             z-index: 1;
             position: relative;
             height: 100%;
-            padding: 10px 0 0 8px;
+           // padding: 10px 0 0 8px;
             float:left;
+
+
         }
         .intl-tel-input.allow-dropdown .country-code{
             padding: 0 8px 0 8px;
@@ -729,4 +731,16 @@
   100% {
     opacity: 0;
   }
+}
+
+
+.login-details{
+	.intl-tel-input.allow-dropdown{
+	.flag-container{
+		.selected-flag{
+			padding: 0px 10px !important;
+			background-color: white;
+		}
+	}
+}
 }
