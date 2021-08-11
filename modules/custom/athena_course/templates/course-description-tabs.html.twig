@@ -1310,21 +1310,26 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-        jQuery("#reg_mobile_num").intlTelInput({
-        initialCountry: "auto",
-        geoIpLookup: function(success, failure) {
-            jQuery.ajax({
-            url: 'https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137',
+        if(!localStorage.getItem('countryCode')) {
+        jQuery.ajax({
+            url: 'https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8',
             type: 'GET',
-            // dataType: "jsonp",
             success: function (resp) {
-                //console.log(resp);
-                var countryCode = (resp && resp.country_code) ? resp.country_code : "in";
-                success(countryCode.toLowerCase());
+            var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "in";
+            localStorage.setItem('countryCode', countryCode);
+            localStorage.setItem('ip', resp.ip);
+            localStorage.setItem('province', resp.state_prov);
             },
+            error: function(jqXHR,error, errorThrown) {  
+            if(jqXHR.status&&jqXHR.status!=200){
+                alert(jqXHR.responseText); 
+            }
+            },  
             async: false
-            });
-        },
+            }); 
+        }
+        jQuery("#phone").intlTelInput({
+        initialCountry: localStorage.getItem('countryCode'),
         separateDialCode: true
         });
       jQuery("#smo_form_submit").click(function() {

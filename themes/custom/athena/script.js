@@ -39,7 +39,27 @@ function initiateSendingMail(form_id, mailinfo) {
 }
 
 jQuery(document).ready(function() {
-
+    let ip = "", countryCode = "in", province = "";
+    if(!localStorage.getItem('countryCode')) {
+      jQuery.ajax({
+        url: 'https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8',
+        type: 'GET',
+        success: function (resp) {
+          console.log(resp);
+          var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "in";
+          console.log(countryCode);
+          localStorage.setItem('countryCode', countryCode);
+          localStorage.setItem('ip', resp.ip);
+          localStorage.setItem('province', resp.state_prov);
+        },
+        error: function(jqXHR,error, errorThrown) {  
+          if(jqXHR.status&&jqXHR.status!=200){
+            alert(jqXHR.responseText); 
+          }
+        },  
+        async: false
+        }); 
+    }
     jQuery(".mat-expansion-panel .mat-expansion-panel-header").click(function(){
         jQuery(this).toggleClass("mat-expanded");
         jQuery(this).siblings(".mat-panel-content").slideToggle();
@@ -115,20 +135,7 @@ jQuery(document).ready(function() {
       }
     });
     var telConfig = {
-      initialCountry: "auto",
-      geoIpLookup: function(success, failure) {
-        jQuery.ajax({
-            url: 'https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137',
-            type: 'GET',
-            success: function (resp) {
-                // console.log(resp);
-                var countryCode = (resp && resp.country_code) ? resp.country_code : "in";
-                // console.log(countryCode);
-                success(countryCode.toLowerCase());
-            },
-            async: false
-        });
-      },
+      initialCountry: localStorage.getItem('countryCode'),
       separateDialCode: true
     }
     let ciso = getURLParameterByName("ciso");

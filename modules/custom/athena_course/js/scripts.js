@@ -5,25 +5,11 @@ var baseUrl = window.location.origin;
 let ip,province,BU = "AGE";
 jQuery(document).ready(function () {
   var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
-  jQuery.ajax({
-    url : "https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137",
-    type : "GET",
-    async: false,
-    success : function(data) {
-      // console.log(data);
-      ip = data.ip;
-      province = data.region;
-      // province = data.region;
-      // console.log(ip + ' ' + province);
-      if(prov_list.includes(province)) {
-        BU = "DicioMarketing"
-      }
-      // console.log(BU);
-    },
-    error: function() {
-      alert("Something went wrong please try again");
-    }
-  });
+  ip = (!localStorage.getItem('ip'))? "" :localStorage.getItem('ip');
+  province = (!localStorage.getItem('province'))? "" : localStorage.getItem('province');
+  if(prov_list.includes(province)) {
+    BU = "DicioMarketing"
+  }
   var search_url = baseUrl + '/search-results/abc?univ=';
   jQuery("#partner_search").change(function () {
     var partner = jQuery("#partner_search").val();
