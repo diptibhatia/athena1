@@ -72,7 +72,7 @@ var baseUrl = window.location.origin;
   var ccode = (!localStorage.getItem('countryCode')) ? "in" : localStorage.getItem('countryCode');
   jQuery("#reg_mobile_num").intlTelInput({
     initialCountry: ccode,
-    separateDialCode: false
+    separateDialCode: true
   });
 
   $.fn.inputFilter = function(inputFilter) {
