@@ -2,24 +2,6 @@ var baseUrl = window.location.origin;
 (function ($, Drupal) {
   $(document).ready(function () {
 
-    jQuery("#reg_mobile_num").intlTelInput({
-      initialCountry: "auto",
-      geoIpLookup: function(success, failure) {
-        jQuery.ajax({
-          url: 'https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137',
-          type: 'GET',
-          // dataType: "jsonp",
-          success: function (resp) {
-              //console.log(resp);
-              var countryCode = (resp && resp.country_code) ? resp.country_code : "in";
-              success(countryCode.toLowerCase());
-          },
-          async: false
-        });
-      },
-      separateDialCode: true
-    });
-
     $.fn.inputFilter = function(inputFilter) {
       return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
         if (inputFilter(this.value)) {
@@ -178,23 +160,11 @@ var baseUrl = window.location.origin;
         cData.modId = jQuery("#modId").val();
         cData.pay = jQuery("#pay").val();
         let ip,province;
-        jQuery.ajax({
-          url : "https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137",
-          type : "GET",
-          async: false,
-          success : function(data) {
-            ip = data.ip;
-            province = data.region;
-            // console.log(ip + ' ' + province);
-            if(prov_list.includes(province)) {
-              BU = "DicioMarketing"
-            }
-            // console.log(BU);
-          },
-          error: function() {
-            alert("Something went wrong please try again");
-          }
-        });
+        ip = (!localStorage.getItem('ip'))? "" :localStorage.getItem('ip');
+        province = (!localStorage.getItem('province'))? "" : localStorage.getItem('province');
+        if(prov_list.includes(province)) {
+          BU = "DicioMarketing"
+        }
         // var userId = 0;
         var sendInfo = {
           UserName: String(jQuery("#regEmail").val()),
