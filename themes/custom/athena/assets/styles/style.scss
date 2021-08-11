@@ -480,6 +480,38 @@ h5.font-medium {font-weight:600; color: #5b1a87}
       }
 }
 
+.bs_grid_1 {background: #eee;
+    padding: 15px;
+    img {
+        border:3px solid $titleYellow;
+        border-radius: 50%;
+        min-height: 180px;
+        max-height: 180px;
+        min-width: 180px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    img.linkedin {
+        border: none;
+        width: 40px;
+        min-width:auto;
+        position: absolute;
+        top: 145px;
+        left: 145px;
+    }
+    .prof-des{
+        padding-top:0.9rem !important
+      }
+      p{
+        padding: 0 0 0 30px;
+
+        @include atSize424{
+        padding:0px;
+    }
+
+      }
+}
+
 .iti-flag {
     position: absolute;
     top: 0;
