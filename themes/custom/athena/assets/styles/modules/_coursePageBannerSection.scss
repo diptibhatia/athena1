@@ -86,20 +86,11 @@ a {color:#fff;}
 
     &__logos {
 
-        display:flex;
-        justify-content: space-between;
-        width:50%;
-
-    @include atSize424 {
-        display:flex;
-        justify-content: space-between;
-        width:100%;
-    }
     
 
         img {
             width: 76px;
-
+            margin-right:22px;
             &:nth-child(1) {
                 margin-left: 0;
             }
