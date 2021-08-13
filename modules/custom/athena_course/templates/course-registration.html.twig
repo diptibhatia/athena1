@@ -61,7 +61,7 @@
 								</div>
 								{# <div class="login-item" style="display:none">
 									<p>Country</p>
-									<select name="ddlCountry" id="reg_country" tabindex="7" class="form-control ">
+									<select name="ddlCountry" id="reg_country" class="form-control ">
 										<option value="">Choose Country of Residence</option>
 										<option value="1">Afghanistan</option>
 										<option value="2">Albania</option>
@@ -314,6 +314,7 @@
 									<span id="error-msg" class="hide"></span>
 								</div>
 								<input type="hidden" id="country_code" value="{{ccode}}"/>
+																
 								<div class="login-item">
 									<p>Choose your Course</p>
 									<select name="course" id="reg_course">
@@ -329,11 +330,12 @@
 									</select>
 									<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 								</div>
+
 								<div class="login-item">
 									<p>Highest Qualification</p>
-									<select name="ctl00$MainContent$ddlQualification" id="reg_qual" tabindex="6" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
+									<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
 										<option value="">Select your highest qualification</option>
-										<option value="Masters Degree">Masters Degree or Above</option>
+										<option value="Masters Degree or Above">Masters Degree or Above</option>
 										<option value="Bachelors Degree">Bachelor's Degree</option>
 										<option value="Diploma">Higher Diploma/Diploma</option>
 										<option value="A Level">A Level/Higher Secondary</option>
@@ -355,14 +357,14 @@
 								</div>
 								<div class="login-item">
 									<p>Level of employment</p>
-									<select name="ctl00$MainContent$ddlEmployment" id="reg_level" tabindex="9" class="form-control">
+									<select name="ctl00$MainContent$ddlEmployment" id="reg_level" class="form-control">
 										<option selected="selected" value="">Select level of employment</option>
-										<option value="1">Clerical/Support/Entry Level</option>
-										<option value="6">Administrative/Officer Level</option>
-										<option value="2">Supervisory/Team Leader Level</option>
-										<option value="3">Manager/Middle Management</option>
-										<option value="4">Heads/Senior Management</option>
-										<option value="5">CEO/COO/CFO/MD/GM- Executive Management
+										<option value="Clerical/Support/Entry Level">Clerical/Support/Entry Level</option>
+										<option value="Supervisory/Team Leader Level">Supervisory/Team Leader Level</option>
+										<option value="Manager/Middle Management">Manager/Middle Management</option>
+										<option value="Heads/Senior Management">Heads/Senior Management</option>
+										<option value="CEO/COO/CFO/MD/GM- Executive Management">CEO/COO/CFO/MD/GM- Executive Management
+										<option value="Administrative/Officer Level">Administrative/Officer Level</option>
 										</option>
 
 									</select>
@@ -440,7 +442,7 @@
 								</div>
 								{# <div class="login-item" style="display:none">
 									<p>Country</p>
-									<select name="ddlCountry" id="reg_country" tabindex="7" class="form-control ">
+									<select name="ddlCountry" id="reg_country" class="form-control ">
 										<option value="">Choose Country of Residence</option>
 										<option value="1">Afghanistan</option>
 										<option value="2">Albania</option>
@@ -710,9 +712,9 @@
 								</div>
 								<div class="login-item">
 									<p>Highest Qualification</p>
-									<select name="ctl00$MainContent$ddlQualification" id="reg_qual" tabindex="6" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
+									<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
 										<option value="">Select your highest qualification</option>
-										<option value="Masters Degree">Masters Degree</option>
+										<option value="Masters Degree or Above">Masters Degree or Above</option>
 										<option value="Bachelors Degree">Bachelors Degree</option>
 										<option value="Diploma">Diploma</option>
 										<option value="A Level">A Level</option>
@@ -733,14 +735,14 @@
 								</div>
 								<div class="login-item">
 									<p>Level of employment</p>
-									<select name="ctl00$MainContent$ddlEmployment" id="reg_level" tabindex="9" class="form-control">
+									<select name="ctl00$MainContent$ddlEmployment" id="reg_level" class="form-control">
 										<option selected="selected" value="">Select level of employment</option>
-										<option value="1">Clerical/Support/Entry Level</option>
-										<option value="6">Administrative/Officer Level</option>
-										<option value="2">Supervisory/Team Leader Level</option>
-										<option value="3">Manager/Middle Management</option>
-										<option value="4">Heads/Senior Management</option>
-										<option value="5">CEO/COO/CFO/MD/GM- Executive Management
+										<option value="Clerical/Support/Entry Level">Clerical/Support/Entry Level</option>
+										<option value="Supervisory/Team Leader Level">Supervisory/Team Leader Level</option>
+										<option value="Manager/Middle Management">Manager/Middle Management</option>
+										<option value="Heads/Senior Management">Heads/Senior Management</option>
+										<option value="CEO/COO/CFO/MD/GM- Executive Management">CEO/COO/CFO/MD/GM- Executive Management
+										<option value="Administrative/Officer Level">Administrative/Officer Level</option>
 										</option>
 
 									</select>
@@ -809,7 +811,6 @@
 	</div>
 </div>
 
-
 <script>
 
 
@@ -827,7 +828,6 @@ pas.classList.toggle('fa-eye-slash');
 sap.classList.toggle('fa-eye-slash');
 
 }
-
 
 
 </script>

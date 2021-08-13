@@ -285,6 +285,11 @@ jQuery(document).ready(function () {
     }
   });
 
+  if ( jQuery(".ac-form"))
+    jQuery(".ac-form #reg_first_name").focus();
+  if ( jQuery(".pc-form"))
+    jQuery(".pc-form #reg_first_name").focus();
+  
 
   jQuery(".ac-form #registration_form_passchck").click(function () {
     var msg = '';
