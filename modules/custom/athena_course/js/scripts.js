@@ -1,6 +1,6 @@
 var baseUrl = window.location.origin;
 //var baseUrl = "https://websitestg.athena.edu";
-
+  
 //alert(baseUrl);
 let ip,province,BU = "AGE";
 jQuery(document).ready(function () {
@@ -152,7 +152,7 @@ jQuery(document).ready(function () {
 
   jQuery("#get_in_touch").click(function (e) {
     var msg = '';
-    var regex = /^[a-zA-Z_ \.]*$/;
+    var regex = /^[a-zA-Z_ \.']*$/;
 
     fname = jQuery("#get_in_touch_fname").val();
     lname = jQuery("#get_in_touch_lname").val();
@@ -255,7 +255,6 @@ jQuery(document).ready(function () {
           }
         }
       });
-
 
       var mailinfo = {
         'mail': jQuery('#get_in_touch_email').val(),
@@ -526,7 +525,7 @@ jQuery(document).ready(function () {
   jQuery(".ac-form #registration_form").click(function () {
     var msg = '';
     var c_email = jQuery(".ac-form #reg_email").val();
-    var regex = /^[a-zA-Z_ \.]*$/;
+    var regex = /^[a-zA-Z_ \.']*$/;
 
     fname = jQuery(".ac-form #reg_first_name").val();
     lname = jQuery(".ac-form #reg_last_name").val();
@@ -780,10 +779,10 @@ jQuery(document).ready(function () {
 
       jQuery.ajax(baseUrl + '/save/contact', {
         type: 'POST',  // http method
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
+        contentType: "application/json; charset=utf-8",        
         data: JSON.stringify(mailinfo),  // data to submit
         dataType: 'json',
+
         success: function (data, status, xhr) {
           console.log('success');
         },
@@ -793,9 +792,37 @@ jQuery(document).ready(function () {
           }
         }
       });
-
+    
       initiateSendingMail('news-letter-subscribe', mailinfo);
 
+      // ****** save newsletter info in database *********      
+      var mailinfo = {
+        'Mail': jQuery('#newsletter-email-input').val()
+      };  
+
+      var URL = "https://agestagingapi.azurewebsites.net/api/Newsletter/SaveNewsLetter";
+        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" 
+          || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+          URL = "https://athenawpapi.azurewebsites.net/api/Newsletter/SaveNewsLetter";
+        }
+  
+     jQuery.ajax( URL, {
+        type: 'POST',  // http method
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(mailinfo),  // data to submit
+        
+        success: function (data, status, xhr) {
+          console.log('success');
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+          if (jqXhr.status == 200) {
+            console.log('error');
+          }
+        }
+      });
+      // ********************************** 
+  
       jQuery('#newsletter-info-box-error').css('display', 'none');
       jQuery("#newsletter-info-box").html("Subscribed Successfullly");
       jQuery('#newsletter-info-box').css('display', 'inherit');

@@ -409,10 +409,10 @@ class ShortTermCourseController {
                                     </div>
 
                                     <div class="row">
-                                        <div class="image col-md-4">
+                                        <div class="image col-md-3 pr-0">
                                             <img src="' . $courses_data['course_image'] . '" alt="course-image">
                                         </div>
-                                        <div class="course-details  col-md-8">
+                                        <div class="course-details  col-md-9">
                                             <h3>' . $courses_data['label'] . '</h3>
                                             <div class="course-info">
                                                 ' . $courses_data['card_intro'] . '
@@ -682,7 +682,7 @@ $html .= '<div class="flip-card">
                                     </div>
 
                                     <div class="row">
-                                        <div class="image col-md-4">
+                                        <div class="image col-md-3 pr-0">
                                             <img src="' . $courses_data['course_image'] . '" alt="course-image">
                                         </div>
                                         <div class="course-details  col-md-8">

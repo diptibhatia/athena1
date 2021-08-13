@@ -1,6 +1,8 @@
 (function ($, Drupal, drupalSettings) {
   'use strict';
 
+  var baseUrl = window.location.origin;
+
   jQuery('document').ready(function() {
       var gc = getCookie("website_subscribe");
       if (gc == null || gc === '') {
@@ -47,6 +49,8 @@
           }
         }
       });
+
+
 
       jQuery('#register-pop-up').remove();
       jQuery('#thanks-up').remove();
@@ -96,6 +100,36 @@
               }
             }
           });
+
+          // ****** save newsletter info in database *********      
+      
+      var mailinfo = {
+          'mail': emailval
+        };  
+
+      var URL = "https://agestagingapi.azurewebsites.net/api/Newsletter/SaveNewsLetter";
+        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" 
+          || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+          URL = "https://athenawpapi.azurewebsites.net/api/Newsletter/SaveNewsLetter";
+        }
+  
+      jQuery.ajax( URL, {
+        type: 'POST',  // http method
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(mailinfo),  // data to submit
+        dataType: 'json',
+        success: function (data, status, xhr) {
+          console.log('success');
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+          if (jqXhr.status == 200) {
+            console.log('error here');
+          }
+        }
+      });
+      // ********************************** 
+  
 
           jQuery('#register-pop-up').hide();
           jQuery('#thanks-up').show();
