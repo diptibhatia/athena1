@@ -143,7 +143,7 @@ button.owl-next {
   right: 0;
   width: 100%;
   height: 397px;
- // background-color: #eaedf9;
+  // background-color: #eaedf9;
 
   @media (max-width: 1024px) {
     display: none;
@@ -1103,11 +1103,19 @@ button.owl-next {
 
   .testimonials {
     position: relative;
-    //top: 120px;
-   // margin-top: 200px;
     background-color: #eff1fe;
-    height: 90%;
+    height: 104%;
     margin-top: 86px;
+    margin-bottom: -8%;
+
+
+    @include atSize424 {
+      position: relative;
+      background-color: #eff1fe;
+      height: 98%;
+      margin-top: 232px;
+      margin-bottom: -56%;
+    }
 
     .testimonials-background-image {
       width: 100%;
@@ -3884,7 +3892,7 @@ button.credit-section {
 
 .st-test-bg h3 {
   font-family: Lato;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -3922,6 +3930,7 @@ button.credit-section {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .st-test-bg .lin a {
@@ -3967,10 +3976,10 @@ button.credit-section {
 }
 
 .deg-ba {
-      position: relative !important;
-      margin-top: 15px;
-      height: 49px;
-      width: 100% !important;
+  position: relative !important;
+  margin-top: 15px;
+  height: 49px;
+  width: 100% !important;
 }
 
 .item-one {
@@ -4192,7 +4201,8 @@ button.credit-section {
   display: inline-block;
   padding-left: 10px;
 }
-.pink-line{
+
+.pink-line {
   padding-top: 8px;
 }
 
