@@ -1,261 +1,309 @@
 .auth-images {
-	img {
-		width: 100%;
-	}
+    img {
+        width: 100%;
+    }
 }
+
 .register-images {
-	@media (max-width: 770px) {
-		display: none;
-	}
-	img {
-		width: 100%;
-	    height: auto;
-	    position: relative;
-	    top: 8rem;
-	}
+    @media (max-width: 770px) {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 8rem;
+    }
 }
+
 .login-wrapper {
-	.row {width:auto}
-	h1 {
-		font-family: Lato;
-	  	font-size: 42px;
-		font-weight: bold;
-		font-stretch: normal;
-		font-style: normal;
-		line-height: normal;
-		letter-spacing: normal;
-		color: #ff016e;
-		padding: 30px 0 10px 0;
-		margin:0;
-		span {
-			color: #303030;
-		}
-	}
-	h3 {
-		font-family: Lato;
-	  	font-size: 16px;
-	  	font-weight: normal;
-	  	font-stretch: normal;
-	  	font-style: normal;
-	  	line-height: 1.63;
-	  	letter-spacing: normal;
-	  	color: #303030;
-	  	width: 445px;
-	}
-	h4 {
-		font-family: Lato;
-	  	font-size: 16px;
-	  	font-weight: normal;
-	  	font-stretch: normal;
-	  	font-style: normal;
-	  	line-height: normal;
-	  	letter-spacing: normal;
-	  	color: #303030;
-	  	span {
-	  		font-weight: bold;
-  			color: #ff3e91;
-	  	}
-	}
-	.login-details {
-		margin: 30px 0;
-		label {display: block; color:red; clear:both;}
-		.login-item {
-			margin: 7px 0;
-			p {
-				font-family: Lato;
-			    font-size: 14px;
-			    font-weight: normal;
-			    font-stretch: normal;
-			    font-style: normal;
-			    line-height: normal;
-			    letter-spacing: normal;
-			    color: #303030;
-			    margin: 0 0 7px 0;
-			}
-			input, select {
-				height: 50px;
-			    border-radius: 6px;
-			    box-shadow: 0 2px 18px -1px #d5dbfb;
-			    border-bottom: solid 1.2px rgba(255, 61, 144, 0.18);
-			    background-color: #ffffff;
-			    width: 450px;
-			    padding: 10px 45px 10px 10px;
-			    margin: 4px 0 10px 0;
-			    font-family: Lato;
-			    font-size: 16px;
-			    font-weight: 500;
-			    font-stretch: normal;
-			    font-style: normal;
-			    line-height: normal;
-			    letter-spacing: normal;
-				color: rgba(24,43,79, 1);
-				-webkit-appearance: none;
-				border-top: none;
-				border-left: none;
-				border-right: none;
-				transition: 0.3s;
-			}
-			select{
-				color: #b3b3b3;
-			}
-			option{
-				color:black;
-			}
-			img{
-				position: absolute;
-				width: 13px;
-				height: 10px;
-				margin-left: 71%;
-				margin-top: -34px;
-				opacity: 0.4;
+    .row {
+        width: auto
+    }
 
-				@include atSize424{
-        			margin-left: 83%;
-    			}
-			}
-			.choose-drop{
-				width: 13px;
-				height: 10px;
-				margin-left: -6%;
-				margin-top: 32px;
-				opacity: 0.4;
+    h1 {
+        font-family: Lato;
+        font-size: 42px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ff016e;
+        padding: 30px 0 10px 0;
+        margin: 0;
 
-				@include atSize424{
-        			margin-left: -9%;
-    			}
-			}
+        span {
+            color: #303030;
+        }
+    }
 
-.pass-cls{
+    h3 {
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.63;
+        letter-spacing: normal;
+        color: #303030;
+        width: 445px;
+    }
 
-	height: 50px !important;
-	border-radius: 6px !important;
-	box-shadow: 0 2px 18px -1px #d5dbfb !important;
-	border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
-	background-color: #ffffff !important;
+    h4 {
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #303030;
+
+        span {
+            font-weight: bold;
+            color: #ff3e91;
+        }
+    }
+
+    .login-details {
+        margin: 30px 0;
+
+        label {
+            display: block;
+            color: red;
+            clear: both;
+        }
+
+        .login-item {
+            margin: 7px 0;
+
+            p {
+                font-family: Lato;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: #303030;
+                margin: 0 0 7px 0;
+            }
+
+            input,
+            select {
+                height: 50px;
+                border-radius: 6px;
+                box-shadow: 0 2px 18px -1px #d5dbfb;
+                border-bottom: solid 1.2px rgba(255, 61, 144, 0.18);
+                background-color: #ffffff;
+                width: 450px;
+                padding: 10px 45px 10px 10px;
+                margin: 4px 0 10px 0;
+                font-family: Lato;
+                font-size: 16px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: rgba(24, 43, 79, 1);
+                -webkit-appearance: none;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                transition: 0.3s;
+            }
+
+            select {
+                color: #b3b3b3;
+            }
+
+            option {
+                color: black;
+            }
+
+            img {
+                position: absolute;
+                width: 13px;
+                height: 10px;
+                margin-left: 71%;
+                margin-top: -34px;
+                opacity: 0.4;
+
+                @include atSize424 {
+                    margin-left: 83%;
+                }
+            }
+
+            .choose-drop {
+                width: 13px;
+                height: 10px;
+                margin-left: -6%;
+                margin-top: 32px;
+                opacity: 0.4;
+
+                @include atSize424 {
+                    margin-left: -9%;
+                }
+            }
+
+            .pass-cls {
+
+                height: 50px !important;
+                border-radius: 6px !important;
+                box-shadow: 0 2px 18px -1px #d5dbfb !important;
+                border: solid 1.2px rgba(255, 61, 144, 0.18) !important;
+                background-color: #ffffff !important;
+            }
+
+
+
+            .passyeye {
+                margin-left: -30px;
+                cursor: pointer;
+                color: grey;
+                font-size: 13px;
+                position: absolute;
+                top: 67%;
+            }
+
+            .passyeye:hover {
+                color: rgba(0, 128, 0, 0.555);
+            }
+        }
+
+        .names {
+            display: flex;
+
+            .name-item {
+                flex-direction: row;
+                margin-right: 10px;
+
+                input {
+                    width: 219px;
+
+                }
+            }
+        }
+
+        .forgot-password {
+            text-align: right;
+            font-family: Lato;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ff006e;
+            width: 80%;
+        }
+
+        .button {
+            width: 80%;
+            text-align: center;
+
+            label {
+                display: inline-block;
+                color: #303030;
+
+                a {
+                    color: #303030
+                }
+            }
+
+            button {
+                width: 347px;
+                height: 50px;
+                border-radius: 6px;
+                box-shadow: 0 2px 25px 2px #d5dbfb;
+                background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
+                font-family: Lato;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: #ffffff;
+                border: none;
+                //margin: 30px 0;
+            }
+        }
+    }
+
+    @media (max-width: 424px) {
+        h3 {
+            width: 100%;
+        }
+
+        .login-details {
+            .login-item {
+
+                input,
+                select {
+                    width: 100%;
+                }
+            }
+
+            .names {
+                .name-item {
+
+                    input,
+                    select {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .button {
+                width: 100%;
+
+                button {
+                    width: 300px;
+                }
+            }
+        }
+    }
 }
 
-
-
-      .passyeye {
-         margin-left: -30px;
-         cursor: pointer;
-         color: grey;
-         font-size: 13px;
-         position: absolute;
-         top: 67%;
-      }
-      .passyeye:hover {
-        color: rgba(0, 128, 0, 0.555);
-      }
-		}
-		.names {
-			display: flex;
-			.name-item {
-				flex-direction: row;
-				margin-right: 10px;
-				input {
-					width: 219px;
-
-				}
-			}
-		}
-		.forgot-password {
-			text-align: right;
-			font-family: Lato;
-		  	font-size: 14px;
-		  	font-weight: normal;
-		  	font-stretch: normal;
-		  	font-style: normal;
-		  	line-height: normal;
-		  	letter-spacing: normal;
-		  	color: #ff006e;
-		  	width: 80%;
-		}
-		.button {
-			width: 80%;
-			text-align: center;
-			label {display: inline-block; color:#303030;
-				a {color:#303030}
-				}
-			button {
-				width: 347px;
-			  	height: 50px;
-			  	border-radius: 6px;
-			  	box-shadow: 0 2px 25px 2px #d5dbfb;
-			  	background-image: linear-gradient(to right, #ff006e, #ff4e9a 113%, #ffd85e 141%);
-			  	font-family: Lato;
-			  	font-size: 16px;
-			  	font-weight: normal;
-			  	font-stretch: normal;
-			  	font-style: normal;
-			  	line-height: normal;
-			  	letter-spacing: normal;
-			  	color: #ffffff;
-			  	border: none;
-			  	//margin: 30px 0;
-			}
-		}
-	}
-	@media (max-width: 424px) {
-		h3 {
-			width: 100%;
-		}
-		.login-details {
-			.login-item {
-				input, select {
-					width: 100%;
-				}
-			}
-			.names {
-				.name-item {
-					input, select {
-						width: 100%;
-					}
-				}
-			}
-			.button {
-				width: 100%;
-				button {
-					width: 300px;
-				}
-			}
-		}
-	}
+.intl-tel-input.allow-dropdown {
+    width: 100%;
 }
 
-.intl-tel-input.allow-dropdown{
-width:100%;
-}
+.login-wrapper .intl-tel-input.allow-dropdown {
+    width: 81%;
 
-.login-wrapper .intl-tel-input.allow-dropdown{
-width: 81%;
-@include belowSize700{
-	width:100% !important;
-}
+    @include belowSize700 {
+        width: 100% !important;
+    }
 
 }
 
-.login-wrapper .intl-tel-input.allow-dropdown input#phone{
-	width:75% !important;
-	box-shadow: none !important;
+.login-wrapper .intl-tel-input.allow-dropdown input#phone {
+    width: 75% !important;
+    box-shadow: none !important;
     //border: none !important;
     height: 44px !important;
-	padding-left: 10px !important;
-	@include belowSize700{
-		float: left;
-		margin-left: 116px !important;
-		padding-left: 10px !important;
-		width: 60% !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 40px !important;
-	}
+    padding-left: 10px !important;
 
-	}
+    @include belowSize700 {
+        float: left;
+        margin-left: 116px !important;
+        padding-left: 10px !important;
+        width: 60% !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 40px !important;
+    }
+
+}
 
 
-.intl-tel-input.allow-dropdown input#reg_mobile_num{
-	width: 74%;
+.intl-tel-input.allow-dropdown input#reg_mobile_num {
+    width: 74%;
     float: right;
     text-align: left;
     padding: 7px 10px !important;
@@ -265,13 +313,17 @@ width: 81%;
 }
 
 
-.login-wrapper{
-	.intl-tel-input.allow-dropdown{
-	.flag-container{
-		.selected-flag{
-			padding: 0px !important;
-			background-color: white;
-		}
-	}
-}
+.login-wrapper {
+    .intl-tel-input.allow-dropdown {
+        .flag-container {
+            .selected-flag {
+                padding: 0px 10px !important;
+                background-color: white;
+                border-right: 1.5px solid #ccc;
+                height: auto;
+                bottom: -6px;
+				width: 92px !important;
+            }
+        }
+    }
 }
