@@ -41,3 +41,8 @@ affiliate-page:
     'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js': { type: external, minified: true }
     js/owl.carousel.js: {weight: -10}
     js/af-page.js: {weight: -9}
+
+intl-tel-input:
+  css:
+    theme:
+      'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/10.0.2/css/intlTelInput.css': { type: external }
