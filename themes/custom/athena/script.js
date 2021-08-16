@@ -40,25 +40,36 @@ function initiateSendingMail(form_id, mailinfo) {
 
 jQuery(document).ready(function() {
     let ip = "", countryCode = "in", province = "";
-    if(!localStorage.getItem('countryCode')) {
-      jQuery.ajax({
-        url: 'https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8',
-        type: 'GET',
-        success: function (resp) {
-          console.log(resp);
-          var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "in";
-          console.log(countryCode);
-          localStorage.setItem('countryCode', countryCode);
-          localStorage.setItem('ip', resp.ip);
-          localStorage.setItem('province', resp.state_prov);
-        },
-        error: function(jqXHR,error, errorThrown) {  
-          if(jqXHR.status&&jqXHR.status!=200){
-            alert(jqXHR.responseText); 
-          }
-        },  
-        async: false
+    if(jQuery("#phone").length > 0 || jQuery("#reg_mobile_num").length > 0 || jQuery("#edit-mobile-no").length > 0) {
+      if(!localStorage.getItem('countryCode')) {
+        jQuery.ajax({
+          url: 'https://api.ipdata.co/?api-key=15193eee792e71613a4613c61275d9beb375e3e71076c0992d057336',
+          type: 'GET',
+          success: function (resp) {
+            console.log(resp);
+            var countryCode = (resp && resp.country_code) ? resp.country_code.toLowerCase() : "in";
+            localStorage.setItem('countryCode', countryCode);
+            localStorage.setItem('countryName', resp.country_name);
+            localStorage.setItem('ip', resp.ip);
+            localStorage.setItem('province', resp.state_prov);
+          },
+          error: function(jqXHR,error, errorThrown) {  
+            if(jqXHR.status&&jqXHR.status!=200){
+              alert(jqXHR.responseText); 
+            }
+          },  
+          async: false
         }); 
+      }
+    }
+    // Contact Us webform autofetch phone field
+    if(jQuery("#edit-mobile-no").length > 0) {
+      var countryName = (!localStorage.getItem('countryName')) ? "India" : localStorage.getItem('countryName');
+      jQuery("#edit-country").val(countryName);
+      jQuery("#edit-mobile-no").intlTelInput({
+        initialCountry: localStorage.getItem('countryCode'),
+        separateDialCode: true
+      });
     }
     jQuery(".mat-expansion-panel .mat-expansion-panel-header").click(function(){
         jQuery(this).toggleClass("mat-expanded");
