@@ -86,12 +86,15 @@ a {color:#fff;}
 
     &__logos {
 
+    
+
         img {
             width: 76px;
-
+            margin-right:22px;
             &:nth-child(1) {
                 margin-left: 0;
             }
+            
 
             @include atSize700 {
                 width: 95px;
@@ -316,6 +319,8 @@ a {color:#fff;}
 
     .shareIcon
     {
+
+        margin-top: 30px;
         // position: absolute;
         // bottom: 1.5rem;
         // left: 45%;
