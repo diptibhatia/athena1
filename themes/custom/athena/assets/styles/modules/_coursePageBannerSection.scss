@@ -94,6 +94,7 @@ a {color:#fff;}
             &:nth-child(1) {
                 margin-left: 0;
             }
+            
 
             @include atSize700 {
                 width: 95px;
