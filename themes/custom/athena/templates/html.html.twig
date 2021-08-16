@@ -87,30 +87,35 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    {#
+    {% if linkconnectscript %}
+
+      <script type="text/javascript" id="uts_lp" src="//www.linkconnector.com/uts_lp.php?cgid=901759"></script>
+
+    {% endif %}
+
     {% if link_connector_pixel %}
 
       <!-- Start UTS Confirm Code -->
       <!-- Generic Cart Variables -->
       <script type="text/javascript">
-      var uts_eventid = '5326';  // Lead EventID
-      var uts_orderid = "{{ lead_mail }}"; // unique transaction identifier such as email address or
-      customerid
-      var uts_saleamount = "{{ lead_cid }}";  // needs to be a positive value (not 0).  It is only used
-      to store the value in our DB and not to determine commission
-      var uts_coupon = '';  // leave blank
-      var uts_discount = ''; // leave blank
+      var uts_eventid = '5326'; 
+      var uts_orderid = "{{ lead_mail }}"; 
+      var uts_saleamount = "{{ lead_cid }}";  
+      var uts_coupon = '';  
+      var uts_discount = '';
       var uts_currency = 'USD';
       </script>
-      <script type="text/javascript" id="uts_tm"
-      src="//www.linkconnector.com/uts_tm.php?cgid=901759"></script>
+      <script type="text/javascript" id="uts_tm" src="//www.linkconnector.com/uts_tm.php?cgid=901759"></script>
       <!-- End UTS Confirm Code -->
 
     {% endif %}
 
-    {#
+    
       Keyboard navigation/accessibility link to main content section in
       page.html.twig.
     #}
+    
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}

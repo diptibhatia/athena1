@@ -11,63 +11,93 @@
   height: 99px;
   object-fit: cover;
   border: solid 1.3px #ffac00;
+  object-position: 50% 0px;
 }
 
 .employers-icons li {
   margin: 0px !important;
 }
 
-.grid-list-desc{h5 {font-size: 14px;
-  font-weight: bold; color:#303030;
-p {font-size: 12px;
-  font-weight: 500; color:#303030;}}}
+.grid-list-desc {
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #303030;
+
+    p {
+      font-size: 12px;
+      font-weight: 500;
+      color: #303030;
+    }
+  }
+}
 
 .event_popup {
-  .row {width:auto; }
-  .card { 
-    width: 525px; 
+  .row {
+    width: auto;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 525px;
     margin: 0;
     box-shadow: 0 2px 18px -1px #d5dbfb;
     border: solid 2px rgba(255, 0, 110, 0.2);
-    background: rgb(255,255,255);
-    background: linear-gradient(-45deg, rgba(255,255,255,1) 50%, rgba(249, 249, 249,1) 50%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 1) 50%, rgba(249, 249, 249, 1) 50%);
 
-@media screen and (max-width: 1366px) { 
-   width: 425px; 
-}
-@media screen and (max-width: 540px) { 
-    width: 90%;
-    left: 20px;
-}
+    .card-body {
+      padding: 15px 14px 31px 31px;
+    }
+
+    @media screen and (max-width: 1366px) {
+      width: 425px;
+    }
+
+    @media screen and (max-width: 540px) {
+      width: 90%;
+      left: 20px;
+    }
   }
- .event_popup_close {
-   position: absolute;
-  left: -20px;
-  top: -20px;
-  background: #000;
-  padding: 7px 10px;
-  border-radius: 50%;
-  width: 43px;
-  text-align: center;
-  color: #fff;
-  border: 2px solid #fff;
-  font-weight: bold;
-&:hover {text-decoration: none;}
-}
-.register-popup {
-  position: absolute; top:338px; right:0; z-index: 99; margin: 0;
-}
-h4.course-title {    
-  font-family: Lato;
-  font-size: 14px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #ff006e;
-  text-transform: uppercase;
-}
+
+  .event_popup_close {
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    background: #000;
+    padding: 7px 10px;
+    border-radius: 50%;
+    width: 43px;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .register-popup {
+    position: absolute;
+    top: 338px;
+    right: 0;
+    z-index: 99;
+    margin: 0;
+  }
+
+  h4.course-title {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ff006e;
+    text-transform: uppercase;
+  }
+
   h4.course-partner {
     font-family: Lato;
     font-size: 18px;
@@ -78,28 +108,31 @@ h4.course-title {
     letter-spacing: normal;
     color: #91278f;
   }
-    p.course-info {
-      font-family: Lato;
-      font-size: 14px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.79;
-      letter-spacing: normal;
-      color: #303030;
-    }
-.course-main .register a {  
+
+  p.course-info {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.79;
+    letter-spacing: normal;
+    color: #303030;
+  }
+
+  .course-main .register a {
     color: #fff;
     letter-spacing: .3px;
-    display: block; 
+    display: block;
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 3px;
-    background-image: linear-gradient(to right,#ff006e 0%,#ff4e9a 100%,#fff 100%);
+    background-image: linear-gradient(to right, #ff006e 0%, #ff4e9a 100%, #fff 100%);
     //width: 170px;
+  }
 }
-}
+
 /********************
    EMPLOYERS DETAILS
 *********************/
@@ -139,9 +172,9 @@ h4.course-title {
   transition: all 0.5s;
   border-color: #ff4f6c;
   -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  transform: translateY(-3px);
   -webkit-box-shadow: 0 3px 20px -8px #000000;
-          box-shadow: 0 3px 20px -8px #000000;
+  box-shadow: 0 3px 20px -8px #000000;
 }
 
 @media (min-width: 200px) and (max-width: 768px) {
@@ -154,6 +187,7 @@ h4.course-title {
   .employers-details-time h6 {
     text-align: center !important;
   }
+
   .employers-details-item-border {
     margin-bottom: 1rem !important;
     margin-top: 1rem !important;
@@ -169,23 +203,23 @@ h4.course-title {
 
 .list-grid-item:hover {
   -webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
-          box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+  box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   border-color: transparent;
 }
 
 .left-sidebar .card-body {
-    border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 .custom-control {
-    margin: 11px 20px;
+  margin: 11px 20px;
 }
 
 .card-header {
-    background-color: transparent;
-    margin-bottom: 0 !important;
+  background-color: transparent;
+  margin-bottom: 0 !important;
 }
 
 .pagination.job-pagination .page-link {
@@ -205,5 +239,12 @@ h4.course-title {
 }
 
 .f-14 {
-    font-size: 14px;
+  font-size: 14px;
 }
+
+// .event_popup{
+// .row{
+//   justify-content: space-evenly;
+
+// }
+// }

@@ -242,9 +242,9 @@
 .why-section {
     color: $primaryColor;
 
-    @include atSize1250 {
-        height: 890px;
-    }
+    // @include atSize1250 {
+    //     height: 890px;
+    // }
 
     .usp {
         display: flex;
@@ -442,11 +442,11 @@
         }
         }
         .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
-            width: 46px;
+            width: 90px;
             z-index: 1;
             position: relative;
             height: 100%;
-            padding: 10px 0 0 8px;
+        //    padding: 10px 0 0 8px;
             float:left;
         }
         .intl-tel-input.allow-dropdown .country-code{
@@ -636,7 +636,7 @@
 
 .form-group
 {
-  line-height: 33px;
+  line-height: 24px;
 }
 
 .country-code {
@@ -645,6 +645,99 @@
 }
 .form-check-input {
 
-  margin-top: 11px !important;
+  //margin-top: 11px !important;
 }
 
+.dot1 {
+  animation: visibility 3s linear infinite;
+}
+
+@keyframes visibility {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot2 {
+  animation: visibility2 3s linear infinite;
+}
+
+
+@keyframes visibility2 {
+  0% {
+    opacity: 0;
+  }
+
+  21% {
+    opacity: 0;
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot3 {
+  animation: visibility3 3s linear infinite;
+}
+
+@keyframes visibility3 {
+  0% {
+    opacity: 0;
+  }
+
+  43% {
+    opacity: 0;
+  }
+
+  44% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.login-details{
+	.intl-tel-input.allow-dropdown{
+	.flag-container{
+		.selected-flag{
+		padding: 0px 10px !important;
+			background-color: white;
+		}
+	}
+}
+}

@@ -32,7 +32,7 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-  <div class="about-popular-content OuterContainer">
+  <div class="about-popular-content">
     {{ content }}
     <div class="text-center blogs-view-all">
 	<button onclick="window.location='/insights/blogs';" class="athena-btn violet-btn" type="button">View All</button>
@@ -48,7 +48,8 @@
 #block-views-block-home-page-blogs-home-blogs-block .card-title  a:hover{ color:#ff008e; text-decoration:none;}
 #block-views-block-home-page-blogs-home-blogs-block .card-title {padding-top:25px;}
 .home-blog-image {position:relative;}
-.home-blog-image .insight-logo {top:70%;}
-#block-views-block-home-page-blogs-home-blogs-block .blogs-view-all {padding-top:3.0rem;}
+.home-blog-image .insight-logo {top:70%;display:none;}
+#block-views-block-home-page-blogs-home-blogs-block .blogs-view-all {padding:3.0rem;}
 #block-views-block-home-page-blogs-home-blogs-block .OuterContainer {padding:80px 0;}
 </style>
+

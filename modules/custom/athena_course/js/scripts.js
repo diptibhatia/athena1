@@ -1,9 +1,15 @@
 var baseUrl = window.location.origin;
 //var baseUrl = "https://websitestg.athena.edu";
-
+  
 //alert(baseUrl);
-
+let ip,province,BU = "AGE";
 jQuery(document).ready(function () {
+  var prov_list = ['Western Cape', 'Limpopo', 'Eastern Cape', 'Free State', 'North West'];
+  ip = (!localStorage.getItem('ip'))? "" :localStorage.getItem('ip');
+  province = (!localStorage.getItem('province'))? "" : localStorage.getItem('province');
+  if(prov_list.includes(province)) {
+    BU = "DicioMarketing"
+  }
   var search_url = baseUrl + '/search-results/abc?univ=';
   jQuery("#partner_search").change(function () {
     var partner = jQuery("#partner_search").val();
@@ -146,7 +152,7 @@ jQuery(document).ready(function () {
 
   jQuery("#get_in_touch").click(function (e) {
     var msg = '';
-    var regex = /^[a-zA-Z_ \.]*$/;
+    var regex = /^[a-zA-Z_ \.']*$/;
 
     fname = jQuery("#get_in_touch_fname").val();
     lname = jQuery("#get_in_touch_lname").val();
@@ -250,7 +256,6 @@ jQuery(document).ready(function () {
         }
       });
 
-
       var mailinfo = {
         'mail': jQuery('#get_in_touch_email').val(),
         'fname': jQuery('#get_in_touch_fname').val(),
@@ -280,6 +285,11 @@ jQuery(document).ready(function () {
     }
   });
 
+  if ( jQuery(".ac-form"))
+    jQuery(".ac-form #reg_first_name").focus();
+  if ( jQuery(".pc-form"))
+    jQuery(".pc-form #reg_first_name").focus();
+  
 
   jQuery(".ac-form #registration_form_passchck").click(function () {
     var msg = '';
@@ -345,8 +355,8 @@ jQuery(document).ready(function () {
       type: 'POST',  // http method
       contentType: "application/json; charset=utf-8",
       dataType: "json",
+      async: false,
       data: JSON.stringify(sendInfo),  // data to submit
-      dataType: 'json',
       success: function (data, status, xhr) {
         var txt;
         var r = confirm("Registration Successful, you will be redirected to login page now.");
@@ -407,7 +417,7 @@ jQuery(document).ready(function () {
       msg += '\n\u2022 please confirm pass';
     }
 
-    if (jQuery(".pc-form #reg_pass").val() !== jQuery(".pc-form #reg_confirm_pass").val()) {
+    if (jQuery(".pc-form #reg_pass").val() !== jQuery(".pc-form #reg_confirm_pass_second").val()) {
       msg += '\n\u2022 password and confirm password do not match';
     }
 
@@ -445,7 +455,9 @@ jQuery(document).ready(function () {
       Yearsofexperience: parseInt(jQuery(".pc-form #reg_exp").val()),
       Monthofexperience: parseInt(jQuery(".pc-form #reg_months").val()),
       IsAccepted: true,
-      Employmentlevel: String(jQuery("#reg_level").val())
+      Employmentlevel: String(jQuery("#reg_level").val()),
+      IPAddress:ip,
+      BU:BU
     };
 
     var email_id = jQuery(".pc-form #reg_email").val();
@@ -518,7 +530,7 @@ jQuery(document).ready(function () {
   jQuery(".ac-form #registration_form").click(function () {
     var msg = '';
     var c_email = jQuery(".ac-form #reg_email").val();
-    var regex = /^[a-zA-Z_ \.]*$/;
+    var regex = /^[a-zA-Z_ \.']*$/;
 
     fname = jQuery(".ac-form #reg_first_name").val();
     lname = jQuery(".ac-form #reg_last_name").val();
@@ -772,10 +784,10 @@ jQuery(document).ready(function () {
 
       jQuery.ajax(baseUrl + '/save/contact', {
         type: 'POST',  // http method
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
+        contentType: "application/json; charset=utf-8",        
         data: JSON.stringify(mailinfo),  // data to submit
         dataType: 'json',
+
         success: function (data, status, xhr) {
           console.log('success');
         },
@@ -785,9 +797,37 @@ jQuery(document).ready(function () {
           }
         }
       });
-
+    
       initiateSendingMail('news-letter-subscribe', mailinfo);
 
+      // ****** save newsletter info in database *********      
+      var mailinfo = {
+        'Mail': jQuery('#newsletter-email-input').val()
+      };  
+
+      var URL = "https://agestagingapi.azurewebsites.net/api/Newsletter/SaveNewsLetter";
+        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" 
+          || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+          URL = "https://athenawpapi.azurewebsites.net/api/Newsletter/SaveNewsLetter";
+        }
+  
+     jQuery.ajax( URL, {
+        type: 'POST',  // http method
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(mailinfo),  // data to submit
+        
+        success: function (data, status, xhr) {
+          console.log('success');
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+          if (jqXhr.status == 200) {
+            console.log('error');
+          }
+        }
+      });
+      // ********************************** 
+  
       jQuery('#newsletter-info-box-error').css('display', 'none');
       jQuery("#newsletter-info-box").html("Subscribed Successfullly");
       jQuery('#newsletter-info-box').css('display', 'inherit');

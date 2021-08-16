@@ -15,8 +15,8 @@
     };
   }(jQuery));
 
-jQuery(".selected-flag").after("<div class='country-code' />");
-jQuery('.iti__flag-container').remove();
+// jQuery(".selected-flag").after("<div class='country-code' />");
+// jQuery('.iti__flag-container').remove();
 
 function initiateSendingMail(form_id, mailinfo) {
   var dataObj = {
@@ -39,72 +39,127 @@ function initiateSendingMail(form_id, mailinfo) {
 }
 
 jQuery(document).ready(function() {
-
+    let ip = "", countryCode = "in", province = "";
+    if(jQuery("#phone").length > 0 || jQuery("#reg_mobile_num").length > 0 || jQuery("#edit-mobile-no").length > 0) {
+      if(!localStorage.getItem('countryCode')) {
+        jQuery.ajax({
+          url: 'https://api.ipdata.co/?api-key=15193eee792e71613a4613c61275d9beb375e3e71076c0992d057336',
+          type: 'GET',
+          success: function (resp) {
+            console.log(resp);
+            var countryCode = (resp && resp.country_code) ? resp.country_code.toLowerCase() : "in";
+            localStorage.setItem('countryCode', countryCode);
+            localStorage.setItem('countryName', resp.country_name);
+            localStorage.setItem('ip', resp.ip);
+            localStorage.setItem('province', resp.state_prov);
+          },
+          error: function(jqXHR,error, errorThrown) {  
+            if(jqXHR.status&&jqXHR.status!=200){
+              alert(jqXHR.responseText); 
+            }
+          },  
+          async: false
+        }); 
+      }
+    }
+    // Contact Us webform autofetch phone field
+    if(jQuery("#edit-mobile-no").length > 0) {
+      var countryName = (!localStorage.getItem('countryName')) ? "India" : localStorage.getItem('countryName');
+      jQuery("#edit-country").val(countryName);
+      jQuery("#edit-mobile-no").intlTelInput({
+        initialCountry: localStorage.getItem('countryCode'),
+        separateDialCode: true
+      });
+    }
     jQuery(".mat-expansion-panel .mat-expansion-panel-header").click(function(){
         jQuery(this).toggleClass("mat-expanded");
         jQuery(this).siblings(".mat-panel-content").slideToggle();
       });
+      //Switch tab in reg page based on course
+      let type = getURLParameterByName("type");
+      if(type == "cert") {
+        jQuery('ul.nav a[href="' + '#uc' + '"]').tab('show');
+      } else if(type == "acad") {
+        jQuery('ul.nav a[href="' + '#ac' + '"]').tab('show');
+      }
     // Typing effect in home page - starts here.
     // https://css-tricks.com/snippets/css/typewriter-effect/
-    // var TxtType = function(el, toRotate, period) {
-    //     this.toRotate = toRotate;
-    //     this.el = el;
-    //     this.loopNum = 0;
-    //     this.period = parseInt(period, 10) || 2000;
-    //     this.txt = '';
-    //     this.tick();
-    //     this.isDeleting = false;
-    // };
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
 
-    // TxtType.prototype.tick = function() {
-    //     var i = this.loopNum % this.toRotate.length;
-    //     var fullTxt = this.toRotate[i];
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
 
-    //     if (this.isDeleting) {
-    //     this.txt = fullTxt.substring(0, this.txt.length - 1);
-    //     } else {
-    //     this.txt = fullTxt.substring(0, this.txt.length + 1);
-    //     }
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
 
-    //     this.el.innerHTML = '<span class="typewrite-wrap">'+this.txt+'</span>';
+        this.el.innerHTML = '<span class="typewrite-wrap">'+this.txt+'</span>';
 
-    //     var that = this;
-    //     var delta = 200 - Math.random() * 100;
+        var that = this;
+        var delta = 200 - Math.random() * 100;
 
-    //     if (this.isDeleting) { delta /= 2; }
+        if (this.isDeleting) { delta /= 2; }
 
-    //     if (!this.isDeleting && this.txt === fullTxt) {
-    //     delta = this.period;
-    //     this.isDeleting = true;
-    //     } else if (this.isDeleting && this.txt === '') {
-    //     this.isDeleting = false;
-    //     this.loopNum++;
-    //     delta = 500;
-    //     }
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
 
-    //     setTimeout(function() {
-    //     that.tick();
-    //     }, delta);
-    // };
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
 
-    // var elements = document.getElementsByClassName('typewrite');
-    // for (var i=0; i<elements.length; i++) {
-    //     var toRotate = elements[i].getAttribute('data-type');
-    //     var period = elements[i].getAttribute('data-period');
-    //     if (toRotate) {
-    //       new TxtType(elements[i], JSON.parse(toRotate), period);
-    //     }
-    // }
-    // // INJECT CSS
-    // var css = document.createElement("style");
-    // css.type = "text/css";
-    // css.innerHTML = ".typewrite > .typewrite-wrap { border-right: 0.08em solid #ff026f}";
-    // document.body.appendChild(css);
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .typewrite-wrap { border-right: 0.08em solid #ff026f}";
+    document.body.appendChild(css);
     // Typing effect in home page - ends here.
-
-    jQuery("#phone").intlTelInput();
-    jQuery(".ac-form #phone").intlTelInput();
-    jQuery(".pc-form #phone").intlTelInput();
+    // Search by enter key in shaort course page
+    jQuery("#search").keyup(function(event) {
+      if (event.keyCode === 13) {
+          $(".search-btn").click();
+      }
+    });
+    var telConfig = {
+      initialCountry: localStorage.getItem('countryCode'),
+      separateDialCode: true
+    }
+    let ciso = getURLParameterByName("ciso");
+    if(ciso !== null) {
+      console.log("ciso");
+      telConfig = {
+        initialCountry: atob(ciso),
+        separateDialCode: true
+      };
+    }
+    jQuery("#phone").intlTelInput(telConfig);
+    jQuery(".ac-form #phone").intlTelInput(telConfig);
+    jQuery(".pc-form #phone").intlTelInput(telConfig);
 
     jQuery(".ac-form #phone").inputFilter(function(value) {
       return /^\d*$/.test(value);
@@ -122,34 +177,34 @@ jQuery(document).ready(function() {
     });
     jQuery('#phone').attr('maxlength', 15);
 
-    if (jQuery(".country-code").length == 0) {
-        jQuery(".selected-flag").after("<div class='country-code' />");
-        jQuery(".country-code").text("+1");
-    }
+    // if (jQuery(".country-code").length == 0) {
+    //     jQuery(".selected-flag").after("<div class='country-code' />");
+    //     jQuery(".country-code").text("+1");
+    // }
 
-    jQuery(".country-list li").on('click', function(){
-        jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
-    });
+    // jQuery(".country-list li").on('click', function(){
+    //     jQuery(".country-code").text("+" + jQuery(this).attr('data-dial-code'));
+    // });
 
-    if (jQuery(".country-code").length > 0) {
-        jQuery.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a52fe906a94d778219bd6d0c76b4e8', function(data) {
-            var countrycode = data.country_code2;
-            countrycode = countrycode.toLowerCase();
+    // if (jQuery(".country-code").length > 0) {
+    //     jQuery.get('https://api.ipdata.co/?api-key=87a4372ec9b7336f78f3b3551e7410d213ef86d45f7c266c0fefa137', function(data) {
+    //         var countrycode = data.country_code2;
+    //         countrycode = countrycode.toLowerCase();
 
-            var element = document.getElementsByClassName("selected-flag")[0];
-            element.dispatchEvent(new Event("click"));
-            jQuery("li.country[data-country-code='" + countrycode +
-            "']").trigger('click');
+    //         var element = document.getElementsByClassName("selected-flag")[0];
+    //         element.dispatchEvent(new Event("click"));
+    //         jQuery("li.country[data-country-code='" + countrycode +
+    //         "']").trigger('click');
 
-            var element = document.getElementsByClassName("selected-flag")[1];
-            element.dispatchEvent(new Event("click"));
-            jQuery("li.country[data-country-code='" + countrycode +
-            "']").trigger('click');
+    //         var element = document.getElementsByClassName("selected-flag")[1];
+    //         element.dispatchEvent(new Event("click"));
+    //         jQuery("li.country[data-country-code='" + countrycode +
+    //         "']").trigger('click');
 
 
-            window.scrollTo(0, 0);
-        });
-    }
+    //         window.scrollTo(0, 0);
+    //     });
+    // }
 });
 
 jQuery(document).on("click", ".country-list li", function(event) {
@@ -178,5 +233,11 @@ function scrollEvent(){
 
 window.onload = scrollEvent();
 
-
-
+function getURLParameterByName(name, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}

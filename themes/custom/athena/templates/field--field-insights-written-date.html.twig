@@ -2,22 +2,28 @@
   {% if multiple %}
     <div{{ attributes }}>
       {% for item in items %}
-        <span{{ item.attributes }}>{{ item.content }}</span>
+        <span{{ item.attributes }} class="meta">{{ item.content }}</span>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <span{{ attributes }} >{{ item.content }}</span>
+      <span{{ attributes }} class="meta" >{{ item.content }}</span>
+      {% if comment_count %}
+      <span class="meta-count">  | {{comment_count}}</span> <img src="/themes/custom/athena/images/comment.svg">
+      {% endif %}
+      {% if node_stats %}
+      <span class="meta-count">  | {{node_stats}} </span><img alt="eye icon" style="opacity: 0.5;" src="/themes/custom/athena/images/icons8-eye-16.png">
+      {% endif %}
     {% endfor %}
   {% endif %}
 {% else %}
   <div{{ attributes }} >
-    <span{{ title_attributes.addClass(title_classes) }} >{{ label }}</span>
+    <span{{ title_attributes.addClass(title_classes) }} class="meta" >{{ label }}</span>
     {% if multiple %}
       <div>
     {% endif %}
     {% for item in items %}
-      <span{{ item.attributes }} >{{ item.content }}</span>
+      <span{{ item.attributes }}  class="meta">{{ item.content }}</span>
     {% endfor %}
     {% if multiple %}
       </div>

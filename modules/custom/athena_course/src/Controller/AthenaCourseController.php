@@ -34,6 +34,7 @@ class AthenaCourseController {
     $lname = $_REQUEST['lname'];
     $email = $_REQUEST['email'];
     $ccode = $_REQUEST['ccode'];
+    $ciso = $_REQUEST['ciso'];
     $phone = $_REQUEST['phone'];
 
     $academic =  [
@@ -44,6 +45,7 @@ class AthenaCourseController {
       '#lname' => $lname,
       '#email' => $email,
       '#ccode' => $ccode,
+      '#ciso' => $ciso,
       '#phone' => $phone,
       '#node' => $node,
       '#base_path' => $base_path,
@@ -264,8 +266,11 @@ class AthenaCourseController {
     $utm_campaign = $_GET['utm_campaign'] ?? '';
     $url_params = '';
     if (!empty($ref) && !empty($utm_source) && !empty($utm_medium) && !empty($utm_campaign)) {
-      $url_params = '&ref=' . $ref . '&utm_source=' . $source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
+      $url_params = '&ref=' . $ref . '&utm_source=' . $utm_source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
     }
+
+    //print $url_params;
+
 
     // New D8 procedural code.
    $parameters = \Drupal::routeMatch()->getParameters();
@@ -537,7 +542,11 @@ $course_description_tabs =  [
   '#why_athena' => $node->get('field_course_why_athena')->value,
   '#tax_value' => $tax_value,
   '#base_path' => $base_path,
-  '#campaign_params' => $url_params
+  '#campaign_params' => $url_params,
+  '#source' => $utm_source,
+  '#medium' => $utm_medium,
+  '#campaign' => $utm_campaign
+
 ];
 
 return array(
@@ -599,6 +608,9 @@ if( isset($_REQUEST['email']))
 if( isset($_REQUEST['ccode']))
   $ccode = base64_decode($_REQUEST['ccode']);
 
+if( isset($_REQUEST['ccode']))
+  $ciso = base64_decode($_REQUEST['ciso']);
+
 if( isset($_REQUEST['phone']))
   $phone = base64_decode($_REQUEST['phone']);
 
@@ -612,6 +624,7 @@ $registration =  [
   '#lname' => $lname,
   '#email' => $email,
   '#ccode' => $ccode,
+  '#ciso' => $ciso,
   '#phone' => $phone,
   '#cid' => $cid,
   // '#nodes' => $nodes,

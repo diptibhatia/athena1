@@ -6,7 +6,7 @@
                   <img src="/themes/custom/athena/images/testimonial-bg.png" />
    </div>
       <div class="my-container">
-         <div class="testimonials-item">
+      {#    <div class="testimonials-item">
             <!-- <img src="/themes/custom/athena/images/testimonial-bg.png" alt=""/> -->
             <div class="item-one shawdow-effect">
                <!-- <h1>Testimonials</h1> --><img alt="testimonials" src="/themes/custom/athena/images/Testimonials-1.png" />
@@ -18,15 +18,22 @@
             </div>
 
             <div class="item-two">
-               {% for testidata in testi %}            
+               {% for testidata in testi %}
                   {% if loop.index ==1 %}
                      <div class="image-dot-testimonials-one"><img alt="dots" src="/themes/custom/athena/images/dots-course.svg" /></div>
                      <div class="student-review">
+                        
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
 
+                           {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
                            <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+
+                           {% endif %}
+
                         </div>
+                        
                         <div class="info">
                            <h3><span>“</span>
                               {% set text = testidata.title.value|render|striptags %}
@@ -39,7 +46,11 @@
 
                            <div class="student-info">
 
+                           {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
                            <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+
+                           {% endif %}
 
                            {{testidata.field_testimonial_name_and_desig.value|raw}}
                            {% if testidata.field_testimonials_country_selec.value %}
@@ -54,7 +65,13 @@
                      <div class="student-review two">
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
+
+                           {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
                            <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+
+                           {% endif %}
+
                         </div>
                         <div class="info">
                            <h3><span>“</span>
@@ -67,8 +84,11 @@
                            </p>
                            <div class="student-info">
 
-                           <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+                           {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
 
+                              <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+
+                           {% endif %}
 
                            {{testidata.field_testimonial_name_and_desig.value|raw}}
                            {% if testidata.field_testimonials_country_selec.value %}
@@ -82,7 +102,13 @@
                      <div class="student-review">
                         <div class="student-image">
                            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}"  style="border-radius: 50%;border: 3px solid orange;" alt="" width="150" height="150" >
-                           <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+
+                           {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
+                              <div class="social-icon-linkedin d-none d-md-block d-lg-block"><a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img alt="" src="/themes/custom/athena/images/linked-testimonial.svg" /></a></div>
+
+                           {% endif %}
+
                         </div>
                         <div class="info">
                            <h3><span>“</span>
@@ -95,7 +121,11 @@
                            </p>
                            <div class="student-info">
 
-                           <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+                           {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
+                              <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img src="/themes/custom/athena/images/linked-testimonial.svg" class="d-block d-md-none d-lg-none" alt="" /></a>
+
+                           {% endif %}
 
                            {{testidata.field_testimonial_name_and_desig.value|raw}}
                            {% if testidata.field_testimonials_country_selec.value %}
@@ -111,6 +141,153 @@
                            <button  onclick="window.location='/insights/testimonials'; ">View All</button>
             </div>
          </div>
+#}
+         
+
+
+<div class="row">
+	<div class="col-md-6">
+		<div
+			class="item-one shawdow-effect"><!-- <h1>Testimonials</h1> -->
+			<img alt="testimonials" src="/themes/custom/athena/images/Testimonials-1.png"/>
+			<h2>Our Students Say<br/>
+				About Us
+			</h2>
+			<h3>Our students speak about their learning experience at Athena, how the courses sharpened their management skills and the support they received at every stage.</h3>
+
+		</div>
+
+	</div>
+	<div class="col-md-6"></div>
+</div>
+
+<div class="row">
+	{% set count = 0 %}
+	{% for testidata in testimonial_row1 %}
+
+		<div class="col-md-4 mb-30">
+		<div class=" st-test-bg">
+
+         <div class="student-image">
+
+   			<img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+
+            {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
+               <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img class="test-linkd" src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+            {% endif %}         
+
+   			<p><b>{{testidata.field_name.value|raw}}</b><br>
+                  {{testidata.field_designation.value|raw}}
+            </p>
+
+         </div>   
+
+			<h3>
+				{% set text = testidata.title.value|render|striptags %}
+                {{ text|length > 36 ? text|slice(0, 36 ) ~ '...' : text }}
+			</h3>
+
+			<h4>
+				{% set text = testidata.field_testimonial_text.value|render|striptags %}
+            {{ text|length > 70 ? text|slice(0, 70 ) ~ '...' : text }}&nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">ReadMore</a></span>    
+			</h4>
+
+			<div class="lin">
+            {% for univ in testidata.field_testimonial_course %}         
+               {% set text = univ.entity.title.value %}
+               {{ text|length > 20 ? text|slice(0, 20) : text }}
+            {% endfor %}
+
+			</div>
+			<div class="con">
+				{% if testidata.field_testimonials_country_selec.value %}
+
+               {% set list_value = testidata.field_testimonials_country_selec.value %}
+
+               {% set text = testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] %}
+               {{ text|length > 15 ? text|slice(0, 15) : text }}
+
+                        
+               <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+            
+            {% endif %}
+			</div>
+
+		</div>
+	</div>
+{% set count = count + 1 %}
+{% endfor %}
+</div>
+
+
+
+<div class="row">
+   {% set count = 3 %}
+   {% for testidata in testimonial_row2 %}
+
+      <div class="col-md-4 mb-30">
+      <div class=" st-test-bg">
+
+         <div class="student-image">
+
+            <img src="{{ file_url(testidata.field_testimonial_thumbnail_imag[0].entity.uri.value)}}" class="img-responsive">
+
+            {% if testidata.field_testimonial_linkedin_profi.value is not empty  %}
+
+               <a href="{{testidata.field_testimonial_linkedin_profi.value}}" target="_blank"><img class="test-linkd" src="/themes/custom/athena/images/testimonials/lnkedin.png" alt="" /></a>
+            {% endif %}         
+
+            <p><b>{{testidata.field_name.value|raw}}</b><br>
+                  {{testidata.field_designation.value|raw}}
+            </p>
+
+         </div>   
+
+         <h3>
+            {% set text = testidata.title.value|render|striptags %}
+                {{ text|length > 36 ? text|slice(0, 36 ) ~ '...' : text }}
+         </h3>
+
+         <h4>
+            {% set text = testidata.field_testimonial_text.value|render|striptags %}
+            {{ text|length > 70 ? text|slice(0, 70 ) ~ '...' : text }}&nbsp;<span><a href="{{ url('<front>') }}node/{{testidata.nid.value}}?page={{count}}" hreflang="en">ReadMore</a></span>    
+         </h4>
+
+         <div class="lin">
+            {% for univ in testidata.field_testimonial_course %}         
+               {% set text = univ.entity.title.value %}
+               {{ text|length > 20 ? text|slice(0, 20) : text }}
+            {% endfor %}
+
+         </div>
+         <div class="con">
+            {% if testidata.field_testimonials_country_selec.value %}
+
+               {% set list_value = testidata.field_testimonials_country_selec.value %}
+
+               {% set text = testidata.field_testimonials_country_selec.getSetting('allowed_values')[list_value] %}
+               {{ text|length > 15 ? text|slice(0, 15) : text }}
+                        
+              <img src="https://ipdata.co/flags/{{ testidata.field_testimonials_country_selec.value|lower }}.png">
+             {% endif %}
+         </div>
+
+      </div>
+   </div>
+{% set count = count + 1 %}
+{% endfor %}
+</div>
+
+
+	<div class="col-md-12 text-center m-40a">
+      <a href="{{ url('<front>') }}/insights/testimonials">
+         Show More
+      </a>
+	</div>
+
+
+
       </div>
      </div>
    </div>

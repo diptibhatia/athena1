@@ -236,10 +236,71 @@ function athena_preprocess_image(&$variables) {
   }
 }
 
+function getShortCourse($node) {
+    try {
+        $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+        if ($lms_url == "https://newlms.athena.edu") {
+            $api = "/athenadev";
+        } elseif ($lms_url == "https://learnstaging.athena.edu") {
+            $api = "/athenastg";
+        } else {
+            $api = "/athenaprod";
+        }
+        $course_name = $node->getTitle();
+        $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=1&fk_type_of_qualification_id=1&status=1&course_name=".trim($course_name);
+        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+        $data = (string)$response->getBody();
+        $nodes = json_decode($data)->data->data;
+        return $nodes;
+    } catch (Exception $e) {
+      return [];
+    }
+}
 
-
+function getRelatedShortCourses() {
+  try {
+    $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+    if ($lms_url == "https://newlms.athena.edu") {
+        $api = "/athenadev";
+    } elseif ($lms_url == "https://learnstaging.athena.edu") {
+        $api = "/athenastg";
+    } else {
+        $api = "/athenaprod";
+    }
+    $related_courses = $related_courses_data = [];
+    $current_page = 1;
+    $total = 0;
+    $limit = 10;
+    $uri = $lms_url . $api . "/api/get_master_table_data?table=subject_area";
+    $course_ids = [];
+    $course_subjects = json_decode(\Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody()->getContents());
+    foreach ($course_subjects as $course_subject) {
+      $course_ids[] = $course_subject->id;
+    }
+    // $random_subject_id = array_rand($course_ids);
+    $random_subject_id = 6;
+    $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=10&fk_type_of_qualification_id=1&status=1&subject_area_id=".$random_subject_id;
+    $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')))->getBody();
+    $all_data = json_decode($response);
+    if($all_data->status == 200) {
+      $related_courses = $all_data->data->data;
+      $total = $all_data->data->total;
+      $current_page = $all_data->data->current_page;
+    }
+    $pages = ceil($total / $limit);
+    $related_courses_data["lms_url"] = $lms_url;
+    $related_courses_data["related_courses"] = $related_courses;
+    $related_courses_data["total"] = $total;
+    $related_courses_data["current_page"] = $current_page;
+    $related_courses_data["subject_id"] = $random_subject_id;
+    return $related_courses_data;
+  } catch (Exception $e) {
+    return [];
+  }
+}
 
 function athena_preprocess_page(&$variables) {
+
   $variables['error_page'] = (int) filter_var(\Drupal::config('system.site')->get('page')['403'], FILTER_SANITIZE_NUMBER_INT);
   $current_path = \Drupal::service('path.current')->getPath();
 
@@ -247,6 +308,18 @@ function athena_preprocess_page(&$variables) {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
+
+      if ($node_type == 'short_course') {
+        \Drupal::service('page_cache_kill_switch')->trigger();
+        $course_data = getShortCourse($node);
+        $related_course_data = getRelatedShortCourses();
+        if(!empty($course_data)) {
+          $variables['course_info'] = $course_data[0];
+        }
+        if(!empty($related_course_data)){
+          $variables['related_courses_data'] = $related_course_data;
+        }
+      }
 
       if ($node_type == 'affiliate_page') {
         $current_page_node_id = $node->id();
@@ -368,6 +441,12 @@ function athena_preprocess_page(&$variables) {
     $line_app_id = CommonHelper::getConfigSettings('athena_library.common_settings', 'line_app_id');
     $variables['line_app_id'] = $line_app_id;
   }
+  
+  $faq_gloss = \Drupal::service('path.alias_manager')->getPathByAlias('/FAQ-Glossary');
+  if (strpos($current_path, $faq_gloss ) !== false) {
+      $variables['athena_exclude'] = TRUE;
+    }
+    
 
   if (strpos($current_path, '/university') !== false) {
     $variables['athena_exclude'] = TRUE;
@@ -489,7 +568,6 @@ function athena_preprocess_node(&$variables) {
   $current_uri = \Drupal::request()->getRequestUri();
 
   $variables['leaders'] = '0';
-
   if ($variables['node']->getType() === 'about_us_pages') {
     if (strpos($current_uri, 'about-us/governance-structure') !== false) {
       $alias = \Drupal::service('path.alias_manager')->getPathByAlias('/about-board-of-governance');
@@ -585,7 +663,7 @@ function athena_preprocess_views_view_field(&$variables) {
 
   $view = $variables['view'];
 
-  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' ) {
+  if($view->id() == 'insights_all_search' || $view->id() == 'insights_blogs_search' || $view->id() == 'insights_news_search' || $view->id() == 'insights_press_release_search' || $view->id() == 'insights_interview_search_view' || $view->id() == 'insights_book_review_search' || $view->id() == 'most_viewed_popular_insights' ) {
     if($variables['field']->field == 'nid') {
       $my_field_value = $variables['field']->getValue($variables['row']);
       $entity_a = Node::load($my_field_value);
@@ -665,6 +743,12 @@ function athena_preprocess_field(&$variables) {
     $stats = \Drupal::service('comment.statistics')->read(array_fill_keys([$nid], ''), 'node');
     if ($stats[0]->comment_count == "" ) $stats[0]->comment_count = 0;
     $variables['comment_count'] = $stats[0]->comment_count;
+    if (!empty(\Drupal::hasService('nodeviewcount.records_manager'))) {
+      $nodeviewcount = \Drupal::service('nodeviewcount.records_manager')->getNodeViewsCount($node,\Drupal\user\Entity\User::getAnonymousUser());
+      if ($nodeviewcount) {
+        $variables['node_stats'] = $nodeviewcount[0]->expression;
+      }
+    }
   }
 }
 
@@ -684,8 +768,19 @@ function athena_preprocess_links(&$variables) {
 
 function athena_preprocess_html(&$variables)
 {
-
   $current_path = \Drupal::service('path.current')->getPath();
+  
+  /*
+  $mbaprograms = \Drupal::service('path.alias_manager')->getPathByAlias('/MBAPrograms');
+  $pgcertificateEnrol = \Drupal::service('path.alias_manager')->getPathByAlias('/pgcertificateEnrol');
+ 
+  if ((strpos($current_path, $mbaprograms) !== false) || (strpos($current_path, $pgcertificateEnrol ) !== false) ) {
+      $lead_source = $_REQUEST['ref'] ?? '';
+      if ($lead_source == 'AF-LINKCONNECTOR-CS') {
+        $variables['linkconnectscript'] = TRUE;
+      } 
+  }  
+
   if (strpos($current_path, '/StudentEnroltoCourse') !== false) {
     $referer = $_SERVER['HTTP_REFERER'];
     $lead_source = $_REQUEST['source'] ?? '';
@@ -693,7 +788,7 @@ function athena_preprocess_html(&$variables)
     $lead_cid = $_REQUEST['CId'] ?? '';
     $lead_mail = $_REQUEST['mail'] ?? '';
 
-    if (strpos($referer, 'MBAPrograms') !== false) {
+    if ((strpos($referer, 'MBAPrograms') !== false) || (strpos($referer, 'pgcertificateEnrol') !== false) ) {
       if ($lead_source == 'LINKCONNECTOR') {
         $variables['link_connector_pixel'] = TRUE;
         $variables['lead_user'] = $lead_user;
@@ -702,7 +797,7 @@ function athena_preprocess_html(&$variables)
       }
     }
   }
-
+  */
 
   $route_name = \Drupal::routeMatch()->getRouteName();
     // Custom meta tags on smo and course pages.
@@ -753,9 +848,16 @@ function athena_preprocess_html(&$variables)
                 ],
             ];
 
-            $image = file_create_url($node->field_search_list_image->entity->getFileUri());
 
-            $image = [
+            $searchimage = "";          
+            if(is_object( $node->get('field_search_list_image')->entity))
+              $searchimage = $node->get('field_search_list_image')->entity->getFileUri();
+
+            if (!empty($searchimage)) $image = file_create_url($searchimage);
+          
+            //$image = file_create_url($node->field_search_list_image->entity->getFileUri());
+
+            $ogimage = [
                 '#tag' => 'meta',
                 '#attributes' => [
                     'property' => 'og:image',
@@ -763,11 +865,42 @@ function athena_preprocess_html(&$variables)
                 ],
             ];
 
+          $twitter_card = [
+            '#tag' => 'meta',
+            '#attributes' => [
+                'name' => 'twitter:card',
+                'content' => 'summary_large_image',
+            ],
+          ];
+          $twitter_title = [
+              '#tag' => 'meta',
+              '#attributes' => [
+                  'name' => 'twitter:title',
+                  'content' => $meta_tag_value,
+              ],
+          ];
+          $twitter_desc = [
+              '#tag' => 'meta',
+              '#attributes' => [
+                  'name' => 'twitter:description',
+                  'content' => $meta_tag_desc,
+              ],
+          ];
+          $twitter_image = [
+              '#tag' => 'meta',
+              '#attributes' => [
+                  'name' => 'twitter:image',
+                  'content' => $image,
+              ],
+          ];
 
             $variables['page']['#attached']['html_head'][] = [$title, 'title'];
             $variables['page']['#attached']['html_head'][] = [$description, 'description'];
-            $variables['page']['#attached']['html_head'][] = [$image, 'image'];
-
+            // $variables['page']['#attached']['html_head'][] = [$ogimage, 'image'];
+            $variables['page']['#attached']['html_head'][] = [$twitter_card, 'twitter_card'];
+            $variables['page']['#attached']['html_head'][] = [$twitter_title, 'twitter_title'];
+            $variables['page']['#attached']['html_head'][] = [$twitter_desc, 'twitter_desc'];
+            $variables['page']['#attached']['html_head'][] = [$twitter_image, 'twitter_image'];
     }
 
 
@@ -808,4 +941,14 @@ function athena_preprocess_html(&$variables)
        $variables['page']['#attached']['html_head'][] = [$og_desc, 'description'];
       }
     }
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function athena_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  if($current_path == "/registration") {
+    unset($javascript['themes/custom/athena/prodbundled.js']);
+  }
 }

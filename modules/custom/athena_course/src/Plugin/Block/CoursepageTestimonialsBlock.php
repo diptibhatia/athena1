@@ -37,16 +37,20 @@ class CoursepageTestimonialsBlock extends BlockBase {
     $testinodes = node_load_multiple($latest);
 
     $testimo =  array_slice($testinodes, 0, 7);
-    //echo "<pre>";
-    //print_r($testimo);exit;
-
-  // Base theme path.
+    
+    if (!empty($testinodes) && $testinodes != "")
+    {
+      $testimonial_row1 =  array_slice($testinodes, 0, 3);
+      $testimonial_row2 =  array_slice($testinodes, 3, 3);
+    }
+      // Base theme path.
   $theme = \Drupal::theme()->getActiveTheme();
 
   $base_path = $base_url.'/'. $theme->getPath();
     $coursepage_testimonials =  [
     '#theme' => 'coursepage_testimonials',
-    '#testi' => $testimo,
+    '#testimonial_row1' => $testimonial_row1,
+    '#testimonial_row2' => $testimonial_row2,
     '#base_path' => $base_path,
 
   ];

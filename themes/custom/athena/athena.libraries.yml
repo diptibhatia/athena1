@@ -28,6 +28,10 @@ global-js:
   dependencies:
     - core/jquery
 
+bootstrap:
+  js:
+    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js': { type: external, minified: true }
+
 affiliate-page:
   css:
     theme:
