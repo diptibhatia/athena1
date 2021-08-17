@@ -687,6 +687,10 @@
             font-size: 13px;
             color: #8d8d8d;
         }
+
+        .date-co {
+            float: right;
+        }
     }
 
     .meta {
@@ -905,4 +909,15 @@
     &.mobilePadding {
         padding-top: 130px;
     }
+}
+
+.inis-head {
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    color: #33475b;
 }
