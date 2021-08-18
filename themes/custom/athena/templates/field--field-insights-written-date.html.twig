@@ -7,7 +7,7 @@
     </div>
   {% else %}
     {% for item in items %}
-      <span{{ attributes }} class="meta" >{{ item.content }}</span>
+      <span{{ attributes }} class="meta date-co" >{{ item.content }}</span>
       {% if comment_count %}
       <span class="meta-count">  | {{comment_count}}</span> <img src="/themes/custom/athena/images/comment.svg">
       {% endif %}
