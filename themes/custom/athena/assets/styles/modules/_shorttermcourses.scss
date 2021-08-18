@@ -594,6 +594,15 @@
         overflow: hidden;
         margin-bottom: 12px;
 
+        &.course-info-text {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
+
         h2,
         p,
         p.small {
@@ -685,6 +694,15 @@
         border: #fff solid 1px;
         height: 170px;
         overflow: hidden;
+
+        &.course-info-text {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
 
         img {
           max-height: 52px;
