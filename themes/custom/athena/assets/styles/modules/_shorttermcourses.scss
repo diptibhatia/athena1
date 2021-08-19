@@ -8,6 +8,7 @@
 
 .findCourseInput {
   padding: 1rem 0;
+
   @media screen and (max-width:699px) {
     padding: 1rem 0 1rem 1rem;
   }
@@ -59,12 +60,14 @@
     position: relative;
     text-align: left;
     width: 100%;
+
     // @media screen and (min-width:768px){
     //     max-width:287px;
     // }
     .row {
       width: auto;
     }
+
     @media screen and (max-width:699px) {
       max-width: 100%;
       margin: 0 0 20px;
@@ -187,7 +190,7 @@
 
     .heading {
       clear: both;
-      background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
+      background-image: linear-gradient(89deg, #ff006e 0%, #ff4e9a 100%, #ffd85e 100%);
       color: #fff;
       padding: 0.3rem 0;
       height: 46px;
@@ -225,6 +228,7 @@
 
       img {
         border-radius: 0;
+
         @media screen and (max-width:699px) {
           width: 100% !important;
         }
@@ -304,7 +308,9 @@
     }
   }
 }
+
 @media screen and (min-width: 768px) {
+
   .mobileSlideOnly .owl-item.cloned,
   .mobileSlideOnly .owl-nav {
     display: none !important;
@@ -368,6 +374,7 @@
     margin-top: 100px;
   }
 }
+
 /*Star Rating SVG*/
 .rating {
   min-height: 31px;
@@ -405,6 +412,7 @@
   /* stroke: #000; */
   stroke-linejoin: round;
 }
+
 /* un-used */
 
 .jq-shadow {
@@ -445,6 +453,7 @@
     text-align: left;
     perspective: 1000px;
     white-space: normal;
+
     @media screen and (max-width: 767px) {
       float: none;
       display: inline-block;
@@ -462,12 +471,13 @@
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
   .flip-card:hover {
     .flip-card-inner {
       .flip-card-front {
+
         .col-12,
         .col-4,
         .col-8 {
@@ -478,6 +488,7 @@
           position: unset;
         }
       }
+
       transform: rotateY(180deg);
     }
   }
@@ -517,7 +528,7 @@
         max-height: 32px;
         max-width: 100px !important;
         position: absolute;
-        transform: translate(0,-50%);
+        transform: translate(0, -50%);
         left: 1.2rem;
         top: 50%;
       }
@@ -540,6 +551,7 @@
         border-radius: 0;
         width: 280px;
         height: 114px;
+
         @media screen and (max-width: 699px) {
           width: 100% !important;
         }
@@ -578,8 +590,18 @@
         letter-spacing: normal;
         color: #606060;
         padding-bottom: 0.3rem;
-        height: 103px;
+        height: 96px;
         overflow: hidden;
+        margin-bottom: 12px;
+
+        &.course-info-text {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
 
         h2,
         p,
@@ -672,6 +694,15 @@
         border: #fff solid 1px;
         height: 170px;
         overflow: hidden;
+
+        &.course-info-text {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
 
         img {
           max-height: 52px;

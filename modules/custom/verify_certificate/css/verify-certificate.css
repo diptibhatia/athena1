@@ -12,12 +12,12 @@ body {
   color: #fff;
 }
 
-.navbar {
+/* .navbar {
 
   margin-bottom: 20px;
   margin-top: 10px;
 
-}
+} */
 
 ul {
   padding-left: 0px
@@ -56,7 +56,7 @@ ul li {
 .inner-txt h1 {
   font-size: 20px;
   font-weight: bold;
-  line-height: 0.1;
+  line-height: 1.75rem;
 }
 
 .inner-txt a {

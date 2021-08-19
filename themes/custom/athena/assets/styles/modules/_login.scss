@@ -319,10 +319,17 @@
             .selected-flag {
                 padding: 0px 10px !important;
                 background-color: white;
-                border-right: 1.5px solid #ccc;
+                //border-right: 1.5px solid #ccc;
                 height: auto;
                 bottom: -6px;
-				width: 92px !important;
+                width: 103px !important;
+
+                .selected-dial-code {
+                    margin-left: 28px;
+                    border-left: 1.5px solid #ccc;
+                    display: flex;
+                    padding-left: 8px;
+                }
             }
         }
     }

@@ -63,14 +63,16 @@ jQuery(document).ready(function () {
       jQuery("#level_search").val(level);
     }
 
+
+  // ---- focus on first name 
+  if ( jQuery(".ac-form"))
+    jQuery(".ac-form #reg_first_name").focus();
+  
+  
   }
 
 
-  /*
-    //---------------------------------------------
-  
-  
-  
+  /*  
   jQuery.validator.addMethod("lettersonly", function(value, element) {
     return this.optional(element) || /^[a-z]+$/i.test(value);
   }, "Please enter only letters");
@@ -285,11 +287,6 @@ jQuery(document).ready(function () {
     }
   });
 
-  if ( jQuery(".ac-form"))
-    jQuery(".ac-form #reg_first_name").focus();
-  if ( jQuery(".pc-form"))
-    jQuery(".pc-form #reg_first_name").focus();
-  
 
   jQuery(".ac-form #registration_form_passchck").click(function () {
     var msg = '';
@@ -650,7 +647,7 @@ jQuery(document).ready(function () {
   jQuery(".pc-form #registration_form").click(function () {
     var msg = '';
     var c_email = jQuery(".pc-form #reg_email").val();
-    var regex = /^[a-zA-Z_ \.]*$/;
+    var regex = /^[a-zA-Z_ \.']*$/;
 
     fname = jQuery(".pc-form #reg_first_name").val();
     lname = jQuery(".pc-form #reg_last_name").val();
