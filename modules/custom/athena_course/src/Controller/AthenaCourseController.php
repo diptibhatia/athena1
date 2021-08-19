@@ -265,8 +265,8 @@ class AthenaCourseController {
     $utm_medium = $_GET['utm_medium'] ?? '';
     $utm_campaign = $_GET['utm_campaign'] ?? '';
     $url_params = '';
-    if (!empty($ref) && !empty($utm_source) && !empty($utm_medium) && !empty($utm_campaign)) {
-      $url_params = '&ref=' . $ref . '&utm_source=' . $utm_source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
+    if (!empty($utm_source) && !empty($utm_medium) && !empty($utm_campaign)) {
+      $url_params = '&utm_source=' . $utm_source . '&utm_medium=' . $utm_medium . '&utm_campaign=' . $utm_campaign;
     }
 
     //print $url_params;
