@@ -71,6 +71,12 @@ jQuery(document).ready(function() {
         separateDialCode: true
       });
     }
+    if(jQuery("#reg_mobile_num").length > 0) {
+      jQuery("#reg_mobile_num").intlTelInput({
+        initialCountry: localStorage.getItem('countryCode'),
+        separateDialCode: true
+      });
+    }
     jQuery(".mat-expansion-panel .mat-expansion-panel-header").click(function(){
         jQuery(this).toggleClass("mat-expanded");
         jQuery(this).siblings(".mat-panel-content").slideToggle();
