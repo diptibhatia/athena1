@@ -96,7 +96,7 @@
                 height: 50px;
                 border-radius: 6px;
                 box-shadow: 0 2px 18px -1px #d5dbfb;
-                border-bottom: solid 1.2px rgba(255, 61, 144, 0.18);
+                border-bottom: solid 1.2px rgba(134, 134, 134, 0.18);
                 background-color: #ffffff;
                 width: 450px;
                 padding: 10px 45px 10px 10px;
@@ -294,7 +294,7 @@
         margin-left: 116px !important;
         padding-left: 10px !important;
         width: 60% !important;
-        border: none !important;
+        //border: none !important;
         box-shadow: none !important;
         height: 40px !important;
     }
@@ -316,6 +316,14 @@
 .login-wrapper {
     .intl-tel-input.allow-dropdown {
         .flag-container {
+            border-bottom: 1.5px solid #e9e9e9;
+            width: 115px;
+            margin-bottom: 4px;
+
+            @include atSize424 {
+                margin-bottom: 8px;
+            }
+
             .selected-flag {
                 padding: 0px 10px !important;
                 background-color: white;
