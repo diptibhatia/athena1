@@ -95,10 +95,11 @@ class CertificateController extends ControllerBase {
             $course_details = $course_api_data_arr['data'][0]['course_introduction'];
             $awarded_by = $course_api_data_arr['data'][0]['awarded_by'];
           }
-        }
+	}
 
-        if($candidateDetails['firstName'] != '' && $candidateDetails['firstName'] == $userDetails['firstName'] && $candidateDetails['lastName'] == $userDetails['lastName'] && $candidateDetails['courseName'] == $userDetails['certificateName'] && $candidateDetails['ID'] == $userDetails['blockchainid']) {
 
+        if($candidateDetails['firstName'] != '' && $candidateDetails['firstName'] == $userDetails['userDetails']['firstName'] && $candidateDetails['lastName'] == $userDetails['userDetails']['lastName'] && $candidateDetails['courseName'] == $userDetails['certificateName'] && $candidateDetails['ID'] == $userDetails['blockchainId']) {
+	
           $picSrc = $userDetails['userProfilePic'] ?? '/themes/custom/athena/images/head-shot.png';
           $userDetails['profilePic'] = $picSrc;
           $userDetails['awarded_by'] = $awarded_by;
