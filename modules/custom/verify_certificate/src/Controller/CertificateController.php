@@ -63,16 +63,28 @@ class CertificateController extends ControllerBase {
         ])->getBody()->getContents();
         $candidateDetails = json_decode($response, TRUE)['result'][0];
 
-        //Get the certificate details from Blockchain API
+       /* //Get the certificate details from Blockchain API
         $response = \Drupal::httpClient()->get('https://weverifyapi.azurewebsites.net/ClaimCertificate/GetCertificate/' . $this->certID, [
           'headers' => [
             'Content-Type' => 'application/json'
           ],
           'http_errors' => false,
         ])->getBody()->getContents();
-        $certDetails = json_decode($response, TRUE)[0];
+        $certDetails = json_decode($response, TRUE)[0]; */
+		
+		  $api_url = $this->_lms_url . $this->_api . '/api/getClaimedCertificateByBlockchainId/' . $this->certID;
 
-        $courseName = $certDetails['courseName'] ?? '';
+          //Get the user details from Blockchain API
+          $response = \Drupal::httpClient()->get($api_url, [
+            'headers' => [
+              'Content-Type' => 'application/json'
+            ],
+            'http_errors' => false,
+          ])->getBody()->getContents();
+          $userDetails = json_decode($response, TRUE);
+        
+
+        $courseName = $userDetails['certificateName'] ?? '';
         if (!empty($courseName)) {
           $api_uri = $this->_lms_url .$this->_api. "/api/courselist?course_name=" . $courseName;
           $response_data = \Drupal::httpClient()->get($api_uri, array('headers' => array('Accept' => 'application/json')));
@@ -85,23 +97,13 @@ class CertificateController extends ControllerBase {
           }
         }
 
-        if($candidateDetails['firstName'] != '' && $candidateDetails['firstName'] == $certDetails['firstName'] && $candidateDetails['lastName'] == $certDetails['lastName'] && $candidateDetails['courseName'] == $certDetails['courseName'] && $candidateDetails['ID'] == $certDetails['certUniqueId']) {
+        if($candidateDetails['firstName'] != '' && $candidateDetails['firstName'] == $userDetails['firstName'] && $candidateDetails['lastName'] == $userDetails['lastName'] && $candidateDetails['courseName'] == $userDetails['certificateName'] && $candidateDetails['ID'] == $userDetails['blockchainid']) {
 
-          $api_url = $this->_lms_url . $this->_api . '/api/getClaimedCertificateByBlockchainId/' . $this->certID;
-
-          //Get the user details from Blockchain API
-          $response = \Drupal::httpClient()->get($api_url, [
-            'headers' => [
-              'Content-Type' => 'application/json'
-            ],
-            'http_errors' => false,
-          ])->getBody()->getContents();
-          $userDetails = json_decode($response, TRUE);
           $picSrc = $userDetails['userProfilePic'] ?? '/themes/custom/athena/images/head-shot.png';
-          $certDetails['profilePic'] = $picSrc;
-          $certDetails['awarded_by'] = $awarded_by;
+          $userDetails['profilePic'] = $picSrc;
+          $userDetails['awarded_by'] = $awarded_by;
           $transcript = $userDetails['transcript']['transcript_path'] ?? '';
-          $certDetails['transcript'] = $transcript;
+          $userDetails['transcript'] = $transcript;
           $verify = 1;
         }
 
@@ -115,7 +117,7 @@ class CertificateController extends ControllerBase {
       '#theme' => 'verify_certificate',
       '#queryParams' => $queryParams,
       '#candidateDetails' => $candidateDetails,
-      '#certDetails' => $certDetails,
+      '#certDetails' => $userDetails,
       '#verify' => $verify,
       '#coursedetails' => $course_details,
       '#coursedetailsdefault' => $this->_course_details_default,
@@ -123,3 +125,4 @@ class CertificateController extends ControllerBase {
   }
 
 }
+
