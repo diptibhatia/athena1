@@ -1487,7 +1487,7 @@
     border-left: 1.5px solid rgb(215, 215, 215);
 }
 
-.row,
+.row-yere,
 .row-mba,
 .row-doctorate {
     min-width: 23%;
@@ -1616,9 +1616,9 @@ h4 {
         font-size: 14px;
 
         &:hover .arrow-icon {
-               
-                display: block !important;
-            
+
+            display: block !important;
+
         }
     }
 }
@@ -1665,7 +1665,7 @@ h4 {
     padding-bottom: 31px;
 }
 
-.row {
+.row-yere {
     .hea {
         color: #ff4d9a;
         font-family: Lato;
