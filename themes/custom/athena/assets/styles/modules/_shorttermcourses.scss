@@ -458,7 +458,7 @@
       float: none;
       display: inline-block;
 
-      &:first-child {
+      width: 84% !important &:first-child {
         margin: 0 0 20px 24px;
       }
     }
