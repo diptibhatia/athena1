@@ -78,12 +78,12 @@
         }
 
         img {
-            
+
             display: block;
             margin: 0 auto;
         }
 
-        
+
     }
 
     .logos {
@@ -96,7 +96,7 @@
         img {
             display: inline-block;
             height: auto;
-            margin-right: 10px; 
+            margin-right: 10px;
         }
     }
 
@@ -191,7 +191,7 @@
         width: 182px;
         height: 51px;
         padding: 3px 19px 0 24px;
-        background-image: linear-gradient(89deg, #ffc300 0%, #ffac00 100%, 
+        background-image: linear-gradient(89deg, #ffc300 0%, #ffac00 100%,
         #ffd85e 100%);
 
         p {
@@ -288,7 +288,7 @@
                     top: 50%;
                     transform: translateY(-50%)
                 }
-    
+
                 &:nth-last-of-type(1)::after {
                     content: none;
                 }
@@ -403,7 +403,7 @@
             }
 
             .course-login-wrapper {
-                height:auto; 
+                height:auto;
                 margin-bottom:25px;
                 @include belowSize1250 {
                     left: 0;
@@ -411,7 +411,7 @@
 
                 .login-item{
                     input{
-                        border:1px solid #ced4da;                        
+                        border:1px solid #ced4da;
                     }
                 }
 
@@ -430,10 +430,10 @@
                     right: 26px;
                     transform: rotate(45deg);
                     bottom: 31px;}
-               } 
+               }
                select{border:1px solid #ced4da;}
             }
-        
+
         .intl-tel-input.allow-dropdown {box-shadow:0 2px 18px -1px #d5dbfb;width:100%;}
         .intl-tel-input .country-list{margin-top:49px;}
         .intl-tel-input.allow-dropdown input{width: 74%;float: right;text-align: left;padding: 7px 10px !important;box-shadow: none;background: none;height: 44px;
@@ -442,11 +442,11 @@
         }
         }
         .intl-tel-input.allow-dropdown .selected-flag , .intl-tel-input.allow-dropdown .country-code{
-            width: 46px;
+            width: 90px;
             z-index: 1;
             position: relative;
             height: 100%;
-            padding: 10px 0 0 8px;
+        //    padding: 10px 0 0 8px;
             float:left;
         }
         .intl-tel-input.allow-dropdown .country-code{
@@ -578,7 +578,7 @@
             &-control-prev {
                 left: 0;
                 bottom: -50px;
-                align-items: flex-end;  
+                align-items: flex-end;
 
                 @include atSize750 {
                     left: -50px;
@@ -593,7 +593,7 @@
             &-control-next {
                 right: 0;
                 bottom: -50px;
-                align-items: flex-end;  
+                align-items: flex-end;
 
                 @include atSize750 {
                     right: -50px;
@@ -606,7 +606,7 @@
             }
 
             img {
-                
+
                 @include atSize1000 {
                     width: 60px;
                 }
@@ -621,4 +621,125 @@
 .fyi-tabs__overview-list li ol li {
     color: pink;
     padding-left: 12px;
+}
+.reg-form-control {
+  box-shadow: 0 2px 18px -1px #d5dbfb;
+  padding: .375rem .75rem;
+  height: 54px;
+}
+
+.sign-up-button {
+  margin-top: 10px;
+}
+
+.reg-sub {
+  margin: 46px 0;
+}
+
+.form-group
+{
+  line-height: 24px;
+}
+
+.country-code {
+  height: 76% !important;
+  margin: 4px 0 !important;
+}
+.form-check-input {
+
+  //margin-top: 11px !important;
+}
+
+.dot1 {
+  animation: visibility 3s linear infinite;
+}
+
+@keyframes visibility {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot2 {
+  animation: visibility2 3s linear infinite;
+}
+
+
+@keyframes visibility2 {
+  0% {
+    opacity: 0;
+  }
+
+  21% {
+    opacity: 0;
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot3 {
+  animation: visibility3 3s linear infinite;
+}
+
+@keyframes visibility3 {
+  0% {
+    opacity: 0;
+  }
+
+  43% {
+    opacity: 0;
+  }
+
+  44% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.login-details{
+	.intl-tel-input.allow-dropdown{
+	.flag-container{
+		.selected-flag{
+		padding: 0px 10px !important;
+			background-color: white;
+		}
+	}
+}
 }
