@@ -164,7 +164,7 @@ function read_time_node_view(array &$build, EntityInterface $entity, EntityViewD
       $read_time = $minute_format;
     }
 
-    $data = t((string) $display, [':read_time' => strtoupper($read_time)]);
+    $data = t((string) $display, [':read_time' => $read_time]);
     if($node_type->id() == 'insight_article') {
       $data = $data .'</span>';
     }
@@ -237,7 +237,7 @@ function read_time_defaults() {
     'fields' => ['body'],
     'wpm' => '225',
     'format' => 'hour_short',
-    'display' => t(':read_time READ'),
+    'display' => t(':read_time read'),
   ];
 }
 
@@ -301,7 +301,7 @@ function get_read_time($entity) {
     } else {
       $read_time = $minute_format;
     }
-    $data = t((string) $display, [':read_time' => strtoupper($read_time)]);
+    $data = t((string) $display, [':read_time' => $read_time]);
     $build['read_time'] = [
       '#type' => 'markup',
       '#markup' => $data,
