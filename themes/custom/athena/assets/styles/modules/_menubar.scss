@@ -1484,10 +1484,10 @@
     padding-left: 28px;
     padding-top: 10px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
-.row,
+.row-yere,
 .row-mba,
 .row-doctorate {
     min-width: 23%;
@@ -1495,7 +1495,7 @@
     padding-left: 28px;
     padding-top: 10px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-mba,
@@ -1522,18 +1522,53 @@
     }
 }
 
-.arrow-icon {
-    position: absolute;
-    left: 24%;
-    display: none !important;
+.sub-head {
+    .arrow-icon {
+        position: absolute;
+        left: 24%;
+        opacity: 0.6;
+        visibility: hidden;
+    }
+
+    .arrow-icon-master {
+        visibility: visible;
+        position: absolute;
+        left: 24%;
+        opacity: 0.6;
+    }
 }
+
+.sub-category {
+    .arrow-icon {
+        position: absolute;
+        left: 45%;
+        opacity: 0.6;
+        margin-top: -24px;
+        visibility: hidden;
+    }
+
+    .arrow-icon-master {
+        position: absolute;
+        left: 45%;
+        opacity: 0.6;
+        margin-top: -24px;
+    }
+
+    .arrow-icon-master-post {
+        position: absolute;
+        left: 45%;
+        opacity: 0.6;
+        margin-top: -24px;
+    }
+}
+
 
 .row-two {
     min-width: 20%;
     padding-left: 28px;
     padding-top: 10px;
     margin-right: 3%;
-    border-left: 1.5px solid #d7d7d7;
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 
 }
 
@@ -1543,7 +1578,7 @@
     padding-left: 28px;
     padding-top: 10px;
     margin-right: 3%;
-    border-left: 1.5px solid #d7d7d7;
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-two-upskill {
@@ -1552,7 +1587,7 @@
     padding-left: 28px;
     padding-top: 10px;
     margin-right: 3%;
-    border-left: 1.5px solid #d7d7d7;
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .scroll {
@@ -1567,6 +1602,28 @@
     overflow: auto;
     width: 118%;
     height: 218px;
+
+    h4 {
+        margin-bottom: -8%;
+    }
+
+    .arrow-icon-master-post {
+        position: relative;
+        left: 82%;
+        opacity: 0.6;
+        //margin-top: -24px;
+
+    }
+
+    .arrow-icon {
+        position: relative;
+        left: 82%;
+        opacity: 0.6;
+        //margin-top: -24px;
+        visibility: hidden;
+
+    }
+
 }
 
 /* Scroll Bar Design  */
@@ -1605,23 +1662,14 @@
     line-height: normal;
     letter-spacing: normal;
     color: #ff4d9a;
+
 }
 
 h4 {
     font-size: 14px;
 }
 
-.sub-head {
-    h4 {
-        font-size: 14px;
 
-        &:hover .arrow-icon {
-               
-                display: block !important;
-            
-        }
-    }
-}
 
 .menu-drop {
     display: flex;
@@ -1665,7 +1713,7 @@ h4 {
     padding-bottom: 31px;
 }
 
-.row {
+.row-yere {
     .hea {
         color: #ff4d9a;
         font-family: Lato;
@@ -1751,7 +1799,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-postcert {
@@ -1760,7 +1808,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-basics {
@@ -1769,7 +1817,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-essentials {
@@ -1778,7 +1826,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-mast {
@@ -1787,7 +1835,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-diploma {
@@ -1796,7 +1844,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-exedipl {
@@ -1805,7 +1853,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .row-mbaessentials {
@@ -1814,7 +1862,7 @@ hr {
     padding: 10px;
     padding-left: 28px;
     margin-right: 3%;
-    border-left: 1.5px solid rgb(215, 215, 215);
+    border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
 .re-link h5 {
