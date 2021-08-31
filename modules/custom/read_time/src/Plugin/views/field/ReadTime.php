@@ -105,9 +105,9 @@ class ReadTime extends FieldPluginBase {
    
     if($this->options['link_to_entity'] == 1) {
       $build = $entity->toLink()->toRenderable();
-      $build['#title'] = t((string) $display, [':read_time' => strtoupper($read_time)]);
+      $build['#title'] = t((string) $display, [':read_time' => $read_time]);
     } else {
-      $build = t((string) $display, [':read_time' => strtoupper($read_time)]);
+      $build = t((string) $display, [':read_time' => $read_time]);
     }
     return  $build;
   }

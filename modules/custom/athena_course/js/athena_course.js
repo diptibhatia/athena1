@@ -152,7 +152,10 @@ var baseUrl = window.location.origin;
         utmSource = (utmSource == null || utmSource == '') ? "Direct":utmSource;
         //API URL
         var URL = "https://agestagingapi.azurewebsites.net/Register/SaveLead";
-        if (baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu") {
+        if ( baseUrl == "https://www.athena.edu" || baseUrl == "https://athena.edu" 
+          || baseUrl == "http://www.athena.edu" || baseUrl == "http://athena.edu" 
+          || baseUrl == "https://www.courses.athena.edu" || baseUrl == "https://courses.athena.edu" 
+          || baseUrl == "http://www.courses.athena.edu" || baseUrl == "http://courses.athena.edu" ) {
           URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
         }
         cData.email = String(jQuery("#regEmail").val());
