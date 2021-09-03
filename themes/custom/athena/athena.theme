@@ -455,6 +455,11 @@ function athena_preprocess_page(&$variables) {
     $variables['athena_exclude'] = TRUE;
   }
 
+//********new-testimonial******please remove this code 
+  if (strpos($current_path, '/new-testimonial') !== false) {
+    $variables['athena_exclude'] = TRUE;
+  }
+//********new-testimonial******please remove this code 
 
   if (strpos($current_path, '/webform/contact_us') !== false) {
     $variables['athena_exclude'] = TRUE;
