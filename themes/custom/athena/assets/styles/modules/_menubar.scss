@@ -1453,6 +1453,19 @@
     height: 66%;
     margin: 36% 0% 0% 0%;
 
+    @media screen and (max-width: 1024px) {
+        height: 29%;
+        margin: 45% 0% 0% 0%;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 43%;
+        margin: 4% 0% 0% 0%;
+
+    }
+
+
     /* Scroll Bar Design  */
     /* width */
     ::-webkit-scrollbar {
@@ -1518,6 +1531,11 @@
     padding-top: 10px;
     margin-right: 3%;
     border-left: solid 1px rgba(151, 151, 151, 0.1);
+
+    @media screen and (max-width: 1024px) {
+        margin-right: 10%;
+
+    }
 }
 
 .row-mba,
@@ -1530,6 +1548,11 @@
     padding-top: 10px;
     margin-left: 9%;
     margin-right: 3%;
+
+    @media screen and (max-width: 1024px) {
+        margin-left: 2%;
+
+    }
 
     h3 {
         font-family: Lato;
@@ -1550,6 +1573,11 @@
         left: 24%;
         opacity: 0.6;
         visibility: hidden;
+
+        @media screen and (max-width: 768px) {
+            left: 17%;
+
+        }
     }
 
     .arrow-icon-master {
@@ -1557,6 +1585,11 @@
         position: absolute;
         left: 24%;
         opacity: 0.6;
+
+        @media screen and (max-width: 768px) {
+            left: 17%;
+
+        }
     }
 }
 
@@ -1567,6 +1600,11 @@
         opacity: 0.6;
         margin-top: -24px;
         visibility: hidden;
+
+        @media screen and (max-width: 768px) {
+            left: 39%;
+
+        }
     }
 
     .arrow-icon-master {
@@ -1574,6 +1612,11 @@
         left: 45%;
         opacity: 0.6;
         margin-top: -24px;
+
+        @media screen and (max-width: 768px) {
+            left: 39%;
+
+        }
     }
 
     .arrow-icon-master-post {
@@ -1632,6 +1675,11 @@
         left: 82%;
         opacity: 0.6;
         margin-top: 18px;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+
+        }
     }
 
     .arrow-icon {
@@ -1640,6 +1688,11 @@
         opacity: 0.6;
         visibility: hidden;
         margin-top: 10px;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+
+        }
     }
 }
 
@@ -1779,6 +1832,11 @@ h4 {
     opacity: 0.9;
     border-radius: 3px;
     background-color: #ff016f;
+
+    @media screen and (max-width: 768px) {
+        width: 199px;
+
+    }
 }
 
 .card-in-drop-two {
@@ -1789,6 +1847,11 @@ h4 {
     opacity: 0.9;
     border-radius: 3px;
     background-color: #ffc400;
+
+    @media screen and (max-width: 768px) {
+        width: 199px;
+
+    }
 }
 
 .card-text {
