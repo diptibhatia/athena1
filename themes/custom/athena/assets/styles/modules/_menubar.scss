@@ -1007,7 +1007,7 @@
         }
 
         .dd-level1 {
-            height: 181px;
+            height: 221px;
             display: none;
             position: absolute;
             z-index: 1;
@@ -1177,8 +1177,9 @@
                                                 display: block;
 
                                                 @include belowSize700 {
-                                                    width: 95% !important;
+                                                    width: 97% !important;
                                                     display: none;
+                                                    height: auto;
 
                                                     img {
                                                         display: block;
@@ -1190,16 +1191,20 @@
                                                     padding: 5px 0;
                                                     list-style: none;
 
+                                                    @include belowSize700 {
+                                                        padding: 1px 0;
+                                                    }
+
                                                     a {
                                                         display: block;
                                                         background: rgba(243, 243, 243, .67);
                                                         padding: 5px;
-                                                        color: #000;
+                                                        color: #ff026f;
 
                                                         @include belowSize700 {
                                                             display: block;
                                                             background: transparent;
-                                                            padding: 5px 0;
+                                                            padding: 21px 0px 0 12px;
                                                         }
                                                     }
 
@@ -1256,17 +1261,18 @@
                                                 display: block;
 
                                                 @include belowSize700 {
-                                                    display: none;
+                                                    display: block;
                                                 }
 
                                                 a {
-                                                    color: #3a3a3a !important;
+                                                    color: #ff026f !important;
+                                                    padding: 21px 0px 0 12px;
                                                 }
                                             }
                                         }
 
                                         a {
-                                            color: #ff006e !important;
+                                            color: black !important;
                                             text-decoration: none;
                                         }
                                     }
@@ -1274,6 +1280,7 @@
                                     a {
                                         font-weight: normal;
                                         font-style: normal;
+                                        color: black;
 
                                         img {
                                             max-width: 50px;
@@ -1312,8 +1319,8 @@
 
                     a {
                         font-weight: bold;
-                        font-style: italic;
-                        color: #333;
+                        //font-style: italic;
+                        color: #ff026f;
                     }
 
                     &:first-child {
