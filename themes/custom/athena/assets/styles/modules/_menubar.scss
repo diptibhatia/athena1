@@ -1511,10 +1511,10 @@
 }
 
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-}
+// .dropdown-content a:hover {
+//     background-color: #ddd;
+//     color: black;
+// }
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -1800,6 +1800,18 @@ h4 {
     line-height: normal;
     letter-spacing: normal;
     padding-bottom: 31px;
+
+    a {
+        color: #ff4d9a;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        padding:0 0 0px 0;
+    }
 }
 
 .row-yere {
