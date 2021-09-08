@@ -1577,7 +1577,7 @@
 .sub-head {
     .arrow-icon {
         position: absolute;
-        left: 24%;
+        left: 23%;
         opacity: 0.6;
         visibility: hidden;
 
@@ -1590,7 +1590,7 @@
     .arrow-icon-master {
         visibility: visible;
         position: absolute;
-        left: 24%;
+        left: 23%;
         opacity: 0.6;
 
         @media screen and (max-width: 768px) {
@@ -1681,7 +1681,7 @@
         position: relative;
         left: 82%;
         opacity: 0.6;
-        margin-top: 18px;
+        margin-top: 10px;
 
         @media screen and (max-width: 768px) {
             display: none;
@@ -1802,6 +1802,16 @@ h4 {
 }
 
 .row-yere {
+    min-width: 26%;
+
+    .po-scroll {
+        height: 338px;
+        overflow: auto;
+        overflow-x: scroll;
+        overflow-x: hidden;
+    }
+
+
     .hea {
         color: #ff4d9a;
         font-family: Lato;
@@ -1812,6 +1822,15 @@ h4 {
         line-height: normal;
         letter-spacing: normal;
         padding-bottom: 0px;
+    }
+
+
+    &.micro {
+        display: none;
+    }
+
+    &.upskill {
+        display: none;
     }
 }
 
@@ -1829,8 +1848,9 @@ h4 {
     h5 {
         font-size: 12px;
         font-weight: bold;
-        width: 53%; 
+        width: 53%;
     }
+
 }
 
 .sub-category-list {
@@ -1843,7 +1863,7 @@ h4 {
     font-size: 14px;
 }
 
-.card-in-drop {
+.card-in-drop:nth-of-type(odd) {
     width: 284px;
     height: auto;
     margin: 21px 135px 12px 10px;
@@ -1858,7 +1878,7 @@ h4 {
     }
 }
 
-.card-in-drop-two {
+.card-in-drop:nth-of-type(even) {
     width: 284px;
     height: auto;
     margin: 21px 135px 12px 10px;
@@ -1883,6 +1903,7 @@ h4 {
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
+    height: 36px;
 }
 
 .card-text-para {
@@ -1895,6 +1916,10 @@ h4 {
     line-height: 1.5;
     letter-spacing: normal;
     color: #ffffff;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 hr {
