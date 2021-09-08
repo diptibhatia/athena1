@@ -1007,7 +1007,7 @@
         }
 
         .dd-level1 {
-            height: 221px;
+            height: 278px;
             display: none;
             position: absolute;
             z-index: 1;
@@ -1819,6 +1819,18 @@ h4 {
     color: #ff4d9a;
     padding-top: 5px;
     text-decoration: underline;
+}
+
+.re-link-mob {
+    color: #ff4d9a;
+    padding-top: 18px;
+    text-decoration: underline;
+
+    h5 {
+        font-size: 12px;
+        font-weight: bold;
+        width: 53%; 
+    }
 }
 
 .sub-category-list {

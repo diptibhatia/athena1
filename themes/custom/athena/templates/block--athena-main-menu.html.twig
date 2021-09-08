@@ -41,6 +41,7 @@
 			<div class="close-button" style="float: right;margin-right: 24px;margin-bottom: 10px;" onclick="closbtn()"><img src="https://athena.edu/themes/custom/athena/images/icons/cancel.png" style="width:20px"></div>
 			<ul onclick="eplcour()">
 				<li>
+				<i class="fas fa-graduation-cap main-head-icon"></i>
 					<a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Degree</a>
 					<div class="dd-level2">
 						<div class="dd-level2-inner">
@@ -59,7 +60,7 @@
 												</li>
 												{% for univ in academic.universities%}
 													<li>
-<a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="https://athenawebsiteprod.s3.amazonaws.com/s3fs-public/2020-10/ciq.png" alt="" {{univ.label}} ">{{univ.label}}</a>
+														<a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="https://athenawebsiteprod.s3.amazonaws.com/s3fs-public/2020-10/ciq.png" alt="" {{univ.label}} ">{{univ.label}}</a>
 
 													</li>
 												{% endfor %}
@@ -72,6 +73,7 @@
 					</div>
 				</li>
 				<li>
+				<i class="far fa-credit-card main-head-icon"></i>
 					<a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Micro Credit</a>
 					<div class="dd-level2">
 						<div class="dd-level2-inner">
@@ -102,6 +104,7 @@
 					</div>
 				</li>
 				<li>
+				<i class="fas fa-scroll main-head-icon"></i>
 					<a href="#"><img src="certification-icn.svg" style="float:left;margin-right:10px;"/>Upskilliing Courses</a>
 					<div class="dd-level2">
 						<div class="dd-level2-inner">
@@ -128,6 +131,11 @@
 						</div>
 					</div>
 				</li>
+				<div class="re-link-mob">
+					<h5>Want to Know More about<br>
+						Our Universities ?</h5>
+				</div>
+
 			</ul>
 		</div>
 	</div>
@@ -137,98 +145,98 @@
 		</button>
 		<div class="collapse navbar-collapse d-none d-md-block" id="main_nav" onclick="newmenu();">
 			<ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
-					                                                                                display: inline-flex;
-					                                                                                border-radius: 5px;
-					                                                                                padding: 0;
-					                                                                                height: 38px;
-					                                                                                justify-content: space-evenly;
-					                                                                                align-items: center;box-sizing: border-box;">
+										                                                                                display: inline-flex;
+										                                                                                border-radius: 5px;
+										                                                                                padding: 0;
+										                                                                                height: 38px;
+										                                                                                justify-content: space-evenly;
+										                                                                                align-items: center;box-sizing: border-box;">
 				<li class="nav-item dropdown dropbtn" onclick="newmenu();">
 					<a class="nav-link dropdown-toggle dropbtn" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';font-size:14px;letter-spacing:1px;" onclick="newmenu();">
 						Explore
 						<span style="padding-left:5px" class="glyphicon glyphicon-chevron-down"></span>
 					</a>
 					{# <ul class="dropdown-menu" style="height: 383px;
-					                                                                                        left: -10px;
-					                                                                                        top: 55px;
-					                                                                                        box-shadow: 0 2px 13px 0 #8c8c8c;
-					                                                                                        width: 279px;
-					                                                                                        font-family: 'Lato';
-					                                                                                        font-size: 1rem;">
-					                                                                                           <li class="has-submenu">
-					                                                                                             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
-					                                                                                             <div class="megasubmenu dropdown-menu box-shadow">
-					                                                                                               <div class="row">
-					                                                                                                    <div class="col-7">
-					                                                                                                            <ul class="list-unstyled bindWidth">
-					                                                                                                                <h5 style="padding-left: 20px;">Academic</h5>
-					                                                                                                                <a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
-					                                                                                                                {% set modnum = 1 %}
-					                                                                                                                {% for academic in academicnodes %}
-					                                                                                                                <li>
-					                                                                                                                    <a href="{{url('<front>')}}course/{{academic.nid}}" onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
-					                                                                                                                    <div style="display:none;" id="secondary-data_{{modnum}}">
-					                                                                                                                        <h6>Awarding Body</h6>
-					                                                                                                                        <ul class="list-unstyled">
-					                                                                                                                        {% for univ in academic.universities%}
-					                                                                                                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-					                                                                                                                           {% endfor %}
-					                                                                                                                        </ul>
-					                                                                                                                    </div>
-					                                                                                                                </li>
-					                                                                                                                {% set modnum = modnum + 1 %}
-					                                                                                                                {% endfor %}
-					                                                                                                            </ul>
-					                                                                                                    </div><!-- end col-3 -->
-					                                                                                                    <div class="col-5 three-level" id="secondary-data_three-level">
-					                                                                                                      <h6>Awarding Body</h6>
-					                                                                                                      <ul class="list-unstyled">
-					                                                                                                      {% for univ in academic_universities%}
-					                                                                                                          <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-					                                                                                                         {% endfor %}
-					                                                                                                      </ul>
-					                                                                                                    </div><!-- end col-3 -->
-					                                                                                                </div><!-- end row -->
-					                                                                                             </div>
-					                                                                                          </li>
-					                                                                                          <li class="has-submenu">
-					                                                                                             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
-					                                                                                             <div class="megasubmenu dropdown-menu box-shadow">
-					                                                                                                <div class="row">
-					                                                                                                     <div class="col-7">
-					                                                                                                             <ul class="list-unstyled bindWidth">
-					                                                                                                <h5 style="padding-left: 20px;">Certifications</h5>
-					                                                                                                                <a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
-					                                                                                                                {% set modnum = 1 %}
-					                                                                                                                {% for cert in certificationsnodes %}
-					                                                                                                                <li>
-					                                                                                                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data-cert_{{modnum}}')">{{cert.title}}</a>
-					                                                                                                                    <div style="display:none;" id="secondary-data-cert_{{modnum}}">
-					                                                                                                                        <h6>Universities</h6>
-					                                                                                                                        <ul class="list-unstyled">
-					                                                                                                                        {% for univ in cert.universities%}
-					                                                                                                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-					                                                                                                                           {% endfor %}
-					                                                                                                                        </ul>
-					                                                                                                                    </div>
-					                                                                                                                </li>
-					                                                                                                                {% set modnum = modnum + 1 %}
-					                                                                                                                {% endfor %}
-					                                                                                                             </ul>
-					                                                                                                     </div><!-- end col-3 -->
-					                                                                                            <div class="col-5 three-level" id="secondary-data-cert_three-level">
-					                                                                                                <h6>Awarding Body</h6>
-					                                                                                                <ul class="list-unstyled">
-					                                                                                                {% for univ in certifications_universities%}
-					                                                                                                    <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-					                                                                                                   {% endfor %}
-					                                                                                                </ul>
-					                                                                                              </div><!-- end col-3 -->
-					                                                                                                    <!-- end col-3 -->
-					                                                                                                 </div><!-- end row -->
-					                                                                                              </div>
-					                                                                                          </li> 
-					                                                                                        </ul> #}
+										                                                                                        left: -10px;
+										                                                                                        top: 55px;
+										                                                                                        box-shadow: 0 2px 13px 0 #8c8c8c;
+										                                                                                        width: 279px;
+										                                                                                        font-family: 'Lato';
+										                                                                                        font-size: 1rem;">
+										                                                                                           <li class="has-submenu">
+										                                                                                             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
+										                                                                                             <div class="megasubmenu dropdown-menu box-shadow">
+										                                                                                               <div class="row">
+										                                                                                                    <div class="col-7">
+										                                                                                                            <ul class="list-unstyled bindWidth">
+										                                                                                                                <h5 style="padding-left: 20px;">Academic</h5>
+										                                                                                                                <a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
+										                                                                                                                {% set modnum = 1 %}
+										                                                                                                                {% for academic in academicnodes %}
+										                                                                                                                <li>
+										                                                                                                                    <a href="{{url('<front>')}}course/{{academic.nid}}" onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
+										                                                                                                                    <div style="display:none;" id="secondary-data_{{modnum}}">
+										                                                                                                                        <h6>Awarding Body</h6>
+										                                                                                                                        <ul class="list-unstyled">
+										                                                                                                                        {% for univ in academic.universities%}
+										                                                                                                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+										                                                                                                                           {% endfor %}
+										                                                                                                                        </ul>
+										                                                                                                                    </div>
+										                                                                                                                </li>
+										                                                                                                                {% set modnum = modnum + 1 %}
+										                                                                                                                {% endfor %}
+										                                                                                                            </ul>
+										                                                                                                    </div><!-- end col-3 -->
+										                                                                                                    <div class="col-5 three-level" id="secondary-data_three-level">
+										                                                                                                      <h6>Awarding Body</h6>
+										                                                                                                      <ul class="list-unstyled">
+										                                                                                                      {% for univ in academic_universities%}
+										                                                                                                          <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+										                                                                                                         {% endfor %}
+										                                                                                                      </ul>
+										                                                                                                    </div><!-- end col-3 -->
+										                                                                                                </div><!-- end row -->
+										                                                                                             </div>
+										                                                                                          </li>
+										                                                                                          <li class="has-submenu">
+										                                                                                             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
+										                                                                                             <div class="megasubmenu dropdown-menu box-shadow">
+										                                                                                                <div class="row">
+										                                                                                                     <div class="col-7">
+										                                                                                                             <ul class="list-unstyled bindWidth">
+										                                                                                                <h5 style="padding-left: 20px;">Certifications</h5>
+										                                                                                                                <a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
+										                                                                                                                {% set modnum = 1 %}
+										                                                                                                                {% for cert in certificationsnodes %}
+										                                                                                                                <li>
+										                                                                                                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data-cert_{{modnum}}')">{{cert.title}}</a>
+										                                                                                                                    <div style="display:none;" id="secondary-data-cert_{{modnum}}">
+										                                                                                                                        <h6>Universities</h6>
+										                                                                                                                        <ul class="list-unstyled">
+										                                                                                                                        {% for univ in cert.universities%}
+										                                                                                                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+										                                                                                                                           {% endfor %}
+										                                                                                                                        </ul>
+										                                                                                                                    </div>
+										                                                                                                                </li>
+										                                                                                                                {% set modnum = modnum + 1 %}
+										                                                                                                                {% endfor %}
+										                                                                                                             </ul>
+										                                                                                                     </div><!-- end col-3 -->
+										                                                                                            <div class="col-5 three-level" id="secondary-data-cert_three-level">
+										                                                                                                <h6>Awarding Body</h6>
+										                                                                                                <ul class="list-unstyled">
+										                                                                                                {% for univ in certifications_universities%}
+										                                                                                                    <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
+										                                                                                                   {% endfor %}
+										                                                                                                </ul>
+										                                                                                              </div><!-- end col-3 -->
+										                                                                                                    <!-- end col-3 -->
+										                                                                                                 </div><!-- end row -->
+										                                                                                              </div>
+										                                                                                          </li> 
+										                                                                                        </ul> #}
 				</li>
 			</ul>
 
@@ -508,8 +516,8 @@
 							<hr>
 							<div class="card-text-para">
 								We have a multitude of courses tailored to your career goals and busy schedule. These
-								                                                                                                                                                                                    courses have been developed to
-								                                                                                                                                                                                    enhance …..
+																                                                                                                                                                                                    courses have been developed to
+																                                                                                                                                                                                    enhance …..
 							</div>
 						</div>
 						<div class="card-in-drop-two">
@@ -519,8 +527,8 @@
 							<hr>
 							<div class="card-text-para">
 								We have a multitude of courses tailored to your career goals and busy schedule. These
-								                                                                                                                                                                                    courses have been developed to
-								                                                                                                                                                                                    enhance …..
+																                                                                                                                                                                                    courses have been developed to
+																                                                                                                                                                                                    enhance …..
 							</div>
 						</div>
 					</div>
@@ -554,24 +562,24 @@
 	<nav class="primary-nav">
 		<ul>
 			<!--  <li class="about"><a href="{{ url('<front>') }}about-us/our-background">About Us <i class="arrow arrow--down"></i></a>
-			                                                                           <ul class="secondary-nav">
-			                                                                              <li><a href="{{ url('<front>') }}about-us/our-background/">Our Background</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/founder-and-ceo">Founder &amp; CEO</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/board-of-governance">Board of Governance</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/athena-governance-structure">Governance Structure</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/academic-director">Academic Director</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/dean">Dean</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/executive-council">Executive Council</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/academic-council">Academic Council</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/core-principles">Core Principles</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/key-staffs-and-contacts">Key Staffs & Contacts</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/accreditation-and-partnerships">Accreditation & Partnerships</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/athena-and-associated-entities">Associated Entities</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Awards & Recognitions</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policies & Procedures</a></li>
-			                                                                              <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
-			                                                                           </ul>
-			                                                                        </li> -->
+						                                                                           <ul class="secondary-nav">
+						                                                                              <li><a href="{{ url('<front>') }}about-us/our-background/">Our Background</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/founder-and-ceo">Founder &amp; CEO</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/board-of-governance">Board of Governance</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/athena-governance-structure">Governance Structure</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/academic-director">Academic Director</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/dean">Dean</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/executive-council">Executive Council</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/academic-council">Academic Council</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/core-principles">Core Principles</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/key-staffs-and-contacts">Key Staffs & Contacts</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/accreditation-and-partnerships">Accreditation & Partnerships</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/athena-and-associated-entities">Associated Entities</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Awards & Recognitions</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policies & Procedures</a></li>
+						                                                                              <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
+						                                                                           </ul>
+						                                                                        </li> -->
 			<li>
 				<a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a>
 			</li>
@@ -1378,4 +1386,3 @@ doccat.style.display = "none";
 }
 </script>
 <script rel="preconnect" src="https://kit.fontawesome.com/31cbd00155.js" crossorigin="anonymous"></script>
-
