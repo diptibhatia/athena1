@@ -202,7 +202,6 @@
 								<div class="upskill-scroll">
 								{% for certification_list in certification_list %}
 
-
 										<div class="sub-category" onmouseover="{{certification_list.func}}">
 											<h4>{{certification_list.cert_name}}</h4>
 											<i class="fas fa-chevron-right arrow-icon-master-post" id="{{certification_list.ele_id}}"></i>
@@ -212,20 +211,22 @@
 
 								</div>
 
-							{% endif %}								
+							{% else %}
+								
+								{% for value1 in term_data_second_level %}	
+								
+									{% if value1.master == value.id %}
 
-							{% for value1 in term_data_second_level %}	
-							
-								{% if value1.master == value.id %}
+										<div class="sub-category" onmouseover="{{value1.func}}">
+											<h4>{{value1.name}}</h4>
+											<i class="{{value1.class}}" id="{{value1.ele_id}}"></i>
+										</div>
 
-									<div class="sub-category" onmouseover="{{value1.func}}">
-										<h4>{{value1.name}}</h4>
-										<i class="{{value1.class}}" id="{{value1.ele_id}}"></i>
-									</div>
+									{% endif %}
 
-								{% endif %}
+								{% endfor %}							
 
-							{% endfor %}							
+							{% endif %}	
 
 							<div class="re-link">
 								
@@ -233,9 +234,7 @@
 									Our Universities ?</a></h5>
 
 							</div>
-
 						</div>
-
 						
 					{% endfor %}
 
@@ -244,7 +243,7 @@
 					{% for term_data_second_level in term_data_second_level %}
 
 						<div id={{term_data_second_level.ele_id1}} class={{term_data_second_level.ele_class1}}>
-						<h3 class="hea">View all {{term_data_second_level.name}} Courses</h3>
+						<h3 class="hea"><a href="{{url('<front>')}}{{term_data_second_level.search_key}}">View all {{term_data_second_level.name}} Courses</a></h3>
 						<div class="scroll">
 
 							{% for academicnodes in academicnodes %}
@@ -495,10 +494,9 @@ var x = document.getElementById("newme");
 if (x.style.display === "none") {
 x.style.display = "block";
 } else {
-x.style.display = "none";
+x.style.display = "block";
 }
 }
-
 
 function degree() {
 var depo = document.getElementById("depo");

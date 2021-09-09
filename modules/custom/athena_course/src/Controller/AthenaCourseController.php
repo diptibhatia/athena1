@@ -1651,187 +1651,218 @@ function search($word = false){
     }
     */
 
-    $bundle='course';
-    $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
+    //if ( $_REQUEST['search_key'] == "ShowAllMasters" ||  )
+    $arr_strings = array("ShowAllMasters" ,'ShowAllMBA','ShowAllDoctorate','ShowAllCertification','ShowAllDiploma' );
 
-    //print "search key=".$_REQUEST['search_key'];
-
-    if ( $_REQUEST['search_key'] == "viewllcertificate" )
+    if ( in_array( $_REQUEST['search_key'], $arr_strings ))
     {
-        $grp = $query->orConditionGroup()
-      ->condition('field_course_category', 'Certifications', '=');
-        $_REQUEST['search_key'] = "";
+      $arr_level1 = get_first_level_array_main_menu();
+      $arr_level2 = get_second_level_array_main_menu($arr_level1);
+      $arr_level2 = get_courses_array_main_menu($arr_level2);
 
-    }elseif ( $_REQUEST['search_key'] == "showallacademic") {
-        $grp = $query->orConditionGroup()
-      ->condition('field_course_category', 'Academic', '=');
-        $_REQUEST['search_key'] = "";
-    }elseif ( $_REQUEST['search_key'] == "showallpopular") {
-        $grp = $query->orConditionGroup()
-      ->condition('field_is_popular_course', '1', '=');
-        $_REQUEST['search_key'] = "";
+
+      foreach ($arr_level2 as $value) 
+      {
+        if ( ( $_REQUEST['search_key'] == "ShowAllMasters") && ( $value['cat_name'] == 'Masters') ){
+          $entity_ids[] = $value['nid'];
+          }elseif ( ($_REQUEST['search_key'] == "ShowAllMBA") && ( $value['cat_name'] == 'MBA' )) {
+          $entity_ids[] = $value['nid'];
+        }elseif ( $_REQUEST['search_key'] == "ShowAllDoctorate" && $value['cat_name'] == 'Doctorate' ){
+          $entity_ids[] = $value['nid'];
+        }elseif ( $_REQUEST['search_key'] == "ShowAllCertification" && $value['cat_name'] == 'Postgraduate Certifications' ){
+          $entity_ids[] = $value['nid'];
+        }elseif ( $_REQUEST['search_key'] == "ShowAllDiploma" && $value['cat_name'] == 'Postgraduate Diploma' ){
+          $entity_ids[] = $value['nid'];
+        }
+
+      }
+    
     }
     else
     {
-      $grp = $query->orConditionGroup()
-      ->condition('title' ,$_REQUEST['search_key'] ,'CONTAINS')
-      ->condition('field_course_banner_description.value' ,$_REQUEST['search_key'] , 'CONTAINS');
-    }
+      $bundle='course';
+      $query = \Drupal::entityQuery('node');
+      $query->condition('status', 1);
 
-    // Filter conditions
-    if(isset ($_REQUEST['lang']) && !empty($_REQUEST['lang']) && $_REQUEST['lang'] != 'language') {
-        $query->condition('field_course_language_prof_label.value' ,$_REQUEST['lang'] , 'CONTAINS');
-    }
+      if ( $_REQUEST['search_key'] == "viewllcertificate" )
+      {
+          $grp = $query->orConditionGroup()
+        ->condition('field_course_category', 'Certifications', '=');
+          $_REQUEST['search_key'] = "";
 
-    if(isset ($_REQUEST['duration']) && !empty($_REQUEST['duration']) && $_REQUEST['duration'] != 'duration') {
-        $query->condition('field_course_duration.value', $_REQUEST['duration'], 'CONTAINS');
-    }
-
-
-    if(isset ($_REQUEST['level']) && !empty($_REQUEST['level']) && $_REQUEST['level'] != 'levels') {
-        $query->condition('field_course_level.value', $_REQUEST['level'], 'CONTAINS');
-    }
-
-
-    if(isset ($_POST['course_category'])) {
-      $query->condition('field_course_category', $_POST['course_category']);
-    }
-    $query->condition('type', $bundle);
-
-    // $entity_ids = $query->execute();
-    $entity_ids = $query->condition($grp)->execute();
-
-    $partners = array(
-      'Scottish Qualifications Authority, UK',
-      'Guglielmo Marconi University, Italy',
-      'Cambridge International Qualifications, UK',
-      'Universidad Catolica De Murcia (UCAM), Spain',
-      'Chartered Management Institute, UK',
-    );
-
-    $partner_list = '';
-    foreach($partners as $partner) {
-      if(isset($_REQUEST['univ']) && $_REQUEST['univ'] == $partner) {
-         $partner_list .=  '<option value="'.$partner.'" selected>'.$partner.'</option>';
-      }else {
-          $partner_list .=  '<option value="'.$partner.'">'.$partner.'</option>';
+      }elseif ( $_REQUEST['search_key'] == "showallacademic") {
+          $grp = $query->orConditionGroup()
+        ->condition('field_course_category', 'Academic', '=');
+          $_REQUEST['search_key'] = "";
+      }elseif ( $_REQUEST['search_key'] == "showallpopular") {
+          $grp = $query->orConditionGroup()
+        ->condition('field_is_popular_course', '1', '=');
+          $_REQUEST['search_key'] = "";
       }
-    }
-
-    // Base theme path.
-    global $base_url;
-    $theme = \Drupal::theme()->getActiveTheme();
-
-    if(!empty($entity_ids)) {
-      $nodes = node_load_multiple($entity_ids);
-    }
-
-    $merged_nodes =  $nodes ;
-
-    //print_r($merged_nodes);
-
-    $term_name = $_REQUEST['search_key'];
-    if (!empty($term_name)) {
-      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-        ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
-
-      if (count($term) > 0) {
-        $term = reset($term);
-        $term_id = $term->id();
-        //print_r($term_id);
-        $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
-        ->latestRevision()
-        ->condition('status', 1)
-        ->condition('field_tagtaxanomy', $term_id, '=')
-        ->condition('type', $bundle)
-        ->execute();
-
-
-        $tnodes = node_load_multiple($term_node);
-
-        if(empty($nodes))
-          $merged_nodes = $tnodes;
-        else
-          $merged_nodes = array_merge($nodes, $tnodes);
-
-
-
+      else
+      {
+        $grp = $query->orConditionGroup()
+        ->condition('title' ,$_REQUEST['search_key'] ,'CONTAINS')
+        ->condition('field_course_banner_description.value' ,$_REQUEST['search_key'] , 'CONTAINS');
       }
+
+      // Filter conditions
+      if(isset ($_REQUEST['lang']) && !empty($_REQUEST['lang']) && $_REQUEST['lang'] != 'language') {
+          $query->condition('field_course_language_prof_label.value' ,$_REQUEST['lang'] , 'CONTAINS');
+      }
+
+      if(isset ($_REQUEST['duration']) && !empty($_REQUEST['duration']) && $_REQUEST['duration'] != 'duration') {
+          $query->condition('field_course_duration.value', $_REQUEST['duration'], 'CONTAINS');
+      }
+
+
+      if(isset ($_REQUEST['level']) && !empty($_REQUEST['level']) && $_REQUEST['level'] != 'levels') {
+          $query->condition('field_course_level.value', $_REQUEST['level'], 'CONTAINS');
+      }
+
+
+      if(isset ($_POST['course_category'])) {
+        $query->condition('field_course_category', $_POST['course_category']);
+      }
+      $query->condition('type', $bundle);
+
+      // $entity_ids = $query->execute();
+      $entity_ids = $query->condition($grp)->execute();
+    
     }
 
 
-    // if(strpos(strtolower($_POST['search_key']), 'diploma') !== false){
-    //   $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
-    //   ->latestRevision()
-    //   ->condition('field_tagtaxanomy', 9, '=')
-    //   ->condition('type', $bundle)
-    //   ->execute();
+      $partners = array(
+        'Scottish Qualifications Authority, UK',
+        'Guglielmo Marconi University, Italy',
+        'Cambridge International Qualifications, UK',
+        'Universidad Catolica De Murcia (UCAM), Spain',
+        'Chartered Management Institute, UK',
+      );
 
-    //   $tnodes = node_load_multiple($term_node);
-    //   $merged_nodes = array_merge($nodes, $tnodes);
-
-    // }
-
-    // if(strpos(strtolower($_POST['search_key']), 'degree') !== false){
-    //   $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
-    //   ->latestRevision()
-    //   ->condition('field_tagtaxanomy', 10, '=')
-    //   ->condition('type', $bundle)
-    //   ->execute();
-
-    //   $tnodes = node_load_multiple($term_node);
-    //   $merged_nodes = array_merge($nodes, $tnodes);
-
-    // }
-
-    // if(strpos(strtolower($_POST['search_key']), 'certification') !== false){
-    //   $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
-    //   ->latestRevision()
-    //   ->condition('field_tagtaxanomy',11, '=')
-    //   ->condition('type', $bundle)
-    //   ->execute();
-
-    //   $tnodes = node_load_multiple($term_node);
-    //   $merged_nodes = array_merge($nodes, $tnodes);
-    // }
-
-
-    if (isset($_REQUEST['univ']) && !empty($_REQUEST['univ']) && $_REQUEST['univ'] != 'partner') {
-      $universityContentType = 'universities';
-      $universityQuery = \Drupal::entityQuery('node');
-      $universityQuery->condition('status', 1);
-      $universityQuery->condition('title', $_REQUEST['univ']);
-      $universityQuery->condition('type', 'universities');
-      $universityData = $universityQuery->execute();
-      if (count($universityData) > 0) {
-        $univNid = reset($universityData);
-        foreach ($merged_nodes as $key => $node) {
-          $mergedNodeNid = $node->id();
-          $universitiesPara =  $node->field_link_universities->referencedEntities();
-          foreach($universitiesPara as $key2 => $univPara) {
-            $universities[$mergedNodeNid][] = $univPara->field_university->value;
-          }
-          if (!in_array($univNid, $universities[$mergedNodeNid])) {
-            unset($merged_nodes[$key]);
-          }
+      $partner_list = '';
+      foreach($partners as $partner) {
+        if(isset($_REQUEST['univ']) && $_REQUEST['univ'] == $partner) {
+           $partner_list .=  '<option value="'.$partner.'" selected>'.$partner.'</option>';
+        }else {
+            $partner_list .=  '<option value="'.$partner.'">'.$partner.'</option>';
         }
       }
 
+      // Base theme path.
+      global $base_url;
+      $theme = \Drupal::theme()->getActiveTheme();
+
+      if(!empty($entity_ids)) {
+        $nodes = node_load_multiple($entity_ids);
+      }
+
+      $merged_nodes =  $nodes ;
+
+      //print_r($merged_nodes);
+
+      $term_name = $_REQUEST['search_key'];
+      if (!empty($term_name)) {
+        $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+          ->loadByProperties(['name' => $term_name, 'vid' => 'tags']);
+
+        if (count($term) > 0) {
+          $term = reset($term);
+          $term_id = $term->id();
+          //print_r($term_id);
+          $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+          ->latestRevision()
+          ->condition('status', 1)
+          ->condition('field_tagtaxanomy', $term_id, '=')
+          ->condition('type', $bundle)
+          ->execute();
+
+
+          $tnodes = node_load_multiple($term_node);
+
+          if(empty($nodes))
+            $merged_nodes = $tnodes;
+          else
+            $merged_nodes = array_merge($nodes, $tnodes);
+
+
+
+        }
+      }
+
+
+      // if(strpos(strtolower($_POST['search_key']), 'diploma') !== false){
+      //   $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+      //   ->latestRevision()
+      //   ->condition('field_tagtaxanomy', 9, '=')
+      //   ->condition('type', $bundle)
+      //   ->execute();
+
+      //   $tnodes = node_load_multiple($term_node);
+      //   $merged_nodes = array_merge($nodes, $tnodes);
+
+      // }
+
+      // if(strpos(strtolower($_POST['search_key']), 'degree') !== false){
+      //   $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+      //   ->latestRevision()
+      //   ->condition('field_tagtaxanomy', 10, '=')
+      //   ->condition('type', $bundle)
+      //   ->execute();
+
+      //   $tnodes = node_load_multiple($term_node);
+      //   $merged_nodes = array_merge($nodes, $tnodes);
+
+      // }
+
+      // if(strpos(strtolower($_POST['search_key']), 'certification') !== false){
+      //   $term_node = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+      //   ->latestRevision()
+      //   ->condition('field_tagtaxanomy',11, '=')
+      //   ->condition('type', $bundle)
+      //   ->execute();
+
+      //   $tnodes = node_load_multiple($term_node);
+      //   $merged_nodes = array_merge($nodes, $tnodes);
+      // }
+
+
+      if (isset($_REQUEST['univ']) && !empty($_REQUEST['univ']) && $_REQUEST['univ'] != 'partner') {
+        $universityContentType = 'universities';
+        $universityQuery = \Drupal::entityQuery('node');
+        $universityQuery->condition('status', 1);
+        $universityQuery->condition('title', $_REQUEST['univ']);
+        $universityQuery->condition('type', 'universities');
+        $universityData = $universityQuery->execute();
+        if (count($universityData) > 0) {
+          $univNid = reset($universityData);
+          foreach ($merged_nodes as $key => $node) {
+            $mergedNodeNid = $node->id();
+            $universitiesPara =  $node->field_link_universities->referencedEntities();
+            foreach($universitiesPara as $key2 => $univPara) {
+              $universities[$mergedNodeNid][] = $univPara->field_university->value;
+            }
+            if (!in_array($univNid, $universities[$mergedNodeNid])) {
+              unset($merged_nodes[$key]);
+            }
+          }
+        }
+
+      }
+
+
+    foreach ($merged_nodes as $key => $node) {
+      $mergedNodeNids[] = $node->id();
     }
 
+    // changed code to display unique records
+    $filterNodes = array_unique($mergedNodeNids);
 
-  foreach ($merged_nodes as $key => $node) {
-    $mergedNodeNids[] = $node->id();
-  }
-
-  // changed code to display unique records
-  $filterNodes = array_unique($mergedNodeNids);
-
-  $merged_nodes = [];
-  foreach ($filterNodes as $key => $nodeNid) {
-    $merged_nodes[] = Node::load($nodeNid);
-  }
+    $merged_nodes = [];
+    foreach ($filterNodes as $key => $nodeNid) {
+      $merged_nodes[] = Node::load($nodeNid);
+    }
+  
 
 
   $base_path = $base_url.'/'. $theme->getPath();
