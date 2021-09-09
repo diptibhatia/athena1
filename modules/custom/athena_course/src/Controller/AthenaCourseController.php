@@ -663,12 +663,42 @@ return array(
 
       return $response;
     } 
+
+//--------short term -----------------
+$url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+        if ( $url == "https://newlms.athena.edu" )
+            $api = "/athenadev";
+        elseif ( $url == "https://learnstaging.athena.edu" )
+            $api = "/athenastg";
+        else
+            $api = "/athenaprod";
+        
+$uri = $url .$api. "/api/courselist?page=1&page_limit=10&fk_type_of_qualification_id=1&status=1";
+
+$response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+            $data = (string)$response->getBody();
+          $nodes = json_decode($data);
+
+foreach ($nodes->data->data as $key => $value) {
+$courses_data[] = [
+                    'cid' => $value->cid,
+                    'label' => $value->course_name,
+                    'course_url' => $url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,                    
+                ];
+}
+
+//print_r($courses_data); exit;
+
+//-----------------    
+
     
 
-$certifications_id = get_course_nav_items('Certifications');
-if(!empty($certifications_id)) {
-  $certifications = node_load_multiple($certifications_id);
-}
+// $certifications_id = get_course_nav_items('Certifications');
+// if(!empty($certifications_id)) {
+//   $certifications = node_load_multiple($certifications_id);
+// }
+
+$certifications = $courses_data;
 
 // Base theme path.
 global $base_url;
@@ -1651,8 +1681,9 @@ function search($word = false){
     }
     */
 
-    //if ( $_REQUEST['search_key'] == "ShowAllMasters" ||  )
-    $arr_strings = array("ShowAllMasters" ,'ShowAllMBA','ShowAllDoctorate','ShowAllCertification','ShowAllDiploma' );
+    $arr_strings = array("ShowAllMasters" ,'ShowAllMBA','ShowAllDoctorate','ShowAllCertification','ShowAllDiploma', 'ShowAllDegree', 'ShowAllMicroCredit' );
+
+    
 
     if ( in_array( $_REQUEST['search_key'], $arr_strings ))
     {
@@ -1672,6 +1703,10 @@ function search($word = false){
         }elseif ( $_REQUEST['search_key'] == "ShowAllCertification" && $value['cat_name'] == 'Postgraduate Certifications' ){
           $entity_ids[] = $value['nid'];
         }elseif ( $_REQUEST['search_key'] == "ShowAllDiploma" && $value['cat_name'] == 'Postgraduate Diploma' ){
+          $entity_ids[] = $value['nid'];
+        }elseif ( ($_REQUEST['search_key'] == "ShowAllDegree") && ( ($value['cat_name'] == 'Masters') || ($value['cat_name'] == 'MBA') || ( $value['cat_name'] == 'Doctorate' ))){          
+          $entity_ids[] = $value['nid'];
+        }elseif ( ($_REQUEST['search_key'] == "ShowAllMicroCredit") && ( ($value['cat_name'] == 'Postgraduate Diploma') || ($value['cat_name'] == 'Postgraduate Certifications') )){          
           $entity_ids[] = $value['nid'];
         }
 
