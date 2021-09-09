@@ -182,7 +182,7 @@ function get_second_level_array_main_menu($term_data_first_level)
               $ele_class = "fas fa-chevron-right arrow-icon-master";
               $ele_id1 = "masterscat";
               $ele_class1 = "row-masters";
-
+              $search_key = "search-results/abc?search_key=ShowAllMasters";
             }         
 
             if ( $term->name == "MBA" ) 
@@ -192,7 +192,7 @@ function get_second_level_array_main_menu($term_data_first_level)
               $ele_class = "fas fa-chevron-right arrow-icon";
               $ele_id1 = "mbacat";
               $ele_class1 = "row-mba";
-
+              $search_key = "search-results/abc?search_key=ShowAllMBA";  
             }
 
             if ( $term->name == "Doctorate" ) 
@@ -202,6 +202,7 @@ function get_second_level_array_main_menu($term_data_first_level)
               $ele_class = "fas fa-chevron-right arrow-icon";   
               $ele_id1 = "doctoratecat";
               $ele_class1 = "row-doctorate";
+              $search_key = "search-results/abc?search_key=ShowAllDoctorate";
             }
               
             if ( $term->name == "Postgraduate Diploma" ) 
@@ -211,6 +212,7 @@ function get_second_level_array_main_menu($term_data_first_level)
               $ele_class = "fas fa-chevron-right arrow-icon-master-post";   
               $ele_id1 = "postdisplcat";
               $ele_class1 = "row-postdispl";
+              $search_key = "search-results/abc?search_key=ShowAllDiploma";
             }
             
             if ( $term->name == "Postgraduate Certifications" ) 
@@ -219,7 +221,8 @@ function get_second_level_array_main_menu($term_data_first_level)
               $func = "postcert()";
               $ele_class = "fas fa-chevron-right arrow-icon";
               $ele_id1 = "postcertcat";
-              $ele_class1 = "row-postcert";      
+              $ele_class1 = "row-postcert";
+              $search_key = "search-results/abc?search_key=ShowAllCertification";      
             }
 
             if (!empty($manager->loadParents($term->tid))) 
@@ -233,7 +236,7 @@ function get_second_level_array_main_menu($term_data_first_level)
                 'ele_class' => $ele_class,
                 'ele_id1' => $ele_id1 ,
                 'ele_class1' => $ele_class1,
-              
+                'search_key' => $search_key                    
                 );   
             }
         }
