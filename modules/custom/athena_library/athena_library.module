@@ -116,7 +116,7 @@ function get_first_level_array_main_menu()
         $ele_id1 = "degreecat";
         $ele_class = "fas fa-graduation-cap main-head-icon";
         $ele_class1 = "row-two";
-        $link = "search-results/abc?search_key=showallacademic";
+        $link = "search-results/abc?search_key=ShowAllDegree";
         $func = "degree()"; 
       }         
 
@@ -126,7 +126,7 @@ function get_first_level_array_main_menu()
         $ele_id1 = "microcat";
         $ele_class = "far fa-credit-card main-head-icon";
         $ele_class1 = "row-two-micro";
-        $link = "search-results/abc?search_key=viewllcertificate";
+        $link = "search-results/abc?search_key=ShowAllMicroCredit";
         $func = "micro()"; 
       }
 

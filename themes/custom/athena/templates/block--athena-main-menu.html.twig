@@ -47,26 +47,21 @@
 						<div class="dd-level2-inner">
 							<h4>Academic</h4>
 							<p>
-								<a href="{{url('<front>')}}academic-program">View all Degree Courses</a>
+								<a href="{{url('<front>')}}search-results/abc?search_key=ShowAllDegree">View all Degree Courses</a>
 							</p>
 							<ul>
 								{% for academic in academicnodes %}
-									<li>
-										<a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
-										<div class="dd-level3">
-											<ul>
-												<li>
-													<h4>Awarding Body</h4>
-												</li>
-												{% for univ in academic.universities%}
-													<li>
-														<a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="https://athenawebsiteprod.s3.amazonaws.com/s3fs-public/2020-10/ciq.png" alt="" {{univ.label}} ">{{univ.label}}</a>
 
-													</li>
-												{% endfor %}
-											</ul>
-										</div>
-									</li>
+									{{academic.cat_name}}
+
+									{% if academic.cat_name == "Masters" or academic.cat_name == "MBA" or academic.cat_name == "Doctorate" %}
+
+										<li>
+											<a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+										</li>
+
+									{% endif %}
+
 								{% endfor %}
 							</ul>
 						</div>
@@ -79,25 +74,20 @@
 						<div class="dd-level2-inner">
 							<h4>Academic</h4>
 							<p>
-								<a href="{{url('<front>')}}academic-program">View all Micro Credit Courses</a>
+								<a href="{{url('<front>')}}search-results/abc?search_key=ShowAllMicroCredit">View all Micro Credit Courses</a>
 							</p>
 							<ul>
 								{% for academic in academicnodes %}
-									<li>
-										<a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
-										<div class="dd-level3">
-											<ul>
-												<li>
-													<h4>Awarding Body</h4>
-												</li>
-												{% for univ in academic.universities%}
-													<li>
-														<a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="{{univ.label}}">{{univ.label}}</a>
-													</li>
-												{% endfor %}
-											</ul>
-										</div>
-									</li>
+
+									{% if academic.cat_name == "Postgraduate Diploma" or academic.cat_name == "Postgraduate Certifications" %}
+
+										<li>
+											<a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+											
+										</li>
+
+									{% endif %}	
+
 								{% endfor %}
 							</ul>
 						</div>
@@ -110,21 +100,12 @@
 						<div class="dd-level2-inner">
 							<h4>Certification</h4>
 							<p>
-								<a href="{{url('<front>')}}certifications">View all Upskilliing</a>
+								<a href="{{url('<front>')}}shortterm-courses">View all Upskilliing</a>
 							</p>
 							<ul>
-								{% for cert in certificationsnodes %}
+								{% for cert in shortsourses_list %}
 									<li>
-										<a href="{{url('<front>')}}course/{{cert.nid}}">{{cert.title}}</a>
-										<div class="dd-level3">
-											<ul>
-												{% for univ in cert.universities%}
-													<li>
-														<a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="{{univ.label}}">{{univ.label}}</a>
-													</li>
-												{% endfor %}
-											</ul>
-										</div>
+										<a href="{{cert.course_url}}">{{cert.label}}</a>
 									</li>
 								{% endfor %}
 							</ul>
@@ -132,8 +113,8 @@
 					</div>
 				</li>
 				<div class="re-link-mob">
-					<h5>Want to Know More about<br>
-						Our Universities ?</h5>
+					<h5><a href="{{url('<front>')}}about-us/athena-and-associated-entities">Want to Know More about<br>
+						Our Universities ?</a></h5>
 				</div>
 
 			</ul>

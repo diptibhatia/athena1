@@ -715,16 +715,17 @@
 								<select name="course" id="reg_course">
 									<option value="" default="">Select your course</option>
 									{% for nodedata in certifications %}
-										{% if cid == nodedata.field_cid.value %}
-											<option value="{{nodedata.field_cid.value}}" selected="selected">
-												{{nodedata.label}}</option>
-										{% else %}
-											<option value="{{nodedata.field_cid.value}}">{{nodedata.label}}</option>
-										{% endif %}
+										<option value="{{nodedata.cid}}">{{nodedata.label}}</option>
+									
 									{% endfor %}
 								</select>
 								<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 							</div>
+
+							{% for nodedata in certifications %}
+								<input type="hidden" id="c{{nodedata.cid}}" value="{{nodedata.course_url}}"/>				
+							{% endfor %}
+
 							<div class="login-item">
 								<p>Highest Qualification</p>
 								<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
