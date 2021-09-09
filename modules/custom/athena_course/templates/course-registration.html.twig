@@ -36,7 +36,7 @@
 						</li>
 						<li>
 							<a class="nav-link" data-toggle="pill" href="#uc">
-								Professional certification
+								Upskilling Courses 
 							</a>
 						</li>
 					</ul>
@@ -316,15 +316,30 @@
 								<input type="hidden" id="country_code" value="{{ccode}}"/>
 
 								<div class="login-item">
+									<p>Course Category</p>
+									<select name="course_category" id="reg_course_category">
+										<option value="abc">Course Category</option>
+										{% for nodedata in course_catgory %}
+											{% if categorylist == nodedata.id %}
+												<option value="{{nodedata.id}}" selected="selected">{{nodedata.name}}</option>
+											{% else %}
+												<option value="{{nodedata.id}}">{{nodedata.name}}</option>
+											{% endif %}	
+										{% endfor %}
+									</select>
+									<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
+								</div>
+								
+								<div class="login-item">
 									<p>Choose your Course</p>
-									<select name="course" id="reg_course">
-										<option value="" default="">Select your course</option>
+									<select name="course" id="reg_course" class="addajaxlist">
+										<option value="" class="courselistselect" default="">Select your course</option>
 										{% for nodedata in academics %}
 											{% if cid == nodedata.field_cid.value %}
-												<option value="{{nodedata.field_cid.value}}" selected="selected">
+												<option class="courselistselect" value="{{nodedata.field_cid.value}}" selected="selected">
 													{{nodedata.label}}</option>
 											{% else %}
-												<option value="{{nodedata.field_cid.value}}">{{nodedata.label}}</option>
+												<option class="courselistselect" value="{{nodedata.field_cid.value}}">{{nodedata.label}}</option>
 											{% endif %}
 										{% endfor %}
 									</select>
@@ -809,17 +824,41 @@
 	<div class="col-md-6 col-sm-12 register-images">
 		<img src="/themes/custom/athena/images/Register-athena-img.png" alt="login image">
 	</div>
-</div></div></div><script>function eye(id) {
-var pas = document.getElementById("togglePassword");
-var sap = document.getElementById("togglePassword_second");
+</div></div></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+	function eye(id) {
+		var pas = document.getElementById("togglePassword");
+		var sap = document.getElementById("togglePassword_second");
 
 
-var x = document.getElementById(id).getAttribute("type");
+		var x = document.getElementById(id).getAttribute("type");
 
-let typeValue = (x == "password") ? "text" : "password";
+		let typeValue = (x == "password") ? "text" : "password";
 
-document.getElementById(id).setAttribute("type", typeValue);
-pas.classList.toggle('fa-eye-slash');
-sap.classList.toggle('fa-eye-slash');
+		document.getElementById(id).setAttribute("type", typeValue);
+		pas.classList.toggle('fa-eye-slash');
+		sap.classList.toggle('fa-eye-slash');
 
-}</script>
+	}
+
+jQuery("#reg_course_category").on('change', function() {
+
+	var course_category = jQuery('#reg_course_category').val();
+	var endpoint = Drupal.url('registration');
+
+	Drupal.ajax({
+	'url': endpoint,
+	'submit': {
+	  'course_category': course_category
+	}
+	}).execute();
+
+	
+	
+});
+
+
+</script>

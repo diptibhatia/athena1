@@ -236,7 +236,7 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'language_prof_label' => NULL,
       'language_prof_desc' => NULL,
       'why_athena' => NULL,
-      'tax_value' => NULL,
+      'tax_value' => NULL,      
       'base_path' => NULL,
       'campaign_params' => NULL,
       'source' => NULL,
@@ -373,9 +373,12 @@ function athena_course_theme($existing, $type, $theme, $path) {
       'ccode' => NULL,
       'ciso' => NULL,
       'phone' => NULL,
+      'categorylist' => NULL,
       // 'nodes' => NULL,
       'academics' => NULL,
       'certifications' => NULL,
+      'course_catgory' => NULL,
+      'ccat' => NULL
       ],
     ],
     'universities' => [
@@ -438,6 +441,7 @@ function athena_course_page_attachments(array &$attachments) {
       $attachments['#attached']['library'][] = 'athena_course/cuddly-slider';
     }
 
+    /*
     if ($route_name == 'athena_smo.smo' || $route_name == 'athena_course.course') {
       $taboolaPixel = "window._tfa = window._tfa || [];
         window._tfa.push({notify: 'event', name: 'page_view', id: 1381678});
@@ -475,7 +479,8 @@ function athena_course_page_attachments(array &$attachments) {
         ];
       }
     }
-
+    */
+  
     // Custom meta tags on smo and course pages.
     if ($route_name == 'athena_course.course' || $route_name == 'athena_smo.smo') {
       $possible_parameters = \Drupal::routeMatch()->getParameters();
@@ -791,6 +796,7 @@ function athena_course_page_attachments(array &$attachments) {
         ];
       }
 
+      /*
       $taboolaTqPixel = "_tfa.push({notify: 'event', name: 'lead', id: 1381678});";
       $attachments['#attached']['html_head'][] = [
         [
@@ -800,6 +806,7 @@ function athena_course_page_attachments(array &$attachments) {
         ],
         'taboola_tq'
       ];
+      */
     }
 }
 

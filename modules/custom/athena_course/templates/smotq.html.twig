@@ -13,14 +13,24 @@
 <input type="hidden" id="ccode" value="{{ccode}}" >
 <input type="hidden" id="ciso" value="{{ciso}}" >
 <input type="hidden" id="phone1" value="{{phone}}" >
+
+
+{# code commented for short course
 {% set type = 'cert' %}
 {% if node.field_course_category.value == 'Academic' %}
 {% set type = 'acad' %}
 {% elseif node.field_course_category.value == 'Micro Credits' %}
 {% set type = 'mcred' %}
 {% endif %}
+#}
+
+{% set type = 'acad' %}
 <input type="hidden" id="type" value="{{type}}" >
-                           
+                 
+
+{% set categorylist = node.field_course_category_list.0.target_id %}
+<input type="hidden" id="categorylist" value="{{categorylist}}" >
+
 <div class="row" style="margin-bottom:31px;">
 <div class="col">
 <div class="registeredDescription">
@@ -44,9 +54,9 @@
 <div class="row">
 <div class="col registeredDescription">
  {% if source is not empty %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&ciso={{ciso}}&phone={{phone}}&type={{type}}" >
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&utm_source={{source}}&utm_campaign={{campaign}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&ciso={{ciso}}&phone={{phone}}&type={{type}}&categorylist={{categorylist}}" >
   {% else %}
-<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&ciso={{ciso}}&phone={{phone}}&type={{type}}" > 
+<a href="{{ url('<front>') }}registration?cid={{node.field_cid.value}}&fname={{fname}}&lname={{lname}}&email={{email}}&ccode={{ccode}}&ciso={{ciso}}&phone={{phone}}&type={{type}}&categorylist={{categorylist}}" > 
  {% endif %}
 
 

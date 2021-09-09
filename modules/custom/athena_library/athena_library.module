@@ -99,9 +99,337 @@ function get_course_nav_items($type = 'Academic') {
     return  $data;
 }
 
+/**
+* load first level array
+*/
+function get_first_level_array_main_menu()
+{
+    // load first level array  
+  $vid = 'course_category';
+  $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $tree = $manager->loadTree($vid,0,1);
+  foreach ($tree as $term) 
+  {
+      if ( $term->name == "Degree" )
+      {
+        $ele_id = "degreefaicon";
+        $ele_id1 = "degreecat";
+        $ele_class = "fas fa-graduation-cap main-head-icon";
+        $ele_class1 = "row-two";
+        $link = "search-results/abc?search_key=showallacademic";
+        $func = "degree()"; 
+      }         
+
+      if ( $term->name == "Micro Credit" ) 
+      {
+        $ele_id = "microfaicon";
+        $ele_id1 = "microcat";
+        $ele_class = "far fa-credit-card main-head-icon";
+        $ele_class1 = "row-two-micro";
+        $link = "search-results/abc?search_key=viewllcertificate";
+        $func = "micro()"; 
+      }
+
+      if ( $term->name == "Upskilling Courses" ) 
+      {
+        $ele_id = "upskillfaicon";
+        $ele_id1 = "upskillcat";
+        $ele_class = "fas fa-scroll main-head-icon";   
+        $ele_class1 = "row-two-upskill";
+        $link = "shortterm-courses";
+        $func = "upskill()";
+      }
+        
+      $term_data_first_level[] = array(        
+
+      'id' => $term->tid,
+      'name' => $term->name,
+      'ele_id' => $ele_id,
+      'ele_class' => $ele_class,
+      'ele_id1' => $ele_id1,
+      'ele_class1' => $ele_class1,
+      'link' => $link,
+      'func' => $func,
+     );   
+    
+  }
+
+  return $term_data_first_level;
+
+} 
+
+/**
+* load second level array
+*/
+function get_second_level_array_main_menu($term_data_first_level)
+{
+    foreach ($term_data_first_level as $value) 
+    {
+    //print $key;
+        //print($value['id']) ;
+        $vid = 'course_category';
+        $term_data = array();
+        $vid = 'course_category';
+        $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+        $tree = $manager->loadTree($vid , $value['id'] , 2);
+        foreach ($tree as $term) 
+        {
+
+            if ( $term->name == "Masters" )
+            {
+              $ele_id = "mastersfaicon";
+              $func = "masters()";
+              $ele_class = "fas fa-chevron-right arrow-icon-master";
+              $ele_id1 = "masterscat";
+              $ele_class1 = "row-masters";
+
+            }         
+
+            if ( $term->name == "MBA" ) 
+            {
+              $ele_id = "mbafuncfaicon";
+              $func = "mbafunc()";
+              $ele_class = "fas fa-chevron-right arrow-icon";
+              $ele_id1 = "mbacat";
+              $ele_class1 = "row-mba";
+
+            }
+
+            if ( $term->name == "Doctorate" ) 
+            {
+              $ele_id = "doctfunfaicon";
+              $func = "doctfun()";
+              $ele_class = "fas fa-chevron-right arrow-icon";   
+              $ele_id1 = "doctoratecat";
+              $ele_class1 = "row-doctorate";
+            }
+              
+            if ( $term->name == "Postgraduate Diploma" ) 
+            {
+              $ele_id = "postdisplfaicon";
+              $func = "postdispl()";
+              $ele_class = "fas fa-chevron-right arrow-icon-master-post";   
+              $ele_id1 = "postdisplcat";
+              $ele_class1 = "row-postdispl";
+            }
+            
+            if ( $term->name == "Postgraduate Certifications" ) 
+            {
+              $ele_id = "postcertfaicon";
+              $func = "postcert()";
+              $ele_class = "fas fa-chevron-right arrow-icon";
+              $ele_id1 = "postcertcat";
+              $ele_class1 = "row-postcert";      
+            }
+
+            if (!empty($manager->loadParents($term->tid))) 
+            {
+                $term_data_second_level[] = array(
+                'id' => $term->tid,
+                'name' => $term->name,
+                'master'  => $value['id'],
+                'ele_id' => $ele_id ,
+                'func' => $func ,
+                'ele_class' => $ele_class,
+                'ele_id1' => $ele_id1 ,
+                'ele_class1' => $ele_class1,
+              
+                );   
+            }
+        }
+
+    }
+
+    return $term_data_second_level;
+
+}
+
+/**
+* load courses main menu
+*/
+function get_courses_array_main_menu($term_data_second_level)
+{
+    $database = \Drupal::database();
+
+    foreach ($term_data_second_level as $course_category) 
+    {
+        $query = $database->select('node_field_data', 'n');
+        $query->leftJoin('draggableviews_structure', 'w', 'w.entity_id = n.nid');    
+        $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
+        $query->fields('n', array('nid'));
+        $query->fields('c1',array('field_course_category_list_target_id') );
+        $query->condition('n.status', 1);
+        $query->condition('c1.field_course_category_list_target_id', $course_category['id'] );
+        $query->condition('w.view_name', 'course_ordering');          
+        $query->orderBy('w.weight', ASC);
+
+        $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
+        
+        $academics = array();
+        if(!empty($academic_ids)) 
+          $academics = node_load_multiple($academic_ids);
+
+       foreach($academics as $node) 
+       {
+            $academic_node_ids[] =
+            array(
+              "cat_id" => $course_category['id'],
+              "cat_name" => $course_category['name'],
+              "nid"=>$node->id(),
+              "title"=>$node->label(),
+            );
+       }
+    }
+
+    return $academic_node_ids;    
+
+}
+
+/**
+* load courses main menu
+*/
+function get_first_level_short_courses_array_main_menu()
+{
+
+    $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+    if ($lms_url == "https://newlms.athena.edu") {
+        $api = "/athenadev";
+    } elseif ($lms_url == "https://learnstaging.athena.edu") {
+        $api = "/athenastg";
+    } else {
+        $api = "/athenaprod";
+    }
+
+    $certificates_uri = $lms_url . $api . "/api/get_master_table_data?table=certification_type";
+    $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
+    $certificate_filters = (string)$response_certificates->getBody();
+    $certificates = json_decode($certificate_filters, TRUE);
+
+    foreach ($certificates as $key => $value) 
+    {
+          
+        if ( $value['certificate_type_name'] == "Basics" )
+        {
+            $ele_id = "basicfuncfaicon";
+            $func = "basicfunc()";
+            $ele_id1 = "basiccat";
+            $class = "row-basics";
+        }         
+
+        if ( $value['certificate_type_name'] == "Essentials" ) 
+        {
+          $ele_id = "essenfuncfaicon";
+          $func = "essenfunc()";
+          $ele_id1 = "essentialscat";
+          $class = "row-essentials";
+        }
+
+        if ( $value['certificate_type_name'] == "Mastering" ) 
+        {
+          $ele_id = "mastfuncfaicon";
+          $func = "mastfunc()"; 
+          $ele_id1 = "mastcat";
+          $class = "row-mast";  
+        }
+          
+        if ( $value['certificate_type_name'] == "Diploma" ) 
+        {
+          $ele_id = "dipfuncfaicon";
+          $func = "dipfunc()";  
+          $ele_id1 = "displomacat";
+          $class = "row-diploma"; 
+        }
+        
+        if ( $value['certificate_type_name'] == "Executive Diploma" ) 
+        {
+          $ele_id = "exediplfuncfaicon";
+          $func = "exediplfunc()";
+          $ele_id1 = "exediplcat";
+          $class = "row-exedipl";   
+        }
+
+        if ( $value['certificate_type_name'] == "MBA Essentials" ) 
+        {
+          $ele_id = "mbaessenfuncfaicon";
+          $func = "mbaessenfunc()";
+          $ele_id1 = "mbaessentialscat";
+          $class = "row-mbaessentials";   
+        }
 
 
+        if ( $value['certificate_type_name'] != "MBA Essentials with Specialization" )
+        {            
+          $certification_list[] =
+            array(
+              "cert_id" => $value['id'],
+              "cert_name" => $value['certificate_type_name'],
+              "ele_id" => $ele_id,
+              "func"  => $func,
+              "ele_id1" => $ele_id1,
+              "class"  => $class,
+              
+            );    
+        }
+    }
+        
+    return $certification_list;   
 
+}
+
+
+/**
+*
+*/
+function get_popular_courses_main_menu($category)
+{
+
+    $query = \Drupal::database()->select('node_field_data', 'n');
+    $query->leftJoin('draggableviews_structure', 'w', 'w.entity_id = n.nid');
+    $query->innerJoin('node__field_course_category', 'c', 'c.entity_id = n.nid');        
+    $query->innerJoin('node__field_is_popular_course', 'p', 'p.entity_id = n.nid');
+    
+    $query
+    ->fields('n', array('nid'))
+    ->condition('c.field_course_category_value', $category )
+    ->condition('c.bundle', 'course')
+    ->condition('n.status', 1)
+    ->condition('n.type', 'course')
+    ->condition('w.view_name', 'course_ordering')
+    ->condition('p.field_is_popular_course_value', 1 )
+    ->orderBy('w.weight', ASC);
+    $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
+
+    $academics = array();
+    if(!empty($academic_ids)) 
+      $academics = node_load_multiple($academic_ids);
+
+    if ( $category == "Academics" )
+    {
+       foreach($academics as $node) 
+       {
+            $academic_node_ids[] =
+            array(
+              "nid"=>$node->id(),
+              "title"=>$node->label(),
+            );
+       }
+   }
+   else
+   {
+       foreach($academics as $node) 
+       {
+            $academic_node_ids[] =
+            array(
+              "nid"=>$node->id(),
+              "title"=>$node->label(),
+            );
+       }
+
+   }
+   
+   return $academic_node_ids;
+
+}
 
 /**
  * Implements hook_theme().
