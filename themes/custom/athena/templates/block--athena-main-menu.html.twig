@@ -41,12 +41,45 @@
 			<div class="close-button" style="float: right;margin-right: 24px;margin-bottom: 10px;" onclick="closbtn()"><img src="https://athena.edu/themes/custom/athena/images/icons/cancel.png" style="width:20px"></div>
 			<ul onclick="eplcour()">
 				<li>
-					<a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Academic Programs</a>
+					<i class="fas fa-graduation-cap main-head-icon"></i>
+					<a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Degree</a>
 					<div class="dd-level2">
 						<div class="dd-level2-inner">
 							<h4>Academic</h4>
 							<p>
-								<a href="{{url('<front>')}}academic-program">View all Academic Courses</a>
+								<a href="{{url('<front>')}}academic-program">View all Degree Courses</a>
+							</p>
+							<ul>
+								{% for academic in academicnodes %}
+									<li>
+										<a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+										<div class="dd-level3">
+											<ul>
+												<li>
+													<h4>Awarding Body</h4>
+												</li>
+												{% for univ in academic.universities%}
+													<li>
+														<a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="https://athenawebsiteprod.s3.amazonaws.com/s3fs-public/2020-10/ciq.png" alt="" {{univ.label}} ">{{univ.label}}</a>
+
+													</li>
+												{% endfor %}
+											</ul>
+										</div>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<i class="far fa-credit-card main-head-icon"></i>
+					<a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Micro Credit</a>
+					<div class="dd-level2">
+						<div class="dd-level2-inner">
+							<h4>Academic</h4>
+							<p>
+								<a href="{{url('<front>')}}academic-program">View all Micro Credit Courses</a>
 							</p>
 							<ul>
 								{% for academic in academicnodes %}
@@ -71,12 +104,13 @@
 					</div>
 				</li>
 				<li>
-					<a href="#"><img src="certification-icn.svg" style="float:left;margin-right:10px;"/>Certifications</a>
+					<i class="fas fa-scroll main-head-icon"></i>
+					<a href="#"><img src="certification-icn.svg" style="float:left;margin-right:10px;"/>Upskilliing Courses</a>
 					<div class="dd-level2">
 						<div class="dd-level2-inner">
 							<h4>Certification</h4>
 							<p>
-								<a href="{{url('<front>')}}certifications">View all Certification</a>
+								<a href="{{url('<front>')}}certifications">View all Upskilliing</a>
 							</p>
 							<ul>
 								{% for cert in certificationsnodes %}
@@ -97,418 +131,251 @@
 						</div>
 					</div>
 				</li>
+				<div class="re-link-mob">
+					<h5>Want to Know More about<br>
+						Our Universities ?</h5>
+				</div>
+
 			</ul>
 		</div>
 	</div>
-
 	<nav class="navbar navbar-expand-lg">
 		<button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#main_nav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse d-none d-md-block" id="main_nav" onclick="newmenu();">
-
 			<ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
-																				display: inline-flex;
-																				border-radius: 5px;
-																				padding: 0;
-																				height: 38px;
-																				justify-content: space-evenly;
-																				align-items: center;box-sizing: border-box;">
+																														                                                                                	
 				<li class="nav-item dropdown dropbtn" onclick="newmenu();">
 					<a class="nav-link dropdown-toggle dropbtn" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';font-size:14px;letter-spacing:1px;" onclick="newmenu();">
 						Explore
 						<span style="padding-left:5px" class="glyphicon glyphicon-chevron-down"></span>
 					</a>
 					{# <ul class="dropdown-menu" style="height: 383px;
-																				        left: -10px;
-																				        top: 55px;
-																				        box-shadow: 0 2px 13px 0 #8c8c8c;
-																				        width: 279px;
-																				        font-family: 'Lato';
-																				        font-size: 1rem;">
-																				           <li class="has-submenu">
-																				             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
-																				             <div class="megasubmenu dropdown-menu box-shadow">
-																				               <div class="row">
-																				                    <div class="col-7">
-																				                            <ul class="list-unstyled bindWidth">
-																				                                <h5 style="padding-left: 20px;">Academic</h5>
-																				                                <a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
-																				                                {% set modnum = 1 %}
-																				                                {% for academic in academicnodes %}
-																				                                <li>
-																				                                    <a href="{{url('<front>')}}course/{{academic.nid}}" onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
-																				                                    <div style="display:none;" id="secondary-data_{{modnum}}">
-																				                                        <h6>Awarding Body</h6>
-																				                                        <ul class="list-unstyled">
-																				                                        {% for univ in academic.universities%}
-																				                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-																				                                           {% endfor %}
-																				                                        </ul>
-																				                                    </div>
-																				                                </li>
-																				                                {% set modnum = modnum + 1 %}
-																				                                {% endfor %}
-																				                            </ul>
-																				                    </div><!-- end col-3 -->
-																				                    <div class="col-5 three-level" id="secondary-data_three-level">
-																				                      <h6>Awarding Body</h6>
-																				                      <ul class="list-unstyled">
-																				                      {% for univ in academic_universities%}
-																				                          <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-																				                         {% endfor %}
-																				                      </ul>
-																				                    </div><!-- end col-3 -->
-																				                </div><!-- end row -->
-																				             </div>
-																				          </li>
-																				          <li class="has-submenu">
-																				             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
-																				             <div class="megasubmenu dropdown-menu box-shadow">
-																				                <div class="row">
-																				                     <div class="col-7">
-																				                             <ul class="list-unstyled bindWidth">
-																				                <h5 style="padding-left: 20px;">Certifications</h5>
-																				                                <a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
-																				                                {% set modnum = 1 %}
-																				                                {% for cert in certificationsnodes %}
-																				                                <li>
-																				                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data-cert_{{modnum}}')">{{cert.title}}</a>
-																				                                    <div style="display:none;" id="secondary-data-cert_{{modnum}}">
-																				                                        <h6>Universities</h6>
-																				                                        <ul class="list-unstyled">
-																				                                        {% for univ in cert.universities%}
-																				                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-																				                                           {% endfor %}
-																				                                        </ul>
-																				                                    </div>
-																				                                </li>
-																				                                {% set modnum = modnum + 1 %}
-																				                                {% endfor %}
-																				                             </ul>
-																				                     </div><!-- end col-3 -->
-																				            <div class="col-5 three-level" id="secondary-data-cert_three-level">
-																				                <h6>Awarding Body</h6>
-																				                <ul class="list-unstyled">
-																				                {% for univ in certifications_universities%}
-																				                    <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-																				                   {% endfor %}
-																				                </ul>
-																				              </div><!-- end col-3 -->
-																				                    <!-- end col-3 -->
-																				                 </div><!-- end row -->
-																				              </div>
-																				          </li> 
-																				        </ul> #}
+																														                                                                                        left: -10px;
+																														                                                                                        top: 55px;
+																														                                                                                        box-shadow: 0 2px 13px 0 #8c8c8c;
+																														                                                                                        width: 279px;
+																														                                                                                        font-family: 'Lato';
+																												                                                                                          </li> 
+																														                                                                                        </ul> #}
 				</li>
 			</ul>
 
 
+
 			{# New Drop Down Menu Design Starts Here #}
+
 
 			<div class="dropdown-content" id="newme">
 				<div class="menu-drop">
 					<div class="row-one">
 						<h3>Explore All Courses</h3>
-						<div class="sub-head" onmouseover="degree()">
-							<i class="fas fa-graduation-cap main-head-icon"></i>
-							<h4>Degree</h4>
-							<i class="fas fa-chevron-right arrow-icon-master" id="degreefaicon"></i>
-						</div>
-						<div class="sub-head" onmouseover="micro()">
-							<i class="far fa-credit-card main-head-icon"></i>
-							<h4>Micro Credit</h4>
-							<i class="fas fa-chevron-right arrow-icon" id="microfaicon"></i>
-						</div>
-						<div class="sub-head" onmouseover="upskill()">
-							<i class="fas fa-scroll main-head-icon"></i>
-							<h4>Upskilling Courses</h4>
-							<i class="fas fa-chevron-right arrow-icon" id="upskillfaicon"></i>
-						</div>
+						
+						{% for value in term_data_first_level %}	
+
+							<div class="sub-head" onmouseover="{{value.func}}">
+								<i class="{{value.ele_class}}"></i>
+								<h4>{{value.name}}</h4>
+
+								<i class="fas fa-chevron-right arrow-icon-master" id="{{value.ele_id}}"></i>
+							</div>
+					
+
+						{% endfor %}	
+
 					</div>
 
-					<div id="degreecat" class="row-two">
-						<h3 class="hea">View all Degree Courses</h3>
-						<div class="sub-category" onmouseover="masters()">
-							<h4>Masters</h4>
-							<i class="fas fa-chevron-right arrow-icon-master" id="mastersfaicon"></i>
-						</div>
-						<div class="sub-category" onmouseover="mbafunc()">
-							<h4>MBA</h4>
-							<i class="fas fa-chevron-right arrow-icon" id="mbafuncfaicon"></i>
-						</div>
-						<div class="sub-category" onmouseover="doctfun()">
-							<h4>Doctorate</h4>
-							<i class="fas fa-chevron-right arrow-icon" id="doctfunfaicon"></i>
-						</div>
-						<div class="re-link">
-							<h5>Want to Know More about<br>
-								Our Universities ?</h5>
-						</div>
-					</div>
-					<div id="microcat" class="row-two-micro">
-						<h3 class="hea">View all Micro Credit Courses</h3>
-						<div class="sub-category" onmouseover="postdispl()">
-							<h4>Postgraduate Diploma</h4>
-							<i class="fas fa-chevron-right arrow-icon-master-post" id="postdisplfaicon"></i>
-						</div>
-						<div class="sub-category" onmouseover="postcert()">
-							<h4>Postgraduate Certification</h4>
-							<i class="fas fa-chevron-right arrow-icon" id="postcertfaicon"></i>
-						</div>
-						<div class="re-link">
-							<h5>Want to Know More about<br>
-								Our Universities ?</h5>
-						</div>
-					</div>
-					<div id="upskillcat" class="row-two-upskill">
-						<h3 class="hea">View all Upskilling Courses</h3>
-						<div class="upskill-scroll">
-							<div class="sub-category" onmouseover="basicfunc()">
-								<h4>Basics</h4>
-								<i class="fas fa-chevron-right arrow-icon-master-post" id="basicfuncfaicon"></i>
-							</div>
-							<div class="sub-category" onmouseover="essenfunc()">
-								<h4>Essentials</h4>
-								<i class="fas fa-chevron-right arrow-icon" id="essenfuncfaicon"></i>
-							</div>
-							<div class="sub-category" onmouseover="mastfunc()">
-								<h4>Mastering</h4>
-								<i class="fas fa-chevron-right arrow-icon" id="mastfuncfaicon"></i>
-							</div>
-							<div class="sub-category" onmouseover="dipfunc()">
-								<h4>Diploma</h4>
-								<i class="fas fa-chevron-right arrow-icon" id="dipfuncfaicon"></i>
-							</div>
-							<div class="sub-category" onmouseover="exediplfunc()">
-								<h4>Executive Diploma</h4>
-								<i class="fas fa-chevron-right arrow-icon" id="exediplfuncfaicon"></i>
-							</div>
-							<div class="sub-category" onmouseover="mbaessenfunc()">
-								<h4>MBA Essentials</h4>
-								<i class="fas fa-chevron-right arrow-icon" id="mbaessenfuncfaicon"></i>
-							</div>
-						</div>
-						<div class="re-link">
-							<h5>Want to Know More about<br>
-								Our Universities ?</h5>
-						</div>
-					</div>
+					<!-- second level menu -->	
 
-					<div id="masterscat" class="row-masters">
-						<h3 class="hea">View all Masters Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Masters in Innovation and Entrepreneurship
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Masters of Data Science
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>Masters in Procurement and Contracts Management
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="mbacat" class="row-mba">
-						<h3 class="hea">View all MBA Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Master of Business Administration
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									MBA in General Management- FastTrack
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>Executive MBA
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>Executive MBA-Business Analytics
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>Master of International Business Administration
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="doctoratecat" class="row-doctorate">
-						<h3 class="hea">View all Doctorate Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Doctorate of Business Administration
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Integrated doctorate of business administration
-								</h4>
-							</div>
-						</div>
-					</div>
+					{% for value in term_data_first_level %}	
 
-					<div id="postdisplcat" class="row-postdispl">
-						<h3 class="hea">View all Postgraduate Diploma Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Diploma in Supply Chain and Logistics Management
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Diploma (Masters) in International Business & Strategy
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="postcertcat" class="row-postcert">
-						<h3 class="hea">View all Postgraduate Certification Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Postgraduate Certificate in Managerial Accounting and Finance
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Postgraduate Certificate in Socio-economic and Legal Framework
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>Postgraduate Certificate in Strategic Management
-								</h4>
-							</div>
-						</div>
-					</div>
+						<div id="{{value.ele_id1}}" class="{{value.ele_class1}}">
+							<h3 class="hea">
+								<a href="{{ url('<front>') }}{{value.link}}">
+								View all {{value.name}} Courses
+								</a>
+							</h3>
+						
+							{% if value.name == "Upskilling Courses" %}
 
-					<div id="basiccat" class="row-basics">
-						<h3 class="hea">View all Basic Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Basics of Training & Leadership
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Basics of Financial Returns
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="essentialscat" class="row-essentials">
-						<h3 class="hea">View all Essentials Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Essentials of Behavioral Science
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Essentials of Team Management
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="mastcat" class="row-mast">
-						<h3 class="hea">View all Mastering Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Mastering Capital Budgeting
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Mastering Financial Analysis - Ratios and Returns
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="displomacat" class="row-diploma">
-						<h3 class="hea">View all Diploma Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Diploma in International Human Resource Management
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Diploma in Application of Business Analytics
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="exediplcat" class="row-exedipl">
-						<h3 class="hea">View all Executive Diploma Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>Executive Diploma in Finance for Business Leaders
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Executive Diploma in Sustainability & Business
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									Executive Diploma in Data Analytics
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div id="mbaessentialscat" class="row-mbaessentials">
-						<h3 class="hea">View all MBA Essentials Courses</h3>
-						<div class="scroll">
-							<div class="sub-category-list">
-								<h4>MBA Essentials - Blockchain
-								</h4>
-							</div>
-							<div class="sub-category-list">
-								<h4>
-									MBA Essentials - Marketing
-								</h4>
-							</div>
-						</div>
-					</div>
+								<div class="upskill-scroll">
+								{% for certification_list in certification_list %}
 
-					<div class="row-yere">
-						<h3 class="hea">Explore All Courses</h3>
-						<div class="card-in-drop">
-							<div class="card-text">
-								Executive MBA-Business Analytics
+
+										<div class="sub-category" onmouseover="{{certification_list.func}}">
+											<h4>{{certification_list.cert_name}}</h4>
+											<i class="fas fa-chevron-right arrow-icon-master-post" id="{{certification_list.ele_id}}"></i>
+										</div>
+
+									{% endfor %}
+
+								</div>
+
+							{% endif %}								
+
+							{% for value1 in term_data_second_level %}	
+							
+								{% if value1.master == value.id %}
+
+									<div class="sub-category" onmouseover="{{value1.func}}">
+										<h4>{{value1.name}}</h4>
+										<i class="{{value1.class}}" id="{{value1.ele_id}}"></i>
+									</div>
+
+								{% endif %}
+
+							{% endfor %}							
+
+							<div class="re-link">
+								
+								<h5><a href="{{url('<front>')}}about-us/athena-and-associated-entities">Want to Know More about<br>
+									Our Universities ?</a></h5>
+
 							</div>
-							<hr>
-							<div class="card-text-para">
-								We have a multitude of courses tailored to your career goals and busy schedule. These
-																																                                                    courses have been developed to
-																																                                                    enhance …..
+
+						</div>
+
+						
+					{% endfor %}
+
+					<!-- course listing for degree and micro credit -->
+
+					{% for term_data_second_level in term_data_second_level %}
+
+						<div id={{term_data_second_level.ele_id1}} class={{term_data_second_level.ele_class1}}>
+						<h3 class="hea">View all {{term_data_second_level.name}} Courses</h3>
+						<div class="scroll">
+
+							{% for academicnodes in academicnodes %}
+								
+								{% if term_data_second_level.id == academicnodes.cat_id %}
+
+								<div class="sub-category-list">
+									<h4><a href="{{url('<front>')}}course/{{academicnodes.nid}}">
+										{{academicnodes.title}}
+										</a>
+									</h4>
+								</div>
+
+								{% endif %}
+								
+							{% endfor %}
+	
+						</div>
+						</div>
+
+					{% endfor %}
+
+
+					<!-- short term course listing -->					
+
+
+ 					{% for certification_list in certification_list %}
+
+	 					<div id="{{certification_list.ele_id1}}" class="{{certification_list.class}}">
+							<h3 class="hea">View all {{certification_list.cert_name}} Courses</h3>
+							<div class="scroll">
+
+								{% for shortsourses_list in shortsourses_list %}
+
+									{% if shortsourses_list.category == certification_list.cert_id %}
+
+										<div class="sub-category-list">
+											
+										<h4><a href="{{shortsourses_list.course_url}}">{{shortsourses_list.label}}
+
+											</a></h4>
+										</div>
+
+									{% endif %}	
+
+								{% endfor %}
+
 							</div>
 						</div>
 
-						<div class="card-in-drop-two">
-							<div class="card-text">
-								Master of Business Administration
+ 					{% endfor %}
+
+ 					<!-- popular courses listing -->
+
+					<div class="row-yere degree" id="depo">
+						<div class="po-scroll">
+
+							<h3 class="hea">Popular Courses</h3>
+							
+							{% for term_popular_academic in term_popular_academic %}
+
+								<div class="card-in-drop">
+									<div class="card-text">
+										{{term_popular_academic.title}}
+									</div>
+									<hr>
+									<div class="card-text-para">
+										We have a multitude of courses tailored to your career goals and busy schedule. These
+										courses have been developed to enhance …..
+									</div>
+								</div>
+
+							{% endfor %}							
+
+						</div>
+					</div>
+					
+					<div class="row-yere micro" id="mipo">
+					<h3 class="hea">Popular Courses</h3>
+						<div class="po-scroll">
+
+						{% for term_popular_certification in term_popular_certification %}
+							
+							<div class="card-in-drop">
+								<div class="card-text">
+									{{term_popular_certification.title}}
+								</div>
+								<hr>
+								<div class="card-text-para">
+									We have a multitude of courses tailored to your career goals and busy schedule. These
+									courses have been developed to enhance …..
+								</div>
 							</div>
-							<hr>
-							<div class="card-text-para">
-								We have a multitude of courses tailored to your career goals and busy schedule. These
-																																                                                    courses have been developed to
-																																                                                    enhance …..
-							</div>
+
+						{% endfor %}
+
 						</div>
 
 					</div>
+
+					<div class="row-yere upskill" id="uppo">
+						<div class="po-scroll">
+
+							<h3 class="hea">Popular Courses</h3>
+							<div class="card-in-drop">
+								<div class="card-text">
+									Executive MBA-Business Analytics
+								</div>
+								<hr>
+								<div class="card-text-para">
+									We have a multitude of courses tailored to your career goals and busy schedule. These
+									courses have been developed to enhance …..
+								</div>
+							</div>
+							<div class="card-in-drop">
+								<div class="card-text">
+									Master of Business Administration
+								</div>
+								<hr>
+								<div class="card-text-para">
+									We have a multitude of courses tailored to your career goals and busy schedule. These
+									courses have been developed to  enhance …..
+								</div>
+							</div>
+						</div>
+					</div>
+					
+
 
 				</div>
-
 			</div>
-
 
 			{# New Drop Down Menu Design Ends Here #}
 
@@ -631,7 +498,12 @@ x.style.display = "block";
 x.style.display = "none";
 }
 }
+
+
 function degree() {
+var depo = document.getElementById("depo");
+var mipo = document.getElementById("mipo");
+var uppo = document.getElementById("uppo");
 var h = document.getElementById("degreecat");
 var r = document.getElementById("microcat");
 var m = document.getElementById("upskillcat");
@@ -654,6 +526,9 @@ m.style.display = "none";
 h.style.display = "block";
 r.style.display = "none";
 mcat.style.display = "block";
+depo.style.display = "none";
+mipo.style.display = "block";
+uppo.style.display = "none";
 defai.style.visibility = "visible";
 mifai.style.visibility = "hidden";
 upfai.style.visibility = "hidden";
@@ -674,6 +549,9 @@ mcat.style.display = "block";
 defai.style.visibility = "visible";
 mifai.style.visibility = "hidden";
 upfai.style.visibility = "hidden";
+depo.style.display = "block";
+mipo.style.display = "none";
+uppo.style.display = "none";
 displcat.style.display = "none";
 mbcat.style.display = "none";
 doccat.style.display = "none";
@@ -686,6 +564,11 @@ mbaessencat.style.display = "none";
 }
 }
 function micro() {
+	var depo = document.getElementById("depo");
+	var mipo = document.getElementById("mipo");
+	var uppo = document.getElementById("uppo");
+
+
 var h = document.getElementById("degreecat");
 var r = document.getElementById("microcat");
 var m = document.getElementById("upskillcat");
@@ -710,6 +593,10 @@ h.style.display = "none";
 mcat.style.display = "none";
 defai.style.visibility = "hidden";
 mifai.style.visibility = "visible";
+depo.style.display = "none";
+mipo.style.display = "block";
+uppo.style.display = "none";
+
 upfai.style.visibility = "hidden";
 mbcat.style.display = "none";
 doccat.style.display = "none";
@@ -732,6 +619,9 @@ upfai.style.visibility = "hidden";
 certcat.style.display = "none";
 mcat.style.display = "none";
 basecat.style.display = "none";
+depo.style.display = "none";
+mipo.style.display = "block";
+uppo.style.display = "none";
 essentscat.style.display = "none";
 mascat.style.display = "none";
 displocat.style.display = "none";
@@ -742,6 +632,11 @@ doccat.style.display = "none";
 }
 }
 function upskill() {
+	var depo = document.getElementById("depo");
+	var mipo = document.getElementById("mipo");
+	var uppo = document.getElementById("uppo");
+
+
 var h = document.getElementById("degreecat");
 var r = document.getElementById("microcat");
 var m = document.getElementById("upskillcat");
@@ -772,6 +667,10 @@ mifai.style.visibility = "hidden";
 upfai.style.visibility = "visible";
 doccat.style.display = "none";
 certcat.style.display = "none";
+depo.style.display = "none";
+mipo.style.display = "none";
+uppo.style.display = "block";
+
 displcat.style.display = "none";
 mascat.style.display = "none";
 displocat.style.display = "none";
@@ -785,6 +684,10 @@ basecat.style.display = "block";
 essentscat.style.display = "none";
 certcat.style.display = "none";
 displcat.style.display = "none";
+depo.style.display = "none";
+mipo.style.display = "none";
+uppo.style.display = "block";
+
 defai.style.visibility = "hidden";
 mifai.style.visibility = "hidden";
 upfai.style.visibility = "visible";

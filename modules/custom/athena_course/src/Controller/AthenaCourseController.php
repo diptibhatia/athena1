@@ -9,6 +9,14 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Serialization\Json;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use \Drupal\Core\Url;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\AppendCommand;
+use Drupal\Core\Ajax\RemoveCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+use \Drupal\athena_library\Utils\CommonHelper;
+use \Symfony\Component\HttpFoundation\Request;
+
 
 class AthenaCourseController {
 
@@ -491,10 +499,10 @@ $banner_block =  [
   '#campaign_params' => $url_params
 ];
 
-$fee_pay_per = $node->get('field_course_fee_pay_per')->value;
+//$fee_pay_per = $node->get('field_course_fee_pay_per')->value;
 if(empty($fee_pay_per)) $fee_pay_per = '';
 
-$duration = $node->get('field_duration')->value;
+//$duration = $node->get('field_duration')->value;
 if(empty($duration)) $duration = 'Flexible Duration';
 
 $testibundle='testimonials';
@@ -516,15 +524,18 @@ $course_description_tabs =  [
   '#logo' => $univ_data,
   '#course_title' => $node->get('title')->value,
   '#course_team' => $course_team,
-  '#ready_to_start_desc' => $node->get('field_ready_to_start_description')->value,
-  '#register_now_link' => $node->get('field_register_now_link')->value,    
+  //'#ready_to_start_desc' => $node->get('field_ready_to_start_description')->value,
+  '#ready_to_start_desc' => "",
+  //'#register_now_link' => $node->get('field_register_now_link')->value,
+  '#register_now_link' => "",    
   '#course_batch_title' => $node->get('field_batch_title')->value,
   '#course_batch_desc' => $node->get('field_batch_desc')->value,
   '#course_batch' => $course_batch,
   '#faq' => $faq,
-  '#admission_process' => $node->get('field_admission_process')->value,
+  //'#admission_process' => $node->get('field_admission_process')->value ,
+  '#admission_process' => "",
   '#why_course' => $why_course,
-  '#free_trial_link' => $node->get('field_free_trial_link')->value,
+  //'#free_trial_link' => $node->get('field_free_trial_link')->value,
   '#duration' => $duration,  
   '#course_duration' => $node->get('field_course_duration')->value,
   '#certification_label' => $node->get('field_course_certification_label')->value,
@@ -570,19 +581,94 @@ return array(
 // $nodes = node_load_multiple($entity_ids);
 // }
 
-$academics = $certifications = [];
-$academic_ids = get_course_nav_items('Academic');
-if(!empty($academic_ids)) {
-  $academics = node_load_multiple($academic_ids);
-}
+// $academics = $certifications = [];
+// $academic_ids = get_course_nav_items('Academic');
+// if(!empty($academic_ids)) {
+//   $academics = node_load_multiple($academic_ids);
+// }
+
+
+//************short course page changes **************
+
+//--------get the list of course category --------------------
+
+  
+  $vid = 'course_category';
+  $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $tree = $manager->loadTree($vid,0,2);
+  foreach ($tree as $term) {
+    if (!empty($manager->loadParents($term->tid))) {
+      $term_data[] = array(
+      'id' => $term->tid,
+      'name' => $term->name
+     );   
+    }
+  }
+
+//print_r($term_data); exit;
+
+// ------------load data for academic tab--------------
+
+  $course_category = $_REQUEST['course_category'] ?? '' ;
+  
+  if(db_table_exists('draggableviews_structure')) {
+    $query = \Drupal::database()->select('node_field_data', 'n');
+    $query->leftJoin('draggableviews_structure', 'w', 'w.entity_id = n.nid');
+    if(($course_category != '') && ($course_category != 'abc' ))
+      $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
+    $query->fields('n', array('nid'));
+    $query->condition('n.status', 1);
+    if(($course_category != '') && ( $course_category != 'abc' ))
+      $query->condition('c1.field_course_category_list_target_id', $course_category );
+    $query->condition('w.view_name', 'course_ordering');          
+    $query->orderBy('w.weight', ASC);
+
+    //print $query; exit;
+
+    $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
+    if(!empty($academic_ids)) 
+      $academics = node_load_multiple($academic_ids);
+   }
+   else
+   {
+     $query = \Drupal::database()->select('node_field_data', 'n');
+      if(($course_category != '') && ($course_category != 'abc' ))
+        $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
+      $query->fields('n', array('nid'));
+      $query->condition('n.status', 1);
+      if(($course_category != '') && ( $course_category != 'abc' ))
+        $query->condition('c1.field_course_category_list_target_id', $course_category );
+   
+      $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
+      if(!empty($academic_ids)) 
+        $academics = node_load_multiple($academic_ids);
+      
+   }
+
+//--------load courses for selected category --------------
+
+    if( $course_category != '' && !empty($course_category))
+    {
+      $response = new AjaxResponse();
+      $selector = '.login-item .addajaxlist';
+
+      $html .= '<option class="login-item courselistselect" default="">Select your course</option>';
+      foreach ( $academics as $key => $value )
+      {
+        $html .= '<option class="courselistselect" value="'.$value->get('field_cid')->value.'">'.$value->label().'</option>';
+      }
+
+      $response->addCommand(new InvokeCommand('.login-item .courselistselect', 'hide'));
+      $response->addCommand(new HtmlCommand($selector, $html));  
+
+      return $response;
+    } 
+    
 
 $certifications_id = get_course_nav_items('Certifications');
 if(!empty($certifications_id)) {
   $certifications = node_load_multiple($certifications_id);
 }
-
-
-//$node = Node::load($nid);
 
 // Base theme path.
 global $base_url;
@@ -614,6 +700,9 @@ if( isset($_REQUEST['ccode']))
 if( isset($_REQUEST['phone']))
   $phone = base64_decode($_REQUEST['phone']);
 
+if( isset($_REQUEST['categorylist']))
+  $categorylist = $_REQUEST['categorylist'];
+
 //print_r($node);exit;
 $registration =  [
   '#theme' => 'course_registration',
@@ -627,16 +716,24 @@ $registration =  [
   '#ciso' => $ciso,
   '#phone' => $phone,
   '#cid' => $cid,
+  '#categorylist' => $categorylist,
   // '#nodes' => $nodes,
+  '#course_catgory' => $term_data,
   '#academics' => $academics,
   '#certifications' => $certifications,
+  '#ccat' => $response,
+  '#attached' => [
+            'library' => [
+                'core/drupal.ajax'
+            ]
+          ]
 ];
 
 return array(
    $registration
 );
 
-  }
+}
 
   public function import(){
 
@@ -1905,12 +2002,16 @@ $base_path = $base_url.'/'. $theme->getPath();
 $alias = \Drupal::service('path.alias_manager')->getPathByAlias('/explore-courses');
 $params = Url::fromUri("internal:" . $alias)->getRouteParameters();
 $entity_type = key($params);
-$node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
 
-$paragraph_data = $node->field_explore_course_details->referencedEntities();
+if( !empty($params[$entity_type]))
+{
+
+  $node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+  $paragraph_data = $node->field_explore_course_details->referencedEntities();
 
 
-foreach($paragraph_data as $explore_data) {
+  foreach($paragraph_data as $explore_data) {
 
     $type = $explore_data->get('field_explore_course_type')->value;
 
@@ -1927,25 +2028,26 @@ foreach($paragraph_data as $explore_data) {
 }
 
 
-// Course list
+  // Course list
   $bundle='course';
-     $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
+  $query = \Drupal::entityQuery('node');
+  $query->condition('status', 1);
   //  $query->condition('field_course_academic_route', 'academic', 'CONTAINS');
-$query->condition('field_course_category', 'Certifications');
-    $query->condition('type', $bundle);
-    $academic_list = $query->execute();
+  $query->condition('field_course_category', 'Certifications');
+  $query->condition('type', $bundle);
+  $academic_list = $query->execute();
 
-   $academicnodes = node_load_multiple($academic_list);
-   //$academicnodes =  array_slice($academicnodes, 0, 3);
+  if ( !empty($academic_list))
+    $academicnodes = node_load_multiple($academic_list);
+  //$academicnodes =  array_slice($academicnodes, 0, 3);
 
-   $bundle='insight_article';
+  $bundle='insight_article';
 
-    $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
-    $query->condition('type', $bundle);
-    $query->sort('created' , 'DESC');
-    $latest = $query->execute();
+  $query = \Drupal::entityQuery('node');
+  $query->condition('status', 1);
+  $query->condition('type', $bundle);
+  $query->sort('created' , 'DESC');
+  $latest = $query->execute();
 
 
     $insightsnodes = node_load_multiple($latest);
@@ -1968,8 +2070,8 @@ $academic =  [
 ];
 
 
-return array($academic);
-
+  return array($academic);
+}
 
 }
 
