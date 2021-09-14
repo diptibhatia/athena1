@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div class="container-fluid find-your-course">
+  <div class="container-fluid find-your-course" id="findCourseInput">
     <div class="pt-4 pb-4 container">
       <div class="row">
         <div class="col-md-12">
@@ -85,15 +85,18 @@
             {% endfor %}
           </nav>
         </div>
-        <input id="selected_keywords" type="hidden"/>
+
+        <input id="selected_keywords" type="hidden" />
         <input id="selected_keywords_ids" type="hidden"/>
         <input id="selected_cert_ids" type="hidden"/>
+        <input id="certification_filter_request" value="{{certification_filter_request}}" type="hidden"/>
+        
       </div>
 
       <!--Multiple Course Selection buttons: END -->
 
       <!--courses List: START-->
-      <div class="row shortterm-courses-area" id="findCourseInput">
+      <div class="row shortterm-courses-area">
         <div class="col-12 p-0">
           <div class="shortterm-courses">
             {% for node in nodes %}
@@ -202,7 +205,14 @@
 
 <script type="text/javascript">
 
-jQuery('.category-area .nav-link:first').addClass('active');
+if ( jQuery('#certification_filter_request').val() != '' )
+{
+  var certification_filter_request = jQuery('#certification_filter_request').val();  
+  jQuery('.category-area #filter_certificate_'+certification_filter_request).addClass('active');
+}
+else
+  jQuery('.category-area .nav-link:first').addClass('active');
+
 
 jQuery("#showMore").on('click', function() {
 var pagerVal = jQuery('#pager').val();

@@ -241,6 +241,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
 
       //$certificates_uri = $lms_url . $api . "/api/get_master_table_data?table=certification_type";
       $certificates_uri = $lms_url . $api . "/api/getCertTypeByQualId/1";
+
       $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
       $certificate_filters = (string)$response_certificates->getBody();
       $certificates = json_decode($certificate_filters);
@@ -257,6 +258,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "basicfunc()";
               $ele_id1 = "basiccat";
               $class = "row-basics";
+              $url = "shortterm-courses?certificate_filters=1#findCourseInput";
             }         
 
             if ( $value2->certificate_type_name == "Essentials" ) 
@@ -265,6 +267,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "essenfunc()";
               $ele_id1 = "essentialscat";
               $class = "row-essentials";
+              $url = "shortterm-courses?certificate_filters=2#findCourseInput";
             }
 
             if ( $value2->certificate_type_name == "Mastering" ) 
@@ -273,6 +276,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "mastfunc()"; 
               $ele_id1 = "mastcat";
               $class = "row-mast";  
+              $url = "shortterm-courses?certificate_filters=3#findCourseInput";
             }
               
             if ( $value2->certificate_type_name == "Diploma" ) 
@@ -281,6 +285,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "dipfunc()";  
               $ele_id1 = "displomacat";
               $class = "row-diploma"; 
+              $url = "shortterm-courses?certificate_filters=4#findCourseInput";
             }
             
             if ( $value2->certificate_type_name == "Executive Diploma" ) 
@@ -288,7 +293,8 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $ele_id = "exediplfuncfaicon";
               $func = "exediplfunc()";
               $ele_id1 = "exediplcat";
-              $class = "row-exedipl";   
+              $class = "row-exedipl";
+              $url = "shortterm-courses?certificate_filters=5#findCourseInput";
             }
 
             if ( $value2->certificate_type_name == "MBA Essentials" ) 
@@ -296,7 +302,8 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $ele_id = "mbaessenfuncfaicon";
               $func = "mbaessenfunc()";
               $ele_id1 = "mbaessentialscat";
-              $class = "row-mbaessentials";   
+              $class = "row-mbaessentials";
+              $url = "shortterm-courses?certificate_filters=6#findCourseInput";
             }
 
 
@@ -308,7 +315,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               "func"  => $func,
               "ele_id1" => $ele_id1,
               "class"  => $class,
-              
+              "url" => $url
             );    
         }
 

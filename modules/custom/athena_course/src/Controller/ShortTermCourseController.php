@@ -30,21 +30,29 @@ class ShortTermCourseController {
             $this->_api = "/athenaprod";
         //$this->_lms_url = "https://newlms.athena.edu";
 
+        // for smo pages         
         if (in_array("subject", explode("/",$_SERVER['REQUEST_URI'] ))) $this->sublist = "SubjectList";
         elseif (in_array("certificate", explode("/",$_SERVER['REQUEST_URI'] ))) $this->sublist = "CertList";
+
+        // listing pages setting filters for main menu 
+        $this->certificate_filters_request = $_REQUEST['certificate_filters'];
+
     }
 
     /**
      * List courses as per pagination.
      * @return [array]
      */
-    public function shortTermCourse( $id = NULL ) {
+    public function shortTermCourse( $id = NULL ) {    
+        
         $limit = $this->_limit;
         //$uri = "https://newlms.athena.edu/athenadev/api/courselist?page=1&page_limit=$limit";
         $uri = $this->_lms_url .$this->_api. "/api/courselist?page=1&page_limit=$limit&fk_type_of_qualification_id=1&status=1";
 
         if ( $this->sublist == "SubjectList" ) $uri .= "&subject_area_id=".$id;
         elseif ( $this->sublist == "CertList" ) $uri .= "&fk_certificate_type_id=".$id;
+        elseif ( !empty($this->certificate_filters_request)) $uri .= "&fk_certificate_type_id=".$this->certificate_filters_request;
+
         try {
             $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
             $data = (string)$response->getBody();
@@ -53,8 +61,6 @@ class ShortTermCourseController {
             $response_filters = \Drupal::httpClient()->get($filters_uri, array('headers' => array('Accept' => 'application/json')));
             $data_filters = (string)$response_filters->getBody();
             $filters = json_decode($data_filters, TRUE);
-
-            //print_r($filters);
 
             $certificates_uri = $this->_lms_url .$this->_api. "/api/get_master_table_data?table=certification_type";
             $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
@@ -133,6 +139,7 @@ class ShortTermCourseController {
         if (($this->sublist == "SubjectList" ) || ($this->sublist == "CertList" )) $theme =  "short_term_course_subject";
         else $theme =  "short_term_course";
 
+
         $short_term_course =  [
           '#theme' => $theme,
           '#nodes' => $short_term_courses_nodes,
@@ -140,6 +147,7 @@ class ShortTermCourseController {
           '#certificates' => $certificates,
           '#display_load_more' => $display_load_more,
           '#portal_url' => $this->_lms_url,
+          '#certification_filter_request' => $this->certificate_filters_request,
           '#attached' => [
             'library' => [
                 'core/drupal.ajax'

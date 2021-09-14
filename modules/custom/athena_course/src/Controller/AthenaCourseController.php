@@ -593,7 +593,7 @@ return array(
 //--------get the list of course category --------------------
 
   
-  $vid = 'course_category';
+  $vid = 'course_category_list';
   $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
   $tree = $manager->loadTree($vid,0,2);
   foreach ($tree as $term) {
