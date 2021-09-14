@@ -105,7 +105,7 @@ function get_course_nav_items($type = 'Academic') {
 function get_first_level_array_main_menu()
 {
     // load first level array  
-  $vid = 'course_category';
+  $vid = 'course_category_list';
   $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
   $tree = $manager->loadTree($vid,0,1);
   foreach ($tree as $term) 
@@ -167,9 +167,8 @@ function get_second_level_array_main_menu($term_data_first_level)
     {
     //print $key;
         //print($value['id']) ;
-        $vid = 'course_category';
         $term_data = array();
-        $vid = 'course_category';
+        $vid = 'course_category_list';
         $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
         $tree = $manager->loadTree($vid , $value['id'] , 2);
         foreach ($tree as $term) 
@@ -406,29 +405,15 @@ function get_popular_courses_main_menu($category)
     if(!empty($academic_ids)) 
       $academics = node_load_multiple($academic_ids);
 
-    if ( $category == "Academics" )
-    {
-       foreach($academics as $node) 
-       {
-            $academic_node_ids[] =
-            array(
-              "nid"=>$node->id(),
-              "title"=>$node->label(),
-            );
-       }
-   }
-   else
-   {
-       foreach($academics as $node) 
-       {
-            $academic_node_ids[] =
-            array(
-              "nid"=>$node->id(),
-              "title"=>$node->label(),
-            );
-       }
+     foreach($academics as $node) 
+     {
+          $academic_node_ids[] =
+          array(
+            "nid"=>$node->id(),
+            "title"=>$node->label(),
 
-   }
+          );
+     }
    
    return $academic_node_ids;
 

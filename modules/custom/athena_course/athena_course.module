@@ -54,7 +54,9 @@ function athena_course_theme($existing, $type, $theme, $path) {
         'display_load_more' => NULL,
         'filters' => NULL,
         'certificates' => NULL,
-        'portal_url' => NULL
+        'portal_url' => NULL,
+        'certification_filter_request' => NULL
+        
       ],
     ],
     'short_term_course_subject' => [

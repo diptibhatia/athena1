@@ -254,7 +254,7 @@
  					{% for certification_list in certification_list %}
 
 	 					<div id="{{certification_list.ele_id1}}" class="{{certification_list.class}}">
-							<h3 class="hea">View all {{certification_list.cert_name}} Courses</h3>
+							<h3 class="hea"><a href="{{url('<front>')}}{{certification_list.url}}">View all {{certification_list.cert_name}} Courses</a></h3>
 							<div class="scroll">
 
 								{% for shortsourses_list in shortsourses_list %}
@@ -287,8 +287,8 @@
 							{% for term_popular_academic in term_popular_academic %}
 
 								<div class="card-in-drop">
-									<div class="card-text">
-										{{term_popular_academic.title}}
+									<div class="card-text"><a href="{{url('<front>')}}course/{{term_popular_academic.nid}}">
+										{{term_popular_academic.title}}</a>
 									</div>
 									<hr>
 									<div class="card-text-para">
@@ -309,8 +309,8 @@
 						{% for term_popular_certification in term_popular_certification %}
 							
 							<div class="card-in-drop">
-								<div class="card-text">
-									{{term_popular_certification.title}}
+								<div class="card-text"><a href="{{url('<front>')}}course/{{term_popular_certification.nid}}">
+									{{term_popular_certification.title}}</a>
 								</div>
 								<hr>
 								<div class="card-text-para">
@@ -328,10 +328,12 @@
 					<div class="row-yere upskill" id="uppo">
 						<div class="po-scroll">
 
+							<!-- 'course_url' => $url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,
+ -->
 							<h3 class="hea">Popular Courses</h3>
 							<div class="card-in-drop">
-								<div class="card-text">
-									Executive MBA-Business Analytics
+								<div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/143/executive-diploma-in-strategic-leadership-and-hr-practices-in-organizations">
+									Executive Diploma in Strategic Leadership And HR Practices In Organizations</a>
 								</div>
 								<hr>
 								<div class="card-text-para">
@@ -340,8 +342,38 @@
 								</div>
 							</div>
 							<div class="card-in-drop">
-								<div class="card-text">
-									Master of Business Administration
+								<div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/153/essentials-of-designing-supply-chain">
+									Essentials of Designing Supply Chain</a>
+								</div>
+								<hr>
+								<div class="card-text-para">
+									We have a multitude of courses tailored to your career goals and busy schedule. These
+									courses have been developed to  enhance …..
+								</div>
+							</div>
+							<div class="card-in-drop">
+								<div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/158/mastering-logistics-management">
+									Mastering logistics Management</a>
+								</div>
+								<hr>
+								<div class="card-text-para">
+									We have a multitude of courses tailored to your career goals and busy schedule. These
+									courses have been developed to  enhance …..
+								</div>
+							</div>
+							<div class="card-in-drop">
+								<div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/154/mastering-components-of-supply-chain-management">
+									Mastering Components of Supply Chain Management</a>
+								</div>
+								<hr>
+								<div class="card-text-para">
+									We have a multitude of courses tailored to your career goals and busy schedule. These
+									courses have been developed to  enhance …..
+								</div>
+							</div>
+							<div class="card-in-drop">
+								<div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/176/executive-diploma-in-innovation-entrepreneurship">
+									Executive Diploma in Innovation & Entrepreneurship</a>
 								</div>
 								<hr>
 								<div class="card-text-para">
