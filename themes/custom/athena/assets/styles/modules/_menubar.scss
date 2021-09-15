@@ -1810,7 +1810,7 @@ h4 {
         font-style: normal;
         line-height: normal;
         letter-spacing: normal;
-        padding:0 0 0px 0;
+        padding: 0 0 0px 0;
     }
 }
 
@@ -1878,7 +1878,7 @@ h4 {
 
 .card-in-drop:nth-of-type(odd) {
     width: 284px;
-    height: auto;
+    height: 158px;
     margin: 21px 135px 12px 10px;
     padding: 11px 12px 13px 7.5px;
     opacity: 0.9;
@@ -1906,8 +1906,8 @@ h4 {
     }
 }
 
-.card-text {
-    margin: 0 17px 7.5px 0.5px;
+.card-text a {
+    margin: 0 0px 7.5px 0.5px;
     font-family: Lato;
     font-size: 16px;
     font-weight: 600;
@@ -1916,7 +1916,8 @@ h4 {
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
-    height: 36px;
+    height: 62px;
+    padding: 0;
 }
 
 .card-text-para {
@@ -2013,10 +2014,11 @@ hr {
     border-left: solid 1px rgba(151, 151, 151, 0.1);
 }
 
-.re-link h5 {
+.re-link h5 a {
     font-size: 12px;
     font-weight: bold;
-    width: 53%;
+    width: 90%;
+    color: #ff0068;
 }
 
 
