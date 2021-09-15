@@ -529,9 +529,15 @@ var mascat = document.getElementById("mastcat");
 var displocat = document.getElementById("displomacat");
 var exedcat = document.getElementById("exediplcat");
 var mbaessencat = document.getElementById("mbaessentialscat");
+
 var defai = document.getElementById("degreefaicon");
 var mifai = document.getElementById("microfaicon");
 var upfai = document.getElementById("upskillfaicon");
+
+var mafai = document.getElementById("mastersfaicon");
+var mbfai = document.getElementById("mbafuncfaicon");
+var dofai = document.getElementById("doctfunfaicon");
+
 if (h.style.display === "none") {
 m.style.display = "none";
 h.style.display = "block";
@@ -572,13 +578,17 @@ mascat.style.display = "none";
 displocat.style.display = "none";
 exedcat.style.display = "none";
 mbaessencat.style.display = "none";
+
+mafai.style.visibility = "visible";
+mbfai.style.visibility = "hidden";
+dofai.style.visibility = "hidden";
+
 }
 }
 function micro() {
-	var depo = document.getElementById("depo");
-	var mipo = document.getElementById("mipo");
-	var uppo = document.getElementById("uppo");
-
+var depo = document.getElementById("depo");
+var mipo = document.getElementById("mipo");
+var uppo = document.getElementById("uppo");
 
 var h = document.getElementById("degreecat");
 var r = document.getElementById("microcat");
@@ -594,9 +604,14 @@ var mascat = document.getElementById("mastcat");
 var displocat = document.getElementById("displomacat");
 var exedcat = document.getElementById("exediplcat");
 var mbaessencat = document.getElementById("mbaessentialscat");
+
+var postdifai = document.getElementById("postdisplfaicon");
+var postcerfai = document.getElementById("postcertfaicon");
+
 var defai = document.getElementById("degreefaicon");
 var mifai = document.getElementById("microfaicon");
 var upfai = document.getElementById("upskillfaicon");
+
 if (r.style.display === "none") {
 m.style.display = "none";
 r.style.display = "block";
@@ -646,13 +661,16 @@ exedcat.style.display = "none";
 mbaessencat.style.display = "none";
 mbcat.style.display = "none";
 doccat.style.display = "none";
+
+postcerfai.style.visibility = "visible";
+postdifai.style.visibility = "hidden";
+
 }
 }
 function upskill() {
-	var depo = document.getElementById("depo");
-	var mipo = document.getElementById("mipo");
-	var uppo = document.getElementById("uppo");
-
+var depo = document.getElementById("depo");
+var mipo = document.getElementById("mipo");
+var uppo = document.getElementById("uppo");
 
 var h = document.getElementById("degreecat");
 var r = document.getElementById("microcat");
@@ -671,6 +689,14 @@ var mbaessencat = document.getElementById("mbaessentialscat");
 var defai = document.getElementById("degreefaicon");
 var mifai = document.getElementById("microfaicon");
 var upfai = document.getElementById("upskillfaicon");
+
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+
 if (m.style.display === "none") {
 r.style.display = "none";
 m.style.display = "block";
@@ -715,6 +741,14 @@ mascat.style.display = "none";
 displocat.style.display = "none";
 exedcat.style.display = "none";
 mbaessencat.style.display = "none";
+
+basfai.style.visibility = "visible";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+
 }
 }
 function masters() {
@@ -729,9 +763,11 @@ var mascat = document.getElementById("mastcat");
 var displocat = document.getElementById("displomacat");
 var exedcat = document.getElementById("exediplcat");
 var mbaessencat = document.getElementById("mbaessentialscat");
+
 var mafai = document.getElementById("mastersfaicon");
 var mbfai = document.getElementById("mbafuncfaicon");
 var dofai = document.getElementById("doctfunfaicon");
+
 if (mcat.style.display === "none") {
 mcat.style.display = "block";
 mbcat.style.display = "none";
@@ -911,8 +947,10 @@ var mascat = document.getElementById("mastcat");
 var displocat = document.getElementById("displomacat");
 var exedcat = document.getElementById("exediplcat");
 var mbaessencat = document.getElementById("mbaessentialscat");
+
 var postdifai = document.getElementById("postdisplfaicon");
 var postcerfai = document.getElementById("postcertfaicon");
+
 if (certcat.style.display === "none") {
 certcat.style.display = "block";
 displcat.style.display = "none";
@@ -956,12 +994,14 @@ var essentscat = document.getElementById("essentialscat");
 var exedcat = document.getElementById("exediplcat");
 var mbaessencat = document.getElementById("mbaessentialscat");
 var displocat = document.getElementById("displomacat");
+
 var basfai = document.getElementById("basicfuncfaicon");
 var essefai = document.getElementById("essenfuncfaicon");
 var mastffai = document.getElementById("mastfuncfaicon");
 var diplffai = document.getElementById("dipfuncfaicon");
 var exefai = document.getElementById("exediplfuncfaicon");
 var mbaffai = document.getElementById("mbaessenfuncfaicon");
+
 if (basecat.style.display === "none") {
 basecat.style.display = "block";
 displcat.style.display = "none";
