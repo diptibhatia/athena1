@@ -457,9 +457,7 @@
     @media screen and (max-width: 767px) {
       float: none;
       display: inline-block;
-      width: 90% !important
-
-      // &:first-child {
+      width: 90% !important // &:first-child {
       //   margin: 0 0 20px 24px;
       // }
     }
@@ -716,6 +714,13 @@
       p.small {
         font-size: 14px;
         margin-bottom: 7px;
+      }
+
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       h4 {
