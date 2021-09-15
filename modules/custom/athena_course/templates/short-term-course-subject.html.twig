@@ -64,9 +64,14 @@
                                                 
                                                     {% for certificate_key, certificate_value in certificates %}
 
-                                                    <input type="checkbox" id="filter_certificate_{{ certificate_value.id }}" class="chk1" name="allchkfilters" onclick="searchCertificates('{{ certificate_value.id }}', '{{ certificate_value.certificate_type_name }}')">
-                                                    <label for="filter_certificate_{{ certificate_value.id }}">{{certificate_value.certificate_type_name }}</label>
+                                                         {% for key , certificate_value1 in certificate_value %}
+
+
+                                                    <input type="checkbox" id="filter_certificate_{{ certificate_value1.id }}" class="chk1" name="allchkfilters" onclick="searchCertificates('{{ certificate_value1.id }}', '{{ certificate_value1.certificate_type_name }}')">
+                                                    <label for="filter_certificate_{{ certificate_value1.id }}">{{certificate_value1.certificate_type_name }}</label>
                                                     
+                                                        {% endfor %}
+
                                                     {% endfor %}
                                                     
                                                 {% elseif SubOrCertList == "CertList" %}

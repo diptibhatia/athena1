@@ -62,7 +62,9 @@ class ShortTermCourseController {
             $data_filters = (string)$response_filters->getBody();
             $filters = json_decode($data_filters, TRUE);
 
-            $certificates_uri = $this->_lms_url .$this->_api. "/api/get_master_table_data?table=certification_type";
+            //$certificates_uri = $this->_lms_url .$this->_api. "/api/get_master_table_data?table=certification_type";
+            $certificates_uri = $this->_lms_url .$this->_api. "/api/getCertTypeByQualId/1";
+
             $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
             $certificate_filters = (string)$response_certificates->getBody();
             $certificates = json_decode($certificate_filters, TRUE);

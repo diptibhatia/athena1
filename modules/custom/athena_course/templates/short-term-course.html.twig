@@ -76,11 +76,15 @@
 
             <a id="filter_certificate_all" onclick="searchCertificates('all')" class="nav-link" aria-current="page" href="javascript:void(0)">
               <span>All</span></a>
-
+            
             {% for certificate_key, certificate_value in certificates %}
+              
+              {% for key , certificate_value1 in certificate_value %}
 
-              <a id="filter_certificate_{{ certificate_value.id }}" onclick="searchCertificates('{{ certificate_value.id }}')" class="nav-link" aria-current="page" href="javascript:void(0)">
-                <span>{{certificate_value.certificate_type_name }}</span></a>
+                <a id="filter_certificate_{{ certificate_value1.id }}" onclick="searchCertificates('{{ certificate_value1.id }}')" class="nav-link" aria-current="page" href="javascript:void(0)">
+                  <span>{{certificate_value1.certificate_type_name }}</span></a>
+
+              {% endfor %}  
 
             {% endfor %}
           </nav>
