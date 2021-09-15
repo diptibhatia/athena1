@@ -202,27 +202,28 @@ function get_second_level_array_main_menu($term_data_first_level)
               $ele_id1 = "doctoratecat";
               $ele_class1 = "row-doctorate";
               $search_key = "search-results/abc?search_key=ShowAllDoctorate";
-            }
-              
-            if ( $term->name == "Postgraduate Diploma" ) 
-            {
-              $ele_id = "postdisplfaicon";
-              $func = "postdispl()";
-              $ele_class = "fas fa-chevron-right arrow-icon-master-post";   
-              $ele_id1 = "postdisplcat";
-              $ele_class1 = "row-postdispl";
-              $search_key = "search-results/abc?search_key=ShowAllDiploma";
-            }
+            }              
             
             if ( $term->name == "Postgraduate Certifications" ) 
             {
               $ele_id = "postcertfaicon";
               $func = "postcert()";
-              $ele_class = "fas fa-chevron-right arrow-icon";
+              $ele_class = "fas fa-chevron-right arrow-icon-master-post";
               $ele_id1 = "postcertcat";
               $ele_class1 = "row-postcert";
               $search_key = "search-results/abc?search_key=ShowAllCertification";      
             }
+            
+            if ( $term->name == "Postgraduate Diploma" ) 
+            {
+              $ele_id = "postdisplfaicon";
+              $func = "postdispl()";
+              $ele_class = "fas fa-chevron-right arrow-icon";   
+              $ele_id1 = "postdisplcat";
+              $ele_class1 = "row-postdispl";
+              $search_key = "search-results/abc?search_key=ShowAllDiploma";
+            }
+
 
             if (!empty($manager->loadParents($term->tid))) 
             {

@@ -258,6 +258,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "basicfunc()";
               $ele_id1 = "basiccat";
               $class = "row-basics";
+              $class1 = "fas fa-chevron-right arrow-icon-master-post";
               $url = "shortterm-courses?certificate_filters=1#findCourseInput";
             }         
 
@@ -267,6 +268,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "essenfunc()";
               $ele_id1 = "essentialscat";
               $class = "row-essentials";
+              $class1 = "fas fa-chevron-right arrow-icon";
               $url = "shortterm-courses?certificate_filters=2#findCourseInput";
             }
 
@@ -275,7 +277,8 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $ele_id = "mastfuncfaicon";
               $func = "mastfunc()"; 
               $ele_id1 = "mastcat";
-              $class = "row-mast";  
+              $class = "row-mast";
+              $class1 = "fas fa-chevron-right arrow-icon";
               $url = "shortterm-courses?certificate_filters=3#findCourseInput";
             }
               
@@ -284,7 +287,8 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $ele_id = "dipfuncfaicon";
               $func = "dipfunc()";  
               $ele_id1 = "displomacat";
-              $class = "row-diploma"; 
+              $class = "row-diploma";
+              $class1 = "fas fa-chevron-right arrow-icon";
               $url = "shortterm-courses?certificate_filters=4#findCourseInput";
             }
             
@@ -294,6 +298,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "exediplfunc()";
               $ele_id1 = "exediplcat";
               $class = "row-exedipl";
+              $class1 = "fas fa-chevron-right arrow-icon";
               $url = "shortterm-courses?certificate_filters=5#findCourseInput";
             }
 
@@ -303,6 +308,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               $func = "mbaessenfunc()";
               $ele_id1 = "mbaessentialscat";
               $class = "row-mbaessentials";
+              $class1 = "fas fa-chevron-right arrow-icon";
               $url = "shortterm-courses?certificate_filters=6#findCourseInput";
             }
 
@@ -315,6 +321,7 @@ $variables['term_popular_certification'] = $term_popular_certification;
               "func"  => $func,
               "ele_id1" => $ele_id1,
               "class"  => $class,
+              "class1"  => $class1,
               "url" => $url
             );    
         }

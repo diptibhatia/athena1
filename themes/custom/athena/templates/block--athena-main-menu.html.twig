@@ -185,7 +185,7 @@
 
 										<div class="sub-category" onmouseover="{{certification_list.func}}">
 											<h4>{{certification_list.cert_name}}</h4>
-											<i class="fas fa-chevron-right arrow-icon-master-post" id="{{certification_list.ele_id}}"></i>
+											<i class="{{certification_list.class1}}" id="{{certification_list.ele_id}}"></i>
 										</div>
 
 									{% endfor %}
@@ -200,7 +200,7 @@
 
 										<div class="sub-category" onmouseover="{{value1.func}}">
 											<h4>{{value1.name}}</h4>
-											<i class="{{value1.class}}" id="{{value1.ele_id}}"></i>
+											<i class="{{value1.ele_class}}" id="{{value1.ele_id}}"></i>
 										</div>
 
 									{% endif %}
@@ -617,17 +617,23 @@ mascat.style.display = "none";
 displocat.style.display = "none";
 exedcat.style.display = "none";
 mbaessencat.style.display = "none";
-certcat.style.display = "none";
-displcat.style.display = "block";
+
+certcat.style.display = "block";
+displcat.style.display = "none";
+
 } else {
 m.style.display = "none";
 h.style.display = "none";
 r.style.display = "block";
-displcat.style.display = "block";
+
+displcat.style.display = "none";
+
 defai.style.visibility = "hidden";
 mifai.style.visibility = "visible";
 upfai.style.visibility = "hidden";
-certcat.style.display = "none";
+
+certcat.style.display = "block";
+
 mcat.style.display = "none";
 basecat.style.display = "none";
 depo.style.display = "none";
