@@ -596,8 +596,15 @@ function athena_preprocess_page(&$variables) {
   if (strpos($current_path, $faq_gloss ) !== false) {
       $variables['athena_exclude'] = TRUE;
     }
-    
 
+
+  // ********** temporary code to ignore this theme for new-testimonial design ***
+  $new_testimonial = \Drupal::service('path.alias_manager')->getPathByAlias('/new-testimonial');
+    if (strpos($current_path, $new_testimonial ) !== false) {
+        $variables['athena_exclude'] = TRUE;
+      }
+// ********** temporary code to ignore this theme for new-testimonial design ***
+  
   if (strpos($current_path, '/university') !== false) {
     $variables['athena_exclude'] = TRUE;
   }
