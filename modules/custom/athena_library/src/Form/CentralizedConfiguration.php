@@ -135,6 +135,14 @@ class CentralizedConfiguration extends ConfigFormBase {
       '#format' => $config->get('earning_a_degree.format'),
     ];
 
+    $form['static_blocks']['earning_a_degree_short_courses'] = [
+      '#type' => 'text_format',
+      '#title' => 'Earning a Block Chain Verified Certificate from Uniathena Short Courses',
+      '#format' => 'full_html',
+      '#default_value' => $config->get('earning_a_degree_short_courses.value'),
+      '#format' => $config->get('earning_a_degree_short_courses.format'),
+    ];
+
     $form['static_blocks']['seven_day_free_trial'] = [
       '#type' => 'text_format',
       '#title' => 'Take a 7-day free Trial',
@@ -257,6 +265,10 @@ class CentralizedConfiguration extends ConfigFormBase {
 
       ->set('earning_a_degree.value', $form_state->getValue('earning_a_degree')['value'])
       ->set('earning_a_degree.format', $form_state->getValue('earning_a_degree')['format'])
+
+      ->set('earning_a_degree_short_courses.value', $form_state->getValue('earning_a_degree_short_courses')['value'])
+      ->set('earning_a_degree_short_courses.format', $form_state->getValue('earning_a_degree_short_courses')['format'])
+
 
       ->set('seven_day_free_trial.value', $form_state->getValue('seven_day_free_trial')['value'])
       ->set('seven_day_free_trial.format', $form_state->getValue('seven_day_free_trial')['format'])
