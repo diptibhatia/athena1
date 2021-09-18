@@ -142,18 +142,19 @@
 									:</b>
 
 								{{coursedata.field_course_duration.value}}</p>
-							{# <div class="box-content">
-								<h3 class="title">Master of Business
-																				                                                                                Administration</h3>
+							 
+							 <!-- card flip side  -->
+							 <div class="box-content">
+								<h3 class="title">{{coursedata.label}}</h3>
 
 								<div class="right-half-yellow">
 									<div class="right-yellow">
 										<a href="">
-											$ 4400.00
+											${{coursedata.field_course_total_fee.value}}
 										</a>
 									</div>
 								</div>
-								<p>Guglielmo Marconi University, Italy</p>
+								<p>{{coursedata.field_course_awarding_body.value|raw }}</p>
 								<div class="split-100">
 									<div class="first" style="display:inline-block;width:46%">
 										<h4>
@@ -162,33 +163,40 @@
 										<p>Anytime anywhere
 										</p>
 										<h4>
-											Flexible
+											{{durlabel}}
 										</h4>
 										<p>
-											9-36 months
+											{{coursedata.field_course_duration.value}}
 										</p>
 									</div>
 
 									<div class="first2">
 										<h4>
-											Dual Certification
+											{{coursedata.field_course_certification_label.value}}
 										</h4>
 										<p>
-											IMBA &amp; Scottish Diploma
+											{{coursedata.field_course_certification.value}}
+
 										</p>
+
+										{% if coursedata.field_course_accreditations.0.value is not empty %}
 
 										<h4>
 											Accreditations
 										</h4>
-										<p>Ministry of Edu, Italy Scottish
-																										                                                                                        Qualification Authority, UK</p>
+										
+											<p>{{ coursedata.field_course_accreditations.0.value|raw }}</p>
+		                                 <p>{{ coursedata.field_course_accreditations.1.value|raw }}</p>
 
+		                                 {% endif %}
+										
 									</div>
+
 								</div>
 								<div class="text-center-app ">
-									<a href="#">Apply Now</a>
+									<a href="{{ url('<front>') }}course/{{coursedata.id}}">Apply Now</a>
 								</div>
-							</div> #}
+							</div> 
 
 						</div>
 					</div>
@@ -249,18 +257,18 @@
 									:</b>
 
 								{{coursedata.field_course_duration.value}}</p>
-							{# <div class="box-content">
-								<h3 class="title">Master of Business
-																						                                                                                Administration</h3>
+
+							 <div class="box-content">
+								<h3 class="title">{{coursedata.label}}</h3>
 
 								<div class="right-half-yellow">
 									<div class="right-yellow">
 										<a href="">
-											$ 4400.00
+											${{coursedata.field_course_total_fee.value}}
 										</a>
 									</div>
 								</div>
-								<p>Guglielmo Marconi University, Italy</p>
+								<p>{{coursedata.field_course_awarding_body.value|raw }}</p>
 								<div class="split-100">
 									<div class="first" style="display:inline-block;width:46%">
 										<h4>
@@ -269,33 +277,39 @@
 										<p>Anytime anywhere
 										</p>
 										<h4>
-											Flexible
+											{{durlabel}}
 										</h4>
 										<p>
-											9-36 months
+											{{coursedata.field_course_duration.value}}
 										</p>
 									</div>
 
 									<div class="first2">
 										<h4>
-											Dual Certification
+											{{coursedata.field_course_certification_label.value}}
 										</h4>
 										<p>
-											IMBA &amp; Scottish Diploma
+											{{coursedata.field_course_certification.value}}
+
 										</p>
 
+										{% if coursedata.field_course_accreditations.0.value is not empty %}
 										<h4>
 											Accreditations
 										</h4>
-										<p>Ministry of Edu, Italy Scottish
-																														                                                                                        Qualification Authority, UK</p>
+										
+											<p>{{ coursedata.field_course_accreditations.0.value|raw }}</p>
+			                                 <p>{{ coursedata.field_course_accreditations.1.value|raw }}</p>
+		                                 {% endif %}
 
 									</div>
+
 								</div>
 								<div class="text-center-app ">
-									<a href="#">Apply Now</a>
+									<a href="{{ url('<front>') }}course/{{coursedata.id}}">Apply Now</a>
 								</div>
-							</div> #}
+							</div> 
+
 
 						</div>
 					</div>
