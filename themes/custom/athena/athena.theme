@@ -408,6 +408,7 @@ function getShortCourse($node) {
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
         $nodes = json_decode($data)->data->data;
+        //print_r($nodes); exit;
         return $nodes;
     } catch (Exception $e) {
       return [];
@@ -458,17 +459,21 @@ function getRelatedShortCourses() {
 
 function athena_preprocess_page(&$variables) {
 
+
   $variables['error_page'] = (int) filter_var(\Drupal::config('system.site')->get('page')['403'], FILTER_SANITIZE_NUMBER_INT);
   $current_path = \Drupal::service('path.current')->getPath();
 
+
   if (strpos($current_path, '/node') !== false) {
-    $node = \Drupal::routeMatch()->getParameter('node');
+    $node = \Drupal::routeMatch()->getParameter('node');    
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
 
-      if ($node_type == 'short_course') {
+      if ($node_type == 'short_term_courses') {
         \Drupal::service('page_cache_kill_switch')->trigger();
         $course_data = getShortCourse($node);
+
+
         $related_course_data = getRelatedShortCourses();
         if(!empty($course_data)) {
           $variables['course_info'] = $course_data[0];
@@ -610,6 +615,12 @@ function athena_preprocess_page(&$variables) {
     if (strpos($current_path, $new_testimonial ) !== false) {
         $variables['athena_exclude'] = TRUE;
       }
+
+  $career_page = \Drupal::service('path.alias_manager')->getPathByAlias('/career-page');
+    if (strpos($current_path, $career_page ) !== false) {
+        $variables['athena_exclude'] = TRUE;
+      }
+      
 // ********** temporary code to ignore this theme for new-testimonial design ***
   
   if (strpos($current_path, '/university') !== false) {
