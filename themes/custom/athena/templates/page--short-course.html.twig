@@ -503,76 +503,93 @@
     <h2>Other Courses You might Interested</h2>
      
       <!--courses List: START-->
-      <div class="row">
-        <div class="col-12 p-0">
-          <div class="shortterm-courses">
-            {% for course in related_courses_data.related_courses %}
-                {% set course_url =  related_courses_data.lms_url ~ '/student-dashboard/course/' ~ course.cid ~ '/' ~ course.slug %}
-                <div class="item content" style="display:block;">
-                  <div class="item-inner">
-                    <div class="course-item-hover" style="padding:22px 15px 18px;">
-                      <div class="row">
-                        <div class="col-12 social-icons card-icon">
-                          <a href="http://www.facebook.com/sharer.php?u={{course_url}}" target="_blank"><img
-                              src="/themes/custom/athena/images/icons/facebook.svg" /></a>
-                          <a href="http://twitter.com/share?url={{course_url}}" target="_blank"><img
-                              src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2" /></a>
-                          <a href="http://www.linkedin.com/shareArticle?mini=true&url={{course_url}}"
-                            target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg" /></a>
-                        </div>
-                      </div>
-                      <div class="course-details text-center0">
-                        <h3>{{course.course_name}}</h3>
-                        <div class="course-info">
-                          <p class="small">{{course.university_name}}</p>
-                          {{ course.course_overview|raw }}
-                        </div>
-                        <h4><a target="_blank" href="{{course_url}}">More Information ></a></h4>
-                        <div class="col-12 button-area"><a target="_blank" href="{{course_url}}"><button>Start
-                              Now</button></a></div>
-                      </div>
-                    </div>
-                    <div class="course-item">
-                      <div class="row heading m-0">
-                        <div class="col-9">
-                          <img src="{{course.logo ? course.logo : '/themes/custom/athena/images/no-university.png' }}" alt="{{ course.university_name }}" title="{{ course.university_name }}">
-                        </div>
-                        <div class="col-3">
-                          <span class="free-text">{{course.field_course_amount ? course.field_course_amount : 'Free'}}</span>
-                        </div>
-                      </div>
-                      <div class="image">
-                        <img width="100%" src="{{course.course_image_path}}" alt="course-image">
-                      </div>
-                      <div class="course-details">
-                        <h3>{{course.course_name}}</h3>
-                        <div class="course-info">
-                          <p class="small">{{ course.course_introduction|raw }}</p>
-                        </div>
-                        <div class="col-12 button-area"><a target="_blank" href="{{course_url}}"><button>Start
-                              Now</button></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            {% endfor %}
-            <input type="hidden" id="total" value="{{related_courses_data.total}}">
-            <input type="hidden" id="current_page" value="{{related_courses_data.current_page}}">
-            <input type="hidden" id="subject_id" value="{{related_courses_data.subject_id}}">
-          </div>
-        </div>
-        {% if related_courses_data.total > 10 %}
-            <div class="col-12 text-center">
-              <button id="loadMore" class="btn athena-btn purple-btn"><a href="http://athena.edu/course-home"
-                  style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a></button>
-                <div id="loading" class="loader" style="display: none;">
-                <img style="height: 50px;" src="/themes/custom/athena/images/smo/shortcourse-assets/load-more-spinner.gif" alt="loader">
-                </div>
-            </div>
-        {% endif %}
-        
+<div class="row shortterm-courses-area">
+	<div class="col-12 p-0">
+		<div class="shortterm-courses">
+			{% for node in nodes %}
+				<div class="flip-card">
+					<div class="flip-card-inner">
+						<div class="flip-card-front">
+							<div class="row heading m-0">
+								<div class="col-8">
+									{% if node.univ_name is not empty and node.univ_name is not null %}
+										<img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
+									{% endif %}
 
-      </div>
+								</div>
+								<div class="col-4">
+									<span class="free-text">{{node.field_course_amount}}</span>
+								</div>
+							</div>
+							<div class="image">
+								{# <div class="timer">
+									<p>Offer Ends in : 4:58:04</p>
+								</div> #}
+								<img width="100%" src="{{node.course_image}}" alt="course-image">
+							</div>
+							<div class="course-details">
+								<h3>{{node.label}}</h3>
+								<div class="course-info course-info-text">
+									<p>{{ node.card_intro|raw }}</p>
+								</div>
+								<div class="col-12 button-area">
+									<a target="_blank" href="{{node.course_url}}">
+										<button>Start Now</button>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="flip-card-back">
+							<div class="row">
+								<div class="col-12 social-icons card-icon">
+
+									<a href="https://www.facebook.com/sharer.php?u={{node.course_url}}{{node.cid}}/{{node.label}}&quote=Check out this course - {{node.label}}{{'. '}} {{node.course_url}}&title={{node.cid}}" target="_blank"><img src="/themes/custom/athena/images/icons/facebook.svg"/></a>
+
+									<a href="https://twitter.com/share?text=Check out this course - {{node.label}}{{'. '}}  &url={{node.course_url}}" target="_blank"><img src="/themes/custom/athena/images/icons/twitter.svg" class="ml-2 mr-2"/></a>
+
+									<a href="https://www.linkedin.com/shareArticle?mini=true&url={{node.course_url}}&title={{node.course_url}}{{node.cid}}/{{node.label}}" target="_blank"><img src="/themes/custom/athena/images/icons/linkedin.svg"/></a>
+
+								</div>
+							</div>
+							<div class="course-details text-center0">
+								<h3>{{node.label}}</h3>
+								<div class="course-info">
+									<p class="small">{{node.univ_name}}</p>
+									<span class="course-info-text">
+										<p>{{ node.body|raw }}</p>
+									</span>
+								</div>
+
+								<h4>
+									<a target="_blank" href="{{node.course_url}}">More Information ></a>
+								</h4>
+
+								<!-- <p class="small">{{node.field_students_enrolled}} <em>Students Enrolled</em></p> -->
+
+								<div class="col-12 button-area">
+									<a target="_blank" href="{{node.course_url}}">
+										<button>Start Now</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<input type="hidden" id="pager" name="pager" value="1"/>
+	</div>
+
+	{% if display_load_more %}
+		<div class="show_more_wrapper col-12 text-center mt-4">
+			<button id="showMore" class="btn athena-btn purple-btn">
+				<a href="javascript:void(0)" style="font-weight:initial;color:inherit;text-decoration:none;">Show More</a>
+			</button>
+		</div>
+	{% endif %}
+
+</div>
+
       <!--courses List: END-->
      
   </div>
