@@ -546,6 +546,25 @@
       clear: both;
       min-height: 112px;
 
+      .timer {
+        background: #ffc100;
+        width: 132px;
+        height: 22px;
+        position: absolute;
+        top: 129px;
+        border-radius: 11px;
+        margin-left: 10px;
+
+        p {
+          font-size: 12px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: italic;
+          letter-spacing: normal;
+          color: #303030;
+        }
+      }
+
       img {
         border-radius: 0;
         width: 280px;
