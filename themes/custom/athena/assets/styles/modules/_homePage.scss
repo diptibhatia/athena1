@@ -4290,9 +4290,10 @@ button.credit-section {
 }
 
 .right-half-yellow {
-  width: 85px;
+  width: 88px;
   display: inline-block;
   vertical-align: top;
+  position: absolute;
 }
 
 .right-yellow {
@@ -4395,20 +4396,21 @@ button.credit-section {
 
 .box-content .title {
   font-family: Lato;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.25;
   letter-spacing: normal;
   color: #303030;
-  width: 75%;
+  width: 74%;
   display: inline-block;
   vertical-align: top;
   margin-top: 10px;
   padding-left: 10px;
   height: 80px;
 }
+
 
 //eligibility content
 
