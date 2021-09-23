@@ -85,6 +85,16 @@
 
     .insight-sidebar-title {
         font-size: 24px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            width: 14%;
+            height: 1px;
+            background-color: #b32727;
+            margin-left: 56px;
+        }
     }
 
     .insight-sidebar-wrapper {
@@ -776,6 +786,28 @@
         top: 50%;
     }
 }
+
+#block-latestinsightssidebarblock {
+
+    .insight-sidebar-title::after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        width: 14%;
+        height: 1px;
+        background-color: #f0f0f0;
+        margin-left: 56px;
+    }
+
+
+    .row {
+        width: auto;
+        border-bottom: 1.5px solid #f0f0f0;
+        margin-left: 0;
+    }
+}
+
+
 
 #block-ourpopularcoursesblock {
     background-color: #ff00680d;
