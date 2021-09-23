@@ -196,162 +196,162 @@ function athena_preprocess_block(array &$variables) {
     $variables['courses_data'] = $nodes;
 
 
-//------------------working code start here-------------
+// //------------------working code start here-------------
 
 
-// load first level array 
+// // load first level array 
 
-$term_data_first_level = get_first_level_array_main_menu();
-$variables['term_data_first_level'] = $term_data_first_level;
+// $term_data_first_level = get_first_level_array_main_menu();
+// $variables['term_data_first_level'] = $term_data_first_level;
 
-//-------------------------------------
-// load second level array for each level
+// //-------------------------------------
+// // load second level array for each level
 
-$term_data_second_level = get_second_level_array_main_menu($term_data_first_level);
-$variables['term_data_second_level'] = $term_data_second_level;
+// $term_data_second_level = get_second_level_array_main_menu($term_data_first_level);
+// $variables['term_data_second_level'] = $term_data_second_level;
 
-//------------------
-// load courses array for main menu
-$get_courses_array_main_menu = get_courses_array_main_menu($term_data_second_level);
-$variables['academicnodes'] = $get_courses_array_main_menu;
+// //------------------
+// // load courses array for main menu
+// $get_courses_array_main_menu = get_courses_array_main_menu($term_data_second_level);
+// $variables['academicnodes'] = $get_courses_array_main_menu;
 
-//----------------popular courses for a level -----
+// //----------------popular courses for a level -----
 
-$term_popular_academic = get_popular_courses_main_menu('Academic');
-$variables['term_popular_academic'] = $term_popular_academic;
+// $term_popular_academic = get_popular_courses_main_menu('Academic');
+// $variables['term_popular_academic'] = $term_popular_academic;
 
-//-----------------------------------------------
+// //-----------------------------------------------
 
-$term_popular_certification = get_popular_courses_main_menu('Certifications');
-$variables['term_popular_certification'] = $term_popular_certification;
+// $term_popular_certification = get_popular_courses_main_menu('Certifications');
+// $variables['term_popular_certification'] = $term_popular_certification;
         
 
 
-//----------------
+// //----------------
 
-// load first level array for short courses 
-      $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
-      if ($lms_url == "https://newlms.athena.edu") {
-          $api = "/athenadev";
-      } elseif ($lms_url == "https://learnstaging.athena.edu") {
-          $api = "/athenastg";
-      } else {
-          $api = "/athenaprod";
-      }
+// // load first level array for short courses 
+//       $lms_url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
+//       if ($lms_url == "https://newlms.athena.edu") {
+//           $api = "/athenadev";
+//       } elseif ($lms_url == "https://learnstaging.athena.edu") {
+//           $api = "/athenastg";
+//       } else {
+//           $api = "/athenaprod";
+//       }
 
-      //$certificates_uri = $lms_url . $api . "/api/get_master_table_data?table=certification_type";
-      $certificates_uri = $lms_url . $api . "/api/getCertTypeByQualId/1";
+//       //$certificates_uri = $lms_url . $api . "/api/get_master_table_data?table=certification_type";
+//       $certificates_uri = $lms_url . $api . "/api/getCertTypeByQualId/1";
 
-      $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
-      $certificate_filters = (string)$response_certificates->getBody();
-      $certificates = json_decode($certificate_filters);
+//       $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
+//       $certificate_filters = (string)$response_certificates->getBody();
+//       $certificates = json_decode($certificate_filters);
       
 
-      foreach ($certificates as $key => $value) 
-      {
-        foreach ($value as $key2 => $value2) 
-        {
+//       foreach ($certificates as $key => $value) 
+//       {
+//         foreach ($value as $key2 => $value2) 
+//         {
 
-          if ( $value2->certificate_type_name == "Basics" )
-            {
-              $ele_id = "basicfuncfaicon";
-              $func = "basicfunc()";
-              $ele_id1 = "basiccat";
-              $class = "row-basics";
-              $class1 = "fas fa-chevron-right arrow-icon-master-post";
-              $url = "shortterm-courses?certificate_filters=1#findCourseInput";
-            }         
+//           if ( $value2->certificate_type_name == "Basics" )
+//             {
+//               $ele_id = "basicfuncfaicon";
+//               $func = "basicfunc()";
+//               $ele_id1 = "basiccat";
+//               $class = "row-basics";
+//               $class1 = "fas fa-chevron-right arrow-icon-master-post";
+//               $url = "shortterm-courses?certificate_filters=1#findCourseInput";
+//             }         
 
-            if ( $value2->certificate_type_name == "Essentials" ) 
-            {
-              $ele_id = "essenfuncfaicon";
-              $func = "essenfunc()";
-              $ele_id1 = "essentialscat";
-              $class = "row-essentials";
-              $class1 = "fas fa-chevron-right arrow-icon";
-              $url = "shortterm-courses?certificate_filters=2#findCourseInput";
-            }
+//             if ( $value2->certificate_type_name == "Essentials" ) 
+//             {
+//               $ele_id = "essenfuncfaicon";
+//               $func = "essenfunc()";
+//               $ele_id1 = "essentialscat";
+//               $class = "row-essentials";
+//               $class1 = "fas fa-chevron-right arrow-icon";
+//               $url = "shortterm-courses?certificate_filters=2#findCourseInput";
+//             }
 
-            if ( $value2->certificate_type_name == "Mastering" ) 
-            {
-              $ele_id = "mastfuncfaicon";
-              $func = "mastfunc()"; 
-              $ele_id1 = "mastcat";
-              $class = "row-mast";
-              $class1 = "fas fa-chevron-right arrow-icon";
-              $url = "shortterm-courses?certificate_filters=3#findCourseInput";
-            }
+//             if ( $value2->certificate_type_name == "Mastering" ) 
+//             {
+//               $ele_id = "mastfuncfaicon";
+//               $func = "mastfunc()"; 
+//               $ele_id1 = "mastcat";
+//               $class = "row-mast";
+//               $class1 = "fas fa-chevron-right arrow-icon";
+//               $url = "shortterm-courses?certificate_filters=3#findCourseInput";
+//             }
               
-            if ( $value2->certificate_type_name == "Diploma" ) 
-            {
-              $ele_id = "dipfuncfaicon";
-              $func = "dipfunc()";  
-              $ele_id1 = "displomacat";
-              $class = "row-diploma";
-              $class1 = "fas fa-chevron-right arrow-icon";
-              $url = "shortterm-courses?certificate_filters=4#findCourseInput";
-            }
+//             if ( $value2->certificate_type_name == "Diploma" ) 
+//             {
+//               $ele_id = "dipfuncfaicon";
+//               $func = "dipfunc()";  
+//               $ele_id1 = "displomacat";
+//               $class = "row-diploma";
+//               $class1 = "fas fa-chevron-right arrow-icon";
+//               $url = "shortterm-courses?certificate_filters=4#findCourseInput";
+//             }
             
-            if ( $value2->certificate_type_name == "Executive Diploma" ) 
-            {
-              $ele_id = "exediplfuncfaicon";
-              $func = "exediplfunc()";
-              $ele_id1 = "exediplcat";
-              $class = "row-exedipl";
-              $class1 = "fas fa-chevron-right arrow-icon";
-              $url = "shortterm-courses?certificate_filters=5#findCourseInput";
-            }
+//             if ( $value2->certificate_type_name == "Executive Diploma" ) 
+//             {
+//               $ele_id = "exediplfuncfaicon";
+//               $func = "exediplfunc()";
+//               $ele_id1 = "exediplcat";
+//               $class = "row-exedipl";
+//               $class1 = "fas fa-chevron-right arrow-icon";
+//               $url = "shortterm-courses?certificate_filters=5#findCourseInput";
+//             }
 
-            if ( $value2->certificate_type_name == "MBA Essentials" ) 
-            {
-              $ele_id = "mbaessenfuncfaicon";
-              $func = "mbaessenfunc()";
-              $ele_id1 = "mbaessentialscat";
-              $class = "row-mbaessentials";
-              $class1 = "fas fa-chevron-right arrow-icon";
-              $url = "shortterm-courses?certificate_filters=6#findCourseInput";
-            }
+//             if ( $value2->certificate_type_name == "MBA Essentials" ) 
+//             {
+//               $ele_id = "mbaessenfuncfaicon";
+//               $func = "mbaessenfunc()";
+//               $ele_id1 = "mbaessentialscat";
+//               $class = "row-mbaessentials";
+//               $class1 = "fas fa-chevron-right arrow-icon";
+//               $url = "shortterm-courses?certificate_filters=6#findCourseInput";
+//             }
 
 
-           $certification_list[] =
-            array(
-              "cert_id" => $value2->id,
-              "cert_name" => $value2->certificate_type_name,
-              "ele_id" => $ele_id,
-              "func"  => $func,
-              "ele_id1" => $ele_id1,
-              "class"  => $class,
-              "class1"  => $class1,
-              "url" => $url
-            );    
-        }
+//            $certification_list[] =
+//             array(
+//               "cert_id" => $value2->id,
+//               "cert_name" => $value2->certificate_type_name,
+//               "ele_id" => $ele_id,
+//               "func"  => $func,
+//               "ele_id1" => $ele_id1,
+//               "class"  => $class,
+//               "class1"  => $class1,
+//               "url" => $url
+//             );    
+//         }
 
-      }
+//       }
 
-      $variables['certification_list'] = $certification_list;
+//       $variables['certification_list'] = $certification_list;
 
-      // load short term courses for each category
-      foreach ($certification_list as $key => $value) 
-      {
-        $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=100&fk_type_of_qualification_id=1&status=1&fk_certificate_type_id=".$value['cert_id'];
-        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
-        $data = (string)$response->getBody();
-        $nodes = json_decode($data)->data->data;
-        if (count($nodes) > 0) {
-          foreach ($nodes as $key => $value1) 
-          {
-            $courses_data[] = [
-              'cid' => $value1->cid,
-              'course_url' => $lms_url . '/student-dashboard/course/' . $value1->cid.'/'.$value1->slug,
-                'label' => $value1->course_name,
-                'category' => $value['cert_id']
-            ];
-          }
-      }//load short term courses for each category
+//       // load short term courses for each category
+//       foreach ($certification_list as $key => $value) 
+//       {
+//         $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=100&fk_type_of_qualification_id=1&status=1&fk_certificate_type_id=".$value['cert_id'];
+//         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+//         $data = (string)$response->getBody();
+//         $nodes = json_decode($data)->data->data;
+//         if (count($nodes) > 0) {
+//           foreach ($nodes as $key => $value1) 
+//           {
+//             $courses_data[] = [
+//               'cid' => $value1->cid,
+//               'course_url' => $lms_url . '/student-dashboard/course/' . $value1->cid.'/'.$value1->slug,
+//                 'label' => $value1->course_name,
+//                 'category' => $value['cert_id']
+//             ];
+//           }
+//       }//load short term courses for each category
     
-    }
+//     }
 
-    $variables['shortsourses_list'] = $courses_data;
+//     $variables['shortsourses_list'] = $courses_data;
 
 }
 
@@ -404,7 +404,9 @@ function getShortCourse($node) {
             $api = "/athenaprod";
         }
         $course_name = $node->getTitle();
+        
         $uri = $lms_url . $api . "/api/courselist?page=1&page_limit=1&fk_type_of_qualification_id=1&status=1&course_name=".trim($course_name);
+        //Create Course in Dev
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $data = (string)$response->getBody();
         $nodes = json_decode($data)->data->data;
@@ -468,11 +470,9 @@ function athena_preprocess_page(&$variables) {
     $node = \Drupal::routeMatch()->getParameter('node');    
     if ($node instanceof \Drupal\node\NodeInterface) {
       $node_type = $node->getType();
-
       if ($node_type == 'short_term_courses') {
         \Drupal::service('page_cache_kill_switch')->trigger();
         $course_data = getShortCourse($node);
-
 
         $related_course_data = getRelatedShortCourses();
         if(!empty($course_data)) {
@@ -712,6 +712,7 @@ function athena_theme_suggestions_page_alter(array &$suggestions, array $variabl
   $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__' . $node->bundle();
+    
   }
   if($path_alias == "/verify/certificate") {
     $suggestions[] = 'page__verify_certificate';

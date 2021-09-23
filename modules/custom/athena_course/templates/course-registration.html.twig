@@ -36,7 +36,8 @@
 						</li>
 						<li>
 							<a class="nav-link" data-toggle="pill" href="#uc">
-								Upskilling Courses 
+								<!-- Upskilling Courses  -->
+								Professional certification
 							</a>
 						</li>
 					</ul>
@@ -315,21 +316,28 @@
 								</div>
 								<input type="hidden" id="country_code" value="{{ccode}}"/>
 
-								<div class="login-item">
-									<p>Course Category</p>
-									<select name="course_category" id="reg_course_category">
-										<option value="abc">Course Category</option>
-										{% for nodedata in course_catgory %}
-											{% if categorylist == nodedata.id %}
-												<option value="{{nodedata.id}}" selected="selected">{{nodedata.name}}</option>
-											{% else %}
-												<option value="{{nodedata.id}}">{{nodedata.name}}</option>
-											{% endif %}	
-										{% endfor %}
-									</select>
-									<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
-								</div>
-								
+								<!-- 
+								{% set abc = get_static_data('short_courses_config', TRUE)|raw %}
+
+								{% if abc == "Y" %}
+
+									<div class="login-item">
+										<p>Course Category</p>
+										<select name="course_category" id="reg_course_category">
+											<option value="abc">Course Category</option>
+											{% for nodedata in course_catgory %}
+												{% if categorylist == nodedata.id %}
+													<option value="{{nodedata.id}}" selected="selected">{{nodedata.name}}</option>
+												{% else %}
+													<option value="{{nodedata.id}}">{{nodedata.name}}</option>
+												{% endif %}	
+											{% endfor %}
+										</select>
+										<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
+									</div>
+
+								{% endif %}
+								 -->
 								<div class="login-item">
 									<p>Choose your Course</p>
 									<select name="course" id="reg_course" class="addajaxlist">
@@ -714,10 +722,18 @@
 								<p>Choose your Course</p>
 								<select name="course" id="reg_course">
 									<option value="" default="">Select your course</option>
-									{% for nodedata in certifications %}
+									<!-- {% for nodedata in certifications %}
 										<option value="{{nodedata.cid}}">{{nodedata.label}}</option>
 									
-									{% endfor %}
+									{% endfor %} -->
+									{% for nodedata in certifications %}
+											{% if cid == nodedata.field_cid.value %}
+												<option class="courselistselect" value="{{nodedata.field_cid.value}}" selected="selected">
+													{{nodedata.label}}</option>
+											{% else %}
+												<option class="courselistselect" value="{{nodedata.field_cid.value}}">{{nodedata.label}}</option>
+											{% endif %}
+										{% endfor %}
 								</select>
 								<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 							</div>
