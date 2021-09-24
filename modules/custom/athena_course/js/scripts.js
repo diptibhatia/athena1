@@ -465,8 +465,8 @@ jQuery(document).ready(function () {
       var URL = "https://athenawpapi.azurewebsites.net/Register/SaveLead";
     }
 
-    var direct_url1 = "c"+jQuery(".pc-form #reg_course").val();
-    var redirect_url1 = jQuery(".pc-form #"+direct_url1).val();
+    // var direct_url1 = "c"+jQuery(".pc-form #reg_course").val();
+    // var redirect_url1 = jQuery(".pc-form #"+direct_url1).val();
     
 
 
@@ -503,13 +503,13 @@ jQuery(document).ready(function () {
                 var userId = parseInt(jQuery.trim(data));
                 if (userId > 0) {
                   //window.location.replace('https://ulearn.athena.edu/StudentEnroltoCourse?UId='+userId+'&CId='+cData.cId+'&ModId='+cData.modId);
-                  //window.location.replace(baseUrl + '/StudentEnroltoCourse?UId=' + userId + '&CId=' + cid + '&mail=' + email_id);
-                  window.location.replace(redirect_url1);
+                  window.location.replace(baseUrl + '/StudentEnroltoCourse?UId=' + userId + '&CId=' + cid + '&mail=' + email_id);
+                  //window.location.replace(redirect_url1);
 
                 }
                 else {
-                  //window.location.replace(baseUrl + '/StudentEnroltoCourse?mail=' + email_id + '&CId=' + cid);
-                  window.location.replace(redirect_url1);
+                  window.location.replace(baseUrl + '/StudentEnroltoCourse?mail=' + email_id + '&CId=' + cid);
+                  //window.location.replace(redirect_url1);
                 }
 
               });
@@ -719,8 +719,8 @@ jQuery(document).ready(function () {
 
     });
 
-    var direct_url = "c"+jQuery(".pc-form #reg_course").val();
-    var redirect_url = jQuery(".pc-form #"+direct_url).val();
+    // var direct_url = "c"+jQuery(".pc-form #reg_course").val();
+    // var redirect_url = jQuery(".pc-form #"+direct_url).val();
     
 
     if (msg == '') {
@@ -746,8 +746,8 @@ jQuery(document).ready(function () {
             var redirect = confirm("Email ID already registered, redirect to login page ?");
             if (redirect == true) {
               // window.location.replace('https://ulearn.athena.edu/login?mail='+email_id+'&CId='+cid);
-              //window.location.replace(baseUrl + '/StudentEnroltoCourse?mail=' + email_id + '&CId=' + cid);
-              window.location.replace(redirect_url);
+              window.location.replace(baseUrl + '/StudentEnroltoCourse?mail=' + email_id + '&CId=' + cid);
+              //window.location.replace(redirect_url);
               
             } else {
               return false;
