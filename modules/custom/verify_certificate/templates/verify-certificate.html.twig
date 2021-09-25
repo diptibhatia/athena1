@@ -1,175 +1,222 @@
 {{ attach_library('verify_certificate/verify_certificate') }}
 <div class="content-wrapper cert-inner-container m-70">
-  <div class="container bg-color pad-20">
-    <div class="row">
-      <div class="col-md-8"> </div>
-      <div class="col-md-4">
-        <form class="search-cert" action="/verify/certificate" method="get">
-          <input type="text" placeholder="Certificate ID " name="certID" value={% if queryParams.certID != '' %}{{queryParams.certID}}{% else %}{{''}} {% endif %}>
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="sub-header">
-    <div class="container inner3 ">
-      <div class="row">
-        <div class="col-md-1 text-center">
-          {% if certDetails.profilePic %}
-            <img src="{{ certDetails.profilePic }}" class="pro-img">
-          {% else %}
-            <img src="/themes/custom/athena/images/head-shot.png" class="pro-img">
-          {% endif %}
+	<div class="container bg-color pad-20">
+		<div class="row">
+			<div class="col-md-8"></div>
+			<div class="col-md-4">
+				<form class="search-cert" action="/verify/certificate" method="get">
+					<input type="text" placeholder="Certificate ID " name="certID" value={% if queryParams.certID != '' %} {{queryParams.certID}} {% else %} {{''}} {% endif %}>
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="sub-header">
+		<div class="container inner3 ">
+			<div class="row">
+				<div class="col-md-1 text-center">
+					{% if certDetails.profilePic %}
+						<img src="{{ certDetails.profilePic }}" class="pro-img">
+					{% else %}
+						<img src="/themes/custom/athena/images/head-shot.png" class="pro-img">
+					{% endif %}
 
-        </div>
-        <div class="col-md-7">
-          <p style="padding-top:19px;">This Certificate was issued to <span> {{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span> on {% if certDetails.createdAt %}{{ certDetails.createdAt|date('d F Y') }} {% endif %}.</p>
-          <p>Expires on : No Expiration Date</p>
-        </div>
-        <div class="col-md-4 head-text text-right"> <img src="/themes/custom/athena/images/head-icon.jpg"> <strong> Blockchain ID: </strong>
-        {% if certDetails.blockchainId %}{{certDetails.blockchainId}}{% else %} NA {% endif %}</div>
-        <!-- .container -->
-      </div>
-    </div>
-  </div>
-  <div class="container bg-color padt-40">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="border-width text-center">
-          <div class="pad-b border-width-in">
-          {% if certDetails.certificatePath %}
-            <img data-toggle="modal" data-target="#myModal-img" src="{{certDetails.certificatePath}}" alt="{{certDetails.certificatePath}}" style="width:100%;background-color:#dddddd;padding:5px">
-          {% else %}
-            <img data-toggle="modal" data-target="#myModal-img" src="/themes/custom/athena/images/certificate.jpg" alt="Certificate Preview" style="width:100%;background-color:#dddddd;padding:5px">
-          {% endif %}
+				</div>
+				<div class="col-md-7">
+					<p style="padding-top:19px;">This Certificate was issued to
+						<span>
+							{{ candidateDetails.firstName ~ ' ' ~ candidateDetails.lastName }}</span>
+						on
+						{% if certDetails.createdAt %}
+							{{ certDetails.createdAt|date('d F Y') }}
+						{% endif %}.</p>
+					<p>Expires on : No Expiration Date</p>
+				</div>
+				<div class="col-md-4 head-text text-right">
+					<img src="/themes/custom/athena/images/head-icon.jpg">
+					<strong>
+						Blockchain ID:
+					</strong>
+					{% if certDetails.blockchainId %}
+						{{certDetails.blockchainId}}
+					{% else %}
+						NA
+					{% endif %}
+				</div>
+				<!-- .container -->
+			</div>
+		</div>
+	</div>
+	<div class="container bg-color padt-40">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="border-width text-center">
+					<div class="pad-b border-width-in">
+						{% if certDetails.certificatePath %}
+							<img data-toggle="modal" data-target="#myModal-img" src="{{certDetails.certificatePath}}" alt="{{certDetails.certificatePath}}" style="width:100%;background-color:#dddddd;padding:5px">
+						{% else %}
+							<img data-toggle="modal" data-target="#myModal-img" src="/themes/custom/athena/images/certificate.jpg" alt="Certificate Preview" style="width:100%;background-color:#dddddd;padding:5px">
+						{% endif %}
 
-          <a href="#" data-toggle="modal" data-target="#myModal-img">Click to Enlarge</a>
-          <button class="ver-a" data-toggle="modal" data-target="#myModal">Verify Details</button>
-          <div class="view-trans" id="view_transcript_link">
-            <a href="javascript:void(0)">View Transcript</a>
-          </div>
-          </div>
-          <div class="so-share" style="padding: 0 20px 0px 20px ;">
-            <div class="so-share-1">
-              <p>You can easly share your digital
-                certificate with your friends, family
-                and colleagues</p>
-              <div class="mr-so">
-                <!-- Add font awesome icons -->
+						<a href="#" data-toggle="modal" data-target="#myModal-img">Click to Enlarge</a>
+						<button class="ver-a" data-toggle="modal" data-target="#myModal">Verify Details</button>
+						<div class="view-trans" id="view_transcript_link">
+							<a href="javascript:void(0)">View Transcript</a>
+						</div>
+						<div class="download-cert">
+							<img src="https://png.pngtree.com/png-clipart/20190921/original/pngtree-file-download-icon-png-image_4719240.jpg">
+              <a href="#">Download All</a>
+						</div>
+					</div>
+					<div class="so-share" style="padding: 0 20px 0px 20px ;">
+						<div class="so-share-1">
+							<p>You can easly share your digital
+								                certificate with your friends, family
+								                and colleagues</p>
+							<div
+								class="mr-so">
+								<!-- Add font awesome icons -->
 
-                {% if certDetails.certificatePath %}
+								{% if certDetails.certificatePath %}
 
-                  <a href="https://www.facebook.com/sharer.php?u={{ certDetails.certificatePath }}" target="blank" class="fa fa-facebook"></a>
-                  <a href="https://twitter.com/share?url={{ certDetails.certificatePath }}" target="blank" class="fa fa-twitter"></a>
-                  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ certDetails.certificatePath }}" target="blank" class="fa fa-linkedin"></a>
-                  <a href="https://api.whatsapp.com/send?text={{ certDetails.certificatePath }}" target="blank" class="fa fa-whatsapp" data-action="share/whatsapp/share"></a>
+									<a href="https://www.facebook.com/sharer.php?u={{ certDetails.certificatePath }}" target="blank" class="fa fa-facebook"></a>
+									<a href="https://twitter.com/share?url={{ certDetails.certificatePath }}" target="blank" class="fa fa-twitter"></a>
+									<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ certDetails.certificatePath }}" target="blank" class="fa fa-linkedin"></a>
+									<a href="https://api.whatsapp.com/send?text={{ certDetails.certificatePath }}" target="blank" class="fa fa-whatsapp" data-action="share/whatsapp/share"></a>
 
-                {% else %}
+								{% else %}
 
-                  <a href="javascript:void(0)" class="fa fa-facebook"></a>
-                  <a href="javascript:void(0)" class="fa fa-twitter"></a>
-                  <a href="javascript:void(0)" class="fa fa-linkedin"></a>
-                  <a href="javascript:void(0)" class="fa fa-whatsapp" data-action="share/whatsapp/share"></a>
+									<a href="javascript:void(0)" class="fa fa-facebook"></a>
+									<a href="javascript:void(0)" class="fa fa-twitter"></a>
+									<a href="javascript:void(0)" class="fa fa-linkedin"></a>
+									<a href="javascript:void(0)" class="fa fa-whatsapp" data-action="share/whatsapp/share"></a>
 
-                {% endif %}
+								{% endif %}
 
 
-              </div>
-              <div class="bg-copy">
-                <div class="bg-fade"> </div>
-                <p id="copy-text">{% if certDetails.certificatePath %}{{certDetails.certificatePath}}{% else %} NA {% endif %}</p>
-                <h6 id="copy-btn">COPY</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8 inner-txt">
-        <div class="pad-20a">
+							</div>
+							<div class="bg-copy">
+								<div class="bg-fade"></div>
+								<p id="copy-text">
+									{% if certDetails.certificatePath %}
+										{{certDetails.certificatePath}}
+									{% else %}
+										NA
+									{% endif %}
+								</p>
+								<h6 id="copy-btn">COPY</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 inner-txt">
+				<div class="pad-20a">
 
-          <div id="course_details" style="display:block;">
-            {% if coursedetails %}
-              <h1>{{ certDetails.certificateName}} </h1>
-              <p> Issued by <strong> {{ certDetails.awarded_by }} </strong> </p>
-              {{ coursedetails|raw }}
-            {% else %}
-              {{ coursedetailsdefault|raw }}
-            {% endif %}
-          </div>
+					<div id="course_details" style="display:block;">
+						{% if coursedetails %}
+							<h1>{{ certDetails.certificateName}}
+							</h1>
+							<p>
+								Issued by
+								<strong>
+									{{ certDetails.awarded_by }}
+								</strong>
+							</p>
+							{{ coursedetails|raw }}
+						{% else %}
+							{{ coursedetailsdefault|raw }}
+						{% endif %}
+					</div>
 
-          <div id="transcript_details" style="display:none;">
-              <img src="{{ certDetails.transcript }}">
-          </div>
+					<div id="transcript_details" style="display:none;">
+						<img src="{{ certDetails.transcript }}">
+					</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog dia-wi">
+	<div
+		class="modal-dialog dia-wi">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Verification</h4>
-      </div>
-      <div class="modal-body">
-        {% if verify %}
-        <p><i class="fa fa-check" aria-hidden="true"></i> Issued on {{ certDetails.createdAt|date('d F Y') }}</p>
-        <p><i class="fa fa-check" aria-hidden="true"></i> Issued by {{ certDetails.awarded_by }}</p>
-        <p><i class="fa fa-check" aria-hidden="true"></i> Issued to {{ certDetails.firstName ~ ' ' ~ certDetails.lastName }}</p>
-        <p><i class="fa fa-check" aria-hidden="true"></i> Accepted on {{ certDetails.createdAt|date('d F Y') }}</p>
-        <div class="modal-footer text-left">
-          <div><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Verified</div>
-        </div>
-        {% else %}
-        <div class="modal-footer text-center">
-          <div><i class="fa fa-minus-circle" aria-hidden="true"></i>Verification failed</div>
-        </div>
-        {% endif %}
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Verification</h4>
+			</div>
+			<div class="modal-body">
+				{% if verify %}
+					<p>
+						<i class="fa fa-check" aria-hidden="true"></i>
+						Issued on
+						{{ certDetails.createdAt|date('d F Y') }}</p>
+					<p>
+						<i class="fa fa-check" aria-hidden="true"></i>
+						Issued by
+						{{ certDetails.awarded_by }}</p>
+					<p>
+						<i class="fa fa-check" aria-hidden="true"></i>
+						Issued to
+						{{ certDetails.firstName ~ ' ' ~ certDetails.lastName }}</p>
+					<p>
+						<i class="fa fa-check" aria-hidden="true"></i>
+						Accepted on
+						{{ certDetails.createdAt|date('d F Y') }}</p>
+					<div class="modal-footer text-left">
+						<div>
+							<i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+							Verified</div>
+					</div>
+				{% else %}
+					<div class="modal-footer text-center">
+						<div>
+							<i class="fa fa-minus-circle" aria-hidden="true"></i>Verification failed</div>
+					</div>
+				{% endif %}
 
 
+			</div>
 
-      </div>
-
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal-img" role="dialog">
-  <div class="modal-dialog">
+	<div
+		class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-      </div>
-      <div class="modal-body">
-        <img src="{{certDetails.certificatePath}}" alt="{{certDetails.certificateFileName}}" style="width:100%;" />
-      </div>
+			</div>
+			<div class="modal-body">
+				<img src="{{certDetails.certificatePath}}" alt="{{certDetails.certificateFileName}}" style="width:100%;"/>
+			</div>
 
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-  jQuery('#view_transcript_link a').on('click', function(){
-    jQuery('#transcript_details').toggle();
-    jQuery('#course_details').toggle();
-    if (jQuery('#course_details').is(":visible")) {
-      jQuery('#view_transcript_link a').text('View Transcript');
-    }
-    else {
-      jQuery('#view_transcript_link a').text('View Course Details');
-    }
-  });
+	jQuery('#view_transcript_link a').on('click', function () {
+jQuery('#transcript_details').toggle();
+jQuery('#course_details').toggle();
+if (jQuery('#course_details').is(":visible")) {
+jQuery('#view_transcript_link a').text('View Transcript');
+} else {
+jQuery('#view_transcript_link a').text('View Course Details');
+}
+});
 </script>
-
-

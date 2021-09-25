@@ -127,9 +127,11 @@ ul li {
 .m-40 {
   margin-top: 40px
 }
+
 .m-70 {
   margin-top: 70px
 }
+
 .txt {
   padding: 20px 0;
 }
@@ -284,9 +286,11 @@ textarea {
 .pad-20 {
   padding: 15px 15px
 }
+
 .padt-40 {
   padding-top: 40px;
 }
+
 .bg-color {
   background-color: #efefef;
 }
@@ -497,13 +501,30 @@ textarea {
   /* IE6-9 */
 
 }
+
 .cert-inner-container .container .row {
   margin-left: inherit;
   margin-right: inherit;
 }
+
 .fa-minus-circle:before {
   color: red;
 }
-#myModal .modal-header, #myModal .modal-footer{
+
+#myModal .modal-header,
+#myModal .modal-footer {
   display: initial;
+}
+
+.download-cert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+}
+
+.download-cert img {
+  width: 46px;
+  height: 31px;
 }
