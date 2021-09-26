@@ -130,13 +130,13 @@ function get_first_level_array_main_menu()
         $func = "micro()"; 
       }
 
-      if ( $term->name == "Upskilling Courses" ) 
+      if ( $term->name == "Short Courses" ) 
       {
         $ele_id = "upskillfaicon";
         $ele_id1 = "upskillcat";
         $ele_class = "fas fa-scroll main-head-icon";   
         $ele_class1 = "row-two-upskill";
-        $link = "shortterm-courses";
+        $link = "https://uniathena.com/shortterm-courses";
         $func = "upskill()";
       }
         

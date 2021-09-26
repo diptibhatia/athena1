@@ -67,8 +67,12 @@
 						</div>
 						<div class="download-cert">
 							<img src="https://png.pngtree.com/png-clipart/20190921/original/pngtree-file-download-icon-png-image_4719240.jpg">
-              <a href="#">Download All</a>
+              <a href="#" id='download_link'>Download All</a>
 						</div>
+						<input type="hidden" id="download_cert" value="{{certDetails.certificate_pdf_path}}">
+         				<input type="hidden" id="download_trans" value="{{certDetails.transcript_pdf}}">
+         
+
 					</div>
 					<div class="so-share" style="padding: 0 20px 0px 20px ;">
 						<div class="so-share-1">
@@ -209,6 +213,8 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
 <script type="text/javascript">
 	jQuery('#view_transcript_link a').on('click', function () {
 jQuery('#transcript_details').toggle();
@@ -219,4 +225,37 @@ jQuery('#view_transcript_link a').text('View Transcript');
 jQuery('#view_transcript_link a').text('View Course Details');
 }
 });
+
+$("#download_link").on('click', function() {
+
+// download certificate
+  var url = jQuery('#download_cert').val();
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.responseType = 'blob';
+  xhr.onload = function(){
+  var file = new Blob([xhr.response],{
+      type: 'application/pdf'
+    });
+    saveAs (file, 'Certificate.pdf')
+  }
+
+xhr.send();
+
+// download transcript
+var url1 = jQuery('#download_trans').val();
+  var xhr1 = new XMLHttpRequest();
+  xhr1.open("GET", url1, true);
+  xhr1.responseType = 'blob';
+  xhr1.onload = function(){
+  var file1 = new Blob([xhr1.response],{
+      type: 'application/pdf'
+    });
+    saveAs (file1, 'Transcript.pdf')
+  }
+
+xhr1.send();
+
+});
+
 </script>
