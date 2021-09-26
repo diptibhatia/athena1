@@ -587,76 +587,74 @@ return array(
 //--------get the list of course category --------------------
 
   
-//   $vid = 'course_category_list';
-//   $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
-//   $tree = $manager->loadTree($vid,0,2);
-//   foreach ($tree as $term) {
-//     if (!empty($manager->loadParents($term->tid))) {
-//       $term_data[] = array(
-//       'id' => $term->tid,
-//       'name' => $term->name
-//      );   
-//     }
-//   }
+  $vid = 'course_category_list';
+  $manager = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $tree = $manager->loadTree($vid,0,2);
+  foreach ($tree as $term) {
+    if (!empty($manager->loadParents($term->tid))) {
+      $term_data[] = array(
+      'id' => $term->tid,
+      'name' => $term->name
+     );   
+    }
+  }
 
-// //print_r($term_data); exit;
+// ------------load data for academic tab--------------
 
-// // ------------load data for academic tab--------------
-
-//   $course_category = $_REQUEST['course_category'] ?? '' ;
+  $course_category = $_REQUEST['course_category'] ?? '' ;
   
-//   if(db_table_exists('draggableviews_structure')) {
-//     $query = \Drupal::database()->select('node_field_data', 'n');
-//     $query->leftJoin('draggableviews_structure', 'w', 'w.entity_id = n.nid');
-//     if(($course_category != '') && ($course_category != 'abc' ))
-//       $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
-//     $query->fields('n', array('nid'));
-//     $query->condition('n.status', 1);
-//     if(($course_category != '') && ( $course_category != 'abc' ))
-//       $query->condition('c1.field_course_category_list_target_id', $course_category );
-//     $query->condition('w.view_name', 'course_ordering');          
-//     $query->orderBy('w.weight', ASC);
+  if(db_table_exists('draggableviews_structure')) {
+    $query = \Drupal::database()->select('node_field_data', 'n');
+    $query->leftJoin('draggableviews_structure', 'w', 'w.entity_id = n.nid');
+    if(($course_category != '') && ($course_category != 'abc' ))
+      $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
+    $query->fields('n', array('nid'));
+    $query->condition('n.status', 1);
+    if(($course_category != '') && ( $course_category != 'abc' ))
+      $query->condition('c1.field_course_category_list_target_id', $course_category );
+    $query->condition('w.view_name', 'course_ordering');          
+    $query->orderBy('w.weight', ASC);
 
-//     //print $query; exit;
+    //print $query; exit;
 
-//     $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
-//     if(!empty($academic_ids)) 
-//       $academics = node_load_multiple($academic_ids);
-//    }
-//    else
-//    {
-//      $query = \Drupal::database()->select('node_field_data', 'n');
-//       if(($course_category != '') && ($course_category != 'abc' ))
-//         $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
-//       $query->fields('n', array('nid'));
-//       $query->condition('n.status', 1);
-//       if(($course_category != '') && ( $course_category != 'abc' ))
-//         $query->condition('c1.field_course_category_list_target_id', $course_category );
+    $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
+    if(!empty($academic_ids)) 
+      $academics = node_load_multiple($academic_ids);
+   }
+   else
+   {
+     $query = \Drupal::database()->select('node_field_data', 'n');
+      if(($course_category != '') && ($course_category != 'abc' ))
+        $query->innerJoin('node__field_course_category_list', 'c1', 'c1.entity_id = n.nid');
+      $query->fields('n', array('nid'));
+      $query->condition('n.status', 1);
+      if(($course_category != '') && ( $course_category != 'abc' ))
+        $query->condition('c1.field_course_category_list_target_id', $course_category );
    
-//       $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
-//       if(!empty($academic_ids)) 
-//         $academics = node_load_multiple($academic_ids);
+      $academic_ids = $query->execute()->fetchAllKeyed(0, 0);
+      if(!empty($academic_ids)) 
+        $academics = node_load_multiple($academic_ids);
       
-//    }
+   }
 
-// //--------load courses for selected category --------------
+//--------load courses for selected category --------------
 
-//     if( $course_category != '' && !empty($course_category))
-//     {
-//       $response = new AjaxResponse();
-//       $selector = '.login-item .addajaxlist';
+    if( $course_category != '' && !empty($course_category))
+    {
+      $response = new AjaxResponse();
+      $selector = '.login-item .addajaxlist';
 
-//       $html .= '<option class="login-item courselistselect" default="">Select your course</option>';
-//       foreach ( $academics as $key => $value )
-//       {
-//         $html .= '<option class="courselistselect" value="'.$value->get('field_cid')->value.'">'.$value->label().'</option>';
-//       }
+      $html .= '<option class="login-item courselistselect" default="">Select your course</option>';
+      foreach ( $academics as $key => $value )
+      {
+        $html .= '<option class="courselistselect" value="'.$value->get('field_cid')->value.'">'.$value->label().'</option>';
+      }
 
-//       $response->addCommand(new InvokeCommand('.login-item .courselistselect', 'hide'));
-//       $response->addCommand(new HtmlCommand($selector, $html));  
+      $response->addCommand(new InvokeCommand('.login-item .courselistselect', 'hide'));
+      $response->addCommand(new HtmlCommand($selector, $html));  
 
-//       return $response;
-//     } 
+      return $response;
+    } 
 
 //--------short term -----------------
 // $url = CommonHelper::getConfigSettings('athena_library.common_settings', 'lms_url');
@@ -683,16 +681,12 @@ return array(
 
 // $certifications = $courses_data;
 
-//print_r($courses_data); exit;
-
-//-----------------    
-
     
-$academics = $certifications = [];
-$academic_ids = get_course_nav_items('Academic');
-if(!empty($academic_ids)) {
-  $academics = node_load_multiple($academic_ids);
-}
+// $academics = $certifications = [];
+// $academic_ids = get_course_nav_items('Academic');
+// if(!empty($academic_ids)) {
+//   $academics = node_load_multiple($academic_ids);
+// }
 
 $certifications_id = get_course_nav_items('Certifications');
 if(!empty($certifications_id)) {

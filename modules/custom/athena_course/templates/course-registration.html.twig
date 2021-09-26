@@ -32,12 +32,14 @@
 				<div class="register-wrapper">
 					<ul class="nav nav-pills">
 						<li class="active">
-							<a class="nav-link show active" data-toggle="pill" href="#ac">Academic Courses</a>
+							<!-- <a class="nav-link show active" data-toggle="pill" href="#ac">Academic Courses</a> -->
+							<a class="nav-link show active" href="#ac">Academic Courses</a>
 						</li>
 						<li>
-							<a class="nav-link" data-toggle="pill" href="#uc">
-								<!-- Upskilling Courses  -->
-								Professional certification
+							<!-- <a class="nav-link" data-toggle="pill" href="#uc"> -->
+							<a class="nav-link" href="https://learnstaging.athena.edu/short-course-sign-up" >								
+								Short Courses 								
+								<!-- Professional certification -->
 							</a>
 						</li>
 					</ul>
@@ -315,12 +317,7 @@
 									<span id="error-msg" class="hide"></span>
 								</div>
 								<input type="hidden" id="country_code" value="{{ccode}}"/>
-
-								<!-- 
-								{% set abc = get_static_data('short_courses_config', TRUE)|raw %}
-
-								{% if abc == "Y" %}
-
+								
 									<div class="login-item">
 										<p>Course Category</p>
 										<select name="course_category" id="reg_course_category">
@@ -336,8 +333,8 @@
 										<img class="choose-drop" src="themes\custom\athena\images\drop-arr.png" alt="arrow">
 									</div>
 
-								{% endif %}
-								 -->
+								
+								
 								<div class="login-item">
 									<p>Choose your Course</p>
 									<select name="course" id="reg_course" class="addajaxlist">
@@ -876,6 +873,5 @@ jQuery("#reg_course_category").on('change', function() {
 	
 	
 });
-
 
 </script>

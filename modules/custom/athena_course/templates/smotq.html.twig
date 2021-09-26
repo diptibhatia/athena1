@@ -15,24 +15,20 @@
 <input type="hidden" id="phone1" value="{{phone}}" >
 
 
-{% set type = 'cert' %}
+<!-- {% set type = 'cert' %}
 {% if node.field_course_category.value == 'Academic' %}
 {% set type = 'acad' %}
 {% elseif node.field_course_category.value == 'Micro Credits' %}
 {% set type = 'mcred' %}
 {% endif %}
+ -->
 
-<!-- {# uncomment for short course
 {% set type = 'acad' %}
-
 {% set categorylist = node.field_course_category_list.0.target_id %}
 <input type="hidden" id="categorylist" value="{{categorylist}}" >
 
-#}
- -->
-<input type="hidden" id="type" value="{{type}}" >
-                 
 
+<input type="hidden" id="type" value="{{type}}" >
 
 <div class="row" style="margin-bottom:31px;">
 <div class="col">

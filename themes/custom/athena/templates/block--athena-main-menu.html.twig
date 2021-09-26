@@ -1,4 +1,3 @@
-
 {#
 /**
  * @file
@@ -34,257 +33,1299 @@
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <div class="megamenu-container">
-<div class="explore-btn-main d-block d-md-none" >
-    <span onClick="drop();">Explore</span>
+  <div class="explore-btn-main d-block d-md-none">
+    <span onclick="drop();">Explore</span>
     <div id="dropcontent" class="dd-level1">
-    <div id="clbt" class="back-button" style="color:#303030;display:none;font-size: 14px;float: left;margin-Left: 14px;padding: 1px 0 0 8px;border-radius: 19px;width: 65px;height: 22px;margin-bottom: 10px;" onclick="remove()">&lt; Back</div>
-    {# <i class="fas fa-times" style="color: #303030;font-size: 18px;float: right;margin-right: 27px;margin-bottom: 10px;" onclick="closbtn()"></i> #}
-   <div class="close-button" style="float: right;margin-right: 24px;margin-bottom: 10px;" onclick="closbtn()"><img src="https://athena.edu/themes/custom/athena/images/icons/cancel.png" style="width:20px"></div>
-        <ul onclick="eplcour()" >
-            <li><a href=#><img style="float:left;margin-right:10px;" src="acadamic-icn.svg" />Academic Programs</a>
-                <div class="dd-level2">
-                    <div class="dd-level2-inner">
-                            <h4>Academic</h4>
-                            <p><a href="{{url('<front>')}}academic-program">View all Academic Courses</a></p>
-                        <ul>
-                            {% for academic in academicnodes %}
-                            <li><a href="{{url('<front>')}}course/{{academic.nid}}" href=#>{{academic.title}}</a>
-                                <div class="dd-level3">
-                                    <ul>
-                                        <li><h4>Awarding Body</h4></li>
-                                        {% for univ in academic.universities%}
-                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="{{univ.label}}">{{univ.label}}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li><a href=#><img src="certification-icn.svg" style="float:left;margin-right:10px;" />Certifications</a>
-                <div class="dd-level2">
-                    <div class="dd-level2-inner">
-                        <h4>Certification</h4>
-                        <p><a href="{{url('<front>')}}certifications">View all Certification</a></p>
-                        <ul>
-                            {% for cert in certificationsnodes %}
-                                <li><a href="{{url('<front>')}}course/{{cert.nid}}">{{cert.title}}</a>
-                                    <div class="dd-level3">
-                                        <ul>
-                                            {% for univ in cert.universities%}
-                                                <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="{{univ.label}}">{{univ.label}}</a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+      <div id="clbt" class="back-button" style="color:#303030;display:none;font-size: 14px;float: left;margin-Left: 14px;padding: 1px 0 0 8px;border-radius: 19px;width: 65px;height: 22px;margin-bottom: 10px;" onclick="remove()">&lt; Back</div>
+      {# <i class="fas fa-times" style="color: #303030;font-size: 18px;float: right;margin-right: 27px;margin-bottom: 10px;" onclick="closbtn()"></i> #}
+      <div class="close-button" style="float: right;margin-right: 24px;margin-bottom: 10px;" onclick="closbtn()"><img src="https://athena.edu/themes/custom/athena/images/icons/cancel.png" style="width:20px"></div>
+      <ul onclick="eplcour()">
+        <li>
+          <i class="fas fa-graduation-cap main-head-icon"></i>
+          <a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Degree</a>
+          <div class="dd-level2">
+            <div class="dd-level2-inner">
+              <h4>Academic</h4>
+              <p>
+                <a href="{{url('<front>')}}search-results/abc?search_key=ShowAllDegree">View all Degree Courses</a>
+              </p>
+              <ul>
+                {% for academic in academicnodes %}
 
-    <nav class="navbar navbar-expand-lg">
-  <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#main_nav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse d-none d-md-block" id="main_nav">
-<ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
-display: inline-flex;
-border-radius: 5px;
-padding: 0;
-height: 38px;
-justify-content: space-evenly;
-align-items: center;box-sizing: border-box;">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';font-size:14px;letter-spacing:1px;"> Explore <span style="padding-left:5px" class="glyphicon glyphicon-chevron-down"></span></a>
-        <ul class="dropdown-menu" style="height: 383px;
-        left: -10px;
-        top: 55px;
-        box-shadow: 0 2px 13px 0 #8c8c8c;
-        width: 279px;
-        font-family: 'Lato';
-        font-size: 1rem;">
-          <li class="has-submenu">
-             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/acadamic-icn.svg" alt="icon">&nbsp;&nbsp;&nbsp;Academic Programs </a>
-             <div class="megasubmenu dropdown-menu box-shadow">
-               <div class="row">
-                    <div class="col-7">
-                            <ul class="list-unstyled bindWidth">
-                                <h5 style="padding-left: 20px;">Academic</h5>
-                                <a href="{{url('<front>')}}academic-program" style="padding-left:0px;color:#ff026f;"><b><i>View all Academic Courses</i></b></a><br/>
-                                {% set modnum = 1 %}
-                                {% for academic in academicnodes %}
-                                <li>
-                                    <a href="{{url('<front>')}}course/{{academic.nid}}" onmouseover="showThirdLevel('secondary-data_{{modnum}}')">{{academic.title}}</a>
-                                    <div style="display:none;" id="secondary-data_{{modnum}}">
-                                        <h6>Awarding Body</h6>
-                                        <ul class="list-unstyled">
-                                        {% for univ in academic.universities%}
-                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                           {% endfor %}
-                                        </ul>
-                                    </div>
-                                </li>
-                                {% set modnum = modnum + 1 %}
-                                {% endfor %}
-                            </ul>
-                    </div><!-- end col-3 -->
-                    <div class="col-5 three-level" id="secondary-data_three-level">
-                      <h6>Awarding Body</h6>
-                      <ul class="list-unstyled">
-                      {% for univ in academic_universities%}
-                          <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                         {% endfor %}
-                      </ul>
-                    </div><!-- end col-3 -->
-                </div><!-- end row -->
-             </div>
-          </li>
-          <li class="has-submenu">
-             <a class="dropdown-item dropdown-toggle" href="#"> <img src="/themes/custom/athena/images/coursepage/certification-icn.svg" alt="icon">&nbsp;&nbsp;Certifications </a>
-             <div class="megasubmenu dropdown-menu box-shadow">
-                <div class="row">
-                     <div class="col-7">
-                             <ul class="list-unstyled bindWidth">
-                <h5 style="padding-left: 20px;">Certifications</h5>
-                                <a href="{{url('<front>')}}certifications" style="padding-left:0px;color:#ff026f;"><b><i>View all Certifications</i></b></a><br/>
-                                {% set modnum = 1 %}
-                                {% for cert in certificationsnodes %}
-                                <li>
-                                    <a href="{{url('<front>')}}course/{{cert.nid}}" onmouseover="showThirdLevel('secondary-data-cert_{{modnum}}')">{{cert.title}}</a>
-                                    <div style="display:none;" id="secondary-data-cert_{{modnum}}">
-                                        <h6>Universities</h6>
-                                        <ul class="list-unstyled">
-                                        {% for univ in cert.universities%}
-                                            <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                                           {% endfor %}
-                                        </ul>
-                                    </div>
-                                </li>
-                                {% set modnum = modnum + 1 %}
-                                {% endfor %}
-                             </ul>
-                     </div><!-- end col-3 -->
-            <div class="col-5 three-level" id="secondary-data-cert_three-level">
-                <h6>Awarding Body</h6>
-                <ul class="list-unstyled">
-                {% for univ in certifications_universities%}
-                    <li><a href="{{url('<front>')}}university?univ={{univ.univkey}}"><img src="{{univ.logo}}" alt="logo">{{univ.label}}</a></li>
-                   {% endfor %}
-                </ul>
-              </div><!-- end col-3 -->
-                    <!-- end col-3 -->
-                 </div><!-- end row -->
+                  {{academic.cat_name}}
+
+                  {% if academic.cat_name == "Masters" or academic.cat_name == "MBA" or academic.cat_name == "Doctorate" %}
+
+                    <li>
+                      <a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+                    </li>
+
+                  {% endif %}
+
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <i class="far fa-credit-card main-head-icon"></i>
+          <a href="#"><img style="float:left;margin-right:10px;" src="acadamic-icn.svg"/>Micro Credit</a>
+          <div class="dd-level2">
+            <div class="dd-level2-inner">
+              <h4>Academic</h4>
+              <p>
+                <a href="{{url('<front>')}}search-results/abc?search_key=ShowAllMicroCredit">View all Micro Credit Courses</a>
+              </p>
+              <ul>
+                {% for academic in academicnodes %}
+
+                  {% if academic.cat_name == "Postgraduate Diploma" or academic.cat_name == "Postgraduate Certifications" %}
+
+                    <li>
+                      <a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+                      
+                    </li>
+
+                  {% endif %} 
+
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-scroll main-head-icon"></i>
+          <a href="#"><img src="certification-icn.svg" style="float:left;margin-right:10px;"/>Short Course</a>
+          <div class="dd-level2">
+            <div class="dd-level2-inner">
+              <h4>Certification</h4>
+              <p>
+                <a href="https://uniathena.com/shortterm-courses">View all Short Courses</a>
+              </p>
+              <ul>
+                {% for cert in shortsourses_list %}
+                  <li>
+                    <a href="{{cert.course_url}}">{{cert.label}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </li>
+        <div class="re-link-mob">
+          <h5><a href="{{url('<front>')}}about-us/athena-and-associated-entities">Want to Know More about<br>
+            Our Universities ?</a></h5>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#main_nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-none d-md-block" id="main_nav" onclick="newmenu();">
+      <ul class="navbar-nav" style="background-image: linear-gradient(89deg,#ff006e 0%,#ff4e9a 100%,#ffd85e 100%);
+                                                                                                                                              
+        <li class="nav-item dropdown dropbtn" onclick="newmenu();">
+          <a class="nav-link dropdown-toggle dropbtn" href="#" data-toggle="dropdown" style="color:white;font-weight: bold;font-family: 'lato';font-size:14px;letter-spacing:1px;" onclick="newmenu();">
+            Explore
+            <span style="padding-left:5px" class="glyphicon glyphicon-chevron-down"></span>
+          </a>
+          {# <ul class="dropdown-menu" style="height: 383px;                                                                                                                                                    left: -10px;                                                                                                                                                    top: 55px;                                                                                                                                                    box-shadow: 0 2px 13px 0 #8c8c8c;                                                                                                                                                    width: 279px;                                                                                                                                                    font-family: 'Lato';                                                                                                                                                  </li>                                                                                                                                                     </ul> #}
+        </li>
+      </ul>
+
+      {# New Drop Down Menu Design Starts Here #}
+
+
+      <div class="dropdown-content" id="newme">
+        <div class="menu-drop">
+          <div class="row-one">
+            <h3>Explore All Courses</h3>
+            
+            {% for value in term_data_first_level %}  
+
+              <div class="sub-head" onmouseover="{{value.func}}">
+                <i class="{{value.ele_class}}"></i>
+                <h4>{{value.name}}</h4>
+
+                <i class="fas fa-chevron-right arrow-icon-master" id="{{value.ele_id}}"></i>
               </div>
-          </li>
-        </ul>
-    </li>
-</ul>
-  </div> <!-- navbar-collapse.// -->
+          
+
+            {% endfor %}  
+
+          </div>
+
+          <!-- second level menu -->  
+
+          {% for value in term_data_first_level %}  
+
+            <div id="{{value.ele_id1}}" class="{{value.ele_class1}}">
+
+              {% if value.name == "Short Courses" %}
+                  <h3 class="hea">
+                  <a href="{{value.link}}">
+                  
+                  View all {{value.name}} 
+                  </a>
+                  </h3>
+              
+
+                <div class="upskill-scroll">
+                {% for certification_list in certification_list %}
+
+                    <div class="sub-category" onmouseover="{{certification_list.func}}">
+                      <h4>{{certification_list.cert_name}}</h4>
+                      <i class="{{certification_list.class1}}" id="{{certification_list.ele_id}}"></i>
+                    </div>
+
+                  {% endfor %}
+
+                </div>
+
+              {% else %}
+              
+                 <h3 class="hea">
+                  <a href="{{url('<front>')}}{{value.link}}">
+                  
+                  View all {{value.name}} Courses
+                  </a>
+                  </h3>
+
+                {% for value1 in term_data_second_level %}  
+                
+                  {% if value1.master == value.id %}
+
+                    <div class="sub-category" onmouseover="{{value1.func}}">
+                      <h4>{{value1.name}}</h4>
+                      <i class="{{value1.ele_class}}" id="{{value1.ele_id}}"></i>
+                    </div>
+
+                  {% endif %}
+
+                {% endfor %}              
+
+              {% endif %} 
+
+              <div class="re-link">
+                
+                <h5><a href="{{url('<front>')}}about-us/athena-and-associated-entities">Want to Know More about<br>
+                  Our Universities ?</a></h5>
+
+              </div>
+            </div>
+            
+          {% endfor %}
+
+          <!-- course listing for degree and micro credit -->
+
+          {% for term_data_second_level in term_data_second_level %}
+
+            <div id={{term_data_second_level.ele_id1}} class={{term_data_second_level.ele_class1}}>
+            <h3 class="hea"><a href="{{url('<front>')}}{{term_data_second_level.search_key}}">View all {{term_data_second_level.name}} Courses</a></h3>
+            <div class="scroll">
+
+              {% for academicnodes in academicnodes %}
+                
+                {% if term_data_second_level.id == academicnodes.cat_id %}
+
+                <div class="sub-category-list">
+                  <h4><a href="{{url('<front>')}}course/{{academicnodes.nid}}">
+                    {{academicnodes.title}}
+                    </a>
+                  </h4>
+                </div>
+
+                {% endif %}
+                
+              {% endfor %}
+  
+            </div>
+            </div>
+
+          {% endfor %}
+
+
+          <!-- short term course listing -->          
+
+
+          {% for certification_list in certification_list %}
+
+            <div id="{{certification_list.ele_id1}}" class="{{certification_list.class}}">
+              <h3 class="hea"><a href="{{certification_list.url}}">View all {{certification_list.cert_name}} Courses</a></h3>
+              <div class="scroll">
+
+                {% for shortsourses_list in shortsourses_list %}
+
+                  {% if shortsourses_list.category == certification_list.cert_id %}
+
+                    <div class="sub-category-list">
+                      
+                    <h4><a href="{{shortsourses_list.course_url}}">{{shortsourses_list.label}}
+
+                      </a></h4>
+                    </div>
+
+                  {% endif %} 
+
+                {% endfor %}
+
+              </div>
+            </div>
+
+          {% endfor %}
+
+          <!-- popular courses listing -->
+
+          <div class="row-yere degree" id="depo">
+            <div class="po-scroll">
+
+              <h3 class="hea">Popular Courses</h3>
+              
+              {% for term_popular_academic in term_popular_academic %}
+
+                <div class="card-in-drop">
+                  <div class="card-text"><a href="{{url('<front>')}}course/{{term_popular_academic.nid}}">
+                    {{term_popular_academic.title}}</a>
+                  </div>
+                  <hr>
+                  <div class="card-text-para">
+                    We have a multitude of courses tailored to your career goals and busy schedule. These
+                    courses have been developed to enhance …..
+                  </div>
+                </div>
+
+              {% endfor %}              
+
+            </div>
+          </div>
+          
+          <div class="row-yere micro" id="mipo">
+          <h3 class="hea">Popular Courses</h3>
+            <div class="po-scroll">
+
+            {% for term_popular_certification in term_popular_certification %}
+              
+              <div class="card-in-drop">
+                <div class="card-text"><a href="{{url('<front>')}}course/{{term_popular_certification.nid}}">
+                  {{term_popular_certification.title}}</a>
+                </div>
+                <hr>
+                <div class="card-text-para">
+                  We have a multitude of courses tailored to your career goals and busy schedule. These
+                  courses have been developed to enhance …..
+                </div>
+              </div>
+
+            {% endfor %}
+
+            </div>
+
+          </div>
+
+          <div class="row-yere upskill" id="uppo">
+            <div class="po-scroll">
+
+              <h3 class="hea">Popular Courses</h3>
+              <div class="card-in-drop">
+                <div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/143/executive-diploma-in-strategic-leadership-and-hr-practices-in-organizations">
+                  Executive Diploma in Strategic Leadership And HR Practices In Organizations</a>
+                </div>
+                <hr>
+                <div class="card-text-para">
+                  We have a multitude of courses tailored to your career goals and busy schedule. These
+                  courses have been developed to enhance …..
+                </div>
+              </div>
+              <div class="card-in-drop">
+                <div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/153/essentials-of-designing-supply-chain">
+                  Essentials of Designing Supply Chain</a>
+                </div>
+                <hr>
+                <div class="card-text-para">
+                  We have a multitude of courses tailored to your career goals and busy schedule. These
+                  courses have been developed to  enhance …..
+                </div>
+              </div>
+              <div class="card-in-drop">
+                <div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/158/mastering-logistics-management">
+                  Mastering logistics Management</a>
+                </div>
+                <hr>
+                <div class="card-text-para">
+                  We have a multitude of courses tailored to your career goals and busy schedule. These
+                  courses have been developed to  enhance …..
+                </div>
+              </div>
+              <div class="card-in-drop">
+                <div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/154/mastering-components-of-supply-chain-management">
+                  Mastering Components of Supply Chain Management</a>
+                </div>
+                <hr>
+                <div class="card-text-para">
+                  We have a multitude of courses tailored to your career goals and busy schedule. These
+                  courses have been developed to  enhance …..
+                </div>
+              </div>
+              <div class="card-in-drop">
+                <div class="card-text"><a href="https://learn.athena.edu/student-dashboard/course/176/executive-diploma-in-innovation-entrepreneurship">
+                  Executive Diploma in Innovation & Entrepreneurship</a>
+                </div>
+                <hr>
+                <div class="card-text-para">
+                  We have a multitude of courses tailored to your career goals and busy schedule. These
+                  courses have been developed to  enhance …..
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+
+        </div>
+      </div>
+
+      {# New Drop Down Menu Design Ends Here #}
+
+
+    </div>
+    <!-- navbar-collapse.// -->
     <div class="collapse navbar-collapse" id="search_nav" style="flex-basis:auto;">
-      <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc"
-        method="POST">
-         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#search_nav" aria-expanded="true">
-            <img src="/themes/custom/athena/images/close.svg" alt="close" style="width: 20px;">
+      <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc" method="POST">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#search_nav" aria-expanded="true">
+          <img src="/themes/custom/athena/images/close.svg" alt="close" style="width: 20px;">
         </button>
         <input type="text" id="search_key" placeholder="What do you want to learn ?" name="search_key">
         <input type="hidden" name="submit_form">
-        <a class="search-courses" href="javascript:;" onClick="document.getElementById('course-search--form').submit()">
+        <a class="search-courses" href="javascript:;" onclick="document.getElementById('course-search--form').submit()">
           <img src="/themes/custom/athena/images/search.svg" alt="search"></a>
       </form>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#search_nav">
       <img src="/themes/custom/athena/images/search.svg" alt="search" style="width: 36px;">
     </button>
-</nav>
+  </nav>
 </div>
 
 <div class="site-header__menu-icon">
-    <div class="site-header__menu-icon__middle"></div>
+  <div class="site-header__menu-icon__middle"></div>
 </div>
 <div class="site-header__menu-content">
   <nav class="primary-nav">
-  <ul>
-                      <!--  <li class="about"><a href="{{ url('<front>') }}about-us/our-background">About Us <i class="arrow arrow--down"></i></a>
-                           <ul class="secondary-nav">
-                              <li><a href="{{ url('<front>') }}about-us/our-background/">Our Background</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/founder-and-ceo">Founder &amp; CEO</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/board-of-governance">Board of Governance</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/athena-governance-structure">Governance Structure</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/academic-director">Academic Director</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/dean">Dean</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/executive-council">Executive Council</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/academic-council">Academic Council</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/core-principles">Core Principles</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/key-staffs-and-contacts">Key Staffs & Contacts</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/accreditation-and-partnerships">Accreditation & Partnerships</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/athena-and-associated-entities">Associated Entities</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Awards & Recognitions</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policies & Procedures</a></li>
-                              <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
-                           </ul>
-                        </li> -->
-                        <li><a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a></li>
-                        <li><a id="insights" href="{{ url('<front>') }}insights/all">Insights</a></li>
-                        <li><a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a></li>
-                        <li><a class="hideinMobileView btn btn-pink getStartedBtn mt-0" style="box-shadow:none;" href="{{ url('<front>') }}registration">Get Started</a></li>
-                    </ul>
+    <ul>
+      <!--  <li class="about"><a href="{{ url('<front>') }}about-us/our-background">About Us <i class="arrow arrow--down"></i></a>
+                                                   <ul class="secondary-nav">
+                                                      <li><a href="{{ url('<front>') }}about-us/our-background/">Our Background</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/founder-and-ceo">Founder &amp; CEO</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/board-of-governance">Board of Governance</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/athena-governance-structure">Governance Structure</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/academic-director">Academic Director</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/dean">Dean</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/executive-council">Executive Council</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/academic-council">Academic Council</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/core-principles">Core Principles</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/key-staffs-and-contacts">Key Staffs & Contacts</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/accreditation-and-partnerships">Accreditation & Partnerships</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/athena-and-associated-entities">Associated Entities</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Awards & Recognitions</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/policies-and-procedures">Policies & Procedures</a></li>
+                                                      <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
+                                                   </ul>
+                                                </li> -->
+      <li>
+        <a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a>
+      </li>
+      <li>
+        <a id="insights" href="{{ url('<front>') }}insights/all">Insights</a>
+      </li>
+      <li>
+        <a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a>
+      </li>
+      <li>
+        <a class="hideinMobileView btn btn-pink getStartedBtn mt-0" style="box-shadow:none;" href="{{ url('<front>') }}registration">Get Started</a>
+      </li>
+    </ul>
   </nav>
 </div>
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <script type="text/javascript">
-  var pathname = window.location.href;
-  var element = '';
-  if (pathname.indexOf("course-home") > -1) {
-    element = document.getElementById("courses-home");
-    element.classList.add("is-active");
-  }
-  if (pathname.indexOf("insights") > -1) {
-    element = document.getElementById("insights");
-    element.classList.add("is-active");
-  }
+var pathname = window.location.href;
+var element = '';
+if (pathname.indexOf("course-home") > -1) {
+element = document.getElementById("courses-home");
+element.classList.add("is-active");
+}
+if (pathname.indexOf("insights") > -1) {
+element = document.getElementById("insights");
+element.classList.add("is-active");
+}
 
 function drop() {
-  var drpcnt = document.getElementById("dropcontent");
-  if ( drpcnt.style.display === "none") {
-    drpcnt.style.display = "block";
-  } else {
-    drpcnt.style.display = "block";
-  }
+var drpcnt = document.getElementById("dropcontent");
+if (drpcnt.style.display === "none") {
+drpcnt.style.display = "block";
+} else {
+drpcnt.style.display = "none";
+}
 }
 
 function closbtn() {
-  var drpcnt = document.getElementById("dropcontent");
-  var cos = document.getElementById("clbt");
-  if ( drpcnt.style.display === "none") {
-    drpcnt.style.display = "block";
-    cos.style.display = "none";
-  } else {
-    drpcnt.style.display = "none";
-    cos.style.display = "none";
-  }
+var drpcnt = document.getElementById("dropcontent");
+var cos = document.getElementById("clbt");
+if (drpcnt.style.display === "none") {
+drpcnt.style.display = "block";
+cos.style.display = "none";
+} else {
+drpcnt.style.display = "none";
+cos.style.display = "none";
 }
-function eplcour(){
-   var cos = document.getElementById("clbt");
-   if(cos.style.display === "none"){
-     cos.style.display = "block";
-   }else{
-     cos.style.display = "block";
-   }
 }
-function remove(){
-  var cos = document.getElementById("clbt");
-   if(cos.style.display === "block"){
-     cos.style.display = "none";
-   }else{
-     cos.style.display = "none";
-   }
+function eplcour() {
+var cos = document.getElementById("clbt");
+if (cos.style.display === "none") {
+cos.style.display = "block";
+} else {
+cos.style.display = "block";
 }
-
-
+}
+function remove() {
+var cos = document.getElementById("clbt");
+if (cos.style.display === "block") {
+cos.style.display = "none";
+} else {
+cos.style.display = "none";
+}
+}
 </script>
+<script>
+  function newmenu() {
+var x = document.getElementById("newme");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+
+function degree() {
+var depo = document.getElementById("depo");
+var mipo = document.getElementById("mipo");
+var uppo = document.getElementById("uppo");
+var h = document.getElementById("degreecat");
+var r = document.getElementById("microcat");
+var m = document.getElementById("upskillcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+
+var defai = document.getElementById("degreefaicon");
+var mifai = document.getElementById("microfaicon");
+var upfai = document.getElementById("upskillfaicon");
+
+var mafai = document.getElementById("mastersfaicon");
+var mbfai = document.getElementById("mbafuncfaicon");
+var dofai = document.getElementById("doctfunfaicon");
+
+if (h.style.display === "none") {
+m.style.display = "none";
+h.style.display = "block";
+r.style.display = "none";
+mcat.style.display = "block";
+depo.style.display = "none";
+mipo.style.display = "block";
+uppo.style.display = "none";
+defai.style.visibility = "visible";
+mifai.style.visibility = "hidden";
+upfai.style.visibility = "hidden";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+m.style.display = "none";
+h.style.display = "block";
+mcat.style.display = "block";
+defai.style.visibility = "visible";
+mifai.style.visibility = "hidden";
+upfai.style.visibility = "hidden";
+depo.style.display = "block";
+mipo.style.display = "none";
+uppo.style.display = "none";
+displcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+
+mafai.style.visibility = "visible";
+mbfai.style.visibility = "hidden";
+dofai.style.visibility = "hidden";
+
+}
+}
+function micro() {
+var depo = document.getElementById("depo");
+var mipo = document.getElementById("mipo");
+var uppo = document.getElementById("uppo");
+
+var h = document.getElementById("degreecat");
+var r = document.getElementById("microcat");
+var m = document.getElementById("upskillcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+
+var postdifai = document.getElementById("postdisplfaicon");
+var postcerfai = document.getElementById("postcertfaicon");
+
+var defai = document.getElementById("degreefaicon");
+var mifai = document.getElementById("microfaicon");
+var upfai = document.getElementById("upskillfaicon");
+
+if (r.style.display === "none") {
+m.style.display = "none";
+r.style.display = "block";
+h.style.display = "none";
+mcat.style.display = "none";
+defai.style.visibility = "hidden";
+mifai.style.visibility = "visible";
+depo.style.display = "none";
+mipo.style.display = "block";
+uppo.style.display = "none";
+
+upfai.style.visibility = "hidden";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+
+certcat.style.display = "block";
+displcat.style.display = "none";
+
+} else {
+m.style.display = "none";
+h.style.display = "none";
+r.style.display = "block";
+
+displcat.style.display = "none";
+
+defai.style.visibility = "hidden";
+mifai.style.visibility = "visible";
+upfai.style.visibility = "hidden";
+
+certcat.style.display = "block";
+
+mcat.style.display = "none";
+basecat.style.display = "none";
+depo.style.display = "none";
+mipo.style.display = "block";
+uppo.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+
+postcerfai.style.visibility = "visible";
+postdifai.style.visibility = "hidden";
+
+}
+}
+function upskill() {
+var depo = document.getElementById("depo");
+var mipo = document.getElementById("mipo");
+var uppo = document.getElementById("uppo");
+
+var h = document.getElementById("degreecat");
+var r = document.getElementById("microcat");
+var m = document.getElementById("upskillcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var defai = document.getElementById("degreefaicon");
+var mifai = document.getElementById("microfaicon");
+var upfai = document.getElementById("upskillfaicon");
+
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+
+if (m.style.display === "none") {
+r.style.display = "none";
+m.style.display = "block";
+h.style.display = "none";
+basecat.style.display = "block";
+essentscat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+defai.style.visibility = "hidden";
+mifai.style.visibility = "hidden";
+upfai.style.visibility = "visible";
+doccat.style.display = "none";
+certcat.style.display = "none";
+depo.style.display = "none";
+mipo.style.display = "none";
+uppo.style.display = "block";
+
+displcat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+r.style.display = "none";
+h.style.display = "none";
+m.style.display = "block";
+basecat.style.display = "block";
+essentscat.style.display = "none";
+certcat.style.display = "none";
+displcat.style.display = "none";
+depo.style.display = "none";
+mipo.style.display = "none";
+uppo.style.display = "block";
+
+defai.style.visibility = "hidden";
+mifai.style.visibility = "hidden";
+upfai.style.visibility = "visible";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+
+basfai.style.visibility = "visible";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+
+}
+}
+function masters() {
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+
+var mafai = document.getElementById("mastersfaicon");
+var mbfai = document.getElementById("mbafuncfaicon");
+var dofai = document.getElementById("doctfunfaicon");
+
+if (mcat.style.display === "none") {
+mcat.style.display = "block";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+displcat.style.display = "none";
+mafai.style.visibility = "visible";
+mbfai.style.visibility = "hidden";
+dofai.style.visibility = "hidden";
+certcat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+mcat.style.display = "block";
+mbcat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+basecat.style.display = "none";
+mafai.style.visibility = "visible";
+mbfai.style.visibility = "hidden";
+dofai.style.visibility = "hidden";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+}
+}
+function mbafunc() {
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var mafai = document.getElementById("mastersfaicon");
+var mbfai = document.getElementById("mbafuncfaicon");
+var dofai = document.getElementById("doctfunfaicon");
+if (mbcat.style.display === "none") {
+mbcat.style.display = "block";
+mcat.style.display = "none";
+doccat.style.display = "none";
+displcat.style.display = "none";
+mafai.style.visibility = "hidden";
+mbfai.style.visibility = "visible";
+dofai.style.visibility = "hidden";
+certcat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+mbcat.style.display = "block";
+mcat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+mafai.style.visibility = "hidden";
+mbfai.style.visibility = "visible";
+dofai.style.visibility = "hidden";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+}
+}
+function doctfun() {
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var mafai = document.getElementById("mastersfaicon");
+var mbfai = document.getElementById("mbafuncfaicon");
+var dofai = document.getElementById("doctfunfaicon");
+if (doccat.style.display === "none") {
+doccat.style.display = "block";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+mafai.style.visibility = "hidden";
+mbfai.style.visibility = "hidden";
+dofai.style.visibility = "visible";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+doccat.style.display = "block";
+mcat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+basecat.style.display = "none";
+mafai.style.visibility = "hidden";
+mbfai.style.visibility = "hidden";
+dofai.style.visibility = "visible";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+}
+}
+function postdispl() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var postdifai = document.getElementById("postdisplfaicon");
+var postcerfai = document.getElementById("postcertfaicon");
+if (displcat.style.display === "none") {
+displcat.style.display = "block";
+certcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+basecat.style.display = "none";
+postdifai.style.visibility = "visible";
+postcerfai.style.visibility = "hidden";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+displcat.style.display = "block";
+certcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+postdifai.style.visibility = "visible";
+postcerfai.style.visibility = "hidden";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+}
+}
+function postcert() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+
+var postdifai = document.getElementById("postdisplfaicon");
+var postcerfai = document.getElementById("postcertfaicon");
+
+if (certcat.style.display === "none") {
+certcat.style.display = "block";
+displcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+basecat.style.display = "none";
+postdifai.style.visibility = "hidden";
+postcerfai.style.visibility = "visible";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+} else {
+certcat.style.display = "block";
+displcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+postdifai.style.visibility = "hidden";
+postcerfai.style.visibility = "visible";
+doccat.style.display = "none";
+basecat.style.display = "none";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+displocat.style.display = "none";
+exedcat.style.display = "none";
+mbaessencat.style.display = "none";
+}
+}
+
+function basicfunc() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var mascat = document.getElementById("mastcat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var displocat = document.getElementById("displomacat");
+
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+
+if (basecat.style.display === "none") {
+basecat.style.display = "block";
+displcat.style.display = "none";
+mbaessencat.style.display = "none";
+mascat.style.display = "none";
+certcat.style.display = "none";
+mcat.style.display = "none";
+basfai.style.visibility = "visible";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+displocat.style.display = "none";
+mbcat.style.display = "none";
+exedcat.style.display = "none";
+doccat.style.display = "none";
+essentscat.style.display = "none";
+} else {
+certcat.style.display = "none";
+displocat.style.display = "none";
+mascat.style.display = "none";
+displcat.style.display = "none";
+basecat.style.display = "block";
+basfai.style.visibility = "visible";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+mcat.style.display = "none";
+mbaessencat.style.display = "none";
+exedcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+essentscat.style.display = "none";
+}
+}
+
+
+function essenfunc() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+if (essentscat.style.display === "none") {
+essentscat.style.display = "block";
+basecat.style.display = "none";
+displocat.style.display = "none";
+mbaessencat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "visible";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+mascat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+exedcat.style.display = "none";
+} else {
+certcat.style.display = "none";
+displcat.style.display = "none";
+mbaessencat.style.display = "none";
+essentscat.style.display = "block";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "visible";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+mascat.style.display = "none";
+displocat.style.display = "none";
+basecat.style.display = "none";
+mcat.style.display = "none";
+exedcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+}
+}
+
+function mastfunc() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+if (mascat.style.display === "none") {
+mascat.style.display = "block";
+essentscat.style.display = "none";
+mbaessencat.style.display = "none";
+displocat.style.display = "none";
+basecat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "visible";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+mcat.style.display = "none";
+exedcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+} else {
+certcat.style.display = "none";
+displcat.style.display = "none";
+essentscat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "visible";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+mbaessencat.style.display = "none";
+mascat.style.display = "block";
+basecat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+exedcat.style.display = "none";
+displocat.style.display = "none";
+doccat.style.display = "none";
+}
+}
+
+
+function dipfunc() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+if (displocat.style.display === "none") {
+displocat.style.display = "block";
+mascat.style.display = "none";
+mbaessencat.style.display = "none";
+essentscat.style.display = "none";
+exedcat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "visible";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+basecat.style.display = "none";
+displcat.style.display = "none";
+certcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+} else {
+displocat.style.display = "block";
+certcat.style.display = "none";
+displcat.style.display = "none";
+exedcat.style.display = "none";
+essentscat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "visible";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "hidden";
+mbaessencat.style.display = "none";
+mascat.style.display = "none";
+basecat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+}
+}
+
+
+function exediplfunc() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+if (exedcat.style.display === "none") {
+exedcat.style.display = "block";
+displocat.style.display = "none";
+mbaessencat.style.display = "none";
+mascat.style.display = "none";
+essentscat.style.display = "none";
+basecat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "visible";
+mbaffai.style.visibility = "hidden";
+displcat.style.display = "none";
+certcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+} else {
+exedcat.style.display = "block";
+displocat.style.display = "none";
+certcat.style.display = "none";
+displcat.style.display = "none";
+mbaessencat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "visible";
+mbaffai.style.visibility = "hidden";
+essentscat.style.display = "none";
+mascat.style.display = "none";
+basecat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+}
+}
+
+
+function mbaessenfunc() {
+var displcat = document.getElementById("postdisplcat");
+var certcat = document.getElementById("postcertcat");
+var mcat = document.getElementById("masterscat");
+var mbcat = document.getElementById("mbacat");
+var doccat = document.getElementById("doctoratecat");
+var basecat = document.getElementById("basiccat");
+var essentscat = document.getElementById("essentialscat");
+var mascat = document.getElementById("mastcat");
+var displocat = document.getElementById("displomacat");
+var exedcat = document.getElementById("exediplcat");
+var mbaessencat = document.getElementById("mbaessentialscat");
+var basfai = document.getElementById("basicfuncfaicon");
+var essefai = document.getElementById("essenfuncfaicon");
+var mastffai = document.getElementById("mastfuncfaicon");
+var diplffai = document.getElementById("dipfuncfaicon");
+var exefai = document.getElementById("exediplfuncfaicon");
+var mbaffai = document.getElementById("mbaessenfuncfaicon");
+if (mbaessencat.style.display === "none") {
+mbaessencat.style.display = "block";
+exedcat.style.display = "none";
+displocat.style.display = "none";
+mascat.style.display = "none";
+essentscat.style.display = "none";
+basecat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "visible";
+displcat.style.display = "none";
+certcat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+} else {
+mbaessencat.style.display = "block";
+exedcat.style.display = "none";
+displocat.style.display = "none";
+certcat.style.display = "none";
+displcat.style.display = "none";
+essentscat.style.display = "none";
+basfai.style.visibility = "hidden";
+essefai.style.visibility = "hidden";
+mastffai.style.visibility = "hidden";
+diplffai.style.visibility = "hidden";
+exefai.style.visibility = "hidden";
+mbaffai.style.visibility = "visible";
+mascat.style.display = "none";
+basecat.style.display = "none";
+mcat.style.display = "none";
+mbcat.style.display = "none";
+doccat.style.display = "none";
+}
+}
+</script>
+<script rel="preconnect" src="https://kit.fontawesome.com/31cbd00155.js" crossorigin="anonymous"></script>
