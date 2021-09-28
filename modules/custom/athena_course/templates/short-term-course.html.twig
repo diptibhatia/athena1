@@ -108,19 +108,62 @@
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                     <div class="row heading m-0">
-                      <div class="col-8">
+                      <div class="col-4">
                         {% if node.univ_name is not empty and node.univ_name is not null %}
                           <img src="{{node.white_logo}}" alt="{{ node.univ_name }}">
                         {% endif %}
 
                       </div>
-                      <div class="col-4">
-                        <span class="free-text">{{node.field_course_amount}}</span>
+                      <div class="col-8">
+					  {% if node.fees_amount is not empty and node.fees_amount is not null %}
+					  <span class="course-amount" style="color: #fff;
+    text-decoration: line-through;
+    font-size: 14px;
+    padding-right: 21px;">USD {{node.fees_amount}}</span>
+	{% endif %}
+                        <span class="free-text" style="font-size: 14px;
+    color: #ffc100;
+    background-color: #303030;
+    border-radius: 14px;
+    padding: 0px 10px;">{{node.field_course_amount}}</span>
                       </div>
                     </div>
                     <div class="image">
-                     <div class="timer">
-                    <p>Offer Ends in : 4:58:04</p>
+                     <div class="timer" style="width:200px">
+                    <p id="timerid--{{node.cid}}"></p>
+					<script type="text/javascript">
+					// Set the date we're counting down to
+						//var countDownDate = new Date("Oct 27, 2021 23:59:60").getTime();
+						var countDownDate = new Date();
+countDownDate.setDate(countDownDate.getDate() + 30);
+
+						// Update the count down every 1 second
+						var x = setInterval(function() {
+
+						  // Get today's date and time
+						  var now = new Date().getTime();
+
+						  // Find the distance between now and the count down date
+						  var distance = countDownDate - now;
+
+						  // Time calculations for days, hours, minutes and seconds
+						  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+						  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+						  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+						  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+						  // Display the result in the element with id="demo"
+						  document.getElementById("timerid--"+{{node.cid}}).innerHTML ="Offer ends in "+ days + ":" + hours + ":"
+						  + minutes + ":" + seconds ;
+
+						  // If the count down is finished, write some text
+						  if (distance < 0) {
+							clearInterval(x);
+							document.getElementById("demo").innerHTML = "EXPIRED";
+						  }
+						}, 1000);
+					
+					</script>
                     </div> 
                       <img width="100%" src="{{node.course_image}}" alt="course-image">
                     </div>
@@ -430,3 +473,5 @@ jQuery('.category-area .nav-link:first').addClass('active');
 return false;
 }
 </script>
+
+

@@ -64,7 +64,6 @@ class ShortTermCourseController {
 
             //$certificates_uri = $this->_lms_url .$this->_api. "/api/get_master_table_data?table=certification_type";
             $certificates_uri = $this->_lms_url .$this->_api. "/api/getCertTypeByQualId/1";
-
             $response_certificates = \Drupal::httpClient()->get($certificates_uri, array('headers' => array('Accept' => 'application/json')));
             $certificate_filters = (string)$response_certificates->getBody();
             $certificates = json_decode($certificate_filters, TRUE);
@@ -113,8 +112,18 @@ class ShortTermCourseController {
 
                 $website_card_content = $value->website_card_content;
                 
-                
+         $fees_url = "https://learn.athena.edu/athenaprod/api/courses/".$value->cid."/courseFees";
+			$response_fees = \Drupal::httpClient()->get($fees_url, array('headers' => array('Accept' => 'application/json')));
+            $fees_data = (string)$response_fees->getBody();
+            $fees = json_decode($fees_data, TRUE);
+//	print $fees[['data'][0]['amount']];		exit;
+    $fees_amount = '';
+	if(!empty($fees['data'][0]['amount'])) {
+		$fees_amount = $fees['data'][0]['amount'];
+	}
+
                 $courses_data[] = [
+				    'fees_amount' => $fees_amount,
                     'cid' => $value->cid,
                     'course_url' => $this->_lms_url .'/student-dashboard/course/' . $value->cid .'/'.$value->slug,
                     'label' => $value->course_name,
@@ -850,3 +859,4 @@ $html .= '<div class="flip-card">
         
     }
 }
+
