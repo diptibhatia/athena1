@@ -67,9 +67,7 @@
                 <a href="{{front_link}}search-results/abc?search_key=ShowAllDegree">View all Degree Courses</a>
               </p>
               <ul>
-                {% for academic in academicnodes %}
-
-                  {{academic.cat_name}}
+                {% for academic in academicnodes %}                 
 
                   {% if academic.cat_name == "Masters" or academic.cat_name == "MBA" or academic.cat_name == "Doctorate" %}
 
