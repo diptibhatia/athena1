@@ -32,17 +32,16 @@
  */
 #}
 
-{% set front = url('<front>') %}
-
-{% if front == "https://uniathena.com/" or front == "http://uniathena.com/" %}  
+{% set front = url('<front>')|render %}
+        
+{% if ( front == "https://uniathena.com/") or ( front == "http://uniathena.com/") %}  
     
     {% set front_link = "https://athena.edu/" %}
     {% set front_link_shortcourse = "https://uniathena.com/lms/short-course-sign-in" %}
 
-
 {% else %}
         
-    {% set front_link = url('<front>') %}
+   {% set front_link = url('<front>') %}
    {% set front_link_shortcourse = "https://ulearn.athena.edu/login" %}
 
 {% endif %}
