@@ -390,9 +390,12 @@ function get_popular_courses_main_menu($category)
     $query->leftJoin('draggableviews_structure', 'w', 'w.entity_id = n.nid');
     $query->innerJoin('node__field_course_category', 'c', 'c.entity_id = n.nid');        
     $query->innerJoin('node__field_is_popular_course', 'p', 'p.entity_id = n.nid');
+    $query->innerJoin('node__field_course_banner_description', 'd', 'd.entity_id = n.nid');
     
+
     $query
     ->fields('n', array('nid'))
+    ->fields('d', array('field_course_banner_description_value'))
     ->condition('c.field_course_category_value', $category )
     ->condition('c.bundle', 'course')
     ->condition('n.status', 1)
@@ -406,16 +409,19 @@ function get_popular_courses_main_menu($category)
     if(!empty($academic_ids)) 
       $academics = node_load_multiple($academic_ids);
 
+
      foreach($academics as $node) 
      {
+          
           $academic_node_ids[] =
           array(
             "nid"=>$node->id(),
             "title"=>$node->label(),
+            "description" => $node->get('field_course_banner_description')->value
 
           );
-     }
-   
+     }   
+     
    return $academic_node_ids;
 
 }
