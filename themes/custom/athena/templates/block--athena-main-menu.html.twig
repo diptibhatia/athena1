@@ -434,18 +434,37 @@
                                                       <li><a href="{{ url('<front>') }}about-us/news-and-notifications">News & Notifications</a></li>
                                                    </ul>
                                                 </li> -->
-      <li>
-        <a id="courses-home" href="{{ url('<front>') }}course-home">Courses</a>
+
+{% set front = url('<front>') %}
+
+{% if front == "https://uniathena.com/" or front == "http://uniathena.com/" %}  
+    
+    {% set front_link = "https://athena.edu/" %}
+    {% set front_link_shortcourse = "https://uniathena.com/lms/short-course-sign-in" %}
+
+
+{% else %}
+        
+    {% set front_link = url('<front>') %}
+   {% set front_link_shortcourse = "https://ulearn.athena.edu/login" %}
+
+{% endif %}
+
+
+      <li>        
+          <a id="courses-home" href="{{ front_link }}course-home">Courses</a>      
+      </li>
+      <li>      
+        <a id="insights" href="{{ front_link }}insights/all">Insights</a>      
+      </li>
+      <li>        
+          <a class="loginBtn" href="{{front_link_shortcourse}}">Log in</a>                
       </li>
       <li>
-        <a id="insights" href="{{ url('<front>') }}insights/all">Insights</a>
+        <a class="hideinMobileView btn btn-pink getStartedBtn mt-0" style="box-shadow:none;" href="{{ front_link }}registration">Get Started</a>
       </li>
-      <li>
-        <a class="loginBtn" href="https://ulearn.athena.edu/login">Log in</a>
-      </li>
-      <li>
-        <a class="hideinMobileView btn btn-pink getStartedBtn mt-0" style="box-shadow:none;" href="{{ url('<front>') }}registration">Get Started</a>
-      </li>
+
+        
     </ul>
   </nav>
 </div>
