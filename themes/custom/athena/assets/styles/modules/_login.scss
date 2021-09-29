@@ -117,11 +117,18 @@
             }
 
             select {
-                color: #b3b3b3;
+                color:#d2cdd1;
+
+                
             }
 
             option {
-                color: black;
+                color: #000;
+            }
+
+            option:first-child
+            {
+                 color: #d2cdd1;
             }
 
             img {
@@ -341,4 +348,8 @@
             }
         }
     }
+}
+
+.default-select{
+    color:red;
 }

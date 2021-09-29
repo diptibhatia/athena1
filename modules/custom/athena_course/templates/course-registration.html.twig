@@ -340,7 +340,7 @@
 								 -->
 								<div class="login-item">
 									<p>Choose your Course</p>
-									<select name="course" id="reg_course" class="addajaxlist">
+									<select name="course" id="reg_course" class="addajaxlist" onchange="changeMe(this)">
 										<option value="" class="courselistselect" default="">Select your course</option>
 										{% for nodedata in academics %}
 											{% if cid == nodedata.field_cid.value %}
@@ -356,8 +356,8 @@
 
 								<div class="login-item">
 									<p>Highest Qualification</p>
-									<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
-										<option value="">Select your highest qualification</option>
+									<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select"  onchange="changeMe(this)">
+										<option selected="selected" value="">Select your highest qualification</option>
 										<option value="Masters Degree or Above">Masters Degree or Above</option>
 										<option value="Bachelors Degree">Bachelor's Degree</option>
 										<option value="Diploma">Higher Diploma/Diploma</option>
@@ -380,7 +380,7 @@
 								</div>
 								<div class="login-item">
 									<p>Level of employment</p>
-									<select name="ctl00$MainContent$ddlEmployment" id="reg_level" class="form-control">
+									<select name="ctl00$MainContent$ddlEmployment" id="reg_level" class="form-control" onchange="changeMe(this)">
 										<option selected="selected" value="">Select level of employment</option>
 										<option value="Clerical/Support/Entry Level">Clerical/Support/Entry Level</option>
 										<option value="Supervisory/Team Leader Level">Supervisory/Team Leader Level</option>
@@ -720,7 +720,7 @@
 							<input type="hidden" id="country_code" value="{{ccode}}"/>
 							<div class="login-item">
 								<p>Choose your Course</p>
-								<select name="course" id="reg_course">
+								<select name="course" id="reg_course" onchange="changeMe(this)">
 									<option value="" default="">Select your course</option>
 									<!-- {% for nodedata in certifications %}
 										<option value="{{nodedata.cid}}">{{nodedata.label}}</option>
@@ -744,8 +744,8 @@
 
 							<div class="login-item">
 								<p>Highest Qualification</p>
-								<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select" onchange="HighQualchange(this.value)">
-									<option value="">Select your highest qualification</option>
+								<select name="ctl00$MainContent$ddlQualification" id="reg_qual" class="form-control required" placeholder="Select"  onchange="changeMe(this)"  >
+									<option selected="selected" value="">Select your highest qualification</option>
 									<option value="Masters Degree or Above">Masters Degree or Above</option>
 									<option value="Bachelors Degree">Bachelor's Degree</option>
 									<option value="Diploma">Higher Diploma/Diploma</option>
@@ -878,4 +878,11 @@ jQuery("#reg_course_category").on('change', function() {
 });
 
 
+</script>
+
+<script type="text/javascript">
+    function changeMe(sel)
+    {
+      sel.style.color = "#000";              
+    }
 </script>
