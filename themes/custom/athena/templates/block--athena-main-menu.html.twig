@@ -31,6 +31,24 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
+
+{% set front = url('<front>') %}
+
+{% if front == "https://uniathena.com/" or front == "http://uniathena.com/" %}  
+    
+    {% set front_link = "https://athena.edu/" %}
+    {% set front_link_shortcourse = "https://uniathena.com/lms/short-course-sign-in" %}
+
+
+{% else %}
+        
+    {% set front_link = url('<front>') %}
+   {% set front_link_shortcourse = "https://ulearn.athena.edu/login" %}
+
+{% endif %}
+
+
+
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <div class="megamenu-container">
   <div class="explore-btn-main d-block d-md-none">
@@ -47,7 +65,7 @@
             <div class="dd-level2-inner">
               <h4>Academic</h4>
               <p>
-                <a href="{{url('<front>')}}search-results/abc?search_key=ShowAllDegree">View all Degree Courses</a>
+                <a href="{{front_link}}search-results/abc?search_key=ShowAllDegree">View all Degree Courses</a>
               </p>
               <ul>
                 {% for academic in academicnodes %}
@@ -57,7 +75,7 @@
                   {% if academic.cat_name == "Masters" or academic.cat_name == "MBA" or academic.cat_name == "Doctorate" %}
 
                     <li>
-                      <a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+                      <a href="{{front_link}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
                     </li>
 
                   {% endif %}
@@ -74,7 +92,7 @@
             <div class="dd-level2-inner">
               <h4>Academic</h4>
               <p>
-                <a href="{{url('<front>')}}search-results/abc?search_key=ShowAllMicroCredit">View all Micro Credit Courses</a>
+                <a href="{{front_link}}search-results/abc?search_key=ShowAllMicroCredit">View all Micro Credit Courses</a>
               </p>
               <ul>
                 {% for academic in academicnodes %}
@@ -82,7 +100,7 @@
                   {% if academic.cat_name == "Postgraduate Diploma" or academic.cat_name == "Postgraduate Certifications" %}
 
                     <li>
-                      <a href="{{url('<front>')}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
+                      <a href="{{front_link}}course/{{academic.nid}}" href="#">{{academic.title}}</a>
                       
                     </li>
 
@@ -113,7 +131,7 @@
           </div>
         </li>
         <div class="re-link-mob">
-          <h5><a href="{{url('<front>')}}about-us/athena-and-associated-entities">Want to Know More about<br>
+          <h5><a href="{{front_link}}about-us/athena-and-associated-entities">Want to Know More about<br>
             Our Universities ?</a></h5>
         </div>
 
@@ -188,7 +206,7 @@
               {% else %}
               
                  <h3 class="hea">
-                  <a href="{{url('<front>')}}{{value.link}}">
+                  <a href="{{front_link}}{{value.link}}">
                   
                   View all {{value.name}} Courses
                   </a>
@@ -211,7 +229,7 @@
 
               <div class="re-link">
                 
-                <h5><a href="{{url('<front>')}}about-us/athena-and-associated-entities">Want to Know More about<br>
+                <h5><a href="{{front_link}}about-us/athena-and-associated-entities">Want to Know More about<br>
                   Our Universities ?</a></h5>
 
               </div>
@@ -224,7 +242,7 @@
           {% for term_data_second_level in term_data_second_level %}
 
             <div id={{term_data_second_level.ele_id1}} class={{term_data_second_level.ele_class1}}>
-            <h3 class="hea"><a href="{{url('<front>')}}{{term_data_second_level.search_key}}">View all {{term_data_second_level.name}} Courses</a></h3>
+            <h3 class="hea"><a href="{{front_link}}{{term_data_second_level.search_key}}">View all {{term_data_second_level.name}} Courses</a></h3>
             <div class="scroll">
 
               {% for academicnodes in academicnodes %}
@@ -232,7 +250,7 @@
                 {% if term_data_second_level.id == academicnodes.cat_id %}
 
                 <div class="sub-category-list">
-                  <h4><a href="{{url('<front>')}}course/{{academicnodes.nid}}">
+                  <h4><a href="{{front_link}}course/{{academicnodes.nid}}">
                     {{academicnodes.title}}
                     </a>
                   </h4>
@@ -287,13 +305,12 @@
               {% for term_popular_academic in term_popular_academic %}
 
                 <div class="card-in-drop">
-                  <div class="card-text"><a href="{{url('<front>')}}course/{{term_popular_academic.nid}}">
+                  <div class="card-text"><a href="{{front_link}}course/{{term_popular_academic.nid}}">
                     {{term_popular_academic.title}}</a>
                   </div>
                   <hr>
                   <div class="card-text-para">
-                    We have a multitude of courses tailored to your career goals and busy schedule. These
-                    courses have been developed to enhance …..
+                    {{term_popular_academic.description}}
                   </div>
                 </div>
 
@@ -309,13 +326,12 @@
             {% for term_popular_certification in term_popular_certification %}
               
               <div class="card-in-drop">
-                <div class="card-text"><a href="{{url('<front>')}}course/{{term_popular_certification.nid}}">
+                <div class="card-text"><a href="{{front_link}}course/{{term_popular_certification.nid}}">
                   {{term_popular_certification.title}}</a>
                 </div>
                 <hr>
                 <div class="card-text-para">
-                  We have a multitude of courses tailored to your career goals and busy schedule. These
-                  courses have been developed to enhance …..
+                  {{term_popular_certification.description}}
                 </div>
               </div>
 
@@ -335,8 +351,7 @@
                 </div>
                 <hr>
                 <div class="card-text-para">
-                  We have a multitude of courses tailored to your career goals and busy schedule. These
-                  courses have been developed to enhance …..
+                  Develop comprehensive knowledge about the wider business context in which how the manager has to lead, perform and make effective decisions.
                 </div>
               </div>
               <div class="card-in-drop">
@@ -345,8 +360,7 @@
                 </div>
                 <hr>
                 <div class="card-text-para">
-                  We have a multitude of courses tailored to your career goals and busy schedule. These
-                  courses have been developed to  enhance …..
+                  Learn the forecasting, planning, and execution of supply chains and Push & Pull systems in Supply Chain with supply chain and logistic management.
                 </div>
               </div>
               <div class="card-in-drop">
@@ -355,8 +369,7 @@
                 </div>
                 <hr>
                 <div class="card-text-para">
-                  We have a multitude of courses tailored to your career goals and busy schedule. These
-                  courses have been developed to  enhance …..
+                  Learn about challenges and functions involved in Logistics operations and how to tackle them.
                 </div>
               </div>
               <div class="card-in-drop">
@@ -365,8 +378,7 @@
                 </div>
                 <hr>
                 <div class="card-text-para">
-                  We have a multitude of courses tailored to your career goals and busy schedule. These
-                  courses have been developed to  enhance …..
+                  Develop an understanding of Logistics & Procurement Management with Mastering Supply Chain and Logistic Management
                 </div>
               </div>
               <div class="card-in-drop">
@@ -375,8 +387,7 @@
                 </div>
                 <hr>
                 <div class="card-text-para">
-                  We have a multitude of courses tailored to your career goals and busy schedule. These
-                  courses have been developed to  enhance …..
+                  Create sustainable and impactful organizations by breaking paradigms and creating opportunities you never imagined.
                 </div>
               </div>
             </div>
@@ -393,7 +404,7 @@
     </div>
     <!-- navbar-collapse.// -->
     <div class="collapse navbar-collapse" id="search_nav" style="flex-basis:auto;">
-      <form id="course-search--form" class="input-group search-form" action="{{ url('<front>') }}search-results/abc" method="POST">
+      <form id="course-search--form" class="input-group search-form" action="{{ front_link }}search-results/abc" method="POST">
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#search_nav" aria-expanded="true">
           <img src="/themes/custom/athena/images/close.svg" alt="close" style="width: 20px;">
         </button>
@@ -435,20 +446,6 @@
                                                    </ul>
                                                 </li> -->
 
-{% set front = url('<front>') %}
-
-{% if front == "https://uniathena.com/" or front == "http://uniathena.com/" %}  
-    
-    {% set front_link = "https://athena.edu/" %}
-    {% set front_link_shortcourse = "https://uniathena.com/lms/short-course-sign-in" %}
-
-
-{% else %}
-        
-    {% set front_link = url('<front>') %}
-   {% set front_link_shortcourse = "https://ulearn.athena.edu/login" %}
-
-{% endif %}
 
 
       <li>        
@@ -458,7 +455,8 @@
         <a id="insights" href="{{ front_link }}insights/all">Insights</a>      
       </li>
       <li>        
-          <a class="loginBtn" href="{{front_link_shortcourse}}">Log in</a>                
+          <a class="loginBtn" href="{{front_link_shortcourse}}">Log in</a>
+                
       </li>
       <li>
         <a class="hideinMobileView btn btn-pink getStartedBtn mt-0" style="box-shadow:none;" href="{{ front_link }}registration">Get Started</a>
